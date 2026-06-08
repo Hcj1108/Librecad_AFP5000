@@ -66,6 +66,7 @@ void Logger::SetQSS()
 void Logger::showEvent(QShowEvent*)
 {
     refreshFileList();
+    //啊打发等哈韩国
    
 }
 
