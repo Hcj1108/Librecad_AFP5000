@@ -66,6 +66,7 @@ void Logger::SetQSS()
 void Logger::showEvent(QShowEvent*)
 {
     refreshFileList();
+    //aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 }
 
 void Logger::refreshFileList()
