@@ -132,8 +132,8 @@
       <PreprocessorDefinitions>_WINDOWS;UNICODE;_UNICODE;WIN32;_ENABLE_EXTENDED_ALIGNED_STORAGE;WIN64;DWGSUPPORT;_USE_MATH_DEFINES;QC_APPDIR="LibreCAD";LC_VERSION="2.2.0-undef";NDEBUG;QT_NO_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ResourceCompile>
     <PostBuildEvent>
-      <Command>./../../scripts/postprocess-win.bat 2.2.0-undef</Command>
-      <Message>./../../scripts/postprocess-win.bat 2.2.0-undef</Message>
+      <Command>
+      </Command>
     </PostBuildEvent>
     <QtMoc>
       <CompilerFlavor>msvc</CompilerFlavor>
@@ -198,8 +198,8 @@
       <PreprocessorDefinitions>_WINDOWS;UNICODE;_UNICODE;WIN32;_ENABLE_EXTENDED_ALIGNED_STORAGE;WIN64;DWGSUPPORT;_USE_MATH_DEFINES;QC_APPDIR="LibreCAD";LC_VERSION="2.2.0-undef";_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ResourceCompile>
     <PostBuildEvent>
-      <Command>./../../scripts/postprocess-win.bat 2.2.0-undef</Command>
-      <Message>./../../scripts/postprocess-win.bat 2.2.0-undef</Message>
+      <Command>
+      </Command>
     </PostBuildEvent>
     <QtMoc>
       <CompilerFlavor>msvc</CompilerFlavor>
