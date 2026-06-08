@@ -132,6 +132,24 @@ void Logger::exportLog()
 
 void Logger::write(const QString& text)
 {
+    // 自动分类
+    if (text.contains(QStringLiteral("失败")) ||
+        text.contains(QStringLiteral("异常")) ||
+        text.contains(QStringLiteral("不足")) ||
+        text.contains(QStringLiteral("错误"))) {
+        writeError(text);
+        return;
+    }
+    if (text.contains(QStringLiteral("相机")) ||
+        text.contains(QStringLiteral("激光")) ||
+        text.contains(QStringLiteral("触发")) ||
+        text.contains(QStringLiteral("打印")) ||
+        text.contains(QStringLiteral("监控")) ||
+        text.contains(QStringLiteral("标定"))) {
+        writeComm(text);
+        return;
+    }
+
     cleanOldLogs();
 
     QDateTime current_time = QDateTime::currentDateTime();

@@ -234,10 +234,10 @@ QC_ApplicationWindow::QC_ApplicationWindow()
     connect(OCRT, &OCRruning::running, OCRT, &OCRruning::getocr);
     QObject::connect(&manager, &DeletionManager::deletionCompleted, [this](bool success) {
         if (success) {
-            Logger::write("存储空间不足，删除文件夹: " + std::string(manager.OldestFolderPath.toLocal8Bit()));
+            Logger::writeError("存储空间不足，删除文件夹: " + std::string(manager.OldestFolderPath.toLocal8Bit()));
         }
         else {
-            Logger::write("存储空间不足，删除文件夹失败! ");
+            Logger::writeError("存储空间不足，删除文件夹失败! ");
         }
         });
 
@@ -279,7 +279,7 @@ QC_ApplicationWindow::QC_ApplicationWindow()
         this->setWindowState(Qt::WindowMinimized);
     });
     connect(this, &QC_ApplicationWindow::camlog, this, [=] {
-        Logger::write("拍照!");
+        Logger::writeComm("拍照!");
     });
     connect(this, &QC_ApplicationWindow::resizeimage, this, &QC_ApplicationWindow::processImageAndControls);
   
@@ -652,7 +652,7 @@ QC_ApplicationWindow::QC_ApplicationWindow()
         if (IsOpenBKBK == true)
         {
             FileUtils::SendBKBK("02", "F0",1);//单次打码
-            Logger::write("单次打码");
+            Logger::writeComm("单次打码");
         }
         else
         {
@@ -666,7 +666,7 @@ QC_ApplicationWindow::QC_ApplicationWindow()
         if (isOpenCam)
         {
             FileUtils::SendBKBK("02", "F1", 1);//单次拍照
-            Logger::write("单次拍照");
+            Logger::writeComm("单次拍照");
         }
         else
         {
@@ -679,7 +679,7 @@ QC_ApplicationWindow::QC_ApplicationWindow()
 
     connect(ui->toolButton_10, &QPushButton::clicked, this, [=] {
         FileUtils::SendBKBK("21", "F0", 1);//取消报警
-        Logger::write("取消报警");
+        Logger::writeError("取消报警");
         });
  
     
@@ -4828,10 +4828,10 @@ bool QC_ApplicationWindow::OpenCamer()
             // 验证Line2状态
             Line2Status = ObjFeatureControlPtr->GetBoolFeature("LineStatus")->GetValue();
             if (Line2Status) {
-                Logger::write("相机打开 - Line2联机状态: TRUE");
+                Logger::writeComm("相机打开 - Line2联机状态: TRUE");
             }
             else {
-                Logger::write("相机打开 - Line2联机状态: FALSE（警告）");
+                Logger::writeComm("相机打开 - Line2联机状态: FALSE（警告）");
             }
             // ============Line1控制（原有功能） ============
             ObjFeatureControlPtr->GetEnumFeature("LineSelector")->SetValue("Line1");
@@ -4881,7 +4881,7 @@ bool QC_ApplicationWindow::OpenCamer()
             ObjFeatureControlPtr->GetCommandFeature("AcquisitionStart")->Execute();
             statusBar()->showMessage(QString::fromLocal8Bit("相机连接成功!"), 3000); // 显示临时信息，时间3秒钟.
             isOpenCam = true;
-            Logger::write("打开相机");
+            Logger::writeComm("打开相机");
            
             return 1;
         }
@@ -4890,7 +4890,7 @@ bool QC_ApplicationWindow::OpenCamer()
             QMessageBox* msgBoxs = new QMessageBox(QMessageBox::Critical, QString::fromLocal8Bit("相机连接失败! "), QString::fromLocal8Bit("连接相机出错! "), QMessageBox::Ok);
             msgBoxs->button(QMessageBox::Ok)->setText(QString::fromLocal8Bit("确定 "));
             msgBoxs->show();
-            Logger::write(e.GetErrorCode() + e.what());
+            Logger::writeComm("相机连接出错! ");
             return 0;
         }
     }
@@ -4947,11 +4947,11 @@ void QC_ApplicationWindow::CloseCamer()
             IGXFactory::GetInstance().Uninit();
             statusBar()->showMessage(QString::fromLocal8Bit("已断开相机连接！ "), 3000); // 显示临时信息，时间3秒钟.
             isOpenCam = false;
-            Logger::write("关闭相机");
+            Logger::writeComm("关闭相机");
         }
         catch (CGalaxyException& e)
         {
-            Logger::write(e.GetErrorCode() + e.what());
+            Logger::writeComm("相机连接出错! ");
         }
     }
 }
@@ -4965,13 +4965,17 @@ void QC_ApplicationWindow::CapAndOcr()
         if (CamTimerEnd)//滤波
         {
             OCRT->isfinash = false;
-            emit OCRT->running(image, rot, rects, &RawResult, &RawResult2, &Time_str, &ocrresult, SCenabled, BZenabled, EWenabled, Start_Data_Time, Save_Time, ui->comboBox_2->currentText(), IsCustom, QString::fromLocal8Bit(QByteArray::fromStdString(CustomStr)), QString::fromLocal8Bit(QByteArray::fromStdString(CustomStr_2)), QString::fromLocal8Bit(QByteArray::fromStdString(CustomStr_3)), QString::fromLocal8Bit(QByteArray::fromStdString(CustomStr_4)), QString::fromLocal8Bit(QByteArray::fromStdString(CustomStr_5)), QString::fromLocal8Bit(QByteArray::fromStdString(CustomStr_6)), &ocr_time, FirstOCRSize, SecOCRSize);//触发working流程开始执行
-            //emit OCRT->running(resizeImage, rot, rects, &RawResult, &RawResult2, &Time_str, &ocrresult, Start_Data_Time, Save_Time, ui->comboBox_2->currentText(), IsCustom, QString::fromLocal8Bit(CustomStr.c_str()), QString::fromLocal8Bit(CustomStr_2.c_str()), QString::fromLocal8Bit(CustomStr_3.c_str()), QString::fromLocal8Bit(CustomStr_4.c_str()), QString::fromLocal8Bit(CustomStr_5.c_str()), &ocr_time, FirstOCRSize, SecOCRSize);//触发working流程开始执行
+            emit OCRT->running(image, rot, rects, &RawResult, &RawResult2, &Time_str, &ocrresult, SCenabled, BZenabled, EWenabled, Start_Data_Time, 
+                Save_Time, ui->comboBox_2->currentText(), IsCustom, QString::fromLocal8Bit(QByteArray::fromStdString(CustomStr)), 
+                QString::fromLocal8Bit(QByteArray::fromStdString(CustomStr_2)), QString::fromLocal8Bit(QByteArray::fromStdString(CustomStr_3)),
+                QString::fromLocal8Bit(QByteArray::fromStdString(CustomStr_4)), QString::fromLocal8Bit(QByteArray::fromStdString(CustomStr_5)), 
+                QString::fromLocal8Bit(QByteArray::fromStdString(CustomStr_6)), &ocr_time, FirstOCRSize, SecOCRSize);//触发working流程开始执行
+         
         }
     }
     else
     {
-        Logger::write("检测过程中拍照 ");
+        Logger::writeComm("检测过程中拍照 ");
     }
 }
 /**
@@ -5020,8 +5024,8 @@ bool QC_ApplicationWindow::SetROISimple(int width, int height,int x, int y ) {
         QMessageBox* msgBoxs = new QMessageBox(QMessageBox::Critical, QString::fromLocal8Bit("相机连接出错! "), QString::fromLocal8Bit("相机连接出错,请重启打码软件\n和视觉软件! "), QMessageBox::Ok);
         msgBoxs->button(QMessageBox::Ok)->setText(QString::fromLocal8Bit("确定 "));
         msgBoxs->show();
-        Logger::write("相机连接出错! ");
-        Logger::write(e.what());
+        Logger::writeComm("相机连接出错! ");
+       
     }
     
 }
@@ -5103,8 +5107,8 @@ void QC_ApplicationWindow::AutoCap()
         QMessageBox* msgBoxs = new QMessageBox(QMessageBox::Critical, QString::fromLocal8Bit("相机连接出错! "), QString::fromLocal8Bit("相机连接出错,请重启打码软件\n和视觉软件! "), QMessageBox::Ok);
         msgBoxs->button(QMessageBox::Ok)->setText(QString::fromLocal8Bit("确定 "));
         msgBoxs->show();
-        Logger::write("相机连接出错! ");
-        Logger::write(e.what());
+        Logger::writeComm("相机连接出错! ");
+      
     }
 
     IsAutoCap = true;
@@ -5439,12 +5443,7 @@ void QC_ApplicationWindow::Pass()
     ui->label->setStyleSheet("background-color: rgb(0, 255, 0);""color: black;");
   
     ui->label->setText(QString::fromLocal8Bit("OK"));
-   /* Count[PreCounter % 20] = true;
-
-    PreCounter++;
-    EndCounter++;
-    PreCounter = PreCounter % 20;
-    EndCounter = EndCounter % 20;*/
+  
 
     OKnum++;
     Totalnum++;
@@ -5483,11 +5482,7 @@ void QC_ApplicationWindow::NG()
         }
     }
 
-    /*PreCounter++;
-    EndCounter++;
-    PreCounter = PreCounter % 20;
-    EndCounter = EndCounter % 20;*/
-
+  
     NGnum++;
     Totalnum++;
     RateUpdate();
@@ -5770,7 +5765,7 @@ void QC_ApplicationWindow::CreateScheme()
         else
         {
             setting.insertDBresult(result);
-            Logger::write("新增配方失败 ");
+            Logger::writeError("新增配方失败 ");
         }
     
 }
@@ -5798,10 +5793,6 @@ void QC_ApplicationWindow::ChangeSchemeName()
         {
             QString pre_alter_name = ui->comboBox->currentText();
             string Pre_Alter_Name = std::string(pre_alter_name.toLocal8Bit());
-
-            /*QString waitalter_name = QString::fromLocal8Bit("修改后配方名 ");;
-            string WaitAlter_Name = std::string(waitalter_name.toLocal8Bit());*/
-
             int altername_result = AlterSchemeName(Pre_Alter_Name, str);
             if (altername_result)
             {
@@ -5863,9 +5854,7 @@ void QC_ApplicationWindow::AlterScheme()
             result = AlterDB(std::string(setting.schemeName.toLocal8Bit()));
             if (result)
             {
-                /*IsWaitAlter = true;
-                admin.setPortParam(DelayModel, DelayTime, DelayDistance, DCLength, GapCount, KeepCount, OutputLocationMin, OutputLocationMax, CamFilterLength);
-                */
+              
                 QMessageBox* msgBoxs = new QMessageBox(QMessageBox::Information, QString::fromLocal8Bit("修改成功 "), QString::fromLocal8Bit("配方更新成功! "), QMessageBox::Ok, &setting);
                 msgBoxs->button(QMessageBox::Ok)->setText(QString::fromLocal8Bit("确定 "));
                 msgBoxs->show();
@@ -5899,12 +5888,7 @@ void QC_ApplicationWindow::AlterScheme()
        
         if (result)
         {
-            /*IsWaitAlter = true;
-            admin.setPortParam(DelayModel, DelayTime, DelayDistance, DCLength, GapCount, KeepCount, OutputLocationMin, OutputLocationMax, CamFilterLength);
-            */
-           /* QMessageBox* msgBoxs = new QMessageBox(QMessageBox::Information, QString::fromLocal8Bit("修改成功 "), QString::fromLocal8Bit("配方更新成功! "), QMessageBox::Ok, &setting);
-            msgBoxs->button(QMessageBox::Ok)->setText(QString::fromLocal8Bit("确定 "));
-            msgBoxs->show();*/
+           
             IsAlter = false;
             std::string defaultstr = "修改配方:" + schemename + "\n修改后配方参数为:\n ";
             defaultstr.append("\t曝光时间: " + to_string(ExposureTime) + "\n");
@@ -5957,7 +5941,7 @@ void QC_ApplicationWindow::SaveNG()
         }
         else
         { //创建失败
-            Logger::write("新建当日NG图片文件夹失败! ");
+            Logger::writeError("新建当日NG图片文件夹失败! ");
             //std::cout << "Fail to create directory." << std::endl;
             throw std::exception();
         }
@@ -6244,7 +6228,7 @@ void QC_ApplicationWindow::CamErrorAct()
     ui->label->setStyleSheet("background-color: rgb(255,210,75);""color: black;");
   
     ui->label->setText(QString::fromLocal8Bit("相机断开"));
-    Logger::write("相机异常断开! ");
+    Logger::writeError("相机异常断开! ");
     QMessageBox* msgBoxs = new QMessageBox(QMessageBox::Critical, QString::fromLocal8Bit("相机掉线 "), QString::fromLocal8Bit("检测到相机掉线，请检查相机\n连接并重启软件！ "), QMessageBox::Ok, this);
     msgBoxs->button(QMessageBox::Ok)->setText(QString::fromLocal8Bit("确定 "));
     msgBoxs->show();
@@ -7104,13 +7088,13 @@ void QC_ApplicationWindow::showOCRResults() {
             if (IsCustom)
             {
                 string NG_Str = "*应检测内容:\n" + CustomStr + " " + CustomStr_2 + "\n" + CustomStr_3 + " " + CustomStr_4 + "\n" + CustomStr_5 + "\n*识别结果为:\n" + RawResult.toStdString() + "\n**********二次识别结果***********\n" + RawResult2.toStdString();
-                Logger::write(NG_Str);
+                Logger::writeError(NG_Str);
                 ui->textEdit->setText(QString::fromLocal8Bit("末次识别异常\n") + QString::fromLocal8Bit("----------------\n") + RawResult + QString::fromLocal8Bit("----------------\n") + RawResult2);
             }
             else
             {
                 string NG_Str = "*应匹配日期字符为:生产日期:" + Start_Data_Time.toStdString() + " 保质期:" + Save_Time.toStdString() + "\n*识别结果为:\n" + RawResult.toStdString() + "\n**********二次识别结果***********\n" + RawResult2.toStdString();
-                Logger::write(NG_Str);
+                Logger::writeError(NG_Str);
                 ui->textEdit->setText(QString::fromLocal8Bit("末次识别异常\n") + QString::fromLocal8Bit("----------------\n") + RawResult + QString::fromLocal8Bit("----------------\n") + RawResult2);
             }
         }
