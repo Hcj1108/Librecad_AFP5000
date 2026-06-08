@@ -1,0 +1,3921 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>QC_ApplicationWindow</class>
+ <widget class="QMainWindow" name="QC_ApplicationWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1020</width>
+    <height>750</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background-color:rgb(220, 235, 240)</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QVBoxLayout" name="verticalLayout" stretch="66,605">
+    <property name="spacing">
+     <number>6</number>
+    </property>
+    <property name="leftMargin">
+     <number>0</number>
+    </property>
+    <property name="topMargin">
+     <number>0</number>
+    </property>
+    <property name="rightMargin">
+     <number>0</number>
+    </property>
+    <property name="bottomMargin">
+     <number>0</number>
+    </property>
+    <item>
+     <layout class="QHBoxLayout" name="horizontalLayout_3">
+      <property name="rightMargin">
+       <number>0</number>
+      </property>
+      <property name="bottomMargin">
+       <number>0</number>
+      </property>
+      <item>
+       <widget class="QWidget" name="widget_3" native="true">
+        <property name="styleSheet">
+         <string notr="true">background-color: rgb(100, 181, 246);
+opacity: 1;
+
+</string>
+        </property>
+        <widget class="QLabel" name="label_6">
+         <property name="geometry">
+          <rect>
+           <x>400</x>
+           <y>0</y>
+           <width>191</width>
+           <height>41</height>
+          </rect>
+         </property>
+         <property name="font">
+          <font>
+           <family>华文中宋</family>
+           <pointsize>28</pointsize>
+           <bold>false</bold>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true"/>
+         </property>
+         <property name="text">
+          <string>AFP-5000</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter</set>
+         </property>
+        </widget>
+        <widget class="QComboBox" name="comboBox">
+         <property name="geometry">
+          <rect>
+           <x>100</x>
+           <y>2</y>
+           <width>191</width>
+           <height>37</height>
+          </rect>
+         </property>
+         <property name="font">
+          <font>
+           <family>微软雅黑</family>
+           <pointsize>14</pointsize>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">
+QComboBox::drop-down {
+    subcontrol-origin: padding;
+    subcontrol-position: top right;
+    width: 15px; 
+    border-left-width: 1px;
+    border-left-color: darkgray;
+    border-left-style: solid;
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+}
+
+QComboBox::down-arrow {
+    image: url(:/PNG/Resources/PNG/down_2.png);
+} 
+QComboBox::down-arrow:on {
+    top: 1px;
+    left: 1px;
+}</string>
+         </property>
+         <item>
+          <property name="text">
+           <string>默认</string>
+          </property>
+         </item>
+        </widget>
+        <widget class="QLabel" name="label_3">
+         <property name="geometry">
+          <rect>
+           <x>5</x>
+           <y>2</y>
+           <width>91</width>
+           <height>37</height>
+          </rect>
+         </property>
+         <property name="font">
+          <font>
+           <family>微软雅黑</family>
+           <pointsize>14</pointsize>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="text">
+          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;当前任务：&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignmentFlag::AlignCenter</set>
+         </property>
+        </widget>
+       </widget>
+      </item>
+      <item>
+       <widget class="QToolButton" name="toolButton_10">
+        <property name="font">
+         <font>
+          <family>微软雅黑</family>
+          <pointsize>9</pointsize>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">   background-color: rgb(255, 255, 255);
+        opacity: 1;</string>
+        </property>
+        <property name="text">
+         <string>清除
+报警</string>
+        </property>
+        <property name="iconSize">
+         <size>
+          <width>32</width>
+          <height>33</height>
+         </size>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QToolButton" name="toolButton_38">
+        <property name="font">
+         <font>
+          <family>微软雅黑</family>
+          <pointsize>9</pointsize>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">   background-color: rgb(255, 255, 255);
+        opacity: 1;</string>
+        </property>
+        <property name="text">
+         <string>报警
+正常</string>
+        </property>
+        <property name="iconSize">
+         <size>
+          <width>40</width>
+          <height>40</height>
+         </size>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QToolButton" name="toolButton_32">
+        <property name="font">
+         <font>
+          <family>微软雅黑</family>
+          <pointsize>9</pointsize>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">   background-color: rgb(255, 255, 255);
+        opacity: 1;</string>
+        </property>
+        <property name="text">
+         <string>联机
+正常</string>
+        </property>
+        <property name="iconSize">
+         <size>
+          <width>40</width>
+          <height>40</height>
+         </size>
+        </property>
+        <property name="toolButtonStyle">
+         <enum>Qt::ToolButtonStyle::ToolButtonIconOnly</enum>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QToolButton" name="MIN">
+        <property name="styleSheet">
+         <string notr="true">   background-color: rgb(255, 255, 255);
+        opacity: 1;</string>
+        </property>
+        <property name="text">
+         <string>MIN</string>
+        </property>
+        <property name="icon">
+         <iconset resource="OCRdemo.qrc">
+          <normaloff>:/PIC/Resources/PICs/branch_close.png</normaloff>:/PIC/Resources/PICs/branch_close.png</iconset>
+        </property>
+        <property name="iconSize">
+         <size>
+          <width>32</width>
+          <height>32</height>
+         </size>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QToolButton" name="EXIT">
+        <property name="styleSheet">
+         <string notr="true">   background-color: rgb(255, 255, 255);
+        opacity: 1;</string>
+        </property>
+        <property name="text">
+         <string>EXIT</string>
+        </property>
+        <property name="icon">
+         <iconset resource="OCRdemo.qrc">
+          <normaloff>:/PIC/Resources/PICs/close.png</normaloff>:/PIC/Resources/PICs/close.png</iconset>
+        </property>
+        <property name="iconSize">
+         <size>
+          <width>32</width>
+          <height>32</height>
+         </size>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item>
+     <widget class="QStackedWidget" name="stackedWidget">
+      <property name="styleSheet">
+       <string notr="true">background-color:rgb(220, 235, 240);</string>
+      </property>
+      <property name="currentIndex">
+       <number>0</number>
+      </property>
+      <widget class="QWidget" name="page_2">
+       <widget class="QStackedWidget" name="stackedWidget_2">
+        <property name="geometry">
+         <rect>
+          <x>710</x>
+          <y>0</y>
+          <width>301</width>
+          <height>531</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background-color:rgb(250, 250, 245);
+
+opacity: 1;</string>
+        </property>
+        <property name="currentIndex">
+         <number>3</number>
+        </property>
+        <widget class="QWidget" name="page_4">
+         <widget class="QGroupBox" name="groupBox_5">
+          <property name="geometry">
+           <rect>
+            <x>10</x>
+            <y>10</y>
+            <width>281</width>
+            <height>201</height>
+           </rect>
+          </property>
+          <property name="font">
+           <font>
+            <family>微软雅黑</family>
+            <pointsize>12</pointsize>
+            <bold>false</bold>
+           </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true"/>
+          </property>
+          <property name="title">
+           <string>位置调整</string>
+          </property>
+          <widget class="QLabel" name="label_32">
+           <property name="geometry">
+            <rect>
+             <x>20</x>
+             <y>30</y>
+             <width>41</width>
+             <height>30</height>
+            </rect>
+           </property>
+           <property name="font">
+            <font>
+             <family>微软雅黑</family>
+             <pointsize>12</pointsize>
+             <bold>false</bold>
+            </font>
+           </property>
+           <property name="styleSheet">
+            <string/>
+           </property>
+           <property name="text">
+            <string>步长：</string>
+           </property>
+          </widget>
+          <widget class="QLineEdit" name="lineEdit_15">
+           <property name="geometry">
+            <rect>
+             <x>90</x>
+             <y>30</y>
+             <width>131</width>
+             <height>30</height>
+            </rect>
+           </property>
+           <property name="styleSheet">
+            <string/>
+           </property>
+          </widget>
+          <widget class="QToolButton" name="moveUpBtn">
+           <property name="geometry">
+            <rect>
+             <x>120</x>
+             <y>70</y>
+             <width>40</width>
+             <height>40</height>
+            </rect>
+           </property>
+           <property name="styleSheet">
+            <string notr="true"> QToolButton {
+        opacity: 1;
+ 		border: none;
+}
+/* 按下状态 */
+QToolButton:pressed {
+   background-color: #546E7A; /* 深石板灰 */
+    background-image: none;
+    padding-top: 12px;
+    padding-bottom: 8px;
+    border: 1px solid #37474F; /* 深色边框模拟阴影 */
+}
+</string>
+           </property>
+           <property name="text">
+            <string>...</string>
+           </property>
+           <property name="icon">
+            <iconset resource="OCRdemo.qrc">
+             <normaloff>:/PIC/Resources/PICs/add_top.png</normaloff>:/PIC/Resources/PICs/add_top.png</iconset>
+           </property>
+           <property name="arrowType">
+            <enum>Qt::ArrowType::NoArrow</enum>
+           </property>
+          </widget>
+          <widget class="QToolButton" name="moveRighBtn">
+           <property name="geometry">
+            <rect>
+             <x>160</x>
+             <y>110</y>
+             <width>40</width>
+             <height>40</height>
+            </rect>
+           </property>
+           <property name="styleSheet">
+            <string notr="true"> QToolButton {
+        opacity: 1;
+ 		border: none;
+}
+/* 按下状态 */
+QToolButton:pressed {
+   background-color: #546E7A; /* 深石板灰 */
+    background-image: none;
+    padding-top: 12px;
+    padding-bottom: 8px;
+    border: 1px solid #37474F; /* 深色边框模拟阴影 */
+}
+</string>
+           </property>
+           <property name="text">
+            <string>...</string>
+           </property>
+           <property name="icon">
+            <iconset resource="OCRdemo.qrc">
+             <normaloff>:/PIC/Resources/PICs/add_right.png</normaloff>:/PIC/Resources/PICs/add_right.png</iconset>
+           </property>
+           <property name="arrowType">
+            <enum>Qt::ArrowType::NoArrow</enum>
+           </property>
+          </widget>
+          <widget class="QToolButton" name="moveLeftBtn">
+           <property name="geometry">
+            <rect>
+             <x>80</x>
+             <y>110</y>
+             <width>40</width>
+             <height>40</height>
+            </rect>
+           </property>
+           <property name="styleSheet">
+            <string notr="true"> QToolButton {
+        opacity: 1;
+ 		border: none;
+}
+/* 按下状态 */
+QToolButton:pressed {
+   background-color: #546E7A; /* 深石板灰 */
+    background-image: none;
+    padding-top: 12px;
+    padding-bottom: 8px;
+    border: 1px solid #37474F; /* 深色边框模拟阴影 */
+}
+</string>
+           </property>
+           <property name="text">
+            <string>...</string>
+           </property>
+           <property name="icon">
+            <iconset resource="OCRdemo.qrc">
+             <normaloff>:/PIC/Resources/PICs/add_left.png</normaloff>:/PIC/Resources/PICs/add_left.png</iconset>
+           </property>
+           <property name="arrowType">
+            <enum>Qt::ArrowType::NoArrow</enum>
+           </property>
+          </widget>
+          <widget class="QToolButton" name="moveDownBtn">
+           <property name="geometry">
+            <rect>
+             <x>120</x>
+             <y>150</y>
+             <width>40</width>
+             <height>40</height>
+            </rect>
+           </property>
+           <property name="styleSheet">
+            <string notr="true"> QToolButton {
+        opacity: 1;
+ 		border: none;
+}
+/* 按下状态 */
+QToolButton:pressed {
+   background-color: #546E7A; /* 深石板灰 */
+    background-image: none;
+    padding-top: 12px;
+    padding-bottom: 8px;
+    border: 1px solid #37474F; /* 深色边框模拟阴影 */
+}
+</string>
+           </property>
+           <property name="text">
+            <string>...</string>
+           </property>
+           <property name="icon">
+            <iconset resource="OCRdemo.qrc">
+             <normaloff>:/PIC/Resources/PICs/add_bottom.png</normaloff>:/PIC/Resources/PICs/add_bottom.png</iconset>
+           </property>
+           <property name="popupMode">
+            <enum>QToolButton::ToolButtonPopupMode::DelayedPopup</enum>
+           </property>
+           <property name="arrowType">
+            <enum>Qt::ArrowType::NoArrow</enum>
+           </property>
+          </widget>
+          <widget class="QToolButton" name="moveToPosition">
+           <property name="geometry">
+            <rect>
+             <x>120</x>
+             <y>110</y>
+             <width>40</width>
+             <height>40</height>
+            </rect>
+           </property>
+           <property name="styleSheet">
+            <string notr="true"> QToolButton {
+        opacity: 1;
+ 		border: none;
+}
+/* 按下状态 */
+QToolButton:pressed {
+   background-color: #546E7A; /* 深石板灰 */
+    background-image: none;
+    padding-top: 12px;
+    padding-bottom: 8px;
+    border: 1px solid #37474F; /* 深色边框模拟阴影 */
+}
+</string>
+           </property>
+           <property name="text">
+            <string>...</string>
+           </property>
+           <property name="icon">
+            <iconset resource="OCRdemo.qrc">
+             <normaloff>:/PIC/Resources/PICs/branch_open.png</normaloff>:/PIC/Resources/PICs/branch_open.png</iconset>
+           </property>
+           <property name="arrowType">
+            <enum>Qt::ArrowType::NoArrow</enum>
+           </property>
+          </widget>
+         </widget>
+         <widget class="QGroupBox" name="groupBox_7">
+          <property name="geometry">
+           <rect>
+            <x>10</x>
+            <y>230</y>
+            <width>281</width>
+            <height>91</height>
+           </rect>
+          </property>
+          <property name="font">
+           <font>
+            <family>微软雅黑</family>
+            <pointsize>12</pointsize>
+            <bold>false</bold>
+           </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true"/>
+          </property>
+          <property name="title">
+           <string>视图缩放</string>
+          </property>
+          <widget class="QWidget" name="horizontalLayoutWidget">
+           <property name="geometry">
+            <rect>
+             <x>10</x>
+             <y>30</y>
+             <width>261</width>
+             <height>51</height>
+            </rect>
+           </property>
+           <layout class="QHBoxLayout" name="horizontalLayout_2">
+            <item>
+             <widget class="QToolButton" name="toolButton_44">
+              <property name="font">
+               <font>
+                <family>微软雅黑</family>
+                <pointsize>8</pointsize>
+                <bold>true</bold>
+               </font>
+              </property>
+              <property name="styleSheet">
+               <string notr="true"> QToolButton {
+        opacity: 1;
+ 		border: none;
+}
+/* 按下状态 */
+QToolButton:pressed {
+   background-color: #546E7A; /* 深石板灰 */
+    background-image: none;
+    padding-top: 12px;
+    padding-bottom: 8px;
+    border: 1px solid #37474F; /* 深色边框模拟阴影 */
+}
+</string>
+              </property>
+              <property name="text">
+               <string>缩小
+视图</string>
+              </property>
+              <property name="icon">
+               <iconset resource="OCRdemo.qrc">
+                <normaloff>:/PNG/Resources/PNG/zoomin.png</normaloff>:/PNG/Resources/PNG/zoomin.png</iconset>
+              </property>
+              <property name="iconSize">
+               <size>
+                <width>30</width>
+                <height>30</height>
+               </size>
+              </property>
+              <property name="toolButtonStyle">
+               <enum>Qt::ToolButtonStyle::ToolButtonTextBesideIcon</enum>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QToolButton" name="toolButton_43">
+              <property name="font">
+               <font>
+                <family>微软雅黑</family>
+                <pointsize>8</pointsize>
+                <bold>true</bold>
+               </font>
+              </property>
+              <property name="styleSheet">
+               <string notr="true"> QToolButton {
+        opacity: 1;
+ 		border: none;
+}
+/* 按下状态 */
+QToolButton:pressed {
+   background-color: #546E7A; /* 深石板灰 */
+    background-image: none;
+    padding-top: 12px;
+    padding-bottom: 8px;
+    border: 1px solid #37474F; /* 深色边框模拟阴影 */
+}
+</string>
+              </property>
+              <property name="text">
+               <string>放大
+视图</string>
+              </property>
+              <property name="icon">
+               <iconset resource="OCRdemo.qrc">
+                <normaloff>:/PNG/Resources/PNG/zoomout.png</normaloff>:/PNG/Resources/PNG/zoomout.png</iconset>
+              </property>
+              <property name="iconSize">
+               <size>
+                <width>30</width>
+                <height>30</height>
+               </size>
+              </property>
+              <property name="toolButtonStyle">
+               <enum>Qt::ToolButtonStyle::ToolButtonTextBesideIcon</enum>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QToolButton" name="toolButton_45">
+              <property name="font">
+               <font>
+                <family>微软雅黑</family>
+                <pointsize>8</pointsize>
+                <bold>true</bold>
+               </font>
+              </property>
+              <property name="styleSheet">
+               <string notr="true"> QToolButton {
+        opacity: 1;
+ 		border: none;
+}
+/* 按下状态 */
+QToolButton:pressed {
+   background-color: #546E7A; /* 深石板灰 */
+    background-image: none;
+    padding-top: 12px;
+    padding-bottom: 8px;
+    border: 1px solid #37474F; /* 深色边框模拟阴影 */
+}
+</string>
+              </property>
+              <property name="text">
+               <string>居中
+显示</string>
+              </property>
+              <property name="icon">
+               <iconset resource="OCRdemo.qrc">
+                <normaloff>:/PNG/Resources/PNG/zoomauto.png</normaloff>:/PNG/Resources/PNG/zoomauto.png</iconset>
+              </property>
+              <property name="iconSize">
+               <size>
+                <width>30</width>
+                <height>30</height>
+               </size>
+              </property>
+              <property name="toolButtonStyle">
+               <enum>Qt::ToolButtonStyle::ToolButtonTextBesideIcon</enum>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+         </widget>
+         <widget class="QGroupBox" name="groupBox_10">
+          <property name="geometry">
+           <rect>
+            <x>10</x>
+            <y>340</y>
+            <width>281</width>
+            <height>131</height>
+           </rect>
+          </property>
+          <property name="font">
+           <font>
+            <family>微软雅黑</family>
+            <pointsize>12</pointsize>
+            <bold>false</bold>
+           </font>
+          </property>
+          <property name="title">
+           <string>文本设置</string>
+          </property>
+          <widget class="QToolButton" name="moveDownBtn_2">
+           <property name="geometry">
+            <rect>
+             <x>10</x>
+             <y>30</y>
+             <width>111</width>
+             <height>41</height>
+            </rect>
+           </property>
+           <property name="font">
+            <font>
+             <family>微软雅黑</family>
+             <pointsize>8</pointsize>
+             <bold>true</bold>
+            </font>
+           </property>
+           <property name="styleSheet">
+            <string notr="true"> QToolButton {
+        opacity: 1;
+ 		border: none;
+}
+/* 按下状态 */
+QToolButton:pressed {
+   background-color: #546E7A; /* 深石板灰 */
+    background-image: none;
+    padding-top: 12px;
+    padding-bottom: 8px;
+    border: 1px solid #37474F; /* 深色边框模拟阴影 */
+}
+</string>
+           </property>
+           <property name="text">
+            <string>局部ROI</string>
+           </property>
+           <property name="icon">
+            <iconset resource="OCRdemo.qrc">
+             <normaloff>:/PNG/Resources/PNG/Jubu.png</normaloff>:/PNG/Resources/PNG/Jubu.png</iconset>
+           </property>
+           <property name="iconSize">
+            <size>
+             <width>30</width>
+             <height>30</height>
+            </size>
+           </property>
+           <property name="popupMode">
+            <enum>QToolButton::ToolButtonPopupMode::DelayedPopup</enum>
+           </property>
+           <property name="toolButtonStyle">
+            <enum>Qt::ToolButtonStyle::ToolButtonTextBesideIcon</enum>
+           </property>
+           <property name="arrowType">
+            <enum>Qt::ArrowType::NoArrow</enum>
+           </property>
+          </widget>
+          <widget class="QToolButton" name="moveDownBtn_3">
+           <property name="geometry">
+            <rect>
+             <x>150</x>
+             <y>30</y>
+             <width>111</width>
+             <height>41</height>
+            </rect>
+           </property>
+           <property name="font">
+            <font>
+             <family>微软雅黑</family>
+             <pointsize>8</pointsize>
+             <bold>true</bold>
+            </font>
+           </property>
+           <property name="styleSheet">
+            <string notr="true"> QToolButton {
+        opacity: 1;
+ 		border: none;
+}
+/* 按下状态 */
+QToolButton:pressed {
+   background-color: #546E7A; /* 深石板灰 */
+    background-image: none;
+    padding-top: 12px;
+    padding-bottom: 8px;
+    border: 1px solid #37474F; /* 深色边框模拟阴影 */
+}
+</string>
+           </property>
+           <property name="text">
+            <string>全局显示</string>
+           </property>
+           <property name="icon">
+            <iconset resource="OCRdemo.qrc">
+             <normaloff>:/PNG/Resources/PNG/Quanju.png</normaloff>:/PNG/Resources/PNG/Quanju.png</iconset>
+           </property>
+           <property name="iconSize">
+            <size>
+             <width>30</width>
+             <height>30</height>
+            </size>
+           </property>
+           <property name="popupMode">
+            <enum>QToolButton::ToolButtonPopupMode::DelayedPopup</enum>
+           </property>
+           <property name="toolButtonStyle">
+            <enum>Qt::ToolButtonStyle::ToolButtonTextBesideIcon</enum>
+           </property>
+           <property name="arrowType">
+            <enum>Qt::ArrowType::NoArrow</enum>
+           </property>
+          </widget>
+          <widget class="QToolButton" name="toolButton_42">
+           <property name="geometry">
+            <rect>
+             <x>10</x>
+             <y>80</y>
+             <width>111</width>
+             <height>41</height>
+            </rect>
+           </property>
+           <property name="font">
+            <font>
+             <family>微软雅黑</family>
+             <pointsize>8</pointsize>
+             <bold>true</bold>
+            </font>
+           </property>
+           <property name="styleSheet">
+            <string notr="true"> QToolButton {
+        opacity: 1;
+ 		border: none;
+}
+/* 按下状态 */
+QToolButton:pressed {
+   background-color: #546E7A; /* 深石板灰 */
+    background-image: none;
+    padding-top: 12px;
+    padding-bottom: 8px;
+    border: 1px solid #37474F; /* 深色边框模拟阴影 */
+}
+</string>
+           </property>
+           <property name="text">
+            <string>文本编辑</string>
+           </property>
+           <property name="icon">
+            <iconset resource="OCRdemo.qrc">
+             <normaloff>:/PNG/Resources/PNG/mtext.png</normaloff>:/PNG/Resources/PNG/mtext.png</iconset>
+           </property>
+           <property name="iconSize">
+            <size>
+             <width>30</width>
+             <height>30</height>
+            </size>
+           </property>
+           <property name="toolButtonStyle">
+            <enum>Qt::ToolButtonStyle::ToolButtonTextBesideIcon</enum>
+           </property>
+          </widget>
+          <widget class="QToolButton" name="toolButton_46">
+           <property name="geometry">
+            <rect>
+             <x>150</x>
+             <y>80</y>
+             <width>111</width>
+             <height>41</height>
+            </rect>
+           </property>
+           <property name="font">
+            <font>
+             <family>微软雅黑</family>
+             <pointsize>8</pointsize>
+             <bold>true</bold>
+            </font>
+           </property>
+           <property name="styleSheet">
+            <string notr="true"> QToolButton {
+        opacity: 1;
+ 		border: none;
+}
+/* 按下状态 */
+QToolButton:pressed {
+   background-color: #546E7A; /* 深石板灰 */
+    background-image: none;
+    padding-top: 12px;
+    padding-bottom: 8px;
+    border: 1px solid #37474F; /* 深色边框模拟阴影 */
+}
+</string>
+           </property>
+           <property name="text">
+            <string>删除文本</string>
+           </property>
+           <property name="icon">
+            <iconset resource="OCRdemo.qrc">
+             <normaloff>:/PNG/Resources/PNG/delete.png</normaloff>:/PNG/Resources/PNG/delete.png</iconset>
+           </property>
+           <property name="iconSize">
+            <size>
+             <width>30</width>
+             <height>30</height>
+            </size>
+           </property>
+           <property name="toolButtonStyle">
+            <enum>Qt::ToolButtonStyle::ToolButtonTextBesideIcon</enum>
+           </property>
+          </widget>
+         </widget>
+        </widget>
+        <widget class="QWidget" name="page_6">
+         <widget class="QGroupBox" name="groupBox_6">
+          <property name="geometry">
+           <rect>
+            <x>10</x>
+            <y>190</y>
+            <width>281</width>
+            <height>331</height>
+           </rect>
+          </property>
+          <property name="font">
+           <font>
+            <family>微软雅黑</family>
+            <pointsize>12</pointsize>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="title">
+           <string>系统信息</string>
+          </property>
+          <widget class="QGraphicsView" name="graphicsView">
+           <property name="geometry">
+            <rect>
+             <x>10</x>
+             <y>170</y>
+             <width>251</width>
+             <height>151</height>
+            </rect>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">background-color: #9e9e9e;
+opacity: 1; 
+border: none;                  /* 核心：去掉所有边框 */</string>
+           </property>
+          </widget>
+          <widget class="QToolButton" name="toolButton_8">
+           <property name="geometry">
+            <rect>
+             <x>230</x>
+             <y>300</y>
+             <width>31</width>
+             <height>21</height>
+            </rect>
+           </property>
+           <property name="font">
+            <font>
+             <family>微软雅黑</family>
+             <pointsize>14</pointsize>
+             <bold>true</bold>
+            </font>
+           </property>
+           <property name="toolTip">
+            <string>清空数据</string>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">background-color: rgb(110,110,110); opacity: 1; 
+
+background-color: transparent; /* 核心：背景完全透明 */
+opacity: 1;                    /* 保持不透明度为1（文字清晰可见） */
+border: none;                  /* 核心：去掉所有边框 */
+
+</string>
+           </property>
+           <property name="text">
+            <string>清空数据</string>
+           </property>
+           <property name="icon">
+            <iconset resource="OCRdemo.qrc">
+             <normaloff>:/PIC/Resources/PICs/clear.png</normaloff>:/PIC/Resources/PICs/clear.png</iconset>
+           </property>
+           <property name="toolButtonStyle">
+            <enum>Qt::ToolButtonStyle::ToolButtonIconOnly</enum>
+           </property>
+           <property name="autoRaise">
+            <bool>false</bool>
+           </property>
+          </widget>
+          <widget class="QTextEdit" name="textEdit">
+           <property name="geometry">
+            <rect>
+             <x>10</x>
+             <y>80</y>
+             <width>251</width>
+             <height>81</height>
+            </rect>
+           </property>
+           <property name="font">
+            <font>
+             <family>微软雅黑</family>
+             <pointsize>10</pointsize>
+            </font>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">background-color: #9e9e9e;
+opacity: 1;
+border: none;                  /* 核心：去掉所有边框 */</string>
+           </property>
+           <property name="html">
+            <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;meta charset=&quot;utf-8&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+hr { height: 1px; border-width: 0; }
+li.unchecked::marker { content: &quot;\2610&quot;; }
+li.checked::marker { content: &quot;\2612&quot;; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'微软雅黑'; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Microsoft YaHei UI';&quot;&gt;末次识别异常:&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+           </property>
+          </widget>
+          <widget class="QWidget" name="widget" native="true">
+           <property name="geometry">
+            <rect>
+             <x>10</x>
+             <y>40</y>
+             <width>251</width>
+             <height>31</height>
+            </rect>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">background-color: #9e9e9e;
+opacity: 1; 
+</string>
+           </property>
+           <widget class="QLabel" name="label_5">
+            <property name="geometry">
+             <rect>
+              <x>0</x>
+              <y>0</y>
+              <width>111</width>
+              <height>21</height>
+             </rect>
+            </property>
+            <property name="font">
+             <font>
+              <family>微软雅黑</family>
+              <pointsize>10</pointsize>
+             </font>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">background-color: rgb(110,110,110); opacity: 1; 
+
+background-color: transparent; /* 核心：背景完全透明 */
+opacity: 1;                    /* 保持不透明度为1（文字清晰可见） */
+border: none;                  /* 核心：去掉所有边框 */
+border-radius: 0;              /* 去掉圆角，如果需要圆角可以改成比如 5px */</string>
+            </property>
+            <property name="text">
+             <string>单次检测用时:</string>
+            </property>
+           </widget>
+           <widget class="QLabel" name="label_21">
+            <property name="geometry">
+             <rect>
+              <x>130</x>
+              <y>0</y>
+              <width>121</width>
+              <height>21</height>
+             </rect>
+            </property>
+            <property name="font">
+             <font>
+              <family>微软雅黑</family>
+              <pointsize>12</pointsize>
+              <italic>false</italic>
+              <bold>false</bold>
+             </font>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">background-color: rgb(110,110,110); opacity: 1; 
+
+background-color: transparent; /* 核心：背景完全透明 */
+opacity: 1;                    /* 保持不透明度为1（文字清晰可见） */
+border: none;                  /* 核心：去掉所有边框 */
+border-radius: 0;              /* 去掉圆角，如果需要圆角可以改成比如 5px */</string>
+            </property>
+            <property name="frameShape">
+             <enum>QFrame::Shape::NoFrame</enum>
+            </property>
+            <property name="text">
+             <string>0</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignmentFlag::AlignCenter</set>
+            </property>
+           </widget>
+          </widget>
+         </widget>
+         <widget class="QTabWidget" name="tabWidget">
+          <property name="geometry">
+           <rect>
+            <x>10</x>
+            <y>10</y>
+            <width>281</width>
+            <height>171</height>
+           </rect>
+          </property>
+          <property name="font">
+           <font>
+            <family>微软雅黑</family>
+            <pointsize>10</pointsize>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="currentIndex">
+           <number>1</number>
+          </property>
+          <property name="iconSize">
+           <size>
+            <width>25</width>
+            <height>25</height>
+           </size>
+          </property>
+          <widget class="QWidget" name="tab">
+           <attribute name="icon">
+            <iconset resource="OCRdemo.qrc">
+             <normaloff>:/PIC/Resources/PICs/A2.png</normaloff>:/PIC/Resources/PICs/A2.png</iconset>
+           </attribute>
+           <attribute name="title">
+            <string>自定义检测</string>
+           </attribute>
+           <widget class="QLineEdit" name="lineEdit_13">
+            <property name="enabled">
+             <bool>false</bool>
+            </property>
+            <property name="geometry">
+             <rect>
+              <x>5</x>
+              <y>10</y>
+              <width>151</width>
+              <height>31</height>
+             </rect>
+            </property>
+            <property name="font">
+             <font>
+              <family>微软雅黑</family>
+              <pointsize>12</pointsize>
+              <bold>true</bold>
+             </font>
+            </property>
+            <property name="styleSheet">
+             <string notr="true"/>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+           </widget>
+           <widget class="QLineEdit" name="lineEdit_14">
+            <property name="enabled">
+             <bool>false</bool>
+            </property>
+            <property name="geometry">
+             <rect>
+              <x>5</x>
+              <y>50</y>
+              <width>151</width>
+              <height>31</height>
+             </rect>
+            </property>
+            <property name="font">
+             <font>
+              <family>微软雅黑</family>
+              <pointsize>12</pointsize>
+              <bold>true</bold>
+             </font>
+            </property>
+            <property name="styleSheet">
+             <string notr="true"/>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+           </widget>
+           <widget class="QLineEdit" name="lineEdit_16">
+            <property name="enabled">
+             <bool>false</bool>
+            </property>
+            <property name="geometry">
+             <rect>
+              <x>5</x>
+              <y>90</y>
+              <width>151</width>
+              <height>31</height>
+             </rect>
+            </property>
+            <property name="font">
+             <font>
+              <family>微软雅黑</family>
+              <pointsize>12</pointsize>
+              <bold>true</bold>
+             </font>
+            </property>
+            <property name="styleSheet">
+             <string notr="true"/>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+           </widget>
+           <widget class="QLineEdit" name="lineEdit_17">
+            <property name="enabled">
+             <bool>false</bool>
+            </property>
+            <property name="geometry">
+             <rect>
+              <x>180</x>
+              <y>10</y>
+              <width>81</width>
+              <height>31</height>
+             </rect>
+            </property>
+            <property name="font">
+             <font>
+              <family>微软雅黑</family>
+              <pointsize>12</pointsize>
+              <bold>true</bold>
+             </font>
+            </property>
+            <property name="styleSheet">
+             <string notr="true"/>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+           </widget>
+           <widget class="QLineEdit" name="lineEdit_18">
+            <property name="enabled">
+             <bool>false</bool>
+            </property>
+            <property name="geometry">
+             <rect>
+              <x>180</x>
+              <y>50</y>
+              <width>81</width>
+              <height>31</height>
+             </rect>
+            </property>
+            <property name="font">
+             <font>
+              <family>微软雅黑</family>
+              <pointsize>12</pointsize>
+              <bold>true</bold>
+             </font>
+            </property>
+            <property name="styleSheet">
+             <string notr="true"/>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+           </widget>
+           <widget class="QToolButton" name="zdybutton">
+            <property name="geometry">
+             <rect>
+              <x>180</x>
+              <y>90</y>
+              <width>81</width>
+              <height>31</height>
+             </rect>
+            </property>
+            <property name="font">
+             <font>
+              <family>微软雅黑</family>
+              <pointsize>8</pointsize>
+              <bold>true</bold>
+             </font>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">/* 按下状态 */
+QToolButton:pressed {
+   background-color: #546E7A; /* 深石板灰 */
+    background-image: none;
+    padding-top: 12px;
+    padding-bottom: 8px;
+    border: 1px solid #37474F; /* 深色边框模拟阴影 */
+}
+ QToolButton {
+		background-color: qlineargradient(x1:0, y1:0, x2:0, y2:1, 
+    	stop:0 #ffffff,       /* 顶部：纯白（高光） */
+   		stop:0.15 #dcdcdc,    /* 过渡：浅灰 */
+    	stop:0.85 #a9a9a9,    /* 底部过渡：中灰 */
+    	stop:1 #e8e8e8        /* 底部：亮灰（反光） */);
+}</string>
+            </property>
+            <property name="text">
+             <string>关闭</string>
+            </property>
+            <property name="iconSize">
+             <size>
+              <width>31</width>
+              <height>31</height>
+             </size>
+            </property>
+            <property name="popupMode">
+             <enum>QToolButton::ToolButtonPopupMode::DelayedPopup</enum>
+            </property>
+            <property name="toolButtonStyle">
+             <enum>Qt::ToolButtonStyle::ToolButtonTextBesideIcon</enum>
+            </property>
+           </widget>
+          </widget>
+          <widget class="QWidget" name="tab_2">
+           <attribute name="icon">
+            <iconset resource="OCRdemo.qrc">
+             <normaloff>:/PIC/Resources/PICs/rl.png</normaloff>:/PIC/Resources/PICs/rl.png</iconset>
+           </attribute>
+           <attribute name="title">
+            <string>日期检测</string>
+           </attribute>
+           <widget class="QLabel" name="label_25">
+            <property name="geometry">
+             <rect>
+              <x>10</x>
+              <y>10</y>
+              <width>81</width>
+              <height>31</height>
+             </rect>
+            </property>
+            <property name="font">
+             <font>
+              <family>微软雅黑</family>
+              <pointsize>12</pointsize>
+             </font>
+            </property>
+            <property name="text">
+             <string>生产日期：</string>
+            </property>
+           </widget>
+           <widget class="QLineEdit" name="lineEdit_2">
+            <property name="enabled">
+             <bool>false</bool>
+            </property>
+            <property name="geometry">
+             <rect>
+              <x>100</x>
+              <y>10</y>
+              <width>161</width>
+              <height>31</height>
+             </rect>
+            </property>
+            <property name="font">
+             <font>
+              <family>微软雅黑</family>
+              <pointsize>12</pointsize>
+              <bold>false</bold>
+             </font>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignmentFlag::AlignCenter</set>
+            </property>
+           </widget>
+           <widget class="QLabel" name="label_26">
+            <property name="geometry">
+             <rect>
+              <x>10</x>
+              <y>50</y>
+              <width>81</width>
+              <height>31</height>
+             </rect>
+            </property>
+            <property name="font">
+             <font>
+              <family>微软雅黑</family>
+              <pointsize>12</pointsize>
+             </font>
+            </property>
+            <property name="text">
+             <string>保质日期：</string>
+            </property>
+           </widget>
+           <widget class="QLineEdit" name="lineEdit_10">
+            <property name="enabled">
+             <bool>false</bool>
+            </property>
+            <property name="geometry">
+             <rect>
+              <x>100</x>
+              <y>50</y>
+              <width>161</width>
+              <height>31</height>
+             </rect>
+            </property>
+            <property name="font">
+             <font>
+              <family>微软雅黑</family>
+              <pointsize>12</pointsize>
+              <bold>false</bold>
+             </font>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignmentFlag::AlignCenter</set>
+            </property>
+           </widget>
+           <widget class="QLabel" name="label_28">
+            <property name="geometry">
+             <rect>
+              <x>10</x>
+              <y>90</y>
+              <width>81</width>
+              <height>31</height>
+             </rect>
+            </property>
+            <property name="font">
+             <font>
+              <family>微软雅黑</family>
+              <pointsize>12</pointsize>
+             </font>
+            </property>
+            <property name="text">
+             <string>额外代码：</string>
+            </property>
+           </widget>
+           <widget class="QLineEdit" name="lineEdit_12">
+            <property name="enabled">
+             <bool>false</bool>
+            </property>
+            <property name="geometry">
+             <rect>
+              <x>100</x>
+              <y>90</y>
+              <width>161</width>
+              <height>31</height>
+             </rect>
+            </property>
+            <property name="font">
+             <font>
+              <family>微软雅黑</family>
+              <pointsize>12</pointsize>
+              <bold>false</bold>
+             </font>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignmentFlag::AlignCenter</set>
+            </property>
+           </widget>
+          </widget>
+         </widget>
+        </widget>
+        <widget class="QWidget" name="page_10">
+         <widget class="QToolButton" name="toolButton_6">
+          <property name="geometry">
+           <rect>
+            <x>40</x>
+            <y>70</y>
+            <width>211</width>
+            <height>121</height>
+           </rect>
+          </property>
+          <property name="font">
+           <font>
+            <family>微软雅黑</family>
+            <pointsize>12</pointsize>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true"> QToolButton {
+        opacity: 1;
+ 		border: none;
+}
+/* 按下状态 */
+QToolButton:pressed {
+   background-color: #546E7A; /* 深石板灰 */
+    background-image: none;
+    padding-top: 12px;
+    padding-bottom: 8px;
+    border: 1px solid #37474F; /* 深色边框模拟阴影 */
+}
+</string>
+          </property>
+          <property name="text">
+           <string>日期模式</string>
+          </property>
+          <property name="icon">
+           <iconset resource="OCRdemo.qrc">
+            <normaloff>:/PIC/Resources/PICs/rl.png</normaloff>:/PIC/Resources/PICs/rl.png</iconset>
+          </property>
+          <property name="iconSize">
+           <size>
+            <width>80</width>
+            <height>80</height>
+           </size>
+          </property>
+          <property name="toolButtonStyle">
+           <enum>Qt::ToolButtonStyle::ToolButtonTextUnderIcon</enum>
+          </property>
+         </widget>
+         <widget class="QToolButton" name="toolButton_9">
+          <property name="geometry">
+           <rect>
+            <x>50</x>
+            <y>310</y>
+            <width>211</width>
+            <height>131</height>
+           </rect>
+          </property>
+          <property name="font">
+           <font>
+            <family>微软雅黑</family>
+            <pointsize>12</pointsize>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true"> QToolButton {
+        opacity: 1;
+ 		border: none;
+}
+/* 按下状态 */
+QToolButton:pressed {
+   background-color: #546E7A; /* 深石板灰 */
+    background-image: none;
+    padding-top: 12px;
+    padding-bottom: 8px;
+    border: 1px solid #37474F; /* 深色边框模拟阴影 */
+}
+</string>
+          </property>
+          <property name="text">
+           <string>自定义</string>
+          </property>
+          <property name="icon">
+           <iconset resource="OCRdemo.qrc">
+            <normaloff>:/PIC/Resources/PICs/A2.png</normaloff>:/PIC/Resources/PICs/A2.png</iconset>
+          </property>
+          <property name="iconSize">
+           <size>
+            <width>80</width>
+            <height>80</height>
+           </size>
+          </property>
+          <property name="toolButtonStyle">
+           <enum>Qt::ToolButtonStyle::ToolButtonTextUnderIcon</enum>
+          </property>
+         </widget>
+        </widget>
+        <widget class="QWidget" name="page_12">
+         <widget class="QGroupBox" name="groupBox_4">
+          <property name="geometry">
+           <rect>
+            <x>10</x>
+            <y>315</y>
+            <width>281</width>
+            <height>91</height>
+           </rect>
+          </property>
+          <property name="font">
+           <font>
+            <family>微软雅黑</family>
+            <pointsize>12</pointsize>
+           </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true"/>
+          </property>
+          <property name="title">
+           <string>仿真</string>
+          </property>
+          <widget class="QToolButton" name="toolButton_2">
+           <property name="geometry">
+            <rect>
+             <x>10</x>
+             <y>30</y>
+             <width>110</width>
+             <height>40</height>
+            </rect>
+           </property>
+           <property name="font">
+            <font>
+             <family>微软雅黑</family>
+             <pointsize>8</pointsize>
+             <bold>true</bold>
+            </font>
+           </property>
+           <property name="styleSheet">
+            <string notr="true"> QToolButton {
+        opacity: 1;
+ 		border: none;
+}
+/* 按下状态 */
+QToolButton:pressed {
+   background-color: #546E7A; /* 深石板灰 */
+    background-image: none;
+    padding-top: 12px;
+    padding-bottom: 8px;
+    border: 1px solid #37474F; /* 深色边框模拟阴影 */
+}
+</string>
+           </property>
+           <property name="text">
+            <string>仿真</string>
+           </property>
+           <property name="icon">
+            <iconset resource="OCRdemo.qrc">
+             <normaloff>:/PIC/Resources/PICs/Anquan.png</normaloff>:/PIC/Resources/PICs/Anquan.png</iconset>
+           </property>
+           <property name="iconSize">
+            <size>
+             <width>40</width>
+             <height>40</height>
+            </size>
+           </property>
+           <property name="toolButtonStyle">
+            <enum>Qt::ToolButtonStyle::ToolButtonTextBesideIcon</enum>
+           </property>
+          </widget>
+          <widget class="QToolButton" name="toolButton_4">
+           <property name="geometry">
+            <rect>
+             <x>140</x>
+             <y>30</y>
+             <width>110</width>
+             <height>40</height>
+            </rect>
+           </property>
+           <property name="font">
+            <font>
+             <family>微软雅黑</family>
+             <pointsize>8</pointsize>
+             <bold>true</bold>
+            </font>
+           </property>
+           <property name="styleSheet">
+            <string notr="true"> QToolButton {
+        opacity: 1;
+ 		border: none;
+}
+/* 按下状态 */
+QToolButton:pressed {
+   background-color: #546E7A; /* 深石板灰 */
+    background-image: none;
+    padding-top: 12px;
+    padding-bottom: 8px;
+    border: 1px solid #37474F; /* 深色边框模拟阴影 */
+}
+</string>
+           </property>
+           <property name="text">
+            <string>下一张</string>
+           </property>
+           <property name="icon">
+            <iconset resource="OCRdemo.qrc">
+             <normaloff>:/PIC/Resources/PICs/XYZ.png</normaloff>:/PIC/Resources/PICs/XYZ.png</iconset>
+           </property>
+           <property name="iconSize">
+            <size>
+             <width>40</width>
+             <height>40</height>
+            </size>
+           </property>
+           <property name="toolButtonStyle">
+            <enum>Qt::ToolButtonStyle::ToolButtonTextBesideIcon</enum>
+           </property>
+          </widget>
+         </widget>
+         <widget class="QGroupBox" name="groupBox_8">
+          <property name="geometry">
+           <rect>
+            <x>10</x>
+            <y>10</y>
+            <width>281</width>
+            <height>141</height>
+           </rect>
+          </property>
+          <property name="font">
+           <font>
+            <family>微软雅黑</family>
+            <pointsize>12</pointsize>
+            <bold>false</bold>
+           </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true"/>
+          </property>
+          <property name="title">
+           <string>点检</string>
+          </property>
+          <widget class="QToolButton" name="toolButton_12">
+           <property name="geometry">
+            <rect>
+             <x>10</x>
+             <y>30</y>
+             <width>110</width>
+             <height>40</height>
+            </rect>
+           </property>
+           <property name="font">
+            <font>
+             <family>微软雅黑</family>
+             <pointsize>8</pointsize>
+             <bold>true</bold>
+            </font>
+           </property>
+           <property name="styleSheet">
+            <string notr="true"> QToolButton {
+        opacity: 1;
+ 		border: none;
+}
+/* 按下状态 */
+QToolButton:pressed {
+   background-color: #546E7A; /* 深石板灰 */
+    background-image: none;
+    padding-top: 12px;
+    padding-bottom: 8px;
+    border: 1px solid #37474F; /* 深色边框模拟阴影 */
+}
+</string>
+           </property>
+           <property name="text">
+            <string>视频教程</string>
+           </property>
+           <property name="icon">
+            <iconset resource="OCRdemo.qrc">
+             <normaloff>:/PIC/Resources/PICs/jiaocheng.png</normaloff>:/PIC/Resources/PICs/jiaocheng.png</iconset>
+           </property>
+           <property name="iconSize">
+            <size>
+             <width>40</width>
+             <height>40</height>
+            </size>
+           </property>
+           <property name="toolButtonStyle">
+            <enum>Qt::ToolButtonStyle::ToolButtonTextBesideIcon</enum>
+           </property>
+          </widget>
+          <widget class="QToolButton" name="toolButton_13">
+           <property name="geometry">
+            <rect>
+             <x>140</x>
+             <y>30</y>
+             <width>110</width>
+             <height>40</height>
+            </rect>
+           </property>
+           <property name="font">
+            <font>
+             <family>微软雅黑</family>
+             <pointsize>8</pointsize>
+             <bold>true</bold>
+            </font>
+           </property>
+           <property name="styleSheet">
+            <string notr="true"> QToolButton {
+        opacity: 1;
+ 		border: none;
+}
+/* 按下状态 */
+QToolButton:pressed {
+   background-color: #546E7A; /* 深石板灰 */
+    background-image: none;
+    padding-top: 12px;
+    padding-bottom: 8px;
+    border: 1px solid #37474F; /* 深色边框模拟阴影 */
+}
+</string>
+           </property>
+           <property name="text">
+            <string>软件日志</string>
+           </property>
+           <property name="icon">
+            <iconset resource="OCRdemo.qrc">
+             <normaloff>:/PIC/Resources/PICs/Rizhi.png</normaloff>:/PIC/Resources/PICs/Rizhi.png</iconset>
+           </property>
+           <property name="iconSize">
+            <size>
+             <width>40</width>
+             <height>40</height>
+            </size>
+           </property>
+           <property name="toolButtonStyle">
+            <enum>Qt::ToolButtonStyle::ToolButtonTextBesideIcon</enum>
+           </property>
+          </widget>
+          <widget class="QToolButton" name="toolButton_5">
+           <property name="geometry">
+            <rect>
+             <x>10</x>
+             <y>80</y>
+             <width>110</width>
+             <height>40</height>
+            </rect>
+           </property>
+           <property name="font">
+            <font>
+             <family>微软雅黑</family>
+             <pointsize>8</pointsize>
+             <bold>true</bold>
+            </font>
+           </property>
+           <property name="toolTip">
+            <string>NG图片</string>
+           </property>
+           <property name="styleSheet">
+            <string notr="true"> QToolButton {
+        opacity: 1;
+ 		border: none;
+}
+/* 按下状态 */
+QToolButton:pressed {
+   background-color: #546E7A; /* 深石板灰 */
+    background-image: none;
+    padding-top: 12px;
+    padding-bottom: 8px;
+    border: 1px solid #37474F; /* 深色边框模拟阴影 */
+}
+</string>
+           </property>
+           <property name="text">
+            <string>NG图片</string>
+           </property>
+           <property name="icon">
+            <iconset resource="OCRdemo.qrc">
+             <normaloff>:/PIC/Resources/PICs/NGTP.png</normaloff>:/PIC/Resources/PICs/NGTP.png</iconset>
+           </property>
+           <property name="iconSize">
+            <size>
+             <width>40</width>
+             <height>40</height>
+            </size>
+           </property>
+           <property name="toolButtonStyle">
+            <enum>Qt::ToolButtonStyle::ToolButtonTextBesideIcon</enum>
+           </property>
+          </widget>
+          <widget class="QToolButton" name="toolButton_16">
+           <property name="geometry">
+            <rect>
+             <x>140</x>
+             <y>80</y>
+             <width>110</width>
+             <height>40</height>
+            </rect>
+           </property>
+           <property name="font">
+            <font>
+             <family>微软雅黑</family>
+             <pointsize>8</pointsize>
+             <bold>true</bold>
+            </font>
+           </property>
+           <property name="styleSheet">
+            <string notr="true"> QToolButton {
+        opacity: 1;
+ 		border: none;
+}
+/* 按下状态 */
+QToolButton:pressed {
+   background-color: #546E7A; /* 深石板灰 */
+    background-image: none;
+    padding-top: 12px;
+    padding-bottom: 8px;
+    border: 1px solid #37474F; /* 深色边框模拟阴影 */
+}
+</string>
+           </property>
+           <property name="text">
+            <string>设备状态</string>
+           </property>
+           <property name="icon">
+            <iconset resource="OCRdemo.qrc">
+             <normaloff>:/PIC/Resources/PICs/XTZT.png</normaloff>:/PIC/Resources/PICs/XTZT.png</iconset>
+           </property>
+           <property name="iconSize">
+            <size>
+             <width>40</width>
+             <height>40</height>
+            </size>
+           </property>
+           <property name="toolButtonStyle">
+            <enum>Qt::ToolButtonStyle::ToolButtonTextBesideIcon</enum>
+           </property>
+          </widget>
+         </widget>
+         <widget class="QGroupBox" name="groupBox_9">
+          <property name="geometry">
+           <rect>
+            <x>10</x>
+            <y>160</y>
+            <width>281</width>
+            <height>141</height>
+           </rect>
+          </property>
+          <property name="font">
+           <font>
+            <family>微软雅黑</family>
+            <pointsize>12</pointsize>
+           </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true"/>
+          </property>
+          <property name="title">
+           <string>运行设定</string>
+          </property>
+          <widget class="QToolButton" name="toolButton_33">
+           <property name="geometry">
+            <rect>
+             <x>10</x>
+             <y>30</y>
+             <width>110</width>
+             <height>40</height>
+            </rect>
+           </property>
+           <property name="font">
+            <font>
+             <family>微软雅黑</family>
+             <pointsize>8</pointsize>
+             <bold>true</bold>
+            </font>
+           </property>
+           <property name="styleSheet">
+            <string notr="true"> QToolButton {
+        opacity: 1;
+ 		border: none;
+}
+/* 按下状态 */
+QToolButton:pressed {
+   background-color: #546E7A; /* 深石板灰 */
+    background-image: none;
+    padding-top: 12px;
+    padding-bottom: 8px;
+    border: 1px solid #37474F; /* 深色边框模拟阴影 */
+}
+</string>
+           </property>
+           <property name="text">
+            <string>打印参数</string>
+           </property>
+           <property name="icon">
+            <iconset resource="OCRdemo.qrc">
+             <normaloff>:/PNG/Resources/PNG/DYTZ.png</normaloff>:/PNG/Resources/PNG/DYTZ.png</iconset>
+           </property>
+           <property name="iconSize">
+            <size>
+             <width>40</width>
+             <height>40</height>
+            </size>
+           </property>
+           <property name="toolButtonStyle">
+            <enum>Qt::ToolButtonStyle::ToolButtonTextBesideIcon</enum>
+           </property>
+          </widget>
+          <widget class="QToolButton" name="toolButton_25">
+           <property name="geometry">
+            <rect>
+             <x>140</x>
+             <y>30</y>
+             <width>110</width>
+             <height>40</height>
+            </rect>
+           </property>
+           <property name="font">
+            <font>
+             <family>微软雅黑</family>
+             <pointsize>8</pointsize>
+             <bold>true</bold>
+            </font>
+           </property>
+           <property name="styleSheet">
+            <string notr="true"> QToolButton {
+        opacity: 1;
+ 		border: none;
+}
+/* 按下状态 */
+QToolButton:pressed {
+   background-color: #546E7A; /* 深石板灰 */
+    background-image: none;
+    padding-top: 12px;
+    padding-bottom: 8px;
+    border: 1px solid #37474F; /* 深色边框模拟阴影 */
+}
+</string>
+           </property>
+           <property name="text">
+            <string>检测参数</string>
+           </property>
+           <property name="icon">
+            <iconset resource="OCRdemo.qrc">
+             <normaloff>:/PIC/Resources/PICs/任务.png</normaloff>:/PIC/Resources/PICs/任务.png</iconset>
+           </property>
+           <property name="iconSize">
+            <size>
+             <width>40</width>
+             <height>40</height>
+            </size>
+           </property>
+           <property name="toolButtonStyle">
+            <enum>Qt::ToolButtonStyle::ToolButtonTextBesideIcon</enum>
+           </property>
+          </widget>
+          <widget class="QToolButton" name="toolButton_7">
+           <property name="geometry">
+            <rect>
+             <x>10</x>
+             <y>80</y>
+             <width>110</width>
+             <height>40</height>
+            </rect>
+           </property>
+           <property name="font">
+            <font>
+             <family>微软雅黑</family>
+             <pointsize>8</pointsize>
+             <bold>true</bold>
+            </font>
+           </property>
+           <property name="styleSheet">
+            <string notr="true"> QToolButton {
+        opacity: 1;
+ 		border: none;
+}
+/* 按下状态 */
+QToolButton:pressed {
+   background-color: #546E7A; /* 深石板灰 */
+    background-image: none;
+    padding-top: 12px;
+    padding-bottom: 8px;
+    border: 1px solid #37474F; /* 深色边框模拟阴影 */
+}
+</string>
+           </property>
+           <property name="text">
+            <string>图像调整</string>
+           </property>
+           <property name="icon">
+            <iconset resource="OCRdemo.qrc">
+             <normaloff>:/PIC/Resources/PICs/Bianji.png</normaloff>:/PIC/Resources/PICs/Bianji.png</iconset>
+           </property>
+           <property name="iconSize">
+            <size>
+             <width>40</width>
+             <height>40</height>
+            </size>
+           </property>
+           <property name="toolButtonStyle">
+            <enum>Qt::ToolButtonStyle::ToolButtonTextBesideIcon</enum>
+           </property>
+          </widget>
+          <widget class="QToolButton" name="toolButton_30">
+           <property name="geometry">
+            <rect>
+             <x>140</x>
+             <y>80</y>
+             <width>110</width>
+             <height>40</height>
+            </rect>
+           </property>
+           <property name="font">
+            <font>
+             <family>微软雅黑</family>
+             <pointsize>8</pointsize>
+             <bold>true</bold>
+            </font>
+           </property>
+           <property name="styleSheet">
+            <string notr="true"> QToolButton {
+        opacity: 1;
+ 		border: none;
+}
+/* 按下状态 */
+QToolButton:pressed {
+   background-color: #546E7A; /* 深石板灰 */
+    background-image: none;
+    padding-top: 12px;
+    padding-bottom: 8px;
+    border: 1px solid #37474F; /* 深色边框模拟阴影 */
+}
+</string>
+           </property>
+           <property name="text">
+            <string>用户权限</string>
+           </property>
+           <property name="icon">
+            <iconset resource="OCRdemo.qrc">
+             <normaloff>:/PNG/Resources/PNG/YHGL.png</normaloff>:/PNG/Resources/PNG/YHGL.png</iconset>
+           </property>
+           <property name="iconSize">
+            <size>
+             <width>45</width>
+             <height>45</height>
+            </size>
+           </property>
+           <property name="toolButtonStyle">
+            <enum>Qt::ToolButtonStyle::ToolButtonTextBesideIcon</enum>
+           </property>
+          </widget>
+         </widget>
+         <widget class="QGroupBox" name="groupBox_11">
+          <property name="geometry">
+           <rect>
+            <x>10</x>
+            <y>420</y>
+            <width>281</width>
+            <height>91</height>
+           </rect>
+          </property>
+          <property name="font">
+           <font>
+            <family>微软雅黑</family>
+            <pointsize>12</pointsize>
+           </font>
+          </property>
+          <property name="title">
+           <string>配方管理</string>
+          </property>
+          <widget class="QToolButton" name="toolButton_11">
+           <property name="geometry">
+            <rect>
+             <x>10</x>
+             <y>30</y>
+             <width>110</width>
+             <height>40</height>
+            </rect>
+           </property>
+           <property name="font">
+            <font>
+             <family>微软雅黑</family>
+             <pointsize>8</pointsize>
+             <bold>true</bold>
+            </font>
+           </property>
+           <property name="styleSheet">
+            <string notr="true"> QToolButton {
+        opacity: 1;
+ 		border: none;
+}
+/* 按下状态 */
+QToolButton:pressed {
+   background-color: #546E7A; /* 深石板灰 */
+    background-image: none;
+    padding-top: 12px;
+    padding-bottom: 8px;
+    border: 1px solid #37474F; /* 深色边框模拟阴影 */
+}
+</string>
+           </property>
+           <property name="text">
+            <string>新建任务</string>
+           </property>
+           <property name="icon">
+            <iconset resource="OCRdemo.qrc">
+             <normaloff>:/PNG/Resources/PNG/BCPF.png</normaloff>:/PNG/Resources/PNG/BCPF.png</iconset>
+           </property>
+           <property name="iconSize">
+            <size>
+             <width>40</width>
+             <height>40</height>
+            </size>
+           </property>
+           <property name="toolButtonStyle">
+            <enum>Qt::ToolButtonStyle::ToolButtonTextBesideIcon</enum>
+           </property>
+          </widget>
+          <widget class="QToolButton" name="toolButton_14">
+           <property name="geometry">
+            <rect>
+             <x>140</x>
+             <y>30</y>
+             <width>110</width>
+             <height>40</height>
+            </rect>
+           </property>
+           <property name="font">
+            <font>
+             <family>微软雅黑</family>
+             <pointsize>8</pointsize>
+             <bold>true</bold>
+            </font>
+           </property>
+           <property name="styleSheet">
+            <string notr="true"> QToolButton {
+        opacity: 1;
+ 		border: none;
+}
+/* 按下状态 */
+QToolButton:pressed {
+   background-color: #546E7A; /* 深石板灰 */
+    background-image: none;
+    padding-top: 12px;
+    padding-bottom: 8px;
+    border: 1px solid #37474F; /* 深色边框模拟阴影 */
+}
+</string>
+           </property>
+           <property name="text">
+            <string>配方管理</string>
+           </property>
+           <property name="icon">
+            <iconset resource="OCRdemo.qrc">
+             <normaloff>:/PNG/Resources/PNG/GXPF.png</normaloff>:/PNG/Resources/PNG/GXPF.png</iconset>
+           </property>
+           <property name="iconSize">
+            <size>
+             <width>40</width>
+             <height>40</height>
+            </size>
+           </property>
+           <property name="toolButtonStyle">
+            <enum>Qt::ToolButtonStyle::ToolButtonTextBesideIcon</enum>
+           </property>
+          </widget>
+         </widget>
+        </widget>
+       </widget>
+       <widget class="QWidget" name="widget_2" native="true">
+        <property name="geometry">
+         <rect>
+          <x>5</x>
+          <y>0</y>
+          <width>701</width>
+          <height>41</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background-color: rgb(190, 190, 190); opacity: 1;
+border:none;
+background-color: qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 #dfd5cf, stop: 0.15 #acbbac, stop: 0.85 #acbbac,stop:1 #dfd5cf);
+</string>
+        </property>
+        <widget class="QToolButton" name="toolButton">
+         <property name="geometry">
+          <rect>
+           <x>500</x>
+           <y>0</y>
+           <width>41</width>
+           <height>41</height>
+          </rect>
+         </property>
+         <property name="font">
+          <font>
+           <family>微软雅黑</family>
+           <pointsize>13</pointsize>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="toolTip">
+          <string>相机联机</string>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background-color: rgb(190, 190, 190); opacity: 1; border: none;
+border:none;
+background-color: qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 #dfd5cf, stop: 0.15 #acbbac, stop: 0.85 #acbbac,stop:1 #dfd5cf);
+
+</string>
+         </property>
+         <property name="text">
+          <string notr="true">相机</string>
+         </property>
+        </widget>
+        <widget class="QToolButton" name="toolButton_35">
+         <property name="geometry">
+          <rect>
+           <x>600</x>
+           <y>0</y>
+           <width>41</width>
+           <height>41</height>
+          </rect>
+         </property>
+         <property name="font">
+          <font>
+           <family>微软雅黑</family>
+           <pointsize>13</pointsize>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="toolTip">
+          <string>单次拍照</string>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background-color: rgb(190, 190, 190); opacity: 1; border: none;
+
+background-color: qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 #dfd5cf, stop: 0.15 #acbbac, stop: 0.85 #acbbac,stop:1 #dfd5cf);
+
+</string>
+         </property>
+         <property name="text">
+          <string>采集</string>
+         </property>
+         <property name="icon">
+          <iconset resource="OCRdemo.qrc">
+           <normaloff>:/PNG/Resources/PNG/DZCJ1.png</normaloff>:/PNG/Resources/PNG/DZCJ1.png</iconset>
+         </property>
+         <property name="iconSize">
+          <size>
+           <width>25</width>
+           <height>25</height>
+          </size>
+         </property>
+        </widget>
+        <widget class="QLabel" name="label">
+         <property name="geometry">
+          <rect>
+           <x>0</x>
+           <y>0</y>
+           <width>181</width>
+           <height>41</height>
+          </rect>
+         </property>
+         <property name="font">
+          <font>
+           <family>微软雅黑</family>
+           <pointsize>14</pointsize>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background-color: rgb(0, 170, 0); opacity: 1;</string>
+         </property>
+         <property name="text">
+          <string>OK</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignmentFlag::AlignCenter</set>
+         </property>
+        </widget>
+        <widget class="QToolButton" name="toolButton_34">
+         <property name="geometry">
+          <rect>
+           <x>650</x>
+           <y>0</y>
+           <width>41</width>
+           <height>41</height>
+          </rect>
+         </property>
+         <property name="font">
+          <font>
+           <family>微软雅黑</family>
+           <pointsize>8</pointsize>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background-color: rgb(190, 190, 190); opacity: 1; border: none;
+border:none;
+background-color: qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 #dfd5cf, stop: 0.15 #acbbac, stop: 0.85 #acbbac,stop:1 #dfd5cf);
+
+
+
+</string>
+         </property>
+         <property name="text">
+          <string>单次打印</string>
+         </property>
+         <property name="icon">
+          <iconset resource="OCRdemo.qrc">
+           <normaloff>:/PIC/Resources/PICs/JGDB.png</normaloff>:/PIC/Resources/PICs/JGDB.png</iconset>
+         </property>
+         <property name="iconSize">
+          <size>
+           <width>25</width>
+           <height>25</height>
+          </size>
+         </property>
+        </widget>
+        <widget class="QToolButton" name="toolButton_3">
+         <property name="geometry">
+          <rect>
+           <x>550</x>
+           <y>0</y>
+           <width>41</width>
+           <height>41</height>
+          </rect>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background-color: rgb(190, 190, 190); opacity: 1; border: none;
+border:none;
+background-color: qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 #dfd5cf, stop: 0.15 #acbbac, stop: 0.85 #acbbac,stop:1 #dfd5cf);
+
+</string>
+         </property>
+         <property name="text">
+          <string>...</string>
+         </property>
+         <property name="icon">
+          <iconset resource="OCRdemo.qrc">
+           <normaloff>:/PNG/Resources/PNG/JKMS.png</normaloff>:/PNG/Resources/PNG/JKMS.png</iconset>
+         </property>
+         <property name="iconSize">
+          <size>
+           <width>25</width>
+           <height>25</height>
+          </size>
+         </property>
+         <property name="toolButtonStyle">
+          <enum>Qt::ToolButtonStyle::ToolButtonIconOnly</enum>
+         </property>
+        </widget>
+       </widget>
+       <widget class="QToolButton" name="timg2">
+        <property name="geometry">
+         <rect>
+          <x>555</x>
+          <y>150</y>
+          <width>151</width>
+          <height>110</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background-color: rgb(0,0,0); 
+opacity: 1; 
+border: none; 
+border-radius: 0;
+/*background-color: qlineargradient(x1:0, y1:0, x2:0, y2:1, 
+    stop:0 #4A4A4A,       
+    stop:0.15 #2D2D2D,    
+    stop:0.85 #1A1A1A,    
+    stop:1 #3C3C3C        
+);*/</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+       </widget>
+       <widget class="QToolButton" name="timg1">
+        <property name="geometry">
+         <rect>
+          <x>555</x>
+          <y>40</y>
+          <width>151</width>
+          <height>110</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">
+background-color:rgb(0, 0, 0);
+opacity: 1; 
+border: none; 
+border-radius: 0;
+/*background-color: qlineargradient(x1:0, y1:0, x2:0, y2:1, 
+    stop:0 #4A4A4A,       
+    stop:0.15 #2D2D2D,    
+    stop:0.85 #1A1A1A,    
+    stop:1 #3C3C3C        
+);*/</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+       </widget>
+       <widget class="QToolButton" name="timg3">
+        <property name="geometry">
+         <rect>
+          <x>555</x>
+          <y>260</y>
+          <width>151</width>
+          <height>110</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background-color: rgb(0,0,0); 
+opacity: 1; 
+border: none; 
+border-radius: 0;
+/*background-color: qlineargradient(x1:0, y1:0, x2:0, y2:1, 
+    stop:0 #4A4A4A,       
+    stop:0.15 #2D2D2D,    
+    stop:0.85 #1A1A1A,    
+    stop:1 #3C3C3C        
+);*/</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+       </widget>
+       <widget class="QToolButton" name="timg4">
+        <property name="geometry">
+         <rect>
+          <x>555</x>
+          <y>370</y>
+          <width>151</width>
+          <height>110</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background-color: rgb(0,0,0); 
+opacity: 1; 
+border: none; 
+border-radius: 0;
+/*background-color: qlineargradient(x1:0, y1:0, x2:0, y2:1, 
+    stop:0 #4A4A4A,       
+    stop:0.15 #2D2D2D,    
+    stop:0.85 #1A1A1A,    
+    stop:1 #3C3C3C        
+);*/</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="toolButtonStyle">
+         <enum>Qt::ToolButtonStyle::ToolButtonTextBesideIcon</enum>
+        </property>
+       </widget>
+       <widget class="QToolButton" name="timg5">
+        <property name="geometry">
+         <rect>
+          <x>555</x>
+          <y>480</y>
+          <width>151</width>
+          <height>111</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background-color: rgb(0,0,0); 
+opacity: 1; 
+border: none; 
+border-radius: 0;
+/*background-color: qlineargradient(x1:0, y1:0, x2:0, y2:1, 
+    stop:0 #4A4A4A,       
+    stop:0.15 #2D2D2D,    
+    stop:0.85 #1A1A1A,    
+    stop:1 #3C3C3C        
+);*/</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+       </widget>
+       <widget class="QStackedWidget" name="stackedWidget_3">
+        <property name="geometry">
+         <rect>
+          <x>5</x>
+          <y>40</y>
+          <width>551</width>
+          <height>551</height>
+         </rect>
+        </property>
+        <property name="currentIndex">
+         <number>1</number>
+        </property>
+        <widget class="QWidget" name="page_5">
+         <widget class="QMdiArea" name="mdiArea">
+          <property name="geometry">
+           <rect>
+            <x>0</x>
+            <y>0</y>
+            <width>551</width>
+            <height>551</height>
+           </rect>
+          </property>
+          <property name="styleSheet">
+           <string notr="true"/>
+          </property>
+         </widget>
+        </widget>
+        <widget class="QWidget" name="page_8">
+         <widget class="QLabel" name="label_2">
+          <property name="geometry">
+           <rect>
+            <x>0</x>
+            <y>0</y>
+            <width>551</width>
+            <height>551</height>
+           </rect>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">background-color: rgb(0, 0, 0); </string>
+          </property>
+          <property name="frameShape">
+           <enum>QFrame::Shape::Box</enum>
+          </property>
+          <property name="lineWidth">
+           <number>5</number>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+          <property name="pixmap">
+           <pixmap resource="OCRdemo.qrc">:/PIC/Resources/PICs/MZGYXJ.png</pixmap>
+          </property>
+          <property name="scaledContents">
+           <bool>false</bool>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignmentFlag::AlignCenter</set>
+          </property>
+         </widget>
+        </widget>
+       </widget>
+       <widget class="QWidget" name="layoutWidget">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>600</y>
+          <width>1020</width>
+          <height>66</height>
+         </rect>
+        </property>
+        <layout class="QHBoxLayout" name="horizontalLayout" stretch="0,0,0,0,0,0,0,0,0">
+         <property name="spacing">
+          <number>0</number>
+         </property>
+         <property name="rightMargin">
+          <number>0</number>
+         </property>
+         <property name="bottomMargin">
+          <number>0</number>
+         </property>
+         <item>
+          <widget class="QToolButton" name="toolButton_26">
+           <property name="font">
+            <font>
+             <family>微软雅黑</family>
+             <pointsize>10</pointsize>
+             <bold>true</bold>
+            </font>
+           </property>
+           <property name="styleSheet">
+            <string notr="true"> QToolButton {
+        opacity: 1;
+ 		border: none;
+}
+/* 按下状态 */
+QToolButton:pressed {
+   background-color: #546E7A; /* 深石板灰 */
+    background-image: none;
+    padding-top: 12px;
+    padding-bottom: 8px;
+    border: 1px solid #37474F; /* 深色边框模拟阴影 */
+}
+</string>
+           </property>
+           <property name="text">
+            <string>主页</string>
+           </property>
+           <property name="icon">
+            <iconset resource="OCRdemo.qrc">
+             <normaloff>:/PIC/Resources/PICs/Zhuye.png</normaloff>:/PIC/Resources/PICs/Zhuye.png</iconset>
+           </property>
+           <property name="iconSize">
+            <size>
+             <width>45</width>
+             <height>45</height>
+            </size>
+           </property>
+           <property name="toolButtonStyle">
+            <enum>Qt::ToolButtonStyle::ToolButtonTextBesideIcon</enum>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <spacer name="horizontalSpacer">
+           <property name="orientation">
+            <enum>Qt::Orientation::Horizontal</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>40</width>
+             <height>20</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+         <item>
+          <widget class="QToolButton" name="toolButton_47">
+           <property name="font">
+            <font>
+             <family>微软雅黑</family>
+             <pointsize>10</pointsize>
+             <bold>true</bold>
+            </font>
+           </property>
+           <property name="styleSheet">
+            <string notr="true"> QToolButton {
+        opacity: 1;
+ 		border: none;
+}
+/* 按下状态 */
+QToolButton:pressed {
+   background-color: #546E7A; /* 深石板灰 */
+    background-image: none;
+    padding-top: 12px;
+    padding-bottom: 8px;
+    border: 1px solid #37474F; /* 深色边框模拟阴影 */
+}
+</string>
+           </property>
+           <property name="text">
+            <string>打印设置</string>
+           </property>
+           <property name="icon">
+            <iconset resource="OCRdemo.qrc">
+             <normaloff>:/PNG/Resources/PNG/mtext.png</normaloff>:/PNG/Resources/PNG/mtext.png</iconset>
+           </property>
+           <property name="iconSize">
+            <size>
+             <width>45</width>
+             <height>45</height>
+            </size>
+           </property>
+           <property name="toolButtonStyle">
+            <enum>Qt::ToolButtonStyle::ToolButtonTextBesideIcon</enum>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <spacer name="horizontalSpacer_2">
+           <property name="orientation">
+            <enum>Qt::Orientation::Horizontal</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>40</width>
+             <height>20</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+         <item>
+          <widget class="QToolButton" name="toolButton_36">
+           <property name="font">
+            <font>
+             <family>微软雅黑</family>
+             <pointsize>10</pointsize>
+             <bold>true</bold>
+            </font>
+           </property>
+           <property name="styleSheet">
+            <string notr="true"> QToolButton {
+        opacity: 1;
+ 		border: none;
+}
+/* 按下状态 */
+QToolButton:pressed {
+   background-color: #546E7A; /* 深石板灰 */
+    background-image: none;
+    padding-top: 12px;
+    padding-bottom: 8px;
+    border: 1px solid #37474F; /* 深色边框模拟阴影 */
+}
+</string>
+           </property>
+           <property name="text">
+            <string>OCR设置</string>
+           </property>
+           <property name="icon">
+            <iconset resource="OCRdemo.qrc">
+             <normaloff>:/PNG/Resources/PNG/OCR.png</normaloff>:/PNG/Resources/PNG/OCR.png</iconset>
+           </property>
+           <property name="iconSize">
+            <size>
+             <width>45</width>
+             <height>45</height>
+            </size>
+           </property>
+           <property name="toolButtonStyle">
+            <enum>Qt::ToolButtonStyle::ToolButtonTextBesideIcon</enum>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <spacer name="horizontalSpacer_3">
+           <property name="orientation">
+            <enum>Qt::Orientation::Horizontal</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>40</width>
+             <height>20</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+         <item>
+          <widget class="QToolButton" name="toolButton_21">
+           <property name="font">
+            <font>
+             <family>微软雅黑</family>
+             <pointsize>10</pointsize>
+             <bold>true</bold>
+            </font>
+           </property>
+           <property name="styleSheet">
+            <string notr="true"> QToolButton {
+        opacity: 1;
+ 		border: none;
+}
+/* 按下状态 */
+QToolButton:pressed {
+   background-color: #546E7A; /* 深石板灰 */
+    background-image: none;
+    padding-top: 12px;
+    padding-bottom: 8px;
+    border: 1px solid #37474F; /* 深色边框模拟阴影 */
+}
+</string>
+           </property>
+           <property name="text">
+            <string>功能菜单</string>
+           </property>
+           <property name="icon">
+            <iconset resource="OCRdemo.qrc">
+             <normaloff>:/PIC/Resources/PICs/PFGL.png</normaloff>:/PIC/Resources/PICs/PFGL.png</iconset>
+           </property>
+           <property name="iconSize">
+            <size>
+             <width>45</width>
+             <height>45</height>
+            </size>
+           </property>
+           <property name="toolButtonStyle">
+            <enum>Qt::ToolButtonStyle::ToolButtonTextBesideIcon</enum>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <spacer name="horizontalSpacer_4">
+           <property name="orientation">
+            <enum>Qt::Orientation::Horizontal</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>40</width>
+             <height>20</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+         <item>
+          <widget class="QToolButton" name="toolButton_17">
+           <property name="font">
+            <font>
+             <family>微软雅黑</family>
+             <pointsize>11</pointsize>
+             <italic>false</italic>
+             <bold>true</bold>
+            </font>
+           </property>
+           <property name="styleSheet">
+            <string notr="true"> QToolButton {
+        opacity: 1;
+ 		border: none;
+}
+/* 按下状态 */
+QToolButton:pressed {
+   background-color: #546E7A; /* 深石板灰 */
+    background-image: none;
+    padding-top: 12px;
+    padding-bottom: 8px;
+    border: 1px solid #37474F; /* 深色边框模拟阴影 */
+}
+</string>
+           </property>
+           <property name="text">
+            <string>未登录</string>
+           </property>
+           <property name="icon">
+            <iconset resource="OCRdemo.qrc">
+             <normaloff>:/PIC/Resources/PICs/admin.png</normaloff>:/PIC/Resources/PICs/admin.png</iconset>
+           </property>
+           <property name="iconSize">
+            <size>
+             <width>45</width>
+             <height>45</height>
+            </size>
+           </property>
+           <property name="autoRepeatDelay">
+            <number>300</number>
+           </property>
+           <property name="toolButtonStyle">
+            <enum>Qt::ToolButtonStyle::ToolButtonTextBesideIcon</enum>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+       <widget class="QToolButton" name="toolButton_15">
+        <property name="geometry">
+         <rect>
+          <x>790</x>
+          <y>540</y>
+          <width>134</width>
+          <height>54</height>
+         </rect>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>134</width>
+          <height>54</height>
+         </size>
+        </property>
+        <property name="font">
+         <font>
+          <family>微软雅黑</family>
+          <pointsize>10</pointsize>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">/* 按下状态 */
+QToolButton:pressed {
+   background-color: #546E7A; /* 深石板灰 */
+    background-image: none;
+    padding-top: 12px;
+    padding-bottom: 8px;
+    border: 1px solid #37474F; /* 深色边框模拟阴影 */
+}
+ QToolButton {
+        background-color: rgb(255, 255, 255);
+        opacity: 1;
+        border-radius: 15px;  
+        border: 2px solid #4CAF50;
+        padding: 5px 15px;
+        min-width: 100px;
+        min-height: 40px;
+		
+		
+      }
+</string>
+        </property>
+        <property name="text">
+         <string>打印</string>
+        </property>
+        <property name="icon">
+         <iconset resource="OCRdemo.qrc">
+          <normaloff>:/PNG/Resources/PNG/OFF.png</normaloff>:/PNG/Resources/PNG/OFF.png</iconset>
+        </property>
+        <property name="iconSize">
+         <size>
+          <width>30</width>
+          <height>30</height>
+         </size>
+        </property>
+        <property name="checkable">
+         <bool>false</bool>
+        </property>
+        <property name="autoRepeat">
+         <bool>false</bool>
+        </property>
+        <property name="autoExclusive">
+         <bool>false</bool>
+        </property>
+        <property name="popupMode">
+         <enum>QToolButton::ToolButtonPopupMode::DelayedPopup</enum>
+        </property>
+        <property name="toolButtonStyle">
+         <enum>Qt::ToolButtonStyle::ToolButtonTextBesideIcon</enum>
+        </property>
+        <property name="autoRaise">
+         <bool>false</bool>
+        </property>
+       </widget>
+      </widget>
+      <widget class="QWidget" name="page_7">
+       <widget class="QStackedWidget" name="stackedWidget_4">
+        <property name="geometry">
+         <rect>
+          <x>20</x>
+          <y>20</y>
+          <width>951</width>
+          <height>561</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background-color:rgb(220, 235, 240);
+opacity: 1;</string>
+        </property>
+        <property name="currentIndex">
+         <number>1</number>
+        </property>
+        <widget class="QWidget" name="page">
+         <widget class="QPushButton" name="pushButton_6">
+          <property name="geometry">
+           <rect>
+            <x>620</x>
+            <y>40</y>
+            <width>151</width>
+            <height>71</height>
+           </rect>
+          </property>
+          <property name="font">
+           <font>
+            <family>微软雅黑</family>
+            <pointsize>11</pointsize>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">/* 按下状态 */
+QPushButton:pressed {
+   background-color: #546E7A; /* 深石板灰 */
+    background-image: none;
+    padding-top: 12px;
+    padding-bottom: 8px;
+    border: 1px solid #37474F; /* 深色边框模拟阴影 */
+}
+ QPushButton {
+		background-color: qlineargradient(x1:0, y1:0, x2:0, y2:1, 
+    	stop:0 #ffffff,       /* 顶部：纯白（高光） */
+   		stop:0.15 #dcdcdc,    /* 过渡：浅灰 */
+    	stop:0.85 #a9a9a9,    /* 底部过渡：中灰 */
+    	stop:1 #e8e8e8        /* 底部：亮灰（反光） */);
+}</string>
+          </property>
+          <property name="text">
+           <string>完成</string>
+          </property>
+         </widget>
+         <widget class="QGroupBox" name="groupBox_3">
+          <property name="geometry">
+           <rect>
+            <x>0</x>
+            <y>30</y>
+            <width>581</width>
+            <height>321</height>
+           </rect>
+          </property>
+          <property name="title">
+           <string>自定义检测文本</string>
+          </property>
+          <widget class="QLineEdit" name="lineEdit_4">
+           <property name="geometry">
+            <rect>
+             <x>50</x>
+             <y>80</y>
+             <width>201</width>
+             <height>41</height>
+            </rect>
+           </property>
+           <property name="font">
+            <font>
+             <family>微软雅黑</family>
+             <pointsize>12</pointsize>
+             <bold>true</bold>
+            </font>
+           </property>
+           <property name="styleSheet">
+            <string notr="true"/>
+           </property>
+           <property name="inputMethodHints">
+            <set>Qt::InputMethodHint::ImhNone</set>
+           </property>
+           <property name="inputMask">
+            <string/>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+          </widget>
+          <widget class="QLineEdit" name="lineEdit_6">
+           <property name="geometry">
+            <rect>
+             <x>50</x>
+             <y>160</y>
+             <width>201</width>
+             <height>41</height>
+            </rect>
+           </property>
+           <property name="font">
+            <font>
+             <family>微软雅黑</family>
+             <pointsize>12</pointsize>
+             <bold>true</bold>
+            </font>
+           </property>
+           <property name="styleSheet">
+            <string notr="true"/>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+          </widget>
+          <widget class="QLineEdit" name="lineEdit_5">
+           <property name="geometry">
+            <rect>
+             <x>50</x>
+             <y>240</y>
+             <width>371</width>
+             <height>41</height>
+            </rect>
+           </property>
+           <property name="font">
+            <font>
+             <family>微软雅黑</family>
+             <pointsize>12</pointsize>
+             <bold>true</bold>
+            </font>
+           </property>
+           <property name="styleSheet">
+            <string notr="true"/>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+          </widget>
+          <widget class="QLineEdit" name="lineEdit_7">
+           <property name="geometry">
+            <rect>
+             <x>270</x>
+             <y>80</y>
+             <width>151</width>
+             <height>41</height>
+            </rect>
+           </property>
+           <property name="font">
+            <font>
+             <family>微软雅黑</family>
+             <pointsize>12</pointsize>
+             <bold>true</bold>
+            </font>
+           </property>
+           <property name="styleSheet">
+            <string notr="true"/>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+          </widget>
+          <widget class="QLineEdit" name="lineEdit_8">
+           <property name="geometry">
+            <rect>
+             <x>270</x>
+             <y>160</y>
+             <width>151</width>
+             <height>41</height>
+            </rect>
+           </property>
+           <property name="font">
+            <font>
+             <family>微软雅黑</family>
+             <pointsize>12</pointsize>
+             <bold>true</bold>
+            </font>
+           </property>
+           <property name="styleSheet">
+            <string notr="true"/>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+          </widget>
+          <widget class="QPushButton" name="zdybutton_2">
+           <property name="geometry">
+            <rect>
+             <x>440</x>
+             <y>240</y>
+             <width>71</width>
+             <height>41</height>
+            </rect>
+           </property>
+           <property name="font">
+            <font>
+             <family>微软雅黑</family>
+             <pointsize>11</pointsize>
+             <bold>true</bold>
+            </font>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">/* 按下状态 */
+QPushButton:pressed {
+   background-color: #546E7A; /* 深石板灰 */
+    background-image: none;
+    padding-top: 12px;
+    padding-bottom: 8px;
+    border: 1px solid #37474F; /* 深色边框模拟阴影 */
+}
+ QPushButton {
+		background-color: qlineargradient(x1:0, y1:0, x2:0, y2:1, 
+    	stop:0 #ffffff,       /* 顶部：纯白（高光） */
+   		stop:0.15 #dcdcdc,    /* 过渡：浅灰 */
+    	stop:0.85 #a9a9a9,    /* 底部过渡：中灰 */
+    	stop:1 #e8e8e8        /* 底部：亮灰（反光） */);
+}</string>
+           </property>
+           <property name="text">
+            <string>清空</string>
+           </property>
+          </widget>
+          <widget class="QToolButton" name="zdybutton_3">
+           <property name="geometry">
+            <rect>
+             <x>440</x>
+             <y>160</y>
+             <width>71</width>
+             <height>41</height>
+            </rect>
+           </property>
+           <property name="font">
+            <font>
+             <family>微软雅黑</family>
+             <pointsize>9</pointsize>
+             <bold>true</bold>
+            </font>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">/* 按下状态 */
+QToolButton:pressed {
+   background-color: #546E7A; /* 深石板灰 */
+    background-image: none;
+    padding-top: 12px;
+    padding-bottom: 8px;
+    border: 1px solid #37474F; /* 深色边框模拟阴影 */
+}
+ QToolButton {
+		background-color: qlineargradient(x1:0, y1:0, x2:0, y2:1, 
+    	stop:0 #ffffff,       /* 顶部：纯白（高光） */
+   		stop:0.15 #dcdcdc,    /* 过渡：浅灰 */
+    	stop:0.85 #a9a9a9,    /* 底部过渡：中灰 */
+    	stop:1 #e8e8e8        /* 底部：亮灰（反光） */);
+}</string>
+           </property>
+           <property name="text">
+            <string>关闭</string>
+           </property>
+           <property name="popupMode">
+            <enum>QToolButton::ToolButtonPopupMode::DelayedPopup</enum>
+           </property>
+           <property name="toolButtonStyle">
+            <enum>Qt::ToolButtonStyle::ToolButtonTextBesideIcon</enum>
+           </property>
+          </widget>
+         </widget>
+        </widget>
+        <widget class="QWidget" name="stackedWidget_4Page1">
+         <widget class="QGroupBox" name="groupBox">
+          <property name="geometry">
+           <rect>
+            <x>20</x>
+            <y>0</y>
+            <width>251</width>
+            <height>441</height>
+           </rect>
+          </property>
+          <property name="font">
+           <font>
+            <family>微软雅黑</family>
+            <pointsize>12</pointsize>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="title">
+           <string>日期检测内容设置</string>
+          </property>
+          <widget class="QLabel" name="label_19">
+           <property name="geometry">
+            <rect>
+             <x>20</x>
+             <y>20</y>
+             <width>91</width>
+             <height>31</height>
+            </rect>
+           </property>
+           <property name="text">
+            <string>生产日期有效：</string>
+           </property>
+          </widget>
+          <widget class="QLabel" name="label_20">
+           <property name="geometry">
+            <rect>
+             <x>20</x>
+             <y>100</y>
+             <width>91</width>
+             <height>31</height>
+            </rect>
+           </property>
+           <property name="text">
+            <string>保质日期有效：</string>
+           </property>
+          </widget>
+          <widget class="QToolButton" name="toolButton_18">
+           <property name="geometry">
+            <rect>
+             <x>30</x>
+             <y>60</y>
+             <width>81</width>
+             <height>31</height>
+            </rect>
+           </property>
+           <property name="font">
+            <font>
+             <italic>false</italic>
+            </font>
+           </property>
+           <property name="text">
+            <string>有效</string>
+           </property>
+          </widget>
+          <widget class="QToolButton" name="toolButton_22">
+           <property name="geometry">
+            <rect>
+             <x>30</x>
+             <y>150</y>
+             <width>81</width>
+             <height>31</height>
+            </rect>
+           </property>
+           <property name="text">
+            <string>有效</string>
+           </property>
+          </widget>
+          <widget class="QToolButton" name="toolButton_23">
+           <property name="geometry">
+            <rect>
+             <x>110</x>
+             <y>150</y>
+             <width>81</width>
+             <height>31</height>
+            </rect>
+           </property>
+           <property name="text">
+            <string>无效</string>
+           </property>
+          </widget>
+          <widget class="QToolButton" name="toolButton_20">
+           <property name="geometry">
+            <rect>
+             <x>110</x>
+             <y>60</y>
+             <width>81</width>
+             <height>31</height>
+            </rect>
+           </property>
+           <property name="styleSheet">
+            <string notr="true"/>
+           </property>
+           <property name="text">
+            <string>无效</string>
+           </property>
+          </widget>
+          <widget class="QLabel" name="label_22">
+           <property name="geometry">
+            <rect>
+             <x>20</x>
+             <y>270</y>
+             <width>91</width>
+             <height>31</height>
+            </rect>
+           </property>
+           <property name="text">
+            <string>保质时长：</string>
+           </property>
+          </widget>
+          <widget class="QSpinBox" name="spinBox">
+           <property name="geometry">
+            <rect>
+             <x>40</x>
+             <y>310</y>
+             <width>131</width>
+             <height>31</height>
+            </rect>
+           </property>
+           <property name="font">
+            <font>
+             <family>Microsoft YaHei UI</family>
+             <pointsize>9</pointsize>
+             <bold>false</bold>
+            </font>
+           </property>
+           <property name="minimum">
+            <number>-99</number>
+           </property>
+          </widget>
+          <widget class="QLabel" name="label_23">
+           <property name="geometry">
+            <rect>
+             <x>20</x>
+             <y>190</y>
+             <width>91</width>
+             <height>31</height>
+            </rect>
+           </property>
+           <property name="text">
+            <string>额外代码：</string>
+           </property>
+          </widget>
+          <widget class="QToolButton" name="toolButton_24">
+           <property name="geometry">
+            <rect>
+             <x>30</x>
+             <y>220</y>
+             <width>81</width>
+             <height>31</height>
+            </rect>
+           </property>
+           <property name="text">
+            <string>有效</string>
+           </property>
+          </widget>
+          <widget class="QToolButton" name="toolButton_29">
+           <property name="geometry">
+            <rect>
+             <x>110</x>
+             <y>220</y>
+             <width>81</width>
+             <height>31</height>
+            </rect>
+           </property>
+           <property name="text">
+            <string>无效</string>
+           </property>
+          </widget>
+          <widget class="QSpinBox" name="spinBox_2">
+           <property name="geometry">
+            <rect>
+             <x>40</x>
+             <y>350</y>
+             <width>131</width>
+             <height>31</height>
+            </rect>
+           </property>
+           <property name="font">
+            <font>
+             <family>Microsoft YaHei UI</family>
+             <pointsize>9</pointsize>
+             <bold>false</bold>
+            </font>
+           </property>
+          </widget>
+          <widget class="QSpinBox" name="spinBox_3">
+           <property name="geometry">
+            <rect>
+             <x>40</x>
+             <y>390</y>
+             <width>131</width>
+             <height>31</height>
+            </rect>
+           </property>
+           <property name="font">
+            <font>
+             <family>Microsoft YaHei UI</family>
+             <pointsize>9</pointsize>
+             <bold>false</bold>
+            </font>
+           </property>
+          </widget>
+          <widget class="QLabel" name="label_29">
+           <property name="geometry">
+            <rect>
+             <x>10</x>
+             <y>310</y>
+             <width>31</width>
+             <height>31</height>
+            </rect>
+           </property>
+           <property name="text">
+            <string>日：</string>
+           </property>
+          </widget>
+          <widget class="QLabel" name="label_30">
+           <property name="geometry">
+            <rect>
+             <x>10</x>
+             <y>350</y>
+             <width>31</width>
+             <height>31</height>
+            </rect>
+           </property>
+           <property name="text">
+            <string>月：</string>
+           </property>
+          </widget>
+          <widget class="QLabel" name="label_31">
+           <property name="geometry">
+            <rect>
+             <x>10</x>
+             <y>390</y>
+             <width>31</width>
+             <height>31</height>
+            </rect>
+           </property>
+           <property name="text">
+            <string>年：</string>
+           </property>
+          </widget>
+         </widget>
+         <widget class="QPushButton" name="pushButton_5">
+          <property name="geometry">
+           <rect>
+            <x>770</x>
+            <y>20</y>
+            <width>151</width>
+            <height>71</height>
+           </rect>
+          </property>
+          <property name="font">
+           <font>
+            <family>微软雅黑</family>
+            <pointsize>11</pointsize>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">/* 按下状态 */
+QPushButton:pressed {
+     background-color: #546E7A; /* 深石板灰 */
+    background-image: none;
+    padding-top: 12px;
+    padding-bottom: 8px;
+    border: 1px solid #37474F; /* 深色边框模拟阴影 */
+}
+ QPushButton {
+		background-color: qlineargradient(x1:0, y1:0, x2:0, y2:1, 
+    	stop:0 #ffffff,       /* 顶部：纯白（高光） */
+   		stop:0.15 #dcdcdc,    /* 过渡：浅灰 */
+    	stop:0.85 #a9a9a9,    /* 底部过渡：中灰 */
+    	stop:1 #e8e8e8        /* 底部：亮灰（反光） */);
+}</string>
+          </property>
+          <property name="text">
+           <string>完成</string>
+          </property>
+         </widget>
+         <widget class="QGroupBox" name="groupBox_2">
+          <property name="geometry">
+           <rect>
+            <x>300</x>
+            <y>90</y>
+            <width>621</width>
+            <height>351</height>
+           </rect>
+          </property>
+          <property name="title">
+           <string>日期设置</string>
+          </property>
+          <widget class="QLabel" name="label_4">
+           <property name="geometry">
+            <rect>
+             <x>10</x>
+             <y>30</y>
+             <width>81</width>
+             <height>31</height>
+            </rect>
+           </property>
+           <property name="font">
+            <font>
+             <family>微软雅黑</family>
+             <pointsize>12</pointsize>
+             <bold>true</bold>
+            </font>
+           </property>
+           <property name="text">
+            <string>生产日期:</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignmentFlag::AlignCenter</set>
+           </property>
+          </widget>
+          <widget class="QLabel" name="label_14">
+           <property name="geometry">
+            <rect>
+             <x>10</x>
+             <y>80</y>
+             <width>81</width>
+             <height>31</height>
+            </rect>
+           </property>
+           <property name="font">
+            <font>
+             <family>微软雅黑</family>
+             <pointsize>12</pointsize>
+             <bold>true</bold>
+            </font>
+           </property>
+           <property name="text">
+            <string>保质期至:</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignmentFlag::AlignCenter</set>
+           </property>
+          </widget>
+          <widget class="QLabel" name="label_16">
+           <property name="geometry">
+            <rect>
+             <x>10</x>
+             <y>130</y>
+             <width>81</width>
+             <height>31</height>
+            </rect>
+           </property>
+           <property name="font">
+            <font>
+             <family>微软雅黑</family>
+             <pointsize>12</pointsize>
+             <bold>true</bold>
+            </font>
+           </property>
+           <property name="text">
+            <string>额外代码</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignmentFlag::AlignCenter</set>
+           </property>
+          </widget>
+          <widget class="QLineEdit" name="lineEdit">
+           <property name="geometry">
+            <rect>
+             <x>110</x>
+             <y>20</y>
+             <width>231</width>
+             <height>41</height>
+            </rect>
+           </property>
+           <property name="font">
+            <font>
+             <family>微软雅黑</family>
+             <pointsize>12</pointsize>
+             <bold>true</bold>
+            </font>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+          </widget>
+          <widget class="QLineEdit" name="lineEdit_3">
+           <property name="geometry">
+            <rect>
+             <x>110</x>
+             <y>70</y>
+             <width>231</width>
+             <height>41</height>
+            </rect>
+           </property>
+           <property name="font">
+            <font>
+             <family>微软雅黑</family>
+             <pointsize>12</pointsize>
+             <bold>true</bold>
+            </font>
+           </property>
+          </widget>
+          <widget class="QLineEdit" name="lineEdit_9">
+           <property name="geometry">
+            <rect>
+             <x>110</x>
+             <y>120</y>
+             <width>231</width>
+             <height>41</height>
+            </rect>
+           </property>
+           <property name="font">
+            <font>
+             <family>微软雅黑</family>
+             <pointsize>12</pointsize>
+             <bold>true</bold>
+            </font>
+           </property>
+          </widget>
+          <widget class="QLabel" name="label_15">
+           <property name="geometry">
+            <rect>
+             <x>20</x>
+             <y>180</y>
+             <width>61</width>
+             <height>41</height>
+            </rect>
+           </property>
+           <property name="font">
+            <font>
+             <family>微软雅黑</family>
+             <pointsize>12</pointsize>
+             <bold>true</bold>
+            </font>
+           </property>
+           <property name="text">
+            <string>首字母:</string>
+           </property>
+          </widget>
+          <widget class="QComboBox" name="comboBox_2">
+           <property name="geometry">
+            <rect>
+             <x>110</x>
+             <y>180</y>
+             <width>51</width>
+             <height>41</height>
+            </rect>
+           </property>
+           <property name="font">
+            <font>
+             <family>微软雅黑</family>
+             <pointsize>18</pointsize>
+             <bold>true</bold>
+            </font>
+           </property>
+           <item>
+            <property name="text">
+             <string>*</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>A</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>B</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>C</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>D</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>E</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>F</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>G</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>H</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>I</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>J</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>K</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>L</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>M</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>N</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>O</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>P</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Q</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>R</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>S</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>T</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>U</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>V</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>W</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>X</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Y</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Z</string>
+            </property>
+           </item>
+          </widget>
+          <widget class="QPushButton" name="pushButton_4">
+           <property name="geometry">
+            <rect>
+             <x>360</x>
+             <y>120</y>
+             <width>111</width>
+             <height>51</height>
+            </rect>
+           </property>
+           <property name="font">
+            <font>
+             <family>微软雅黑</family>
+             <pointsize>11</pointsize>
+             <bold>true</bold>
+            </font>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">/* 按下状态 */
+QPushButton:pressed {
+     background-color: #546E7A; /* 深石板灰 */
+    background-image: none;
+    padding-top: 12px;
+    padding-bottom: 8px;
+    border: 1px solid #37474F; /* 深色边框模拟阴影 */
+}
+ QPushButton {
+		background-color: qlineargradient(x1:0, y1:0, x2:0, y2:1, 
+    	stop:0 #ffffff,       /* 顶部：纯白（高光） */
+   		stop:0.15 #dcdcdc,    /* 过渡：浅灰 */
+    	stop:0.85 #a9a9a9,    /* 底部过渡：中灰 */
+    	stop:1 #e8e8e8        /* 底部：亮灰（反光） */);
+}</string>
+           </property>
+           <property name="text">
+            <string>设置额外代码</string>
+           </property>
+          </widget>
+          <widget class="QPushButton" name="pushButton_3">
+           <property name="geometry">
+            <rect>
+             <x>360</x>
+             <y>20</y>
+             <width>111</width>
+             <height>51</height>
+            </rect>
+           </property>
+           <property name="font">
+            <font>
+             <family>微软雅黑</family>
+             <pointsize>11</pointsize>
+             <bold>true</bold>
+            </font>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">/* 按下状态 */
+QPushButton:pressed {
+    background-color: #546E7A; /* 深石板灰 */
+    background-image: none;
+    padding-top: 12px;
+    padding-bottom: 8px;
+    border: 1px solid #37474F; /* 深色边框模拟阴影 */
+}
+ QPushButton {
+		background-color: qlineargradient(x1:0, y1:0, x2:0, y2:1, 
+    	stop:0 #ffffff,       /* 顶部：纯白（高光） */
+   		stop:0.15 #dcdcdc,    /* 过渡：浅灰 */
+    	stop:0.85 #a9a9a9,    /* 底部过渡：中灰 */
+    	stop:1 #e8e8e8        /* 底部：亮灰（反光） */);
+}</string>
+           </property>
+           <property name="text">
+            <string>选择生产日期</string>
+           </property>
+          </widget>
+         </widget>
+        </widget>
+       </widget>
+      </widget>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+ </widget>
+ <resources>
+  <include location="OCRdemo.qrc"/>
+  <include location="../res/icons/icons.qrc"/>
+  <include location="../../../LibreCAD-2.2/librecad/src/OCRdemo.qrc"/>
+  <include location="../../../LibreCAD-2.4(6)SiNianTest/librecad/src/OCRdemo.qrc"/>
+ </resources>
+ <connections/>
+ <slots>
+  <slot>ShowUser()</slot>
+  <slot>ShowXJadmain()</slot>
+ </slots>
+</ui>

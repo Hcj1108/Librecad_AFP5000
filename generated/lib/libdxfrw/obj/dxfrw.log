@@ -1,0 +1,149 @@
+﻿   Qt/MSBuild: 3.5.0.0
+  Reading Qt configuration (D:/software/qt/5.15.2/msvc2019_64/bin/qmake)
+   Qt: 5.15.2
+cl : 命令行  warning D9002: 忽略未知选项“-std=c++11”
+cl : 命令行  warning D9002: 忽略未知选项“-std=c++11”
+cl : 命令行  warning D9002: 忽略未知选项“-std=c++11”
+  drw_base.cpp
+cl : 命令行  warning D9002: 忽略未知选项“-std=c++11”
+  drw_classes.cpp
+  drw_dbg.cpp
+cl : 命令行  warning D9002: 忽略未知选项“-std=c++11”
+cl : 命令行  warning D9002: 忽略未知选项“-std=c++11”
+  drw_entities.cpp
+  drw_header.cpp
+cl : 命令行  warning D9002: 忽略未知选项“-std=c++11”
+cl : 命令行  warning D9002: 忽略未知选项“-std=c++11”
+cl : 命令行  warning D9002: 忽略未知选项“-std=c++11”
+cl : 命令行  warning D9002: 忽略未知选项“-std=c++11”
+cl : 命令行  warning D9002: 忽略未知选项“-std=c++11”
+  drw_objects.cpp
+  drw_textcodec.cpp
+  dwgbuffer.cpp
+  dwgreader.cpp
+  dwgreader15.cpp
+cl : 命令行  warning D9002: 忽略未知选项“-std=c++11”
+cl : 命令行  warning D9002: 忽略未知选项“-std=c++11”
+  dwgreader18.cpp
+  dwgreader21.cpp
+cl : 命令行  warning D9002: 忽略未知选项“-std=c++11”
+cl : 命令行  warning D9002: 忽略未知选项“-std=c++11”
+  dwgreader24.cpp
+  dwgreader27.cpp
+cl : 命令行  warning D9002: 忽略未知选项“-std=c++11”
+  dwgutil.cpp
+cl : 命令行  warning D9002: 忽略未知选项“-std=c++11”
+  dxfreader.cpp
+cl : 命令行  warning D9002: 忽略未知选项“-std=c++11”
+  dxfwriter.cpp
+cl : 命令行  warning D9002: 忽略未知选项“-std=c++11”
+  libdwgr.cpp
+cl : 命令行  warning D9002: 忽略未知选项“-std=c++11”
+  libdxfrw.cpp
+cl : 命令行  warning D9002: 忽略未知选项“-std=c++11”
+  rscodec.cpp
+D:\DM\LibreCAD-2.4(YitiJi)\libraries\libdxfrw\src\drw_entities.h(841,32): warning C4267: “=”: 从“size_t”转换到“int”，可能丢失数据
+  (编译源文件“src/drw_entities.cpp”)
+  
+D:\DM\LibreCAD-2.4(YitiJi)\libraries\libdxfrw\src\drw_entities.h(841,32): warning C4267: “=”: 从“size_t”转换到“int”，可能丢失数据
+  (编译源文件“src/libdwgr.cpp”)
+  
+D:\DM\LibreCAD-2.4(YitiJi)\libraries\libdxfrw\src\intern\dwgbuffer.h(135,51): warning C4244: “return”: 从“duint64”转换到“int”，可能丢失数据
+  (编译源文件“src/drw_header.cpp”)
+  
+D:\DM\LibreCAD-2.4(YitiJi)\libraries\libdxfrw\src\intern\dwgbuffer.h(135,51): warning C4244: “return”: 从“duint64”转换到“int”，可能丢失数据
+  (编译源文件“src/intern/dwgbuffer.cpp”)
+  
+D:\DM\LibreCAD-2.4(YitiJi)\libraries\libdxfrw\src\intern\dwgbuffer.h(135,51): warning C4244: “return”: 从“duint64”转换到“int”，可能丢失数据
+  (编译源文件“src/intern/dwgreader27.cpp”)
+  
+D:\DM\LibreCAD-2.4(YitiJi)\libraries\libdxfrw\src\drw_entities.h(841,32): warning C4267: “=”: 从“size_t”转换到“int”，可能丢失数据
+  (编译源文件“src/intern/dwgbuffer.cpp”)
+  
+D:\DM\LibreCAD-2.4(YitiJi)\libraries\libdxfrw\src\intern\dwgbuffer.h(135,51): warning C4244: “return”: 从“duint64”转换到“int”，可能丢失数据
+  (编译源文件“src/intern/dwgreader24.cpp”)
+  
+D:\DM\LibreCAD-2.4(YitiJi)\libraries\libdxfrw\src\drw_entities.h(841,32): warning C4267: “=”: 从“size_t”转换到“int”，可能丢失数据
+  (编译源文件“src/intern/dwgreader27.cpp”)
+  
+D:\DM\LibreCAD-2.4(YitiJi)\libraries\libdxfrw\src\intern\dwgbuffer.h(135,51): warning C4244: “return”: 从“duint64”转换到“int”，可能丢失数据
+  (编译源文件“src/drw_classes.cpp”)
+  
+D:\DM\LibreCAD-2.4(YitiJi)\libraries\libdxfrw\src\intern\dwgbuffer.h(135,51): warning C4244: “return”: 从“duint64”转换到“int”，可能丢失数据
+  (编译源文件“src/intern/dwgreader.cpp”)
+  
+D:\DM\LibreCAD-2.4(YitiJi)\libraries\libdxfrw\src\intern\dwgbuffer.h(135,51): warning C4244: “return”: 从“duint64”转换到“int”，可能丢失数据
+  (编译源文件“src/drw_entities.cpp”)
+  
+D:\DM\LibreCAD-2.4(YitiJi)\libraries\libdxfrw\src\drw_entities.h(841,32): warning C4267: “=”: 从“size_t”转换到“int”，可能丢失数据
+  (编译源文件“src/intern/dwgreader24.cpp”)
+  
+D:\DM\LibreCAD-2.4(YitiJi)\libraries\libdxfrw\src\drw_entities.h(841,32): warning C4267: “=”: 从“size_t”转换到“int”，可能丢失数据
+  (编译源文件“src/libdxfrw.cpp”)
+  
+D:\DM\LibreCAD-2.4(YitiJi)\libraries\libdxfrw\src\drw_entities.cpp(207,20): warning C4244: “初始化”: 从“duint64”转换到“duint32”，可能丢失数据
+D:\DM\LibreCAD-2.4(YitiJi)\libraries\libdxfrw\src\intern\dwgbuffer.h(135,51): warning C4244: “return”: 从“duint64”转换到“int”，可能丢失数据
+  (编译源文件“src/drw_objects.cpp”)
+  
+D:\DM\LibreCAD-2.4(YitiJi)\libraries\libdxfrw\src\drw_entities.h(841,32): warning C4267: “=”: 从“size_t”转换到“int”，可能丢失数据
+  (编译源文件“src/intern/dwgreader.cpp”)
+  
+D:\DM\LibreCAD-2.4(YitiJi)\libraries\libdxfrw\src\drw_entities.cpp(760,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+D:\DM\LibreCAD-2.4(YitiJi)\libraries\libdxfrw\src\intern\dwgbuffer.h(135,51): warning C4244: “return”: 从“duint64”转换到“int”，可能丢失数据
+  (编译源文件“src/intern/dwgreader15.cpp”)
+  
+D:\DM\LibreCAD-2.4(YitiJi)\libraries\libdxfrw\src\drw_objects.cpp(116,20): warning C4244: “初始化”: 从“duint64”转换到“duint32”，可能丢失数据
+D:\DM\LibreCAD-2.4(YitiJi)\libraries\libdxfrw\src\drw_objects.cpp(153,17): warning C4244: “初始化”: 从“duint64”转换到“int”，可能丢失数据
+D:\DM\LibreCAD-2.4(YitiJi)\libraries\libdxfrw\src\intern\dwgbuffer.h(135,51): warning C4244: “return”: 从“duint64”转换到“int”，可能丢失数据
+  (编译源文件“src/intern/dwgreader21.cpp”)
+  
+D:\DM\LibreCAD-2.4(YitiJi)\libraries\libdxfrw\src\drw_entities.cpp(1887,37): warning C4805: “|=”: 在操作中将类型“bool”与类型“int”混合不安全
+D:\DM\LibreCAD-2.4(YitiJi)\libraries\libdxfrw\src\drw_entities.cpp(1887,37): warning C4805: “|”: 在操作中将类型“bool”与类型“int”混合不安全
+D:\DM\LibreCAD-2.4(YitiJi)\libraries\libdxfrw\src\drw_objects.cpp(483,21): warning C4267: “=”: 从“size_t”转换到“int”，可能丢失数据
+D:\DM\LibreCAD-2.4(YitiJi)\libraries\libdxfrw\src\intern\dxfwriter.cpp(178,22): warning C4244: “=”: 从“unsigned __int64”转换到“char”，可能丢失数据
+D:\DM\LibreCAD-2.4(YitiJi)\libraries\libdxfrw\src\intern\dxfwriter.cpp(179,22): warning C4244: “=”: 从“unsigned __int64”转换到“char”，可能丢失数据
+D:\DM\LibreCAD-2.4(YitiJi)\libraries\libdxfrw\src\intern\dxfwriter.cpp(180,22): warning C4244: “=”: 从“unsigned __int64”转换到“char”，可能丢失数据
+D:\DM\LibreCAD-2.4(YitiJi)\libraries\libdxfrw\src\intern\dxfwriter.cpp(181,22): warning C4244: “=”: 从“unsigned __int64”转换到“char”，可能丢失数据
+D:\DM\LibreCAD-2.4(YitiJi)\libraries\libdxfrw\src\intern\dxfwriter.cpp(182,22): warning C4244: “=”: 从“unsigned __int64”转换到“char”，可能丢失数据
+D:\DM\LibreCAD-2.4(YitiJi)\libraries\libdxfrw\src\intern\dxfwriter.cpp(183,22): warning C4244: “=”: 从“unsigned __int64”转换到“char”，可能丢失数据
+D:\DM\LibreCAD-2.4(YitiJi)\libraries\libdxfrw\src\drw_entities.h(841,32): warning C4267: “=”: 从“size_t”转换到“int”，可能丢失数据
+  (编译源文件“src/intern/dwgreader15.cpp”)
+  
+D:\DM\LibreCAD-2.4(YitiJi)\libraries\libdxfrw\src\drw_entities.h(841,32): warning C4267: “=”: 从“size_t”转换到“int”，可能丢失数据
+  (编译源文件“src/intern/dwgreader21.cpp”)
+  
+D:\DM\LibreCAD-2.4(YitiJi)\libraries\libdxfrw\src\drw_entities.h(841,32): warning C4267: “=”: 从“size_t”转换到“int”，可能丢失数据
+  (编译源文件“src/intern/dwgutil.cpp”)
+  
+D:\DM\LibreCAD-2.4(YitiJi)\libraries\libdxfrw\src\intern\dwgbuffer.h(135,51): warning C4244: “return”: 从“duint64”转换到“int”，可能丢失数据
+  (编译源文件“src/intern/dwgreader18.cpp”)
+  
+D:\DM\LibreCAD-2.4(YitiJi)\libraries\libdxfrw\src\intern\dwgbuffer.h(135,51): warning C4244: “return”: 从“duint64”转换到“int”，可能丢失数据
+  (编译源文件“src/libdwgr.cpp”)
+  
+D:\DM\LibreCAD-2.4(YitiJi)\libraries\libdxfrw\src\drw_entities.h(841,32): warning C4267: “=”: 从“size_t”转换到“int”，可能丢失数据
+  (编译源文件“src/intern/dwgreader18.cpp”)
+  
+D:\DM\LibreCAD-2.4(YitiJi)\libraries\libdxfrw\src\intern\dwgutil.cpp(152,22): warning C4244: “=”: 从“duint64”转换到“duint32”，可能丢失数据
+D:\DM\LibreCAD-2.4(YitiJi)\libraries\libdxfrw\src\intern\dwgutil.cpp(153,18): warning C4244: “=”: 从“duint64”转换到“duint32”，可能丢失数据
+D:\DM\LibreCAD-2.4(YitiJi)\libraries\libdxfrw\src\intern\dwgutil.cpp(298,16): warning C4244: “初始化”: 从“duint64”转换到“duint8”，可能丢失数据
+D:\DM\LibreCAD-2.4(YitiJi)\libraries\libdxfrw\src\intern\dwgutil.cpp(299,21): warning C4244: “初始化”: 从“duint64”转换到“duint32”，可能丢失数据
+D:\DM\LibreCAD-2.4(YitiJi)\libraries\libdxfrw\src\intern\dwgutil.cpp(335,22): warning C4244: “=”: 从“duint64”转换到“duint32”，可能丢失数据
+D:\DM\LibreCAD-2.4(YitiJi)\libraries\libdxfrw\src\intern\dwgutil.cpp(336,18): warning C4244: “=”: 从“duint64”转换到“duint32”，可能丢失数据
+D:\DM\LibreCAD-2.4(YitiJi)\libraries\libdxfrw\src\intern\dwgreader15.cpp(92,59): warning C4244: “参数”: 从“duint64”转换到“dint32”，可能丢失数据
+D:\DM\LibreCAD-2.4(YitiJi)\libraries\libdxfrw\src\intern\dwgreader.cpp(129,20): warning C4244: “初始化”: 从“duint64”转换到“duint32”，可能丢失数据
+D:\DM\LibreCAD-2.4(YitiJi)\libraries\libdxfrw\src\intern\dwgreader.cpp(134,18): warning C4244: “初始化”: 从“duint64”转换到“int”，可能丢失数据
+D:\DM\LibreCAD-2.4(YitiJi)\libraries\libdxfrw\src\intern\dwgreader.cpp(164,37): warning C4244: “=”: 从“duint64”转换到“int”，可能丢失数据
+D:\DM\LibreCAD-2.4(YitiJi)\libraries\libdxfrw\src\intern\dwgreader21.cpp(63,20): warning C4244: “初始化”: 从“duint64”转换到“duint32”，可能丢失数据
+D:\DM\LibreCAD-2.4(YitiJi)\libraries\libdxfrw\src\intern\dwgreader21.cpp(71,75): warning C4244: “参数”: 从“duint64”转换到“duint32”，可能丢失数据
+D:\DM\LibreCAD-2.4(YitiJi)\libraries\libdxfrw\src\intern\dwgreader21.cpp(96,23): warning C4244: “初始化”: 从“duint64”转换到“duint8”，可能丢失数据
+D:\DM\LibreCAD-2.4(YitiJi)\libraries\libdxfrw\src\intern\dwgreader21.cpp(278,56): warning C4244: “=”: 从“duint64”转换到“duint32”，可能丢失数据
+D:\DM\LibreCAD-2.4(YitiJi)\libraries\libdxfrw\src\intern\dwgreader21.cpp(285,57): warning C4244: “=”: 从“duint64”转换到“duint32”，可能丢失数据
+D:\DM\LibreCAD-2.4(YitiJi)\libraries\libdxfrw\src\intern\dwgreader21.cpp(289,49): warning C4244: “参数”: 从“duint64”转换到“duint16”，可能丢失数据
+D:\DM\LibreCAD-2.4(YitiJi)\libraries\libdxfrw\src\intern\dwgreader21.cpp(294,24): warning C4244: “初始化”: 从“duint64”转换到“duint32”，可能丢失数据
+D:\DM\LibreCAD-2.4(YitiJi)\libraries\libdxfrw\src\intern\dwgreader21.cpp(295,24): warning C4244: “初始化”: 从“duint64”转换到“duint32”，可能丢失数据
+D:\DM\LibreCAD-2.4(YitiJi)\libraries\libdxfrw\src\libdxfrw.cpp(787,44): warning C4267: “=”: 从“size_t”转换到“int”，可能丢失数据
+D:\DM\LibreCAD-2.4(YitiJi)\libraries\libdxfrw\src\libdxfrw.cpp(855,19): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+D:\DM\LibreCAD-2.4(YitiJi)\libraries\libdxfrw\src\libdxfrw.cpp(956,43): warning C4267: “=”: 从“size_t”转换到“int”，可能丢失数据
+D:\DM\LibreCAD-2.4(YitiJi)\libraries\libdxfrw\src\libdxfrw.cpp(1044,53): warning C4244: “参数”: 从“unsigned __int64”转换到“double”，可能丢失数据
+  dxfrw.vcxproj -> D:\DM\LibreCAD-2.4(YitiJi)\generated\lib\dxfrw.lib

@@ -1,0 +1,23 @@
+.gitignore
+generated/
+build/
+Debug/
+Release/
+Log/
+*.obj
+*.exe
+*.pdb
+*.tlog
+.vs/
+ipch/
+
+# Large files
+.vs/
+*.ipch
+*.dll
+*.lib
+*.exp
+*.pdb
+msyh.lff
+boost_1_88_0/
+libraries/

@@ -1,0 +1,5 @@
+E:\Projects\LibreCAD-2.2\generated\librecad\obj\LibreCAD.vcxproj.Up2Date
+D:\LibreCAD-2.2\generated\librecad\obj\LibreCAD.vcxproj.Up2Date
+D:\DM\LibreCAD-2.2\generated\librecad\obj\LibreCAD.vcxproj.Up2Date
+D:\DM\LibreCAD-2.4\generated\librecad\obj\LibreCAD.vcxproj.Up2Date
+D:\DM\LibreCAD-2.4(YitiJi)\generated\librecad\obj\LibreCAD.vcxproj.Up2Date

@@ -1,0 +1,47 @@
+﻿  Generate moc_predefs.h
+   Qt/MSBuild: 3.5.0.0
+  Reading Qt configuration (D:/software/qt/5.15.2/msvc2019_64/bin/qmake)
+   Qt: 5.15.2
+  dl_jww.cpp
+  dl_writer_ascii.cpp
+  jwwdoc.cpp
+D:\DM\LibreCAD-2.4(YitiJi)\libraries\jwwlib\src\jwwdoc.h(473,11): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+  (编译源文件“src/dl_jww.cpp”)
+  
+D:\DM\LibreCAD-2.4(YitiJi)\libraries\jwwlib\src\jwwdoc.h(486,24): warning C4267: “=”: 从“size_t”转换到“int”，可能丢失数据
+  (编译源文件“src/dl_jww.cpp”)
+  
+D:\DM\LibreCAD-2.4(YitiJi)\libraries\jwwlib\src\jwwdoc.h(778,11): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+  (编译源文件“src/dl_jww.cpp”)
+  
+D:\DM\LibreCAD-2.4(YitiJi)\libraries\jwwlib\src\jwwdoc.h(473,11): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+  (编译源文件“src/jwwdoc.cpp”)
+  
+D:\DM\LibreCAD-2.4(YitiJi)\libraries\jwwlib\src\jwwdoc.h(486,24): warning C4267: “=”: 从“size_t”转换到“int”，可能丢失数据
+  (编译源文件“src/jwwdoc.cpp”)
+  
+D:\DM\LibreCAD-2.4(YitiJi)\libraries\jwwlib\src\jwwdoc.h(778,11): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+  (编译源文件“src/jwwdoc.cpp”)
+  
+D:\DM\LibreCAD-2.4(YitiJi)\libraries\jwwlib\src\jwwdoc.cpp(5,13): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+D:\DM\LibreCAD-2.4(YitiJi)\libraries\jwwlib\src\jwwdoc.cpp(1197,20): warning C4267: “=”: 从“size_t”转换到“jwWORD”，可能丢失数据
+D:\DM\LibreCAD-2.4(YitiJi)\libraries\jwwlib\src\jwwdoc.cpp(1202,17): warning C4244: “=”: 从“jwDWORD”转换到“jwWORD”，可能丢失数据
+D:\DM\LibreCAD-2.4(YitiJi)\libraries\jwwlib\src\jwwdoc.cpp(1225,20): warning C4267: “=”: 从“size_t”转换到“jwWORD”，可能丢失数据
+D:\DM\LibreCAD-2.4(YitiJi)\libraries\jwwlib\src\jwwdoc.cpp(1232,22): warning C4244: “=”: 从“jwDWORD”转换到“jwWORD”，可能丢失数据
+D:\DM\LibreCAD-2.4(YitiJi)\libraries\jwwlib\src\jwwdoc.cpp(1264,20): warning C4267: “=”: 从“size_t”转换到“jwWORD”，可能丢失数据
+D:\DM\LibreCAD-2.4(YitiJi)\libraries\jwwlib\src\jwwdoc.cpp(1271,21): warning C4244: “=”: 从“jwDWORD”转换到“jwWORD”，可能丢失数据
+D:\DM\LibreCAD-2.4(YitiJi)\libraries\jwwlib\src\jwwdoc.cpp(1304,20): warning C4267: “=”: 从“size_t”转换到“jwWORD”，可能丢失数据
+D:\DM\LibreCAD-2.4(YitiJi)\libraries\jwwlib\src\jwwdoc.cpp(1311,22): warning C4244: “=”: 从“jwDWORD”转换到“jwWORD”，可能丢失数据
+D:\DM\LibreCAD-2.4(YitiJi)\libraries\jwwlib\src\jwwdoc.cpp(1343,20): warning C4267: “=”: 从“size_t”转换到“jwWORD”，可能丢失数据
+D:\DM\LibreCAD-2.4(YitiJi)\libraries\jwwlib\src\jwwdoc.cpp(1350,24): warning C4244: “=”: 从“jwDWORD”转换到“jwWORD”，可能丢失数据
+D:\DM\LibreCAD-2.4(YitiJi)\libraries\jwwlib\src\jwwdoc.cpp(1382,20): warning C4267: “=”: 从“size_t”转换到“jwWORD”，可能丢失数据
+D:\DM\LibreCAD-2.4(YitiJi)\libraries\jwwlib\src\jwwdoc.cpp(1389,23): warning C4244: “=”: 从“jwDWORD”转换到“jwWORD”，可能丢失数据
+D:\DM\LibreCAD-2.4(YitiJi)\libraries\jwwlib\src\jwwdoc.cpp(1421,20): warning C4267: “=”: 从“size_t”转换到“jwWORD”，可能丢失数据
+D:\DM\LibreCAD-2.4(YitiJi)\libraries\jwwlib\src\jwwdoc.cpp(1428,23): warning C4244: “=”: 从“jwDWORD”转换到“jwWORD”，可能丢失数据
+D:\DM\LibreCAD-2.4(YitiJi)\libraries\jwwlib\src\jwwdoc.cpp(1460,20): warning C4267: “=”: 从“size_t”转换到“jwWORD”，可能丢失数据
+D:\DM\LibreCAD-2.4(YitiJi)\libraries\jwwlib\src\jwwdoc.cpp(1467,22): warning C4244: “=”: 从“jwDWORD”转换到“jwWORD”，可能丢失数据
+D:\DM\LibreCAD-2.4(YitiJi)\libraries\jwwlib\src\jwwdoc.cpp(1503,99): warning C4267: “=”: 从“size_t”转换到“jwDWORD”，可能丢失数据
+D:\DM\LibreCAD-2.4(YitiJi)\libraries\jwwlib\src\jwwdoc.cpp(1591,22): warning C4267: “return”: 从“size_t”转换到“int”，可能丢失数据
+D:\DM\LibreCAD-2.4(YitiJi)\libraries\jwwlib\src\jwwdoc.cpp(1619,12): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+D:\DM\LibreCAD-2.4(YitiJi)\libraries\jwwlib\src\jwwdoc.cpp(1651,27): warning C4267: “return”: 从“size_t”转换到“int”，可能丢失数据
+  jwwlib.vcxproj -> D:\DM\LibreCAD-2.4(YitiJi)\generated\lib\jwwlib.lib

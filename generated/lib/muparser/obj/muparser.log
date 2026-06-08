@@ -1,0 +1,17 @@
+﻿   Qt/MSBuild: 3.5.0.0
+  Reading Qt configuration (D:/software/qt/5.15.2/msvc2019_64/bin/qmake)
+   Qt: 5.15.2
+cl : 命令行  warning D9002: 忽略未知选项“-std=c++11”
+cl : 命令行  warning D9002: 忽略未知选项“-std=c++11”
+  muParser.cpp
+cl : 命令行  warning D9002: 忽略未知选项“-std=c++11”
+  muParserBase.cpp
+cl : 命令行  warning D9002: 忽略未知选项“-std=c++11”
+cl : 命令行  warning D9002: 忽略未知选项“-std=c++11”
+  muParserBytecode.cpp
+cl : 命令行  warning D9002: 忽略未知选项“-std=c++11”
+  muParserCallback.cpp
+cl : 命令行  warning D9002: 忽略未知选项“-std=c++11”
+  muParserError.cpp
+  muParserTokenReader.cpp
+  muparser.vcxproj -> D:\DM\LibreCAD-2.4(YitiJi)\generated\lib\muparser.lib

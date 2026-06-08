@@ -1,0 +1,16 @@
+﻿  Generate moc_predefs.h
+   Qt/MSBuild: 3.5.0.0
+  Reading Qt configuration (D:/software/qt/5.15.2/msvc2019_64/bin/qmake)
+   Qt: 5.15.2
+  Moc'ing divide.h...
+  Moc'ing dividedlg.h...
+   Warning: Failed to resolve include "E:/Projects/LibreCAD-2.2/generated/plugin/divide/moc/moc_predefs.h" for moc file D:\DM\LibreCAD-2.4(YitiJi)\plugins\divide\divide.h
+   Warning: Failed to resolve include "E:/Projects/LibreCAD-2.2/generated/plugin/divide/moc/moc_predefs.h" for moc file D:\DM\LibreCAD-2.4(YitiJi)\plugins\divide\dividedlg.h
+  divide.cpp
+  dividedlg.cpp
+  moc_divide.cpp
+  moc_dividedlg.cpp
+    正在创建库 ..\..\windows\resources\plugins\\divide0.lib 和对象 ..\..\windows\resources\plugins\\divide0.exp
+  divide.vcxproj -> D:\DM\LibreCAD-2.4(YitiJi)\windows\resources\plugins\divide0.dll
+  'pwsh.exe' 不是内部或外部命令，也不是可运行的程序
+  或批处理文件。

@@ -1,0 +1,616 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>SerialManagerClass</class>
+ <widget class="QWidget" name="SerialManagerClass">
+  <property name="enabled">
+   <bool>true</bool>
+  </property>
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>692</width>
+    <height>300</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>SerialManager</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background-color:rgb(220, 235, 240);</string>
+  </property>
+  <widget class="QLabel" name="label">
+   <property name="geometry">
+    <rect>
+     <x>210</x>
+     <y>10</y>
+     <width>281</width>
+     <height>54</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>微软雅黑</family>
+     <pointsize>20</pointsize>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">opacity: 1;
+border-radius: 15px;  
+border: 2px solid #4CAF50;
+padding: 5px 15px;
+min-width: 100px;
+min-height: 40px;</string>
+   </property>
+   <property name="text">
+    <string>运行状态设置界面</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignmentFlag::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QToolButton" name="toolButton_21">
+   <property name="geometry">
+    <rect>
+     <x>640</x>
+     <y>10</y>
+     <width>41</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>微软雅黑</family>
+     <pointsize>14</pointsize>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">/* 按下状态 */
+QToolButton:pressed {
+   background-color: #546E7A; /* 深石板灰 */
+    background-image: none;
+    padding-top: 12px;
+    padding-bottom: 8px;
+    border: 1px solid #37474F; /* 深色边框模拟阴影 */
+}
+ QToolButton {
+		background-color: qlineargradient(x1:0, y1:0, x2:0, y2:1, 
+    	stop:0 #ffffff,       /* 顶部：纯白（高光） */
+   		stop:0.15 #dcdcdc,    /* 过渡：浅灰 */
+    	stop:0.85 #a9a9a9,    /* 底部过渡：中灰 */
+    	stop:1 #e8e8e8        /* 底部：亮灰（反光） */);
+}</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="icon">
+    <iconset resource="../OCRdemo.qrc">
+     <normaloff>:/PIC/Resources/PICs/GB.png</normaloff>:/PIC/Resources/PICs/GB.png</iconset>
+   </property>
+  </widget>
+  <widget class="QGroupBox" name="groupBox_2">
+   <property name="geometry">
+    <rect>
+     <x>370</x>
+     <y>90</y>
+     <width>301</width>
+     <height>191</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>微软雅黑</family>
+     <pointsize>14</pointsize>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="title">
+    <string>联机状态</string>
+   </property>
+   <widget class="QCheckBox" name="checkBox">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>30</y>
+      <width>131</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>微软雅黑</family>
+      <pointsize>12</pointsize>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text">
+     <string>相机联机屏蔽</string>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>20</width>
+      <height>16</height>
+     </size>
+    </property>
+    <property name="checked">
+     <bool>false</bool>
+    </property>
+    <property name="autoExclusive">
+     <bool>false</bool>
+    </property>
+    <property name="autoRepeatDelay">
+     <number>300</number>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="checkBox_2">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>70</y>
+      <width>131</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>微软雅黑</family>
+      <pointsize>12</pointsize>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text">
+     <string>标刻联机屏蔽</string>
+    </property>
+    <property name="checked">
+     <bool>false</bool>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="checkBox_3">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>110</y>
+      <width>131</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>微软雅黑</family>
+      <pointsize>12</pointsize>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text">
+     <string>通讯联机屏蔽</string>
+    </property>
+    <property name="checked">
+     <bool>false</bool>
+    </property>
+   </widget>
+   <widget class="QToolButton" name="toolButton_14">
+    <property name="geometry">
+     <rect>
+      <x>190</x>
+      <y>30</y>
+      <width>101</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>微软雅黑</family>
+      <pointsize>10</pointsize>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">/* 按下状态 */
+QToolButton:pressed {
+   background-color: #546E7A; /* 深石板灰 */
+    background-image: none;
+    padding-top: 12px;
+    padding-bottom: 8px;
+    border: 1px solid #37474F; /* 深色边框模拟阴影 */
+}
+ QToolButton {
+		background-color: qlineargradient(x1:0, y1:0, x2:0, y2:1, 
+    	stop:0 #ffffff,       /* 顶部：纯白（高光） */
+   		stop:0.15 #dcdcdc,    /* 过渡：浅灰 */
+    	stop:0.85 #a9a9a9,    /* 底部过渡：中灰 */
+    	stop:1 #e8e8e8        /* 底部：亮灰（反光） */);
+}</string>
+    </property>
+    <property name="text">
+     <string>正常运行</string>
+    </property>
+   </widget>
+   <widget class="QToolButton" name="toolButton_15">
+    <property name="geometry">
+     <rect>
+      <x>190</x>
+      <y>70</y>
+      <width>101</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>微软雅黑</family>
+      <pointsize>10</pointsize>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">/* 按下状态 */
+QToolButton:pressed {
+   background-color: #546E7A; /* 深石板灰 */
+    background-image: none;
+    padding-top: 12px;
+    padding-bottom: 8px;
+    border: 1px solid #37474F; /* 深色边框模拟阴影 */
+}
+ QToolButton {
+		background-color: qlineargradient(x1:0, y1:0, x2:0, y2:1, 
+    	stop:0 #ffffff,       /* 顶部：纯白（高光） */
+   		stop:0.15 #dcdcdc,    /* 过渡：浅灰 */
+    	stop:0.85 #a9a9a9,    /* 底部过渡：中灰 */
+    	stop:1 #e8e8e8        /* 底部：亮灰（反光） */);
+}</string>
+    </property>
+    <property name="text">
+     <string>正常运行</string>
+    </property>
+   </widget>
+   <widget class="QToolButton" name="toolButton_16">
+    <property name="geometry">
+     <rect>
+      <x>190</x>
+      <y>110</y>
+      <width>101</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>微软雅黑</family>
+      <pointsize>10</pointsize>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">/* 按下状态 */
+QToolButton:pressed {
+   background-color: #546E7A; /* 深石板灰 */
+    background-image: none;
+    padding-top: 12px;
+    padding-bottom: 8px;
+    border: 1px solid #37474F; /* 深色边框模拟阴影 */
+}
+ QToolButton {
+		background-color: qlineargradient(x1:0, y1:0, x2:0, y2:1, 
+    	stop:0 #ffffff,       /* 顶部：纯白（高光） */
+   		stop:0.15 #dcdcdc,    /* 过渡：浅灰 */
+    	stop:0.85 #a9a9a9,    /* 底部过渡：中灰 */
+    	stop:1 #e8e8e8        /* 底部：亮灰（反光） */);
+}</string>
+    </property>
+    <property name="text">
+     <string>正常运行</string>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QGroupBox" name="groupBox">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>90</y>
+     <width>301</width>
+     <height>191</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>微软雅黑</family>
+     <pointsize>14</pointsize>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="title">
+    <string>报警状态</string>
+   </property>
+   <widget class="QCheckBox" name="checkBox_5">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>70</y>
+      <width>121</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>微软雅黑</family>
+      <pointsize>12</pointsize>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text">
+     <string>下限报警屏蔽</string>
+    </property>
+    <property name="checked">
+     <bool>false</bool>
+    </property>
+    <property name="tristate">
+     <bool>false</bool>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="checkBox_6">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>110</y>
+      <width>121</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>微软雅黑</family>
+      <pointsize>12</pointsize>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text">
+     <string>相机报警屏蔽</string>
+    </property>
+    <property name="checked">
+     <bool>false</bool>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="checkBox_7">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>150</y>
+      <width>171</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>微软雅黑</family>
+      <pointsize>12</pointsize>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text">
+     <string>超区域报警屏蔽</string>
+    </property>
+    <property name="checked">
+     <bool>false</bool>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="checkBox_4">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>30</y>
+      <width>121</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>微软雅黑</family>
+      <pointsize>12</pointsize>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text">
+     <string>上限报警屏蔽</string>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>25</width>
+      <height>25</height>
+     </size>
+    </property>
+    <property name="checkable">
+     <bool>true</bool>
+    </property>
+    <property name="checked">
+     <bool>false</bool>
+    </property>
+   </widget>
+   <widget class="QToolButton" name="toolButton_10">
+    <property name="geometry">
+     <rect>
+      <x>190</x>
+      <y>30</y>
+      <width>101</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>微软雅黑</family>
+      <pointsize>10</pointsize>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">/* 按下状态 */
+QToolButton:pressed {
+   background-color: #546E7A; /* 深石板灰 */
+    background-image: none;
+    padding-top: 12px;
+    padding-bottom: 8px;
+    border: 1px solid #37474F; /* 深色边框模拟阴影 */
+}
+ QToolButton {
+		background-color: qlineargradient(x1:0, y1:0, x2:0, y2:1, 
+    	stop:0 #ffffff,       /* 顶部：纯白（高光） */
+   		stop:0.15 #dcdcdc,    /* 过渡：浅灰 */
+    	stop:0.85 #a9a9a9,    /* 底部过渡：中灰 */
+    	stop:1 #e8e8e8        /* 底部：亮灰（反光） */);
+}</string>
+    </property>
+    <property name="text">
+     <string>正常运行</string>
+    </property>
+   </widget>
+   <widget class="QToolButton" name="toolButton_11">
+    <property name="geometry">
+     <rect>
+      <x>190</x>
+      <y>70</y>
+      <width>101</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>微软雅黑</family>
+      <pointsize>10</pointsize>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">/* 按下状态 */
+QToolButton:pressed {
+   background-color: #546E7A; /* 深石板灰 */
+    background-image: none;
+    padding-top: 12px;
+    padding-bottom: 8px;
+    border: 1px solid #37474F; /* 深色边框模拟阴影 */
+}
+ QToolButton {
+		background-color: qlineargradient(x1:0, y1:0, x2:0, y2:1, 
+    	stop:0 #ffffff,       /* 顶部：纯白（高光） */
+   		stop:0.15 #dcdcdc,    /* 过渡：浅灰 */
+    	stop:0.85 #a9a9a9,    /* 底部过渡：中灰 */
+    	stop:1 #e8e8e8        /* 底部：亮灰（反光） */);
+}</string>
+    </property>
+    <property name="text">
+     <string>正常运行</string>
+    </property>
+   </widget>
+   <widget class="QToolButton" name="toolButton_12">
+    <property name="geometry">
+     <rect>
+      <x>190</x>
+      <y>110</y>
+      <width>101</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>微软雅黑</family>
+      <pointsize>10</pointsize>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">/* 按下状态 */
+QToolButton:pressed {
+   background-color: #546E7A; /* 深石板灰 */
+    background-image: none;
+    padding-top: 12px;
+    padding-bottom: 8px;
+    border: 1px solid #37474F; /* 深色边框模拟阴影 */
+}
+ QToolButton {
+		background-color: qlineargradient(x1:0, y1:0, x2:0, y2:1, 
+    	stop:0 #ffffff,       /* 顶部：纯白（高光） */
+   		stop:0.15 #dcdcdc,    /* 过渡：浅灰 */
+    	stop:0.85 #a9a9a9,    /* 底部过渡：中灰 */
+    	stop:1 #e8e8e8        /* 底部：亮灰（反光） */);
+}</string>
+    </property>
+    <property name="text">
+     <string>正常运行</string>
+    </property>
+   </widget>
+   <widget class="QToolButton" name="toolButton_13">
+    <property name="geometry">
+     <rect>
+      <x>190</x>
+      <y>150</y>
+      <width>101</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>微软雅黑</family>
+      <pointsize>10</pointsize>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">/* 按下状态 */
+QToolButton:pressed {
+   background-color: #546E7A; /* 深石板灰 */
+    background-image: none;
+    padding-top: 12px;
+    padding-bottom: 8px;
+    border: 1px solid #37474F; /* 深色边框模拟阴影 */
+}
+ QToolButton {
+		background-color: qlineargradient(x1:0, y1:0, x2:0, y2:1, 
+    	stop:0 #ffffff,       /* 顶部：纯白（高光） */
+   		stop:0.15 #dcdcdc,    /* 过渡：浅灰 */
+    	stop:0.85 #a9a9a9,    /* 底部过渡：中灰 */
+    	stop:1 #e8e8e8        /* 底部：亮灰（反光） */);
+}</string>
+    </property>
+    <property name="text">
+     <string>正常运行</string>
+    </property>
+   </widget>
+  </widget>
+  <widget class="Line" name="line_2">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>70</y>
+     <width>661</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="lineWidth">
+    <number>3</number>
+   </property>
+   <property name="orientation">
+    <enum>Qt::Orientation::Horizontal</enum>
+   </property>
+  </widget>
+  <widget class="Line" name="line_3">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>280</y>
+     <width>661</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="lineWidth">
+    <number>3</number>
+   </property>
+   <property name="orientation">
+    <enum>Qt::Orientation::Horizontal</enum>
+   </property>
+  </widget>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <resources>
+  <include location="../OCRdemo.qrc"/>
+ </resources>
+ <connections/>
+</ui>

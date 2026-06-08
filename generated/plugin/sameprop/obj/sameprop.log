@@ -1,0 +1,12 @@
+﻿  Generate moc_predefs.h
+   Qt/MSBuild: 3.5.0.0
+  Reading Qt configuration (D:/software/qt/5.15.2/msvc2019_64/bin/qmake)
+   Qt: 5.15.2
+  Moc'ing sameprop.h...
+   Warning: Failed to resolve include "E:/Projects/LibreCAD-2.2/generated/plugin/sameprop/moc/moc_predefs.h" for moc file D:\DM\LibreCAD-2.4(YitiJi)\plugins\sameprop\sameprop.h
+  sameprop.cpp
+  moc_sameprop.cpp
+    正在创建库 ..\..\windows\resources\plugins\\sameprop1.lib 和对象 ..\..\windows\resources\plugins\\sameprop1.exp
+  sameprop.vcxproj -> D:\DM\LibreCAD-2.4(YitiJi)\windows\resources\plugins\sameprop1.dll
+  'pwsh.exe' 不是内部或外部命令，也不是可运行的程序
+  或批处理文件。

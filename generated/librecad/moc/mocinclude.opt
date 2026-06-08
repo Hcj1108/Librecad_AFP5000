@@ -1,0 +1,44 @@
+-ID:/Development/Qt/5.15.0/msvc2019_64/mkspecs/win32-msvc
+-IE:/Projects/LibreCAD-2.2/librecad/src
+-IE:/Projects/boost_1_87_0
+-IE:/Projects/LibreCAD-2.2/libraries/muparser/include
+-IE:/Projects/LibreCAD-2.2/libraries/libdxfrw/src
+-IE:/Projects/LibreCAD-2.2/libraries/jwwlib/src
+-IE:/Projects/LibreCAD-2.2/librecad/src/cmd
+-IE:/Projects/LibreCAD-2.2/librecad/src/lib/actions
+-IE:/Projects/LibreCAD-2.2/librecad/src/lib/creation
+-IE:/Projects/LibreCAD-2.2/librecad/src/lib/debug
+-IE:/Projects/LibreCAD-2.2/librecad/src/lib/engine
+-IE:/Projects/LibreCAD-2.2/librecad/src/lib/fileio
+-IE:/Projects/LibreCAD-2.2/librecad/src/lib/filters
+-IE:/Projects/LibreCAD-2.2/librecad/src/lib/generators
+-IE:/Projects/LibreCAD-2.2/librecad/src/lib/gui
+-IE:/Projects/LibreCAD-2.2/librecad/src/lib/information
+-IE:/Projects/LibreCAD-2.2/librecad/src/lib/math
+-IE:/Projects/LibreCAD-2.2/librecad/src/lib/modification
+-IE:/Projects/LibreCAD-2.2/librecad/src/lib/printing
+-IE:/Projects/LibreCAD-2.2/librecad/src/actions
+-IE:/Projects/LibreCAD-2.2/librecad/src/main
+-IE:/Projects/LibreCAD-2.2/librecad/src/main/console_dxf2pdf
+-IE:/Projects/LibreCAD-2.2/librecad/src/test
+-IE:/Projects/LibreCAD-2.2/librecad/src/plugins
+-IE:/Projects/LibreCAD-2.2/librecad/src/ui
+-IE:/Projects/LibreCAD-2.2/librecad/src/ui/forms
+-IE:/Projects/LibreCAD-2.2/librecad/src/ui/generic
+-IE:/Projects/LibreCAD-2.2/librecad/res
+-ID:/Development/Qt/5.15.0/msvc2019_64/include
+-ID:/Development/Qt/5.15.0/msvc2019_64/include/QtSvg
+-ID:/Development/Qt/5.15.0/msvc2019_64/include/QtPrintSupport
+-ID:/Development/Qt/5.15.0/msvc2019_64/include/QtWidgets
+-ID:/Development/Qt/5.15.0/msvc2019_64/include/QtGui
+-ID:/Development/Qt/5.15.0/msvc2019_64/include/QtANGLE
+-ID:/Development/Qt/5.15.0/msvc2019_64/include/QtCore
+-ID:\Development\Visual Studio2022\VC\Tools\MSVC\14.42.34433\include
+-ID:\Development\Visual Studio2022\VC\Tools\MSVC\14.42.34433\ATLMFC\include
+-ID:\Development\Visual Studio2022\VC\Auxiliary\VS\include
+-IC:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\ucrt
+-IC:\Program Files (x86)\Windows Kits\10\\include\10.0.26100.0\\um
+-IC:\Program Files (x86)\Windows Kits\10\\include\10.0.26100.0\\shared
+-IC:\Program Files (x86)\Windows Kits\10\\include\10.0.26100.0\\winrt
+-IC:\Program Files (x86)\Windows Kits\10\\include\10.0.26100.0\\cppwinrt
+-IC:\Program Files (x86)\Windows Kits\NETFXSDK\4.8\include\um

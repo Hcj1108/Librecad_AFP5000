@@ -1,0 +1,10 @@
+{
+  "name": "Draw Line Plugin",
+  "version": "1.0",
+  "author": "Your Name",
+  "description": "A simple plugin to draw a line by entering start and end points.",
+  "category": "Plugins",
+  "dependencies": [],
+  "type": "application",
+  "platform": "all"
+}

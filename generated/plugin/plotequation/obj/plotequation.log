@@ -1,0 +1,16 @@
+﻿  Generate moc_predefs.h
+   Qt/MSBuild: 3.5.0.0
+  Reading Qt configuration (D:/software/qt/5.15.2/msvc2019_64/bin/qmake)
+   Qt: 5.15.2
+  Moc'ing plot.h...
+  Moc'ing plotdialog.h...
+   Warning: Failed to resolve include "E:/Projects/LibreCAD-2.2/generated/plugin/plotequation/moc/moc_predefs.h" for moc file D:\DM\LibreCAD-2.4(YitiJi)\plugins\plotequation\plot.h
+   Warning: Failed to resolve include "E:/Projects/LibreCAD-2.2/generated/plugin/plotequation/moc/moc_predefs.h" for moc file D:\DM\LibreCAD-2.4(YitiJi)\plugins\plotequation\plotdialog.h
+  plot.cpp
+  plotdialog.cpp
+  moc_plot.cpp
+  moc_plotdialog.cpp
+    正在创建库 ..\..\windows\resources\plugins\\plotequation1.lib 和对象 ..\..\windows\resources\plugins\\plotequation1.exp
+  plotequation.vcxproj -> D:\DM\LibreCAD-2.4(YitiJi)\windows\resources\plugins\plotequation1.dll
+  'pwsh.exe' 不是内部或外部命令，也不是可运行的程序
+  或批处理文件。
