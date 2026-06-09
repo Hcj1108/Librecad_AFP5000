@@ -233,6 +233,7 @@
     <ClCompile Include="OCRdemo\ImageViewer.cpp" />
     <ClCompile Include="OCRdemo\Jgadmin.cpp" />
     <ClCompile Include="OCRdemo\Logger.cpp" />
+    <ClCompile Include="OCRdemo\LoginDialog.cpp" />
     <ClCompile Include="OCRdemo\mylabel.cpp" />
     <ClCompile Include="OCRdemo\OCRruning.cpp" />
     <ClCompile Include="OCRdemo\PixelCorrector.cpp" />
@@ -621,6 +622,7 @@
     <QtMoc Include="OCRdemo\ImageViewer.h" />
     <QtMoc Include="OCRdemo\mylabel.h" />
     <QtMoc Include="OCRdemo\Logger.h" />
+    <QtMoc Include="OCRdemo\LoginDialog.h" />
     <ClInclude Include="OCRdemo\PixelCorrector.h" />
     <QtMoc Include="OCRdemo\SimpleBarChart.h" />
     <QtMoc Include="OCRdemo\SenderBinUdp.h" />
@@ -1049,6 +1051,7 @@
     <QtUic Include="OCRdemo\ImageViewer.ui" />
     <QtUic Include="OCRdemo\Jgadmin.ui" />
     <QtUic Include="OCRdemo\Logger.ui" />
+    <QtUic Include="OCRdemo\LoginDialog.ui" />
     <QtUic Include="OCRdemo\SenderBinUdp.ui" />
     <QtUic Include="OCRdemo\SerialManager.ui" />
     <QtUic Include="OCRdemo\Setting.ui" />

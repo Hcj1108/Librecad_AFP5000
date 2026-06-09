@@ -19,64 +19,63 @@ D:\software\vcpkg-master\installed\x64-windows\include\iconv.h(1,1): warning C48
 D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\OCRdemo\SerialManager.h(9,10): warning C4067: 预处理器指令后有意外标记 - 应输入换行符
   (编译源文件“main/qc_applicationwindow.cpp”)
   
-D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\main\qc_applicationwindow.h(754,33): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\main\qc_applicationwindow.h(756,33): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
   (编译源文件“main/qc_applicationwindow.cpp”)
   
-D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\main\qc_applicationwindow.h(758,53): warning C4267: “+=”: 从“size_t”转换到“int”，可能丢失数据
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\main\qc_applicationwindow.h(760,53): warning C4267: “+=”: 从“size_t”转换到“int”，可能丢失数据
   (编译源文件“main/qc_applicationwindow.cpp”)
   
-D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\main\qc_applicationwindow.h(889,17): warning C4189: “width_E”: 局部变量已初始化但不引用
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\main\qc_applicationwindow.h(891,17): warning C4189: “width_E”: 局部变量已初始化但不引用
   (编译源文件“main/qc_applicationwindow.cpp”)
   
-D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\main\qc_applicationwindow.h(732,29): warning C4189: “graphicView”: 局部变量已初始化但不引用
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\main\qc_applicationwindow.h(734,29): warning C4189: “graphicView”: 局部变量已初始化但不引用
   (编译源文件“main/qc_applicationwindow.cpp”)
   
-D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\main\qc_applicationwindow.h(900,17): warning C4189: “ii”: 局部变量已初始化但不引用
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\main\qc_applicationwindow.h(902,17): warning C4189: “ii”: 局部变量已初始化但不引用
   (编译源文件“main/qc_applicationwindow.cpp”)
   
-D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\main\qc_applicationwindow.h(754,21): warning C4189: “entityCount”: 局部变量已初始化但不引用
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\main\qc_applicationwindow.h(756,21): warning C4189: “entityCount”: 局部变量已初始化但不引用
   (编译源文件“main/qc_applicationwindow.cpp”)
   
-D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\main\qc_applicationwindow.h(901,35): warning C4189: “v”: 局部变量已初始化但不引用
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\main\qc_applicationwindow.h(903,35): warning C4189: “v”: 局部变量已初始化但不引用
   (编译源文件“main/qc_applicationwindow.cpp”)
   
-D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\main\qc_applicationwindow.h(1034,33): warning C4838: 从“double”转换到“int”需要收缩转换
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\main\qc_applicationwindow.h(1036,33): warning C4838: 从“double”转换到“int”需要收缩转换
   (编译源文件“main/qc_applicationwindow.cpp”)
   
-D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\main\qc_applicationwindow.h(1034,46): warning C4838: 从“double”转换到“int”需要收缩转换
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\main\qc_applicationwindow.h(1036,46): warning C4838: 从“double”转换到“int”需要收缩转换
   (编译源文件“main/qc_applicationwindow.cpp”)
   
-D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\main\qc_applicationwindow.h(1034,65): warning C4838: 从“double”转换到“int”需要收缩转换
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\main\qc_applicationwindow.h(1036,65): warning C4838: 从“double”转换到“int”需要收缩转换
   (编译源文件“main/qc_applicationwindow.cpp”)
   
-D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\main\qc_applicationwindow.h(1035,33): warning C4838: 从“double”转换到“int”需要收缩转换
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\main\qc_applicationwindow.h(1037,33): warning C4838: 从“double”转换到“int”需要收缩转换
   (编译源文件“main/qc_applicationwindow.cpp”)
   
-D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\main\qc_applicationwindow.h(1035,46): warning C4838: 从“double”转换到“int”需要收缩转换
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\main\qc_applicationwindow.h(1037,46): warning C4838: 从“double”转换到“int”需要收缩转换
   (编译源文件“main/qc_applicationwindow.cpp”)
   
-D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\main\qc_applicationwindow.h(1035,65): warning C4838: 从“double”转换到“int”需要收缩转换
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\main\qc_applicationwindow.h(1037,65): warning C4838: 从“double”转换到“int”需要收缩转换
   (编译源文件“main/qc_applicationwindow.cpp”)
   
-D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\main\qc_applicationwindow.cpp(129,98): warning C4100: 'pUserParam': 未引用的参数
-D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\main\qc_applicationwindow.cpp(154,69): warning C4100: 'pUserParam': 未引用的参数
-D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\main\qc_applicationwindow.cpp(1469,22): warning C4189: “document”: 局部变量已初始化但不引用
-D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\main\qc_applicationwindow.cpp(1620,52): warning C4100: 'ce': 未引用的参数
-D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\main\qc_applicationwindow.cpp(3612,46): warning C4100: 'toggle': 未引用的参数
-D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\main\qc_applicationwindow.cpp(4888,34): warning C4101: “e”: 未引用的局部变量
-D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\main\qc_applicationwindow.cpp(4952,34): warning C4101: “e”: 未引用的局部变量
-D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\main\qc_applicationwindow.cpp(5003,38): warning C4101: “e”: 未引用的局部变量
-D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\main\qc_applicationwindow.cpp(5021,30): warning C4101: “e”: 未引用的局部变量
-D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\main\qc_applicationwindow.cpp(5104,30): warning C4101: “e”: 未引用的局部变量
-D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\main\qc_applicationwindow.cpp(5258,87): warning C4267: “参数”: 从“size_t”转换到“int”，可能丢失数据
-D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\main\qc_applicationwindow.cpp(5278,87): warning C4267: “参数”: 从“size_t”转换到“int”，可能丢失数据
-D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\main\qc_applicationwindow.cpp(5733,14): warning C4189: “result1”: 局部变量已初始化但不引用
-D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\main\qc_applicationwindow.cpp(6240,9): warning C4189: “result”: 局部变量已初始化但不引用
-D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\main\qc_applicationwindow.cpp(7104,122): warning C4267: “参数”: 从“size_t”转换到“int”，可能丢失数据
-D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\main\qc_applicationwindow.cpp(7132,118): warning C4267: “参数”: 从“size_t”转换到“int”，可能丢失数据
-D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\main\qc_applicationwindow.cpp(7197,17): warning C4267: “参数”: 从“size_t”转换到“int”，可能丢失数据
-D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\main\qc_applicationwindow.cpp(5031,1): warning C4715: “QC_ApplicationWindow::SetROISimple”: 不是所有的控件路径都返回值
-D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\main\qc_applicationwindow.cpp(4897,1): warning C4715: “QC_ApplicationWindow::OpenCamer”: 不是所有的控件路径都返回值
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\main\qc_applicationwindow.cpp(130,98): warning C4100: 'pUserParam': 未引用的参数
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\main\qc_applicationwindow.cpp(155,69): warning C4100: 'pUserParam': 未引用的参数
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\main\qc_applicationwindow.cpp(1261,22): warning C4189: “document”: 局部变量已初始化但不引用
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\main\qc_applicationwindow.cpp(1412,52): warning C4100: 'ce': 未引用的参数
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\main\qc_applicationwindow.cpp(3404,46): warning C4100: 'toggle': 未引用的参数
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\main\qc_applicationwindow.cpp(4680,34): warning C4101: “e”: 未引用的局部变量
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\main\qc_applicationwindow.cpp(4744,34): warning C4101: “e”: 未引用的局部变量
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\main\qc_applicationwindow.cpp(4795,38): warning C4101: “e”: 未引用的局部变量
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\main\qc_applicationwindow.cpp(4813,30): warning C4101: “e”: 未引用的局部变量
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\main\qc_applicationwindow.cpp(4896,30): warning C4101: “e”: 未引用的局部变量
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\main\qc_applicationwindow.cpp(5050,87): warning C4267: “参数”: 从“size_t”转换到“int”，可能丢失数据
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\main\qc_applicationwindow.cpp(5070,87): warning C4267: “参数”: 从“size_t”转换到“int”，可能丢失数据
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\main\qc_applicationwindow.cpp(5525,14): warning C4189: “result1”: 局部变量已初始化但不引用
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\main\qc_applicationwindow.cpp(6792,122): warning C4267: “参数”: 从“size_t”转换到“int”，可能丢失数据
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\main\qc_applicationwindow.cpp(6820,118): warning C4267: “参数”: 从“size_t”转换到“int”，可能丢失数据
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\main\qc_applicationwindow.cpp(6885,17): warning C4267: “参数”: 从“size_t”转换到“int”，可能丢失数据
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\main\qc_applicationwindow.cpp(4823,1): warning C4715: “QC_ApplicationWindow::SetROISimple”: 不是所有的控件路径都返回值
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\main\qc_applicationwindow.cpp(4689,1): warning C4715: “QC_ApplicationWindow::OpenCamer”: 不是所有的控件路径都返回值
   LibreCAD.vcxproj -> D:\DM\LibreCAD-2.4(YitiJi)\windows\LibreCAD.exe
   'pwsh.exe' 不是内部或外部命令，也不是可运行的程序
   或批处理文件。

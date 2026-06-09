@@ -2615,6 +2615,12 @@ border-radius: 0;
          </property>
          <item>
           <widget class="QToolButton" name="toolButton_26">
+           <property name="minimumSize">
+            <size>
+             <width>112</width>
+             <height>0</height>
+            </size>
+           </property>
            <property name="font">
             <font>
              <family>微软雅黑</family>
@@ -2835,6 +2841,12 @@ QToolButton:pressed {
          </item>
          <item>
           <widget class="QToolButton" name="toolButton_17">
+           <property name="minimumSize">
+            <size>
+             <width>112</width>
+             <height>0</height>
+            </size>
+           </property>
            <property name="font">
             <font>
              <family>微软雅黑</family>

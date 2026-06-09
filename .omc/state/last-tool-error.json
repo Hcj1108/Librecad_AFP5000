@@ -1,7 +1,7 @@
 {
   "tool_name": "Bash",
-  "tool_input_preview": "{\"command\":\"python -c \\\"\\n# 读Logger.cpp的GBK编码内容\\nwith open('D:/DM/LibreCAD-2.4(YitiJi)/librecad/src/OCRdemo/Logger.cpp', 'rb') as f:\\n    content = f.read()\\n\\n# 找到 write(const QString& text) 函数体\\nmar...",
-  "error": "Exit code 1\nERROR: function not found",
-  "timestamp": "2026-06-08T07:09:03.321Z",
+  "tool_input_preview": "{\"command\":\"/c/Users/main/AppData/Local/Programs/Python/Python310/python \\\"D:/DM/LibreCAD-2.4(YitiJi)/temp/fix_caculate.py\\\" \\\"D:/DM/LibreCAD-2.4(YitiJi)/librecad/src/main/qc_applicationwindow.cpp\\\"\",...",
+  "error": "Exit code 1\nCaculateTime(year, month, day, save_time, Savemonth, Saveyear);\r\n        ui->lineEdit_3->setText(Save_Time);\r\n    }\r\n}\r\n\r\nQString QC_ApplicationWindow::CaculateTime(int year, int month, int day, int save_days, int save_months, int save_years)\r\n{\r\n   \r\n\r\n    QDate originalDate(year, month, day);\r\n  \r\n    // 1. ��Ӧ����ƫ��\r\n    QDate targetDate = originalDate.addYears(save_years);\r\n  \r\n   // . �ȼ����·�ƫ��\r\n\r\n    targetDate = targetDate.addMonths(save_months);\r\n \r\n  // 2. �ж�ԭ�����Ƿ�Ϊ��ĩ...",
+  "timestamp": "2026-06-09T00:59:48.814Z",
   "retry_count": 1
 }

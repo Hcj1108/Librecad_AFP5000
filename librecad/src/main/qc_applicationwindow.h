@@ -414,6 +414,8 @@ public:
     void SetSchemeContent(QString schemename);  // 设置方案内容
     //void LockScreen();                     // 锁屏
     void UnlockScreen();                   // 解锁
+    void showLoginDialog();                  // 弹出登录/注销对话框
+    void toggleSchemeButton(QWidget* activeBtn, QWidget* inactiveBtn, bool& flag, bool value);
     void manageUserPermissions();          // 管理用户权限
     void initializeUserPermissions();      // 初始化用户权限
 
@@ -859,13 +861,13 @@ public:
                 myArray = nomArray.getNomArray();
             }
             catch (const std::exception& e) {
-                QMessageBox::critical(this, tr("Error"),
-                    tr("Failed to load nom array: %1").arg(e.what()));
+                QMessageBox::critical(this, QString::fromLocal8Bit("错误"),
+                    QString::fromLocal8Bit("获取数据时抛出异常: % 1").arg(e.what()));
                 return 0;
             }
 
             if (myArray.isEmpty()) {
-                QMessageBox::warning(this, tr("Warning"), tr("Nom array is empty!"));
+                QMessageBox::warning(this, QString::fromLocal8Bit("警告"), QString::fromLocal8Bit("没有任何数据"));
                 return 0;
             }
 

@@ -1297,6 +1297,7 @@ public:
         horizontalLayout->setContentsMargins(0, 0, 0, 0);
         toolButton_26 = new QToolButton(layoutWidget);
         toolButton_26->setObjectName(QString::fromUtf8("toolButton_26"));
+        toolButton_26->setMinimumSize(QSize(112, 0));
         toolButton_26->setFont(font8);
         toolButton_26->setStyleSheet(QString::fromUtf8(" QToolButton {\n"
 "        opacity: 1;\n"
@@ -1407,6 +1408,7 @@ public:
 
         toolButton_17 = new QToolButton(layoutWidget);
         toolButton_17->setObjectName(QString::fromUtf8("toolButton_17"));
+        toolButton_17->setMinimumSize(QSize(112, 0));
         QFont font11;
         font11.setFamily(QString::fromUtf8("\345\276\256\350\275\257\351\233\205\351\273\221"));
         font11.setPointSize(11);

@@ -30,6 +30,7 @@
 // Changes: https://github.com/LibreCAD/LibreCAD/commits/master/librecad/src/main/qc_applicationwindow.cpp
 
 #include "qc_applicationwindow.h"
+#include "LoginDialog.h"
 
 #include <QStatusBar>
 #include <QMenuBar>
@@ -399,237 +400,26 @@ QC_ApplicationWindow::QC_ApplicationWindow()
         }
         serialmanager.show();
         } );
-    connect(ui->toolButton_17, &QPushButton::clicked, this, [=] {
-
-
-        TraverseUsernum = TraverseUser();//用户数量更新
-        // 创建登录对话框
-        QDialog* loginDialog = new QDialog(this);
-        loginDialog->setWindowTitle(QString::fromLocal8Bit("用户登录"));
-        loginDialog->setFixedSize(350, 200);
-        loginDialog->setModal(true);
-
-        // 主布局
-        QVBoxLayout* mainLayout = new QVBoxLayout(loginDialog);
-
-        // 标题
-        QLabel* titleLabel = new QLabel(QString::fromLocal8Bit("用户登录"), loginDialog);
-        titleLabel->setAlignment(Qt::AlignCenter);
-        titleLabel->setStyleSheet("font-size: 20px; font-weight: bold; margin: 15px;");
-        mainLayout->addWidget(titleLabel);
-
-        // 表单布局
-        QFormLayout* formLayout = new QFormLayout();
-
-        // 用户名（ComboBox格式）
-        QComboBox* usernameCombo = new QComboBox(loginDialog);
-        usernameCombo->setEditable(false); // 允许编辑
-        usernameCombo->clear();
-        usernameCombo->setMinimumHeight(35);  // 增加高度
-        usernameCombo->setMinimumWidth(170);  // 增加宽度
-        usernameCombo->setStyleSheet(
-            "QComboBox {"
-            "    padding: 2px 12px;"           // 内边距
-            "    font-size: 22px;"             // 字体大小
-            "    border: 1px solid #ccc;"      // 边框
-            "    border-radius: 4px;"          // 圆角
-          
-            "}"
-            "QComboBox::drop-down {"
-            "    width: 35px;"                 // 下拉按钮宽度
-            "}"
-        );
-        for (int i = 0; i < TraverseUser(); i++)
-        {
-            usernameCombo->addItem(QString::fromLocal8Bit(Name[i].c_str()));
-        }
-
-        usernameCombo->setCurrentText(""); // 清空默认值
-        usernameCombo->setPlaceholderText(QString::fromLocal8Bit("选择或输入用户名"));
-
-        // 密码
-        QLineEdit* passwordEdit = new QLineEdit(loginDialog);
-        passwordEdit->setPlaceholderText(QString::fromLocal8Bit("请输入密码"));
-        passwordEdit->setEchoMode(QLineEdit::Password);
-        // 设置密码框尺寸和样式
-        passwordEdit->setMinimumHeight(35);    // 增加高度
-        passwordEdit->setMinimumWidth(170);    // 增加宽度
-        passwordEdit->setStyleSheet(
-            "QLineEdit {"
-            "    padding: 2px 12px;"           // 内边距
-            "    font-size: 22px;"             // 字体大小
-            "    border: 1px solid #ccc;"      // 边框
-            "    border-radius: 4px;"          // 圆角
-            "}"
-        );
-        formLayout->addRow(QString::fromLocal8Bit("用户名:"), usernameCombo);
-        formLayout->addRow(QString::fromLocal8Bit("密　码:"), passwordEdit);
-        mainLayout->addLayout(formLayout);
-
-        // 按钮布局
-        QHBoxLayout* buttonLayout = new QHBoxLayout();
-
-        // 根据登录状态显示不同按钮
-        QPushButton* loginBtn;
-        QPushButton* logoutBtn;
-        QPushButton* cancelBtn = new QPushButton(QString::fromLocal8Bit("退出"), loginDialog);
-
-        if (m_isLoggedIn) {
-            // 已登录状态：显示注销和退出
-            logoutBtn = new QPushButton(QString::fromLocal8Bit("注销"), loginDialog);
-            logoutBtn->setStyleSheet("background-color: #f44336; color: white;");
-
-            buttonLayout->addWidget(logoutBtn);
-            buttonLayout->addWidget(cancelBtn);
-        }
-        else {
-            // 未登录状态：显示登录和退出
-            loginBtn = new QPushButton(QString::fromLocal8Bit("登录"), loginDialog);
-            loginBtn->setStyleSheet("background-color: #4CAF50; color: white;");
-
-            buttonLayout->addWidget(loginBtn);
-            buttonLayout->addWidget(cancelBtn);
-        }
-
-        mainLayout->addLayout(buttonLayout);
-
-        // 连接信号
-        if (m_isLoggedIn) {
-            // 注销按钮点击
-            connect(logoutBtn, &QPushButton::clicked, loginDialog, [=] {
-                m_isLoggedIn = false;
-
-                loginDialog->accept();
-                USERname = "未登录";
-                PenMa = 0;
-                LiuShuixian = 0;
-                Chufa = 0;
-                FangZhen = 0;
-                PeiFang = 0;
-                xiangJi = 0;
-                CDL = 0;
-                YongHu = 0;
-                BianJi = 0;
-                ui->toolButton_17->setText(QString::fromLocal8Bit("未登录"));
-                manageUserPermissions();
-                QMessageBox::information(this, QString::fromLocal8Bit("注销成功"), QString::fromLocal8Bit("您已成功注销"));
-                Logger::write("未登录");
-                });
-        }
-        else {
-            // 登录按钮点击
-            connect(loginBtn, &QPushButton::clicked, loginDialog, [=] {
-                string username = usernameCombo->currentText().toLocal8Bit();
-                password = passwordEdit->text().toStdString();
-                SelectUser(username);
-                qDebug() << "输入的密码:" << QString::fromStdString(password);
-                qDebug() << "数据库密码:" << QString::fromStdString(userinfo.password);
-                if (username == "") {
-                    QMessageBox::warning(loginDialog, QString::fromLocal8Bit("输入错误"), QString::fromLocal8Bit("请输入用户名"));
-                    return;
-                }
-
-                if (password == "") {
-                    QMessageBox::warning(loginDialog, QString::fromLocal8Bit("输入错误"), QString::fromLocal8Bit("请输入密码"));
-                    return;
-                }
-                else
-                {
-                    if (password == userinfo.password)
-                    {
-                        Userindex = usernameCombo->currentIndex();
-                        m_isLoggedIn = true;
-                        loginDialog->hide();
-                        USERname = userinfo.USERname;
-                        PenMa = userinfo.PenMa;
-                        LiuShuixian = userinfo.LiuShuixian;
-                        Chufa = userinfo.Chufa;
-                        FangZhen = userinfo.FangZhen;
-                        PeiFang = userinfo.PeiFang;
-                        xiangJi = userinfo.xiangJi;
-                        CDL = userinfo.CDL;
-                        YongHu = userinfo.YongHu;
-                        BianJi = userinfo.BianJi;
-                        User.setUser(Userindex, userinfo.PenMa, userinfo.LiuShuixian, userinfo.Chufa, userinfo.FangZhen, userinfo.PeiFang, userinfo.xiangJi, userinfo.CDL, userinfo.YongHu, userinfo.BianJi, TraverseUsernum, Name);
-                        manageUserPermissions();
-                        ui->toolButton_17->setText(QString::fromLocal8Bit(USERname.c_str()));
-                        Logger::write(USERname.c_str() );
-                        return;
-                    }
-                    else
-                    {
-                        QMessageBox::warning(loginDialog, QString::fromLocal8Bit("输入错误"), QString::fromLocal8Bit("密码错误"));
-                        return;
-                    }
-                }
-
-
-                });
-        }
-
-        // 退出按钮
-        connect(cancelBtn, &QPushButton::clicked, loginDialog, &QDialog::reject);
-
-        // 回车键登录
-        if (!m_isLoggedIn) {
-            connect(passwordEdit, &QLineEdit::returnPressed, loginBtn, &QPushButton::click);
-        }
-
-        // 显示对话框
-        loginDialog->exec();
-
-        // 清理内存
-        loginDialog->deleteLater();
-        });
+    connect(ui->toolButton_17, &QPushButton::clicked, this, &QC_ApplicationWindow::showLoginDialog);
     connect(ui->toolButton_18, &QPushButton::clicked, this, [=] {
-        ui->toolButton_18->setStyleSheet("background-color:  #87CEEB;");
-        ui->toolButton_20->setStyleSheet("background-color:  #FFFFFF;");
-        SCenabled = true;
-        QString deletestr = ui->comboBox->currentText();
-        string delestr = std::string(deletestr.toLocal8Bit());
-        AlterSchemeContent(delestr);
-        });
+        toggleSchemeButton(ui->toolButton_18, ui->toolButton_20, SCenabled, true);
+    });
     connect(ui->toolButton_20, &QPushButton::clicked, this, [=] {
-        ui->toolButton_18->setStyleSheet("background-color:  #FFFFFF;");
-        ui->toolButton_20->setStyleSheet("background-color:  #87CEEB;");
-        SCenabled = false;
-        QString deletestr = ui->comboBox->currentText();
-        string delestr = std::string(deletestr.toLocal8Bit());
-        AlterSchemeContent(delestr);
-        });
+        toggleSchemeButton(ui->toolButton_20, ui->toolButton_18, SCenabled, false);
+    });
     connect(ui->toolButton_22, &QPushButton::clicked, this, [=] {
-        ui->toolButton_22->setStyleSheet("background-color:  #87CEEB;");
-        ui->toolButton_23->setStyleSheet("background-color:  #FFFFFF;");
-        BZenabled = true;
-        QString deletestr = ui->comboBox->currentText();
-        string delestr = std::string(deletestr.toLocal8Bit());
-        AlterSchemeContent(delestr);
-        });
+        toggleSchemeButton(ui->toolButton_22, ui->toolButton_23, BZenabled, true);
+    });
     connect(ui->toolButton_23, &QPushButton::clicked, this, [=] {
-        ui->toolButton_22->setStyleSheet("background-color:  #FFFFFF;");
-        ui->toolButton_23->setStyleSheet("background-color:  #87CEEB;");
-        BZenabled = false;
-        QString deletestr = ui->comboBox->currentText();
-        string delestr = std::string(deletestr.toLocal8Bit());
-        AlterSchemeContent(delestr);
-        });
+        toggleSchemeButton(ui->toolButton_23, ui->toolButton_22, BZenabled, false);
+    });
     connect(ui->toolButton_24, &QPushButton::clicked, this, [=] {
-        ui->toolButton_24->setStyleSheet("background-color:  #87CEEB;");
-        ui->toolButton_29->setStyleSheet("background-color:  #FFFFFF;");
-        EWenabled = true;
-        QString deletestr = ui->comboBox->currentText();
-        string delestr = std::string(deletestr.toLocal8Bit());
-        AlterSchemeContent(delestr);
-        });
+        toggleSchemeButton(ui->toolButton_24, ui->toolButton_29, EWenabled, true);
+    });
     connect(ui->toolButton_25, &QPushButton::clicked, this, &QC_ApplicationWindow::ShowXJadmain);
     connect(ui->toolButton_29, &QPushButton::clicked, this, [=] {
-        ui->toolButton_24->setStyleSheet("background-color:  #FFFFFF;");
-        ui->toolButton_29->setStyleSheet("background-color:  #87CEEB;");
-        EWenabled = false;
-        QString deletestr = ui->comboBox->currentText();
-        string delestr = std::string(deletestr.toLocal8Bit());
-        AlterSchemeContent(delestr);
-        });
+        toggleSchemeButton(ui->toolButton_29, ui->toolButton_24, EWenabled, false);
+    });
     connect(ui->toolButton_30, &QPushButton::clicked, this, &QC_ApplicationWindow::ShowUser);
  
    
@@ -652,7 +442,7 @@ QC_ApplicationWindow::QC_ApplicationWindow()
         if (IsOpenBKBK == true)
         {
             FileUtils::SendBKBK("02", "F0",1);//单次打码
-            Logger::writeComm("单次打码");
+            Logger::write("单次打码");
         }
         else
         {
@@ -660,13 +450,14 @@ QC_ApplicationWindow::QC_ApplicationWindow()
             msgBox->setFixedSize(400, 400);
             msgBox->button(QMessageBox::Ok)->setText(QString::fromLocal8Bit("确定 "));
             msgBox->show();
+            Logger::writeError("标刻未打开");
         }
         });
     connect(ui->toolButton_35, &QPushButton::clicked, this, [=] {
         if (isOpenCam)
         {
             FileUtils::SendBKBK("02", "F1", 1);//单次拍照
-            Logger::writeComm("单次拍照");
+            Logger::write("单次拍照");
         }
         else
         {
@@ -674,12 +465,13 @@ QC_ApplicationWindow::QC_ApplicationWindow()
             msgBox->setFixedSize(400, 400);
             msgBox->button(QMessageBox::Ok)->setText(QString::fromLocal8Bit("确定 "));
             msgBox->show();
+            Logger::writeError("相机未连接");
         }
         });
 
     connect(ui->toolButton_10, &QPushButton::clicked, this, [=] {
         FileUtils::SendBKBK("21", "F0", 1);//取消报警
-        Logger::writeError("取消报警");
+        Logger::write("取消报警");
         });
  
     
@@ -6034,7 +5826,6 @@ void QC_ApplicationWindow::RateClear()
     data[QString::fromLocal8Bit("Sum")] = Totalnum;
     
     chart->setData(data);
-   
 
     Logger::write(defaultstr);
 }
@@ -6097,126 +5888,42 @@ void QC_ApplicationWindow::SelectTime()
     }
 }
 
-QString QC_ApplicationWindow::CaculateTime(int year, int month, int day, int save_days, int save_months, int save_years)
+QString QC_ApplicationWindow::CaculateTime(int year, int month, int day,
+    int save_days, int save_months, int save_years)
 {
-   
+    QDate baseDate(year, month, day);
+    QDate expiryDate = baseDate
+        .addYears(save_years)
+        .addMonths(save_months);
 
-    QDate originalDate(year, month, day);
-  
-    // 1. 先应用年偏移
-    QDate targetDate = originalDate.addYears(save_years);
-  
-   // . 先计算月份偏移
-
-    targetDate = targetDate.addMonths(save_months);
- 
-  // 2. 判断原日期是否为月末
-
-    bool isOriginalEndOfMonth = (originalDate.day() == originalDate.daysInMonth());
-    // 3. 处理日期调整
-    if (isOriginalEndOfMonth) {
-        // 原日期是月末：目标日期也应该是月末，但需要处理2月等特殊情况
-        int targetDaysInMonth = targetDate.daysInMonth();
-        int originalDay = originalDate.day();
-
-        // 如果目标月的天数 >= 原日期的天数，使用原日期的天数
-        if (targetDaysInMonth >= originalDay) {
-            targetDate = QDate(targetDate.year(), targetDate.month(), originalDay);
-
-            // 特殊处理：如果设置日期后无效（如2月30日），则使用目标月最后一天
-            if (!targetDate.isValid()) {
-                targetDate = QDate(targetDate.year(), targetDate.month(), targetDaysInMonth);
-            }
-        }
-        else {
-            // 如果目标月的天数 < 原日期的天数，使用目标月的最后一天
-            targetDate = QDate(targetDate.year(), targetDate.month(), targetDaysInMonth);
-        }
-
-        // 额外规则：如果原日期是30日或31日，且目标月是2月，需要使用2月的最后一天（考虑闰年）
-        if ((originalDay == 30 || originalDay == 31) && targetDate.month() == 2) {
-            targetDate = QDate(targetDate.year(), 2, targetDate.daysInMonth());
-        }
-        if (targetDate.day() == originalDate.day())
-        {
-            targetDate = targetDate.addDays(-1);
-        }
+    // 保质期 = 生产日期 + 年月偏移 - 1天
+    if (expiryDate.day() == baseDate.day()) {
+        expiryDate = expiryDate.addDays(-1);
     }
 
-    else {
-
-        // 额外规则
-        if (targetDate.month() == 2 && day > targetDate.daysInMonth()) {
-            // 检查减1天后是否有效（处理2月29日→2月28日等情况）
-            if (!targetDate.isValid()) {
-                // 回退到2月最后一天
-                int lastDayOfFeb = QDate(targetDate.year(), 2, 1).daysInMonth();
-                targetDate = QDate(targetDate.year(), 2, lastDayOfFeb);
-            }
-        }
-        else {
-            // 非月末：减1天（行业标准做法）
-            targetDate = targetDate.addDays(-1);
-        }
-
-
-    }
-
-    // 5. 应用日偏移
-    targetDate = targetDate.addDays(save_days);
-    // 4. 格式化结果
-    return targetDate.toString("yyyyMMdd");
-
+    expiryDate = expiryDate.addDays(save_days);
+    return expiryDate.toString("yyyyMMdd");
 }
 void QC_ApplicationWindow::UpdataTime()
 {
-    QString year_str, month_str, day_str;
-    if (year < 10)
-    {
-        year_str = "0" + QString::number(year);
-    }
-    else {
-        year_str = QString::number(year);
-    }
-    if (month < 10)
-    {
-        month_str = "0" + QString::number(month);
-    }
-    else {
-        month_str = QString::number(month);
-    }
-    if (day < 10)
-    {
-        day_str = "0" + QString::number(day);
-    }
-    else {
-        day_str = QString::number(day);
-    }
-
-    Start_Data_Time = year_str + month_str + day_str;
+    auto pad = [](int v) { return QString("%1").arg(v, 2, 10, QChar('0')); };
+    Start_Data_Time = pad(year) + pad(month) + pad(day);
     ui->lineEdit->setText(Start_Data_Time);
+
     if (SCenabled != 0) {
-        if (FH != "*") {
-            ui->lineEdit_2->setText(FH + Start_Data_Time);
-        }
-        else {
-            ui->lineEdit_2->setText(Start_Data_Time);
-        }
-    }
-    else {
+        ui->lineEdit_2->setText(FH != "*" ? FH + Start_Data_Time : Start_Data_Time);
+    } else {
         ui->lineEdit_2->setText(QString::fromLocal8Bit("生产日期未启用"));
     }
+
     save_time = ui->spinBox->value();
     Save_Time = CaculateTime(year, month, day, save_time, Savemonth, Saveyear);
     ui->lineEdit_3->setText(Save_Time);
-    if (BZenabled != 0) {
-        ui->lineEdit_10->setText(Save_Time);
-    }
-    else {
-        ui->lineEdit_10->setText(QString::fromLocal8Bit("保质日期未启用"));
-    }
-    
+    ui->lineEdit_10->setText(BZenabled != 0
+        ? Save_Time
+        : QString::fromLocal8Bit("保质日期未启用"));
 }
+
 
 void QC_ApplicationWindow::CamErrorAct()
 {
@@ -6237,7 +5944,7 @@ void QC_ApplicationWindow::CamErrorAct()
 void QC_ApplicationWindow::SetSchemeContent(QString schemename)
 {
     string schemeName = std::string(schemename.toLocal8Bit());
-    int result = SelectSchemeContent(schemeName);
+    SelectSchemeContent(schemeName);
 
     CustomStr = schemecontent.CustomStr;
     CustomStr_2 = schemecontent.CustomStr_2;
@@ -6252,59 +5959,36 @@ void QC_ApplicationWindow::SetSchemeContent(QString schemename)
     Savemonth = schemecontent.Savemonth;
     Saveyear = schemecontent.Saveyear;
 
-    ui->lineEdit_4->setText(QString::fromLocal8Bit(CustomStr.c_str()));
-    ui->lineEdit_7->setText(QString::fromLocal8Bit(CustomStr_2.c_str()));
-    ui->lineEdit_6->setText(QString::fromLocal8Bit(CustomStr_3.c_str()));
-    ui->lineEdit_8->setText(QString::fromLocal8Bit(CustomStr_4.c_str()));
-    ui->lineEdit_5->setText(QString::fromLocal8Bit(CustomStr_5.c_str()));
+    auto setText = [&](QLineEdit* edit, const std::string& str) {
+        edit->setText(QString::fromLocal8Bit(str.c_str()));
+    };
+    setText(ui->lineEdit_4, CustomStr);
+    setText(ui->lineEdit_7, CustomStr_2);
+    setText(ui->lineEdit_6, CustomStr_3);
+    setText(ui->lineEdit_8, CustomStr_4);
+    setText(ui->lineEdit_5, CustomStr_5);
+    setText(ui->lineEdit_13, CustomStr);
+    setText(ui->lineEdit_17, CustomStr_2);
+    setText(ui->lineEdit_14, CustomStr_3);
+    setText(ui->lineEdit_18, CustomStr_4);
+    setText(ui->lineEdit_16, CustomStr_5);
 
-    ui->lineEdit_13->setText(QString::fromLocal8Bit(CustomStr.c_str()));
-    ui->lineEdit_17->setText(QString::fromLocal8Bit(CustomStr_2.c_str()));
-    ui->lineEdit_14->setText(QString::fromLocal8Bit(CustomStr_3.c_str()));
-    ui->lineEdit_18->setText(QString::fromLocal8Bit(CustomStr_4.c_str()));
-    ui->lineEdit_16->setText(QString::fromLocal8Bit(CustomStr_5.c_str()));
+    setText(ui->lineEdit_9, CustomStr_6);
+    ui->lineEdit_12->setText(EWenabled != 0
+        ? QString::fromLocal8Bit(CustomStr_6.c_str())
+        : QString::fromLocal8Bit("额外代码未启用"));
 
-    ui->lineEdit_9->setText(QString::fromLocal8Bit(CustomStr_6.c_str()));
-    if (EWenabled != 0) {
-        ui->lineEdit_12->setText(CustomStr_6.c_str());
-    }
-    else {
-        ui->lineEdit_12->setText(QString::fromLocal8Bit("额外代码未启用"));
-    }
     ui->spinBox->setValue(save_time);
     ui->spinBox_2->setValue(Savemonth);
     ui->spinBox_3->setValue(Saveyear);
 
-    if (SCenabled)
-    {
-        ui->toolButton_18->setStyleSheet("background-color:  #87CEEB;");
-        ui->toolButton_20->setStyleSheet("background-color:  #FFFFFF;");
-    }
-    else
-    {
-        ui->toolButton_18->setStyleSheet("background-color:  #FFFFFF;");
-        ui->toolButton_20->setStyleSheet("background-color:  #87CEEB;");
-    }
-    if (BZenabled)
-    {
-        ui->toolButton_22->setStyleSheet("background-color:  #87CEEB;");
-        ui->toolButton_23->setStyleSheet("background-color:  #FFFFFF;");
-    }
-    else
-    {
-        ui->toolButton_22->setStyleSheet("background-color:  #FFFFFF;");
-        ui->toolButton_23->setStyleSheet("background-color:  #87CEEB;");
-    }
-    if (EWenabled)
-    {
-        ui->toolButton_24->setStyleSheet("background-color:  #87CEEB;");
-        ui->toolButton_29->setStyleSheet("background-color:  #FFFFFF;");
-    }
-    else
-    {
-        ui->toolButton_24->setStyleSheet("background-color:  #FFFFFF;");
-        ui->toolButton_29->setStyleSheet("background-color:  #87CEEB;");
-    }
+    auto setToggle = [&](QWidget* onBtn, QWidget* offBtn, bool enabled) {
+        onBtn->setStyleSheet(enabled ? "background-color:  #87CEEB;" : "background-color:  #FFFFFF;");
+        offBtn->setStyleSheet(enabled ? "background-color:  #FFFFFF;" : "background-color:  #87CEEB;");
+    };
+    setToggle(ui->toolButton_18, ui->toolButton_20, SCenabled);
+    setToggle(ui->toolButton_22, ui->toolButton_23, BZenabled);
+    setToggle(ui->toolButton_24, ui->toolButton_29, EWenabled);
 }
 ////打开相机锁定界面
 //void QC_ApplicationWindow::LockScreen()
@@ -6498,53 +6182,57 @@ void QC_ApplicationWindow::GatXJadmin()   //将激光配置写入激光设置界面
 }
 
 
+//标记开关按钮单选待理
+void QC_ApplicationWindow::toggleSchemeButton(QWidget* activeBtn, QWidget* inactiveBtn, bool& flag, bool value)
+{
+    activeBtn->setStyleSheet("background-color:  #87CEEB;");
+    inactiveBtn->setStyleSheet("background-color:  #FFFFFF;");
+    flag = value;
+    QString text = ui->comboBox->currentText();
+    string str = std::string(text.toLocal8Bit());
+    AlterSchemeContent(str);
+}
+
+//弹出登录/注销对话框
+void QC_ApplicationWindow::showLoginDialog()
+{
+    LoginDialog* dlg = new LoginDialog(this);
+    if (dlg->exec() == QDialog::Accepted) {
+        LoginResult result = dlg->getResult();
+        if (result.isLoggedIn) {
+            // 登录成功
+            Userindex = result.userIndex;
+            User.setUser(Userindex, result.PenMa, result.LiuShuixian, result.Chufa,
+                result.FangZhen, result.PeiFang, result.xiangJi, result.CDL,
+                result.YongHu, result.BianJi, TraverseUsernum, Name);
+            manageUserPermissions();
+            ui->toolButton_17->setText(QString::fromLocal8Bit(result.userName.c_str()));
+            Logger::write(result.userName.c_str());
+        } else {
+            // 注销
+            User.setUser(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, TraverseUsernum, Name);
+            manageUserPermissions();
+            ui->toolButton_17->setText(QString::fromLocal8Bit("未登录"));
+            QMessageBox::information(this,
+                QString::fromLocal8Bit("注销成功"),
+                QString::fromLocal8Bit("您已成功注销"));
+            Logger::write("未登录");
+        }
+    }
+    dlg->deleteLater();
+}
+
 //管理用户权限
 void QC_ApplicationWindow::manageUserPermissions() {
 
     jgadmin.setupLaserPermissions(PenMa, LiuShuixian, Chufa);
-    if (PenMa == 0 && LiuShuixian == 0 && Chufa == 0) {
-        ui->toolButton_33->setEnabled(false);
-    }
-    else {
-        ui->toolButton_33->setEnabled(true);
-    }
-
-    if (FangZhen == 1) {
-        ui->toolButton_2->setEnabled(true);
-    }
-    else {
-        ui->toolButton_2->setEnabled(false);
-    }
-    if (PeiFang == 1) {
-        ui->toolButton_7->setEnabled(true);
-    }
-    else {
-        ui->toolButton_7->setEnabled(true);
-    }
-    if (xiangJi == 1) {
-        ui->toolButton_25->setEnabled(true);
-    }
-    else {
-        ui->toolButton_25->setEnabled(false);
-    }
-    if (CDL == 1) {
-        menuBar()->show();
-    }
-    else {
-        menuBar()->hide();
-    }
-    if (YongHu == 1) {
-        ui->toolButton_30->setEnabled(true);
-    }
-    else {
-        ui->toolButton_30->setEnabled(false);
-    }
-    if (BianJi == 1) {
-        ui->toolButton_16->setEnabled(true);
-    }
-    else {
-        ui->toolButton_16->setEnabled(false);
-    }
+    ui->toolButton_33->setEnabled(!(PenMa == 0 && LiuShuixian == 0 && Chufa == 0));
+    ui->toolButton_2->setEnabled(FangZhen == 1);
+    ui->toolButton_7->setEnabled(true); // PeiFang: 原代码两分支均为 true
+    ui->toolButton_25->setEnabled(xiangJi == 1);
+    CDL == 1 ? menuBar()->show() : menuBar()->hide();
+    ui->toolButton_30->setEnabled(YongHu == 1);
+    ui->toolButton_16->setEnabled(BianJi == 1);
 
 }
 void QC_ApplicationWindow::initializeUserPermissions() {
