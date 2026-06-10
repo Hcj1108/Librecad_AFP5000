@@ -56,7 +56,7 @@ public:
         label->setObjectName(QString::fromUtf8("label"));
         label->setGeometry(QRect(210, 10, 281, 54));
         QFont font;
-        font.setFamily(QString::fromUtf8("\345\276\256\350\275\257\351\233\205\351\273\221"));
+        font.setFamily(QString::fromUtf8("Microsoft YaHei"));
         font.setPointSize(20);
         font.setBold(true);
         label->setFont(font);
@@ -71,7 +71,7 @@ public:
         toolButton_21->setObjectName(QString::fromUtf8("toolButton_21"));
         toolButton_21->setGeometry(QRect(640, 10, 41, 41));
         QFont font1;
-        font1.setFamily(QString::fromUtf8("\345\276\256\350\275\257\351\233\205\351\273\221"));
+        font1.setFamily(QString::fromUtf8("Microsoft YaHei"));
         font1.setPointSize(14);
         font1.setBold(true);
         toolButton_21->setFont(font1);
@@ -101,7 +101,7 @@ public:
         checkBox->setObjectName(QString::fromUtf8("checkBox"));
         checkBox->setGeometry(QRect(20, 30, 131, 31));
         QFont font2;
-        font2.setFamily(QString::fromUtf8("\345\276\256\350\275\257\351\233\205\351\273\221"));
+        font2.setFamily(QString::fromUtf8("Microsoft YaHei"));
         font2.setPointSize(12);
         font2.setBold(true);
         checkBox->setFont(font2);
@@ -123,7 +123,7 @@ public:
         toolButton_14->setObjectName(QString::fromUtf8("toolButton_14"));
         toolButton_14->setGeometry(QRect(190, 30, 101, 31));
         QFont font3;
-        font3.setFamily(QString::fromUtf8("\345\276\256\350\275\257\351\233\205\351\273\221"));
+        font3.setFamily(QString::fromUtf8("Microsoft YaHei"));
         font3.setPointSize(10);
         font3.setBold(true);
         toolButton_14->setFont(font3);

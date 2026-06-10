@@ -1,77 +1,80 @@
-#pragma once
+ï»¿#pragma once
 
 #include <QMainWindow>
 #include "ui_user.h"
-#include <QLineEdit>  // ±ØĞë°üº¬µÄÍ·ÎÄ¼ş
-#include<QDebug>
-#include<QTimer>
-#include <QToolTip>  // ±ØĞë°üº¬µÄÍ·ÎÄ¼ş
-#include <QUdpSocket>
-#include <qendian.h>
-#include<QPushButton>
-#include "Config.h"
 #include "udptimesender.h"
 #include "SenderBinUdp.h"
+
+/**
+ * @brief ç”¨æˆ·ç®¡ç†ç•Œé¢
+ *
+ * è´Ÿè´£ç”¨æˆ·æƒé™ç®¡ç†ã€æ·»åŠ /åˆ é™¤ç”¨æˆ·ã€ä¿®æ”¹å¯†ç ã€å›ºä»¶å‡çº§ç­‰åŠŸèƒ½ã€‚
+ * åŒ…å«ä¸¤ä¸ªé¡µé¢ï¼šç”¨æˆ·è®¾ç½®ï¼ˆpageï¼‰å’Œå¢åŠ ç”¨æˆ·ï¼ˆpage_2ï¼‰ï¼Œé€šè¿‡ QStackedWidget åˆ‡æ¢ã€‚
+ */
 class user : public QMainWindow
 {
-	Q_OBJECT
+    Q_OBJECT
 
 public:
+    explicit user(QWidget* parent = nullptr);
+    ~user() override;
 
+    /// è®¾ç½®å½“å‰é€‰ä¸­ç”¨æˆ·çš„æƒé™æ˜¾ç¤ºåŠç”¨æˆ·åˆ—è¡¨
+    void setUser(int userindex, int PenMa, int LiuShuixian, int Chufa,
+        int FangZhen, int PeiFang, int xiangJi, int OCR, int YongHu, int BianJi,
+        int TraverseUsernum, std::vector<std::string> Name);
 
-	user(QWidget* parent = nullptr);
-	~user();
-	void SetQSS();
-	bool eventFilter(QObject* obj, QEvent* evt);//ÓÃÓÚÍÏ¶¯ÉèÖÃÒ³Ãæ
-	QString openBinFilePath;
-	//SimpleUdpSender* simpsender = SimpleUdpSender::instance(); // »ñÈ¡SimpleUdpSenderµÄÊµÀı
-	UdpTimeSender timeSender;        //¿´ÃÅ¹·¹¦ÄÜ,³ÖĞø·¢ËÍÊ±¼ä´Á
-	SenderBinUdp senderBinUdp;
-	
-	void openBinFile();
-	void setUser(int userindex, int PenMa, int LiuShuixian, int Chufa, int FangZhen, int PeiFang, int xiangJi, int OCR, int YongHu, int BianJi,int TraverseUser, std::vector<std::string> Name);
-	void setSwitchUser(int PenMa, int LiuShuixian, int Chufa, int FangZhen, int PeiFang, int xiangJi, int OCR, int YongHu, int BianJi);
-	int getPenMa();
-	int getLiuShuixian();
-	int getChufa();
-	int getFangZhen();
-	int getPeiFang();
-	int getXiangJi();
-	int getOCR();
-	int getYongHu();
-	int getZhuangTai();
-	std::string getTraverseUsername();
-	std::string getpassword();
-	int getPenMa1();
-	int getLiuShuixian1();
-	int getChufa1();
-	int getFangZhen1();
-	int getPeiFang1();
-	int getXiangJi1();
-	int getOCR1();
-	int getYongHu1();
-	int getZhuangTai1();
+    /// åˆ‡æ¢ç”¨æˆ·æ—¶æ›´æ–°æƒé™å‹¾é€‰çŠ¶æ€
+    void setSwitchUser(int PenMa, int LiuShuixian, int Chufa, int FangZhen,
+        int PeiFang, int xiangJi, int OCR, int YongHu, int BianJi);
 
-	void eraseCompleteSignal();
-	void writeCompleteSignal();
-	//void readCompleteSignal();
-	
-	std::string getTraverseUsername1();
-	std::string getpassword1();
+    // === å½“å‰é€‰ä¸­ç”¨æˆ·çš„æƒé™è¯»å–ï¼ˆpage é¡µï¼‰ ===
+    int getPenMa();
+    int getLiuShuixian();
+    int getChufa();
+    int getFangZhen();
+    int getPeiFang();
+    int getXiangJi();
+    int getOCR();
+    int getYongHu();
+    int getZhuangTai();
+    std::string getTraverseUsername();
+    std::string getpassword();
+
+    // === æ–°å¢ç”¨æˆ·çš„æƒé™è¯»å–ï¼ˆpage_2 é¡µï¼‰ ===
+    int getPenMa1();
+    int getLiuShuixian1();
+    int getChufa1();
+    int getFangZhen1();
+    int getPeiFang1();
+    int getXiangJi1();
+    int getOCR1();
+    int getYongHu1();
+    int getZhuangTai1();
+    std::string getTraverseUsername1();
+    std::string getpassword1();
+
+    QString openBinFilePath;
+    UdpTimeSender timeSender;
+    SenderBinUdp senderBinUdp;
+
+    void openBinFile();
+
+protected:
+    void closeEvent(QCloseEvent* event) override;
+
 private:
-	Ui::userClass ui;
+    Ui::userClass ui;
 
 signals:
-
-	void showmain();
-	void addUser();
-	void delUser();
-	void SwitchUser();
-	void alterpassword();
-	void stopSend();
-	void startSend();
-	void usereraseCompleteSignal();  // ²Á³ıÍê³ÉĞÅºÅ
-	void userwriteCompleteSignal(); // Ğ´ÈëÍê³ÉĞÅºÅ
-	void userreadCompleteSignal();  // ¶ÁÈ¡Íê³ÉĞÅºÅ
+    void showmain();
+    void addUser();
+    void delUser();
+    void SwitchUser();
+    void alterpassword();
+    void stopSend();
+    void startSend();
+    void usereraseCompleteSignal();
+    void userwriteCompleteSignal();
+    void userreadCompleteSignal();
 };
-

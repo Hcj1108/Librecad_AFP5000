@@ -139,7 +139,7 @@ public:
 
         toolButton_4 = new QToolButton(widget);
         toolButton_4->setObjectName(QString::fromUtf8("toolButton_4"));
-        toolButton_4->setMinimumSize(QSize(70, 34));
+        toolButton_4->setMinimumSize(QSize(100, 34));
         toolButton_4->setStyleSheet(QString::fromUtf8("QToolButton{font: bold 13px \"Microsoft YaHei\"; background: #3498db; color: white; border-radius: 6px; padding: 6px 14px;}\n"
 "QToolButton:hover{background: #2980b9;}"));
 
@@ -177,7 +177,7 @@ public:
 
         toolButton = new QToolButton(widget);
         toolButton->setObjectName(QString::fromUtf8("toolButton"));
-        toolButton->setMinimumSize(QSize(70, 34));
+        toolButton->setMinimumSize(QSize(100, 34));
         toolButton->setStyleSheet(QString::fromUtf8("QToolButton{font: bold 13px \"Microsoft YaHei\"; background: #3498db; color: white; border-radius: 6px; padding: 6px 14px;}\n"
 "QToolButton:hover{background: #2980b9;}"));
 
@@ -215,7 +215,7 @@ public:
 
         toolButton_2 = new QToolButton(widget);
         toolButton_2->setObjectName(QString::fromUtf8("toolButton_2"));
-        toolButton_2->setMinimumSize(QSize(70, 34));
+        toolButton_2->setMinimumSize(QSize(100, 34));
         toolButton_2->setStyleSheet(QString::fromUtf8("QToolButton{font: bold 13px \"Microsoft YaHei\"; background: #3498db; color: white; border-radius: 6px; padding: 6px 14px;}\n"
 "QToolButton:hover{background: #2980b9;}"));
 
@@ -253,7 +253,7 @@ public:
 
         toolButton_9 = new QToolButton(widget);
         toolButton_9->setObjectName(QString::fromUtf8("toolButton_9"));
-        toolButton_9->setMinimumSize(QSize(70, 34));
+        toolButton_9->setMinimumSize(QSize(100, 34));
         toolButton_9->setStyleSheet(QString::fromUtf8("QToolButton{font: bold 13px \"Microsoft YaHei\"; background: #3498db; color: white; border-radius: 6px; padding: 6px 14px;}\n"
 "QToolButton:hover{background: #2980b9;}"));
 
@@ -296,7 +296,7 @@ public:
 
         toolButton_3 = new QToolButton(widget);
         toolButton_3->setObjectName(QString::fromUtf8("toolButton_3"));
-        toolButton_3->setMinimumSize(QSize(70, 34));
+        toolButton_3->setMinimumSize(QSize(100, 34));
         toolButton_3->setStyleSheet(QString::fromUtf8("QToolButton{font: bold 13px \"Microsoft YaHei\"; background: #3498db; color: white; border-radius: 6px; padding: 6px 14px;}\n"
 "QToolButton:hover{background: #2980b9;}"));
 
@@ -326,7 +326,6 @@ public:
         comboBox->setStyleSheet(QString::fromUtf8("QComboBox{font: 14px \"Microsoft YaHei\"; padding: 4px 10px; border: 2px solid #bdc3c7; border-radius: 6px; background: white;}\n"
 "QComboBox:focus{border-color: #3498db;}\n"
 "QComboBox::drop-down{subcontrol-position: right; width: 28px;}\n"
-"\n"
 ""));
 
         hl_machine->addWidget(comboBox);
@@ -376,7 +375,7 @@ public:
 
         toolButton_7 = new QToolButton(page);
         toolButton_7->setObjectName(QString::fromUtf8("toolButton_7"));
-        toolButton_7->setMinimumSize(QSize(70, 32));
+        toolButton_7->setMinimumSize(QSize(100, 32));
         toolButton_7->setStyleSheet(QString::fromUtf8("QToolButton{font: bold 13px \"Microsoft YaHei\"; background: #3498db; color: white; border-radius: 6px; padding: 6px 14px;}\n"
 "QToolButton:hover{background: #2980b9;}"));
 
@@ -414,7 +413,7 @@ public:
 
         toolButton_8 = new QToolButton(page);
         toolButton_8->setObjectName(QString::fromUtf8("toolButton_8"));
-        toolButton_8->setMinimumSize(QSize(70, 32));
+        toolButton_8->setMinimumSize(QSize(100, 32));
         toolButton_8->setStyleSheet(QString::fromUtf8("QToolButton{font: bold 13px \"Microsoft YaHei\"; background: #3498db; color: white; border-radius: 6px; padding: 6px 14px;}\n"
 "QToolButton:hover{background: #2980b9;}"));
 

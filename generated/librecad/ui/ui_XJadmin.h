@@ -13,7 +13,6 @@
 #include <QtGui/QIcon>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QComboBox>
-#include <QtWidgets/QFrame>
 #include <QtWidgets/QGroupBox>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QMainWindow>
@@ -67,17 +66,15 @@ public:
     QSpinBox *spinBox_23;
     QLabel *label_49;
     QSpinBox *spinBox_24;
-    QLabel *label;
-    QToolButton *MIN;
-    QToolButton *BACK;
-    QFrame *line_2;
-    QFrame *line_3;
 
     void setupUi(QMainWindow *XJadminClass)
     {
         if (XJadminClass->objectName().isEmpty())
             XJadminClass->setObjectName(QString::fromUtf8("XJadminClass"));
-        XJadminClass->resize(821, 420);
+        XJadminClass->resize(821, 341);
+        QIcon icon;
+        icon.addFile(QString::fromUtf8(":/PIC/Resources/PICs/\344\273\273\345\212\241.png"), QSize(), QIcon::Normal, QIcon::Off);
+        XJadminClass->setWindowIcon(icon);
         XJadminClass->setStyleSheet(QString::fromUtf8("background-color:rgb(220, 235, 240);\n"
 "\n"
 ""));
@@ -85,9 +82,9 @@ public:
         centralWidget->setObjectName(QString::fromUtf8("centralWidget"));
         groupBox = new QGroupBox(centralWidget);
         groupBox->setObjectName(QString::fromUtf8("groupBox"));
-        groupBox->setGeometry(QRect(10, 90, 241, 311));
+        groupBox->setGeometry(QRect(10, 20, 241, 311));
         QFont font;
-        font.setFamily(QString::fromUtf8("\345\276\256\350\275\257\351\233\205\351\273\221"));
+        font.setFamily(QString::fromUtf8("Microsoft YaHei"));
         font.setPointSize(14);
         font.setBold(true);
         groupBox->setFont(font);
@@ -95,7 +92,7 @@ public:
         label_4->setObjectName(QString::fromUtf8("label_4"));
         label_4->setGeometry(QRect(10, 30, 91, 31));
         QFont font1;
-        font1.setFamily(QString::fromUtf8("\345\276\256\350\275\257\351\233\205\351\273\221"));
+        font1.setFamily(QString::fromUtf8("Microsoft YaHei"));
         font1.setPointSize(12);
         font1.setBold(true);
         label_4->setFont(font1);
@@ -155,7 +152,7 @@ public:
         comboBox_2->setObjectName(QString::fromUtf8("comboBox_2"));
         comboBox_2->setGeometry(QRect(110, 190, 71, 31));
         QFont font2;
-        font2.setFamily(QString::fromUtf8("\345\276\256\350\275\257\351\233\205\351\273\221"));
+        font2.setFamily(QString::fromUtf8("Microsoft YaHei"));
         font2.setPointSize(11);
         font2.setBold(true);
         comboBox_2->setFont(font2);
@@ -163,7 +160,7 @@ public:
         toolButton->setObjectName(QString::fromUtf8("toolButton"));
         toolButton->setGeometry(QRect(10, 230, 189, 46));
         QFont font3;
-        font3.setFamily(QString::fromUtf8("\345\276\256\350\275\257\351\233\205\351\273\221"));
+        font3.setFamily(QString::fromUtf8("Microsoft YaHei"));
         font3.setPointSize(10);
         font3.setBold(true);
         toolButton->setFont(font3);
@@ -182,14 +179,14 @@ public:
 "    	stop:0.85 #a9a9a9,    /* \345\272\225\351\203\250\350\277\207\346\270\241\357\274\232\344\270\255\347\201\260 */\n"
 "    	stop:1 #e8e8e8        /* \345\272\225\351\203\250\357\274\232\344\272\256\347\201\260\357\274\210\345\217\215\345\205\211\357\274\211 */);\n"
 "}"));
-        QIcon icon;
-        icon.addFile(QString::fromUtf8(":/PNG/Resources/PNG/YSXZ.png"), QSize(), QIcon::Normal, QIcon::Off);
-        toolButton->setIcon(icon);
+        QIcon icon1;
+        icon1.addFile(QString::fromUtf8(":/PNG/Resources/PNG/YSXZ.png"), QSize(), QIcon::Normal, QIcon::Off);
+        toolButton->setIcon(icon1);
         toolButton->setIconSize(QSize(40, 40));
         toolButton->setToolButtonStyle(Qt::ToolButtonStyle::ToolButtonTextBesideIcon);
         groupBox_2 = new QGroupBox(centralWidget);
         groupBox_2->setObjectName(QString::fromUtf8("groupBox_2"));
-        groupBox_2->setGeometry(QRect(280, 90, 221, 311));
+        groupBox_2->setGeometry(QRect(280, 20, 221, 311));
         groupBox_2->setFont(font);
         label_11 = new QLabel(groupBox_2);
         label_11->setObjectName(QString::fromUtf8("label_11"));
@@ -277,7 +274,7 @@ public:
         spinBox_15->setMaximum(9999);
         groupBox_3 = new QGroupBox(centralWidget);
         groupBox_3->setObjectName(QString::fromUtf8("groupBox_3"));
-        groupBox_3->setGeometry(QRect(540, 90, 261, 311));
+        groupBox_3->setGeometry(QRect(540, 20, 261, 311));
         groupBox_3->setFont(font);
         label_23 = new QLabel(groupBox_3);
         label_23->setObjectName(QString::fromUtf8("label_23"));
@@ -349,77 +346,6 @@ public:
         spinBox_24->setButtonSymbols(QAbstractSpinBox::ButtonSymbols::NoButtons);
         spinBox_24->setMinimum(1);
         spinBox_24->setMaximum(9999);
-        label = new QLabel(centralWidget);
-        label->setObjectName(QString::fromUtf8("label"));
-        label->setGeometry(QRect(310, 10, 191, 54));
-        QFont font4;
-        font4.setFamily(QString::fromUtf8("\345\276\256\350\275\257\351\233\205\351\273\221"));
-        font4.setPointSize(20);
-        font4.setBold(true);
-        label->setFont(font4);
-        label->setStyleSheet(QString::fromUtf8("opacity: 1;\n"
-"border-radius: 15px;  \n"
-"border: 2px solid #4CAF50;\n"
-"padding: 5px 15px;\n"
-"min-width: 100px;\n"
-"min-height: 40px;"));
-        label->setAlignment(Qt::AlignmentFlag::AlignCenter);
-        MIN = new QToolButton(centralWidget);
-        MIN->setObjectName(QString::fromUtf8("MIN"));
-        MIN->setGeometry(QRect(720, 10, 40, 40));
-        MIN->setStyleSheet(QString::fromUtf8("/* \346\214\211\344\270\213\347\212\266\346\200\201 */\n"
-"QToolButton:pressed {\n"
-"   background-color: #546E7A; /* \346\267\261\347\237\263\346\235\277\347\201\260 */\n"
-"    background-image: none;\n"
-"    padding-top: 12px;\n"
-"    padding-bottom: 8px;\n"
-"    border: 1px solid #37474F; /* \346\267\261\350\211\262\350\276\271\346\241\206\346\250\241\346\213\237\351\230\264\345\275\261 */\n"
-"}\n"
-" QToolButton {\n"
-"		background-color: qlineargradient(x1:0, y1:0, x2:0, y2:1, \n"
-"    	stop:0 #ffffff,       /* \351\241\266\351\203\250\357\274\232\347\272\257\347\231\275\357\274\210\351\253\230\345\205\211\357\274\211 */\n"
-"   		stop:0.15 #dcdcdc,    /* \350\277\207\346\270\241\357\274\232\346\265\205\347\201\260 */\n"
-"    	stop:0.85 #a9a9a9,    /* \345\272\225\351\203\250\350\277\207\346\270\241\357\274\232\344\270\255\347\201\260 */\n"
-"    	stop:1 #e8e8e8        /* \345\272\225\351\203\250\357\274\232\344\272\256\347\201\260\357\274\210\345\217\215\345\205\211\357\274\211 */);\n"
-"}"));
-        QIcon icon1;
-        icon1.addFile(QString::fromUtf8(":/PIC/Resources/PICs/branch_close.png"), QSize(), QIcon::Normal, QIcon::Off);
-        MIN->setIcon(icon1);
-        MIN->setIconSize(QSize(16, 16));
-        BACK = new QToolButton(centralWidget);
-        BACK->setObjectName(QString::fromUtf8("BACK"));
-        BACK->setGeometry(QRect(770, 10, 40, 40));
-        BACK->setStyleSheet(QString::fromUtf8("/* \346\214\211\344\270\213\347\212\266\346\200\201 */\n"
-"QToolButton:pressed {\n"
-"   background-color: #546E7A; /* \346\267\261\347\237\263\346\235\277\347\201\260 */\n"
-"    background-image: none;\n"
-"    padding-top: 12px;\n"
-"    padding-bottom: 8px;\n"
-"    border: 1px solid #37474F; /* \346\267\261\350\211\262\350\276\271\346\241\206\346\250\241\346\213\237\351\230\264\345\275\261 */\n"
-"}\n"
-" QToolButton {\n"
-"		background-color: qlineargradient(x1:0, y1:0, x2:0, y2:1, \n"
-"    	stop:0 #ffffff,       /* \351\241\266\351\203\250\357\274\232\347\272\257\347\231\275\357\274\210\351\253\230\345\205\211\357\274\211 */\n"
-"   		stop:0.15 #dcdcdc,    /* \350\277\207\346\270\241\357\274\232\346\265\205\347\201\260 */\n"
-"    	stop:0.85 #a9a9a9,    /* \345\272\225\351\203\250\350\277\207\346\270\241\357\274\232\344\270\255\347\201\260 */\n"
-"    	stop:1 #e8e8e8        /* \345\272\225\351\203\250\357\274\232\344\272\256\347\201\260\357\274\210\345\217\215\345\205\211\357\274\211 */);\n"
-"}"));
-        QIcon icon2;
-        icon2.addFile(QString::fromUtf8(":/PIC/Resources/PICs/GB.png"), QSize(), QIcon::Normal, QIcon::Off);
-        BACK->setIcon(icon2);
-        BACK->setIconSize(QSize(16, 16));
-        line_2 = new QFrame(centralWidget);
-        line_2->setObjectName(QString::fromUtf8("line_2"));
-        line_2->setGeometry(QRect(10, 70, 801, 20));
-        line_2->setLineWidth(3);
-        line_2->setFrameShape(QFrame::HLine);
-        line_2->setFrameShadow(QFrame::Sunken);
-        line_3 = new QFrame(centralWidget);
-        line_3->setObjectName(QString::fromUtf8("line_3"));
-        line_3->setGeometry(QRect(10, 400, 801, 20));
-        line_3->setLineWidth(3);
-        line_3->setFrameShape(QFrame::HLine);
-        line_3->setFrameShadow(QFrame::Sunken);
         XJadminClass->setCentralWidget(centralWidget);
 
         retranslateUi(XJadminClass);
@@ -432,7 +358,7 @@ public:
 
     void retranslateUi(QMainWindow *XJadminClass)
     {
-        XJadminClass->setWindowTitle(QCoreApplication::translate("XJadminClass", "XJadmin", nullptr));
+        XJadminClass->setWindowTitle(QCoreApplication::translate("XJadminClass", "\346\243\200\346\265\213\345\217\202\346\225\260", nullptr));
         groupBox->setTitle(QCoreApplication::translate("XJadminClass", "\345\205\211\346\272\220\350\256\276\347\275\256", nullptr));
         label_4->setText(QCoreApplication::translate("XJadminClass", "R\357\274\232", nullptr));
         label_6->setText(QCoreApplication::translate("XJadminClass", "G\357\274\232", nullptr));
@@ -466,9 +392,6 @@ public:
 
         label_48->setText(QCoreApplication::translate("XJadminClass", "\346\213\215\347\205\247\345\273\266\345\220\216\350\247\246\345\217\221\346\227\266\351\227\264\357\274\232", nullptr));
         label_49->setText(QCoreApplication::translate("XJadminClass", "\346\213\215\347\205\247\345\273\266\345\220\216\350\247\246\345\217\221\350\267\235\347\246\273\357\274\232", nullptr));
-        label->setText(QCoreApplication::translate("XJadminClass", "\346\243\200\346\265\213\345\217\202\346\225\260", nullptr));
-        MIN->setText(QCoreApplication::translate("XJadminClass", "\346\234\200\345\260\217\345\214\226", nullptr));
-        BACK->setText(QCoreApplication::translate("XJadminClass", "\350\277\224\345\233\236", nullptr));
     } // retranslateUi
 
 };

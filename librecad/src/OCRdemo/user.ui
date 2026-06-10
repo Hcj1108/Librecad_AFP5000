@@ -7,11 +7,15 @@
     <x>0</x>
     <y>0</y>
     <width>841</width>
-    <height>621</height>
+    <height>539</height>
    </rect>
   </property>
   <property name="windowTitle">
-   <string>user</string>
+   <string>用户权限管理</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="../OCRdemo.qrc">
+    <normaloff>:/PNG/Resources/PNG/YHGL.png</normaloff>:/PNG/Resources/PNG/YHGL.png</iconset>
   </property>
   <property name="styleSheet">
    <string notr="true">background-color:rgb(220, 235, 240);</string>
@@ -21,7 +25,7 @@
     <property name="geometry">
      <rect>
       <x>5</x>
-      <y>90</y>
+      <y>20</y>
       <width>831</width>
       <height>501</height>
      </rect>
@@ -44,7 +48,7 @@
       </property>
       <property name="font">
        <font>
-        <family>微软雅黑</family>
+        <family>Microsoft YaHei</family>
         <pointsize>12</pointsize>
         <bold>true</bold>
        </font>
@@ -72,7 +76,7 @@
        </property>
        <property name="font">
         <font>
-         <family>微软雅黑</family>
+         <family>Microsoft YaHei</family>
          <bold>true</bold>
         </font>
        </property>
@@ -90,7 +94,7 @@
         </property>
         <property name="font">
          <font>
-          <family>微软雅黑</family>
+          <family>Microsoft YaHei</family>
           <pointsize>12</pointsize>
          </font>
         </property>
@@ -112,14 +116,18 @@
         </property>
         <property name="font">
          <font>
-          <family>微软雅黑</family>
+          <family>Microsoft YaHei</family>
           <pointsize>8</pointsize>
           <italic>false</italic>
           <bold>true</bold>
          </font>
         </property>
         <property name="styleSheet">
-         <string notr="true">/* 按下状态 */
+         <string notr="true"> QToolButton {
+        opacity: 1;
+ 		border: none;
+}
+/* 按下状态 */
 QToolButton:pressed {
    background-color: #546E7A; /* 深石板灰 */
     background-image: none;
@@ -127,13 +135,7 @@ QToolButton:pressed {
     padding-bottom: 8px;
     border: 1px solid #37474F; /* 深色边框模拟阴影 */
 }
- QToolButton {
-		background-color: qlineargradient(x1:0, y1:0, x2:0, y2:1, 
-    	stop:0 #ffffff,       /* 顶部：纯白（高光） */
-   		stop:0.15 #dcdcdc,    /* 过渡：浅灰 */
-    	stop:0.85 #a9a9a9,    /* 底部过渡：中灰 */
-    	stop:1 #e8e8e8        /* 底部：亮灰（反光） */);
-}</string>
+</string>
         </property>
         <property name="text">
          <string>增加用户</string>
@@ -163,14 +165,18 @@ QToolButton:pressed {
         </property>
         <property name="font">
          <font>
-          <family>微软雅黑</family>
+          <family>Microsoft YaHei</family>
           <pointsize>8</pointsize>
           <italic>false</italic>
           <bold>true</bold>
          </font>
         </property>
         <property name="styleSheet">
-         <string notr="true">/* 按下状态 */
+         <string notr="true"> QToolButton {
+        opacity: 1;
+ 		border: none;
+}
+/* 按下状态 */
 QToolButton:pressed {
    background-color: #546E7A; /* 深石板灰 */
     background-image: none;
@@ -178,13 +184,7 @@ QToolButton:pressed {
     padding-bottom: 8px;
     border: 1px solid #37474F; /* 深色边框模拟阴影 */
 }
- QToolButton {
-		background-color: qlineargradient(x1:0, y1:0, x2:0, y2:1, 
-    	stop:0 #ffffff,       /* 顶部：纯白（高光） */
-   		stop:0.15 #dcdcdc,    /* 过渡：浅灰 */
-    	stop:0.85 #a9a9a9,    /* 底部过渡：中灰 */
-    	stop:1 #e8e8e8        /* 底部：亮灰（反光） */);
-}</string>
+</string>
         </property>
         <property name="text">
          <string>删除用户</string>
@@ -215,7 +215,7 @@ QToolButton:pressed {
        </property>
        <property name="font">
         <font>
-         <family>微软雅黑</family>
+         <family>Microsoft YaHei</family>
          <bold>true</bold>
         </font>
        </property>
@@ -242,7 +242,7 @@ QToolButton:pressed {
         </property>
         <property name="font">
          <font>
-          <family>微软雅黑</family>
+          <family>Microsoft YaHei</family>
           <pointsize>12</pointsize>
          </font>
         </property>
@@ -261,7 +261,7 @@ QToolButton:pressed {
         </property>
         <property name="font">
          <font>
-          <family>微软雅黑</family>
+          <family>Microsoft YaHei</family>
           <pointsize>12</pointsize>
          </font>
         </property>
@@ -280,7 +280,7 @@ QToolButton:pressed {
         </property>
         <property name="font">
          <font>
-          <family>微软雅黑</family>
+          <family>Microsoft YaHei</family>
           <pointsize>12</pointsize>
          </font>
         </property>
@@ -299,7 +299,7 @@ QToolButton:pressed {
         </property>
         <property name="font">
          <font>
-          <family>微软雅黑</family>
+          <family>Microsoft YaHei</family>
           <pointsize>12</pointsize>
          </font>
         </property>
@@ -324,7 +324,7 @@ QToolButton:pressed {
         </property>
         <property name="font">
          <font>
-          <family>微软雅黑</family>
+          <family>Microsoft YaHei</family>
           <pointsize>12</pointsize>
          </font>
         </property>
@@ -364,7 +364,7 @@ QToolButton:pressed {
          </property>
          <property name="font">
           <font>
-           <family>微软雅黑</family>
+           <family>Microsoft YaHei</family>
            <pointsize>12</pointsize>
           </font>
          </property>
@@ -401,7 +401,7 @@ QToolButton:pressed {
          </property>
          <property name="font">
           <font>
-           <family>微软雅黑</family>
+           <family>Microsoft YaHei</family>
            <pointsize>12</pointsize>
            <bold>false</bold>
           </font>
@@ -421,7 +421,7 @@ QToolButton:pressed {
          </property>
          <property name="font">
           <font>
-           <family>微软雅黑</family>
+           <family>Microsoft YaHei</family>
            <pointsize>12</pointsize>
           </font>
          </property>
@@ -441,7 +441,7 @@ QToolButton:pressed {
         </property>
         <property name="font">
          <font>
-          <family>微软雅黑</family>
+          <family>Microsoft YaHei</family>
           <pointsize>12</pointsize>
          </font>
         </property>
@@ -461,7 +461,7 @@ QToolButton:pressed {
        </property>
        <property name="font">
         <font>
-         <family>微软雅黑</family>
+         <family>Microsoft YaHei</family>
          <bold>true</bold>
         </font>
        </property>
@@ -479,7 +479,7 @@ QToolButton:pressed {
         </property>
         <property name="font">
          <font>
-          <family>微软雅黑</family>
+          <family>Microsoft YaHei</family>
           <pointsize>12</pointsize>
          </font>
         </property>
@@ -498,14 +498,18 @@ QToolButton:pressed {
         </property>
         <property name="font">
          <font>
-          <family>微软雅黑</family>
+          <family>Microsoft YaHei</family>
           <pointsize>8</pointsize>
           <italic>false</italic>
           <bold>true</bold>
          </font>
         </property>
         <property name="styleSheet">
-         <string notr="true">/* 按下状态 */
+         <string notr="true"> QToolButton {
+        opacity: 1;
+ 		border: none;
+}
+/* 按下状态 */
 QToolButton:pressed {
    background-color: #546E7A; /* 深石板灰 */
     background-image: none;
@@ -513,13 +517,7 @@ QToolButton:pressed {
     padding-bottom: 8px;
     border: 1px solid #37474F; /* 深色边框模拟阴影 */
 }
- QToolButton {
-		background-color: qlineargradient(x1:0, y1:0, x2:0, y2:1, 
-    	stop:0 #ffffff,       /* 顶部：纯白（高光） */
-   		stop:0.15 #dcdcdc,    /* 过渡：浅灰 */
-    	stop:0.85 #a9a9a9,    /* 底部过渡：中灰 */
-    	stop:1 #e8e8e8        /* 底部：亮灰（反光） */);
-}</string>
+</string>
         </property>
         <property name="text">
          <string>修改密码</string>
@@ -550,7 +548,7 @@ QToolButton:pressed {
        </property>
        <property name="font">
         <font>
-         <family>微软雅黑</family>
+         <family>Microsoft YaHei</family>
          <bold>true</bold>
         </font>
        </property>
@@ -568,13 +566,17 @@ QToolButton:pressed {
         </property>
         <property name="font">
          <font>
-          <family>微软雅黑</family>
+          <family>Microsoft YaHei</family>
           <pointsize>8</pointsize>
           <bold>true</bold>
          </font>
         </property>
         <property name="styleSheet">
-         <string notr="true">/* 按下状态 */
+         <string notr="true"> QToolButton {
+        opacity: 1;
+ 		border: none;
+}
+/* 按下状态 */
 QToolButton:pressed {
    background-color: #546E7A; /* 深石板灰 */
     background-image: none;
@@ -582,13 +584,7 @@ QToolButton:pressed {
     padding-bottom: 8px;
     border: 1px solid #37474F; /* 深色边框模拟阴影 */
 }
- QToolButton {
-		background-color: qlineargradient(x1:0, y1:0, x2:0, y2:1, 
-    	stop:0 #ffffff,       /* 顶部：纯白（高光） */
-   		stop:0.15 #dcdcdc,    /* 过渡：浅灰 */
-    	stop:0.85 #a9a9a9,    /* 底部过渡：中灰 */
-    	stop:1 #e8e8e8        /* 底部：亮灰（反光） */);
-}</string>
+</string>
         </property>
         <property name="text">
          <string>固件升级</string>
@@ -622,7 +618,7 @@ QToolButton:pressed {
       </property>
       <property name="font">
        <font>
-        <family>微软雅黑</family>
+        <family>Microsoft YaHei</family>
         <pointsize>12</pointsize>
         <bold>true</bold>
        </font>
@@ -641,7 +637,7 @@ QToolButton:pressed {
        </property>
        <property name="font">
         <font>
-         <family>微软雅黑</family>
+         <family>Microsoft YaHei</family>
          <pointsize>12</pointsize>
         </font>
        </property>
@@ -657,7 +653,7 @@ QToolButton:pressed {
        </property>
        <property name="font">
         <font>
-         <family>微软雅黑</family>
+         <family>Microsoft YaHei</family>
          <pointsize>12</pointsize>
         </font>
        </property>
@@ -676,7 +672,7 @@ QToolButton:pressed {
        </property>
        <property name="font">
         <font>
-         <family>微软雅黑</family>
+         <family>Microsoft YaHei</family>
          <pointsize>12</pointsize>
         </font>
        </property>
@@ -695,7 +691,7 @@ QToolButton:pressed {
        </property>
        <property name="font">
         <font>
-         <family>微软雅黑</family>
+         <family>Microsoft YaHei</family>
          <pointsize>12</pointsize>
         </font>
        </property>
@@ -711,7 +707,7 @@ QToolButton:pressed {
        </property>
        <property name="font">
         <font>
-         <family>微软雅黑</family>
+         <family>Microsoft YaHei</family>
          <bold>true</bold>
         </font>
        </property>
@@ -738,7 +734,7 @@ QToolButton:pressed {
         </property>
         <property name="font">
          <font>
-          <family>微软雅黑</family>
+          <family>Microsoft YaHei</family>
           <pointsize>12</pointsize>
          </font>
         </property>
@@ -775,7 +771,7 @@ QToolButton:pressed {
         </property>
         <property name="font">
          <font>
-          <family>微软雅黑</family>
+          <family>Microsoft YaHei</family>
           <pointsize>12</pointsize>
          </font>
         </property>
@@ -794,7 +790,7 @@ QToolButton:pressed {
         </property>
         <property name="font">
          <font>
-          <family>微软雅黑</family>
+          <family>Microsoft YaHei</family>
           <pointsize>12</pointsize>
          </font>
         </property>
@@ -813,7 +809,7 @@ QToolButton:pressed {
         </property>
         <property name="font">
          <font>
-          <family>微软雅黑</family>
+          <family>Microsoft YaHei</family>
           <pointsize>12</pointsize>
          </font>
         </property>
@@ -832,7 +828,7 @@ QToolButton:pressed {
         </property>
         <property name="font">
          <font>
-          <family>微软雅黑</family>
+          <family>Microsoft YaHei</family>
           <pointsize>12</pointsize>
          </font>
         </property>
@@ -851,7 +847,7 @@ QToolButton:pressed {
         </property>
         <property name="font">
          <font>
-          <family>微软雅黑</family>
+          <family>Microsoft YaHei</family>
           <pointsize>12</pointsize>
          </font>
         </property>
@@ -870,7 +866,7 @@ QToolButton:pressed {
         </property>
         <property name="font">
          <font>
-          <family>微软雅黑</family>
+          <family>Microsoft YaHei</family>
           <pointsize>12</pointsize>
          </font>
         </property>
@@ -895,7 +891,7 @@ QToolButton:pressed {
         </property>
         <property name="font">
          <font>
-          <family>微软雅黑</family>
+          <family>Microsoft YaHei</family>
           <pointsize>12</pointsize>
          </font>
         </property>
@@ -920,7 +916,7 @@ QToolButton:pressed {
         </property>
         <property name="font">
          <font>
-          <family>微软雅黑</family>
+          <family>Microsoft YaHei</family>
           <pointsize>12</pointsize>
          </font>
         </property>
@@ -940,14 +936,18 @@ QToolButton:pressed {
        </property>
        <property name="font">
         <font>
-         <family>微软雅黑</family>
+         <family>Microsoft YaHei</family>
          <pointsize>8</pointsize>
          <italic>false</italic>
          <bold>true</bold>
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">/* 按下状态 */
+        <string notr="true"> QToolButton {
+        opacity: 1;
+ 		border: none;
+}
+/* 按下状态 */
 QToolButton:pressed {
    background-color: #546E7A; /* 深石板灰 */
     background-image: none;
@@ -955,13 +955,7 @@ QToolButton:pressed {
     padding-bottom: 8px;
     border: 1px solid #37474F; /* 深色边框模拟阴影 */
 }
- QToolButton {
-		background-color: qlineargradient(x1:0, y1:0, x2:0, y2:1, 
-    	stop:0 #ffffff,       /* 顶部：纯白（高光） */
-   		stop:0.15 #dcdcdc,    /* 过渡：浅灰 */
-    	stop:0.85 #a9a9a9,    /* 底部过渡：中灰 */
-    	stop:1 #e8e8e8        /* 底部：亮灰（反光） */);
-}</string>
+</string>
        </property>
        <property name="text">
         <string>返回</string>
@@ -991,14 +985,18 @@ QToolButton:pressed {
        </property>
        <property name="font">
         <font>
-         <family>微软雅黑</family>
+         <family>Microsoft YaHei</family>
          <pointsize>8</pointsize>
          <italic>false</italic>
          <bold>true</bold>
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">/* 按下状态 */
+        <string notr="true"> QToolButton {
+        opacity: 1;
+ 		border: none;
+}
+/* 按下状态 */
 QToolButton:pressed {
    background-color: #546E7A; /* 深石板灰 */
     background-image: none;
@@ -1006,13 +1004,7 @@ QToolButton:pressed {
     padding-bottom: 8px;
     border: 1px solid #37474F; /* 深色边框模拟阴影 */
 }
- QToolButton {
-		background-color: qlineargradient(x1:0, y1:0, x2:0, y2:1, 
-    	stop:0 #ffffff,       /* 顶部：纯白（高光） */
-   		stop:0.15 #dcdcdc,    /* 过渡：浅灰 */
-    	stop:0.85 #a9a9a9,    /* 底部过渡：中灰 */
-    	stop:1 #e8e8e8        /* 底部：亮灰（反光） */);
-}</string>
+</string>
        </property>
        <property name="text">
         <string>添加用户</string>
@@ -1033,149 +1025,6 @@ QToolButton:pressed {
       </widget>
      </widget>
     </widget>
-   </widget>
-   <widget class="QLabel" name="label">
-    <property name="geometry">
-     <rect>
-      <x>340</x>
-      <y>10</y>
-      <width>191</width>
-      <height>54</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <family>微软雅黑</family>
-      <pointsize>20</pointsize>
-      <bold>true</bold>
-     </font>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">opacity: 1;
-border-radius: 15px;  
-border: 2px solid #4CAF50;
-padding: 5px 15px;
-min-width: 100px;
-min-height: 40px;</string>
-    </property>
-    <property name="text">
-     <string>用户权限</string>
-    </property>
-    <property name="alignment">
-     <set>Qt::AlignmentFlag::AlignCenter</set>
-    </property>
-   </widget>
-   <widget class="QToolButton" name="MIN">
-    <property name="geometry">
-     <rect>
-      <x>740</x>
-      <y>20</y>
-      <width>40</width>
-      <height>40</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">/* 按下状态 */
-QToolButton:pressed {
-   background-color: #546E7A; /* 深石板灰 */
-    background-image: none;
-    padding-top: 12px;
-    padding-bottom: 8px;
-    border: 1px solid #37474F; /* 深色边框模拟阴影 */
-}
- QToolButton {
-		background-color: qlineargradient(x1:0, y1:0, x2:0, y2:1, 
-    	stop:0 #ffffff,       /* 顶部：纯白（高光） */
-   		stop:0.15 #dcdcdc,    /* 过渡：浅灰 */
-    	stop:0.85 #a9a9a9,    /* 底部过渡：中灰 */
-    	stop:1 #e8e8e8        /* 底部：亮灰（反光） */);
-}</string>
-    </property>
-    <property name="text">
-     <string>MIN</string>
-    </property>
-    <property name="icon">
-     <iconset resource="../OCRdemo.qrc">
-      <normaloff>:/PIC/Resources/PICs/branch_close.png</normaloff>:/PIC/Resources/PICs/branch_close.png</iconset>
-    </property>
-    <property name="iconSize">
-     <size>
-      <width>16</width>
-      <height>16</height>
-     </size>
-    </property>
-   </widget>
-   <widget class="QToolButton" name="BACK">
-    <property name="geometry">
-     <rect>
-      <x>791</x>
-      <y>20</y>
-      <width>40</width>
-      <height>40</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">/* 按下状态 */
-QToolButton:pressed {
-   background-color: #546E7A; /* 深石板灰 */
-    background-image: none;
-    padding-top: 12px;
-    padding-bottom: 8px;
-    border: 1px solid #37474F; /* 深色边框模拟阴影 */
-}
- QToolButton {
-		background-color: qlineargradient(x1:0, y1:0, x2:0, y2:1, 
-    	stop:0 #ffffff,       /* 顶部：纯白（高光） */
-   		stop:0.15 #dcdcdc,    /* 过渡：浅灰 */
-    	stop:0.85 #a9a9a9,    /* 底部过渡：中灰 */
-    	stop:1 #e8e8e8        /* 底部：亮灰（反光） */);
-}</string>
-    </property>
-    <property name="text">
-     <string>BACK</string>
-    </property>
-    <property name="icon">
-     <iconset resource="../OCRdemo.qrc">
-      <normaloff>:/PIC/Resources/PICs/close.png</normaloff>:/PIC/Resources/PICs/close.png</iconset>
-    </property>
-    <property name="iconSize">
-     <size>
-      <width>16</width>
-      <height>16</height>
-     </size>
-    </property>
-   </widget>
-   <widget class="Line" name="line_3">
-    <property name="geometry">
-     <rect>
-      <x>10</x>
-      <y>600</y>
-      <width>811</width>
-      <height>20</height>
-     </rect>
-    </property>
-    <property name="lineWidth">
-     <number>3</number>
-    </property>
-    <property name="orientation">
-     <enum>Qt::Orientation::Horizontal</enum>
-    </property>
-   </widget>
-   <widget class="Line" name="line_4">
-    <property name="geometry">
-     <rect>
-      <x>20</x>
-      <y>70</y>
-      <width>801</width>
-      <height>20</height>
-     </rect>
-    </property>
-    <property name="lineWidth">
-     <number>3</number>
-    </property>
-    <property name="orientation">
-     <enum>Qt::Orientation::Horizontal</enum>
-    </property>
    </widget>
   </widget>
  </widget>

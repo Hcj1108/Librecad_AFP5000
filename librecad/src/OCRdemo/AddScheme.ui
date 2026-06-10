@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>645</width>
-    <height>429</height>
+    <width>693</width>
+    <height>351</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -50,17 +50,29 @@
         <number>0</number>
        </property>
        <item>
-        <widget class="QLabel" name="label_2">
-         <property name="styleSheet">
-          <string notr="true">font: bold 13px &quot;Microsoft YaHei&quot;; color: #e74c3c;</string>
-         </property>
-         <property name="text">
-          <string>① 输入配方名（配方命名格式为: 重量+口味+产品种类）</string>
-         </property>
-        </widget>
-       </item>
-       <item>
         <layout class="QHBoxLayout" name="hl_scheme">
+         <item>
+          <widget class="QLabel" name="label_2">
+           <property name="minimumSize">
+            <size>
+             <width>108</width>
+             <height>0</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>200</width>
+             <height>16777215</height>
+            </size>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">font: bold 13px &quot;Microsoft YaHei&quot;; color: #e74c3c;</string>
+           </property>
+           <property name="text">
+            <string>① 输入配方名</string>
+           </property>
+          </widget>
+         </item>
          <item>
           <widget class="QLineEdit" name="lineEdit">
            <property name="minimumSize">
@@ -101,8 +113,14 @@ QLineEdit:focus{border-color: #3498db;}</string>
           <widget class="QToolButton" name="toolButton">
            <property name="minimumSize">
             <size>
-             <width>80</width>
+             <width>100</width>
              <height>38</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>100</width>
+             <height>16777215</height>
             </size>
            </property>
            <property name="styleSheet">
@@ -117,17 +135,29 @@ QToolButton:hover{background: #2980b9;}</string>
         </layout>
        </item>
        <item>
-        <widget class="QLabel" name="label_4">
-         <property name="styleSheet">
-          <string notr="true">font: bold 13px &quot;Microsoft YaHei&quot;; color: #e74c3c;</string>
-         </property>
-         <property name="text">
-          <string>② 输入卷材袋长（单位 mm）</string>
-         </property>
-        </widget>
-       </item>
-       <item>
         <layout class="QHBoxLayout" name="hl_dc">
+         <item>
+          <widget class="QLabel" name="label_4">
+           <property name="minimumSize">
+            <size>
+             <width>108</width>
+             <height>0</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>200</width>
+             <height>16777215</height>
+            </size>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">font: bold 13px &quot;Microsoft YaHei&quot;; color: #e74c3c;</string>
+           </property>
+           <property name="text">
+            <string>② 输入卷材袋长</string>
+           </property>
+          </widget>
+         </item>
          <item>
           <widget class="QLineEdit" name="lineEdit_2">
            <property name="minimumSize">
@@ -178,8 +208,14 @@ QLineEdit:focus{border-color: #3498db;}</string>
           <widget class="QToolButton" name="toolButton_2">
            <property name="minimumSize">
             <size>
-             <width>80</width>
+             <width>100</width>
              <height>38</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>100</width>
+             <height>16777215</height>
             </size>
            </property>
            <property name="styleSheet">
@@ -194,17 +230,29 @@ QToolButton:hover{background: #2980b9;}</string>
         </layout>
        </item>
        <item>
-        <widget class="QLabel" name="label_7">
-         <property name="styleSheet">
-          <string notr="true">font: bold 13px &quot;Microsoft YaHei&quot;; color: #e74c3c;</string>
-         </property>
-         <property name="text">
-          <string>③ 检测失败后隔多少袋开始报警连包</string>
-         </property>
-        </widget>
-       </item>
-       <item>
         <layout class="QHBoxLayout" name="hl_warn">
+         <item>
+          <widget class="QLabel" name="label_7">
+           <property name="minimumSize">
+            <size>
+             <width>108</width>
+             <height>0</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>200</width>
+             <height>16777215</height>
+            </size>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">font: bold 13px &quot;Microsoft YaHei&quot;; color: #e74c3c;</string>
+           </property>
+           <property name="text">
+            <string>③ 输入报警间隔</string>
+           </property>
+          </widget>
+         </item>
          <item>
           <widget class="QLineEdit" name="lineEdit_4">
            <property name="minimumSize">
@@ -255,8 +303,14 @@ QLineEdit:focus{border-color: #3498db;}</string>
           <widget class="QToolButton" name="toolButton_4">
            <property name="minimumSize">
             <size>
-             <width>80</width>
+             <width>100</width>
              <height>38</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>100</width>
+             <height>16777215</height>
             </size>
            </property>
            <property name="styleSheet">
@@ -271,17 +325,29 @@ QToolButton:hover{background: #2980b9;}</string>
         </layout>
        </item>
        <item>
-        <widget class="QLabel" name="label_8">
-         <property name="styleSheet">
-          <string notr="true">font: bold 13px &quot;Microsoft YaHei&quot;; color: #e74c3c;</string>
-         </property>
-         <property name="text">
-          <string>④ 选择包装机类型</string>
-         </property>
-        </widget>
-       </item>
-       <item>
         <layout class="QHBoxLayout" name="hl_machine">
+         <item>
+          <widget class="QLabel" name="label_8">
+           <property name="minimumSize">
+            <size>
+             <width>108</width>
+             <height>0</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>200</width>
+             <height>16777215</height>
+            </size>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">font: bold 13px &quot;Microsoft YaHei&quot;; color: #e74c3c;</string>
+           </property>
+           <property name="text">
+            <string>④ 选择包装机类型</string>
+           </property>
+          </widget>
+         </item>
          <item>
           <widget class="QComboBox" name="comboBox">
            <property name="minimumSize">
@@ -299,7 +365,10 @@ QToolButton:hover{background: #2980b9;}</string>
            <property name="styleSheet">
             <string notr="true">QComboBox{font: 14px &quot;Microsoft YaHei&quot;; padding: 6px 12px; border: 2px solid #bdc3c7; border-radius: 6px; background: white;}
 QComboBox:focus{border-color: #3498db;}
-QComboBox::drop-down{subcontrol-position: right; width: 30px;}</string>
+QComboBox::drop-down{subcontrol-position: right; width: 30px;}
+QComboBox::down-arrow {
+    image: url(:/PNG/Resources/PNG/down_2.png);
+} </string>
            </property>
            <item>
             <property name="text">
@@ -330,8 +399,14 @@ QComboBox::drop-down{subcontrol-position: right; width: 30px;}</string>
           <widget class="QToolButton" name="toolButton_5">
            <property name="minimumSize">
             <size>
-             <width>80</width>
+             <width>100</width>
              <height>38</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>100</width>
+             <height>16777215</height>
             </size>
            </property>
            <property name="styleSheet">
@@ -371,17 +446,29 @@ QToolButton:hover{background: #2980b9;}</string>
             <number>0</number>
            </property>
            <item>
-            <widget class="QLabel" name="label_24">
-             <property name="styleSheet">
-              <string notr="true">font: bold 13px &quot;Microsoft YaHei&quot;; color: #e74c3c; background: transparent;</string>
-             </property>
-             <property name="text">
-              <string>⑤ 打码延后时间（接收信号后等待多长时间打码）</string>
-             </property>
-            </widget>
-           </item>
-           <item>
             <layout class="QHBoxLayout" name="hl_delay1">
+             <item>
+              <widget class="QLabel" name="label_24">
+               <property name="minimumSize">
+                <size>
+                 <width>108</width>
+                 <height>0</height>
+                </size>
+               </property>
+               <property name="maximumSize">
+                <size>
+                 <width>200</width>
+                 <height>16777215</height>
+                </size>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">font: bold 13px &quot;Microsoft YaHei&quot;; color: #e74c3c; background: transparent;</string>
+               </property>
+               <property name="text">
+                <string>⑤ 打码延后时间</string>
+               </property>
+              </widget>
+             </item>
              <item>
               <widget class="QLineEdit" name="lineEdit_8">
                <property name="cursor">
@@ -423,8 +510,14 @@ QLineEdit:focus{border-color: #3498db;}</string>
               <widget class="QToolButton" name="toolButton_12">
                <property name="minimumSize">
                 <size>
-                 <width>80</width>
+                 <width>100</width>
                  <height>34</height>
+                </size>
+               </property>
+               <property name="maximumSize">
+                <size>
+                 <width>100</width>
+                 <height>16777215</height>
                 </size>
                </property>
                <property name="styleSheet">
@@ -439,17 +532,29 @@ QToolButton:hover{background: #2980b9;}</string>
             </layout>
            </item>
            <item>
-            <widget class="QLabel" name="label_23">
-             <property name="styleSheet">
-              <string notr="true">font: bold 13px &quot;Microsoft YaHei&quot;; color: #e74c3c; background: transparent;</string>
-             </property>
-             <property name="text">
-              <string>⑥ 拍照延后时间（打码后等待多长时间拍照）</string>
-             </property>
-            </widget>
-           </item>
-           <item>
             <layout class="QHBoxLayout" name="hl_delay2">
+             <item>
+              <widget class="QLabel" name="label_23">
+               <property name="minimumSize">
+                <size>
+                 <width>108</width>
+                 <height>0</height>
+                </size>
+               </property>
+               <property name="maximumSize">
+                <size>
+                 <width>200</width>
+                 <height>16777215</height>
+                </size>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">font: bold 13px &quot;Microsoft YaHei&quot;; color: #e74c3c; background: transparent;</string>
+               </property>
+               <property name="text">
+                <string>⑥ 拍照延后时间</string>
+               </property>
+              </widget>
+             </item>
              <item>
               <widget class="QLineEdit" name="lineEdit_7">
                <property name="styleSheet">
@@ -488,8 +593,14 @@ QLineEdit:focus{border-color: #3498db;}</string>
               <widget class="QToolButton" name="toolButton_11">
                <property name="minimumSize">
                 <size>
-                 <width>80</width>
+                 <width>100</width>
                  <height>34</height>
+                </size>
+               </property>
+               <property name="maximumSize">
+                <size>
+                 <width>100</width>
+                 <height>16777215</height>
                 </size>
                </property>
                <property name="styleSheet">
@@ -523,17 +634,17 @@ QToolButton:hover{background: #2980b9;}</string>
             <number>0</number>
            </property>
            <item>
-            <widget class="QLabel" name="label_10">
-             <property name="styleSheet">
-              <string notr="true">font: bold 13px &quot;Microsoft YaHei&quot;; color: #e74c3c; background: transparent;</string>
-             </property>
-             <property name="text">
-              <string>⑤ 打码延后距离（接收信号后膜走多少距离开始打码）</string>
-             </property>
-            </widget>
-           </item>
-           <item>
             <layout class="QHBoxLayout" name="hl_dist1">
+             <item>
+              <widget class="QLabel" name="label_10">
+               <property name="styleSheet">
+                <string notr="true">font: bold 13px &quot;Microsoft YaHei&quot;; color: #e74c3c; background: transparent;</string>
+               </property>
+               <property name="text">
+                <string>⑤ 打码延后距离</string>
+               </property>
+              </widget>
+             </item>
              <item>
               <widget class="QLineEdit" name="lineEdit_9">
                <property name="minimumSize">
@@ -544,7 +655,7 @@ QToolButton:hover{background: #2980b9;}</string>
                </property>
                <property name="maximumSize">
                 <size>
-                 <width>104</width>
+                 <width>128</width>
                  <height>16777215</height>
                 </size>
                </property>
@@ -584,8 +695,14 @@ QLineEdit:focus{border-color: #3498db;}</string>
               <widget class="QToolButton" name="toolButton_13">
                <property name="minimumSize">
                 <size>
-                 <width>80</width>
+                 <width>100</width>
                  <height>34</height>
+                </size>
+               </property>
+               <property name="maximumSize">
+                <size>
+                 <width>100</width>
+                 <height>16777215</height>
                 </size>
                </property>
                <property name="styleSheet">
@@ -600,17 +717,17 @@ QToolButton:hover{background: #2980b9;}</string>
             </layout>
            </item>
            <item>
-            <widget class="QLabel" name="label_13">
-             <property name="styleSheet">
-              <string notr="true">font: bold 13px &quot;Microsoft YaHei&quot;; color: #e74c3c; background: transparent;</string>
-             </property>
-             <property name="text">
-              <string>⑥ 拍照延后距离（打码完成后膜走多少距离拍照）</string>
-             </property>
-            </widget>
-           </item>
-           <item>
             <layout class="QHBoxLayout" name="hl_dist2">
+             <item>
+              <widget class="QLabel" name="label_13">
+               <property name="styleSheet">
+                <string notr="true">font: bold 13px &quot;Microsoft YaHei&quot;; color: #e74c3c; background: transparent;</string>
+               </property>
+               <property name="text">
+                <string>⑥ 拍照延后距离</string>
+               </property>
+              </widget>
+             </item>
              <item>
               <widget class="QLineEdit" name="lineEdit_6">
                <property name="minimumSize">
@@ -621,7 +738,7 @@ QToolButton:hover{background: #2980b9;}</string>
                </property>
                <property name="maximumSize">
                 <size>
-                 <width>104</width>
+                 <width>128</width>
                  <height>16777215</height>
                 </size>
                </property>
@@ -661,8 +778,14 @@ QLineEdit:focus{border-color: #3498db;}</string>
               <widget class="QToolButton" name="toolButton_10">
                <property name="minimumSize">
                 <size>
-                 <width>80</width>
+                 <width>100</width>
                  <height>34</height>
+                </size>
+               </property>
+               <property name="maximumSize">
+                <size>
+                 <width>100</width>
+                 <height>16777215</height>
                 </size>
                </property>
                <property name="styleSheet">

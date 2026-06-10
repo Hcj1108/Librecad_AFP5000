@@ -30,7 +30,7 @@
    </property>
    <property name="font">
     <font>
-     <family>微软雅黑</family>
+     <family>Microsoft YaHei</family>
      <pointsize>20</pointsize>
      <bold>true</bold>
     </font>
@@ -61,7 +61,7 @@ min-height: 40px;</string>
    </property>
    <property name="font">
     <font>
-     <family>微软雅黑</family>
+     <family>Microsoft YaHei</family>
      <pointsize>14</pointsize>
      <bold>true</bold>
     </font>
@@ -102,7 +102,7 @@ QToolButton:pressed {
    </property>
    <property name="font">
     <font>
-     <family>微软雅黑</family>
+     <family>Microsoft YaHei</family>
      <pointsize>14</pointsize>
      <bold>true</bold>
     </font>
@@ -121,7 +121,7 @@ QToolButton:pressed {
     </property>
     <property name="font">
      <font>
-      <family>微软雅黑</family>
+      <family>Microsoft YaHei</family>
       <pointsize>12</pointsize>
       <bold>true</bold>
      </font>
@@ -156,7 +156,7 @@ QToolButton:pressed {
     </property>
     <property name="font">
      <font>
-      <family>微软雅黑</family>
+      <family>Microsoft YaHei</family>
       <pointsize>12</pointsize>
       <bold>true</bold>
      </font>
@@ -179,7 +179,7 @@ QToolButton:pressed {
     </property>
     <property name="font">
      <font>
-      <family>微软雅黑</family>
+      <family>Microsoft YaHei</family>
       <pointsize>12</pointsize>
       <bold>true</bold>
      </font>
@@ -202,7 +202,7 @@ QToolButton:pressed {
     </property>
     <property name="font">
      <font>
-      <family>微软雅黑</family>
+      <family>Microsoft YaHei</family>
       <pointsize>10</pointsize>
       <bold>true</bold>
      </font>
@@ -239,7 +239,7 @@ QToolButton:pressed {
     </property>
     <property name="font">
      <font>
-      <family>微软雅黑</family>
+      <family>Microsoft YaHei</family>
       <pointsize>10</pointsize>
       <bold>true</bold>
      </font>
@@ -276,7 +276,7 @@ QToolButton:pressed {
     </property>
     <property name="font">
      <font>
-      <family>微软雅黑</family>
+      <family>Microsoft YaHei</family>
       <pointsize>10</pointsize>
       <bold>true</bold>
      </font>
@@ -314,7 +314,7 @@ QToolButton:pressed {
    </property>
    <property name="font">
     <font>
-     <family>微软雅黑</family>
+     <family>Microsoft YaHei</family>
      <pointsize>14</pointsize>
      <bold>true</bold>
     </font>
@@ -333,7 +333,7 @@ QToolButton:pressed {
     </property>
     <property name="font">
      <font>
-      <family>微软雅黑</family>
+      <family>Microsoft YaHei</family>
       <pointsize>12</pointsize>
       <bold>true</bold>
      </font>
@@ -359,7 +359,7 @@ QToolButton:pressed {
     </property>
     <property name="font">
      <font>
-      <family>微软雅黑</family>
+      <family>Microsoft YaHei</family>
       <pointsize>12</pointsize>
       <bold>true</bold>
      </font>
@@ -382,7 +382,7 @@ QToolButton:pressed {
     </property>
     <property name="font">
      <font>
-      <family>微软雅黑</family>
+      <family>Microsoft YaHei</family>
       <pointsize>12</pointsize>
       <bold>true</bold>
      </font>
@@ -405,7 +405,7 @@ QToolButton:pressed {
     </property>
     <property name="font">
      <font>
-      <family>微软雅黑</family>
+      <family>Microsoft YaHei</family>
       <pointsize>12</pointsize>
       <bold>true</bold>
      </font>
@@ -437,7 +437,7 @@ QToolButton:pressed {
     </property>
     <property name="font">
      <font>
-      <family>微软雅黑</family>
+      <family>Microsoft YaHei</family>
       <pointsize>10</pointsize>
       <bold>true</bold>
      </font>
@@ -474,7 +474,7 @@ QToolButton:pressed {
     </property>
     <property name="font">
      <font>
-      <family>微软雅黑</family>
+      <family>Microsoft YaHei</family>
       <pointsize>10</pointsize>
       <bold>true</bold>
      </font>
@@ -511,7 +511,7 @@ QToolButton:pressed {
     </property>
     <property name="font">
      <font>
-      <family>微软雅黑</family>
+      <family>Microsoft YaHei</family>
       <pointsize>10</pointsize>
       <bold>true</bold>
      </font>
@@ -548,7 +548,7 @@ QToolButton:pressed {
     </property>
     <property name="font">
      <font>
-      <family>微软雅黑</family>
+      <family>Microsoft YaHei</family>
       <pointsize>10</pointsize>
       <bold>true</bold>
      </font>

@@ -57,6 +57,7 @@ public:
         if (SenderBinUdpClass->objectName().isEmpty())
             SenderBinUdpClass->setObjectName(QString::fromUtf8("SenderBinUdpClass"));
         SenderBinUdpClass->resize(690, 370);
+        SenderBinUdpClass->setStyleSheet(QString::fromUtf8("background-color:rgb(220, 235, 240);"));
         SenderBinUdpClass->setStyleSheet(QString::fromUtf8(""));
         centralWidget = new QWidget(SenderBinUdpClass);
         centralWidget->setObjectName(QString::fromUtf8("centralWidget"));
@@ -64,7 +65,7 @@ public:
         label_3->setObjectName(QString::fromUtf8("label_3"));
         label_3->setGeometry(QRect(250, 10, 211, 31));
         QFont font;
-        font.setFamily(QString::fromUtf8("\345\276\256\350\275\257\351\233\205\351\273\221"));
+        font.setFamily(QString::fromUtf8("Microsoft YaHei"));
         font.setPointSize(20);
         font.setBold(true);
         label_3->setFont(font);
@@ -73,7 +74,7 @@ public:
         toolButton_6->setObjectName(QString::fromUtf8("toolButton_6"));
         toolButton_6->setGeometry(QRect(640, 10, 41, 41));
         QFont font1;
-        font1.setFamily(QString::fromUtf8("\345\276\256\350\275\257\351\233\205\351\273\221"));
+        font1.setFamily(QString::fromUtf8("Microsoft YaHei"));
         font1.setPointSize(14);
         font1.setBold(true);
         toolButton_6->setFont(font1);
@@ -93,7 +94,7 @@ public:
         label->setObjectName(QString::fromUtf8("label"));
         label->setGeometry(QRect(20, 20, 91, 31));
         QFont font2;
-        font2.setFamily(QString::fromUtf8("\345\276\256\350\275\257\351\233\205\351\273\221"));
+        font2.setFamily(QString::fromUtf8("Microsoft YaHei"));
         font2.setPointSize(12);
         font2.setBold(true);
         label->setFont(font2);
@@ -106,7 +107,7 @@ public:
         spinBox->setEnabled(false);
         spinBox->setGeometry(QRect(110, 20, 111, 31));
         QFont font3;
-        font3.setFamily(QString::fromUtf8("\345\276\256\350\275\257\351\233\205\351\273\221"));
+        font3.setFamily(QString::fromUtf8("Microsoft YaHei"));
         font3.setPointSize(11);
         font3.setBold(true);
         spinBox->setFont(font3);
@@ -140,7 +141,7 @@ public:
         toolButton_2->setObjectName(QString::fromUtf8("toolButton_2"));
         toolButton_2->setGeometry(QRect(420, 190, 101, 41));
         QFont font4;
-        font4.setFamily(QString::fromUtf8("\345\276\256\350\275\257\351\233\205\351\273\221"));
+        font4.setFamily(QString::fromUtf8("Microsoft YaHei"));
         font4.setPointSize(9);
         font4.setBold(true);
         toolButton_2->setFont(font4);
@@ -175,7 +176,7 @@ public:
         lineEdit_2->setEnabled(false);
         lineEdit_2->setGeometry(QRect(10, 30, 241, 31));
         QFont font5;
-        font5.setFamily(QString::fromUtf8("\345\276\256\350\275\257\351\233\205\351\273\221"));
+        font5.setFamily(QString::fromUtf8("Microsoft YaHei"));
         font5.setPointSize(9);
         font5.setBold(false);
         lineEdit_2->setFont(font5);

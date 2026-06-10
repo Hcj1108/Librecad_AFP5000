@@ -103,7 +103,7 @@ QLineEdit:focus{border-color: #3498db;}</string>
          <widget class="QToolButton" name="toolButton_4">
           <property name="minimumSize">
            <size>
-            <width>70</width>
+            <width>100</width>
             <height>34</height>
            </size>
           </property>
@@ -177,7 +177,7 @@ QLineEdit:focus{border-color: #3498db;}</string>
          <widget class="QToolButton" name="toolButton">
           <property name="minimumSize">
            <size>
-            <width>70</width>
+            <width>100</width>
             <height>34</height>
            </size>
           </property>
@@ -251,7 +251,7 @@ QLineEdit:focus{border-color: #3498db;}</string>
          <widget class="QToolButton" name="toolButton_2">
           <property name="minimumSize">
            <size>
-            <width>70</width>
+            <width>100</width>
             <height>34</height>
            </size>
           </property>
@@ -325,7 +325,7 @@ QLineEdit:focus{border-color: #3498db;}</string>
          <widget class="QToolButton" name="toolButton_9">
           <property name="minimumSize">
            <size>
-            <width>70</width>
+            <width>100</width>
             <height>34</height>
            </size>
           </property>
@@ -405,7 +405,7 @@ QLineEdit:focus{border-color: #3498db;}</string>
          <widget class="QToolButton" name="toolButton_3">
           <property name="minimumSize">
            <size>
-            <width>70</width>
+            <width>100</width>
             <height>34</height>
            </size>
           </property>
@@ -468,7 +468,6 @@ QToolButton:hover{background: #2980b9;}</string>
            <string notr="true">QComboBox{font: 14px &quot;Microsoft YaHei&quot;; padding: 4px 10px; border: 2px solid #bdc3c7; border-radius: 6px; background: white;}
 QComboBox:focus{border-color: #3498db;}
 QComboBox::drop-down{subcontrol-position: right; width: 28px;}
-
 </string>
           </property>
           <item>
@@ -582,7 +581,7 @@ QLineEdit:focus{border-color: #3498db;}</string>
              <widget class="QToolButton" name="toolButton_7">
               <property name="minimumSize">
                <size>
-                <width>70</width>
+                <width>100</width>
                 <height>32</height>
                </size>
               </property>
@@ -656,7 +655,7 @@ QLineEdit:focus{border-color: #3498db;}</string>
              <widget class="QToolButton" name="toolButton_8">
               <property name="minimumSize">
                <size>
-                <width>70</width>
+                <width>100</width>
                 <height>32</height>
                </size>
               </property>

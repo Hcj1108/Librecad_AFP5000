@@ -33,13 +33,12 @@
         opacity: 1;
  		border: none;
 }
-/* 按下状态 */
 QPushButton:pressed {
-   background-color: #546E7A; /* 深石板灰 */
+   background-color: #546E7A; 
     background-image: none;
     padding-top: 12px;
     padding-bottom: 8px;
-    border: 1px solid #37474F; /* 深色边框模拟阴影 */
+    border: 1px solid #37474F; 
 }
 </string>
        </property>
@@ -65,13 +64,12 @@ QPushButton:pressed {
         opacity: 1;
  		border: none;
 }
-/* 按下状态 */
 QPushButton:pressed {
-   background-color: #546E7A; /* 深石板灰 */
+   background-color: #546E7A; 
     background-image: none;
     padding-top: 12px;
     padding-bottom: 8px;
-    border: 1px solid #37474F; /* 深色边框模拟阴影 */
+    border: 1px solid #37474F; 
 }
 </string>
        </property>
@@ -97,13 +95,12 @@ QPushButton:pressed {
         opacity: 1;
  		border: none;
 }
-/* 按下状态 */
 QPushButton:pressed {
-   background-color: #546E7A; /* 深石板灰 */
+   background-color: #546E7A; 
     background-image: none;
     padding-top: 12px;
     padding-bottom: 8px;
-    border: 1px solid #37474F; /* 深色边框模拟阴影 */
+    border: 1px solid #37474F; 
 }
 </string>
        </property>
@@ -221,13 +218,12 @@ QPushButton:pressed {
         opacity: 1;
  		border: none;
 }
-/* 按下状态 */
 QPushButton:pressed {
-   background-color: #546E7A; /* 深石板灰 */
+   background-color: #546E7A; 
     background-image: none;
     padding-top: 12px;
     padding-bottom: 8px;
-    border: 1px solid #37474F; /* 深色边框模拟阴影 */
+    border: 1px solid #37474F; 
 }
 </string>
        </property>
@@ -247,13 +243,12 @@ QPushButton:pressed {
         opacity: 1;
  		border: none;
 }
-/* 按下状态 */
 QPushButton:pressed {
-   background-color: #546E7A; /* 深石板灰 */
+   background-color: #546E7A; 
     background-image: none;
     padding-top: 12px;
     padding-bottom: 8px;
-    border: 1px solid #37474F; /* 深色边框模拟阴影 */
+    border: 1px solid #37474F; 
 }
 </string>
        </property>
@@ -273,13 +268,12 @@ QPushButton:pressed {
         opacity: 1;
  		border: none;
 }
-/* 按下状态 */
 QPushButton:pressed {
-   background-color: #546E7A; /* 深石板灰 */
+   background-color: #546E7A; 
     background-image: none;
     padding-top: 12px;
     padding-bottom: 8px;
-    border: 1px solid #37474F; /* 深色边框模拟阴影 */
+    border: 1px solid #37474F; 
 }
 </string>
        </property>

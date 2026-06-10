@@ -4951,7 +4951,27 @@ void QC_ApplicationWindow::ShowJgadmain()
     if (SelectDB_Jgconfig())
     {
         ui->lineEdit_15->setText(QString::number(jgconfig.interpolationStep));//扫描宽度
-        jgadmin.setJgadmin(jgconfig.BMQzhijing, jgconfig.BMQmaichong, jgconfig.GdFilterTime, jgconfig.MinThresholdMode, jgconfig.MinTriggerTime, jgconfig.MinTriggerDistance,jgconfig.DelayTriggerMode, jgconfig.DelayTriggerTime, jgconfig.DelayTriggerDistance, jgconfig.DelayTriggerModetwo, jgconfig.DelayTriggerTimetwo, jgconfig.DelayTriggerDistancetwo, jgconfig.Dbchoice, jgconfig.interpolationStep, jgconfig.scanW_mm, jgconfig.BMQdirection, jgconfig.FXDBirection, jgconfig.Dbmode, jgconfig.JgFreq, jgconfig.JgPower,jgconfig.KgDelay,jgconfig.GgDelay, jgconfig.firstJumpDelay, jgconfig.jumpDelay, jgconfig.endDelay);
+        JgParam p;
+        p.bmqZhijing = jgconfig.BMQzhijing;
+        p.bmqMaichong = jgconfig.BMQmaichong;
+        p.gdFilterTime = jgconfig.GdFilterTime;
+        p.minThresholdMode = jgconfig.MinThresholdMode;
+        p.minTriggerTime = jgconfig.MinTriggerTime;
+        p.minTriggerDistance = jgconfig.MinTriggerDistance;
+        p.delayTriggerMode = jgconfig.DelayTriggerMode;
+        p.delayTriggerTime = jgconfig.DelayTriggerTime;
+        p.delayTriggerDistance = jgconfig.DelayTriggerDistance;
+        p.scanW_mm = jgconfig.scanW_mm;
+        p.bmqDirection = jgconfig.BMQdirection;
+        p.fxdDirection = jgconfig.FXDBirection;
+        p.dbMode = jgconfig.Dbmode;
+        p.freq = jgconfig.JgFreq;
+        p.power = jgconfig.JgPower;
+        p.kgDelay = jgconfig.KgDelay;
+        p.ggDelay = jgconfig.GgDelay;
+        p.jumpDelay = jgconfig.jumpDelay;
+        p.endDelay = jgconfig.endDelay;
+        jgadmin.setParams(p);
     }
     IsJgadminOpen = true;
     jgadmin.show();
@@ -4967,7 +4987,24 @@ void QC_ApplicationWindow::ShowXJadmain()
     {
         if (SelectDB(str) && SelectDB_Status())
         {
-            xjadmin.SetSetting(jgconfig.BMQzhijing, jgconfig.BMQmaichong, GapCount, DelayModel, DelayTime, DelayDistance, DCLength, OutputLocationMin, OutputLocationMax, KeepCount, R, G, B, RGBTime, RGBMode, jgconfig.MinThresholdMode, jgconfig.MinTriggerTime, jgconfig.MinTriggerDistance, jgconfig.DelayTriggerModetwo, jgconfig.DelayTriggerTimetwo, jgconfig.DelayTriggerDistancetwo);
+            XjParam p;
+            p.bmqZhijing = jgconfig.BMQzhijing;
+            p.bmqMaichong = jgconfig.BMQmaichong;
+            p.gapCount = GapCount;
+            p.dcLength = DCLength;
+            p.outputLocationMin = OutputLocationMin;
+            p.outputLocationMax = OutputLocationMax;
+            p.keepCount = KeepCount;
+            p.r = R; p.g = G; p.b = B;
+            p.rgbTime = RGBTime;
+            p.rgbMode = RGBMode;
+            p.minThresholdMode = jgconfig.MinThresholdMode;
+            p.minTriggerTime = jgconfig.MinTriggerTime;
+            p.minTriggerDistance = jgconfig.MinTriggerDistance;
+            p.delayTriggerMode = jgconfig.DelayTriggerModetwo;
+            p.delayTriggerTime = jgconfig.DelayTriggerTimetwo;
+            p.delayTriggerDistance = jgconfig.DelayTriggerDistancetwo;
+            xjadmin.setParams(p);
 
         }
     }
@@ -5891,12 +5928,13 @@ void QC_ApplicationWindow::SelectTime()
 QString QC_ApplicationWindow::CaculateTime(int year, int month, int day,
     int save_days, int save_months, int save_years)
 {
+   
     QDate baseDate(year, month, day);
     QDate expiryDate = baseDate
         .addYears(save_years)
         .addMonths(save_months);
 
-    // 保质期 = 生产日期 + 年月偏移 - 1天
+    // 只有日期没被月末钳位时，才减1天
     if (expiryDate.day() == baseDate.day()) {
         expiryDate = expiryDate.addDays(-1);
     }
@@ -6134,51 +6172,48 @@ void QC_ApplicationWindow::GatUser()
     }
   
 }
-void QC_ApplicationWindow::GatJgadmin()   //从激光设置界面中读取激光配置 并在保存数据库中更新
+void QC_ApplicationWindow::GatJgadmin()
 {
-    jgconfig.BMQzhijing = jgadmin.getBMQzhijing();//获取激光参数
-    jgconfig.BMQdirection = jgadmin.getBMQdirection();//获取激光参数
-    jgconfig.BMQmaichong = jgadmin.getBMQmaichong();//获取激光参数
-    jgconfig.GdFilterTime = jgadmin.getGdFilterTime();
-    jgconfig.MinThresholdMode = jgadmin.getMinThresholdMode();
-    jgconfig.MinTriggerTime = jgadmin.getMinTriggerTime();
-    jgconfig.MinTriggerDistance = jgadmin.getMinTriggerDistance();
-    jgconfig.DelayTriggerMode = jgadmin.getDelayTriggerMode();
-    jgconfig.DelayTriggerTime = jgadmin.getDelayTriggerTime();
-    jgconfig.DelayTriggerDistance = jgadmin.getDelayTriggerDistance();
-
-    jgconfig.interpolationStep=ui->lineEdit_15->text().toInt();;
-    jgconfig.scanW_mm = jgadmin.getscanW_mm();
-    jgconfig.FXDBirection = jgadmin.getFXDBirection();
-    jgconfig.Dbmode = jgadmin.getDbmode();
-    jgconfig.JgFreq = jgadmin.getJgFreq();
-    jgconfig.JgPower = jgadmin.getJgPower();
-    jgconfig.KgDelay = jgadmin.getKgDelay();
-    jgconfig.GgDelay = jgadmin.getGgDelay();
-    jgconfig.firstJumpDelay = jgadmin.getFirstJumpDelay();
-    jgconfig.endDelay = jgadmin.getEndDelay();
-   
+    JgParam p = jgadmin.getParams();
+    jgconfig.BMQzhijing = p.bmqZhijing;
+    jgconfig.BMQmaichong = p.bmqMaichong;
+    jgconfig.GdFilterTime = p.gdFilterTime;
+    jgconfig.MinThresholdMode = p.minThresholdMode;
+    jgconfig.MinTriggerTime = p.minTriggerTime;
+    jgconfig.MinTriggerDistance = p.minTriggerDistance;
+    jgconfig.DelayTriggerMode = p.delayTriggerMode;
+    jgconfig.DelayTriggerTime = p.delayTriggerTime;
+    jgconfig.DelayTriggerDistance = p.delayTriggerDistance;
+    jgconfig.interpolationStep = ui->lineEdit_15->text().toInt();
+    jgconfig.scanW_mm = p.scanW_mm;
+    jgconfig.FXDBirection = p.fxdDirection;
+    jgconfig.Dbmode = p.dbMode;
+    jgconfig.JgFreq = p.freq;
+    jgconfig.JgPower = p.power;
+    jgconfig.KgDelay = p.kgDelay;
+    jgconfig.GgDelay = p.ggDelay;
+    jgconfig.jumpDelay = p.jumpDelay;
+    jgconfig.endDelay = p.endDelay;
 }
-void QC_ApplicationWindow::GatXJadmin()   //将激光配置写入激光设置界面
+void QC_ApplicationWindow::GatXJadmin()
 {
-    R = xjadmin.getR();
-    G = xjadmin.getG();
-    B = xjadmin.getB();
-    RGBTime = xjadmin.getRGBTime();
-    RGBMode = xjadmin.getRGBMode();
-    DCLength = xjadmin.getDCLength();
-    OutputLocationMin = xjadmin.getOutputLocationMin();
-    OutputLocationMax = xjadmin.getOutputLocationMax();
-    GapCount = xjadmin.getGapCount();
-    KeepCount = xjadmin.getKeepCount();
-    jgconfig.MinThresholdMode = xjadmin.getMinThresholdMode();
-    jgconfig.MinTriggerTime = xjadmin.getMinTriggerTime();
-    jgconfig.MinTriggerDistance = xjadmin.getMinTriggerDistance();
-    jgconfig.DelayTriggerModetwo = xjadmin.getDelayTriggerMode_2();
-    jgconfig.DelayTriggerTimetwo = xjadmin.getDelayTriggerTime_2();
-    jgconfig.DelayTriggerDistancetwo = xjadmin.getDelayTriggerDistance_2();
-    jgconfig.BMQzhijing = xjadmin.getBMQzhijing();//获取激光参数
-    jgconfig.BMQmaichong = xjadmin.getBMQmaichong();//获取激光参数
+    XjParam p = xjadmin.getParams();
+    R = p.r; G = p.g; B = p.b;
+    RGBTime = p.rgbTime;
+    RGBMode = p.rgbMode;
+    DCLength = p.dcLength;
+    OutputLocationMin = p.outputLocationMin;
+    OutputLocationMax = p.outputLocationMax;
+    GapCount = p.gapCount;
+    KeepCount = p.keepCount;
+    jgconfig.MinThresholdMode = p.minThresholdMode;
+    jgconfig.MinTriggerTime = p.minTriggerTime;
+    jgconfig.MinTriggerDistance = p.minTriggerDistance;
+    jgconfig.DelayTriggerModetwo = p.delayTriggerMode;
+    jgconfig.DelayTriggerTimetwo = p.delayTriggerTime;
+    jgconfig.DelayTriggerDistancetwo = p.delayTriggerDistance;
+    jgconfig.BMQzhijing = p.bmqZhijing;
+    jgconfig.BMQmaichong = p.bmqMaichong;
 }
 
 

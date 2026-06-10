@@ -13,7 +13,10 @@
   <property name="windowTitle">
    <string>SenderBinUdp</string>
   </property>
+  
   <property name="styleSheet">
+   <string notr="true">background-color:rgb(220, 235, 240);</string>
+  </property><property name="styleSheet">
    <string notr="true"/>
   </property>
   <widget class="QWidget" name="centralWidget">
@@ -28,7 +31,7 @@
     </property>
     <property name="font">
      <font>
-      <family>微软雅黑</family>
+      <family>Microsoft YaHei</family>
       <pointsize>20</pointsize>
       <bold>true</bold>
      </font>
@@ -51,7 +54,7 @@
     </property>
     <property name="font">
      <font>
-      <family>微软雅黑</family>
+      <family>Microsoft YaHei</family>
       <pointsize>14</pointsize>
       <bold>true</bold>
      </font>
@@ -78,7 +81,7 @@
     </property>
     <property name="font">
      <font>
-      <family>微软雅黑</family>
+      <family>Microsoft YaHei</family>
       <pointsize>14</pointsize>
       <bold>true</bold>
      </font>
@@ -110,7 +113,7 @@
       </property>
       <property name="font">
        <font>
-        <family>微软雅黑</family>
+        <family>Microsoft YaHei</family>
         <pointsize>12</pointsize>
         <bold>true</bold>
        </font>
@@ -130,7 +133,7 @@
       </property>
       <property name="font">
        <font>
-        <family>微软雅黑</family>
+        <family>Microsoft YaHei</family>
         <pointsize>12</pointsize>
         <bold>true</bold>
        </font>
@@ -153,7 +156,7 @@
       </property>
       <property name="font">
        <font>
-        <family>微软雅黑</family>
+        <family>Microsoft YaHei</family>
         <pointsize>11</pointsize>
         <bold>true</bold>
        </font>
@@ -182,7 +185,7 @@
       </property>
       <property name="font">
        <font>
-        <family>微软雅黑</family>
+        <family>Microsoft YaHei</family>
         <pointsize>11</pointsize>
         <bold>true</bold>
        </font>
@@ -211,7 +214,7 @@
       </property>
       <property name="font">
        <font>
-        <family>微软雅黑</family>
+        <family>Microsoft YaHei</family>
         <pointsize>11</pointsize>
         <bold>true</bold>
        </font>
@@ -228,7 +231,7 @@
       </property>
       <property name="font">
        <font>
-        <family>微软雅黑</family>
+        <family>Microsoft YaHei</family>
         <pointsize>12</pointsize>
         <bold>true</bold>
        </font>
@@ -251,7 +254,7 @@
       </property>
       <property name="font">
        <font>
-        <family>微软雅黑</family>
+        <family>Microsoft YaHei</family>
         <pointsize>11</pointsize>
         <bold>true</bold>
        </font>
@@ -274,7 +277,7 @@
       </property>
       <property name="font">
        <font>
-        <family>微软雅黑</family>
+        <family>Microsoft YaHei</family>
         <pointsize>9</pointsize>
         <bold>true</bold>
        </font>
@@ -307,7 +310,7 @@
       </property>
       <property name="font">
        <font>
-        <family>微软雅黑</family>
+        <family>Microsoft YaHei</family>
         <pointsize>12</pointsize>
         <bold>true</bold>
        </font>
@@ -327,7 +330,7 @@
       </property>
       <property name="font">
        <font>
-        <family>微软雅黑</family>
+        <family>Microsoft YaHei</family>
         <pointsize>9</pointsize>
         <bold>true</bold>
        </font>
@@ -365,7 +368,7 @@
       </property>
       <property name="font">
        <font>
-        <family>微软雅黑</family>
+        <family>Microsoft YaHei</family>
         <pointsize>12</pointsize>
         <bold>true</bold>
        </font>
@@ -390,7 +393,7 @@
        </property>
        <property name="font">
         <font>
-         <family>微软雅黑</family>
+         <family>Microsoft YaHei</family>
          <pointsize>9</pointsize>
          <bold>false</bold>
         </font>
@@ -410,7 +413,7 @@
        </property>
        <property name="font">
         <font>
-         <family>微软雅黑</family>
+         <family>Microsoft YaHei</family>
          <pointsize>12</pointsize>
          <bold>true</bold>
         </font>
@@ -454,7 +457,7 @@
       </property>
       <property name="font">
        <font>
-        <family>微软雅黑</family>
+        <family>Microsoft YaHei</family>
         <pointsize>12</pointsize>
         <bold>true</bold>
        </font>
@@ -479,7 +482,7 @@
        </property>
        <property name="font">
         <font>
-         <family>微软雅黑</family>
+         <family>Microsoft YaHei</family>
          <pointsize>12</pointsize>
          <bold>true</bold>
         </font>
