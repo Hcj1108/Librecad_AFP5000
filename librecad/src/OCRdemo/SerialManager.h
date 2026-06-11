@@ -17,7 +17,8 @@ public:
 	~SerialManager();
 	//void paintEvent(QPaintEvent* event) override;
 	void SetQSS();
-	bool eventFilter(QObject* obj, QEvent* evt);//用于拖动设置页面
+	void closeEvent(QCloseEvent* event);
+	
 	int getSerialNum();
 	int getSerialNum2();
 	void setSerialNum(int MaxThresholdAlermOpen, int MinThresholdAlermOpen, int cameraAlarmOpen, int markingOutOfAreaOpen, int linkTXOpen, int linkBKBKOpen, int linkCameraOpen);

@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>821</width>
-    <height>349</height>
+    <width>746</width>
+    <height>364</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -18,1021 +18,999 @@
     <normaloff>:/PNG/Resources/PNG/DYTZ.png</normaloff>:/PNG/Resources/PNG/DYTZ.png</iconset>
   </property>
   <property name="styleSheet">
-   <string notr="true">QWidget{
-background-color:rgb(220, 235, 240);
-}</string>
+   <string notr="true">background-color:rgb(220, 235, 240);</string>
   </property>
-  <widget class="QGroupBox" name="groupBox">
-   <property name="geometry">
-    <rect>
-     <x>290</x>
-     <y>20</y>
-     <width>211</width>
-     <height>311</height>
-    </rect>
+  <layout class="QVBoxLayout" name="mainLayout">
+   <property name="spacing">
+    <number>6</number>
    </property>
-   <property name="font">
-    <font>
-     <family>Microsoft YaHei</family>
-     <pointsize>14</pointsize>
-     <bold>true</bold>
-    </font>
+   <property name="leftMargin">
+    <number>10</number>
    </property>
-   <property name="styleSheet">
-    <string notr="true"/>
+   <property name="topMargin">
+    <number>10</number>
    </property>
-   <property name="title">
-    <string>喷码参数</string>
+   <property name="rightMargin">
+    <number>10</number>
    </property>
-   <property name="alignment">
-    <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter</set>
+   <property name="bottomMargin">
+    <number>10</number>
    </property>
-   <property name="checkable">
-    <bool>false</bool>
-   </property>
-   <property name="checked">
-    <bool>false</bool>
-   </property>
-   <widget class="QLabel" name="label_27">
-    <property name="geometry">
-     <rect>
-      <x>10</x>
-      <y>30</y>
-      <width>81</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <family>Microsoft YaHei</family>
-      <pointsize>12</pointsize>
-      <bold>true</bold>
-     </font>
-    </property>
-    <property name="text">
-     <string>激光功率:</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label_34">
-    <property name="geometry">
-     <rect>
-      <x>10</x>
-      <y>70</y>
-      <width>81</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <family>Microsoft YaHei</family>
-      <pointsize>12</pointsize>
-      <bold>true</bold>
-     </font>
-    </property>
-    <property name="text">
-     <string>激光频率:</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label_41">
-    <property name="geometry">
-     <rect>
-      <x>10</x>
-      <y>110</y>
-      <width>81</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <family>Microsoft YaHei</family>
-      <pointsize>12</pointsize>
-      <bold>true</bold>
-     </font>
-    </property>
-    <property name="text">
-     <string>开光延时:</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label_42">
-    <property name="geometry">
-     <rect>
-      <x>10</x>
-      <y>150</y>
-      <width>81</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <family>Microsoft YaHei</family>
-      <pointsize>12</pointsize>
-      <bold>true</bold>
-     </font>
-    </property>
-    <property name="text">
-     <string>关光延时:</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label_44">
-    <property name="geometry">
-     <rect>
-      <x>10</x>
-      <y>190</y>
-      <width>81</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <family>Microsoft YaHei</family>
-      <pointsize>12</pointsize>
-      <bold>true</bold>
-     </font>
-    </property>
-    <property name="text">
-     <string>跳转延时:</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label_45">
-    <property name="geometry">
-     <rect>
-      <x>10</x>
-      <y>230</y>
-      <width>81</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <family>Microsoft YaHei</family>
-      <pointsize>12</pointsize>
-      <bold>true</bold>
-     </font>
-    </property>
-    <property name="text">
-     <string>结束延时:</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label_20">
-    <property name="geometry">
-     <rect>
-      <x>10</x>
-      <y>270</y>
-      <width>81</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <family>Microsoft YaHei</family>
-      <pointsize>12</pointsize>
-      <bold>true</bold>
-     </font>
-    </property>
-    <property name="text">
-     <string>光电滤波:</string>
-    </property>
-   </widget>
-   <widget class="QSpinBox" name="spinBox">
-    <property name="geometry">
-     <rect>
-      <x>90</x>
-      <y>30</y>
-      <width>71</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <family>Microsoft YaHei</family>
-      <pointsize>10</pointsize>
-      <bold>true</bold>
-     </font>
-    </property>
-    <property name="alignment">
-     <set>Qt::AlignmentFlag::AlignCenter</set>
-    </property>
-    <property name="buttonSymbols">
-     <enum>QAbstractSpinBox::ButtonSymbols::NoButtons</enum>
-    </property>
-    <property name="minimum">
-     <number>5</number>
-    </property>
-    <property name="maximum">
-     <number>95</number>
-    </property>
-   </widget>
-   <widget class="QSpinBox" name="spinBox_2">
-    <property name="geometry">
-     <rect>
-      <x>90</x>
-      <y>70</y>
-      <width>71</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <family>Microsoft YaHei</family>
-      <pointsize>10</pointsize>
-      <bold>true</bold>
-     </font>
-    </property>
-    <property name="alignment">
-     <set>Qt::AlignmentFlag::AlignCenter</set>
-    </property>
-    <property name="buttonSymbols">
-     <enum>QAbstractSpinBox::ButtonSymbols::NoButtons</enum>
-    </property>
-    <property name="minimum">
-     <number>5</number>
-    </property>
-    <property name="maximum">
-     <number>400</number>
-    </property>
-   </widget>
-   <widget class="QSpinBox" name="spinBox_3">
-    <property name="geometry">
-     <rect>
-      <x>90</x>
-      <y>110</y>
-      <width>71</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <family>Microsoft YaHei</family>
-      <pointsize>10</pointsize>
-      <bold>true</bold>
-     </font>
-    </property>
-    <property name="alignment">
-     <set>Qt::AlignmentFlag::AlignCenter</set>
-    </property>
-    <property name="buttonSymbols">
-     <enum>QAbstractSpinBox::ButtonSymbols::NoButtons</enum>
-    </property>
-    <property name="minimum">
-     <number>0</number>
-    </property>
-    <property name="maximum">
-     <number>30</number>
-    </property>
-   </widget>
-   <widget class="QSpinBox" name="spinBox_4">
-    <property name="geometry">
-     <rect>
-      <x>90</x>
-      <y>150</y>
-      <width>71</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <family>Microsoft YaHei</family>
-      <pointsize>10</pointsize>
-      <bold>true</bold>
-     </font>
-    </property>
-    <property name="alignment">
-     <set>Qt::AlignmentFlag::AlignCenter</set>
-    </property>
-    <property name="buttonSymbols">
-     <enum>QAbstractSpinBox::ButtonSymbols::NoButtons</enum>
-    </property>
-    <property name="minimum">
-     <number>0</number>
-    </property>
-    <property name="maximum">
-     <number>30</number>
-    </property>
-   </widget>
-   <widget class="QSpinBox" name="spinBox_5">
-    <property name="geometry">
-     <rect>
-      <x>90</x>
-      <y>190</y>
-      <width>71</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <family>Microsoft YaHei</family>
-      <pointsize>10</pointsize>
-      <bold>true</bold>
-     </font>
-    </property>
-    <property name="alignment">
-     <set>Qt::AlignmentFlag::AlignCenter</set>
-    </property>
-    <property name="buttonSymbols">
-     <enum>QAbstractSpinBox::ButtonSymbols::NoButtons</enum>
-    </property>
-    <property name="minimum">
-     <number>0</number>
-    </property>
-    <property name="maximum">
-     <number>800</number>
-    </property>
-   </widget>
-   <widget class="QSpinBox" name="spinBox_7">
-    <property name="geometry">
-     <rect>
-      <x>90</x>
-      <y>230</y>
-      <width>71</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <family>Microsoft YaHei</family>
-      <pointsize>10</pointsize>
-      <bold>true</bold>
-     </font>
-    </property>
-    <property name="alignment">
-     <set>Qt::AlignmentFlag::AlignCenter</set>
-    </property>
-    <property name="buttonSymbols">
-     <enum>QAbstractSpinBox::ButtonSymbols::NoButtons</enum>
-    </property>
-    <property name="minimum">
-     <number>0</number>
-    </property>
-    <property name="maximum">
-     <number>30</number>
-    </property>
-   </widget>
-   <widget class="QSpinBox" name="spinBox_8">
-    <property name="geometry">
-     <rect>
-      <x>90</x>
-      <y>270</y>
-      <width>71</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <family>Microsoft YaHei</family>
-      <pointsize>10</pointsize>
-      <bold>true</bold>
-     </font>
-    </property>
-    <property name="alignment">
-     <set>Qt::AlignmentFlag::AlignCenter</set>
-    </property>
-    <property name="buttonSymbols">
-     <enum>QAbstractSpinBox::ButtonSymbols::NoButtons</enum>
-    </property>
-    <property name="minimum">
-     <number>1</number>
-    </property>
-    <property name="maximum">
-     <number>999</number>
-    </property>
-   </widget>
-  </widget>
-  <widget class="QGroupBox" name="groupBox_2">
-   <property name="geometry">
-    <rect>
-     <x>10</x>
-     <y>20</y>
-     <width>251</width>
-     <height>311</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <family>Microsoft YaHei</family>
-     <pointsize>14</pointsize>
-     <bold>true</bold>
-    </font>
-   </property>
-   <property name="styleSheet">
-    <string notr="true"/>
-   </property>
-   <property name="title">
-    <string>流水线设置</string>
-   </property>
-   <widget class="QLabel" name="label_103">
-    <property name="geometry">
-     <rect>
-      <x>10</x>
-      <y>30</y>
-      <width>101</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <family>Microsoft YaHei</family>
-      <pointsize>12</pointsize>
-      <bold>true</bold>
-     </font>
-    </property>
-    <property name="text">
-     <string>飞行振镜幅面:</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label_99">
-    <property name="geometry">
-     <rect>
-      <x>10</x>
-      <y>70</y>
-      <width>131</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <family>Microsoft YaHei</family>
-      <pointsize>12</pointsize>
-      <bold>true</bold>
-     </font>
-    </property>
-    <property name="text">
-     <string>飞行编码器方向:</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label_102">
-    <property name="geometry">
-     <rect>
-      <x>10</x>
-      <y>110</y>
-      <width>91</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <family>Microsoft YaHei</family>
-      <pointsize>12</pointsize>
-      <bold>true</bold>
-     </font>
-    </property>
-    <property name="text">
-     <string>飞行轴方向:</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label_72">
-    <property name="geometry">
-     <rect>
-      <x>10</x>
-      <y>150</y>
-      <width>111</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <family>Microsoft YaHei</family>
-      <pointsize>12</pointsize>
-      <bold>true</bold>
-     </font>
-    </property>
-    <property name="text">
-     <string>飞行模式开关:</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label_101">
-    <property name="geometry">
-     <rect>
-      <x>10</x>
-      <y>230</y>
-      <width>111</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <family>Microsoft YaHei</family>
-      <pointsize>12</pointsize>
-      <bold>true</bold>
-     </font>
-    </property>
-    <property name="text">
-     <string>编码器直径:</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label_100">
-    <property name="geometry">
-     <rect>
-      <x>10</x>
-      <y>190</y>
-      <width>111</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <family>Microsoft YaHei</family>
-      <pointsize>12</pointsize>
-      <bold>true</bold>
-     </font>
-    </property>
-    <property name="text">
-     <string>编码器脉冲数:</string>
-    </property>
-   </widget>
-   <widget class="QSpinBox" name="spinBox_10">
-    <property name="geometry">
-     <rect>
-      <x>140</x>
-      <y>30</y>
-      <width>81</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <family>Microsoft YaHei</family>
-      <pointsize>10</pointsize>
-      <bold>true</bold>
-     </font>
-    </property>
-    <property name="alignment">
-     <set>Qt::AlignmentFlag::AlignCenter</set>
-    </property>
-    <property name="buttonSymbols">
-     <enum>QAbstractSpinBox::ButtonSymbols::NoButtons</enum>
-    </property>
-    <property name="minimum">
-     <number>1</number>
-    </property>
-    <property name="maximum">
-     <number>999</number>
-    </property>
-   </widget>
-   <widget class="QSpinBox" name="spinBox_14">
-    <property name="geometry">
-     <rect>
-      <x>140</x>
-      <y>230</y>
-      <width>81</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <family>Microsoft YaHei</family>
-      <pointsize>10</pointsize>
-      <bold>true</bold>
-     </font>
-    </property>
-    <property name="alignment">
-     <set>Qt::AlignmentFlag::AlignCenter</set>
-    </property>
-    <property name="buttonSymbols">
-     <enum>QAbstractSpinBox::ButtonSymbols::NoButtons</enum>
-    </property>
-    <property name="minimum">
-     <number>1</number>
-    </property>
-    <property name="maximum">
-     <number>999</number>
-    </property>
-   </widget>
-   <widget class="QSpinBox" name="spinBox_15">
-    <property name="geometry">
-     <rect>
-      <x>140</x>
-      <y>190</y>
-      <width>81</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <family>Microsoft YaHei</family>
-      <pointsize>10</pointsize>
-      <bold>true</bold>
-     </font>
-    </property>
-    <property name="alignment">
-     <set>Qt::AlignmentFlag::AlignCenter</set>
-    </property>
-    <property name="buttonSymbols">
-     <enum>QAbstractSpinBox::ButtonSymbols::NoButtons</enum>
-    </property>
-    <property name="minimum">
-     <number>1</number>
-    </property>
-    <property name="maximum">
-     <number>9999</number>
-    </property>
-   </widget>
-   <widget class="QComboBox" name="comboBox_4">
-    <property name="geometry">
-     <rect>
-      <x>140</x>
-      <y>70</y>
-      <width>81</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <family>Microsoft YaHei</family>
-      <pointsize>11</pointsize>
-      <bold>true</bold>
-     </font>
-    </property>
-    <item>
-     <property name="text">
-      <string>顺时针</string>
-     </property>
-    </item>
-    <item>
-     <property name="text">
-      <string>逆时针</string>
-     </property>
-    </item>
-   </widget>
-   <widget class="QComboBox" name="comboBox_5">
-    <property name="geometry">
-     <rect>
-      <x>140</x>
-      <y>110</y>
-      <width>81</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <family>Microsoft YaHei</family>
-      <pointsize>11</pointsize>
-      <bold>true</bold>
-     </font>
-    </property>
-    <item>
-     <property name="text">
-      <string>X轴飞行</string>
-     </property>
-    </item>
-    <item>
-     <property name="text">
-      <string>Y轴飞行</string>
-     </property>
-    </item>
-   </widget>
-   <widget class="QComboBox" name="comboBox_6">
-    <property name="geometry">
-     <rect>
-      <x>140</x>
-      <y>150</y>
-      <width>81</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <family>Microsoft YaHei</family>
-      <pointsize>11</pointsize>
-      <bold>true</bold>
-     </font>
-    </property>
-    <item>
-     <property name="text">
-      <string>静态</string>
-     </property>
-    </item>
-    <item>
-     <property name="text">
-      <string>飞行</string>
-     </property>
-    </item>
-   </widget>
-  </widget>
-  <widget class="QGroupBox" name="groupBox_3">
-   <property name="geometry">
-    <rect>
-     <x>530</x>
-     <y>20</y>
-     <width>281</width>
-     <height>311</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <family>Microsoft YaHei</family>
-     <pointsize>14</pointsize>
-     <bold>true</bold>
-    </font>
-   </property>
-   <property name="styleSheet">
-    <string notr="true"/>
-   </property>
-   <property name="title">
-    <string>触发优化</string>
-   </property>
-   <widget class="QLabel" name="label_23">
-    <property name="geometry">
-     <rect>
-      <x>10</x>
-      <y>30</y>
-      <width>141</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <family>Microsoft YaHei</family>
-      <pointsize>12</pointsize>
-      <bold>true</bold>
-     </font>
-    </property>
-    <property name="text">
-     <string>最小触发模式:</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label_22">
-    <property name="geometry">
-     <rect>
-      <x>10</x>
-      <y>70</y>
-      <width>141</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <family>Microsoft YaHei</family>
-      <pointsize>12</pointsize>
-      <bold>true</bold>
-     </font>
-    </property>
-    <property name="text">
-     <string>最小触发时间:</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label_25">
-    <property name="geometry">
-     <rect>
-      <x>10</x>
-      <y>110</y>
-      <width>141</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <family>Microsoft YaHei</family>
-      <pointsize>12</pointsize>
-      <bold>true</bold>
-     </font>
-    </property>
-    <property name="text">
-     <string>最小触发距离:</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label_37">
-    <property name="geometry">
-     <rect>
-      <x>10</x>
-      <y>150</y>
-      <width>141</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <family>Microsoft YaHei</family>
-      <pointsize>12</pointsize>
-      <bold>true</bold>
-     </font>
-    </property>
-    <property name="text">
-     <string>标刻延后触发模式:</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label_38">
-    <property name="geometry">
-     <rect>
-      <x>10</x>
-      <y>190</y>
-      <width>141</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <family>Microsoft YaHei</family>
-      <pointsize>12</pointsize>
-      <bold>true</bold>
-     </font>
-    </property>
-    <property name="text">
-     <string>标刻延后触发时间:</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label_39">
-    <property name="geometry">
-     <rect>
-      <x>10</x>
-      <y>230</y>
-      <width>141</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <family>Microsoft YaHei</family>
-      <pointsize>12</pointsize>
-      <bold>true</bold>
-     </font>
-    </property>
-    <property name="text">
-     <string>标刻延后触发距离:</string>
-    </property>
-   </widget>
-   <widget class="QSpinBox" name="spinBox_17">
-    <property name="geometry">
-     <rect>
-      <x>150</x>
-      <y>70</y>
-      <width>71</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <family>Microsoft YaHei</family>
-      <pointsize>10</pointsize>
-      <bold>true</bold>
-     </font>
-    </property>
-    <property name="alignment">
-     <set>Qt::AlignmentFlag::AlignCenter</set>
-    </property>
-    <property name="buttonSymbols">
-     <enum>QAbstractSpinBox::ButtonSymbols::NoButtons</enum>
-    </property>
-    <property name="minimum">
-     <number>1</number>
-    </property>
-    <property name="maximum">
-     <number>9999</number>
-    </property>
-   </widget>
-   <widget class="QSpinBox" name="spinBox_18">
-    <property name="geometry">
-     <rect>
-      <x>150</x>
-      <y>110</y>
-      <width>71</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <family>Microsoft YaHei</family>
-      <pointsize>10</pointsize>
-      <bold>true</bold>
-     </font>
-    </property>
-    <property name="alignment">
-     <set>Qt::AlignmentFlag::AlignCenter</set>
-    </property>
-    <property name="buttonSymbols">
-     <enum>QAbstractSpinBox::ButtonSymbols::NoButtons</enum>
-    </property>
-    <property name="minimum">
-     <number>1</number>
-    </property>
-    <property name="maximum">
-     <number>9999</number>
-    </property>
-   </widget>
-   <widget class="QSpinBox" name="spinBox_20">
-    <property name="geometry">
-     <rect>
-      <x>150</x>
-      <y>190</y>
-      <width>71</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <family>Microsoft YaHei</family>
-      <pointsize>10</pointsize>
-      <bold>true</bold>
-     </font>
-    </property>
-    <property name="alignment">
-     <set>Qt::AlignmentFlag::AlignCenter</set>
-    </property>
-    <property name="buttonSymbols">
-     <enum>QAbstractSpinBox::ButtonSymbols::NoButtons</enum>
-    </property>
-    <property name="minimum">
-     <number>1</number>
-    </property>
-    <property name="maximum">
-     <number>9999</number>
-    </property>
-   </widget>
-   <widget class="QSpinBox" name="spinBox_21">
-    <property name="geometry">
-     <rect>
-      <x>150</x>
-      <y>230</y>
-      <width>71</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <family>Microsoft YaHei</family>
-      <pointsize>10</pointsize>
-      <bold>true</bold>
-     </font>
-    </property>
-    <property name="alignment">
-     <set>Qt::AlignmentFlag::AlignCenter</set>
-    </property>
-    <property name="buttonSymbols">
-     <enum>QAbstractSpinBox::ButtonSymbols::NoButtons</enum>
-    </property>
-    <property name="minimum">
-     <number>1</number>
-    </property>
-    <property name="maximum">
-     <number>9999</number>
-    </property>
-   </widget>
-   <widget class="QComboBox" name="comboBox">
-    <property name="geometry">
-     <rect>
-      <x>150</x>
-      <y>30</y>
-      <width>71</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <family>Microsoft YaHei</family>
-      <pointsize>11</pointsize>
-      <bold>true</bold>
-     </font>
-    </property>
-    <item>
-     <property name="text">
-      <string>关闭</string>
-     </property>
-    </item>
-    <item>
-     <property name="text">
-      <string>时间模式</string>
-     </property>
-    </item>
-    <item>
-     <property name="text">
-      <string>距离模式</string>
-     </property>
-    </item>
-   </widget>
-   <widget class="QComboBox" name="comboBox_2">
-    <property name="geometry">
-     <rect>
-      <x>150</x>
-      <y>150</y>
-      <width>71</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <family>Microsoft YaHei</family>
-      <pointsize>11</pointsize>
-      <bold>true</bold>
-     </font>
-    </property>
-    <item>
-     <property name="text">
-      <string>关闭</string>
-     </property>
-    </item>
-    <item>
-     <property name="text">
-      <string>时间模式</string>
-     </property>
-    </item>
-    <item>
-     <property name="text">
-      <string>距离模式</string>
-     </property>
-    </item>
-   </widget>
-  </widget>
+   <item>
+    <layout class="QHBoxLayout" name="contentArea">
+     <item>
+      <widget class="QGroupBox" name="groupBox_2">
+       <property name="font">
+        <font>
+         <family>Microsoft YaHei</family>
+         <pointsize>-1</pointsize>
+         <italic>false</italic>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QGroupBox{font: bold 14px &quot;Microsoft YaHei&quot;; color: #2c3e50; border: 1px solid #dcdde1; border-radius: 8px; margin-top: 12px; padding-top: 16px; background: #ffffff;}
+QGroupBox::title{subcontrol-origin: margin; left: 12px; padding: 0 6px;}</string>
+       </property>
+       <property name="title">
+        <string>流水线设置</string>
+       </property>
+       <layout class="QFormLayout" name="lineLayout">
+        <property name="horizontalSpacing">
+         <number>10</number>
+        </property>
+        <property name="verticalSpacing">
+         <number>6</number>
+        </property>
+        <property name="leftMargin">
+         <number>16</number>
+        </property>
+        <property name="topMargin">
+         <number>20</number>
+        </property>
+        <property name="rightMargin">
+         <number>16</number>
+        </property>
+        <property name="bottomMargin">
+         <number>16</number>
+        </property>
+        <item row="0" column="0">
+         <widget class="QLabel" name="label_103">
+          <property name="font">
+           <font>
+            <family>Microsoft YaHei</family>
+            <pointsize>12</pointsize>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">color: #34495e; background: transparent;</string>
+          </property>
+          <property name="text">
+           <string>飞行振镜幅面:</string>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="1">
+         <widget class="QSpinBox" name="spinBox_10">
+          <property name="font">
+           <font>
+            <family>Microsoft YaHei</family>
+            <pointsize>-1</pointsize>
+            <italic>false</italic>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QSpinBox{font: bold 12px &quot;Microsoft YaHei&quot;; border: 2px solid #bdc3c7; border-radius: 4px; background: white; padding: 2px 6px;}QSpinBox:focus{border-color: #3498db;}</string>
+          </property>
+          <property name="buttonSymbols">
+           <enum>QAbstractSpinBox::ButtonSymbols::NoButtons</enum>
+          </property>
+          <property name="minimum">
+           <number>1</number>
+          </property>
+          <property name="maximum">
+           <number>999</number>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="0">
+         <widget class="QLabel" name="label_99">
+          <property name="font">
+           <font>
+            <family>Microsoft YaHei</family>
+            <pointsize>12</pointsize>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">color: #34495e; background: transparent;</string>
+          </property>
+          <property name="text">
+           <string>飞行编码器方向:</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="1">
+         <widget class="QComboBox" name="comboBox_4">
+          <property name="font">
+           <font>
+            <family>Microsoft YaHei</family>
+            <pointsize>-1</pointsize>
+            <italic>false</italic>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QComboBox{font: bold 12px &quot;Microsoft YaHei&quot;; padding: 4px 10px; border: 2px solid #bdc3c7; border-radius: 4px; background: white;}QComboBox:focus{border-color: #3498db;}QComboBox::drop-down{width: 28px;}</string>
+          </property>
+          <item>
+           <property name="text">
+            <string>顺时针</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>逆时针</string>
+           </property>
+          </item>
+         </widget>
+        </item>
+        <item row="2" column="0">
+         <widget class="QLabel" name="label_102">
+          <property name="font">
+           <font>
+            <family>Microsoft YaHei</family>
+            <pointsize>12</pointsize>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">color: #34495e; background: transparent;</string>
+          </property>
+          <property name="text">
+           <string>飞行轴方向:</string>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="1">
+         <widget class="QComboBox" name="comboBox_5">
+          <property name="font">
+           <font>
+            <family>Microsoft YaHei</family>
+            <pointsize>-1</pointsize>
+            <italic>false</italic>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QComboBox{font: bold 12px &quot;Microsoft YaHei&quot;; padding: 4px 10px; border: 2px solid #bdc3c7; border-radius: 4px; background: white;}QComboBox:focus{border-color: #3498db;}QComboBox::drop-down{width: 28px;}</string>
+          </property>
+          <item>
+           <property name="text">
+            <string>X轴飞行</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Y轴飞行</string>
+           </property>
+          </item>
+         </widget>
+        </item>
+        <item row="3" column="0">
+         <widget class="QLabel" name="label_72">
+          <property name="font">
+           <font>
+            <family>Microsoft YaHei</family>
+            <pointsize>12</pointsize>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">color: #34495e; background: transparent;</string>
+          </property>
+          <property name="text">
+           <string>飞行模式开关:</string>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="1">
+         <widget class="QComboBox" name="comboBox_6">
+          <property name="font">
+           <font>
+            <family>Microsoft YaHei</family>
+            <pointsize>-1</pointsize>
+            <italic>false</italic>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QComboBox{font: bold 12px &quot;Microsoft YaHei&quot;; padding: 4px 10px; border: 2px solid #bdc3c7; border-radius: 4px; background: white;}QComboBox:focus{border-color: #3498db;}QComboBox::drop-down{width: 28px;}</string>
+          </property>
+          <item>
+           <property name="text">
+            <string>静态</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>飞行</string>
+           </property>
+          </item>
+         </widget>
+        </item>
+        <item row="4" column="0">
+         <widget class="QLabel" name="label_100">
+          <property name="font">
+           <font>
+            <family>Microsoft YaHei</family>
+            <pointsize>12</pointsize>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">color: #34495e; background: transparent;</string>
+          </property>
+          <property name="text">
+           <string>编码器脉冲数:</string>
+          </property>
+         </widget>
+        </item>
+        <item row="4" column="1">
+         <widget class="QSpinBox" name="spinBox_15">
+          <property name="font">
+           <font>
+            <family>Microsoft YaHei</family>
+            <pointsize>-1</pointsize>
+            <italic>false</italic>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QSpinBox{font: bold 12px &quot;Microsoft YaHei&quot;; border: 2px solid #bdc3c7; border-radius: 4px; background: white; padding: 2px 6px;}QSpinBox:focus{border-color: #3498db;}</string>
+          </property>
+          <property name="buttonSymbols">
+           <enum>QAbstractSpinBox::ButtonSymbols::NoButtons</enum>
+          </property>
+          <property name="minimum">
+           <number>1</number>
+          </property>
+          <property name="maximum">
+           <number>9999</number>
+          </property>
+         </widget>
+        </item>
+        <item row="5" column="0">
+         <widget class="QLabel" name="label_101">
+          <property name="font">
+           <font>
+            <family>Microsoft YaHei</family>
+            <pointsize>12</pointsize>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">color: #34495e; background: transparent;</string>
+          </property>
+          <property name="text">
+           <string>编码器直径:</string>
+          </property>
+         </widget>
+        </item>
+        <item row="5" column="1">
+         <widget class="QSpinBox" name="spinBox_14">
+          <property name="font">
+           <font>
+            <family>Microsoft YaHei</family>
+            <pointsize>-1</pointsize>
+            <italic>false</italic>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QSpinBox{font: bold 12px &quot;Microsoft YaHei&quot;; border: 2px solid #bdc3c7; border-radius: 4px; background: white; padding: 2px 6px;}QSpinBox:focus{border-color: #3498db;}</string>
+          </property>
+          <property name="buttonSymbols">
+           <enum>QAbstractSpinBox::ButtonSymbols::NoButtons</enum>
+          </property>
+          <property name="minimum">
+           <number>1</number>
+          </property>
+          <property name="maximum">
+           <number>999</number>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </item>
+     <item>
+      <widget class="QGroupBox" name="groupBox">
+       <property name="font">
+        <font>
+         <family>Microsoft YaHei</family>
+         <pointsize>-1</pointsize>
+         <italic>false</italic>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QGroupBox{font: bold 14px &quot;Microsoft YaHei&quot;; color: #2c3e50; border: 1px solid #dcdde1; border-radius: 8px; margin-top: 12px; padding-top: 16px; background: #ffffff;}
+QGroupBox::title{subcontrol-origin: margin; left: 12px; padding: 0 6px;}</string>
+       </property>
+       <property name="title">
+        <string>喷码参数</string>
+       </property>
+       <layout class="QFormLayout" name="sprayLayout">
+        <property name="horizontalSpacing">
+         <number>10</number>
+        </property>
+        <property name="verticalSpacing">
+         <number>6</number>
+        </property>
+        <property name="leftMargin">
+         <number>16</number>
+        </property>
+        <property name="topMargin">
+         <number>20</number>
+        </property>
+        <property name="rightMargin">
+         <number>16</number>
+        </property>
+        <property name="bottomMargin">
+         <number>16</number>
+        </property>
+        <item row="0" column="0">
+         <widget class="QLabel" name="label_27">
+          <property name="font">
+           <font>
+            <family>Microsoft YaHei</family>
+            <pointsize>12</pointsize>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">color: #34495e; background: transparent;</string>
+          </property>
+          <property name="text">
+           <string>激光功率:</string>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="1">
+         <widget class="QSpinBox" name="spinBox">
+          <property name="font">
+           <font>
+            <family>Microsoft YaHei</family>
+            <pointsize>-1</pointsize>
+            <italic>false</italic>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QSpinBox{font: bold 12px &quot;Microsoft YaHei&quot;; border: 2px solid #bdc3c7; border-radius: 4px; background: white; padding: 2px 6px;}QSpinBox:focus{border-color: #3498db;}</string>
+          </property>
+          <property name="buttonSymbols">
+           <enum>QAbstractSpinBox::ButtonSymbols::NoButtons</enum>
+          </property>
+          <property name="minimum">
+           <number>5</number>
+          </property>
+          <property name="maximum">
+           <number>95</number>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="0">
+         <widget class="QLabel" name="label_34">
+          <property name="font">
+           <font>
+            <family>Microsoft YaHei</family>
+            <pointsize>12</pointsize>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">color: #34495e; background: transparent;</string>
+          </property>
+          <property name="text">
+           <string>激光频率:</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="1">
+         <widget class="QSpinBox" name="spinBox_2">
+          <property name="font">
+           <font>
+            <family>Microsoft YaHei</family>
+            <pointsize>-1</pointsize>
+            <italic>false</italic>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QSpinBox{font: bold 12px &quot;Microsoft YaHei&quot;; border: 2px solid #bdc3c7; border-radius: 4px; background: white; padding: 2px 6px;}QSpinBox:focus{border-color: #3498db;}</string>
+          </property>
+          <property name="buttonSymbols">
+           <enum>QAbstractSpinBox::ButtonSymbols::NoButtons</enum>
+          </property>
+          <property name="minimum">
+           <number>5</number>
+          </property>
+          <property name="maximum">
+           <number>400</number>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="0">
+         <widget class="QLabel" name="label_41">
+          <property name="font">
+           <font>
+            <family>Microsoft YaHei</family>
+            <pointsize>12</pointsize>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">color: #34495e; background: transparent;</string>
+          </property>
+          <property name="text">
+           <string>开光延时:</string>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="1">
+         <widget class="QSpinBox" name="spinBox_3">
+          <property name="font">
+           <font>
+            <family>Microsoft YaHei</family>
+            <pointsize>-1</pointsize>
+            <italic>false</italic>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QSpinBox{font: bold 12px &quot;Microsoft YaHei&quot;; border: 2px solid #bdc3c7; border-radius: 4px; background: white; padding: 2px 6px;}QSpinBox:focus{border-color: #3498db;}</string>
+          </property>
+          <property name="buttonSymbols">
+           <enum>QAbstractSpinBox::ButtonSymbols::NoButtons</enum>
+          </property>
+          <property name="minimum">
+           <number>0</number>
+          </property>
+          <property name="maximum">
+           <number>30</number>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="0">
+         <widget class="QLabel" name="label_42">
+          <property name="font">
+           <font>
+            <family>Microsoft YaHei</family>
+            <pointsize>12</pointsize>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">color: #34495e; background: transparent;</string>
+          </property>
+          <property name="text">
+           <string>关光延时:</string>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="1">
+         <widget class="QSpinBox" name="spinBox_4">
+          <property name="font">
+           <font>
+            <family>Microsoft YaHei</family>
+            <pointsize>-1</pointsize>
+            <italic>false</italic>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QSpinBox{font: bold 12px &quot;Microsoft YaHei&quot;; border: 2px solid #bdc3c7; border-radius: 4px; background: white; padding: 2px 6px;}QSpinBox:focus{border-color: #3498db;}</string>
+          </property>
+          <property name="buttonSymbols">
+           <enum>QAbstractSpinBox::ButtonSymbols::NoButtons</enum>
+          </property>
+          <property name="minimum">
+           <number>0</number>
+          </property>
+          <property name="maximum">
+           <number>30</number>
+          </property>
+         </widget>
+        </item>
+        <item row="4" column="0">
+         <widget class="QLabel" name="label_44">
+          <property name="font">
+           <font>
+            <family>Microsoft YaHei</family>
+            <pointsize>12</pointsize>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">color: #34495e; background: transparent;</string>
+          </property>
+          <property name="text">
+           <string>跳转延时:</string>
+          </property>
+         </widget>
+        </item>
+        <item row="4" column="1">
+         <widget class="QSpinBox" name="spinBox_5">
+          <property name="font">
+           <font>
+            <family>Microsoft YaHei</family>
+            <pointsize>-1</pointsize>
+            <italic>false</italic>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QSpinBox{font: bold 12px &quot;Microsoft YaHei&quot;; border: 2px solid #bdc3c7; border-radius: 4px; background: white; padding: 2px 6px;}QSpinBox:focus{border-color: #3498db;}</string>
+          </property>
+          <property name="buttonSymbols">
+           <enum>QAbstractSpinBox::ButtonSymbols::NoButtons</enum>
+          </property>
+          <property name="minimum">
+           <number>0</number>
+          </property>
+          <property name="maximum">
+           <number>800</number>
+          </property>
+         </widget>
+        </item>
+        <item row="5" column="0">
+         <widget class="QLabel" name="label_45">
+          <property name="font">
+           <font>
+            <family>Microsoft YaHei</family>
+            <pointsize>12</pointsize>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">color: #34495e; background: transparent;</string>
+          </property>
+          <property name="text">
+           <string>结束延时:</string>
+          </property>
+         </widget>
+        </item>
+        <item row="5" column="1">
+         <widget class="QSpinBox" name="spinBox_7">
+          <property name="font">
+           <font>
+            <family>Microsoft YaHei</family>
+            <pointsize>-1</pointsize>
+            <italic>false</italic>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QSpinBox{font: bold 12px &quot;Microsoft YaHei&quot;; border: 2px solid #bdc3c7; border-radius: 4px; background: white; padding: 2px 6px;}QSpinBox:focus{border-color: #3498db;}</string>
+          </property>
+          <property name="buttonSymbols">
+           <enum>QAbstractSpinBox::ButtonSymbols::NoButtons</enum>
+          </property>
+          <property name="minimum">
+           <number>0</number>
+          </property>
+          <property name="maximum">
+           <number>30</number>
+          </property>
+         </widget>
+        </item>
+        <item row="6" column="0">
+         <widget class="QLabel" name="label_20">
+          <property name="font">
+           <font>
+            <family>Microsoft YaHei</family>
+            <pointsize>12</pointsize>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">color: #34495e; background: transparent;</string>
+          </property>
+          <property name="text">
+           <string>光电滤波:</string>
+          </property>
+         </widget>
+        </item>
+        <item row="6" column="1">
+         <widget class="QSpinBox" name="spinBox_8">
+          <property name="font">
+           <font>
+            <family>Microsoft YaHei</family>
+            <pointsize>-1</pointsize>
+            <italic>false</italic>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QSpinBox{font: bold 12px &quot;Microsoft YaHei&quot;; border: 2px solid #bdc3c7; border-radius: 4px; background: white; padding: 2px 6px;}QSpinBox:focus{border-color: #3498db;}</string>
+          </property>
+          <property name="buttonSymbols">
+           <enum>QAbstractSpinBox::ButtonSymbols::NoButtons</enum>
+          </property>
+          <property name="minimum">
+           <number>1</number>
+          </property>
+          <property name="maximum">
+           <number>999</number>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </item>
+     <item>
+      <widget class="QGroupBox" name="groupBox_3">
+       <property name="font">
+        <font>
+         <family>Microsoft YaHei</family>
+         <pointsize>-1</pointsize>
+         <italic>false</italic>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QGroupBox{font: bold 14px &quot;Microsoft YaHei&quot;; color: #2c3e50; border: 1px solid #dcdde1; border-radius: 8px; margin-top: 12px; padding-top: 16px; background: #ffffff;}
+QGroupBox::title{subcontrol-origin: margin; left: 12px; padding: 0 6px;}</string>
+       </property>
+       <property name="title">
+        <string>触发优化</string>
+       </property>
+       <layout class="QFormLayout" name="triggerLayout">
+        <property name="horizontalSpacing">
+         <number>10</number>
+        </property>
+        <property name="verticalSpacing">
+         <number>6</number>
+        </property>
+        <property name="leftMargin">
+         <number>16</number>
+        </property>
+        <property name="topMargin">
+         <number>20</number>
+        </property>
+        <property name="rightMargin">
+         <number>16</number>
+        </property>
+        <property name="bottomMargin">
+         <number>16</number>
+        </property>
+        <item row="0" column="0">
+         <widget class="QLabel" name="label_23">
+          <property name="font">
+           <font>
+            <family>Microsoft YaHei</family>
+            <pointsize>12</pointsize>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">color: #34495e; background: transparent;</string>
+          </property>
+          <property name="text">
+           <string>最小触发模式:</string>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="1">
+         <widget class="QComboBox" name="comboBox">
+          <property name="font">
+           <font>
+            <family>Microsoft YaHei</family>
+            <pointsize>-1</pointsize>
+            <italic>false</italic>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QComboBox{font: bold 12px &quot;Microsoft YaHei&quot;; padding: 4px 10px; border: 2px solid #bdc3c7; border-radius: 4px; background: white;}QComboBox:focus{border-color: #3498db;}QComboBox::drop-down{width: 28px;}</string>
+          </property>
+          <item>
+           <property name="text">
+            <string>关闭</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>时间模式</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>距离模式</string>
+           </property>
+          </item>
+         </widget>
+        </item>
+        <item row="1" column="0">
+         <widget class="QLabel" name="label_22">
+          <property name="font">
+           <font>
+            <family>Microsoft YaHei</family>
+            <pointsize>12</pointsize>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">color: #34495e; background: transparent;</string>
+          </property>
+          <property name="text">
+           <string>最小触发时间:</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="1">
+         <widget class="QSpinBox" name="spinBox_17">
+          <property name="font">
+           <font>
+            <family>Microsoft YaHei</family>
+            <pointsize>-1</pointsize>
+            <italic>false</italic>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QSpinBox{font: bold 12px &quot;Microsoft YaHei&quot;; border: 2px solid #bdc3c7; border-radius: 4px; background: white; padding: 2px 6px;}QSpinBox:focus{border-color: #3498db;}</string>
+          </property>
+          <property name="buttonSymbols">
+           <enum>QAbstractSpinBox::ButtonSymbols::NoButtons</enum>
+          </property>
+          <property name="minimum">
+           <number>1</number>
+          </property>
+          <property name="maximum">
+           <number>9999</number>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="0">
+         <widget class="QLabel" name="label_25">
+          <property name="font">
+           <font>
+            <family>Microsoft YaHei</family>
+            <pointsize>12</pointsize>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">color: #34495e; background: transparent;</string>
+          </property>
+          <property name="text">
+           <string>最小触发距离:</string>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="1">
+         <widget class="QSpinBox" name="spinBox_18">
+          <property name="font">
+           <font>
+            <family>Microsoft YaHei</family>
+            <pointsize>-1</pointsize>
+            <italic>false</italic>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QSpinBox{font: bold 12px &quot;Microsoft YaHei&quot;; border: 2px solid #bdc3c7; border-radius: 4px; background: white; padding: 2px 6px;}QSpinBox:focus{border-color: #3498db;}</string>
+          </property>
+          <property name="buttonSymbols">
+           <enum>QAbstractSpinBox::ButtonSymbols::NoButtons</enum>
+          </property>
+          <property name="minimum">
+           <number>1</number>
+          </property>
+          <property name="maximum">
+           <number>9999</number>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="0">
+         <widget class="QLabel" name="label_37">
+          <property name="font">
+           <font>
+            <family>Microsoft YaHei</family>
+            <pointsize>12</pointsize>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">color: #34495e; background: transparent;</string>
+          </property>
+          <property name="text">
+           <string>标刻延后触发模式:</string>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="1">
+         <widget class="QComboBox" name="comboBox_2">
+          <property name="font">
+           <font>
+            <family>Microsoft YaHei</family>
+            <pointsize>-1</pointsize>
+            <italic>false</italic>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QComboBox{font: bold 12px &quot;Microsoft YaHei&quot;; padding: 4px 10px; border: 2px solid #bdc3c7; border-radius: 4px; background: white;}QComboBox:focus{border-color: #3498db;}QComboBox::drop-down{width: 28px;}</string>
+          </property>
+          <item>
+           <property name="text">
+            <string>关闭</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>时间模式</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>距离模式</string>
+           </property>
+          </item>
+         </widget>
+        </item>
+        <item row="4" column="0">
+         <widget class="QLabel" name="label_38">
+          <property name="font">
+           <font>
+            <family>Microsoft YaHei</family>
+            <pointsize>12</pointsize>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">color: #34495e; background: transparent;</string>
+          </property>
+          <property name="text">
+           <string>标刻延后触发时间:</string>
+          </property>
+         </widget>
+        </item>
+        <item row="4" column="1">
+         <widget class="QSpinBox" name="spinBox_20">
+          <property name="font">
+           <font>
+            <family>Microsoft YaHei</family>
+            <pointsize>-1</pointsize>
+            <italic>false</italic>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QSpinBox{font: bold 12px &quot;Microsoft YaHei&quot;; border: 2px solid #bdc3c7; border-radius: 4px; background: white; padding: 2px 6px;}QSpinBox:focus{border-color: #3498db;}</string>
+          </property>
+          <property name="buttonSymbols">
+           <enum>QAbstractSpinBox::ButtonSymbols::NoButtons</enum>
+          </property>
+          <property name="minimum">
+           <number>1</number>
+          </property>
+          <property name="maximum">
+           <number>9999</number>
+          </property>
+         </widget>
+        </item>
+        <item row="5" column="0">
+         <widget class="QLabel" name="label_39">
+          <property name="font">
+           <font>
+            <family>Microsoft YaHei</family>
+            <pointsize>12</pointsize>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">color: #34495e; background: transparent;</string>
+          </property>
+          <property name="text">
+           <string>标刻延后触发距离:</string>
+          </property>
+         </widget>
+        </item>
+        <item row="5" column="1">
+         <widget class="QSpinBox" name="spinBox_21">
+          <property name="font">
+           <font>
+            <family>Microsoft YaHei</family>
+            <pointsize>-1</pointsize>
+            <italic>false</italic>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QSpinBox{font: bold 12px &quot;Microsoft YaHei&quot;; border: 2px solid #bdc3c7; border-radius: 4px; background: white; padding: 2px 6px;}QSpinBox:focus{border-color: #3498db;}</string>
+          </property>
+          <property name="buttonSymbols">
+           <enum>QAbstractSpinBox::ButtonSymbols::NoButtons</enum>
+          </property>
+          <property name="minimum">
+           <number>1</number>
+          </property>
+          <property name="maximum">
+           <number>9999</number>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="bottomBar">
+     <item>
+      <spacer name="bottomSpacer">
+       <property name="orientation">
+        <enum>Qt::Orientation::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>40</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item>
+      <widget class="QPushButton" name="btnClose">
+       <property name="minimumSize">
+        <size>
+         <width>80</width>
+         <height>36</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>80</width>
+         <height>36</height>
+        </size>
+       </property>
+       <property name="font">
+        <font>
+         <family>Microsoft YaHei</family>
+         <pointsize>-1</pointsize>
+         <italic>false</italic>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton{font: bold 12px &quot;Microsoft YaHei&quot;; background: #e74c3c; color: white; border-radius: 6px; padding: 6px 14px;}
+QPushButton:hover{background: #c0392b;}</string>
+       </property>
+       <property name="text">
+        <string>关闭</string>
+       </property>
+       <property name="icon">
+        <iconset resource="../OCRdemo.qrc">
+         <normaloff>:/PIC/Resources/PICs/Fanhui.png</normaloff>:/PIC/Resources/PICs/Fanhui.png</iconset>
+       </property>
+       <property name="iconSize">
+        <size>
+         <width>20</width>
+         <height>20</height>
+        </size>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+  </layout>
  </widget>
- <layoutdefault spacing="6" margin="11"/>
  <resources>
   <include location="../OCRdemo.qrc"/>
   <include location="../../../../LibreCAD-2.2/librecad/src/OCRdemo.qrc"/>

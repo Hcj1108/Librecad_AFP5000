@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>SimulatorClass</class>
+ <widget class="QDialog" name="SimulatorClass">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>531</width>
+    <height>198</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>仿真文件夹选择</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="../OCRdemo.qrc">
+    <normaloff>:/PIC/Resources/PICs/Anquan.png</normaloff>:/PIC/Resources/PICs/Anquan.png</iconset>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background-color:rgb(220, 235, 240);</string>
+  </property>
+  <layout class="QVBoxLayout" name="mainLayout">
+   <property name="spacing">
+    <number>12</number>
+   </property>
+   <property name="leftMargin">
+    <number>20</number>
+   </property>
+   <property name="topMargin">
+    <number>20</number>
+   </property>
+   <property name="rightMargin">
+    <number>20</number>
+   </property>
+   <property name="bottomMargin">
+    <number>20</number>
+   </property>
+   <item>
+    <widget class="QLabel" name="labelTitle">
+     <property name="font">
+      <font>
+       <family>Microsoft YaHei</family>
+       <pointsize>14</pointsize>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color: #2c3e50; background: transparent;</string>
+     </property>
+     <property name="text">
+      <string>选择仿真文件夹</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignmentFlag::AlignCenter</set>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="hl_path">
+     <item>
+      <widget class="QLineEdit" name="lineEditPath">
+       <property name="minimumSize">
+        <size>
+         <width>0</width>
+         <height>36</height>
+        </size>
+       </property>
+       <property name="font">
+        <font>
+         <family>Microsoft YaHei</family>
+         <pointsize>-1</pointsize>
+         <italic>false</italic>
+         <bold>false</bold>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QLineEdit{font: 12px &quot;Microsoft YaHei&quot;; padding: 6px 10px; border: 2px solid #bdc3c7; border-radius: 4px; background: white;}
+QLineEdit:focus{border-color: #3498db;}</string>
+       </property>
+       <property name="readOnly">
+        <bool>true</bool>
+       </property>
+       <property name="placeholderText">
+        <string>请选择文件夹...</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QToolButton" name="btnBrowse">
+       <property name="minimumSize">
+        <size>
+         <width>80</width>
+         <height>36</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>80</width>
+         <height>36</height>
+        </size>
+       </property>
+       <property name="font">
+        <font>
+         <family>Microsoft YaHei</family>
+         <pointsize>-1</pointsize>
+         <italic>false</italic>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QToolButton{font: bold 12px &quot;Microsoft YaHei&quot;; background: #3498db; color: white; border-radius: 6px; padding: 6px 14px;}
+QToolButton:hover{background: #2980b9;}</string>
+       </property>
+       <property name="text">
+        <string>浏览</string>
+       </property>
+       <property name="icon">
+        <iconset resource="../OCRdemo.qrc">
+         <normaloff>:/PIC/Resources/PICs/GJH.png</normaloff>:/PIC/Resources/PICs/GJH.png</iconset>
+       </property>
+       <property name="iconSize">
+        <size>
+         <width>20</width>
+         <height>20</height>
+        </size>
+       </property>
+       <property name="toolButtonStyle">
+        <enum>Qt::ToolButtonStyle::ToolButtonTextBesideIcon</enum>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <widget class="QLabel" name="labelCount">
+     <property name="font">
+      <font>
+       <family>Microsoft YaHei</family>
+       <pointsize>12</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color: #7f8c8d; background: transparent;</string>
+     </property>
+     <property name="text">
+      <string>未选择文件夹</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignmentFlag::AlignCenter</set>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="hl_buttons">
+     <item>
+      <spacer name="spacerLeft">
+       <property name="orientation">
+        <enum>Qt::Orientation::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>40</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item>
+      <widget class="QPushButton" name="btnConfirm">
+       <property name="minimumSize">
+        <size>
+         <width>80</width>
+         <height>36</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>80</width>
+         <height>36</height>
+        </size>
+       </property>
+       <property name="font">
+        <font>
+         <family>Microsoft YaHei</family>
+         <pointsize>-1</pointsize>
+         <italic>false</italic>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton{font: bold 12px &quot;Microsoft YaHei&quot;; background: #27ae60; color: white; border-radius: 6px; padding: 6px 16px;}
+QPushButton:hover{background: #229954;}</string>
+       </property>
+       <property name="text">
+        <string>确认</string>
+       </property>
+       <property name="icon">
+        <iconset resource="../OCRdemo.qrc">
+         <normaloff>:/PIC/Resources/PICs/checkbox_checked.png</normaloff>:/PIC/Resources/PICs/checkbox_checked.png</iconset>
+       </property>
+       <property name="iconSize">
+        <size>
+         <width>20</width>
+         <height>20</height>
+        </size>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="btnCancel">
+       <property name="minimumSize">
+        <size>
+         <width>80</width>
+         <height>36</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>80</width>
+         <height>36</height>
+        </size>
+       </property>
+       <property name="font">
+        <font>
+         <family>Microsoft YaHei</family>
+         <pointsize>-1</pointsize>
+         <italic>false</italic>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton{font: bold 12px &quot;Microsoft YaHei&quot;; background: #e74c3c; color: white; border-radius: 6px; padding: 6px 14px;}
+QPushButton:hover{background: #c0392b;}</string>
+       </property>
+       <property name="text">
+        <string>取消</string>
+       </property>
+       <property name="icon">
+        <iconset resource="../OCRdemo.qrc">
+         <normaloff>:/PIC/Resources/PICs/Fanhui.png</normaloff>:/PIC/Resources/PICs/Fanhui.png</iconset>
+       </property>
+       <property name="iconSize">
+        <size>
+         <width>20</width>
+         <height>20</height>
+        </size>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+  </layout>
+ </widget>
+ <resources>
+  <include location="../OCRdemo.qrc"/>
+ </resources>
+ <connections/>
+</ui>

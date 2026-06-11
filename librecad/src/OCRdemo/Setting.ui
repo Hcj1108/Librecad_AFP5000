@@ -73,14 +73,14 @@
         </property>
         <property name="minimumSize">
          <size>
-          <width>561</width>
-          <height>491</height>
+          <width>530</width>
+          <height>530</height>
          </size>
         </property>
         <property name="maximumSize">
          <size>
-          <width>561</width>
-          <height>491</height>
+          <width>530</width>
+          <height>530</height>
          </size>
         </property>
         <property name="styleSheet">
@@ -179,7 +179,7 @@ QLineEdit:focus{border-color: #3498db;}</string>
               </widget>
              </item>
              <item>
-              <widget class="QToolButton" name="toolButton_5">
+              <widget class="QToolButton" name="toolButton_7">
                <property name="minimumSize">
                 <size>
                  <width>32</width>
@@ -202,7 +202,7 @@ QLineEdit:focus{border-color: #3498db;}</string>
               </widget>
              </item>
              <item>
-              <widget class="QToolButton" name="toolButton_7">
+              <widget class="QToolButton" name="toolButton_5">
                <property name="minimumSize">
                 <size>
                  <width>32</width>
@@ -528,8 +528,8 @@ QToolButton:hover{background: #2980b9;}</string>
              </property>
              <property name="iconSize">
               <size>
-               <width>30</width>
-               <height>30</height>
+               <width>20</width>
+               <height>20</height>
               </size>
              </property>
              <property name="toolButtonStyle">
@@ -564,8 +564,8 @@ QToolButton:hover{background: #229954;}</string>
              </property>
              <property name="iconSize">
               <size>
-               <width>30</width>
-               <height>30</height>
+               <width>20</width>
+               <height>20</height>
               </size>
              </property>
              <property name="toolButtonStyle">
@@ -581,6 +581,22 @@ QToolButton:hover{background: #229954;}</string>
           <property name="orientation">
            <enum>Qt::Orientation::Vertical</enum>
           </property>
+          <property name="sizeType">
+           <enum>QSizePolicy::Policy::MinimumExpanding</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>40</width>
+            <height>20</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item>
+         <spacer name="verticalSpacer_5">
+          <property name="orientation">
+           <enum>Qt::Orientation::Vertical</enum>
+          </property>
           <property name="sizeHint" stdset="0">
            <size>
             <width>20</width>
@@ -589,16 +605,111 @@ QToolButton:hover{background: #229954;}</string>
           </property>
          </spacer>
         </item>
+        <item>
+         <spacer name="verticalSpacer_4">
+          <property name="orientation">
+           <enum>Qt::Orientation::Vertical</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>20</width>
+            <height>40</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item>
+         <spacer name="verticalSpacer_3">
+          <property name="orientation">
+           <enum>Qt::Orientation::Vertical</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>20</width>
+            <height>40</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout">
+          <item>
+           <spacer name="horizontalSpacer_3">
+            <property name="orientation">
+             <enum>Qt::Orientation::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>40</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item>
+           <widget class="QPushButton" name="btnClose">
+            <property name="minimumSize">
+             <size>
+              <width>80</width>
+              <height>36</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>80</width>
+              <height>36</height>
+             </size>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">QPushButton{font: bold 12px &quot;Microsoft YaHei&quot;; background: #e74c3c; color: white; border-radius: 6px; padding: 6px 14px;}
+QPushButton:hover{background: #c0392b;}</string>
+            </property>
+            <property name="text">
+             <string>关闭</string>
+            </property>
+            <property name="icon">
+             <iconset resource="../OCRdemo.qrc">
+              <normaloff>:/PIC/Resources/PICs/Fanhui.png</normaloff>:/PIC/Resources/PICs/Fanhui.png</iconset>
+            </property>
+            <property name="iconSize">
+             <size>
+              <width>20</width>
+              <height>20</height>
+             </size>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <spacer name="verticalSpacer_2">
+          <property name="orientation">
+           <enum>Qt::Orientation::Vertical</enum>
+          </property>
+          <property name="sizeType">
+           <enum>QSizePolicy::Policy::Minimum</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>10</width>
+            <height>10</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
        </layout>
       </item>
       <item>
-       <spacer name="horizontalSpacer_3">
+       <spacer name="horizontalSpacer_4">
         <property name="orientation">
          <enum>Qt::Orientation::Horizontal</enum>
         </property>
+        <property name="sizeType">
+         <enum>QSizePolicy::Policy::Minimum</enum>
+        </property>
         <property name="sizeHint" stdset="0">
          <size>
-          <width>40</width>
+          <width>10</width>
           <height>20</height>
          </size>
         </property>

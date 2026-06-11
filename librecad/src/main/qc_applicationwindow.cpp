@@ -31,6 +31,7 @@
 
 #include "qc_applicationwindow.h"
 #include "LoginDialog.h"
+#include "Simulator.h"
 
 #include <QStatusBar>
 #include <QMenuBar>
@@ -350,7 +351,7 @@ QC_ApplicationWindow::QC_ApplicationWindow()
     connect(ui->toolButton_11, &QPushButton::clicked, this, [=] {
         addscheme.SetAddScheme(LocationScale);
         addscheme.show();
-        addscheme.move(QApplication::desktop()->screen()->rect().center() - addscheme.rect().center());
+       /* addscheme.move(QApplication::desktop()->screen()->rect().center() - addscheme.rect().center());*/
         });
 
     connect(ui->toolButton_14, &QPushButton::clicked, this, [=] {
@@ -565,12 +566,12 @@ QC_ApplicationWindow::QC_ApplicationWindow()
     connect(&User, &user::alterpassword, this, &QC_ApplicationWindow::Alterpassword); //修改用户动作);
 
     connect(&jgadmin, &Jgadmin::showmain, this, [=] { 
-        QMessageBox* msgBox = new QMessageBox(QMessageBox::Question, QString::fromLocal8Bit("是否保存方案 "), QString::fromLocal8Bit("是否保存修改内容？ "), QMessageBox::Ok, &setting);
+     /*   QMessageBox* msgBox = new QMessageBox(QMessageBox::Question, QString::fromLocal8Bit("是否保存方案 "), QString::fromLocal8Bit("是否保存修改内容？ "), QMessageBox::Ok, &setting);
         msgBox->setStandardButtons(QMessageBox::Ok | QMessageBox::Cancel);
         msgBox->setButtonText(QMessageBox::Ok, QString::fromLocal8Bit("保存并返回 "));
         msgBox->setButtonText(QMessageBox::Cancel, QString::fromLocal8Bit("直接返回 "));
         if (msgBox->exec() == QMessageBox::Ok)
-        {
+        {*/
             GatJgadmin();
             AlterDB_Jgconfig();//更新数据库
             FileUtils::Sendmarking();
@@ -580,22 +581,17 @@ QC_ApplicationWindow::QC_ApplicationWindow()
             jgadmin.hide();
             Logger::write("保存方案并返回 ");
 
-        }
+       /* }
         else
         {
             this->show();
             jgadmin.hide();
         }
 
-        Logger::write("关闭参数设置界面 ");
+        Logger::write("关闭参数设置界面 ");*/
 
         });
-    connect(&serialmanager, &SerialManager::showmain, this, [=] {
 
-        serialmanager.hide();
-        
-      
-        });
     connect(&serialmanager, &SerialManager::setzhuangtai, this, [=] {
         int date = serialmanager.getSerialNum();
         int date2 = serialmanager.getSerialNum2();
@@ -631,12 +627,12 @@ QC_ApplicationWindow::QC_ApplicationWindow()
         }
         });
     connect(&xjadmin, &XJadmin::showmain, this, [=] {
-        QMessageBox* msgBox = new QMessageBox(QMessageBox::Question, QString::fromLocal8Bit("是否保存方案 "), QString::fromLocal8Bit("是否保存修改内容？ "), QMessageBox::Ok, &setting);
+      /*  QMessageBox* msgBox = new QMessageBox(QMessageBox::Question, QString::fromLocal8Bit("是否保存方案 "), QString::fromLocal8Bit("是否保存修改内容？ "), QMessageBox::Ok, &setting);
         msgBox->setStandardButtons(QMessageBox::Ok | QMessageBox::Cancel);
         msgBox->setButtonText(QMessageBox::Ok, QString::fromLocal8Bit("保存并返回 "));
         msgBox->setButtonText(QMessageBox::Cancel, QString::fromLocal8Bit("直接返回 "));
         if (msgBox->exec() == QMessageBox::Ok)
-        {
+        {*/
             GatXJadmin();
             FileUtils::Sendphoto();
             FileUtils::Sendalarm();
@@ -644,21 +640,20 @@ QC_ApplicationWindow::QC_ApplicationWindow()
             FileUtils::Sendkey();
 
             AlterDB_Jgconfig();//更新数据库
-           
             AlterScheme();
             IsxjadminOpen = false;
             this->show();
             //AlterScheme();
             xjadmin.hide();
             Logger::write("保存方案并返回 ");
-        }
+       /* }
         else
         {
             IsxjadminOpen = false;
             this->show();
             xjadmin.hide();
         }
-        Logger::write("关闭参数设置界面 ");
+        Logger::write("关闭参数设置界面 ");*/
         });
 
   
@@ -4938,7 +4933,6 @@ void QC_ApplicationWindow::ShowSetting()
     setting.schemeName = ui->comboBox->currentText();
 
     setting.show();
-    setting.move(QApplication::desktop()->screen()->rect().center() - setting.rect().center());
     //this->hide();
     Logger::write("打开参数调整界面 ");
         
@@ -4975,7 +4969,7 @@ void QC_ApplicationWindow::ShowJgadmain()
     }
     IsJgadminOpen = true;
     jgadmin.show();
-    jgadmin.move(QApplication::desktop()->screen()->rect().center() - jgadmin.rect().center());
+  
     //this->hide();
     Logger::write("打开激光参数界面 ");
 }
@@ -5010,7 +5004,7 @@ void QC_ApplicationWindow::ShowXJadmain()
     }
     IsxjadminOpen = true;
     xjadmin.show();
-    xjadmin.move(QApplication::desktop()->screen()->rect().center() - jgadmin.rect().center());
+  /*  xjadmin.move(QApplication::desktop()->screen()->rect().center() - jgadmin.rect().center());*/
     //this->hide();
     Logger::write("打开检测参数界面 ");
 }
@@ -5022,7 +5016,7 @@ void QC_ApplicationWindow::ShowUser()
     SelectUser(USERname);
     User.setUser(Userindex, userinfo.PenMa, userinfo.LiuShuixian, userinfo.Chufa, userinfo.FangZhen, userinfo.PeiFang, userinfo.xiangJi, userinfo.CDL, userinfo.YongHu, userinfo.BianJi, TraverseUsernum, Name);
 
-    User.move(QApplication::desktop()->screen()->rect().center() - User.rect().center());
+   /* User.move(QApplication::desktop()->screen()->rect().center() - User.rect().center());*/
     //this->hide();
     Logger::write("打开用户界面 ");
 
@@ -5037,12 +5031,12 @@ void QC_ApplicationWindow::ShowThis()
     if (IsSettingOpen)
     {
         
-            QMessageBox* msgBox = new QMessageBox(QMessageBox::Question, QString::fromLocal8Bit("是否保存方案 "), QString::fromLocal8Bit("是否保存修改内容？ "), QMessageBox::Ok, &setting);
+          /*  QMessageBox* msgBox = new QMessageBox(QMessageBox::Question, QString::fromLocal8Bit("是否保存方案 "), QString::fromLocal8Bit("是否保存修改内容？ "), QMessageBox::Ok, &setting);
             msgBox->setStandardButtons(QMessageBox::Ok | QMessageBox::Cancel);
             msgBox->setButtonText(QMessageBox::Ok, QString::fromLocal8Bit("保存并返回 "));
-            msgBox->setButtonText(QMessageBox::Cancel, QString::fromLocal8Bit("直接返回 "));
-            if (msgBox->exec() == QMessageBox::Ok)
-            {
+            msgBox->setButtonText(QMessageBox::Cancel, QString::fromLocal8Bit("直接返回 "));*/
+            /*if (msgBox->exec() == QMessageBox::Ok)
+            {*/
               
                
                // AlterDB_Jgconfig();//更新数据库
@@ -5055,7 +5049,7 @@ void QC_ApplicationWindow::ShowThis()
                
                 Logger::write("保存方案并返回 ");
               
-            }
+           /* }
             else
             {
                 IsSettingOpen = false;
@@ -5063,7 +5057,7 @@ void QC_ApplicationWindow::ShowThis()
                 setting.hide();
                 IsAlter = false;
                 SetScheme(ui->comboBox->currentText());
-            }
+            }*/
 
          //FileUtils::SendBKBK(60, RGBMode);
          FileUtils::SendBKBK("11","00", RGBMode);
@@ -5236,32 +5230,7 @@ void QC_ApplicationWindow::SetRot()
 
 }
 
-//void QC_ApplicationWindow::SetFirstOCRSize()
-//{
-//    FirstOCRSize = setting.getFirstOCRSize();
-//    IsAlter = true;
-//}
-//void QC_ApplicationWindow::SetSecOCRSize()
-//{
-//    SecOCRSize = setting.getSecOCRSize();
-//    IsAlter = true;
-//}
-//
-//void QC_ApplicationWindow::SetImageSize()
-//{
-//    if (!setting.isfistopen)
-//    {
-//        ImageSize = setting.getImageSize();
-//        SaveImageSize(ImageSize);
-//        rectX = 10;
-//        rectY = 10;
-//        rectW = 20;
-//        rectH = 20;
-//        cv::Rect rect2(rectX, rectY, rectW, rectH);
-//        rects = rect2;
-//        IsAlter = true;
-//    }
-//}
+
 
 
 
@@ -5684,9 +5653,9 @@ void QC_ApplicationWindow::AlterScheme()
             if (result)
             {
               
-                QMessageBox* msgBoxs = new QMessageBox(QMessageBox::Information, QString::fromLocal8Bit("修改成功 "), QString::fromLocal8Bit("配方更新成功! "), QMessageBox::Ok, &setting);
+               /* QMessageBox* msgBoxs = new QMessageBox(QMessageBox::Information, QString::fromLocal8Bit("修改成功 "), QString::fromLocal8Bit("配方更新成功! "), QMessageBox::Ok, &setting);
                 msgBoxs->button(QMessageBox::Ok)->setText(QString::fromLocal8Bit("确定 "));
-                msgBoxs->show();
+                msgBoxs->show();*/
                 IsAlter = false;
                 std::string defaultstr = "修改配方:" + schemename + "\n修改后配方参数为:\n ";
                 defaultstr.append("\t曝光时间: " + to_string(ExposureTime) + "\n");
@@ -5791,19 +5760,17 @@ void QC_ApplicationWindow::ViewRecord()
 //选择仿真文件夹
 void QC_ApplicationWindow::Simulate()
 {
-    ImageList.clear();
-    ImageListIndex = 0;
-    // 获取文件夹路径
-    QString Qfilepath = QFileDialog::getExistingDirectory(this,
-        "Select Dir",
-        "./NG_Pictures/");
-    string filepath = std::string(Qfilepath.toLocal8Bit()) + "/";
-    string suffix = "*.bmp";//后缀名
-    ImageList = getImageList(filepath, suffix);
-    QMessageBox* msgBoxs = new QMessageBox(QMessageBox::Information, QString::fromLocal8Bit("操作完成 "), QString::fromLocal8Bit("成功选择文件夹 "), QMessageBox::Ok, this);
-    msgBoxs->button(QMessageBox::Ok)->setText(QString::fromLocal8Bit("确定 "));
-    msgBoxs->show();
-    Logger::write("选择仿真文件夹 ");
+    Simulator dlg(this);
+    if (dlg.exec() == QDialog::Accepted) {
+        ImageList = dlg.getImageList();
+        ImageListIndex = 0;
+      /*  QMessageBox* msg = new QMessageBox(QMessageBox::Information,
+            QString::fromLocal8Bit("操作完成 "),
+            QString::fromLocal8Bit("成功选择文件夹 "),
+            QMessageBox::Ok, this);
+        msg->button(QMessageBox::Ok)->setText(QString::fromLocal8Bit("确定 "));
+        msg->show();*/
+    }
 }
 
 //只OCR不报警，用于仿真
@@ -6314,8 +6281,8 @@ void QC_ApplicationWindow::processImageAndControls() {
     int imageHeight = image.rows;
 
     // 计算宽高比例
-    double widthRatio = (double)561 / imageWidth;
-    double heightRatio = (double)491 / imageHeight;
+    double widthRatio = (double)530 / imageWidth;
+    double heightRatio = (double)530 / imageHeight;
 
     // 使用较小的比例来确保图像不超出label范围
     ImageSize = std::min(widthRatio, heightRatio);
@@ -6997,6 +6964,7 @@ void QC_ApplicationWindow::updateHistoryToolTips(int pass, QString RawResult, QS
         QString rawResult2;
         QString timeStr;
     };
+
 
     static QList<TempResult> tempHistory;
 

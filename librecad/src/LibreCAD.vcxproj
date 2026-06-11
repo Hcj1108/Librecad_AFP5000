@@ -245,6 +245,7 @@
     <ClCompile Include="OCRdemo\SerialManager.cpp" />
     <ClCompile Include="OCRdemo\Setting.cpp" />
     <ClCompile Include="OCRdemo\SimpleBarChart.cpp" />
+    <ClCompile Include="OCRdemo\Simulator.cpp" />
     <ClCompile Include="OCRdemo\SingletonNomArray.cpp" />
     <ClCompile Include="OCRdemo\user.cpp" />
     <ClCompile Include="OCRdemo\XJadmin.cpp" />
@@ -626,6 +627,7 @@
     <ClInclude Include="OCRdemo\PixelCorrector.h" />
     <QtMoc Include="OCRdemo\SimpleBarChart.h" />
     <QtMoc Include="OCRdemo\SenderBinUdp.h" />
+    <QtMoc Include="OCRdemo\Simulator.h" />
     <ClInclude Include="OCRdemo\SingletonNomArray.h" />
     <QtMoc Include="OCRdemo\XJadmin.h" />
     <ClInclude Include="plugins\document_interface.h" />
@@ -1055,6 +1057,7 @@
     <QtUic Include="OCRdemo\SenderBinUdp.ui" />
     <QtUic Include="OCRdemo\SerialManager.ui" />
     <QtUic Include="OCRdemo\Setting.ui" />
+    <QtUic Include="OCRdemo\Simulator.ui" />
     <QtUic Include="OCRdemo\user.ui" />
     <QtUic Include="OCRdemo\XJadmin.ui" />
     <QtUic Include="QC_ApplicationWindow.ui" />

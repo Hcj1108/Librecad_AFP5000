@@ -339,12 +339,12 @@ public:
     void disableBKBKPrinting();
   
     // 界面控制
-    void ShowSetting();                     // 显示设置界面
-               
+    void ShowSetting();                     // 显示设置界面   
     void ShowJgadmain();                    // 显示激光参数界面
     void ShowXJadmain();                    //显示相机参数界面
     void ShowUser();                        // 显示用户权限界面
     void ShowThis();                        // 显示主界面
+    void ViewRecord();                      // 查看历史记录界面
 
     // 参数设置
     void SubCapture();                      // 向设置界面发送图片
@@ -392,7 +392,7 @@ public:
     // 数据处理
     void SaveNG();                          // 保存NG图片
    
-    void ViewRecord();                      // 查看历史记录
+  
     void Simulate();                        // 模拟仿真加载目录
     void OnlyOcr();                         // 只OCR识别不报警
     void getSerialNum3();

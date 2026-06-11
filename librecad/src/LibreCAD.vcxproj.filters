@@ -1161,6 +1161,9 @@
     <ClCompile Include="OCRdemo\LoginDialog.cpp">
       <Filter>Generated Files</Filter>
     </ClCompile>
+    <ClCompile Include="OCRdemo\Simulator.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="ui\generic\actionlist.h">
@@ -2288,6 +2291,9 @@
     <QtMoc Include="OCRdemo\LoginDialog.h">
       <Filter>Generated Files</Filter>
     </QtMoc>
+    <QtMoc Include="OCRdemo\Simulator.h">
+      <Filter>Generated Files</Filter>
+    </QtMoc>
   </ItemGroup>
   <ItemGroup>
     <None Include="..\ts\librecad_ar.ts">
@@ -2732,6 +2738,9 @@
       <Filter>Generated Files</Filter>
     </QtUic>
     <QtUic Include="OCRdemo\LoginDialog.ui">
+      <Filter>Generated Files</Filter>
+    </QtUic>
+    <QtUic Include="OCRdemo\Simulator.ui">
       <Filter>Generated Files</Filter>
     </QtUic>
   </ItemGroup>

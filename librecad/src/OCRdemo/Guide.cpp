@@ -21,6 +21,7 @@ Guide::Guide(QWidget* parent)
         mediaPlayer->setMedia(QMediaContent(QUrl::fromLocalFile(videoFilePath)));
     }
 
+
     // 按钮连接
     connect(ui.pushButton, &QPushButton::clicked, this, &Guide::replayVideo);
     connect(ui.pushButton_3, &QPushButton::clicked, this, &Guide::togglePausePlay);
@@ -41,7 +42,7 @@ void Guide::SetQSS()
     // 设置窗口标志：保留系统菜单、显示问号(?)按钮、显示关闭(X)按钮
     setWindowFlags(Qt::WindowSystemMenuHint | Qt::WindowContextHelpButtonHint | Qt::WindowCloseButtonHint);
     setWindowTitle(QString::fromLocal8Bit("使用教程"));
-    ui.widget_2->setStyleSheet("QWidget { border: 1px solid green; }");
+   
 
 }
 

@@ -81,6 +81,11 @@ user::user(QWidget* parent)
             userinfo.CDL, userinfo.YongHu, userinfo.BianJi);
     });
 
+    connect(ui.btnClose, &QPushButton::clicked, this, [=] {
+       /* this->hide();*/
+        emit showmain();
+        });
+
     // 窗口样式：标准系统标题栏（含关闭按钮）
     setWindowFlags(Qt::WindowSystemMenuHint | Qt::WindowContextHelpButtonHint | Qt::WindowCloseButtonHint);
    
@@ -96,7 +101,7 @@ user::~user() = default;
  */
 void user::closeEvent(QCloseEvent* event)
 {
-    this->hide();
+   /* this->hide();*/
     emit showmain();
     event->ignore();
 }

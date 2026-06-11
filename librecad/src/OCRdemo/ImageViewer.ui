@@ -6,12 +6,12 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>930</width>
-    <height>620</height>
+    <width>864</width>
+    <height>559</height>
    </rect>
   </property>
   <property name="windowTitle">
-   <string>ImageViewer</string>
+   <string>查看图像记录</string>
   </property>
   <property name="windowIcon">
    <iconset resource="../OCRdemo.qrc">
@@ -20,328 +20,331 @@
   <property name="styleSheet">
    <string notr="true">background-color:rgb(220, 235, 240);</string>
   </property>
-  <widget class="QLabel" name="label">
-   <property name="geometry">
-    <rect>
-     <x>210</x>
-     <y>0</y>
-     <width>711</width>
-     <height>541</height>
-    </rect>
+  <layout class="QVBoxLayout" name="mainLayout">
+   <property name="spacing">
+    <number>6</number>
    </property>
-   <property name="text">
-    <string/>
+   <property name="leftMargin">
+    <number>10</number>
    </property>
-  </widget>
-  <widget class="Line" name="line">
-   <property name="geometry">
-    <rect>
-     <x>10</x>
-     <y>550</y>
-     <width>911</width>
-     <height>16</height>
-    </rect>
+   <property name="topMargin">
+    <number>10</number>
    </property>
-   <property name="lineWidth">
-    <number>3</number>
+   <property name="rightMargin">
+    <number>10</number>
    </property>
-   <property name="orientation">
-    <enum>Qt::Orientation::Horizontal</enum>
+   <property name="bottomMargin">
+    <number>10</number>
    </property>
-  </widget>
-  <widget class="QTreeView" name="treeView">
-   <property name="geometry">
-    <rect>
-     <x>10</x>
-     <y>70</y>
-     <width>191</width>
-     <height>471</height>
-    </rect>
-   </property>
-  </widget>
-  <widget class="QLabel" name="label_2">
-   <property name="geometry">
-    <rect>
-     <x>10</x>
-     <y>560</y>
-     <width>191</width>
-     <height>61</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <family>Microsoft YaHei</family>
-     <pointsize>12</pointsize>
-     <bold>true</bold>
-    </font>
-   </property>
-   <property name="text">
-    <string/>
-   </property>
-   <property name="alignment">
-    <set>Qt::AlignmentFlag::AlignCenter</set>
-   </property>
-  </widget>
-  <widget class="QToolButton" name="toolButton_2">
-   <property name="geometry">
-    <rect>
-     <x>210</x>
-     <y>560</y>
-     <width>161</width>
-     <height>61</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <family>Microsoft YaHei</family>
-     <pointsize>14</pointsize>
-     <bold>true</bold>
-    </font>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">/* 按下状态 */
-QToolButton:pressed {
-   background-color: #546E7A; /* 深石板灰 */
-    background-image: none;
-    padding-top: 12px;
-    padding-bottom: 8px;
-    border: 1px solid #37474F; /* 深色边框模拟阴影 */
-}
- QToolButton {
-		background-color: qlineargradient(x1:0, y1:0, x2:0, y2:1, 
-    	stop:0 #ffffff,       /* 顶部：纯白（高光） */
-   		stop:0.15 #dcdcdc,    /* 过渡：浅灰 */
-    	stop:0.85 #a9a9a9,    /* 底部过渡：中灰 */
-    	stop:1 #e8e8e8        /* 底部：亮灰（反光） */);
-}</string>
-   </property>
-   <property name="text">
-    <string>上一张</string>
-   </property>
-   <property name="icon">
-    <iconset resource="../OCRdemo.qrc">
-     <normaloff>:/PIC/Resources/PICs/calendar_prevmonth.png</normaloff>:/PIC/Resources/PICs/calendar_prevmonth.png</iconset>
-   </property>
-   <property name="iconSize">
-    <size>
-     <width>30</width>
-     <height>30</height>
-    </size>
-   </property>
-   <property name="toolButtonStyle">
-    <enum>Qt::ToolButtonStyle::ToolButtonTextBesideIcon</enum>
-   </property>
-  </widget>
-  <widget class="QToolButton" name="toolButton_5">
-   <property name="geometry">
-    <rect>
-     <x>760</x>
-     <y>560</y>
-     <width>161</width>
-     <height>61</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <family>Microsoft YaHei</family>
-     <pointsize>14</pointsize>
-     <bold>true</bold>
-    </font>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">/* 按下状态 */
-QToolButton:pressed {
-   background-color: #546E7A; /* 深石板灰 */
-    background-image: none;
-    padding-top: 12px;
-    padding-bottom: 8px;
-    border: 1px solid #37474F; /* 深色边框模拟阴影 */
-}
- QToolButton {
-		background-color: qlineargradient(x1:0, y1:0, x2:0, y2:1, 
-    	stop:0 #ffffff,       /* 顶部：纯白（高光） */
-   		stop:0.15 #dcdcdc,    /* 过渡：浅灰 */
-    	stop:0.85 #a9a9a9,    /* 底部过渡：中灰 */
-    	stop:1 #e8e8e8        /* 底部：亮灰（反光） */);
-}</string>
-   </property>
-   <property name="text">
-    <string>关闭窗口</string>
-   </property>
-   <property name="icon">
-    <iconset resource="../OCRdemo.qrc">
-     <normaloff>:/PIC/Resources/PICs/Fanhui.png</normaloff>:/PIC/Resources/PICs/Fanhui.png</iconset>
-   </property>
-   <property name="iconSize">
-    <size>
-     <width>30</width>
-     <height>30</height>
-    </size>
-   </property>
-   <property name="checkable">
-    <bool>false</bool>
-   </property>
-   <property name="autoRepeat">
-    <bool>false</bool>
-   </property>
-   <property name="autoRepeatInterval">
-    <number>100</number>
-   </property>
-   <property name="toolButtonStyle">
-    <enum>Qt::ToolButtonStyle::ToolButtonTextBesideIcon</enum>
-   </property>
-   <property name="autoRaise">
-    <bool>false</bool>
-   </property>
-  </widget>
-  <widget class="QToolButton" name="toolButton">
-   <property name="geometry">
-    <rect>
-     <x>10</x>
-     <y>0</y>
-     <width>191</width>
-     <height>61</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <family>Microsoft YaHei</family>
-     <pointsize>12</pointsize>
-     <bold>true</bold>
-    </font>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">/* 按下状态 */
-QToolButton:pressed {
-   background-color: #546E7A; /* 深石板灰 */
-    background-image: none;
-    padding-top: 12px;
-    padding-bottom: 8px;
-    border: 1px solid #37474F; /* 深色边框模拟阴影 */
-}
- QToolButton {
-		background-color: qlineargradient(x1:0, y1:0, x2:0, y2:1, 
-    	stop:0 #ffffff,       /* 顶部：纯白（高光） */
-   		stop:0.15 #dcdcdc,    /* 过渡：浅灰 */
-    	stop:0.85 #a9a9a9,    /* 底部过渡：中灰 */
-    	stop:1 #e8e8e8        /* 底部：亮灰（反光） */);
-}</string>
-   </property>
-   <property name="text">
-    <string>返回上一级</string>
-   </property>
-   <property name="iconSize">
-    <size>
-     <width>30</width>
-     <height>30</height>
-    </size>
-   </property>
-   <property name="toolButtonStyle">
-    <enum>Qt::ToolButtonStyle::ToolButtonTextUnderIcon</enum>
-   </property>
-  </widget>
-  <widget class="QToolButton" name="toolButton_3">
-   <property name="geometry">
-    <rect>
-     <x>400</x>
-     <y>560</y>
-     <width>161</width>
-     <height>61</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <family>Microsoft YaHei</family>
-     <pointsize>14</pointsize>
-     <bold>true</bold>
-    </font>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">/* 按下状态 */
-QToolButton:pressed {
-   background-color: #546E7A; /* 深石板灰 */
-    background-image: none;
-    padding-top: 12px;
-    padding-bottom: 8px;
-    border: 1px solid #37474F; /* 深色边框模拟阴影 */
-}
- QToolButton {
-		background-color: qlineargradient(x1:0, y1:0, x2:0, y2:1, 
-    	stop:0 #ffffff,       /* 顶部：纯白（高光） */
-   		stop:0.15 #dcdcdc,    /* 过渡：浅灰 */
-    	stop:0.85 #a9a9a9,    /* 底部过渡：中灰 */
-    	stop:1 #e8e8e8        /* 底部：亮灰（反光） */);
-}</string>
-   </property>
-   <property name="text">
-    <string>旋转</string>
-   </property>
-   <property name="icon">
-    <iconset resource="../OCRdemo.qrc">
-     <normaloff>:/PIC/Resources/PICs/Huanyuan.png</normaloff>:/PIC/Resources/PICs/Huanyuan.png</iconset>
-   </property>
-   <property name="iconSize">
-    <size>
-     <width>30</width>
-     <height>30</height>
-    </size>
-   </property>
-   <property name="toolButtonStyle">
-    <enum>Qt::ToolButtonStyle::ToolButtonTextBesideIcon</enum>
-   </property>
-  </widget>
-  <widget class="QToolButton" name="toolButton_4">
-   <property name="geometry">
-    <rect>
-     <x>580</x>
-     <y>560</y>
-     <width>161</width>
-     <height>61</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <family>Microsoft YaHei</family>
-     <pointsize>14</pointsize>
-     <bold>true</bold>
-    </font>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">/* 按下状态 */
-QToolButton:pressed {
-   background-color: #546E7A; /* 深石板灰 */
-    background-image: none;
-    padding-top: 12px;
-    padding-bottom: 8px;
-    border: 1px solid #37474F; /* 深色边框模拟阴影 */
-}
- QToolButton {
-		background-color: qlineargradient(x1:0, y1:0, x2:0, y2:1, 
-    	stop:0 #ffffff,       /* 顶部：纯白（高光） */
-   		stop:0.15 #dcdcdc,    /* 过渡：浅灰 */
-    	stop:0.85 #a9a9a9,    /* 底部过渡：中灰 */
-    	stop:1 #e8e8e8        /* 底部：亮灰（反光） */);
-}</string>
-   </property>
-   <property name="text">
-    <string>下一张</string>
-   </property>
-   <property name="icon">
-    <iconset resource="../OCRdemo.qrc">
-     <normaloff>:/PIC/Resources/PICs/calendar_nextmonth.png</normaloff>:/PIC/Resources/PICs/calendar_nextmonth.png</iconset>
-   </property>
-   <property name="iconSize">
-    <size>
-     <width>30</width>
-     <height>30</height>
-    </size>
-   </property>
-   <property name="toolButtonStyle">
-    <enum>Qt::ToolButtonStyle::ToolButtonTextBesideIcon</enum>
-   </property>
-  </widget>
+   <item>
+    <layout class="QHBoxLayout" name="contentArea" stretch="2,8">
+     <item>
+      <layout class="QVBoxLayout" name="leftPanel">
+       <property name="spacing">
+        <number>4</number>
+       </property>
+       <item>
+        <widget class="QToolButton" name="btnUp">
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>36</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>16777215</width>
+           <height>36</height>
+          </size>
+         </property>
+         <property name="font">
+          <font>
+           <family>Microsoft YaHei</family>
+           <pointsize>-1</pointsize>
+           <italic>false</italic>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QToolButton{font: bold 13px &quot;Microsoft YaHei&quot;; background: #3498db; color: white; border-radius: 6px; padding: 8px 16px;}
+QToolButton:hover{background: #2980b9;}</string>
+         </property>
+         <property name="text">
+          <string>返回上一级</string>
+         </property>
+         <property name="icon">
+          <iconset resource="../OCRdemo.qrc">
+           <normaloff>:/PIC/Resources/PICs/add_top.png</normaloff>:/PIC/Resources/PICs/add_top.png</iconset>
+         </property>
+         <property name="iconSize">
+          <size>
+           <width>20</width>
+           <height>20</height>
+          </size>
+         </property>
+         <property name="toolButtonStyle">
+          <enum>Qt::ToolButtonStyle::ToolButtonTextBesideIcon</enum>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QTreeView" name="treeView">
+         <property name="styleSheet">
+          <string notr="true">QTreeView{font: 12px &quot;Microsoft YaHei&quot;; background: #ffffff; border: 2px solid #bdc3c7; border-radius: 6px; padding: 4px;}
+QTreeView::item{padding: 4px 8px;}
+QTreeView::item:selected{background: #3498db; color: white;}</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="labelInfo">
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>40</height>
+          </size>
+         </property>
+         <property name="font">
+          <font>
+           <family>Microsoft YaHei</family>
+           <pointsize>11</pointsize>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QLabel{background: #ffffff; border: 2px solid #bdc3c7; border-radius: 6px; padding: 8px; color: #34495e;}</string>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignmentFlag::AlignCenter</set>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <layout class="QVBoxLayout" name="rightPanel">
+       <property name="spacing">
+        <number>4</number>
+       </property>
+       <item>
+        <widget class="QLabel" name="labelImage">
+         <property name="styleSheet">
+          <string notr="true">QLabel{  border: 2px solid #27ae60;
+border-radius: 6px; min-height: 400px;}</string>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignmentFlag::AlignCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <layout class="QHBoxLayout" name="bottomBar">
+         <property name="spacing">
+          <number>10</number>
+         </property>
+         <item>
+          <widget class="QToolButton" name="btnPrev">
+           <property name="minimumSize">
+            <size>
+             <width>0</width>
+             <height>36</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>16777215</width>
+             <height>36</height>
+            </size>
+           </property>
+           <property name="font">
+            <font>
+             <family>Microsoft YaHei</family>
+             <pointsize>-1</pointsize>
+             <italic>false</italic>
+             <bold>true</bold>
+            </font>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">QToolButton{font: bold 14px &quot;Microsoft YaHei&quot;; background: #95a5a6; color: white; border-radius: 6px; padding: 8px 20px;}
+QToolButton:hover{background: #7f8c8d;}</string>
+           </property>
+           <property name="text">
+            <string>上一张</string>
+           </property>
+           <property name="icon">
+            <iconset resource="../OCRdemo.qrc">
+             <normaloff>:/PIC/Resources/PICs/calendar_prevmonth.png</normaloff>:/PIC/Resources/PICs/calendar_prevmonth.png</iconset>
+           </property>
+           <property name="iconSize">
+            <size>
+             <width>20</width>
+             <height>20</height>
+            </size>
+           </property>
+           <property name="toolButtonStyle">
+            <enum>Qt::ToolButtonStyle::ToolButtonTextBesideIcon</enum>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QToolButton" name="btnRotate">
+           <property name="minimumSize">
+            <size>
+             <width>0</width>
+             <height>36</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>16777215</width>
+             <height>36</height>
+            </size>
+           </property>
+           <property name="font">
+            <font>
+             <family>Microsoft YaHei</family>
+             <pointsize>-1</pointsize>
+             <italic>false</italic>
+             <bold>true</bold>
+            </font>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">QToolButton{font: bold 14px &quot;Microsoft YaHei&quot;; background: #f39c12; color: white; border-radius: 6px; padding: 8px 20px;}
+QToolButton:hover{background: #e67e22;}</string>
+           </property>
+           <property name="text">
+            <string>旋转</string>
+           </property>
+           <property name="icon">
+            <iconset resource="../OCRdemo.qrc">
+             <normaloff>:/PIC/Resources/PICs/Huanyuan.png</normaloff>:/PIC/Resources/PICs/Huanyuan.png</iconset>
+           </property>
+           <property name="iconSize">
+            <size>
+             <width>20</width>
+             <height>20</height>
+            </size>
+           </property>
+           <property name="toolButtonStyle">
+            <enum>Qt::ToolButtonStyle::ToolButtonTextBesideIcon</enum>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QToolButton" name="btnNext">
+           <property name="minimumSize">
+            <size>
+             <width>0</width>
+             <height>36</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>16777215</width>
+             <height>36</height>
+            </size>
+           </property>
+           <property name="font">
+            <font>
+             <family>Microsoft YaHei</family>
+             <pointsize>-1</pointsize>
+             <italic>false</italic>
+             <bold>true</bold>
+            </font>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">QToolButton{font: bold 14px &quot;Microsoft YaHei&quot;; background: #95a5a6; color: white; border-radius: 6px; padding: 8px 20px;}
+QToolButton:hover{background: #7f8c8d;}</string>
+           </property>
+           <property name="text">
+            <string>下一张</string>
+           </property>
+           <property name="icon">
+            <iconset resource="../OCRdemo.qrc">
+             <normaloff>:/PIC/Resources/PICs/calendar_nextmonth.png</normaloff>:/PIC/Resources/PICs/calendar_nextmonth.png</iconset>
+           </property>
+           <property name="iconSize">
+            <size>
+             <width>20</width>
+             <height>20</height>
+            </size>
+           </property>
+           <property name="toolButtonStyle">
+            <enum>Qt::ToolButtonStyle::ToolButtonTextBesideIcon</enum>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <spacer name="spacerBtn">
+           <property name="orientation">
+            <enum>Qt::Orientation::Horizontal</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>20</width>
+             <height>20</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+         <item>
+          <widget class="QToolButton" name="btnClose">
+           <property name="minimumSize">
+            <size>
+             <width>80</width>
+             <height>36</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>80</width>
+             <height>36</height>
+            </size>
+           </property>
+           <property name="font">
+            <font>
+             <family>Microsoft YaHei</family>
+             <pointsize>-1</pointsize>
+             <italic>false</italic>
+             <bold>true</bold>
+            </font>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">QToolButton{font: bold 12px &quot;Microsoft YaHei&quot;; background: #e74c3c; color: white; border-radius: 6px; padding: 6px 14px;}
+QToolButton:hover{background: #c0392b;}</string>
+           </property>
+           <property name="text">
+            <string>关闭</string>
+           </property>
+           <property name="icon">
+            <iconset resource="../OCRdemo.qrc">
+             <normaloff>:/PIC/Resources/PICs/Fanhui.png</normaloff>:/PIC/Resources/PICs/Fanhui.png</iconset>
+           </property>
+           <property name="iconSize">
+            <size>
+             <width>20</width>
+             <height>20</height>
+            </size>
+           </property>
+           <property name="toolButtonStyle">
+            <enum>Qt::ToolButtonStyle::ToolButtonTextBesideIcon</enum>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+      </layout>
+     </item>
+    </layout>
+   </item>
+  </layout>
  </widget>
- <layoutdefault spacing="6" margin="11"/>
  <resources>
   <include location="../OCRdemo.qrc"/>
  </resources>

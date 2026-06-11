@@ -17,14 +17,12 @@ Jgadmin::Jgadmin(QWidget* parent)
 {
     ui.setupUi(this);
 
-    // 最小化按钮
-   /* connect(ui.MIN, &QPushButton::clicked, this, [=] {
-        this->setWindowState(Qt::WindowMinimized);
-    });*/
+    connect(ui.btnClose, &QPushButton::clicked, this, [=] {
+        emit showmain();
+        });
 
-    // 窗口样式：标准系统标题栏（含关闭按钮）
+    // 设置窗口标志：保留系统菜单、显示问号(?)按钮、显示关闭(X)按钮
     setWindowFlags(Qt::WindowSystemMenuHint | Qt::WindowContextHelpButtonHint | Qt::WindowCloseButtonHint);
-    this->setFixedSize(821, 421);     // 固定窗口大小
 }
 
 Jgadmin::~Jgadmin() = default;

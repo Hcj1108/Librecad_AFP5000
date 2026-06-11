@@ -12,7 +12,7 @@ Setting::Setting(QWidget* parent)
     ui.setupUi(this);
     this->setWindowModality(Qt::ApplicationModal);
 
-  /*  connect(ui.BACK, &QPushButton::clicked, this, [=] {
+    connect(ui.btnClose, &QPushButton::clicked, this, [=] {
         if (isautocap) {
             closeautocap();
             ui.toolButton_2->setEnabled(true);
@@ -20,7 +20,7 @@ Setting::Setting(QWidget* parent)
         }
         ui.label->setBackImage(QImage());
         showmain();
-    });*/
+    });
     connect(ui.toolButton_3, &QPushButton::clicked, this, &Setting::getrect);
     connect(ui.toolButton_6, &QPushButton::clicked, this, &Setting::RaiseGainValue);
     connect(ui.toolButton_8, &QPushButton::clicked, this, &Setting::ReduceGainValue);

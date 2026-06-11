@@ -9,8 +9,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>936</width>
-    <height>620</height>
+    <width>941</width>
+    <height>589</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -23,24 +23,43 @@
   <property name="styleSheet">
    <string notr="true">background-color:rgb(220, 235, 240);</string>
   </property>
-  <layout class="QVBoxLayout" name="verticalLayout">
+  <layout class="QVBoxLayout" name="mainLayout">
+   <property name="spacing">
+    <number>8</number>
+   </property>
+   <property name="leftMargin">
+    <number>10</number>
+   </property>
+   <property name="topMargin">
+    <number>10</number>
+   </property>
+   <property name="rightMargin">
+    <number>10</number>
+   </property>
+   <property name="bottomMargin">
+    <number>10</number>
+   </property>
    <item>
-    <layout class="QHBoxLayout" name="btnLayout">
+    <layout class="QHBoxLayout" name="topBar">
      <item>
       <widget class="QPushButton" name="btnOperate">
+       <property name="minimumSize">
+        <size>
+         <width>120</width>
+         <height>38</height>
+        </size>
+       </property>
+       <property name="font">
+        <font>
+         <family>Microsoft YaHei</family>
+         <pointsize>-1</pointsize>
+         <italic>false</italic>
+         <bold>true</bold>
+        </font>
+       </property>
        <property name="styleSheet">
-        <string notr="true"> QPushButton {
-        opacity: 1;
- 		border: none;
-}
-QPushButton:pressed {
-   background-color: #546E7A; 
-    background-image: none;
-    padding-top: 12px;
-    padding-bottom: 8px;
-    border: 1px solid #37474F; 
-}
-</string>
+        <string notr="true">QPushButton{font: bold 13px &quot;Microsoft YaHei&quot;; background: #3498db; color: white; border-radius: 6px; padding: 8px 16px;}
+QPushButton:hover{background: #2980b9;}</string>
        </property>
        <property name="text">
         <string>操作日志</string>
@@ -51,27 +70,31 @@ QPushButton:pressed {
        </property>
        <property name="iconSize">
         <size>
-         <width>30</width>
-         <height>30</height>
+         <width>24</width>
+         <height>24</height>
         </size>
        </property>
       </widget>
      </item>
      <item>
       <widget class="QPushButton" name="btnError">
+       <property name="minimumSize">
+        <size>
+         <width>120</width>
+         <height>38</height>
+        </size>
+       </property>
+       <property name="font">
+        <font>
+         <family>Microsoft YaHei</family>
+         <pointsize>-1</pointsize>
+         <italic>false</italic>
+         <bold>true</bold>
+        </font>
+       </property>
        <property name="styleSheet">
-        <string notr="true"> QPushButton {
-        opacity: 1;
- 		border: none;
-}
-QPushButton:pressed {
-   background-color: #546E7A; 
-    background-image: none;
-    padding-top: 12px;
-    padding-bottom: 8px;
-    border: 1px solid #37474F; 
-}
-</string>
+        <string notr="true">QPushButton{font: bold 13px &quot;Microsoft YaHei&quot;; background: #e74c3c; color: white; border-radius: 6px; padding: 8px 16px;}
+QPushButton:hover{background: #c0392b;}</string>
        </property>
        <property name="text">
         <string>错误日志</string>
@@ -82,27 +105,31 @@ QPushButton:pressed {
        </property>
        <property name="iconSize">
         <size>
-         <width>30</width>
-         <height>30</height>
+         <width>24</width>
+         <height>24</height>
         </size>
        </property>
       </widget>
      </item>
      <item>
       <widget class="QPushButton" name="btnComm">
+       <property name="minimumSize">
+        <size>
+         <width>120</width>
+         <height>38</height>
+        </size>
+       </property>
+       <property name="font">
+        <font>
+         <family>Microsoft YaHei</family>
+         <pointsize>-1</pointsize>
+         <italic>false</italic>
+         <bold>true</bold>
+        </font>
+       </property>
        <property name="styleSheet">
-        <string notr="true"> QPushButton {
-        opacity: 1;
- 		border: none;
-}
-QPushButton:pressed {
-   background-color: #546E7A; 
-    background-image: none;
-    padding-top: 12px;
-    padding-bottom: 8px;
-    border: 1px solid #37474F; 
-}
-</string>
+        <string notr="true">QPushButton{font: bold 13px &quot;Microsoft YaHei&quot;; background: #f39c12; color: white; border-radius: 6px; padding: 8px 16px;}
+QPushButton:hover{background: #e67e22;}</string>
        </property>
        <property name="text">
         <string>通信日志</string>
@@ -113,14 +140,14 @@ QPushButton:pressed {
        </property>
        <property name="iconSize">
         <size>
-         <width>30</width>
-         <height>30</height>
+         <width>24</width>
+         <height>24</height>
         </size>
        </property>
       </widget>
      </item>
      <item>
-      <spacer name="horizontalSpacer_2">
+      <spacer name="topSpacer">
        <property name="orientation">
         <enum>Qt::Orientation::Horizontal</enum>
        </property>
@@ -134,8 +161,14 @@ QPushButton:pressed {
      </item>
      <item>
       <widget class="QLabel" name="labelKeepDays">
+       <property name="font">
+        <font>
+         <family>Microsoft YaHei</family>
+         <pointsize>13</pointsize>
+        </font>
+       </property>
        <property name="styleSheet">
-        <string notr="true">font-size: 14px;</string>
+        <string notr="true">color: #34495e; background: transparent;</string>
        </property>
        <property name="text">
         <string>保留</string>
@@ -144,8 +177,16 @@ QPushButton:pressed {
      </item>
      <item>
       <widget class="QSpinBox" name="spinKeepDays">
+       <property name="font">
+        <font>
+         <family>Microsoft YaHei</family>
+         <pointsize>-1</pointsize>
+         <italic>false</italic>
+         <bold>true</bold>
+        </font>
+       </property>
        <property name="styleSheet">
-        <string notr="true">font-size: 14px; padding: 4px;</string>
+        <string notr="true">QSpinBox{font: bold 13px &quot;Microsoft YaHei&quot;; padding: 4px 8px; border: 2px solid #bdc3c7; border-radius: 4px; background: white;}</string>
        </property>
        <property name="suffix">
         <string> 天</string>
@@ -164,17 +205,19 @@ QPushButton:pressed {
     </layout>
    </item>
    <item>
-    <layout class="QHBoxLayout" name="horizontalLayout" stretch="3,7">
+    <layout class="QHBoxLayout" name="contentArea" stretch="3,7">
      <item>
       <widget class="QListWidget" name="fileList">
        <property name="minimumSize">
         <size>
-         <width>200</width>
+         <width>220</width>
          <height>0</height>
         </size>
        </property>
        <property name="styleSheet">
-        <string notr="true">font-size: 14px;</string>
+        <string notr="true">QListWidget{font: 13px &quot;Microsoft YaHei&quot;; background: #ffffff; border: 2px solid #bdc3c7; border-radius: 6px; padding: 4px;}
+QListWidget::item{padding: 6px 8px; border-bottom: 1px solid #ecf0f1;}
+QListWidget::item:selected{background: #3498db; color: white; border-radius: 4px;}</string>
        </property>
       </widget>
      </item>
@@ -184,13 +227,11 @@ QPushButton:pressed {
         <cursorShape>ArrowCursor</cursorShape>
        </property>
        <property name="styleSheet">
-        <string notr="true">font-size: 14px; font-family: Consolas, monospace;</string>
+        <string notr="true">QTextEdit{font: 13px &quot;Consolas&quot;, &quot;Microsoft YaHei&quot;; background: #ffffff; border: 2px solid #bdc3c7; border-radius: 6px; padding: 8px;}
+QTextEdit:focus{border-color: #3498db;}</string>
        </property>
        <property name="inputMethodHints">
         <set>Qt::InputMethodHint::ImhNone</set>
-       </property>
-       <property name="midLineWidth">
-        <number>-1</number>
        </property>
        <property name="readOnly">
         <bool>true</bool>
@@ -200,11 +241,26 @@ QPushButton:pressed {
     </layout>
    </item>
    <item>
-    <layout class="QHBoxLayout" name="searchLayout">
+    <layout class="QHBoxLayout" name="bottomBar">
      <item>
       <widget class="QLineEdit" name="searchBox">
+       <property name="minimumSize">
+        <size>
+         <width>200</width>
+         <height>36</height>
+        </size>
+       </property>
+       <property name="font">
+        <font>
+         <family>Microsoft YaHei</family>
+         <pointsize>-1</pointsize>
+         <italic>false</italic>
+         <bold>false</bold>
+        </font>
+       </property>
        <property name="styleSheet">
-        <string notr="true">font-size: 14px; padding: 6px 10px;</string>
+        <string notr="true">QLineEdit{font: 13px &quot;Microsoft YaHei&quot;; padding: 6px 12px; border: 2px solid #bdc3c7; border-radius: 6px; background: white;}
+QLineEdit:focus{border-color: #3498db;}</string>
        </property>
        <property name="placeholderText">
         <string>搜索关键字...</string>
@@ -213,19 +269,23 @@ QPushButton:pressed {
      </item>
      <item>
       <widget class="QPushButton" name="btnSearchPrev">
+       <property name="minimumSize">
+        <size>
+         <width>90</width>
+         <height>36</height>
+        </size>
+       </property>
+       <property name="font">
+        <font>
+         <family>Microsoft YaHei</family>
+         <pointsize>-1</pointsize>
+         <italic>false</italic>
+         <bold>true</bold>
+        </font>
+       </property>
        <property name="styleSheet">
-        <string notr="true"> QPushButton {
-        opacity: 1;
- 		border: none;
-}
-QPushButton:pressed {
-   background-color: #546E7A; 
-    background-image: none;
-    padding-top: 12px;
-    padding-bottom: 8px;
-    border: 1px solid #37474F; 
-}
-</string>
+        <string notr="true">QPushButton{font: bold 12px &quot;Microsoft YaHei&quot;; background: #95a5a6; color: white; border-radius: 6px; padding: 6px 14px;}
+QPushButton:hover{background: #7f8c8d;}</string>
        </property>
        <property name="text">
         <string>上一个</string>
@@ -234,23 +294,33 @@ QPushButton:pressed {
         <iconset resource="../OCRdemo.qrc">
          <normaloff>:/PIC/Resources/PICs/add_top.png</normaloff>:/PIC/Resources/PICs/add_top.png</iconset>
        </property>
+       <property name="iconSize">
+        <size>
+         <width>20</width>
+         <height>20</height>
+        </size>
+       </property>
       </widget>
      </item>
      <item>
       <widget class="QPushButton" name="btnSearchNext">
+       <property name="minimumSize">
+        <size>
+         <width>90</width>
+         <height>36</height>
+        </size>
+       </property>
+       <property name="font">
+        <font>
+         <family>Microsoft YaHei</family>
+         <pointsize>-1</pointsize>
+         <italic>false</italic>
+         <bold>true</bold>
+        </font>
+       </property>
        <property name="styleSheet">
-        <string notr="true"> QPushButton {
-        opacity: 1;
- 		border: none;
-}
-QPushButton:pressed {
-   background-color: #546E7A; 
-    background-image: none;
-    padding-top: 12px;
-    padding-bottom: 8px;
-    border: 1px solid #37474F; 
-}
-</string>
+        <string notr="true">QPushButton{font: bold 12px &quot;Microsoft YaHei&quot;; background: #95a5a6; color: white; border-radius: 6px; padding: 6px 14px;}
+QPushButton:hover{background: #7f8c8d;}</string>
        </property>
        <property name="text">
         <string>下一个</string>
@@ -259,23 +329,33 @@ QPushButton:pressed {
         <iconset resource="../OCRdemo.qrc">
          <normaloff>:/PIC/Resources/PICs/add_bottom.png</normaloff>:/PIC/Resources/PICs/add_bottom.png</iconset>
        </property>
+       <property name="iconSize">
+        <size>
+         <width>20</width>
+         <height>20</height>
+        </size>
+       </property>
       </widget>
      </item>
      <item>
       <widget class="QPushButton" name="btnExport">
+       <property name="minimumSize">
+        <size>
+         <width>100</width>
+         <height>36</height>
+        </size>
+       </property>
+       <property name="font">
+        <font>
+         <family>Microsoft YaHei</family>
+         <pointsize>-1</pointsize>
+         <italic>false</italic>
+         <bold>true</bold>
+        </font>
+       </property>
        <property name="styleSheet">
-        <string notr="true"> QPushButton {
-        opacity: 1;
- 		border: none;
-}
-QPushButton:pressed {
-   background-color: #546E7A; 
-    background-image: none;
-    padding-top: 12px;
-    padding-bottom: 8px;
-    border: 1px solid #37474F; 
-}
-</string>
+        <string notr="true">QPushButton{font: bold 12px &quot;Microsoft YaHei&quot;; background: #27ae60; color: white; border-radius: 6px; padding: 6px 14px;}
+QPushButton:hover{background: #229954;}</string>
        </property>
        <property name="text">
         <string>导出日志</string>
@@ -286,8 +366,62 @@ QPushButton:pressed {
        </property>
        <property name="iconSize">
         <size>
-         <width>16</width>
-         <height>16</height>
+         <width>20</width>
+         <height>20</height>
+        </size>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <spacer name="bottomSpacer">
+       <property name="orientation">
+        <enum>Qt::Orientation::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>20</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item>
+      <widget class="QPushButton" name="btnClose">
+       <property name="minimumSize">
+        <size>
+         <width>80</width>
+         <height>36</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>80</width>
+         <height>36</height>
+        </size>
+       </property>
+       <property name="font">
+        <font>
+         <family>Microsoft YaHei</family>
+         <pointsize>-1</pointsize>
+         <italic>false</italic>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton{font: bold 12px &quot;Microsoft YaHei&quot;; background: #e74c3c; color: white; border-radius: 6px; padding: 6px 14px;}
+QPushButton:hover{background: #c0392b;}</string>
+       </property>
+       <property name="text">
+        <string>关闭</string>
+       </property>
+       <property name="icon">
+        <iconset resource="../OCRdemo.qrc">
+         <normaloff>:/PIC/Resources/PICs/Fanhui.png</normaloff>:/PIC/Resources/PICs/Fanhui.png</iconset>
+       </property>
+       <property name="iconSize">
+        <size>
+         <width>20</width>
+         <height>20</height>
         </size>
        </property>
       </widget>
@@ -296,7 +430,6 @@ QPushButton:pressed {
    </item>
   </layout>
  </widget>
- <layoutdefault spacing="6" margin="11"/>
  <resources>
   <include location="../OCRdemo.qrc"/>
  </resources>

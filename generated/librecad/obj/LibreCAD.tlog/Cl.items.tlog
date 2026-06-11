@@ -21,6 +21,7 @@ D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\OCRdemo\SenderBinUdp.cpp;D:\DM\LibreCAD-
 D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\OCRdemo\SerialManager.cpp;D:\DM\LibreCAD-2.4(YitiJi)\generated\librecad\obj\SerialManager.obj
 D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\OCRdemo\Setting.cpp;D:\DM\LibreCAD-2.4(YitiJi)\generated\librecad\obj\Setting.obj
 D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\OCRdemo\SimpleBarChart.cpp;D:\DM\LibreCAD-2.4(YitiJi)\generated\librecad\obj\SimpleBarChart.obj
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\OCRdemo\Simulator.cpp;D:\DM\LibreCAD-2.4(YitiJi)\generated\librecad\obj\Simulator.obj
 D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\OCRdemo\SingletonNomArray.cpp;D:\DM\LibreCAD-2.4(YitiJi)\generated\librecad\obj\SingletonNomArray.obj
 D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\OCRdemo\user.cpp;D:\DM\LibreCAD-2.4(YitiJi)\generated\librecad\obj\user.obj
 D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\OCRdemo\XJadmin.cpp;D:\DM\LibreCAD-2.4(YitiJi)\generated\librecad\obj\XJadmin.obj
@@ -396,6 +397,7 @@ D:\DM\LibreCAD-2.4(YitiJi)\generated\librecad\moc\moc_Logger.cpp;D:\DM\LibreCAD-
 D:\DM\LibreCAD-2.4(YitiJi)\generated\librecad\moc\moc_LoginDialog.cpp;D:\DM\LibreCAD-2.4(YitiJi)\generated\librecad\obj\moc_LoginDialog.obj
 D:\DM\LibreCAD-2.4(YitiJi)\generated\librecad\moc\moc_SimpleBarChart.cpp;D:\DM\LibreCAD-2.4(YitiJi)\generated\librecad\obj\moc_SimpleBarChart.obj
 D:\DM\LibreCAD-2.4(YitiJi)\generated\librecad\moc\moc_SenderBinUdp.cpp;D:\DM\LibreCAD-2.4(YitiJi)\generated\librecad\obj\moc_SenderBinUdp.obj
+D:\DM\LibreCAD-2.4(YitiJi)\generated\librecad\moc\moc_Simulator.cpp;D:\DM\LibreCAD-2.4(YitiJi)\generated\librecad\obj\moc_Simulator.obj
 D:\DM\LibreCAD-2.4(YitiJi)\generated\librecad\moc\moc_XJadmin.cpp;D:\DM\LibreCAD-2.4(YitiJi)\generated\librecad\obj\moc_XJadmin.obj
 D:\DM\LibreCAD-2.4(YitiJi)\generated\librecad\moc\moc_lc_actiondrawcircle2pr.cpp;D:\DM\LibreCAD-2.4(YitiJi)\generated\librecad\obj\moc_lc_actiondrawcircle2pr.obj
 D:\DM\LibreCAD-2.4(YitiJi)\generated\librecad\moc\moc_lc_actiondrawlinepolygon3.cpp;D:\DM\LibreCAD-2.4(YitiJi)\generated\librecad\obj\moc_lc_actiondrawlinepolygon3.obj

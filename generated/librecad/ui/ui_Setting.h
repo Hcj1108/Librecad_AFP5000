@@ -42,8 +42,8 @@ public:
     QHBoxLayout *hl_exp;
     QLabel *label_2;
     QLineEdit *lineEdit;
-    QToolButton *toolButton_5;
     QToolButton *toolButton_7;
+    QToolButton *toolButton_5;
     QHBoxLayout *hl_gain;
     QLabel *label_3;
     QLineEdit *lineEdit_2;
@@ -62,7 +62,14 @@ public:
     QToolButton *toolButton_2;
     QToolButton *toolButton_3;
     QSpacerItem *verticalSpacer;
+    QSpacerItem *verticalSpacer_5;
+    QSpacerItem *verticalSpacer_4;
+    QSpacerItem *verticalSpacer_3;
+    QHBoxLayout *horizontalLayout;
     QSpacerItem *horizontalSpacer_3;
+    QPushButton *btnClose;
+    QSpacerItem *verticalSpacer_2;
+    QSpacerItem *horizontalSpacer_4;
 
     void setupUi(QMainWindow *SettingClass)
     {
@@ -93,8 +100,8 @@ public:
         sizePolicy.setVerticalStretch(0);
         sizePolicy.setHeightForWidth(label->sizePolicy().hasHeightForWidth());
         label->setSizePolicy(sizePolicy);
-        label->setMinimumSize(QSize(561, 491));
-        label->setMaximumSize(QSize(561, 491));
+        label->setMinimumSize(QSize(530, 530));
+        label->setMaximumSize(QSize(530, 530));
         label->setStyleSheet(QString::fromUtf8("background-color: rgb(0, 0, 0);"));
         label->setFrameShape(QFrame::Shape::Box);
 
@@ -137,25 +144,25 @@ public:
 
         hl_exp->addWidget(lineEdit);
 
-        toolButton_5 = new QToolButton(groupBox_2);
-        toolButton_5->setObjectName(QString::fromUtf8("toolButton_5"));
-        toolButton_5->setMinimumSize(QSize(32, 32));
-        toolButton_5->setMaximumSize(QSize(32, 32));
-        QIcon icon;
-        icon.addFile(QString::fromUtf8(":/PIC/Resources/PICs/Moon.png"), QSize(), QIcon::Normal, QIcon::Off);
-        toolButton_5->setIcon(icon);
-
-        hl_exp->addWidget(toolButton_5);
-
         toolButton_7 = new QToolButton(groupBox_2);
         toolButton_7->setObjectName(QString::fromUtf8("toolButton_7"));
         toolButton_7->setMinimumSize(QSize(32, 32));
         toolButton_7->setMaximumSize(QSize(32, 32));
-        QIcon icon1;
-        icon1.addFile(QString::fromUtf8(":/PIC/Resources/PICs/Sun.png"), QSize(), QIcon::Normal, QIcon::Off);
-        toolButton_7->setIcon(icon1);
+        QIcon icon;
+        icon.addFile(QString::fromUtf8(":/PIC/Resources/PICs/Moon.png"), QSize(), QIcon::Normal, QIcon::Off);
+        toolButton_7->setIcon(icon);
 
         hl_exp->addWidget(toolButton_7);
+
+        toolButton_5 = new QToolButton(groupBox_2);
+        toolButton_5->setObjectName(QString::fromUtf8("toolButton_5"));
+        toolButton_5->setMinimumSize(QSize(32, 32));
+        toolButton_5->setMaximumSize(QSize(32, 32));
+        QIcon icon1;
+        icon1.addFile(QString::fromUtf8(":/PIC/Resources/PICs/Sun.png"), QSize(), QIcon::Normal, QIcon::Off);
+        toolButton_5->setIcon(icon1);
+
+        hl_exp->addWidget(toolButton_5);
 
 
         gbLayout1->addLayout(hl_exp);
@@ -289,7 +296,7 @@ public:
         QIcon icon2;
         icon2.addFile(QString::fromUtf8(":/PNG/Resources/PNG/DZCJ1.png"), QSize(), QIcon::Normal, QIcon::Off);
         toolButton_2->setIcon(icon2);
-        toolButton_2->setIconSize(QSize(30, 30));
+        toolButton_2->setIconSize(QSize(20, 20));
         toolButton_2->setToolButtonStyle(Qt::ToolButtonStyle::ToolButtonTextBesideIcon);
 
         gbLayout2->addWidget(toolButton_2);
@@ -303,7 +310,7 @@ public:
         QIcon icon3;
         icon3.addFile(QString::fromUtf8(":/PNG/Resources/PNG/KXFW.png"), QSize(), QIcon::Normal, QIcon::Off);
         toolButton_3->setIcon(icon3);
-        toolButton_3->setIconSize(QSize(30, 30));
+        toolButton_3->setIconSize(QSize(20, 20));
         toolButton_3->setToolButtonStyle(Qt::ToolButtonStyle::ToolButtonTextBesideIcon);
 
         gbLayout2->addWidget(toolButton_3);
@@ -311,16 +318,55 @@ public:
 
         rightPanel->addWidget(groupBox_3);
 
-        verticalSpacer = new QSpacerItem(20, 40, QSizePolicy::Expanding, QSizePolicy::Minimum);
+        verticalSpacer = new QSpacerItem(40, 20, QSizePolicy::Policy::MinimumExpanding, QSizePolicy::Minimum);
 
         rightPanel->addItem(verticalSpacer);
+
+        verticalSpacer_5 = new QSpacerItem(20, 40, QSizePolicy::Expanding, QSizePolicy::Minimum);
+
+        rightPanel->addItem(verticalSpacer_5);
+
+        verticalSpacer_4 = new QSpacerItem(20, 40, QSizePolicy::Expanding, QSizePolicy::Minimum);
+
+        rightPanel->addItem(verticalSpacer_4);
+
+        verticalSpacer_3 = new QSpacerItem(20, 40, QSizePolicy::Expanding, QSizePolicy::Minimum);
+
+        rightPanel->addItem(verticalSpacer_3);
+
+        horizontalLayout = new QHBoxLayout();
+        horizontalLayout->setSpacing(6);
+        horizontalLayout->setObjectName(QString::fromUtf8("horizontalLayout"));
+        horizontalSpacer_3 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+
+        horizontalLayout->addItem(horizontalSpacer_3);
+
+        btnClose = new QPushButton(centralWidget);
+        btnClose->setObjectName(QString::fromUtf8("btnClose"));
+        btnClose->setMinimumSize(QSize(80, 36));
+        btnClose->setMaximumSize(QSize(80, 36));
+        btnClose->setStyleSheet(QString::fromUtf8("QPushButton{font: bold 12px \"Microsoft YaHei\"; background: #e74c3c; color: white; border-radius: 6px; padding: 6px 14px;}\n"
+"QPushButton:hover{background: #c0392b;}"));
+        QIcon icon4;
+        icon4.addFile(QString::fromUtf8(":/PIC/Resources/PICs/Fanhui.png"), QSize(), QIcon::Normal, QIcon::Off);
+        btnClose->setIcon(icon4);
+        btnClose->setIconSize(QSize(20, 20));
+
+        horizontalLayout->addWidget(btnClose);
+
+
+        rightPanel->addLayout(horizontalLayout);
+
+        verticalSpacer_2 = new QSpacerItem(10, 10, QSizePolicy::Policy::Minimum, QSizePolicy::Minimum);
+
+        rightPanel->addItem(verticalSpacer_2);
 
 
         mainArea->addLayout(rightPanel);
 
-        horizontalSpacer_3 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+        horizontalSpacer_4 = new QSpacerItem(10, 20, QSizePolicy::Policy::Minimum, QSizePolicy::Minimum);
 
-        mainArea->addItem(horizontalSpacer_3);
+        mainArea->addItem(horizontalSpacer_4);
 
 
         mainLayout->addLayout(mainArea);
@@ -337,8 +383,8 @@ public:
         SettingClass->setWindowTitle(QCoreApplication::translate("SettingClass", "\345\217\202\346\225\260\350\256\276\347\275\256", nullptr));
         groupBox_2->setTitle(QCoreApplication::translate("SettingClass", "\345\233\276\345\203\217\350\260\203\346\225\264", nullptr));
         label_2->setText(QCoreApplication::translate("SettingClass", "\346\233\235\345\205\211\346\227\266\351\227\264", nullptr));
-        toolButton_5->setText(QString());
         toolButton_7->setText(QString());
+        toolButton_5->setText(QString());
         label_3->setText(QCoreApplication::translate("SettingClass", "\345\242\236\347\233\212", nullptr));
         toolButton_8->setText(QString());
         toolButton_6->setText(QString());
@@ -354,6 +400,7 @@ public:
         groupBox_3->setTitle(QCoreApplication::translate("SettingClass", "\345\233\276\345\203\217ROI", nullptr));
         toolButton_2->setText(QCoreApplication::translate("SettingClass", "\345\215\225\345\274\240\351\207\207\351\233\206", nullptr));
         toolButton_3->setText(QCoreApplication::translate("SettingClass", "\344\277\235\345\255\230\346\241\206\351\200\211", nullptr));
+        btnClose->setText(QCoreApplication::translate("SettingClass", "\345\205\263\351\227\255", nullptr));
     } // retranslateUi
 
 };

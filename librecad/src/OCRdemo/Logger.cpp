@@ -9,6 +9,8 @@
 #include <QSettings>
 #include <QFileDialog>
 #include <QMessageBox>
+#include <QPushButton>
+#include <QCloseEvent>
 
 static int g_keepDays = 180;
 
@@ -29,6 +31,11 @@ Logger::Logger(QWidget *parent)
 
     connect(ui.btnExport, &QPushButton::clicked, this, &Logger::exportLog);
 
+    connect(ui.btnClose, &QPushButton::clicked, this, [=] {
+        this->hide();
+        emit showmain();
+    });
+
 
     connect(ui.spinKeepDays, QOverload<int>::of(&QSpinBox::valueChanged), [&](int val) {
         g_keepDays = val;
@@ -47,11 +54,18 @@ Logger::Logger(QWidget *parent)
 Logger::~Logger()
 {}
 
+void Logger::closeEvent(QCloseEvent* event)
+{
+    this->hide();
+    emit showmain();
+    event->ignore();
+}
+
 void Logger::SetQSS()
 {
    
     // 设置窗口标志：保留系统菜单、显示问号(?)按钮、显示关闭(X)按钮
-    this->setWindowFlags(Qt::WindowSystemMenuHint | Qt::WindowContextHelpButtonHint | Qt::WindowCloseButtonHint);
+    setWindowFlags(Qt::WindowSystemMenuHint | Qt::WindowContextHelpButtonHint | Qt::WindowCloseButtonHint);
     // 从注册表恢复保留天数
     QSettings settings;
     g_keepDays = settings.value("/Logger/KeepDays", 180).toInt();

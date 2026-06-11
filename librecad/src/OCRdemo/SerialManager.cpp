@@ -13,16 +13,20 @@ SerialManager::SerialManager(QWidget* parent)
 {
 	ui.setupUi(this);
 
-	connect(ui.toolButton_21, &QToolButton::clicked, this, [=] {
+	/*connect(ui.toolButton_21, &QToolButton::clicked, this, [=] {
 		showmain();
-		});
-	connect(ui.checkBox, &QToolButton::clicked, this, &SerialManager::setzhuangtai);
-	connect(ui.checkBox_2, &QToolButton::clicked, this, &SerialManager::setzhuangtai);
-	connect(ui.checkBox_3, &QToolButton::clicked, this, &SerialManager::setzhuangtai);
-	connect(ui.checkBox_4, &QToolButton::clicked, this, &SerialManager::setzhuangtai);
-	connect(ui.checkBox_5, &QToolButton::clicked, this, &SerialManager::setzhuangtai);
-	connect(ui.checkBox_6, &QToolButton::clicked, this, &SerialManager::setzhuangtai);
-	connect(ui.checkBox_7, &QToolButton::clicked, this, &SerialManager::setzhuangtai);
+		});*/
+	connect(ui.checkBox, &QCheckBox::clicked, this, &SerialManager::setzhuangtai);
+	connect(ui.checkBox_2, &QCheckBox::clicked, this, &SerialManager::setzhuangtai);
+	connect(ui.checkBox_3, &QCheckBox::clicked, this, &SerialManager::setzhuangtai);
+	connect(ui.checkBox_4, &QCheckBox::clicked, this, &SerialManager::setzhuangtai);
+	connect(ui.checkBox_5, &QCheckBox::clicked, this, &SerialManager::setzhuangtai);
+	connect(ui.checkBox_6, &QCheckBox::clicked, this, &SerialManager::setzhuangtai);
+	connect(ui.checkBox_7, &QCheckBox::clicked, this, &SerialManager::setzhuangtai);
+	connect(ui.btnClose, &QPushButton::clicked, this, [=] {
+		this->hide();
+		emit showmain();
+	});
 	SetQSS();
 }
 
@@ -30,24 +34,12 @@ SerialManager::~SerialManager()
 {
 	
 }
-//void SerialManager::paintEvent(QPaintEvent* event)
-//{
-//	QPainter painter(this);
-//
-//	// 设置边框颜色和宽度
-//	QPen pen;
-//	pen.setColor(Qt::black);  // 设置边框颜色为蓝色
-//	pen.setWidth(4);         // 设置边框宽度为5px
-//	painter.setPen(pen);
-//
-//	// 绘制自定义边框（窗体的边框）
-//	painter.drawRect(0, 0, this->width() - 1, this->height() - 1);
-//}
+
 //设置页面样式
 void SerialManager::SetQSS()
 {
-	// 去掉最小化和关闭按钮
-	setWindowFlags(Qt::FramelessWindowHint | Qt::WindowSystemMenuHint | Qt::WindowMinMaxButtonsHint);
+	
+	setWindowFlags(Qt::WindowSystemMenuHint | Qt::WindowContextHelpButtonHint | Qt::WindowCloseButtonHint);
 	// 设置窗体的初始大小
 	
 	qApp->installEventFilter(this);                   //给自己加事件过滤器,用来实现拖动窗口
@@ -57,37 +49,13 @@ void SerialManager::SetQSS()
 
 	
 }
-bool SerialManager::eventFilter(QObject* obj, QEvent* evt)
+void SerialManager::closeEvent(QCloseEvent* event)
 {
-	QMouseEvent* mouse = dynamic_cast<QMouseEvent*>(evt);
-	if (obj == this && mouse)                 //判断拖动
-	{
-		if (this->isMaximized())
-		{
-			return true;
-		}
-		static bool dragFlag = false;
-		static QPoint dragPoint(0, 0);
-		if (mouse->button() == Qt::LeftButton && mouse->type() == QEvent::MouseButtonPress)    //按下
-		{
-			dragFlag = true;
-			dragPoint = mouse->pos();                                  //记录鼠标所在的界面位置
-			return true;
-		}
-		else if (dragFlag && mouse->type() == QEvent::MouseMove)     //拖动
-		{
-			this->move(mouse->globalPos() - dragPoint);
-			return true;
-		}
-		else if (mouse->type() == QEvent::MouseButtonRelease)
-		{
-			dragFlag = false;
-			return true;
-		}
-	}
-
-	return QWidget::eventFilter(obj, evt);
+	this->hide();
+	emit showmain();
+	event->ignore();
 }
+
 void SerialManager::setSerialNum(int MaxThresholdAlermOpen, int MinThresholdAlermOpen, int cameraAlarmOpen, int markingOutOfAreaOpen, int linkTXOpen, int linkBKBKOpen, int linkCameraOpen)
 {
 	ui.checkBox_4->setChecked(MaxThresholdAlermOpen);

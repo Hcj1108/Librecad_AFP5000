@@ -3,6 +3,7 @@
 #include <QWidget>
 #include <QListWidgetItem>
 #include <QShowEvent>
+#include <QCloseEvent>
 #include <string>
 #include "ui_Logger.h"
 
@@ -13,7 +14,9 @@ class Logger : public QWidget
 public:
     Logger(QWidget *parent = nullptr);
     ~Logger();
+
     void SetQSS();
+
     static void write(const std::string& text);
     static void write(const QString& text);
     static void write(const char* text);
@@ -32,6 +35,7 @@ public:
 
 protected:
     void showEvent(QShowEvent* event) override;
+    void closeEvent(QCloseEvent* event) override;
 
 private slots:
     void onFileClicked(QListWidgetItem* item);
@@ -47,4 +51,7 @@ private:
     Ui::LoggerClass ui;
     QString currentDir;
     QString currentFile;
+
+signals:
+    void showmain();
 };
