@@ -1164,6 +1164,9 @@
     <ClCompile Include="OCRdemo\Simulator.cpp">
       <Filter>Generated Files</Filter>
     </ClCompile>
+    <ClCompile Include="uiults\EntityMover.cpp">
+      <Filter>Generated Files\uiults</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="ui\generic\actionlist.h">
@@ -4310,6 +4313,9 @@
     </ClInclude>
     <ClInclude Include="lib\engine\rs_mtext.h">
       <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="uiults\EntityMover.h">
+      <Filter>Generated Files\uiults</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

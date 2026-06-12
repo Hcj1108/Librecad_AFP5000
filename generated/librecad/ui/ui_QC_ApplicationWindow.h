@@ -70,6 +70,7 @@ public:
     QToolButton *moveDownBtn_3;
     QToolButton *toolButton_42;
     QToolButton *toolButton_46;
+    QToolButton *toolButton_48;
     QWidget *page_6;
     QGroupBox *groupBox_6;
     QGraphicsView *graphicsView;
@@ -527,7 +528,7 @@ public:
 
         groupBox_10 = new QGroupBox(page_4);
         groupBox_10->setObjectName(QString::fromUtf8("groupBox_10"));
-        groupBox_10->setGeometry(QRect(10, 340, 281, 131));
+        groupBox_10->setGeometry(QRect(10, 340, 281, 181));
         groupBox_10->setFont(font3);
         moveDownBtn_2 = new QToolButton(groupBox_10);
         moveDownBtn_2->setObjectName(QString::fromUtf8("moveDownBtn_2"));
@@ -621,6 +622,28 @@ public:
         toolButton_46->setIcon(icon13);
         toolButton_46->setIconSize(QSize(30, 30));
         toolButton_46->setToolButtonStyle(Qt::ToolButtonStyle::ToolButtonTextBesideIcon);
+        toolButton_48 = new QToolButton(groupBox_10);
+        toolButton_48->setObjectName(QString::fromUtf8("toolButton_48"));
+        toolButton_48->setGeometry(QRect(10, 130, 111, 41));
+        toolButton_48->setFont(font4);
+        toolButton_48->setStyleSheet(QString::fromUtf8(" QToolButton {\n"
+"        opacity: 1;\n"
+" 		border: none;\n"
+"}\n"
+"/* \346\214\211\344\270\213\347\212\266\346\200\201 */\n"
+"QToolButton:pressed {\n"
+"   background-color: #546E7A; /* \346\267\261\347\237\263\346\235\277\347\201\260 */\n"
+"    background-image: none;\n"
+"    padding-top: 12px;\n"
+"    padding-bottom: 8px;\n"
+"    border: 1px solid #37474F; /* \346\267\261\350\211\262\350\276\271\346\241\206\346\250\241\346\213\237\351\230\264\345\275\261 */\n"
+"}\n"
+""));
+        QIcon icon14;
+        icon14.addFile(QString::fromUtf8(":/PNG/Resources/PNG/ZJYH.png"), QSize(), QIcon::Normal, QIcon::Off);
+        toolButton_48->setIcon(icon14);
+        toolButton_48->setIconSize(QSize(30, 30));
+        toolButton_48->setToolButtonStyle(Qt::ToolButtonStyle::ToolButtonTextBesideIcon);
         stackedWidget_2->addWidget(page_4);
         page_6 = new QWidget();
         page_6->setObjectName(QString::fromUtf8("page_6"));
@@ -649,9 +672,9 @@ public:
 "border: none;                  /* \346\240\270\345\277\203\357\274\232\345\216\273\346\216\211\346\211\200\346\234\211\350\276\271\346\241\206 */\n"
 "\n"
 ""));
-        QIcon icon14;
-        icon14.addFile(QString::fromUtf8(":/PIC/Resources/PICs/clear.png"), QSize(), QIcon::Normal, QIcon::Off);
-        toolButton_8->setIcon(icon14);
+        QIcon icon15;
+        icon15.addFile(QString::fromUtf8(":/PIC/Resources/PICs/clear.png"), QSize(), QIcon::Normal, QIcon::Off);
+        toolButton_8->setIcon(icon15);
         toolButton_8->setToolButtonStyle(Qt::ToolButtonStyle::ToolButtonIconOnly);
         toolButton_8->setAutoRaise(false);
         textEdit = new QTextEdit(groupBox_6);
@@ -742,7 +765,11 @@ public:
         zdybutton->setObjectName(QString::fromUtf8("zdybutton"));
         zdybutton->setGeometry(QRect(180, 90, 81, 31));
         zdybutton->setFont(font4);
-        zdybutton->setStyleSheet(QString::fromUtf8("/* \346\214\211\344\270\213\347\212\266\346\200\201 */\n"
+        zdybutton->setStyleSheet(QString::fromUtf8(" QToolButton {\n"
+"        opacity: 1;\n"
+" 		border: none;\n"
+"}\n"
+"/* \346\214\211\344\270\213\347\212\266\346\200\201 */\n"
 "QToolButton:pressed {\n"
 "   background-color: #546E7A; /* \346\267\261\347\237\263\346\235\277\347\201\260 */\n"
 "    background-image: none;\n"
@@ -750,19 +777,13 @@ public:
 "    padding-bottom: 8px;\n"
 "    border: 1px solid #37474F; /* \346\267\261\350\211\262\350\276\271\346\241\206\346\250\241\346\213\237\351\230\264\345\275\261 */\n"
 "}\n"
-" QToolButton {\n"
-"		background-color: qlineargradient(x1:0, y1:0, x2:0, y2:1, \n"
-"    	stop:0 #ffffff,       /* \351\241\266\351\203\250\357\274\232\347\272\257\347\231\275\357\274\210\351\253\230\345\205\211\357\274\211 */\n"
-"   		stop:0.15 #dcdcdc,    /* \350\277\207\346\270\241\357\274\232\346\265\205\347\201\260 */\n"
-"    	stop:0.85 #a9a9a9,    /* \345\272\225\351\203\250\350\277\207\346\270\241\357\274\232\344\270\255\347\201\260 */\n"
-"    	stop:1 #e8e8e8        /* \345\272\225\351\203\250\357\274\232\344\272\256\347\201\260\357\274\210\345\217\215\345\205\211\357\274\211 */);\n"
-"}"));
+""));
         zdybutton->setIconSize(QSize(31, 31));
         zdybutton->setPopupMode(QToolButton::ToolButtonPopupMode::DelayedPopup);
         zdybutton->setToolButtonStyle(Qt::ToolButtonStyle::ToolButtonTextBesideIcon);
-        QIcon icon15;
-        icon15.addFile(QString::fromUtf8(":/PIC/Resources/PICs/A2.png"), QSize(), QIcon::Normal, QIcon::Off);
-        tabWidget->addTab(tab, icon15, QString());
+        QIcon icon16;
+        icon16.addFile(QString::fromUtf8(":/PIC/Resources/PICs/A2.png"), QSize(), QIcon::Normal, QIcon::Off);
+        tabWidget->addTab(tab, icon16, QString());
         tab_2 = new QWidget();
         tab_2->setObjectName(QString::fromUtf8("tab_2"));
         label_25 = new QLabel(tab_2);
@@ -798,9 +819,9 @@ public:
         lineEdit_12->setGeometry(QRect(100, 90, 161, 31));
         lineEdit_12->setFont(font3);
         lineEdit_12->setAlignment(Qt::AlignmentFlag::AlignCenter);
-        QIcon icon16;
-        icon16.addFile(QString::fromUtf8(":/PIC/Resources/PICs/rl.png"), QSize(), QIcon::Normal, QIcon::Off);
-        tabWidget->addTab(tab_2, icon16, QString());
+        QIcon icon17;
+        icon17.addFile(QString::fromUtf8(":/PIC/Resources/PICs/rl.png"), QSize(), QIcon::Normal, QIcon::Off);
+        tabWidget->addTab(tab_2, icon17, QString());
         stackedWidget_2->addWidget(page_6);
         page_10 = new QWidget();
         page_10->setObjectName(QString::fromUtf8("page_10"));
@@ -821,7 +842,7 @@ public:
 "    border: 1px solid #37474F; /* \346\267\261\350\211\262\350\276\271\346\241\206\346\250\241\346\213\237\351\230\264\345\275\261 */\n"
 "}\n"
 ""));
-        toolButton_6->setIcon(icon16);
+        toolButton_6->setIcon(icon17);
         toolButton_6->setIconSize(QSize(80, 80));
         toolButton_6->setToolButtonStyle(Qt::ToolButtonStyle::ToolButtonTextUnderIcon);
         toolButton_9 = new QToolButton(page_10);
@@ -841,7 +862,7 @@ public:
 "    border: 1px solid #37474F; /* \346\267\261\350\211\262\350\276\271\346\241\206\346\250\241\346\213\237\351\230\264\345\275\261 */\n"
 "}\n"
 ""));
-        toolButton_9->setIcon(icon15);
+        toolButton_9->setIcon(icon16);
         toolButton_9->setIconSize(QSize(80, 80));
         toolButton_9->setToolButtonStyle(Qt::ToolButtonStyle::ToolButtonTextUnderIcon);
         stackedWidget_2->addWidget(page_10);
@@ -869,9 +890,9 @@ public:
 "    border: 1px solid #37474F; /* \346\267\261\350\211\262\350\276\271\346\241\206\346\250\241\346\213\237\351\230\264\345\275\261 */\n"
 "}\n"
 ""));
-        QIcon icon17;
-        icon17.addFile(QString::fromUtf8(":/PIC/Resources/PICs/Anquan.png"), QSize(), QIcon::Normal, QIcon::Off);
-        toolButton_2->setIcon(icon17);
+        QIcon icon18;
+        icon18.addFile(QString::fromUtf8(":/PIC/Resources/PICs/Anquan.png"), QSize(), QIcon::Normal, QIcon::Off);
+        toolButton_2->setIcon(icon18);
         toolButton_2->setIconSize(QSize(40, 40));
         toolButton_2->setToolButtonStyle(Qt::ToolButtonStyle::ToolButtonTextBesideIcon);
         toolButton_4 = new QToolButton(groupBox_4);
@@ -891,9 +912,9 @@ public:
 "    border: 1px solid #37474F; /* \346\267\261\350\211\262\350\276\271\346\241\206\346\250\241\346\213\237\351\230\264\345\275\261 */\n"
 "}\n"
 ""));
-        QIcon icon18;
-        icon18.addFile(QString::fromUtf8(":/PIC/Resources/PICs/XYZ.png"), QSize(), QIcon::Normal, QIcon::Off);
-        toolButton_4->setIcon(icon18);
+        QIcon icon19;
+        icon19.addFile(QString::fromUtf8(":/PIC/Resources/PICs/XYZ.png"), QSize(), QIcon::Normal, QIcon::Off);
+        toolButton_4->setIcon(icon19);
         toolButton_4->setIconSize(QSize(40, 40));
         toolButton_4->setToolButtonStyle(Qt::ToolButtonStyle::ToolButtonTextBesideIcon);
         groupBox_8 = new QGroupBox(page_12);
@@ -918,9 +939,9 @@ public:
 "    border: 1px solid #37474F; /* \346\267\261\350\211\262\350\276\271\346\241\206\346\250\241\346\213\237\351\230\264\345\275\261 */\n"
 "}\n"
 ""));
-        QIcon icon19;
-        icon19.addFile(QString::fromUtf8(":/PIC/Resources/PICs/jiaocheng.png"), QSize(), QIcon::Normal, QIcon::Off);
-        toolButton_12->setIcon(icon19);
+        QIcon icon20;
+        icon20.addFile(QString::fromUtf8(":/PIC/Resources/PICs/jiaocheng.png"), QSize(), QIcon::Normal, QIcon::Off);
+        toolButton_12->setIcon(icon20);
         toolButton_12->setIconSize(QSize(40, 40));
         toolButton_12->setToolButtonStyle(Qt::ToolButtonStyle::ToolButtonTextBesideIcon);
         toolButton_13 = new QToolButton(groupBox_8);
@@ -940,9 +961,9 @@ public:
 "    border: 1px solid #37474F; /* \346\267\261\350\211\262\350\276\271\346\241\206\346\250\241\346\213\237\351\230\264\345\275\261 */\n"
 "}\n"
 ""));
-        QIcon icon20;
-        icon20.addFile(QString::fromUtf8(":/PIC/Resources/PICs/Rizhi.png"), QSize(), QIcon::Normal, QIcon::Off);
-        toolButton_13->setIcon(icon20);
+        QIcon icon21;
+        icon21.addFile(QString::fromUtf8(":/PIC/Resources/PICs/Rizhi.png"), QSize(), QIcon::Normal, QIcon::Off);
+        toolButton_13->setIcon(icon21);
         toolButton_13->setIconSize(QSize(40, 40));
         toolButton_13->setToolButtonStyle(Qt::ToolButtonStyle::ToolButtonTextBesideIcon);
         toolButton_5 = new QToolButton(groupBox_8);
@@ -962,9 +983,9 @@ public:
 "    border: 1px solid #37474F; /* \346\267\261\350\211\262\350\276\271\346\241\206\346\250\241\346\213\237\351\230\264\345\275\261 */\n"
 "}\n"
 ""));
-        QIcon icon21;
-        icon21.addFile(QString::fromUtf8(":/PIC/Resources/PICs/NGTP.png"), QSize(), QIcon::Normal, QIcon::Off);
-        toolButton_5->setIcon(icon21);
+        QIcon icon22;
+        icon22.addFile(QString::fromUtf8(":/PIC/Resources/PICs/NGTP.png"), QSize(), QIcon::Normal, QIcon::Off);
+        toolButton_5->setIcon(icon22);
         toolButton_5->setIconSize(QSize(40, 40));
         toolButton_5->setToolButtonStyle(Qt::ToolButtonStyle::ToolButtonTextBesideIcon);
         toolButton_7 = new QToolButton(groupBox_8);
@@ -984,9 +1005,9 @@ public:
 "    border: 1px solid #37474F; /* \346\267\261\350\211\262\350\276\271\346\241\206\346\250\241\346\213\237\351\230\264\345\275\261 */\n"
 "}\n"
 ""));
-        QIcon icon22;
-        icon22.addFile(QString::fromUtf8(":/PIC/Resources/PICs/Bianji.png"), QSize(), QIcon::Normal, QIcon::Off);
-        toolButton_7->setIcon(icon22);
+        QIcon icon23;
+        icon23.addFile(QString::fromUtf8(":/PIC/Resources/PICs/Bianji.png"), QSize(), QIcon::Normal, QIcon::Off);
+        toolButton_7->setIcon(icon23);
         toolButton_7->setIconSize(QSize(40, 40));
         toolButton_7->setToolButtonStyle(Qt::ToolButtonStyle::ToolButtonTextBesideIcon);
         groupBox_9 = new QGroupBox(page_12);
@@ -1011,9 +1032,9 @@ public:
 "    border: 1px solid #37474F; /* \346\267\261\350\211\262\350\276\271\346\241\206\346\250\241\346\213\237\351\230\264\345\275\261 */\n"
 "}\n"
 ""));
-        QIcon icon23;
-        icon23.addFile(QString::fromUtf8(":/PNG/Resources/PNG/DYTZ.png"), QSize(), QIcon::Normal, QIcon::Off);
-        toolButton_33->setIcon(icon23);
+        QIcon icon24;
+        icon24.addFile(QString::fromUtf8(":/PNG/Resources/PNG/DYTZ.png"), QSize(), QIcon::Normal, QIcon::Off);
+        toolButton_33->setIcon(icon24);
         toolButton_33->setIconSize(QSize(40, 40));
         toolButton_33->setToolButtonStyle(Qt::ToolButtonStyle::ToolButtonTextBesideIcon);
         toolButton_25 = new QToolButton(groupBox_9);
@@ -1033,9 +1054,9 @@ public:
 "    border: 1px solid #37474F; /* \346\267\261\350\211\262\350\276\271\346\241\206\346\250\241\346\213\237\351\230\264\345\275\261 */\n"
 "}\n"
 ""));
-        QIcon icon24;
-        icon24.addFile(QString::fromUtf8(":/PIC/Resources/PICs/\344\273\273\345\212\241.png"), QSize(), QIcon::Normal, QIcon::Off);
-        toolButton_25->setIcon(icon24);
+        QIcon icon25;
+        icon25.addFile(QString::fromUtf8(":/PIC/Resources/PICs/\344\273\273\345\212\241.png"), QSize(), QIcon::Normal, QIcon::Off);
+        toolButton_25->setIcon(icon25);
         toolButton_25->setIconSize(QSize(40, 40));
         toolButton_25->setToolButtonStyle(Qt::ToolButtonStyle::ToolButtonTextBesideIcon);
         toolButton_30 = new QToolButton(groupBox_9);
@@ -1055,9 +1076,9 @@ public:
 "    border: 1px solid #37474F; /* \346\267\261\350\211\262\350\276\271\346\241\206\346\250\241\346\213\237\351\230\264\345\275\261 */\n"
 "}\n"
 ""));
-        QIcon icon25;
-        icon25.addFile(QString::fromUtf8(":/PNG/Resources/PNG/YHGL.png"), QSize(), QIcon::Normal, QIcon::Off);
-        toolButton_30->setIcon(icon25);
+        QIcon icon26;
+        icon26.addFile(QString::fromUtf8(":/PNG/Resources/PNG/YHGL.png"), QSize(), QIcon::Normal, QIcon::Off);
+        toolButton_30->setIcon(icon26);
         toolButton_30->setIconSize(QSize(45, 45));
         toolButton_30->setToolButtonStyle(Qt::ToolButtonStyle::ToolButtonTextBesideIcon);
         toolButton_16 = new QToolButton(groupBox_9);
@@ -1077,9 +1098,9 @@ public:
 "    border: 1px solid #37474F; /* \346\267\261\350\211\262\350\276\271\346\241\206\346\250\241\346\213\237\351\230\264\345\275\261 */\n"
 "}\n"
 ""));
-        QIcon icon26;
-        icon26.addFile(QString::fromUtf8(":/PIC/Resources/PICs/XTZT.png"), QSize(), QIcon::Normal, QIcon::Off);
-        toolButton_16->setIcon(icon26);
+        QIcon icon27;
+        icon27.addFile(QString::fromUtf8(":/PIC/Resources/PICs/XTZT.png"), QSize(), QIcon::Normal, QIcon::Off);
+        toolButton_16->setIcon(icon27);
         toolButton_16->setIconSize(QSize(40, 40));
         toolButton_16->setToolButtonStyle(Qt::ToolButtonStyle::ToolButtonTextBesideIcon);
         groupBox_11 = new QGroupBox(page_12);
@@ -1103,9 +1124,9 @@ public:
 "    border: 1px solid #37474F; /* \346\267\261\350\211\262\350\276\271\346\241\206\346\250\241\346\213\237\351\230\264\345\275\261 */\n"
 "}\n"
 ""));
-        QIcon icon27;
-        icon27.addFile(QString::fromUtf8(":/PNG/Resources/PNG/BCPF.png"), QSize(), QIcon::Normal, QIcon::Off);
-        toolButton_11->setIcon(icon27);
+        QIcon icon28;
+        icon28.addFile(QString::fromUtf8(":/PNG/Resources/PNG/BCPF.png"), QSize(), QIcon::Normal, QIcon::Off);
+        toolButton_11->setIcon(icon28);
         toolButton_11->setIconSize(QSize(40, 40));
         toolButton_11->setToolButtonStyle(Qt::ToolButtonStyle::ToolButtonTextBesideIcon);
         toolButton_14 = new QToolButton(groupBox_11);
@@ -1125,9 +1146,9 @@ public:
 "    border: 1px solid #37474F; /* \346\267\261\350\211\262\350\276\271\346\241\206\346\250\241\346\213\237\351\230\264\345\275\261 */\n"
 "}\n"
 ""));
-        QIcon icon28;
-        icon28.addFile(QString::fromUtf8(":/PNG/Resources/PNG/GXPF.png"), QSize(), QIcon::Normal, QIcon::Off);
-        toolButton_14->setIcon(icon28);
+        QIcon icon29;
+        icon29.addFile(QString::fromUtf8(":/PNG/Resources/PNG/GXPF.png"), QSize(), QIcon::Normal, QIcon::Off);
+        toolButton_14->setIcon(icon29);
         toolButton_14->setIconSize(QSize(40, 40));
         toolButton_14->setToolButtonStyle(Qt::ToolButtonStyle::ToolButtonTextBesideIcon);
         stackedWidget_2->addWidget(page_12);
@@ -1161,9 +1182,9 @@ public:
 "background-color: qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 #dfd5cf, stop: 0.15 #acbbac, stop: 0.85 #acbbac,stop:1 #dfd5cf);\n"
 "\n"
 ""));
-        QIcon icon29;
-        icon29.addFile(QString::fromUtf8(":/PNG/Resources/PNG/DZCJ1.png"), QSize(), QIcon::Normal, QIcon::Off);
-        toolButton_35->setIcon(icon29);
+        QIcon icon30;
+        icon30.addFile(QString::fromUtf8(":/PNG/Resources/PNG/DZCJ1.png"), QSize(), QIcon::Normal, QIcon::Off);
+        toolButton_35->setIcon(icon30);
         toolButton_35->setIconSize(QSize(25, 25));
         label = new QLabel(widget_2);
         label->setObjectName(QString::fromUtf8("label"));
@@ -1182,9 +1203,9 @@ public:
 "\n"
 "\n"
 ""));
-        QIcon icon30;
-        icon30.addFile(QString::fromUtf8(":/PIC/Resources/PICs/JGDB.png"), QSize(), QIcon::Normal, QIcon::Off);
-        toolButton_34->setIcon(icon30);
+        QIcon icon31;
+        icon31.addFile(QString::fromUtf8(":/PIC/Resources/PICs/JGDB.png"), QSize(), QIcon::Normal, QIcon::Off);
+        toolButton_34->setIcon(icon31);
         toolButton_34->setIconSize(QSize(25, 25));
         toolButton_3 = new QToolButton(widget_2);
         toolButton_3->setObjectName(QString::fromUtf8("toolButton_3"));
@@ -1194,9 +1215,9 @@ public:
 "background-color: qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 #dfd5cf, stop: 0.15 #acbbac, stop: 0.85 #acbbac,stop:1 #dfd5cf);\n"
 "\n"
 ""));
-        QIcon icon31;
-        icon31.addFile(QString::fromUtf8(":/PNG/Resources/PNG/JKMS.png"), QSize(), QIcon::Normal, QIcon::Off);
-        toolButton_3->setIcon(icon31);
+        QIcon icon32;
+        icon32.addFile(QString::fromUtf8(":/PNG/Resources/PNG/JKMS.png"), QSize(), QIcon::Normal, QIcon::Off);
+        toolButton_3->setIcon(icon32);
         toolButton_3->setIconSize(QSize(25, 25));
         toolButton_3->setToolButtonStyle(Qt::ToolButtonStyle::ToolButtonIconOnly);
         timg2 = new QToolButton(page_2);
@@ -1312,9 +1333,9 @@ public:
 "    border: 1px solid #37474F; /* \346\267\261\350\211\262\350\276\271\346\241\206\346\250\241\346\213\237\351\230\264\345\275\261 */\n"
 "}\n"
 ""));
-        QIcon icon32;
-        icon32.addFile(QString::fromUtf8(":/PIC/Resources/PICs/Zhuye.png"), QSize(), QIcon::Normal, QIcon::Off);
-        toolButton_26->setIcon(icon32);
+        QIcon icon33;
+        icon33.addFile(QString::fromUtf8(":/PIC/Resources/PICs/Zhuye.png"), QSize(), QIcon::Normal, QIcon::Off);
+        toolButton_26->setIcon(icon33);
         toolButton_26->setIconSize(QSize(45, 45));
         toolButton_26->setToolButtonStyle(Qt::ToolButtonStyle::ToolButtonTextBesideIcon);
 
@@ -1366,9 +1387,9 @@ public:
 "    border: 1px solid #37474F; /* \346\267\261\350\211\262\350\276\271\346\241\206\346\250\241\346\213\237\351\230\264\345\275\261 */\n"
 "}\n"
 ""));
-        QIcon icon33;
-        icon33.addFile(QString::fromUtf8(":/PNG/Resources/PNG/OCR.png"), QSize(), QIcon::Normal, QIcon::Off);
-        toolButton_36->setIcon(icon33);
+        QIcon icon34;
+        icon34.addFile(QString::fromUtf8(":/PNG/Resources/PNG/OCR.png"), QSize(), QIcon::Normal, QIcon::Off);
+        toolButton_36->setIcon(icon34);
         toolButton_36->setIconSize(QSize(45, 45));
         toolButton_36->setToolButtonStyle(Qt::ToolButtonStyle::ToolButtonTextBesideIcon);
 
@@ -1394,9 +1415,9 @@ public:
 "    border: 1px solid #37474F; /* \346\267\261\350\211\262\350\276\271\346\241\206\346\250\241\346\213\237\351\230\264\345\275\261 */\n"
 "}\n"
 ""));
-        QIcon icon34;
-        icon34.addFile(QString::fromUtf8(":/PIC/Resources/PICs/PFGL.png"), QSize(), QIcon::Normal, QIcon::Off);
-        toolButton_21->setIcon(icon34);
+        QIcon icon35;
+        icon35.addFile(QString::fromUtf8(":/PIC/Resources/PICs/PFGL.png"), QSize(), QIcon::Normal, QIcon::Off);
+        toolButton_21->setIcon(icon35);
         toolButton_21->setIconSize(QSize(45, 45));
         toolButton_21->setToolButtonStyle(Qt::ToolButtonStyle::ToolButtonTextBesideIcon);
 
@@ -1428,9 +1449,9 @@ public:
 "    border: 1px solid #37474F; /* \346\267\261\350\211\262\350\276\271\346\241\206\346\250\241\346\213\237\351\230\264\345\275\261 */\n"
 "}\n"
 ""));
-        QIcon icon35;
-        icon35.addFile(QString::fromUtf8(":/PIC/Resources/PICs/admin.png"), QSize(), QIcon::Normal, QIcon::Off);
-        toolButton_17->setIcon(icon35);
+        QIcon icon36;
+        icon36.addFile(QString::fromUtf8(":/PIC/Resources/PICs/admin.png"), QSize(), QIcon::Normal, QIcon::Off);
+        toolButton_17->setIcon(icon36);
         toolButton_17->setIconSize(QSize(45, 45));
         toolButton_17->setAutoRepeatDelay(300);
         toolButton_17->setToolButtonStyle(Qt::ToolButtonStyle::ToolButtonTextBesideIcon);
@@ -1462,9 +1483,9 @@ public:
 "		\n"
 "      }\n"
 ""));
-        QIcon icon36;
-        icon36.addFile(QString::fromUtf8(":/PNG/Resources/PNG/OFF.png"), QSize(), QIcon::Normal, QIcon::Off);
-        toolButton_15->setIcon(icon36);
+        QIcon icon37;
+        icon37.addFile(QString::fromUtf8(":/PNG/Resources/PNG/OFF.png"), QSize(), QIcon::Normal, QIcon::Off);
+        toolButton_15->setIcon(icon37);
         toolButton_15->setIconSize(QSize(30, 30));
         toolButton_15->setCheckable(false);
         toolButton_15->setAutoRepeat(false);
@@ -1490,21 +1511,23 @@ public:
         font12.setPointSize(11);
         font12.setBold(true);
         pushButton_6->setFont(font12);
-        pushButton_6->setStyleSheet(QString::fromUtf8("/* \346\214\211\344\270\213\347\212\266\346\200\201 */\n"
-"QPushButton:pressed {\n"
+        pushButton_6->setStyleSheet(QString::fromUtf8(" QToolButton {\n"
+"        opacity: 1;\n"
+" 		border: none;\n"
+"}\n"
+"/* \346\214\211\344\270\213\347\212\266\346\200\201 */\n"
+"QToolButton:pressed {\n"
 "   background-color: #546E7A; /* \346\267\261\347\237\263\346\235\277\347\201\260 */\n"
 "    background-image: none;\n"
 "    padding-top: 12px;\n"
 "    padding-bottom: 8px;\n"
 "    border: 1px solid #37474F; /* \346\267\261\350\211\262\350\276\271\346\241\206\346\250\241\346\213\237\351\230\264\345\275\261 */\n"
 "}\n"
-" QPushButton {\n"
-"		background-color: qlineargradient(x1:0, y1:0, x2:0, y2:1, \n"
-"    	stop:0 #ffffff,       /* \351\241\266\351\203\250\357\274\232\347\272\257\347\231\275\357\274\210\351\253\230\345\205\211\357\274\211 */\n"
-"   		stop:0.15 #dcdcdc,    /* \350\277\207\346\270\241\357\274\232\346\265\205\347\201\260 */\n"
-"    	stop:0.85 #a9a9a9,    /* \345\272\225\351\203\250\350\277\207\346\270\241\357\274\232\344\270\255\347\201\260 */\n"
-"    	stop:1 #e8e8e8        /* \345\272\225\351\203\250\357\274\232\344\272\256\347\201\260\357\274\210\345\217\215\345\205\211\357\274\211 */);\n"
-"}"));
+""));
+        QIcon icon38;
+        icon38.addFile(QString::fromUtf8(":/PIC/Resources/PICs/checkbox_checked.png"), QSize(), QIcon::Normal, QIcon::Off);
+        pushButton_6->setIcon(icon38);
+        pushButton_6->setIconSize(QSize(40, 40));
         groupBox_3 = new QGroupBox(page);
         groupBox_3->setObjectName(QString::fromUtf8("groupBox_3"));
         groupBox_3->setGeometry(QRect(0, 30, 581, 321));
@@ -1538,26 +1561,11 @@ public:
         zdybutton_2->setObjectName(QString::fromUtf8("zdybutton_2"));
         zdybutton_2->setGeometry(QRect(440, 240, 71, 41));
         zdybutton_2->setFont(font12);
-        zdybutton_2->setStyleSheet(QString::fromUtf8("/* \346\214\211\344\270\213\347\212\266\346\200\201 */\n"
-"QPushButton:pressed {\n"
-"   background-color: #546E7A; /* \346\267\261\347\237\263\346\235\277\347\201\260 */\n"
-"    background-image: none;\n"
-"    padding-top: 12px;\n"
-"    padding-bottom: 8px;\n"
-"    border: 1px solid #37474F; /* \346\267\261\350\211\262\350\276\271\346\241\206\346\250\241\346\213\237\351\230\264\345\275\261 */\n"
+        zdybutton_2->setStyleSheet(QString::fromUtf8(" QToolButton {\n"
+"        opacity: 1;\n"
+" 		border: none;\n"
 "}\n"
-" QPushButton {\n"
-"		background-color: qlineargradient(x1:0, y1:0, x2:0, y2:1, \n"
-"    	stop:0 #ffffff,       /* \351\241\266\351\203\250\357\274\232\347\272\257\347\231\275\357\274\210\351\253\230\345\205\211\357\274\211 */\n"
-"   		stop:0.15 #dcdcdc,    /* \350\277\207\346\270\241\357\274\232\346\265\205\347\201\260 */\n"
-"    	stop:0.85 #a9a9a9,    /* \345\272\225\351\203\250\350\277\207\346\270\241\357\274\232\344\270\255\347\201\260 */\n"
-"    	stop:1 #e8e8e8        /* \345\272\225\351\203\250\357\274\232\344\272\256\347\201\260\357\274\210\345\217\215\345\205\211\357\274\211 */);\n"
-"}"));
-        zdybutton_3 = new QToolButton(groupBox_3);
-        zdybutton_3->setObjectName(QString::fromUtf8("zdybutton_3"));
-        zdybutton_3->setGeometry(QRect(440, 160, 71, 41));
-        zdybutton_3->setFont(font2);
-        zdybutton_3->setStyleSheet(QString::fromUtf8("/* \346\214\211\344\270\213\347\212\266\346\200\201 */\n"
+"/* \346\214\211\344\270\213\347\212\266\346\200\201 */\n"
 "QToolButton:pressed {\n"
 "   background-color: #546E7A; /* \346\267\261\347\237\263\346\235\277\347\201\260 */\n"
 "    background-image: none;\n"
@@ -1565,13 +1573,24 @@ public:
 "    padding-bottom: 8px;\n"
 "    border: 1px solid #37474F; /* \346\267\261\350\211\262\350\276\271\346\241\206\346\250\241\346\213\237\351\230\264\345\275\261 */\n"
 "}\n"
-" QToolButton {\n"
-"		background-color: qlineargradient(x1:0, y1:0, x2:0, y2:1, \n"
-"    	stop:0 #ffffff,       /* \351\241\266\351\203\250\357\274\232\347\272\257\347\231\275\357\274\210\351\253\230\345\205\211\357\274\211 */\n"
-"   		stop:0.15 #dcdcdc,    /* \350\277\207\346\270\241\357\274\232\346\265\205\347\201\260 */\n"
-"    	stop:0.85 #a9a9a9,    /* \345\272\225\351\203\250\350\277\207\346\270\241\357\274\232\344\270\255\347\201\260 */\n"
-"    	stop:1 #e8e8e8        /* \345\272\225\351\203\250\357\274\232\344\272\256\347\201\260\357\274\210\345\217\215\345\205\211\357\274\211 */);\n"
-"}"));
+""));
+        zdybutton_3 = new QToolButton(groupBox_3);
+        zdybutton_3->setObjectName(QString::fromUtf8("zdybutton_3"));
+        zdybutton_3->setGeometry(QRect(440, 160, 71, 41));
+        zdybutton_3->setFont(font2);
+        zdybutton_3->setStyleSheet(QString::fromUtf8(" QToolButton {\n"
+"        opacity: 1;\n"
+" 		border: none;\n"
+"}\n"
+"/* \346\214\211\344\270\213\347\212\266\346\200\201 */\n"
+"QToolButton:pressed {\n"
+"   background-color: #546E7A; /* \346\267\261\347\237\263\346\235\277\347\201\260 */\n"
+"    background-image: none;\n"
+"    padding-top: 12px;\n"
+"    padding-bottom: 8px;\n"
+"    border: 1px solid #37474F; /* \346\267\261\350\211\262\350\276\271\346\241\206\346\250\241\346\213\237\351\230\264\345\275\261 */\n"
+"}\n"
+""));
         zdybutton_3->setPopupMode(QToolButton::ToolButtonPopupMode::DelayedPopup);
         zdybutton_3->setToolButtonStyle(Qt::ToolButtonStyle::ToolButtonTextBesideIcon);
         stackedWidget_4->addWidget(page);
@@ -1645,21 +1664,20 @@ public:
         pushButton_5->setObjectName(QString::fromUtf8("pushButton_5"));
         pushButton_5->setGeometry(QRect(770, 20, 151, 71));
         pushButton_5->setFont(font12);
-        pushButton_5->setStyleSheet(QString::fromUtf8("/* \346\214\211\344\270\213\347\212\266\346\200\201 */\n"
-"QPushButton:pressed {\n"
-"     background-color: #546E7A; /* \346\267\261\347\237\263\346\235\277\347\201\260 */\n"
+        pushButton_5->setStyleSheet(QString::fromUtf8(" QToolButton {\n"
+"        opacity: 1;\n"
+" 		border: none;\n"
+"}\n"
+"/* \346\214\211\344\270\213\347\212\266\346\200\201 */\n"
+"QToolButton:pressed {\n"
+"   background-color: #546E7A; /* \346\267\261\347\237\263\346\235\277\347\201\260 */\n"
 "    background-image: none;\n"
 "    padding-top: 12px;\n"
 "    padding-bottom: 8px;\n"
 "    border: 1px solid #37474F; /* \346\267\261\350\211\262\350\276\271\346\241\206\346\250\241\346\213\237\351\230\264\345\275\261 */\n"
 "}\n"
-" QPushButton {\n"
-"		background-color: qlineargradient(x1:0, y1:0, x2:0, y2:1, \n"
-"    	stop:0 #ffffff,       /* \351\241\266\351\203\250\357\274\232\347\272\257\347\231\275\357\274\210\351\253\230\345\205\211\357\274\211 */\n"
-"   		stop:0.15 #dcdcdc,    /* \350\277\207\346\270\241\357\274\232\346\265\205\347\201\260 */\n"
-"    	stop:0.85 #a9a9a9,    /* \345\272\225\351\203\250\350\277\207\346\270\241\357\274\232\344\270\255\347\201\260 */\n"
-"    	stop:1 #e8e8e8        /* \345\272\225\351\203\250\357\274\232\344\272\256\347\201\260\357\274\210\345\217\215\345\205\211\357\274\211 */);\n"
-"}"));
+""));
+        pushButton_5->setIcon(icon38);
         groupBox_2 = new QGroupBox(stackedWidget_4Page1);
         groupBox_2->setObjectName(QString::fromUtf8("groupBox_2"));
         groupBox_2->setGeometry(QRect(300, 90, 621, 351));
@@ -1733,40 +1751,36 @@ public:
         pushButton_4->setObjectName(QString::fromUtf8("pushButton_4"));
         pushButton_4->setGeometry(QRect(360, 120, 111, 51));
         pushButton_4->setFont(font12);
-        pushButton_4->setStyleSheet(QString::fromUtf8("/* \346\214\211\344\270\213\347\212\266\346\200\201 */\n"
-"QPushButton:pressed {\n"
-"     background-color: #546E7A; /* \346\267\261\347\237\263\346\235\277\347\201\260 */\n"
+        pushButton_4->setStyleSheet(QString::fromUtf8(" QToolButton {\n"
+"        opacity: 1;\n"
+" 		border: none;\n"
+"}\n"
+"/* \346\214\211\344\270\213\347\212\266\346\200\201 */\n"
+"QToolButton:pressed {\n"
+"   background-color: #546E7A; /* \346\267\261\347\237\263\346\235\277\347\201\260 */\n"
 "    background-image: none;\n"
 "    padding-top: 12px;\n"
 "    padding-bottom: 8px;\n"
 "    border: 1px solid #37474F; /* \346\267\261\350\211\262\350\276\271\346\241\206\346\250\241\346\213\237\351\230\264\345\275\261 */\n"
 "}\n"
-" QPushButton {\n"
-"		background-color: qlineargradient(x1:0, y1:0, x2:0, y2:1, \n"
-"    	stop:0 #ffffff,       /* \351\241\266\351\203\250\357\274\232\347\272\257\347\231\275\357\274\210\351\253\230\345\205\211\357\274\211 */\n"
-"   		stop:0.15 #dcdcdc,    /* \350\277\207\346\270\241\357\274\232\346\265\205\347\201\260 */\n"
-"    	stop:0.85 #a9a9a9,    /* \345\272\225\351\203\250\350\277\207\346\270\241\357\274\232\344\270\255\347\201\260 */\n"
-"    	stop:1 #e8e8e8        /* \345\272\225\351\203\250\357\274\232\344\272\256\347\201\260\357\274\210\345\217\215\345\205\211\357\274\211 */);\n"
-"}"));
+""));
         pushButton_3 = new QPushButton(groupBox_2);
         pushButton_3->setObjectName(QString::fromUtf8("pushButton_3"));
         pushButton_3->setGeometry(QRect(360, 20, 111, 51));
         pushButton_3->setFont(font12);
-        pushButton_3->setStyleSheet(QString::fromUtf8("/* \346\214\211\344\270\213\347\212\266\346\200\201 */\n"
-"QPushButton:pressed {\n"
-"    background-color: #546E7A; /* \346\267\261\347\237\263\346\235\277\347\201\260 */\n"
+        pushButton_3->setStyleSheet(QString::fromUtf8(" QToolButton {\n"
+"        opacity: 1;\n"
+" 		border: none;\n"
+"}\n"
+"/* \346\214\211\344\270\213\347\212\266\346\200\201 */\n"
+"QToolButton:pressed {\n"
+"   background-color: #546E7A; /* \346\267\261\347\237\263\346\235\277\347\201\260 */\n"
 "    background-image: none;\n"
 "    padding-top: 12px;\n"
 "    padding-bottom: 8px;\n"
 "    border: 1px solid #37474F; /* \346\267\261\350\211\262\350\276\271\346\241\206\346\250\241\346\213\237\351\230\264\345\275\261 */\n"
 "}\n"
-" QPushButton {\n"
-"		background-color: qlineargradient(x1:0, y1:0, x2:0, y2:1, \n"
-"    	stop:0 #ffffff,       /* \351\241\266\351\203\250\357\274\232\347\272\257\347\231\275\357\274\210\351\253\230\345\205\211\357\274\211 */\n"
-"   		stop:0.15 #dcdcdc,    /* \350\277\207\346\270\241\357\274\232\346\265\205\347\201\260 */\n"
-"    	stop:0.85 #a9a9a9,    /* \345\272\225\351\203\250\350\277\207\346\270\241\357\274\232\344\270\255\347\201\260 */\n"
-"    	stop:1 #e8e8e8        /* \345\272\225\351\203\250\357\274\232\344\272\256\347\201\260\357\274\210\345\217\215\345\205\211\357\274\211 */);\n"
-"}"));
+""));
         stackedWidget_4->addWidget(stackedWidget_4Page1);
         stackedWidget->addWidget(page_7);
 
@@ -1779,8 +1793,8 @@ public:
         retranslateUi(QC_ApplicationWindow);
 
         stackedWidget->setCurrentIndex(0);
-        stackedWidget_2->setCurrentIndex(3);
-        tabWidget->setCurrentIndex(1);
+        stackedWidget_2->setCurrentIndex(0);
+        tabWidget->setCurrentIndex(0);
         stackedWidget_3->setCurrentIndex(1);
         stackedWidget_4->setCurrentIndex(1);
 
@@ -1824,6 +1838,7 @@ public:
         moveDownBtn_3->setText(QCoreApplication::translate("QC_ApplicationWindow", "\345\205\250\345\261\200\346\230\276\347\244\272", nullptr));
         toolButton_42->setText(QCoreApplication::translate("QC_ApplicationWindow", "\346\226\207\346\234\254\347\274\226\350\276\221", nullptr));
         toolButton_46->setText(QCoreApplication::translate("QC_ApplicationWindow", "\345\210\240\351\231\244\346\226\207\346\234\254", nullptr));
+        toolButton_48->setText(QCoreApplication::translate("QC_ApplicationWindow", "\344\272\214\347\273\264\347\240\201\347\274\226\350\276\221", nullptr));
         groupBox_6->setTitle(QCoreApplication::translate("QC_ApplicationWindow", "\347\263\273\347\273\237\344\277\241\346\201\257", nullptr));
 #if QT_CONFIG(tooltip)
         toolButton_8->setToolTip(QCoreApplication::translate("QC_ApplicationWindow", "\346\270\205\347\251\272\346\225\260\346\215\256", nullptr));

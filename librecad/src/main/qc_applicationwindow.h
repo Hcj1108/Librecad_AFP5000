@@ -164,6 +164,7 @@ OCRdemo模块导入区域
 #include "PlaceholderPositionManager.h" // 占位符位置管理器
 #include "BinaryDataListener.h"
 #include "fileuilts.h"              // 文件工具类，处理文件操作
+#include "EntityMover.h"           // 实体移动工具类
 
 using namespace std;  // 使用标准命名空间
 
@@ -739,9 +740,9 @@ public:
 
                 // 获取所有实体的路径点
                 auto allPoints = document->getAllEntityPathPoints(true);
-                //// 遍历所有的路径点
-                //std::cout << "字符级实体路径点：" << std::endl;
+                // 遍历所有的路径点
 
+                //std::cout << "字符级实体路径点：" << std::endl;
                 //for (size_t i = 0; i < allPoints.size(); ++i) {
                 //    std::cout << "字符 " << i + 1 << "：" << std::endl;
 
@@ -752,6 +753,7 @@ public:
                 //            << point.x << ", " << point.y << ")" << std::endl;
                 //    }
                 //}
+
                 // 统计信息
                 int entityCount = allPoints.size();
                 int totalPoints = 0;
@@ -818,8 +820,6 @@ public:
 
                 int lastNom = FileUtils::sendOptimizedPointsUDP_hex(optimizedPaths, ip, port, startNom);
 
-                
-                
                 if (lastNom == startNom)
                 {
                     // 方法1：检查占位符位置管理器
@@ -943,378 +943,7 @@ public:
 
 
     
-    int QC_ApplicationWindow::slotCustomFunction3_1() {
-        if (!getMDIWindow()) return -1;
-
-        RS_GraphicView* graphicView = getGraphicView();
-        RS_Document* document = getDocument();
-
-        if (!graphicView || !document) return -1;
-
-        RS_Vector center(32767, 32767); // 中心点
-        int numRects = 3;               // 可根据需要调整矩形数量
-        double step   = 4096 * 2;           // 每次扩展的距离
-
-        // 初始半径
-        double halfWidth = step;
-        double halfHeight = step;
-
-        for (int i = 0; i < numRects; ++i) {
-            RS_Vector corner1(center.x - halfWidth, center.y - halfHeight); // 左下
-            RS_Vector corner2(center.x + halfWidth, center.y + halfHeight); // 右上
-            RS_Vector corner3(corner2.x, corner1.y); // 右下
-            RS_Vector corner4(corner1.x, corner2.y); // 左上
-
-            // 创建四条边
-            RS_Line* line1 = new RS_Line(document, RS_LineData(corner1, corner3));
-            RS_Line* line2 = new RS_Line(document, RS_LineData(corner3, corner2));
-            RS_Line* line3 = new RS_Line(document, RS_LineData(corner2, corner4));
-            RS_Line* line4 = new RS_Line(document, RS_LineData(corner4, corner1));
-
-            // 设置图层
-            RS_Graphic* graphic = dynamic_cast<RS_Graphic*>(document);
-            if (graphic) {
-                RS_Layer* layer = graphic->getActiveLayer();
-                if (layer) {
-                    line1->setLayer(layer);
-                    line2->setLayer(layer);
-                    line3->setLayer(layer);
-                    line4->setLayer(layer);
-                }
-            }
-
-            // 添加到文档
-            document->addEntity(line1);
-            document->addEntity(line2);
-            document->addEntity(line3);
-            document->addEntity(line4);
-
-            // 增大半径
-            halfWidth += step;
-            halfHeight += step;
-        }
-
-        // 画中心十字线
-        RS_Line* hline = new RS_Line(document, RS_LineData(RS_Vector(1024, center.y), RS_Vector(65535-1024, center.y)));
-        RS_Line* vline = new RS_Line(document, RS_LineData(RS_Vector(center.x, 1024), RS_Vector(center.x, 65535-1024)));
-
-        RS_Graphic* graphic = dynamic_cast<RS_Graphic*>(document);
-        if (graphic) {
-            RS_Layer* layer = graphic->getActiveLayer();
-            if (layer) {
-                hline->setLayer(layer);
-                vline->setLayer(layer);
-            }
-        }
-        document->addEntity(hline);
-        document->addEntity(vline);
-
-        graphicView->redraw();
-        return 1;
-    }
-  
-    int QC_ApplicationWindow::slotCustomFunction3() {
-        if (!getMDIWindow()) return -1;
-
-        RS_GraphicView* graphicView = getGraphicView();
-        RS_Document* document = getDocument();
-
-        if (!graphicView || !document) return -1;
-
-        RS_Vector center(32767, 32767); // 中心点
-        int numCross =4;               // 十字线组数（含中心）
-        int step = 4096*2;                // 每次扩展的距离
-        int minCoord = 1000;
-        int maxCoord = 65500;
-
-        RS_Graphic* graphic = dynamic_cast<RS_Graphic*>(document);
-
-        for (int i = 0; i < numCross; ++i) {
-            int offset = i * step;
-
-            // 画中心及两侧的十字线
-            int xs[3] = { center.x, center.x - offset, center.x + offset };
-            int ys[3] = { center.y, center.y - offset, center.y + offset };
-
-            for (int j = 0; j < 3; ++j) {
-                // 横线
-                if (ys[j] >= minCoord && ys[j] <= maxCoord) {
-                    RS_Line* hline = new RS_Line(document, RS_LineData(RS_Vector(minCoord, ys[j]), RS_Vector(maxCoord, ys[j])));
-                    if (graphic) {
-                        RS_Layer* layer = graphic->getActiveLayer();
-                        if (layer) hline->setLayer(layer);
-                    }
-                    document->addEntity(hline);
-                }
-                // 竖线
-                if (xs[j] >= minCoord && xs[j] <= maxCoord) {
-                    RS_Line* vline = new RS_Line(document, RS_LineData(RS_Vector(xs[j], minCoord), RS_Vector(xs[j], maxCoord)));
-                    if (graphic) {
-                        RS_Layer* layer = graphic->getActiveLayer();
-                        if (layer) vline->setLayer(layer);
-                    }
-                    document->addEntity(vline);
-                }
-            }
-        }
-
-        graphicView->redraw();
-        return 1;
-    }
-
-
-    //生成二维码
-    int QC_ApplicationWindow::slotCustomFunction44()
-    {
-        if (getMDIWindow()) {
-            RS_GraphicView* graphicView = getGraphicView();
-            RS_Document* document = getDocument();
-
-            const double scale = 250.0; // 每个模块的尺寸（毫米）
-            const double startX = 20000.0, startY = 20000.0; // 起始坐标
-
-            if (document && graphicView) {
-                try {
-                    //仅 Aztec、PDF417、QRCode 支持 setEncoding 和 setEccLevel
-                    MultiFormatWriter writer(BarcodeFormat::QRCode);
-                    writer.setMargin(1);
-                    //边距
-                    writer.setEccLevel(4);//纠错等级
-                    auto matrix = writer.encode("23444444vhsang", 21, 21); // 21x21个模块版本1的QR码
-                    //版本1 是最小的QR码，尺寸为 ​21×21 模块
-                    //返回一个二维矩阵（matrix），其中每个元素是 true（黑色模块）或 false（白色模块）
-
-                    for (int y = 0; y < matrix.height(); ++y) {
-                        for (int x = 0; x < matrix.width(); ++x) {
-                            if (matrix.get(x, y)) {
-                                double x1 = startX + x * scale;
-                                double y1 = startY + y * scale;
-                                double x2 = x1 + scale;
-                                double y2 = y1 + scale;
-                                // Create rectangle for each black module
-                                RS_Polyline* rectangle = new RS_Polyline(document);
-                                rectangle->setClosed(true); // 关键：标记为闭合图形
-                                // Add vertices in clockwise order
-                                rectangle->addVertex(RS_Vector(x1, y1)); // 左下
-                                rectangle->addVertex(RS_Vector(x2, y1)); // 右下
-                                rectangle->addVertex(RS_Vector(x2, y2)); // 右上
-                                rectangle->addVertex(RS_Vector(x1, y2)); // 左上
-                                // Set layer and style (optional)
-                                rectangle->setLayerToActive();
-                                rectangle->setPen(RS_Pen(RS_Color(0, 0, 255), RS2::Width01, RS2::SolidLine));
-                                // Add to document and refresh view
-                                document->addEntity(rectangle);
-                            }
-                        }
-                    }
-                    // Refresh the view after all rectangles are added
-                    graphicView->redraw();
-
-                    std::cout << "DXF文件已生成（简单方块版）" << std::endl;
-                }
-                catch (const std::exception& e) {
-                    std::cerr << "错误: " << e.what() << std::endl;
-                    return 1;
-                }
-            }
-
-            QMessageBox::information(this, tr("Custom Function"),
-                tr("Drew a QR code using RS_Polyline."));
-
-            return 0;
-        }
-        return -1;
-    }
-
-  
-
-	// 生成二维码,更新预览文本
-    int QC_ApplicationWindow::slotCustomFunction4(){
-        if (!getMDIWindow()) {
-            return -1;
-        }
-
-        RS_GraphicView* graphicView = getGraphicView();
-        RS_Document* document = getDocument();
-
-        if (!graphicView || !document) {
-            QMessageBox::critical(this, tr("Error"), tr("No active document found"));
-            return 1;
-        }
-
-        // 时间格式预设选项
-        const QMap<QString, QString> timeFormats = {
-            {tr("YYYY-MM-DD HH:mm:ss"), "yyyy-MM-dd hh:mm:ss"},
-            {tr("YYYY/MM/DD HH:mm"), "yyyy/MM/dd hh:mm"},
-            {tr("DD-MM-YYYY"), "dd-MM-yyyy"},
-            {tr("HH:mm:ss"), "hh:mm:ss"},
-            {tr("Timestamp"), "yyyyMMddhhmmss"}
-        };
-
-        // 参数输入对话框（整合所有参数）
-        QDialog inputDialog(this);
-        inputDialog.setWindowTitle(tr("Create QR Code"));
-        inputDialog.resize(500, 400);
-
-        QFormLayout layout(&inputDialog);
-
-        // 位置坐标
-        QDoubleSpinBox posXSpinBox;
-        posXSpinBox.setRange(0, 65000);
-        posXSpinBox.setValue(lastQRSettings.posX);
-        posXSpinBox.setSuffix(" mm");
-        posXSpinBox.setDecimals(2);
-        layout.addRow(tr("Position X:"), &posXSpinBox);
-
-        QDoubleSpinBox posYSpinBox;
-        posYSpinBox.setRange(0, 65000);
-        posYSpinBox.setValue(lastQRSettings.posY);
-        posYSpinBox.setSuffix(" mm");
-        posYSpinBox.setDecimals(2);
-        layout.addRow(tr("Position Y:"), &posYSpinBox);
-
-        // 时间模式复选框
-        QCheckBox timeModeCheckBox(tr("Use current time as content"));
-        timeModeCheckBox.setChecked(lastQRSettings.timeMode);  // 保留上次的选择
-        layout.addRow(&timeModeCheckBox);
-
-        // 时间格式选择
-        QComboBox timeFormatCombo;
-        for (auto it = timeFormats.begin(); it != timeFormats.end(); ++it) {
-            timeFormatCombo.addItem(it.key());
-        }
-        timeFormatCombo.setCurrentText(lastQRSettings.timeFormat);  // 保留上次的格式
-        timeFormatCombo.setEnabled(lastQRSettings.timeMode);  // 根据上次选择设置初始状态
-        layout.addRow(tr("Time Format:"), &timeFormatCombo);
-
-        // 文本内容
-        QPlainTextEdit textEdit;
-        textEdit.setPlainText(lastQRSettings.text);
-        textEdit.setEnabled(!lastQRSettings.timeMode);  // 根据上次选择设置初始状态
-        textEdit.setMaximumHeight(80);
-        layout.addRow(tr("Content:"), &textEdit);
-
-        // 连接复选框状态变化信号
-        QObject::connect(&timeModeCheckBox, &QCheckBox::stateChanged, [&](int state) {
-            bool timeMode = (state == Qt::Checked);
-            textEdit.setEnabled(!timeMode);
-            timeFormatCombo.setEnabled(timeMode);
-
-            if (timeMode) {
-                // 预览当前时间
-                updateTimePreview(textEdit, timeFormats.value(timeFormatCombo.currentText()));
-            }
-        });
-
-        // 时间格式变化信号
-        QObject::connect(&timeFormatCombo, &QComboBox::currentTextChanged, [&](const QString&) {
-            if (timeModeCheckBox.isChecked()) {
-                updateTimePreview(textEdit, timeFormats.value(timeFormatCombo.currentText()));
-            }
-        });
-
-        // 模块大小
-        QDoubleSpinBox sizeSpinBox;
-        sizeSpinBox.setRange(0.5, 10000);
-        sizeSpinBox.setValue(lastQRSettings.moduleSize);
-        sizeSpinBox.setSuffix(" mm");
-        sizeSpinBox.setDecimals(2);
-        layout.addRow(tr("Module Size:"), &sizeSpinBox);
-
-        // 边距
-        QSpinBox marginSpinBox;
-        marginSpinBox.setRange(0, 4);
-        marginSpinBox.setValue(lastQRSettings.margin);
-        layout.addRow(tr("Margin:"), &marginSpinBox);
-
-        // 确认按钮
-        QDialogButtonBox buttons(QDialogButtonBox::Ok | QDialogButtonBox::Cancel);
-        layout.addRow(&buttons);
-        connect(&buttons, &QDialogButtonBox::accepted, &inputDialog, &QDialog::accept);
-        connect(&buttons, &QDialogButtonBox::rejected, &inputDialog, &QDialog::reject);
-
-        if (inputDialog.exec() != QDialog::Accepted) {
-            return 0;
-        }
-
-        // 确定最终文本内容
-        QString qrText;
-        if (timeModeCheckBox.isChecked()) {
-            qrText = QDateTime::currentDateTime().toString(timeFormats.value(timeFormatCombo.currentText()));
-        }
-        else {
-            qrText = textEdit.toPlainText();
-        }
-
-        // 保存当前设置（包括时间模式状态）
-        lastQRSettings = {
-            posXSpinBox.value(),
-            posYSpinBox.value(),
-            qrText, // 保存实际使用的内容
-            sizeSpinBox.value(),
-            marginSpinBox.value(),
-            Qt::black,
-            timeModeCheckBox.isChecked(),  // 保存时间模式状态
-            timeFormatCombo.currentText()  // 保存时间格式
-        };
-
-        // 生成QR码
-        try {
-            MultiFormatWriter writer(BarcodeFormat::QRCode);
-            writer.setMargin(lastQRSettings.margin);
-            writer.setEccLevel(3); // 固定高纠错
-
-            std::string utf8Text = lastQRSettings.text.toUtf8().constData();
-            auto matrix = writer.encode(utf8Text, 21, 21);
-
-            // 计算总尺寸
-            double totalWidth = matrix.width() * lastQRSettings.moduleSize;
-            double totalHeight = matrix.height() * lastQRSettings.moduleSize;
-
-            // 绘制所有模块
-            for (int y = 0; y < matrix.height(); ++y) {
-                for (int x = 0; x < matrix.width(); ++x) {
-                    if (matrix.get(x, y)) {
-                        RS_Vector corner1(
-                            lastQRSettings.posX + x * lastQRSettings.moduleSize - totalWidth / 2,
-                            lastQRSettings.posY + y * lastQRSettings.moduleSize - totalHeight / 2
-                        );
-                        RS_Vector corner2 = corner1 + RS_Vector(lastQRSettings.moduleSize, lastQRSettings.moduleSize);
-
-                        RS_Polyline* rect = new RS_Polyline(document);
-                        rect->setClosed(true);
-                        rect->addVertex(corner1);
-                        rect->addVertex(RS_Vector(corner2.x, corner1.y));
-                        rect->addVertex(corner2);
-                        rect->addVertex(RS_Vector(corner1.x, corner2.y));
-
-                        document->addEntity(rect);
-                    }
-                }
-            }
-
-            graphicView->redraw();
-            QMessageBox::information(this, tr("Success"),
-                tr("QR code created successfully\n"
-                    "Size: %1 x %2 mm")
-                .arg(totalWidth, 0, 'f', 1)
-                .arg(totalHeight, 0, 'f', 1));
-        }
-        catch (const std::exception& e) {
-            QMessageBox::critical(this, tr("Error"),
-                tr("Failed to generate QR code:\n%1").arg(e.what()));
-            return 1;
-        }
-
-        return 0;
-    }
-    // 辅助函数：更新时间预览
-    //被二维码生成函数调用
-    void QC_ApplicationWindow::updateTimePreview(QPlainTextEdit& edit, const QString& format)
-    {
-        QString timeStr = QDateTime::currentDateTime().toString(format);
-        edit.setPlainText( timeStr );
-    }
+   
 
 
 
@@ -1323,319 +952,44 @@ public:
    
 
 public:
-    void QC_ApplicationWindow::onMoveToPositionButtonClicked() {
-        if (getMDIWindow()) {
-            RS_GraphicView* graphicView = getGraphicView();
-            RS_Document* document = getDocument();
-
-            if (graphicView && document) {
-                // 开始撤销/重做记录
-                document->startUndoCycle();
-
-                // 目标位置坐标
-                RS_Vector targetPosition(33000.0, 33000.0);
-                int movedCount = 0;
-
-                // 遍历文档中的所有实体
-                for (RS_Entity* e = document->firstEntity(RS2::ResolveNone);
-                    e != nullptr;
-                    e = document->nextEntity(RS2::ResolveNone))
-                {
-                    // 检查实体是否被选中且可移动
-                    if (e && e->isVisible() && !e->isLocked() && e->isSelected()) {
-                        // 使用边界框中心点作为参考（适用于所有实体类型）
-                        RS_Vector min = e->getMin();
-                        RS_Vector max = e->getMax();
-                        RS_Vector center = (min + max) * 0.5;
-
-                        if (center.valid) {
-                            RS_Vector offset = targetPosition - center;
-                            e->move(offset);
-                            e->update();
-                            movedCount++;
-                        }
-                    }
-                }
-
-                // 刷新视图
-                if (movedCount > 0) {
-                    graphicView->redraw();
-                    RS_DEBUG->print(RS_Debug::D_DEBUGGING,
-                        "QC_ApplicationWindow::onMoveToPositionButtonClicked(): Moved %d entities to (33000, 33000)",
-                        movedCount);
-                }
-                else {
-                    RS_DEBUG->print(RS_Debug::D_WARNING,
-                        "QC_ApplicationWindow::onMoveToPositionButtonClicked(): No selected and movable entities found");
-                }
-
-                // 结束撤销/重做记录
-                document->endUndoCycle();
-            }
-        }
+    void onMoveToPositionButtonClicked() {
+        EntityMover::moveToPosition(getDocument(), getGraphicView(),
+            RS_Vector(33000.0, 33000.0),
+            "QC_ApplicationWindow::onMoveToPositionButtonClicked");
     }
-    void QC_ApplicationWindow::onMoveUpButtonClicked() {
-        int interpolationStep = ui->lineEdit_15->text().toInt()*10;
-        if (getMDIWindow()) {
-            RS_GraphicView* graphicView = getGraphicView();
-            RS_Document* document = getDocument();
-
-            if (graphicView && document) {
-                // 开始撤销/重做记录
-                document->startUndoCycle();
-
-                // 创建移动偏移量（Y轴正方向移动10个单位）
-                RS_Vector offset(0.0, interpolationStep);
-                int movedCount = 0;
-
-                // 遍历文档中的所有实体
-                for (RS_Entity* e = document->firstEntity(RS2::ResolveNone);
-                    e != nullptr;
-                    e = document->nextEntity(RS2::ResolveNone))
-                {
-                    // 检查实体是否被选中且可移动
-                    if (e && e->isVisible() && !e->isLocked() && e->isSelected()) {
-                        // 执行移动操作
-                        e->move(offset);
-                        e->update();
-                        // 保持选中状态
-                        e->setSelected(true);
-                        movedCount++;
-                    }
-                }
-
-                // 如果有实体被移动，则刷新视图
-                if (movedCount > 0) {
-                    graphicView->redraw();
-                    RS_DEBUG->print(RS_Debug::D_DEBUGGING,
-                        "QC_ApplicationWindow::onMoveUpButtonClicked(): Moved %d entities up by 10 units",
-                        movedCount);
-                }
-                else {
-                    RS_DEBUG->print(RS_Debug::D_WARNING,
-                        "QC_ApplicationWindow::onMoveUpButtonClicked(): No selected and movable entities found");
-                }
-
-                // 结束撤销/重做记录
-                document->endUndoCycle();
-            }
-        }
+    void onMoveUpButtonClicked() {
+        int step = ui->lineEdit_15->text().toInt() * 10;
+        EntityMover::moveSelected(getDocument(), getGraphicView(),
+            RS_Vector(0.0, step),
+            "QC_ApplicationWindow::onMoveUpButtonClicked");
     }
-    void QC_ApplicationWindow::onMoveDownButtonClicked() {
-        int interpolationStep = ui->lineEdit_15->text().toInt() * 10;
-        if (getMDIWindow()) {
-            RS_GraphicView* graphicView = getGraphicView();
-            RS_Document* document = getDocument();
-
-            if (graphicView && document) {
-                // 开始撤销/重做记录
-                document->startUndoCycle();
-
-                // 创建移动偏移量（Y轴正方向移动10个单位）
-                RS_Vector offset(0.0, -interpolationStep);
-                int movedCount = 0;
-
-                // 遍历文档中的所有实体
-                for (RS_Entity* e = document->firstEntity(RS2::ResolveNone);
-                    e != nullptr;
-                    e = document->nextEntity(RS2::ResolveNone))
-                {
-                    // 检查实体是否被选中且可移动
-                    if (e && e->isVisible() && !e->isLocked() && e->isSelected()) {
-                        // 执行移动操作
-                        e->move(offset);
-                        e->update();
-                        // 保持选中状态
-                        e->setSelected(true);
-                        movedCount++;
-                    }
-                }
-
-                // 如果有实体被移动，则刷新视图
-                if (movedCount > 0) {
-                    graphicView->redraw();
-                    RS_DEBUG->print(RS_Debug::D_DEBUGGING,
-                        "QC_ApplicationWindow::onMoveUpButtonClicked(): Moved %d entities up by 10 units",
-                        movedCount);
-                }
-                else {
-                    RS_DEBUG->print(RS_Debug::D_WARNING,
-                        "QC_ApplicationWindow::onMoveUpButtonClicked(): No selected and movable entities found");
-                }
-
-                // 结束撤销/重做记录
-                document->endUndoCycle();
-            }
-        }
+    void onMoveDownButtonClicked() {
+        int step = ui->lineEdit_15->text().toInt() * 10;
+        EntityMover::moveSelected(getDocument(), getGraphicView(),
+            RS_Vector(0.0, -step),
+            "QC_ApplicationWindow::onMoveDownButtonClicked");
     }
-    void QC_ApplicationWindow::onMoveLeftButtonClicked() {
-        int interpolationStep = ui->lineEdit_15->text().toInt() * 10;
-        if (getMDIWindow()) {
-            RS_GraphicView* graphicView = getGraphicView();
-            RS_Document* document = getDocument();
-
-            if (graphicView && document) {
-                // 开始撤销/重做记录
-                document->startUndoCycle();
-
-                // 创建移动偏移量（Y轴正方向移动10个单位）
-                RS_Vector offset(-interpolationStep, 0);
-                int movedCount = 0;
-
-                // 遍历文档中的所有实体
-                for (RS_Entity* e = document->firstEntity(RS2::ResolveNone);
-                    e != nullptr;
-                    e = document->nextEntity(RS2::ResolveNone))
-                {
-                    // 检查实体是否被选中且可移动
-                    if (e && e->isVisible() && !e->isLocked() && e->isSelected()) {
-                        // 执行移动操作
-                        e->move(offset);
-                        e->update();
-                        // 保持选中状态
-                        e->setSelected(true);
-                        movedCount++;
-                    }
-                }
-
-                // 如果有实体被移动，则刷新视图
-                if (movedCount > 0) {
-                    graphicView->redraw();
-                    RS_DEBUG->print(RS_Debug::D_DEBUGGING,
-                        "QC_ApplicationWindow::onMoveUpButtonClicked(): Moved %d entities up by 10 units",
-                        movedCount);
-                }
-                else {
-                    RS_DEBUG->print(RS_Debug::D_WARNING,
-                        "QC_ApplicationWindow::onMoveUpButtonClicked(): No selected and movable entities found");
-                }
-
-                // 结束撤销/重做记录
-                document->endUndoCycle();
-            }
-        }
+    void onMoveLeftButtonClicked() {
+        int step = ui->lineEdit_15->text().toInt() * 10;
+        EntityMover::moveSelected(getDocument(), getGraphicView(),
+            RS_Vector(-step, 0),
+            "QC_ApplicationWindow::onMoveLeftButtonClicked");
     }
-    void QC_ApplicationWindow::onMoveRightButtonClicked() {
-        int interpolationStep = ui->lineEdit_15->text().toInt() * 10;
-        if (getMDIWindow()) {
-            RS_GraphicView* graphicView = getGraphicView();
-            RS_Document* document = getDocument();
-
-            if (graphicView && document) {
-                // 开始撤销/重做记录
-                document->startUndoCycle();
-
-                // 创建移动偏移量（Y轴正方向移动10个单位）
-                RS_Vector offset(interpolationStep, 0);
-                int movedCount = 0;
-
-                // 遍历文档中的所有实体
-                for (RS_Entity* e = document->firstEntity(RS2::ResolveNone);
-                    e != nullptr;
-                    e = document->nextEntity(RS2::ResolveNone))
-                {
-                    // 检查实体是否被选中且可移动
-                    if (e && e->isVisible() && !e->isLocked() && e->isSelected()) {
-                        // 执行移动操作
-                        e->move(offset);
-                        e->update();
-                        // 保持选中状态
-                        e->setSelected(true);
-                        movedCount++;
-                    }
-                }
-
-                // 如果有实体被移动，则刷新视图
-                if (movedCount > 0) {
-                    graphicView->redraw();
-                    RS_DEBUG->print(RS_Debug::D_DEBUGGING,
-                        "QC_ApplicationWindow::onMoveUpButtonClicked(): Moved %d entities up by 10 units",
-                        movedCount);
-                }
-                else {
-                    RS_DEBUG->print(RS_Debug::D_WARNING,
-                        "QC_ApplicationWindow::onMoveUpButtonClicked(): No selected and movable entities found");
-                }
-
-                // 结束撤销/重做记录
-                document->endUndoCycle();
-            }
-        }
+    void onMoveRightButtonClicked() {
+        int step = ui->lineEdit_15->text().toInt() * 10;
+        EntityMover::moveSelected(getDocument(), getGraphicView(),
+            RS_Vector(step, 0),
+            "QC_ApplicationWindow::onMoveRightButtonClicked");
     }
 
-	//	// 计算选中实体的中心点
-    RS_Vector QC_ApplicationWindow::calculateSelectionCenter(RS_Document* doc) {
-        RS_Vector center(0, 0);
-        int count = 0;
+	////	// 计算选中实体的中心点
+ //   RS_Vector calculateSelectionCenter(RS_Document* doc) {
+ //       return EntityMover::calculateSelectionCenter(doc);
+ //   }
 
-        // 遍历所有实体
-        for (RS_Entity* e = doc->firstEntity(RS2::ResolveAll);
-            e != nullptr;
-            e = doc->nextEntity(RS2::ResolveAll))
-        {
-            if (e && e->isSelected() && e->isVisible() && !e->isLocked()) {
-                // 获取实体的包围盒
-                RS_Vector min = e->getMin();
-                RS_Vector max = e->getMax();
-                
-                // 累加中心点
-                center += (min + max) / 2.0;
-                count++;
-            }
-        }
-        return count > 0 ? center / count : RS_Vector(false); // 返回无效向量如果没有选中实体
-    }
-
-
-    void QC_ApplicationWindow::onRotateClockwiseButtonClicked() {
-        if (!getMDIWindow()) return;
-
-        RS_GraphicView* graphicView = getGraphicView();
-        RS_Document* document = getDocument();
-        if (!graphicView || !document) return;
-      
-        // 开始撤销记录
-        document->startUndoCycle();
-
-        // 计算选中实体的中心点
-        RS_Vector rotationCenter = calculateSelectionCenter(document);
-        if (!rotationCenter.valid) {
-            statusBar()->showMessage(tr("No valid selection found"), 2000);
-            document->endUndoCycle();
-            return;
-        }
-
-        // 旋转参数
-        const double angle = 90.0; // 顺时针90度
-        int rotatedCount = 0;
-
-        // ******** 修改这里：使用 ResolveNone 而非 ResolveAll ********
-        for (RS_Entity* e = document->firstEntity(RS2::ResolveNone);
-            e != nullptr;
-            e = document->nextEntity(RS2::ResolveNone))
-        {
-            if (e && e->isSelected() && e->isVisible() && !e->isLocked()) {
-                // 执行旋转
-                e->rotate(rotationCenter, angle);
-                e->update();
-                rotatedCount++;
-            }
-        }
-
-        // 刷新显示
-        if (rotatedCount > 0) {
-            graphicView->redraw();
-            statusBar()->showMessage(tr("Rotated %1 entities around (%.2f,%.2f)")
-                .arg(rotatedCount)
-                .arg(rotationCenter.x)
-                .arg(rotationCenter.y),
-                3000);
-        }
-        else {
-            statusBar()->showMessage(tr("No rotatable entities selected"), 2000);
-        }
-
-        document->endUndoCycle();
+    void onRotateClockwiseButtonClicked() {
+        EntityMover::rotateSelected(getDocument(), getGraphicView(), 90.0,
+            "QC_ApplicationWindow::onRotateClockwiseButtonClicked");
     }
 
     

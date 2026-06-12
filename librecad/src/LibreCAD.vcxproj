@@ -250,6 +250,7 @@
     <ClCompile Include="OCRdemo\user.cpp" />
     <ClCompile Include="OCRdemo\XJadmin.cpp" />
     <ClCompile Include="uiults\BinaryDataListener.cpp" />
+    <ClCompile Include="uiults\EntityMover.cpp" />
     <ClCompile Include="uiults\fileuilts.cpp" />
     <ClCompile Include="uiults\PlaceholderPositionManager.cpp" />
     <ClCompile Include="uiults\UdpTimeSender.cpp" />
@@ -684,6 +685,7 @@
     <QtMoc Include="ui\forms\qg_coordinatewidget.h" />
     <ClInclude Include="resource.h" />
     <QtMoc Include="uiults\BinaryDataListener.h" />
+    <ClInclude Include="uiults\EntityMover.h" />
     <ClInclude Include="uiults\fileuilts.h" />
     <ClInclude Include="uiults\FontSettingsSingleton.h" />
     <ClInclude Include="uiults\PlaceholderPositionManager.h" />

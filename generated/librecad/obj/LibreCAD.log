@@ -1,16 +1,122 @@
 ﻿   Qt/MSBuild: 3.5.0.0
    Qt: 5.15.2
-  Uic'ing OCRdemo\Simulator.ui...
-  Simulator.cpp
+  Moc'ing main\qc_applicationwindow.h...
+   Warning: Failed to resolve include "E:/LibreCAD-2.2/generated/librecad/moc/moc_predefs.h" for moc file D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\main\qc_applicationwindow.h
+  rs_actionblocksattributes.cpp
+  rs_actionblockssave.cpp
+  rs_undo.cpp
+  main.cpp
   qc_applicationwindow.cpp
+  qc_dialogfactory.cpp
+  lc_simpletests.cpp
+  lc_actionfactory.cpp
+  lc_actiongroupmanager.cpp
+  lc_widgetfactory.cpp
+  qg_layerwidget.cpp
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\lib\engine\rs.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“actions/rs_actionblockssave.cpp”)
+  
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\lib\engine\rs.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“actions/rs_actionblocksattributes.cpp”)
+  
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\lib\engine\rs.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“ui/lc_widgetfactory.cpp”)
+  
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\lib\engine\rs.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“ui/lc_actiongroupmanager.cpp”)
+  
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\lib\engine\rs.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“main/qc_dialogfactory.cpp”)
+  
 D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\lib\engine\rs.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
   (编译源文件“main/qc_applicationwindow.cpp”)
+  
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\lib\engine\rs.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“ui/lc_actionfactory.cpp”)
+  
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\lib\engine\rs.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“lib/engine/rs_undo.cpp”)
+  
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\lib\engine\rs.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“test/lc_simpletests.cpp”)
+  
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\lib\engine\rs.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“ui/qg_layerwidget.cpp”)
+  
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\lib\engine\rs_patternlist.h(64,23): warning C4267: “return”: 从“size_t”转换到“int”，可能丢失数据
+  (编译源文件“main/main.cpp”)
+  
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\lib\engine\rs.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“main/main.cpp”)
+  
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\lib\engine\rs_polyline.h(38,69): warning C4100: 'step': 未引用的参数
+  (编译源文件“ui/lc_widgetfactory.cpp”)
+  
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\lib\engine\rs_polyline.h(38,69): warning C4100: 'step': 未引用的参数
+  (编译源文件“ui/lc_actiongroupmanager.cpp”)
+  
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\lib\engine\rs_polyline.h(38,69): warning C4100: 'step': 未引用的参数
+  (编译源文件“main/qc_dialogfactory.cpp”)
+  
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\lib\engine\rs_polyline.h(38,69): warning C4100: 'step': 未引用的参数
+  (编译源文件“actions/rs_actionblocksattributes.cpp”)
+  
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\lib\engine\rs_polyline.h(38,69): warning C4100: 'step': 未引用的参数
+  (编译源文件“actions/rs_actionblockssave.cpp”)
   
 D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\lib\engine\rs_polyline.h(38,69): warning C4100: 'step': 未引用的参数
   (编译源文件“main/qc_applicationwindow.cpp”)
   
-D:\software\vcpkg-master\installed\x64-windows\include\iconv.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
-  (编译源文件“OCRdemo/Simulator.cpp”)
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\lib\engine\rs_polyline.h(38,69): warning C4100: 'step': 未引用的参数
+  (编译源文件“ui/lc_actionfactory.cpp”)
+  
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\lib\engine\rs_polyline.h(38,69): warning C4100: 'step': 未引用的参数
+  (编译源文件“test/lc_simpletests.cpp”)
+  
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\lib\engine\rs_polyline.h(38,69): warning C4100: 'step': 未引用的参数
+  (编译源文件“ui/qg_layerwidget.cpp”)
+  
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\lib\engine\rs_polyline.h(38,69): warning C4100: 'step': 未引用的参数
+  (编译源文件“lib/engine/rs_undo.cpp”)
+  
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\lib\engine\rs_polyline.h(38,69): warning C4100: 'step': 未引用的参数
+  (编译源文件“main/main.cpp”)
+  
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\main\qc_applicationwindow.h(142,10): warning C4067: 预处理器指令后有意外标记 - 应输入换行符
+  (编译源文件“main/qc_dialogfactory.cpp”)
+  
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\OCRdemo\GXBitmap.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“main/qc_dialogfactory.cpp”)
+  
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\main\qc_applicationwindow.h(142,10): warning C4067: 预处理器指令后有意外标记 - 应输入换行符
+  (编译源文件“actions/rs_actionblockssave.cpp”)
+  
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\OCRdemo\GXBitmap.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“actions/rs_actionblockssave.cpp”)
+  
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\main\qc_applicationwindow.h(142,10): warning C4067: 预处理器指令后有意外标记 - 应输入换行符
+  (编译源文件“ui/lc_widgetfactory.cpp”)
+  
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\OCRdemo\GXBitmap.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“ui/lc_widgetfactory.cpp”)
+  
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\main\qc_applicationwindow.h(142,10): warning C4067: 预处理器指令后有意外标记 - 应输入换行符
+  (编译源文件“test/lc_simpletests.cpp”)
+  
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\OCRdemo\GXBitmap.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“test/lc_simpletests.cpp”)
+  
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\main\qc_applicationwindow.h(142,10): warning C4067: 预处理器指令后有意外标记 - 应输入换行符
+  (编译源文件“actions/rs_actionblocksattributes.cpp”)
+  
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\OCRdemo\GXBitmap.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“actions/rs_actionblocksattributes.cpp”)
+  
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\main\qc_applicationwindow.h(142,10): warning C4067: 预处理器指令后有意外标记 - 应输入换行符
+  (编译源文件“ui/lc_actiongroupmanager.cpp”)
+  
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\OCRdemo\GXBitmap.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“ui/lc_actiongroupmanager.cpp”)
   
 D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\main\qc_applicationwindow.h(142,10): warning C4067: 预处理器指令后有意外标记 - 应输入换行符
   (编译源文件“main/qc_applicationwindow.cpp”)
@@ -18,50 +124,339 @@ D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\main\qc_applicationwindow.h(142,10): war
 D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\OCRdemo\GXBitmap.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
   (编译源文件“main/qc_applicationwindow.cpp”)
   
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\main\qc_applicationwindow.h(142,10): warning C4067: 预处理器指令后有意外标记 - 应输入换行符
+  (编译源文件“lib/engine/rs_undo.cpp”)
+  
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\OCRdemo\GXBitmap.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“lib/engine/rs_undo.cpp”)
+  
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\main\qc_applicationwindow.h(142,10): warning C4067: 预处理器指令后有意外标记 - 应输入换行符
+  (编译源文件“ui/lc_actionfactory.cpp”)
+  
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\OCRdemo\GXBitmap.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“ui/lc_actionfactory.cpp”)
+  
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\main\qc_applicationwindow.h(142,10): warning C4067: 预处理器指令后有意外标记 - 应输入换行符
+  (编译源文件“ui/qg_layerwidget.cpp”)
+  
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\OCRdemo\GXBitmap.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“ui/qg_layerwidget.cpp”)
+  
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\main\qc_applicationwindow.h(142,10): warning C4067: 预处理器指令后有意外标记 - 应输入换行符
+  (编译源文件“main/main.cpp”)
+  
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\OCRdemo\GXBitmap.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“main/main.cpp”)
+  
+D:\software\vcpkg-master\installed\x64-windows\include\iconv.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“main/qc_dialogfactory.cpp”)
+  
+D:\software\vcpkg-master\installed\x64-windows\include\iconv.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“actions/rs_actionblockssave.cpp”)
+  
+D:\software\vcpkg-master\installed\x64-windows\include\iconv.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“test/lc_simpletests.cpp”)
+  
+D:\software\vcpkg-master\installed\x64-windows\include\iconv.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“ui/lc_actiongroupmanager.cpp”)
+  
+D:\software\vcpkg-master\installed\x64-windows\include\iconv.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“ui/lc_widgetfactory.cpp”)
+  
+D:\software\vcpkg-master\installed\x64-windows\include\iconv.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“actions/rs_actionblocksattributes.cpp”)
+  
+D:\software\vcpkg-master\installed\x64-windows\include\iconv.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“lib/engine/rs_undo.cpp”)
+  
+D:\software\vcpkg-master\installed\x64-windows\include\iconv.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“ui/qg_layerwidget.cpp”)
+  
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\OCRdemo\SerialManager.h(9,10): warning C4067: 预处理器指令后有意外标记 - 应输入换行符
+  (编译源文件“actions/rs_actionblockssave.cpp”)
+  
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\OCRdemo\SerialManager.h(9,10): warning C4067: 预处理器指令后有意外标记 - 应输入换行符
+  (编译源文件“main/qc_dialogfactory.cpp”)
+  
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\OCRdemo\SerialManager.h(9,10): warning C4067: 预处理器指令后有意外标记 - 应输入换行符
+  (编译源文件“test/lc_simpletests.cpp”)
+  
 D:\software\vcpkg-master\installed\x64-windows\include\iconv.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
   (编译源文件“main/qc_applicationwindow.cpp”)
   
 D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\OCRdemo\SerialManager.h(9,10): warning C4067: 预处理器指令后有意外标记 - 应输入换行符
+  (编译源文件“ui/lc_actiongroupmanager.cpp”)
+  
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\OCRdemo\SerialManager.h(9,10): warning C4067: 预处理器指令后有意外标记 - 应输入换行符
+  (编译源文件“ui/lc_widgetfactory.cpp”)
+  
+D:\software\vcpkg-master\installed\x64-windows\include\iconv.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“ui/lc_actionfactory.cpp”)
+  
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\OCRdemo\SerialManager.h(9,10): warning C4067: 预处理器指令后有意外标记 - 应输入换行符
+  (编译源文件“ui/qg_layerwidget.cpp”)
+  
+D:\software\vcpkg-master\installed\x64-windows\include\iconv.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“main/main.cpp”)
+  
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\OCRdemo\SerialManager.h(9,10): warning C4067: 预处理器指令后有意外标记 - 应输入换行符
+  (编译源文件“actions/rs_actionblocksattributes.cpp”)
+  
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\OCRdemo\SerialManager.h(9,10): warning C4067: 预处理器指令后有意外标记 - 应输入换行符
+  (编译源文件“lib/engine/rs_undo.cpp”)
+  
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\OCRdemo\SerialManager.h(9,10): warning C4067: 预处理器指令后有意外标记 - 应输入换行符
   (编译源文件“main/qc_applicationwindow.cpp”)
   
-D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\main\qc_applicationwindow.h(756,33): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\OCRdemo\SerialManager.h(9,10): warning C4067: 预处理器指令后有意外标记 - 应输入换行符
+  (编译源文件“main/main.cpp”)
+  
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\OCRdemo\SerialManager.h(9,10): warning C4067: 预处理器指令后有意外标记 - 应输入换行符
+  (编译源文件“ui/lc_actionfactory.cpp”)
+  
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\main\qc_applicationwindow.h(758,33): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+  (编译源文件“actions/rs_actionblockssave.cpp”)
+  
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\main\qc_applicationwindow.h(762,53): warning C4267: “+=”: 从“size_t”转换到“int”，可能丢失数据
+  (编译源文件“actions/rs_actionblockssave.cpp”)
+  
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\main\qc_applicationwindow.h(758,33): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+  (编译源文件“ui/lc_actiongroupmanager.cpp”)
+  
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\main\qc_applicationwindow.h(762,53): warning C4267: “+=”: 从“size_t”转换到“int”，可能丢失数据
+  (编译源文件“ui/lc_actiongroupmanager.cpp”)
+  
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\main\qc_applicationwindow.h(891,17): warning C4189: “width_E”: 局部变量已初始化但不引用
+  (编译源文件“actions/rs_actionblockssave.cpp”)
+  
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\main\qc_applicationwindow.h(758,33): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+  (编译源文件“main/qc_dialogfactory.cpp”)
+  
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\main\qc_applicationwindow.h(735,29): warning C4189: “graphicView”: 局部变量已初始化但不引用
+  (编译源文件“actions/rs_actionblockssave.cpp”)
+  
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\main\qc_applicationwindow.h(902,17): warning C4189: “ii”: 局部变量已初始化但不引用
+  (编译源文件“actions/rs_actionblockssave.cpp”)
+  
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\main\qc_applicationwindow.h(758,21): warning C4189: “entityCount”: 局部变量已初始化但不引用
+  (编译源文件“actions/rs_actionblockssave.cpp”)
+  
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\main\qc_applicationwindow.h(903,35): warning C4189: “v”: 局部变量已初始化但不引用
+  (编译源文件“actions/rs_actionblockssave.cpp”)
+  
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\main\qc_applicationwindow.h(762,53): warning C4267: “+=”: 从“size_t”转换到“int”，可能丢失数据
+  (编译源文件“main/qc_dialogfactory.cpp”)
+  
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\main\qc_applicationwindow.h(891,17): warning C4189: “width_E”: 局部变量已初始化但不引用
+  (编译源文件“ui/lc_actiongroupmanager.cpp”)
+  
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\main\qc_applicationwindow.h(735,29): warning C4189: “graphicView”: 局部变量已初始化但不引用
+  (编译源文件“ui/lc_actiongroupmanager.cpp”)
+  
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\main\qc_applicationwindow.h(902,17): warning C4189: “ii”: 局部变量已初始化但不引用
+  (编译源文件“ui/lc_actiongroupmanager.cpp”)
+  
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\main\qc_applicationwindow.h(758,21): warning C4189: “entityCount”: 局部变量已初始化但不引用
+  (编译源文件“ui/lc_actiongroupmanager.cpp”)
+  
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\main\qc_applicationwindow.h(903,35): warning C4189: “v”: 局部变量已初始化但不引用
+  (编译源文件“ui/lc_actiongroupmanager.cpp”)
+  
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\main\qc_applicationwindow.h(891,17): warning C4189: “width_E”: 局部变量已初始化但不引用
+  (编译源文件“main/qc_dialogfactory.cpp”)
+  
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\main\qc_applicationwindow.h(735,29): warning C4189: “graphicView”: 局部变量已初始化但不引用
+  (编译源文件“main/qc_dialogfactory.cpp”)
+  
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\main\qc_applicationwindow.h(902,17): warning C4189: “ii”: 局部变量已初始化但不引用
+  (编译源文件“main/qc_dialogfactory.cpp”)
+  
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\main\qc_applicationwindow.h(758,21): warning C4189: “entityCount”: 局部变量已初始化但不引用
+  (编译源文件“main/qc_dialogfactory.cpp”)
+  
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\main\qc_applicationwindow.h(903,35): warning C4189: “v”: 局部变量已初始化但不引用
+  (编译源文件“main/qc_dialogfactory.cpp”)
+  
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\main\qc_applicationwindow.h(758,33): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+  (编译源文件“test/lc_simpletests.cpp”)
+  
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\main\qc_applicationwindow.h(762,53): warning C4267: “+=”: 从“size_t”转换到“int”，可能丢失数据
+  (编译源文件“test/lc_simpletests.cpp”)
+  
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\main\qc_applicationwindow.h(891,17): warning C4189: “width_E”: 局部变量已初始化但不引用
+  (编译源文件“test/lc_simpletests.cpp”)
+  
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\main\qc_applicationwindow.h(735,29): warning C4189: “graphicView”: 局部变量已初始化但不引用
+  (编译源文件“test/lc_simpletests.cpp”)
+  
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\main\qc_applicationwindow.h(902,17): warning C4189: “ii”: 局部变量已初始化但不引用
+  (编译源文件“test/lc_simpletests.cpp”)
+  
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\main\qc_applicationwindow.h(758,21): warning C4189: “entityCount”: 局部变量已初始化但不引用
+  (编译源文件“test/lc_simpletests.cpp”)
+  
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\main\qc_applicationwindow.h(903,35): warning C4189: “v”: 局部变量已初始化但不引用
+  (编译源文件“test/lc_simpletests.cpp”)
+  
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\lib\engine\rs_ellipse.h(76,55): warning C4100: 'step': 未引用的参数
+  (编译源文件“test/lc_simpletests.cpp”)
+  
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\main\qc_applicationwindow.h(758,33): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+  (编译源文件“ui/lc_widgetfactory.cpp”)
+  
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\main\qc_applicationwindow.h(762,53): warning C4267: “+=”: 从“size_t”转换到“int”，可能丢失数据
+  (编译源文件“ui/lc_widgetfactory.cpp”)
+  
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\main\qc_applicationwindow.h(891,17): warning C4189: “width_E”: 局部变量已初始化但不引用
+  (编译源文件“ui/lc_widgetfactory.cpp”)
+  
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\main\qc_applicationwindow.h(735,29): warning C4189: “graphicView”: 局部变量已初始化但不引用
+  (编译源文件“ui/lc_widgetfactory.cpp”)
+  
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\main\qc_applicationwindow.h(902,17): warning C4189: “ii”: 局部变量已初始化但不引用
+  (编译源文件“ui/lc_widgetfactory.cpp”)
+  
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\main\qc_applicationwindow.h(758,21): warning C4189: “entityCount”: 局部变量已初始化但不引用
+  (编译源文件“ui/lc_widgetfactory.cpp”)
+  
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\main\qc_applicationwindow.h(903,35): warning C4189: “v”: 局部变量已初始化但不引用
+  (编译源文件“ui/lc_widgetfactory.cpp”)
+  
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\main\qc_applicationwindow.h(758,33): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+  (编译源文件“ui/qg_layerwidget.cpp”)
+  
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\main\qc_applicationwindow.h(762,53): warning C4267: “+=”: 从“size_t”转换到“int”，可能丢失数据
+  (编译源文件“ui/qg_layerwidget.cpp”)
+  
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\main\qc_applicationwindow.h(891,17): warning C4189: “width_E”: 局部变量已初始化但不引用
+  (编译源文件“ui/qg_layerwidget.cpp”)
+  
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\main\qc_applicationwindow.h(735,29): warning C4189: “graphicView”: 局部变量已初始化但不引用
+  (编译源文件“ui/qg_layerwidget.cpp”)
+  
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\main\qc_applicationwindow.h(902,17): warning C4189: “ii”: 局部变量已初始化但不引用
+  (编译源文件“ui/qg_layerwidget.cpp”)
+  
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\main\qc_applicationwindow.h(758,21): warning C4189: “entityCount”: 局部变量已初始化但不引用
+  (编译源文件“ui/qg_layerwidget.cpp”)
+  
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\main\qc_applicationwindow.h(903,35): warning C4189: “v”: 局部变量已初始化但不引用
+  (编译源文件“ui/qg_layerwidget.cpp”)
+  
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\main\qc_applicationwindow.h(758,33): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+  (编译源文件“lib/engine/rs_undo.cpp”)
+  
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\main\qc_applicationwindow.h(762,53): warning C4267: “+=”: 从“size_t”转换到“int”，可能丢失数据
+  (编译源文件“lib/engine/rs_undo.cpp”)
+  
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\main\qc_applicationwindow.h(891,17): warning C4189: “width_E”: 局部变量已初始化但不引用
+  (编译源文件“lib/engine/rs_undo.cpp”)
+  
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\main\qc_applicationwindow.h(735,29): warning C4189: “graphicView”: 局部变量已初始化但不引用
+  (编译源文件“lib/engine/rs_undo.cpp”)
+  
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\main\qc_applicationwindow.h(902,17): warning C4189: “ii”: 局部变量已初始化但不引用
+  (编译源文件“lib/engine/rs_undo.cpp”)
+  
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\main\qc_applicationwindow.h(758,21): warning C4189: “entityCount”: 局部变量已初始化但不引用
+  (编译源文件“lib/engine/rs_undo.cpp”)
+  
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\main\qc_applicationwindow.h(903,35): warning C4189: “v”: 局部变量已初始化但不引用
+  (编译源文件“lib/engine/rs_undo.cpp”)
+  
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\lib\engine\rs_undo.cpp(51,29): warning C4267: “return”: 从“size_t”转换到“int”，可能丢失数据
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\main\qc_applicationwindow.h(758,33): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
   (编译源文件“main/qc_applicationwindow.cpp”)
   
-D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\main\qc_applicationwindow.h(760,53): warning C4267: “+=”: 从“size_t”转换到“int”，可能丢失数据
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\main\qc_applicationwindow.h(762,53): warning C4267: “+=”: 从“size_t”转换到“int”，可能丢失数据
   (编译源文件“main/qc_applicationwindow.cpp”)
   
 D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\main\qc_applicationwindow.h(891,17): warning C4189: “width_E”: 局部变量已初始化但不引用
   (编译源文件“main/qc_applicationwindow.cpp”)
   
-D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\main\qc_applicationwindow.h(734,29): warning C4189: “graphicView”: 局部变量已初始化但不引用
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\main\qc_applicationwindow.h(735,29): warning C4189: “graphicView”: 局部变量已初始化但不引用
   (编译源文件“main/qc_applicationwindow.cpp”)
   
 D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\main\qc_applicationwindow.h(902,17): warning C4189: “ii”: 局部变量已初始化但不引用
   (编译源文件“main/qc_applicationwindow.cpp”)
   
-D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\main\qc_applicationwindow.h(756,21): warning C4189: “entityCount”: 局部变量已初始化但不引用
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\main\qc_applicationwindow.h(758,21): warning C4189: “entityCount”: 局部变量已初始化但不引用
   (编译源文件“main/qc_applicationwindow.cpp”)
   
 D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\main\qc_applicationwindow.h(903,35): warning C4189: “v”: 局部变量已初始化但不引用
   (编译源文件“main/qc_applicationwindow.cpp”)
   
-D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\main\qc_applicationwindow.h(1036,33): warning C4838: 从“double”转换到“int”需要收缩转换
-  (编译源文件“main/qc_applicationwindow.cpp”)
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\main\qc_applicationwindow.h(758,33): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+  (编译源文件“actions/rs_actionblocksattributes.cpp”)
   
-D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\main\qc_applicationwindow.h(1036,46): warning C4838: 从“double”转换到“int”需要收缩转换
-  (编译源文件“main/qc_applicationwindow.cpp”)
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\main\qc_applicationwindow.h(762,53): warning C4267: “+=”: 从“size_t”转换到“int”，可能丢失数据
+  (编译源文件“actions/rs_actionblocksattributes.cpp”)
   
-D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\main\qc_applicationwindow.h(1036,65): warning C4838: 从“double”转换到“int”需要收缩转换
-  (编译源文件“main/qc_applicationwindow.cpp”)
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\main\qc_applicationwindow.h(891,17): warning C4189: “width_E”: 局部变量已初始化但不引用
+  (编译源文件“actions/rs_actionblocksattributes.cpp”)
   
-D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\main\qc_applicationwindow.h(1037,33): warning C4838: 从“double”转换到“int”需要收缩转换
-  (编译源文件“main/qc_applicationwindow.cpp”)
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\main\qc_applicationwindow.h(735,29): warning C4189: “graphicView”: 局部变量已初始化但不引用
+  (编译源文件“actions/rs_actionblocksattributes.cpp”)
   
-D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\main\qc_applicationwindow.h(1037,46): warning C4838: 从“double”转换到“int”需要收缩转换
-  (编译源文件“main/qc_applicationwindow.cpp”)
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\main\qc_applicationwindow.h(902,17): warning C4189: “ii”: 局部变量已初始化但不引用
+  (编译源文件“actions/rs_actionblocksattributes.cpp”)
   
-D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\main\qc_applicationwindow.h(1037,65): warning C4838: 从“double”转换到“int”需要收缩转换
-  (编译源文件“main/qc_applicationwindow.cpp”)
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\main\qc_applicationwindow.h(758,21): warning C4189: “entityCount”: 局部变量已初始化但不引用
+  (编译源文件“actions/rs_actionblocksattributes.cpp”)
+  
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\main\qc_applicationwindow.h(903,35): warning C4189: “v”: 局部变量已初始化但不引用
+  (编译源文件“actions/rs_actionblocksattributes.cpp”)
+  
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\main\qc_applicationwindow.h(758,33): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+  (编译源文件“main/main.cpp”)
+  
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\main\qc_applicationwindow.h(762,53): warning C4267: “+=”: 从“size_t”转换到“int”，可能丢失数据
+  (编译源文件“main/main.cpp”)
+  
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\main\qc_applicationwindow.h(891,17): warning C4189: “width_E”: 局部变量已初始化但不引用
+  (编译源文件“main/main.cpp”)
+  
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\main\qc_applicationwindow.h(735,29): warning C4189: “graphicView”: 局部变量已初始化但不引用
+  (编译源文件“main/main.cpp”)
+  
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\main\qc_applicationwindow.h(902,17): warning C4189: “ii”: 局部变量已初始化但不引用
+  (编译源文件“main/main.cpp”)
+  
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\main\qc_applicationwindow.h(758,21): warning C4189: “entityCount”: 局部变量已初始化但不引用
+  (编译源文件“main/main.cpp”)
+  
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\main\qc_applicationwindow.h(903,35): warning C4189: “v”: 局部变量已初始化但不引用
+  (编译源文件“main/main.cpp”)
+  
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\main\qc_applicationwindow.h(758,33): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+  (编译源文件“ui/lc_actionfactory.cpp”)
+  
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\main\qc_applicationwindow.h(762,53): warning C4267: “+=”: 从“size_t”转换到“int”，可能丢失数据
+  (编译源文件“ui/lc_actionfactory.cpp”)
+  
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\main\qc_applicationwindow.h(891,17): warning C4189: “width_E”: 局部变量已初始化但不引用
+  (编译源文件“ui/lc_actionfactory.cpp”)
+  
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\main\qc_applicationwindow.h(735,29): warning C4189: “graphicView”: 局部变量已初始化但不引用
+  (编译源文件“ui/lc_actionfactory.cpp”)
+  
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\main\qc_applicationwindow.h(902,17): warning C4189: “ii”: 局部变量已初始化但不引用
+  (编译源文件“ui/lc_actionfactory.cpp”)
+  
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\main\qc_applicationwindow.h(758,21): warning C4189: “entityCount”: 局部变量已初始化但不引用
+  (编译源文件“ui/lc_actionfactory.cpp”)
+  
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\main\qc_applicationwindow.h(903,35): warning C4189: “v”: 局部变量已初始化但不引用
+  (编译源文件“ui/lc_actionfactory.cpp”)
+  
+D:\software\eigen-3.4.0\eigen-3.4.0\Eigen\src\Core\arch\Default\Half.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“main/main.cpp”)
+  
+D:\software\eigen-3.4.0\eigen-3.4.0\Eigen\src\Core\arch\Default\BFloat16.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“main/main.cpp”)
+  
+D:\software\eigen-3.4.0\eigen-3.4.0\Eigen\src\Core\arch\Default\GenericPacketMathFunctions.h(676,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“main/main.cpp”)
   
 D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\main\qc_applicationwindow.cpp(131,98): warning C4100: 'pUserParam': 未引用的参数
 D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\main\qc_applicationwindow.cpp(156,69): warning C4100: 'pUserParam': 未引用的参数
@@ -81,7 +476,46 @@ D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\main\qc_applicationwindow.cpp(6822,118):
 D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\main\qc_applicationwindow.cpp(6887,17): warning C4267: “参数”: 从“size_t”转换到“int”，可能丢失数据
 D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\main\qc_applicationwindow.cpp(4818,1): warning C4715: “QC_ApplicationWindow::SetROISimple”: 不是所有的控件路径都返回值
 D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\main\qc_applicationwindow.cpp(4684,1): warning C4715: “QC_ApplicationWindow::OpenCamer”: 不是所有的控件路径都返回值
-  moc_Simulator.cpp
+  moc_qc_applicationwindow.cpp
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\lib\engine\rs.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../generated/librecad/moc/moc_qc_applicationwindow.cpp”)
+  
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\lib\engine\rs_polyline.h(38,69): warning C4100: 'step': 未引用的参数
+  (编译源文件“../../generated/librecad/moc/moc_qc_applicationwindow.cpp”)
+  
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\main\qc_applicationwindow.h(142,10): warning C4067: 预处理器指令后有意外标记 - 应输入换行符
+  (编译源文件“../../generated/librecad/moc/moc_qc_applicationwindow.cpp”)
+  
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\OCRdemo\GXBitmap.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../generated/librecad/moc/moc_qc_applicationwindow.cpp”)
+  
+D:\software\vcpkg-master\installed\x64-windows\include\iconv.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../generated/librecad/moc/moc_qc_applicationwindow.cpp”)
+  
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\OCRdemo\SerialManager.h(9,10): warning C4067: 预处理器指令后有意外标记 - 应输入换行符
+  (编译源文件“../../generated/librecad/moc/moc_qc_applicationwindow.cpp”)
+  
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\main\qc_applicationwindow.h(758,33): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+  (编译源文件“../../generated/librecad/moc/moc_qc_applicationwindow.cpp”)
+  
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\main\qc_applicationwindow.h(762,53): warning C4267: “+=”: 从“size_t”转换到“int”，可能丢失数据
+  (编译源文件“../../generated/librecad/moc/moc_qc_applicationwindow.cpp”)
+  
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\main\qc_applicationwindow.h(891,17): warning C4189: “width_E”: 局部变量已初始化但不引用
+  (编译源文件“../../generated/librecad/moc/moc_qc_applicationwindow.cpp”)
+  
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\main\qc_applicationwindow.h(735,29): warning C4189: “graphicView”: 局部变量已初始化但不引用
+  (编译源文件“../../generated/librecad/moc/moc_qc_applicationwindow.cpp”)
+  
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\main\qc_applicationwindow.h(902,17): warning C4189: “ii”: 局部变量已初始化但不引用
+  (编译源文件“../../generated/librecad/moc/moc_qc_applicationwindow.cpp”)
+  
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\main\qc_applicationwindow.h(758,21): warning C4189: “entityCount”: 局部变量已初始化但不引用
+  (编译源文件“../../generated/librecad/moc/moc_qc_applicationwindow.cpp”)
+  
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\main\qc_applicationwindow.h(903,35): warning C4189: “v”: 局部变量已初始化但不引用
+  (编译源文件“../../generated/librecad/moc/moc_qc_applicationwindow.cpp”)
+  
   LibreCAD.vcxproj -> D:\DM\LibreCAD-2.4(YitiJi)\windows\LibreCAD.exe
   'pwsh.exe' 不是内部或外部命令，也不是可运行的程序
   或批处理文件。
