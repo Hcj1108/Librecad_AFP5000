@@ -27,6 +27,7 @@ D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\OCRdemo\user.cpp;D:\DM\LibreCAD-2.4(Yiti
 D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\OCRdemo\XJadmin.cpp;D:\DM\LibreCAD-2.4(YitiJi)\generated\librecad\obj\XJadmin.obj
 D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\uiults\BinaryDataListener.cpp;D:\DM\LibreCAD-2.4(YitiJi)\generated\librecad\obj\BinaryDataListener.obj
 D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\uiults\EntityMover.cpp;D:\DM\LibreCAD-2.4(YitiJi)\generated\librecad\obj\EntityMover.obj
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\uiults\PathSender.cpp;D:\DM\LibreCAD-2.4(YitiJi)\generated\librecad\obj\PathSender.obj
 D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\uiults\fileuilts.cpp;D:\DM\LibreCAD-2.4(YitiJi)\generated\librecad\obj\fileuilts.obj
 D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\uiults\PlaceholderPositionManager.cpp;D:\DM\LibreCAD-2.4(YitiJi)\generated\librecad\obj\PlaceholderPositionManager.obj
 D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\uiults\UdpTimeSender.cpp;D:\DM\LibreCAD-2.4(YitiJi)\generated\librecad\obj\UdpTimeSender.obj
@@ -423,6 +424,7 @@ D:\DM\LibreCAD-2.4(YitiJi)\generated\librecad\moc\moc_pdf_print_loop.cpp;D:\DM\L
 D:\DM\LibreCAD-2.4(YitiJi)\generated\librecad\moc\moc_qc_actiongetent.cpp;D:\DM\LibreCAD-2.4(YitiJi)\generated\librecad\obj\moc_qc_actiongetent.obj
 D:\DM\LibreCAD-2.4(YitiJi)\generated\librecad\moc\moc_qc_actiongetpoint.cpp;D:\DM\LibreCAD-2.4(YitiJi)\generated\librecad\obj\moc_qc_actiongetpoint.obj
 D:\DM\LibreCAD-2.4(YitiJi)\generated\librecad\moc\moc_qc_actiongetselect.cpp;D:\DM\LibreCAD-2.4(YitiJi)\generated\librecad\obj\moc_qc_actiongetselect.obj
+D:\DM\LibreCAD-2.4(YitiJi)\generated\librecad\moc\moc_qc_applicationwindow.cpp;D:\DM\LibreCAD-2.4(YitiJi)\generated\librecad\obj\moc_qc_applicationwindow.obj
 D:\DM\LibreCAD-2.4(YitiJi)\generated\librecad\moc\moc_qc_mdiwindow.cpp;D:\DM\LibreCAD-2.4(YitiJi)\generated\librecad\obj\moc_qc_mdiwindow.obj
 D:\DM\LibreCAD-2.4(YitiJi)\generated\librecad\moc\moc_qg_actionhandler.cpp;D:\DM\LibreCAD-2.4(YitiJi)\generated\librecad\obj\moc_qg_actionhandler.obj
 D:\DM\LibreCAD-2.4(YitiJi)\generated\librecad\moc\moc_qg_activelayername.cpp;D:\DM\LibreCAD-2.4(YitiJi)\generated\librecad\obj\moc_qg_activelayername.obj
@@ -647,4 +649,3 @@ D:\DM\LibreCAD-2.4(YitiJi)\generated\librecad\moc\moc_rs_graphicview.cpp;D:\DM\L
 D:\DM\LibreCAD-2.4(YitiJi)\generated\librecad\moc\moc_textfileviewer.cpp;D:\DM\LibreCAD-2.4(YitiJi)\generated\librecad\obj\moc_textfileviewer.obj
 D:\DM\LibreCAD-2.4(YitiJi)\generated\librecad\moc\moc_twostackedlabels.cpp;D:\DM\LibreCAD-2.4(YitiJi)\generated\librecad\obj\moc_twostackedlabels.obj
 D:\DM\LibreCAD-2.4(YitiJi)\generated\librecad\moc\moc_widgetcreator.cpp;D:\DM\LibreCAD-2.4(YitiJi)\generated\librecad\obj\moc_widgetcreator.obj
-D:\DM\LibreCAD-2.4(YitiJi)\generated\librecad\moc\moc_qc_applicationwindow.cpp;D:\DM\LibreCAD-2.4(YitiJi)\generated\librecad\obj\moc_qc_applicationwindow.obj

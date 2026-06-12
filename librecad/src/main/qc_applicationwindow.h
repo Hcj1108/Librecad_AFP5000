@@ -165,6 +165,7 @@ OCRdemo模块导入区域
 #include "BinaryDataListener.h"
 #include "fileuilts.h"              // 文件工具类，处理文件操作
 #include "EntityMover.h"           // 实体移动工具类
+#include "PathSender.h"           // 路径点发送类
 
 using namespace std;  // 使用标准命名空间
 
@@ -718,235 +719,17 @@ private:
     QAction* actionCustom4;        // 自定义动作4：生成二维码
     QMenu* extensionsMenu;         // 扩展菜单
 
-public:
-    int begin;  // 静态部分起始地址，激光打标数据地址
-    int end;    // 静态部分结束地址，激光打标数据地址
 
 public:
   
 
 	//发送当前所有的实体的路径点
     int QC_ApplicationWindow::slotCustomFunction1() {
-      
-		// 获取单例实例
-        SingletonNomArray& nomArray = SingletonNomArray::getInstance();
-        QString ip = "192.168.1.10"; // 替换为目标IP
-        if (getMDIWindow()) {
-            RS_GraphicView* graphicView = getGraphicView();
-            RS_Document* document = getDocument();
-			document->update();
-
-            if (document) {
-
-                // 获取所有实体的路径点
-                auto allPoints = document->getAllEntityPathPoints(true);
-                // 遍历所有的路径点
-
-                //std::cout << "字符级实体路径点：" << std::endl;
-                //for (size_t i = 0; i < allPoints.size(); ++i) {
-                //    std::cout << "字符 " << i + 1 << "：" << std::endl;
-
-                //    // 遍历每条路径中的每个点
-                //    for (size_t j = 0; j < allPoints[i].size(); ++j) {
-                //        const RS_Vector& point = allPoints[i][j];
-                //        std::cout << "  点 " << j + 1 << ": ("
-                //            << point.x << ", " << point.y << ")" << std::endl;
-                //    }
-                //}
-
-                // 统计信息
-                int entityCount = allPoints.size();
-                int totalPoints = 0;
-              
-                for (const auto& entityPoints : allPoints) {
-                    totalPoints += entityPoints.size();
-                }
-              
-                // 2. 转换为QPoint格式（假设RS_Vector转QPoint）
-                QVector<QVector<QPoint>> optimizedPaths;
-                for (const auto& entityPoints : allPoints) {
-                    QVector<QPoint> path;
-                    for (const RS_Vector& point : entityPoints) {
-                        path.append(QPoint(static_cast<int>(point.x),
-                            static_cast<int>(point.y)));
-                    }
-                    optimizedPaths.append(path);
-                }
-
-                // 3. 重新组织：两两点分组为新路径
-                QVector<QVector<QPoint>> newOptimizedPaths;
-
-                for (int i = 0; i < optimizedPaths.size(); ++i) {
-                    const QVector<QPoint>& originalPath = optimizedPaths[i];
-
-                    // 将原始路径中的点两两分组
-                    for (int j = 0; j + 1 < originalPath.size(); j += 2) {
-                        QVector<QPoint> newPath;
-                        newPath.append(originalPath[j]);      // 第一个点
-                        newPath.append(originalPath[j + 1]);  // 第二个点
-                        newOptimizedPaths.append(newPath);
-                    }
-
-                    // 如果点数是奇数，最后一个点单独成一条路径（只包含一个点）
-                    if (originalPath.size() % 2 == 1) {
-                        QVector<QPoint> singlePointPath;
-                        singlePointPath.append(originalPath.last());
-                        newOptimizedPaths.append(singlePointPath);
-                    }
-                }
-
-                // 用新的路径替换旧的
-                optimizedPaths = newOptimizedPaths;
-                //// 4. 打印新的optimizedPaths
-                //std::cout << "\n=== 重新组织后的optimizedPaths ===" << std::endl;
-                //std::cout << "新路径总数: " << optimizedPaths.size() << std::endl;
-                //std::cout << "（每2个点组成一条路径）" << std::endl;
-                //std::cout << std::endl;
-
-                //for (int i = 0; i < optimizedPaths.size(); ++i) {
-                //    const QVector<QPoint>& path = optimizedPaths[i];
-                //    std::cout << "路径 " << i << ": " << path.size() << " 个点" << std::endl;
-
-                //    for (int j = 0; j < path.size(); ++j) {
-                //        std::cout << "  点" << j << ": (" << path[j].x() << ", " << path[j].y() << ")" << std::endl;
-                //    }
-                //    std::cout << std::endl;
-                //}
-                qDebug() << "[APP] sending paths:" << optimizedPaths.size();
-                quint16 port = 1234;          // 替换为目标端口
-                int startNom = nomArray.getLastNom();             // 起始编号
-                begin = startNom;
-               
-
-                int lastNom = FileUtils::sendOptimizedPointsUDP_hex(optimizedPaths, ip, port, startNom);
-
-                if (lastNom == startNom)
-                {
-                    // 方法1：检查占位符位置管理器
-                    bool hasDynamicTime = false;
-                    const QVector<RS_Vector>& positions = PlaceholderPositionManager::getInstance().getPositions();
-                    if (!positions.isEmpty()) {
-                        hasDynamicTime = true;
-                        FileUtils::SendBKBK("10","02", 2); // 发送动态时间参数
-
-                    }
-                    if (!hasDynamicTime) {
-                        QMessageBox::warning(this, QString::fromLocal8Bit("警告"),
-                            QString::fromLocal8Bit("没有数据可发送!"));
-                        return 0; // 直接退出函数
-                    }
-                }//
-                else {
-                    // 方法2：检查占位符位置管理器
-                    bool hasDynamicTime = false;
-                    const QVector<RS_Vector>& positions = PlaceholderPositionManager::getInstance().getPositions();
-                    if (!positions.isEmpty()) {
-                        hasDynamicTime = true;
-                        FileUtils::SendBKBK("10","02", 3); // 发送静态加动态时间参数
-                    }
-                    if (!hasDynamicTime) {
-                        FileUtils::SendBKBK("10","02", 1); // 发送静态参数
-                       
-                    }
-                }
-                end = lastNom;
-
-            }
-            // 在这里实现自定义功能1
-            int nom = end;
-         
-            // 获取数据并处理异常
-            QVector<int> myArray;
-            try {
-                myArray = nomArray.getNomArray();
-            }
-            catch (const std::exception& e) {
-                QMessageBox::critical(this, QString::fromLocal8Bit("错误"),
-                    QString::fromLocal8Bit("获取数据时抛出异常: % 1").arg(e.what()));
-                return 0;
-            }
-
-            if (myArray.isEmpty()) {
-                QMessageBox::warning(this, QString::fromLocal8Bit("警告"), QString::fromLocal8Bit("没有任何数据"));
-                return 0;
-            }
-
-            nom = FileUtils::sendquint256(myArray, ip, 1234, nom);//发送0~9的地址信息 ,即第几个地址到第几个表示0,1,2
-            //静态起始地址
-            nom = FileUtils::sendquint256_static(begin, end - 1, ip, 1234, nom);
-
-			
-            int current_x = 0;//当前坐标值
-            int current_y = 0;
-            RS_Vector pos;
-            if (FontSettingsSingleton::getInstance().getPlaceholderPos(pos)) {
-                //qDebug() << pos.x << pos.y;
-                current_x = pos.x;
-                current_y = pos.y;
-            }
-            else {
-                //qDebug() << "No placeholder position set!";
-            }
-            
-            int width_E = FontSettingsSingleton::getInstance().getFontWidth() + FontSettingsSingleton::getInstance().getm_wordSpacing();
-            int higth = FontSettingsSingleton::getInstance().getFontHeight() * FontSettingsSingleton::getInstance().gety_scale();
-
-            //qDebug() << "higth: " << higth;
-
-
-         
-
-
-
-            const QVector<RS_Vector>& positions = PlaceholderPositionManager::getInstance().getPositions();
-            int ii = 0;
-            for (const RS_Vector& v : positions) {
-                //qDebug() << v.x << v.y;
-            }
-
-            FileUtils::sendquint256_4(positions, ip, 1234, nom, 8, higth);//发送八个坐标,hh:mm:ss八个字符的坐标
-
-        }
-        return 1;
+        PathSender sender(getDocument(), getGraphicView(), this);
+        return sender.sendPathPoints();
     }
+
   
-	//拆分所有实体   ps: 该函数会将所有实体分解为线段,而且不可逆
-    void QC_ApplicationWindow::slotCustomFunction2() {
-        if (getMDIWindow()) {
-            RS_GraphicView* graphicView = getGraphicView();
-            RS_Document* document = getDocument();
-
-            if (graphicView && document) {
-                // 创建修改对象
-                RS_Modification modification(*document, graphicView, false);
-
-                // 手动选择所有实体
-                for (RS_Entity* e = document->firstEntity(); e; e = document->nextEntity()) {
-                    e->setSelected(true);
-                }
-
-                // 执行分解操作（true表示分解后移除原实体）
-                bool success = modification.explode(false);
-
-                if (!success) {
-                    RS_DEBUG->print(RS_Debug::D_WARNING,
-                        "QC_ApplicationWindow::slotCustomFunction2(): Explode operation failed");
-                }
-               
-                // 更新视图
-                graphicView->redraw();
-            }
-        }
-    }
-
-    
-
-
-    
-   
-
-
-
     private:
         Ui::QC_ApplicationWindow *ui;  // 新增UI指针
    

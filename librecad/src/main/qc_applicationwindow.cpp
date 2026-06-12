@@ -231,9 +231,13 @@ QC_ApplicationWindow::QC_ApplicationWindow()
 
     Logger::write("***********************程序开始*************************");
 
+    //创建线程共用的互斥锁
+    m_mutex = new QMutex;
+    OCRT->setMutex(m_mutex);
     OCRT->moveToThread(T);
-    T->start();//触发线程开始执行
     connect(OCRT, &OCRruning::running, OCRT, &OCRruning::getocr);
+    T->start();//触发线程开始执行
+
     QObject::connect(&manager, &DeletionManager::deletionCompleted, [this](bool success) {
         if (success) {
             Logger::writeError("存储空间不足，删除文件夹: " + std::string(manager.OldestFolderPath.toLocal8Bit()));
@@ -243,9 +247,7 @@ QC_ApplicationWindow::QC_ApplicationWindow()
         }
         });
 
-    //创建线程共用的互斥锁
-    m_mutex = new QMutex;
-    OCRT->setMutex(m_mutex);
+  
    
  
   
@@ -1395,7 +1397,12 @@ QC_ApplicationWindow::~QC_ApplicationWindow() {
 #endif
 
     delete dialogFactory;
-
+    // 2. 停止线程
+    delete m_mutex;
+    T->quit();  // 请求退出
+    T->wait();  // 等待线程结束
+       
+    
     RS_DEBUG->print("QC_ApplicationWindow::~QC_ApplicationWindow: "
                     "deleting dialog factory: OK");
 }
@@ -3372,15 +3379,17 @@ void QC_ApplicationWindow::slotFileQuit() {
         statusBar()->showMessage(tr("Exiting application..."));
 
         if (queryExit(true)) {
-            // 2. 停止线程
-            if (T && T->isRunning()) {
-                T->quit();  // 请求退出
-                T->wait();  // 等待线程结束
-            }
+          
             // 4. 关闭所有模态窗口（强制）
             serialmanager.close();
             viewer.close();
             guide.close();
+            setting.close();
+            xjadmin.close();
+            jgadmin.close();
+            addscheme.close();
+            alterscheme.close();
+            loggerView.close();
 
             // 5. 标记退出并关闭主窗口
             IsCloseSoftware = true;
