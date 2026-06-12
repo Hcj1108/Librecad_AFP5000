@@ -80,7 +80,6 @@
 #include "qg_selectionwidget.h"
 #include "qg_activelayername.h"
 #include "qg_mousewidget.h"
-#include "twostackedlabels.h"
 
 #include "qg_recentfiles.h"
 #include "qg_dlgimageoptions.h"
@@ -163,7 +162,7 @@ void CSampleDeivceOfflineEventHandler::DoOnDeviceOfflineEvent(void* pUserParam)
 
 
 #ifndef QC_APP_ICON
-# define QC_APP_ICON ":/main/librecad.png"
+# define QC_APP_ICON ":/PIC/Resources/PICs/yjlog.ico"
 #endif
 #ifndef QC_ABOUT_ICON
 # define QC_ABOUT_ICON ":/main/intro_librecad.png"
@@ -353,20 +352,19 @@ QC_ApplicationWindow::QC_ApplicationWindow()
     connect(ui->toolButton_11, &QPushButton::clicked, this, [=] {
         addscheme.SetAddScheme(LocationScale);
         addscheme.show();
-       /* addscheme.move(QApplication::desktop()->screen()->rect().center() - addscheme.rect().center());*/
         });
 
     connect(ui->toolButton_14, &QPushButton::clicked, this, [=] {
-      /*  if (ui->comboBox->currentIndex() != 0)
-        {*/
+      if (ui->comboBox->currentIndex() != 0)
+        {
             OpenAlterScheme();
-      /*  }
+        }
         else
         {
-            QMessageBox* msgBoxs = new QMessageBox(QMessageBox::Critical, QString::fromLocal8Bit("未选择配方 "), QString::fromLocal8Bit("请先选择对应配方! "), QMessageBox::Ok);
+            QMessageBox* msgBoxs = new QMessageBox(QMessageBox::Critical, QString::fromLocal8Bit("未选择配方 "), QString::fromLocal8Bit("默认配方不可修改! "), QMessageBox::Ok);
             msgBoxs->button(QMessageBox::Ok)->setText(QString::fromLocal8Bit("确定 "));
             msgBoxs->show();
-        }*/
+        }
         });
 
     /*******************************************************************************新建配方**************************************************************************************/
@@ -389,7 +387,6 @@ QC_ApplicationWindow::QC_ApplicationWindow()
 
     connect(ui->toolButton_12, &QPushButton::clicked, &guide, &Guide::show);
     connect(ui->toolButton_13, &QPushButton::clicked, &loggerView, &Logger::show);
-   /* connect(ui->toolButton_14, &QPushButton::clicked, this, &QC_ApplicationWindow::LockScreen);*/
     connect(ui->toolButton_15, &QPushButton::clicked, this, [=] {
         if (IsOpenBKBK == false){
             enableBKBKPrinting();
@@ -437,10 +434,7 @@ QC_ApplicationWindow::QC_ApplicationWindow()
         ui->stackedWidget_3->setCurrentIndex(0);
         TriggerLine0();
         });
-   // connect(ui->toolButton_37, &QPushButton::clicked, this, [=] {
-    //    createSimplePieChart();
-
-    //    });
+ 
     connect(ui->toolButton_34, &QPushButton::clicked, this, [=] {
         if (IsOpenBKBK == true)
         {
@@ -562,7 +556,8 @@ QC_ApplicationWindow::QC_ApplicationWindow()
         GatUser();
         this->show();
         User.hide();
-        Logger::write("关闭用户界面 "); });
+        Logger::write("关闭用户界面 ");
+        });
     connect(&User, &user::addUser, this, &QC_ApplicationWindow::AddUser);//添加用户动作);
     connect(&User, &user::delUser, this, &QC_ApplicationWindow::DelUser); //删除用户动作);
     connect(&User, &user::alterpassword, this, &QC_ApplicationWindow::Alterpassword); //修改用户动作);
@@ -662,26 +657,8 @@ QC_ApplicationWindow::QC_ApplicationWindow()
     connect(TimerLongPressSub, &QTimer::timeout, this, [=] {
         TimerLongPressSub->stop();
         CamTimerEnd = true;
-    });
+        });
 
-    ImageSize = FindImageSize();
-    //CamFilterTime = FindCamFilterTime();
-    //CamFilterLength = FindCamFilterLength();
- 
-    RateClear();
-    UpdateCombobox();
-
-    CamerButton();
-
-
-    if (FindNameCode() != 0)
-    {
-        ui->comboBox->setCurrentIndex(FindNameCode());
-    }
-    else
-    {
-        SetScheme(ui->comboBox->currentText());
-    }
     //ui.comboBox->setCurrentIndex(FindNameCode());
 
    // 使用函数指针的Qt5兼容方式
@@ -706,6 +683,25 @@ QC_ApplicationWindow::QC_ApplicationWindow()
             Saveyear = value;  // 使用传递的值而不是再次获取
             UpdataTime();
         });
+
+    ImageSize = FindImageSize();
+
+
+    if (FindNameCode() != 0)
+    {
+        ui->comboBox->setCurrentIndex(FindNameCode());
+    }
+    else
+    {
+        SetScheme(ui->comboBox->currentText());
+    }
+
+
+    RateClear();// 重置统计数据
+    UpdateCombobox();// 刷新方案下拉框
+    CamerButton();// 相机开关按钮，打开相机
+
+
     QDateTime datetime = QDateTime::currentDateTime(); //当前时间
     year = datetime.date().year();             //年
     month = datetime.date().month();			   //月
@@ -714,7 +710,6 @@ QC_ApplicationWindow::QC_ApplicationWindow()
     ui->spinBox->setMinimum(-10000);
     ui->spinBox->setValue(save_time);
     UpdataTime();
-
     getSerialNum3();
    
    
@@ -725,31 +720,22 @@ QC_ApplicationWindow::QC_ApplicationWindow()
     qt_ntfs_permission_lookup++; // turn checking on
 #endif
 
-    //accept drop events to open files
-    setAcceptDrops(false);  //禁用拖放功能,拖放是指从外面把一个文件拖过来
-
-    // make the left and right dock areas dominant
-    // 设置停靠区域主导方向
-    /*这部分用于设置 Qt 主窗口（QMainWindow）的停靠区域（Dock）优先级，控制角落属于哪个 dock 区域。*/
-    /*                如果左上角/左下角存在多个 dock widget，
-    那么左边的 dock（LeftDockWidgetArea）优先于顶部 dock                              ------------*/
+    //accept drop events to open files,
+    //禁用拖放功能,拖放是指从外面把一个文件拖过来
+    setAcceptDrops(false);  
+    appWindow = this;// 设置单例实例
+    RS_DEBUG->print("QC_ApplicationWindow::QC_ApplicationWindow: setting icon");
+    setWindowIcon(QIcon(QC_APP_ICON));// 设置窗口图标
 
 
-    /*              左上/左下角绑定左侧停靠区（放置图层、图块面板）。
-                    右上/右下角绑定右侧停靠区（放置命令窗口、属性面板
-                                                                                   */
+
+    
+    //左上/左下角绑定左侧停靠区（放置图层、图块面板）
+    // 右上/右下角绑定右侧停靠区（放置命令窗口、属性面 
     setCorner(Qt::TopLeftCorner, Qt::LeftDockWidgetArea);
     setCorner(Qt::BottomLeftCorner, Qt::LeftDockWidgetArea);
     setCorner(Qt::TopRightCorner, Qt::RightDockWidgetArea);
     setCorner(Qt::BottomRightCorner, Qt::RightDockWidgetArea);
-
-    appWindow = this;// 设置单例实例
-
-    //QSettings settings;
-
-    RS_DEBUG->print("QC_ApplicationWindow::QC_ApplicationWindow: setting icon");
-    setWindowIcon(QIcon(QC_APP_ICON));// 设置窗口图标
-
     pen_wiz->setObjectName("pen_wiz");
     connect(this, &QC_ApplicationWindow::windowsChanged,
         pen_wiz, &LC_PenWizard::setEnabled);
@@ -763,17 +749,16 @@ QC_ApplicationWindow::QC_ApplicationWindow()
     //状态栏(左下角)初始化
     QStatusBar* status_bar = statusBar();
 
-    //coordinateWidget = new QG_CoordinateWidget(status_bar, "coordinates");// 坐标显示
-    //status_bar->addWidget(coordinateWidget);
-    mouseWidget = new QG_MouseWidget(status_bar, "mouse info");           // 鼠标状态
-    status_bar->addWidget(mouseWidget);
-    selectionWidget = new QG_SelectionWidget(status_bar, "selections");   // 选择计数
-    status_bar->addWidget(selectionWidget);
-    m_pActiveLayerName = new QG_ActiveLayerName(this);                    // 当前图层名  
-    status_bar->addWidget(m_pActiveLayerName);
-    grid_status = new TwoStackedLabels(status_bar);                       // 网格状态
-    grid_status->setTopLabel(tr("Grid Status"));
-    status_bar->addWidget(grid_status);
+   
+    //mouseWidget = new QG_MouseWidget(status_bar, "mouse info");           // 鼠标状态
+    //status_bar->addWidget(mouseWidget);
+    //selectionWidget = new QG_SelectionWidget(status_bar, "selections");   // 选择计数
+    //status_bar->addWidget(selectionWidget);
+    //m_pActiveLayerName = new QG_ActiveLayerName(this);                    // 当前图层名  
+    //status_bar->addWidget(m_pActiveLayerName);
+    //grid_status = new TwoStackedLabels(status_bar);                       // 网格状态
+    //grid_status->setTopLabel(tr("Grid Status"));
+    //status_bar->addWidget(grid_status);
 
     settings.beginGroup("Widgets");
     int allow_statusbar_fontsize = settings.value("AllowStatusbarFontSize", 0).toInt();
@@ -2185,9 +2170,7 @@ QC_MDIWindow* QC_ApplicationWindow::slotFileNew(RS_Document* doc) {
         view->setMenu(activator, menu);
     }
 
-    connect(view, SIGNAL(gridStatusChanged(const QString&)),
-            this, SLOT(updateGridStatus(const QString&)));
-
+   
     actionHandler->set_view(view);
     actionHandler->set_document(w->getDocument());
 
@@ -4021,24 +4004,6 @@ void QC_ApplicationWindow::reloadStyleSheet()
     // author: ravas
 
     loadStyleSheet(style_sheet_path);
-}
-
-//bool QC_ApplicationWindow::eventFilter(QObject *obj, QEvent *event)
-//{
-//    if (QEvent::FileOpen == event->type()) {
-//        QFileOpenEvent *openEvent = static_cast<QFileOpenEvent *>(event);
-//        slotFileOpen(openEvent->file(), RS2::FormatUnknown);
-//        return true;
-//    }
-//
-//    return QObject::eventFilter(obj, event);
-//}
-
-void QC_ApplicationWindow::updateGridStatus(const QString & status)
-{
-    // author: ravas
-
-   grid_status->setBottomLabel(status);
 }
 
 void QC_ApplicationWindow::showDeviceOptions()

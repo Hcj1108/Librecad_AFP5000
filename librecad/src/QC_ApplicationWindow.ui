@@ -289,7 +289,7 @@ QComboBox::down-arrow:on {
 opacity: 1;</string>
         </property>
         <property name="currentIndex">
-         <number>0</number>
+         <number>3</number>
         </property>
         <widget class="QWidget" name="page_4">
          <widget class="QGroupBox" name="groupBox_5">
@@ -699,7 +699,7 @@ QToolButton:pressed {
             <x>10</x>
             <y>340</y>
             <width>281</width>
-            <height>181</height>
+            <height>141</height>
            </rect>
           </property>
           <property name="font">
@@ -905,54 +905,6 @@ QToolButton:pressed {
            <property name="icon">
             <iconset resource="OCRdemo.qrc">
              <normaloff>:/PNG/Resources/PNG/delete.png</normaloff>:/PNG/Resources/PNG/delete.png</iconset>
-           </property>
-           <property name="iconSize">
-            <size>
-             <width>30</width>
-             <height>30</height>
-            </size>
-           </property>
-           <property name="toolButtonStyle">
-            <enum>Qt::ToolButtonStyle::ToolButtonTextBesideIcon</enum>
-           </property>
-          </widget>
-          <widget class="QToolButton" name="toolButton_48">
-           <property name="geometry">
-            <rect>
-             <x>10</x>
-             <y>130</y>
-             <width>111</width>
-             <height>41</height>
-            </rect>
-           </property>
-           <property name="font">
-            <font>
-             <family>微软雅黑</family>
-             <pointsize>8</pointsize>
-             <bold>true</bold>
-            </font>
-           </property>
-           <property name="styleSheet">
-            <string notr="true"> QToolButton {
-        opacity: 1;
- 		border: none;
-}
-/* 按下状态 */
-QToolButton:pressed {
-   background-color: #546E7A; /* 深石板灰 */
-    background-image: none;
-    padding-top: 12px;
-    padding-bottom: 8px;
-    border: 1px solid #37474F; /* 深色边框模拟阴影 */
-}
-</string>
-           </property>
-           <property name="text">
-            <string>二维码编辑</string>
-           </property>
-           <property name="icon">
-            <iconset resource="OCRdemo.qrc">
-             <normaloff>:/PNG/Resources/PNG/ZJYH.png</normaloff>:/PNG/Resources/PNG/ZJYH.png</iconset>
            </property>
            <property name="iconSize">
             <size>

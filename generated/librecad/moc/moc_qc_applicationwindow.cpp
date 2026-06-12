@@ -22,8 +22,8 @@ QT_BEGIN_MOC_NAMESPACE
 QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_QC_ApplicationWindow_t {
-    QByteArrayData data[116];
-    char stringdata0[1559];
+    QByteArrayData data[115];
+    char stringdata0[1542];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -132,22 +132,21 @@ QT_MOC_LITERAL(96, 1261, 21), // "modifyCommandTitleBar"
 QT_MOC_LITERAL(97, 1283, 18), // "Qt::DockWidgetArea"
 QT_MOC_LITERAL(98, 1302, 4), // "area"
 QT_MOC_LITERAL(99, 1307, 16), // "reloadStyleSheet"
-QT_MOC_LITERAL(100, 1324, 16), // "updateGridStatus"
-QT_MOC_LITERAL(101, 1341, 17), // "showDeviceOptions"
-QT_MOC_LITERAL(102, 1359, 12), // "updateDevice"
-QT_MOC_LITERAL(103, 1372, 17), // "invokeMenuCreator"
-QT_MOC_LITERAL(104, 1390, 20), // "invokeToolbarCreator"
-QT_MOC_LITERAL(105, 1411, 13), // "createToolbar"
-QT_MOC_LITERAL(106, 1425, 12), // "toolbar_name"
-QT_MOC_LITERAL(107, 1438, 14), // "destroyToolbar"
-QT_MOC_LITERAL(108, 1453, 11), // "destroyMenu"
-QT_MOC_LITERAL(109, 1465, 9), // "activator"
-QT_MOC_LITERAL(110, 1475, 12), // "unassignMenu"
-QT_MOC_LITERAL(111, 1488, 9), // "menu_name"
-QT_MOC_LITERAL(112, 1498, 10), // "assignMenu"
-QT_MOC_LITERAL(113, 1509, 18), // "invokeMenuAssigner"
-QT_MOC_LITERAL(114, 1528, 10), // "updateMenu"
-QT_MOC_LITERAL(115, 1539, 19) // "invokeLicenseWindow"
+QT_MOC_LITERAL(100, 1324, 17), // "showDeviceOptions"
+QT_MOC_LITERAL(101, 1342, 12), // "updateDevice"
+QT_MOC_LITERAL(102, 1355, 17), // "invokeMenuCreator"
+QT_MOC_LITERAL(103, 1373, 20), // "invokeToolbarCreator"
+QT_MOC_LITERAL(104, 1394, 13), // "createToolbar"
+QT_MOC_LITERAL(105, 1408, 12), // "toolbar_name"
+QT_MOC_LITERAL(106, 1421, 14), // "destroyToolbar"
+QT_MOC_LITERAL(107, 1436, 11), // "destroyMenu"
+QT_MOC_LITERAL(108, 1448, 9), // "activator"
+QT_MOC_LITERAL(109, 1458, 12), // "unassignMenu"
+QT_MOC_LITERAL(110, 1471, 9), // "menu_name"
+QT_MOC_LITERAL(111, 1481, 10), // "assignMenu"
+QT_MOC_LITERAL(112, 1492, 18), // "invokeMenuAssigner"
+QT_MOC_LITERAL(113, 1511, 10), // "updateMenu"
+QT_MOC_LITERAL(114, 1522, 19) // "invokeLicenseWindow"
 
     },
     "QC_ApplicationWindow\0RunOcr\0\0RunShow\0"
@@ -186,13 +185,13 @@ QT_MOC_LITERAL(115, 1539, 19) // "invokeLicenseWindow"
     "toggleFullscreen\0checked\0setPreviousZoomEnable\0"
     "hideOptions\0widgetOptionsDialog\0"
     "modifyCommandTitleBar\0Qt::DockWidgetArea\0"
-    "area\0reloadStyleSheet\0updateGridStatus\0"
-    "showDeviceOptions\0updateDevice\0"
-    "invokeMenuCreator\0invokeToolbarCreator\0"
-    "createToolbar\0toolbar_name\0destroyToolbar\0"
-    "destroyMenu\0activator\0unassignMenu\0"
-    "menu_name\0assignMenu\0invokeMenuAssigner\0"
-    "updateMenu\0invokeLicenseWindow"
+    "area\0reloadStyleSheet\0showDeviceOptions\0"
+    "updateDevice\0invokeMenuCreator\0"
+    "invokeToolbarCreator\0createToolbar\0"
+    "toolbar_name\0destroyToolbar\0destroyMenu\0"
+    "activator\0unassignMenu\0menu_name\0"
+    "assignMenu\0invokeMenuAssigner\0updateMenu\0"
+    "invokeLicenseWindow"
 };
 #undef QT_MOC_LITERAL
 
@@ -202,7 +201,7 @@ static const uint qt_meta_data_QC_ApplicationWindow[] = {
        8,       // revision
        0,       // classname
        0,    0, // classinfo
-      88,   14, // methods
+      87,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -210,96 +209,95 @@ static const uint qt_meta_data_QC_ApplicationWindow[] = {
       12,       // signalCount
 
  // signals: name, argc, parameters, tag, flags
-       1,    0,  454,    2, 0x06 /* Public */,
-       3,    0,  455,    2, 0x06 /* Public */,
-       4,    0,  456,    2, 0x06 /* Public */,
-       5,    0,  457,    2, 0x06 /* Public */,
-       6,    0,  458,    2, 0x06 /* Public */,
-       7,    0,  459,    2, 0x06 /* Public */,
-       8,    0,  460,    2, 0x06 /* Public */,
-       9,    0,  461,    2, 0x06 /* Public */,
-      10,    1,  462,    2, 0x06 /* Public */,
-      12,    1,  465,    2, 0x06 /* Public */,
-      13,    1,  468,    2, 0x06 /* Public */,
-      14,    1,  471,    2, 0x06 /* Public */,
+       1,    0,  449,    2, 0x06 /* Public */,
+       3,    0,  450,    2, 0x06 /* Public */,
+       4,    0,  451,    2, 0x06 /* Public */,
+       5,    0,  452,    2, 0x06 /* Public */,
+       6,    0,  453,    2, 0x06 /* Public */,
+       7,    0,  454,    2, 0x06 /* Public */,
+       8,    0,  455,    2, 0x06 /* Public */,
+       9,    0,  456,    2, 0x06 /* Public */,
+      10,    1,  457,    2, 0x06 /* Public */,
+      12,    1,  460,    2, 0x06 /* Public */,
+      13,    1,  463,    2, 0x06 /* Public */,
+      14,    1,  466,    2, 0x06 /* Public */,
 
  // slots: name, argc, parameters, tag, flags
-      16,    1,  474,    2, 0x0a /* Public */,
-      19,    0,  477,    2, 0x0a /* Public */,
-      20,    0,  478,    2, 0x0a /* Public */,
-      21,    0,  479,    2, 0x0a /* Public */,
-      22,    0,  480,    2, 0x0a /* Public */,
-      23,    0,  481,    2, 0x0a /* Public */,
-      24,    1,  482,    2, 0x0a /* Public */,
-      26,    1,  485,    2, 0x0a /* Public */,
-      26,    1,  488,    2, 0x0a /* Public */,
-      29,    0,  491,    2, 0x0a /* Public */,
-      30,    1,  492,    2, 0x0a /* Public */,
-      31,    0,  495,    2, 0x0a /* Public */,
-      32,    0,  496,    2, 0x0a /* Public */,
-      33,    0,  497,    2, 0x0a /* Public */,
-      34,    0,  498,    2, 0x0a /* Public */,
-      35,    0,  499,    2, 0x0a /* Public */,
-      36,    0,  500,    2, 0x0a /* Public */,
-      37,    0,  501,    2, 0x0a /* Public */,
-      38,    0,  502,    2, 0x0a /* Public */,
-      39,    0,  503,    2, 0x0a /* Public */,
-      40,    0,  504,    2, 0x0a /* Public */,
-      41,    0,  505,    2, 0x0a /* Public */,
-      42,    0,  506,    2, 0x0a /* Public */,
-      43,    0,  507,    2, 0x0a /* Public */,
-      44,    1,  508,    2, 0x0a /* Public */,
-      47,    1,  511,    2, 0x0a /* Public */,
-      50,    1,  514,    2, 0x0a /* Public */,
-      52,    1,  517,    2, 0x0a /* Public */,
-      52,    0,  520,    2, 0x2a /* Public | MethodCloned */,
-      56,    0,  521,    2, 0x0a /* Public */,
-      57,    0,  522,    2, 0x0a /* Public */,
-      58,    0,  523,    2, 0x0a /* Public */,
-      58,    2,  524,    2, 0x0a /* Public */,
-      58,    1,  529,    2, 0x0a /* Public */,
-      62,    1,  532,    2, 0x0a /* Public */,
-      64,    0,  535,    2, 0x0a /* Public */,
-      65,    0,  536,    2, 0x0a /* Public */,
-      66,    0,  537,    2, 0x0a /* Public */,
-      67,    0,  538,    2, 0x0a /* Public */,
-      68,    0,  539,    2, 0x0a /* Public */,
-      68,    6,  540,    2, 0x0a /* Public */,
-      68,    5,  553,    2, 0x2a /* Public | MethodCloned */,
-      75,    1,  564,    2, 0x0a /* Public */,
-      76,    0,  567,    2, 0x0a /* Public */,
-      77,    1,  568,    2, 0x0a /* Public */,
-      77,    0,  571,    2, 0x2a /* Public | MethodCloned */,
-      79,    0,  572,    2, 0x0a /* Public */,
-      80,    1,  573,    2, 0x0a /* Public */,
-      81,    0,  576,    2, 0x0a /* Public */,
-      82,    1,  577,    2, 0x0a /* Public */,
-      84,    1,  580,    2, 0x0a /* Public */,
-      85,    1,  583,    2, 0x0a /* Public */,
-      86,    0,  586,    2, 0x0a /* Public */,
-      87,    0,  587,    2, 0x0a /* Public */,
-      88,    0,  588,    2, 0x0a /* Public */,
-      89,    0,  589,    2, 0x0a /* Public */,
-      90,    0,  590,    2, 0x0a /* Public */,
-      91,    1,  591,    2, 0x0a /* Public */,
-      93,    1,  594,    2, 0x0a /* Public */,
-      94,    1,  597,    2, 0x0a /* Public */,
-      95,    0,  600,    2, 0x0a /* Public */,
-      96,    1,  601,    2, 0x0a /* Public */,
-      99,    0,  604,    2, 0x0a /* Public */,
-     100,    1,  605,    2, 0x0a /* Public */,
-     101,    0,  608,    2, 0x0a /* Public */,
-     102,    1,  609,    2, 0x0a /* Public */,
-     103,    0,  612,    2, 0x0a /* Public */,
-     104,    0,  613,    2, 0x0a /* Public */,
-     105,    1,  614,    2, 0x0a /* Public */,
-     107,    1,  617,    2, 0x0a /* Public */,
-     108,    1,  620,    2, 0x0a /* Public */,
-     110,    2,  623,    2, 0x0a /* Public */,
-     112,    2,  628,    2, 0x0a /* Public */,
-     113,    1,  633,    2, 0x0a /* Public */,
-     114,    1,  636,    2, 0x0a /* Public */,
-     115,    0,  639,    2, 0x0a /* Public */,
+      16,    1,  469,    2, 0x0a /* Public */,
+      19,    0,  472,    2, 0x0a /* Public */,
+      20,    0,  473,    2, 0x0a /* Public */,
+      21,    0,  474,    2, 0x0a /* Public */,
+      22,    0,  475,    2, 0x0a /* Public */,
+      23,    0,  476,    2, 0x0a /* Public */,
+      24,    1,  477,    2, 0x0a /* Public */,
+      26,    1,  480,    2, 0x0a /* Public */,
+      26,    1,  483,    2, 0x0a /* Public */,
+      29,    0,  486,    2, 0x0a /* Public */,
+      30,    1,  487,    2, 0x0a /* Public */,
+      31,    0,  490,    2, 0x0a /* Public */,
+      32,    0,  491,    2, 0x0a /* Public */,
+      33,    0,  492,    2, 0x0a /* Public */,
+      34,    0,  493,    2, 0x0a /* Public */,
+      35,    0,  494,    2, 0x0a /* Public */,
+      36,    0,  495,    2, 0x0a /* Public */,
+      37,    0,  496,    2, 0x0a /* Public */,
+      38,    0,  497,    2, 0x0a /* Public */,
+      39,    0,  498,    2, 0x0a /* Public */,
+      40,    0,  499,    2, 0x0a /* Public */,
+      41,    0,  500,    2, 0x0a /* Public */,
+      42,    0,  501,    2, 0x0a /* Public */,
+      43,    0,  502,    2, 0x0a /* Public */,
+      44,    1,  503,    2, 0x0a /* Public */,
+      47,    1,  506,    2, 0x0a /* Public */,
+      50,    1,  509,    2, 0x0a /* Public */,
+      52,    1,  512,    2, 0x0a /* Public */,
+      52,    0,  515,    2, 0x2a /* Public | MethodCloned */,
+      56,    0,  516,    2, 0x0a /* Public */,
+      57,    0,  517,    2, 0x0a /* Public */,
+      58,    0,  518,    2, 0x0a /* Public */,
+      58,    2,  519,    2, 0x0a /* Public */,
+      58,    1,  524,    2, 0x0a /* Public */,
+      62,    1,  527,    2, 0x0a /* Public */,
+      64,    0,  530,    2, 0x0a /* Public */,
+      65,    0,  531,    2, 0x0a /* Public */,
+      66,    0,  532,    2, 0x0a /* Public */,
+      67,    0,  533,    2, 0x0a /* Public */,
+      68,    0,  534,    2, 0x0a /* Public */,
+      68,    6,  535,    2, 0x0a /* Public */,
+      68,    5,  548,    2, 0x2a /* Public | MethodCloned */,
+      75,    1,  559,    2, 0x0a /* Public */,
+      76,    0,  562,    2, 0x0a /* Public */,
+      77,    1,  563,    2, 0x0a /* Public */,
+      77,    0,  566,    2, 0x2a /* Public | MethodCloned */,
+      79,    0,  567,    2, 0x0a /* Public */,
+      80,    1,  568,    2, 0x0a /* Public */,
+      81,    0,  571,    2, 0x0a /* Public */,
+      82,    1,  572,    2, 0x0a /* Public */,
+      84,    1,  575,    2, 0x0a /* Public */,
+      85,    1,  578,    2, 0x0a /* Public */,
+      86,    0,  581,    2, 0x0a /* Public */,
+      87,    0,  582,    2, 0x0a /* Public */,
+      88,    0,  583,    2, 0x0a /* Public */,
+      89,    0,  584,    2, 0x0a /* Public */,
+      90,    0,  585,    2, 0x0a /* Public */,
+      91,    1,  586,    2, 0x0a /* Public */,
+      93,    1,  589,    2, 0x0a /* Public */,
+      94,    1,  592,    2, 0x0a /* Public */,
+      95,    0,  595,    2, 0x0a /* Public */,
+      96,    1,  596,    2, 0x0a /* Public */,
+      99,    0,  599,    2, 0x0a /* Public */,
+     100,    0,  600,    2, 0x0a /* Public */,
+     101,    1,  601,    2, 0x0a /* Public */,
+     102,    0,  604,    2, 0x0a /* Public */,
+     103,    0,  605,    2, 0x0a /* Public */,
+     104,    1,  606,    2, 0x0a /* Public */,
+     106,    1,  609,    2, 0x0a /* Public */,
+     107,    1,  612,    2, 0x0a /* Public */,
+     109,    2,  615,    2, 0x0a /* Public */,
+     111,    2,  620,    2, 0x0a /* Public */,
+     112,    1,  625,    2, 0x0a /* Public */,
+     113,    1,  628,    2, 0x0a /* Public */,
+     114,    0,  631,    2, 0x0a /* Public */,
 
  // signals: parameters
     QMetaType::Void,
@@ -379,18 +377,17 @@ static const uint qt_meta_data_QC_ApplicationWindow[] = {
     QMetaType::Void,
     QMetaType::Void, 0x80000000 | 97,   98,
     QMetaType::Void,
-    QMetaType::Void, QMetaType::QString,    2,
     QMetaType::Void,
     QMetaType::Void, QMetaType::QString,    2,
     QMetaType::Void,
     QMetaType::Void,
-    QMetaType::Void, QMetaType::QString,  106,
-    QMetaType::Void, QMetaType::QString,  106,
-    QMetaType::Void, QMetaType::QString,  109,
-    QMetaType::Void, QMetaType::QString, QMetaType::QString,  109,  111,
-    QMetaType::Void, QMetaType::QString, QMetaType::QString,  109,  111,
-    QMetaType::Void, QMetaType::QString,  111,
-    QMetaType::Void, QMetaType::QString,  111,
+    QMetaType::Void, QMetaType::QString,  105,
+    QMetaType::Void, QMetaType::QString,  105,
+    QMetaType::Void, QMetaType::QString,  108,
+    QMetaType::Void, QMetaType::QString, QMetaType::QString,  108,  110,
+    QMetaType::Void, QMetaType::QString, QMetaType::QString,  108,  110,
+    QMetaType::Void, QMetaType::QString,  110,
+    QMetaType::Void, QMetaType::QString,  110,
     QMetaType::Void,
 
        0        // eod
@@ -483,19 +480,18 @@ void QC_ApplicationWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c,
         case 72: _t->widgetOptionsDialog(); break;
         case 73: _t->modifyCommandTitleBar((*reinterpret_cast< Qt::DockWidgetArea(*)>(_a[1]))); break;
         case 74: _t->reloadStyleSheet(); break;
-        case 75: _t->updateGridStatus((*reinterpret_cast< const QString(*)>(_a[1]))); break;
-        case 76: _t->showDeviceOptions(); break;
-        case 77: _t->updateDevice((*reinterpret_cast< QString(*)>(_a[1]))); break;
-        case 78: _t->invokeMenuCreator(); break;
-        case 79: _t->invokeToolbarCreator(); break;
-        case 80: _t->createToolbar((*reinterpret_cast< const QString(*)>(_a[1]))); break;
-        case 81: _t->destroyToolbar((*reinterpret_cast< const QString(*)>(_a[1]))); break;
-        case 82: _t->destroyMenu((*reinterpret_cast< const QString(*)>(_a[1]))); break;
-        case 83: _t->unassignMenu((*reinterpret_cast< const QString(*)>(_a[1])),(*reinterpret_cast< const QString(*)>(_a[2]))); break;
-        case 84: _t->assignMenu((*reinterpret_cast< const QString(*)>(_a[1])),(*reinterpret_cast< const QString(*)>(_a[2]))); break;
-        case 85: _t->invokeMenuAssigner((*reinterpret_cast< const QString(*)>(_a[1]))); break;
-        case 86: _t->updateMenu((*reinterpret_cast< const QString(*)>(_a[1]))); break;
-        case 87: _t->invokeLicenseWindow(); break;
+        case 75: _t->showDeviceOptions(); break;
+        case 76: _t->updateDevice((*reinterpret_cast< QString(*)>(_a[1]))); break;
+        case 77: _t->invokeMenuCreator(); break;
+        case 78: _t->invokeToolbarCreator(); break;
+        case 79: _t->createToolbar((*reinterpret_cast< const QString(*)>(_a[1]))); break;
+        case 80: _t->destroyToolbar((*reinterpret_cast< const QString(*)>(_a[1]))); break;
+        case 81: _t->destroyMenu((*reinterpret_cast< const QString(*)>(_a[1]))); break;
+        case 82: _t->unassignMenu((*reinterpret_cast< const QString(*)>(_a[1])),(*reinterpret_cast< const QString(*)>(_a[2]))); break;
+        case 83: _t->assignMenu((*reinterpret_cast< const QString(*)>(_a[1])),(*reinterpret_cast< const QString(*)>(_a[2]))); break;
+        case 84: _t->invokeMenuAssigner((*reinterpret_cast< const QString(*)>(_a[1]))); break;
+        case 85: _t->updateMenu((*reinterpret_cast< const QString(*)>(_a[1]))); break;
+        case 86: _t->invokeLicenseWindow(); break;
         default: ;
         }
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
@@ -634,13 +630,13 @@ int QC_ApplicationWindow::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 88)
+        if (_id < 87)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 88;
+        _id -= 87;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 88)
+        if (_id < 87)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 88;
+        _id -= 87;
     }
     return _id;
 }

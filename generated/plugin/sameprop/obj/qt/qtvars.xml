@@ -1,7 +1,7 @@
 <Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
         <Qt_DEFINES_>_WINDOWS;WIN32;_ENABLE_EXTENDED_ALIGNED_STORAGE;WIN64;NDEBUG;QT_NO_DEBUG;QT_SVG_LIB;QT_WIDGETS_LIB;QT_GUI_LIB;QT_CORE_LIB</Qt_DEFINES_>
-    <Qt_INCLUDEPATH_>D:\DM\LibreCAD-2.4(YitiJi)\generated\plugin\sameprop\obj\qt\qmake\6413def381e644d086127d9f5f27b1f4;D:\software\qt\5.15.2\msvc2019_64\include;D:\software\qt\5.15.2\msvc2019_64\include\QtSvg;D:\software\qt\5.15.2\msvc2019_64\include\QtWidgets;D:\software\qt\5.15.2\msvc2019_64\include\QtGui;D:\software\qt\5.15.2\msvc2019_64\include\QtANGLE;D:\software\qt\5.15.2\msvc2019_64\include\QtCore;D:\DM\LibreCAD-2.4(YitiJi)\generated\plugin\sameprop\obj\qt\qmake\6413def381e644d086127d9f5f27b1f4;D:\software\qt\5.15.2\msvc2019_64\mkspecs\win32-msvc</Qt_INCLUDEPATH_>
+    <Qt_INCLUDEPATH_>D:\DM\LibreCAD-2.4(YitiJi)\generated\plugin\sameprop\obj\qt\qmake\0051830c2ac5461880d1530a6a04cf08;D:\software\qt\5.15.2\msvc2019_64\include;D:\software\qt\5.15.2\msvc2019_64\include\QtSvg;D:\software\qt\5.15.2\msvc2019_64\include\QtWidgets;D:\software\qt\5.15.2\msvc2019_64\include\QtGui;D:\software\qt\5.15.2\msvc2019_64\include\QtANGLE;D:\software\qt\5.15.2\msvc2019_64\include\QtCore;D:\DM\LibreCAD-2.4(YitiJi)\generated\plugin\sameprop\obj\qt\qmake\0051830c2ac5461880d1530a6a04cf08;D:\software\qt\5.15.2\msvc2019_64\mkspecs\win32-msvc</Qt_INCLUDEPATH_>
     <Qt_STDCPP_></Qt_STDCPP_>
     <Qt_RUNTIME_>MultiThreadedDLL</Qt_RUNTIME_>
     <Qt_CL_OPTIONS_>-Zc:rvalueCast -Zc:inline -Zc:strictStrings -Zc:throwingNew -Zc:referenceBinding -Zc:__cplusplus</Qt_CL_OPTIONS_>

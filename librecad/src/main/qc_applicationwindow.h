@@ -212,35 +212,12 @@ class QC_ApplicationWindow : public MainWindowX
 {
     Q_OBJECT  // Qt元对象系统宏，启用信号槽机制
 
-private:
-    /**
-     * @struct QRCodeSettings
-     * @brief QR码设置结构体
-     *
-     * 存储和管理QR码生成的各项参数
-     * 包括位置、内容、尺寸、样式等
-     */
-    struct QRCodeSettings {
-        double posX = 30000;                // X坐标位置（单位：毫米）
-        double posY = 30000;                // Y坐标位置（单位：毫米）
-        QString text = "yjyjyjyj  ";        // QR码文本内容
-        double moduleSize = 500.0;          // 模块尺寸（单位：毫米）
-        int margin = 2;                     // 边距（模块数）
-        QColor color = Qt::black;           // QR码颜色
-        bool timeMode = false;              // 时间模式标志，为true时使用当前时间
-        QString timeFormat = "YYYY-MM-DD HH:mm:ss";  // 时间格式
-    };
-
-    QRCodeSettings lastQRSettings;  // 保存上一次的QR码设置，便于重用
 
     // =======================================================================
     // 8. OCR模块公开成员
     // =======================================================================
 public:
-  //  QTranslator translator;          // 翻译器，支持界面多语言切换
-    
-   
-
+ 
     bool IsCustom = false;           // 自定义日期匹配标识符
     QString thisPassword;            // 操作密码，用于权限验证
     QSettings settings;              // 应用程序设置，存储在注册表或ini文件
@@ -542,7 +519,6 @@ public slots:
     void widgetOptionsDialog();            // 部件选项对话框
     void modifyCommandTitleBar(Qt::DockWidgetArea area);  // 修改命令标题栏
     void reloadStyleSheet();               // 重新加载样式表
-    void updateGridStatus(const QString&); // 更新网格状态
     void showDeviceOptions();              // 显示设备选项
     void updateDevice(QString);            // 更新设备
     void invokeMenuCreator();              // 调用菜单创建器

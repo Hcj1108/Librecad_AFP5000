@@ -1,7 +1,7 @@
 <Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
         <Qt_DEFINES_>_WINDOWS;WIN32;_ENABLE_EXTENDED_ALIGNED_STORAGE;WIN64;NDEBUG;QT_NO_DEBUG</Qt_DEFINES_>
-    <Qt_INCLUDEPATH_>D:\DM\LibreCAD-2.4(YitiJi)\generated\lib\muparser\obj\qt\qmake\04851503b3024e83b0ccbe30c1051b30;D:\software\qt\5.15.2\msvc2019_64\mkspecs\win32-msvc</Qt_INCLUDEPATH_>
+    <Qt_INCLUDEPATH_>D:\DM\LibreCAD-2.4(YitiJi)\generated\lib\muparser\obj\qt\qmake\c24bd74f881e4b59a23e367eef467e1d;D:\software\qt\5.15.2\msvc2019_64\mkspecs\win32-msvc</Qt_INCLUDEPATH_>
     <Qt_STDCPP_></Qt_STDCPP_>
     <Qt_RUNTIME_>MultiThreadedDLL</Qt_RUNTIME_>
     <Qt_CL_OPTIONS_>-Zc:rvalueCast -Zc:inline -Zc:strictStrings -Zc:throwingNew -Zc:referenceBinding -Zc:__cplusplus</Qt_CL_OPTIONS_>

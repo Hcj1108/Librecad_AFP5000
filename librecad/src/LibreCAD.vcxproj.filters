@@ -1065,9 +1065,6 @@
     <ClCompile Include="ui\generic\textfileviewer.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="ui\twostackedlabels.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="ui\generic\widgetcreator.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -1166,6 +1163,9 @@
     </ClCompile>
     <ClCompile Include="uiults\EntityMover.cpp">
       <Filter>Generated Files\uiults</Filter>
+    </ClCompile>
+    <ClCompile Include="uiults\PathSender.cpp">
+      <Filter>Generated Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -2217,9 +2217,6 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <QtMoc Include="ui\generic\textfileviewer.h">
-      <Filter>Header Files</Filter>
-    </QtMoc>
-    <QtMoc Include="ui\twostackedlabels.h">
       <Filter>Header Files</Filter>
     </QtMoc>
     <QtMoc Include="ui\generic\widgetcreator.h">
@@ -4316,6 +4313,9 @@
     </ClInclude>
     <ClInclude Include="uiults\EntityMover.h">
       <Filter>Generated Files\uiults</Filter>
+    </ClInclude>
+    <ClInclude Include="uiults\PathSender.h">
+      <Filter>Generated Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

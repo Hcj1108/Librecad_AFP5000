@@ -592,7 +592,6 @@
     <ClCompile Include="lib\engine\rs_variabledict.cpp" />
     <ClCompile Include="lib\engine\rs_vector.cpp" />
     <ClCompile Include="ui\generic\textfileviewer.cpp" />
-    <ClCompile Include="ui\twostackedlabels.cpp" />
     <ClCompile Include="ui\generic\widgetcreator.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -984,7 +983,6 @@
     <ClInclude Include="lib\engine\rs_variabledict.h" />
     <ClInclude Include="lib\engine\rs_vector.h" />
     <QtMoc Include="ui\generic\textfileviewer.h" />
-    <QtMoc Include="ui\twostackedlabels.h" />
     <QtMoc Include="ui\generic\widgetcreator.h" />
   </ItemGroup>
   <ItemGroup>
