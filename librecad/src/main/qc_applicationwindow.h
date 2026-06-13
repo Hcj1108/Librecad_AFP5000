@@ -139,7 +139,7 @@ OCRdemo模块导入区域
 #include<QTimer>                    // Qt定时器
 #include <QUdpSocket>               // Qt UDP套接字，用于网络通信
 #include <qendian.h>                // Qt字节序处理
-#include <QVBoxLayout>;
+#include <QVBoxLayout>
 
 
 // OCR模块自定义类
@@ -298,7 +298,6 @@ public:
     // 9. OCR模块公共方法声明
     // =======================================================================
 
-    void SetQSS();                          // 设置界面样式表(QSS)
     bool eventFilter(QObject* obj, QEvent* evt);  // 事件过滤器
 
     // 相机控制
@@ -609,8 +608,8 @@ private:
     int showCloseDialog(QC_MDIWindow* w, bool showSaveAll = false);  // 显示关闭对话框
     void enableFileActions(QC_MDIWindow* w);  // 启用文件动作
     void updateWindowTitle(QWidget* w);  // 更新窗口标题
-    void loadPlugins();  // 加载插件
-    QMenu* findMenu(const QString& searchMenu, const QObjectList thisMenuList, const QString& currentEntry);  // 查找菜单
+    //void loadPlugins();  // 加载插件
+    //QMenu* findMenu(const QString& searchMenu, const QObjectList thisMenuList, const QString& currentEntry);  // 查找菜单
 
 #ifdef LC_DEBUGGING
     LC_SimpleTests* m_pSimpleTest{ nullptr };  // 调试模式下的简单测试
@@ -741,10 +740,7 @@ public:
             "QC_ApplicationWindow::onMoveRightButtonClicked");
     }
 
-	////	// 计算选中实体的中心点
- //   RS_Vector calculateSelectionCenter(RS_Document* doc) {
- //       return EntityMover::calculateSelectionCenter(doc);
- //   }
+
 
     void onRotateClockwiseButtonClicked() {
         EntityMover::rotateSelected(getDocument(), getGraphicView(), 90.0,
@@ -753,10 +749,6 @@ public:
 
     
 };
-
-
-
-
 
 
 

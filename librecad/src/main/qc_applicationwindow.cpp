@@ -730,18 +730,18 @@ QC_ApplicationWindow::QC_ApplicationWindow()
 
 
     
-    //左上/左下角绑定左侧停靠区（放置图层、图块面板）
-    // 右上/右下角绑定右侧停靠区（放置命令窗口、属性面 
-    setCorner(Qt::TopLeftCorner, Qt::LeftDockWidgetArea);
-    setCorner(Qt::BottomLeftCorner, Qt::LeftDockWidgetArea);
-    setCorner(Qt::TopRightCorner, Qt::RightDockWidgetArea);
-    setCorner(Qt::BottomRightCorner, Qt::RightDockWidgetArea);
-    pen_wiz->setObjectName("pen_wiz");
-    connect(this, &QC_ApplicationWindow::windowsChanged,
-        pen_wiz, &LC_PenWizard::setEnabled);
-    addDockWidget(Qt::RightDockWidgetArea, pen_wiz);
-    //
-    RS_DEBUG->print("QC_ApplicationWindow::QC_ApplicationWindow: init status bar");
+    ////左上/左下角绑定左侧停靠区（放置图层、图块面板）
+    //// 右上/右下角绑定右侧停靠区（放置命令窗口、属性面 
+    //setCorner(Qt::TopLeftCorner, Qt::LeftDockWidgetArea);
+    //setCorner(Qt::BottomLeftCorner, Qt::LeftDockWidgetArea);
+    //setCorner(Qt::TopRightCorner, Qt::RightDockWidgetArea);
+    //setCorner(Qt::BottomRightCorner, Qt::RightDockWidgetArea);
+    //pen_wiz->setObjectName("pen_wiz");
+    //connect(this, &QC_ApplicationWindow::windowsChanged,
+    //    pen_wiz, &LC_PenWizard::setEnabled);
+    //addDockWidget(Qt::RightDockWidgetArea, pen_wiz);
+    ////
+    //RS_DEBUG->print("QC_ApplicationWindow::QC_ApplicationWindow: init status bar");
 
 
 
@@ -760,7 +760,7 @@ QC_ApplicationWindow::QC_ApplicationWindow()
     //grid_status->setTopLabel(tr("Grid Status"));
     //status_bar->addWidget(grid_status);
 
-    settings.beginGroup("Widgets");
+    /*settings.beginGroup("Widgets");
     int allow_statusbar_fontsize = settings.value("AllowStatusbarFontSize", 0).toInt();
     int allow_statusbar_height = settings.value("AllowStatusbarHeight", 0).toInt();
 
@@ -779,30 +779,22 @@ QC_ApplicationWindow::QC_ApplicationWindow()
     status_bar->setMaximumHeight(height);
     settings.endGroup();
 
-    RS_DEBUG->print("QC_ApplicationWindow::QC_ApplicationWindow: creating LC_CentralWidget");
+    RS_DEBUG->print("QC_ApplicationWindow::QC_ApplicationWindow: creating LC_CentralWidget");*/
 
     status_bar->hide();
   
-    // 1. 移除状态栏中的坐标控件（注释掉原有代码） 
-    // 这部分和状态栏的样式文件冲突了,好在状态栏这几个用途不大
-    // status_bar->addWidget(coordinateWidget);
+
 
 
 
     mdiAreaCAD = ui->mdiArea;  // 将UI中的mdiArea赋值给成员变量
-  //  mdiAreaCAD->setDocumentMode(false);// 启用标签页模式
+    mdiAreaCAD->setDocumentMode(false);// 启用标签页模式
+  
 
-    //中央部件与 MDI 管理
-//auto central = new LC_CentralWidget(this);
-   // central作为中央容器，管理多个绘图子窗口
-    //setCentralWidget(central);
-
-   // mdiAreaCAD = central->getMdiArea();
- //   mdiAreaCAD->setDocumentMode(true);// 启用标签页模式
 
     RS_SETTINGS->beginGroup("/WindowOptions");
-    setTabLayout(static_cast<RS2::TabShape>(RS_SETTINGS->readNumEntry("/TabShape", RS2::Triangular)),
-        static_cast<RS2::TabPosition>(RS_SETTINGS->readNumEntry("/TabPosition", RS2::West)));
+    //setTabLayout(static_cast<RS2::TabShape>(RS_SETTINGS->readNumEntry("/TabShape", RS2::Triangular)),
+        //static_cast<RS2::TabPosition>(RS_SETTINGS->readNumEntry("/TabPosition", RS2::West)));
     RS_SETTINGS->endGroup();
 
     settings.beginGroup("Startup");
@@ -849,66 +841,63 @@ QC_ApplicationWindow::QC_ApplicationWindow()
     widget_factory.createStandardToolbars(actionHandler);       // 标准工具栏
 
 
-   
+ 
+    ////加载自定义工具栏从用户设置中读取工具栏配置
+    //settings.beginGroup("CustomToolbars");
+    //foreach(auto key, settings.childKeys())
+    //{
+    //    auto toolbar = new QToolBar(key, this);
+    //    toolbar->setObjectName(key);
+    //    foreach(auto action, settings.value(key).toStringList())
+    //    {
+    //        toolbar->addAction(a_map[action]);
+    //    }
+    //    addToolBar(toolbar);
 
+    //}
+    //settings.endGroup();
+                                  
+    //默认工具栏:在添加多行文本那里，如果是首次启动，会创建一个包含部分默认指令的工具栏，如：
+    //list << "DrawMText" << "DrawHatch" << "DrawImage" << "BlocksCreate" << "DrawPoint";
+    //*/
+    //if (settings.value("Startup/FirstLoad", 1).toBool())
+    //{
+    //    // 调试：打印所有可用的动作名称
+    //    qDebug() << "=== 所有可用的动作 ===";
+    //    QStringList allActions = a_map.keys();
+    //    allActions.sort();
+    //    foreach(const QString& actionName, allActions) {
+    //        qDebug() << actionName;
+    //    }
+    //    qDebug() << "====================";
+    //    QStringList list;
+    //    list << "DrawMText"
+    //        << "DrawHatch"
+    //        << "ModifyDeleteQuick"
+    //        << "ZoomIn"
+    //        << "ZoomOut"
+    //        << "ZoomAuto"
+    //       
+    //        << "FileNew"
+    //        << "FileOpen";
 
-    //加载自定义工具栏从用户设置中读取工具栏配置
-    settings.beginGroup("CustomToolbars");
-    foreach(auto key, settings.childKeys())
-    {
-        auto toolbar = new QToolBar(key, this);
-        toolbar->setObjectName(key);
-        foreach(auto action, settings.value(key).toStringList())
-        {
-            toolbar->addAction(a_map[action]);
-        }
-        addToolBar(toolbar);
-
-    }
-    settings.endGroup();
-
-    /*默认工具栏:在添加多行文本那里                                                
-    如果是首次启动，会创建一个包含部分默认指令的工具栏，如：
-    list << "DrawMText" << "DrawHatch" << "DrawImage" << "BlocksCreate" << "DrawPoint";
-    */
-    if (settings.value("Startup/FirstLoad", 1).toBool())
-    {
-        // 调试：打印所有可用的动作名称
-        qDebug() << "=== 所有可用的动作 ===";
-        QStringList allActions = a_map.keys();
-        allActions.sort();
-        foreach(const QString& actionName, allActions) {
-            qDebug() << actionName;
-        }
-        qDebug() << "====================";
-        QStringList list;
-        list << "DrawMText"
-            << "DrawHatch"
-            << "ModifyDeleteQuick"
-            << "ZoomIn"
-            << "ZoomOut"
-            << "ZoomAuto"
-           
-            << "FileNew"
-            << "FileOpen";
-
-        auto toolbar = new QToolBar("DefaultCustom", this);
-        toolbar->setObjectName("DefaultCustom");
-        foreach(auto action, list)
-        {
-            toolbar->addAction(a_map[action]);
-        }
-        settings.setValue("CustomToolbars/DefaultCustom", list);
-        addToolBar(Qt::LeftToolBarArea, toolbar);
-    }
+    //    auto toolbar = new QToolBar("DefaultCustom", this);
+    //    toolbar->setObjectName("DefaultCustom");
+    //    foreach(auto action, list)
+    //    {
+    //        toolbar->addAction(a_map[action]);
+    //    }
+    //    settings.setValue("CustomToolbars/DefaultCustom", list);
+    //    addToolBar(Qt::LeftToolBarArea, toolbar);
+    //}
 
 
     //创建菜单栏
     widget_factory.createMenus(menuBar());
 
-    undoButton = a_map["EditUndo"];
+    /*undoButton = a_map["EditUndo"];
     redoButton = a_map["EditRedo"];
-    previousZoom = a_map["ZoomPrevious"];
+    previousZoom = a_map["ZoomPrevious"];*/
 
     //管理 Dock 区域可见性控制按钮
     dock_areas.left = a_map["LeftDockAreaToggle"];
@@ -932,7 +921,7 @@ QC_ApplicationWindow::QC_ApplicationWindow()
 
 
     //连接信号槽：关闭文档、修改画笔、快捷键
-    connect(a_map["FileClose"], SIGNAL(triggered(bool)),
+   /* connect(a_map["FileClose"], SIGNAL(triggered(bool)),
         mdiAreaCAD, SLOT(closeActiveSubWindow()));
 
     connect(penToolBar, SIGNAL(penChanged(RS_Pen)),
@@ -942,7 +931,7 @@ QC_ApplicationWindow::QC_ApplicationWindow()
     connect(ctrl_l, SIGNAL(activated()), actionHandler, SLOT(slotLayersAdd()));
 
     auto ctrl_m = new QShortcut(QKeySequence("Ctrl+M"), this);
-    connect(ctrl_m, SIGNAL(activated()), this, SLOT(slotFocusCommandLine()));
+    connect(ctrl_m, SIGNAL(activated()), this, SLOT(slotFocusCommandLine()));*/
 
     // This event filter allows sending key events to the command widget, therefore, no
     // need to activate the command widget before typing commands.
@@ -951,100 +940,72 @@ QC_ApplicationWindow::QC_ApplicationWindow()
     // send key events for mdiAreaCAD to command widget by default
 
 
-    // 安装事件过滤器,用于将按键事件直接发往命令行输入框。
-    mdiAreaCAD->installEventFilter(commandWidget);
+    //// 安装事件过滤器,用于将按键事件直接发往命令行输入框。
+    //mdiAreaCAD->installEventFilter(commandWidget);
 
-    RS_DEBUG->print("QC_ApplicationWindow::QC_ApplicationWindow: creating dialogFactory");
     dialogFactory = new QC_DialogFactory(this, optionWidget);
-    RS_DEBUG->print("QC_ApplicationWindow::QC_ApplicationWindow: creating dialogFactory: OK");
-
-    RS_DEBUG->print("setting dialog factory object");
-    if (RS_DialogFactory::instance() == nullptr) {
-        RS_DEBUG->print("no RS_DialogFactory instance");
-    }
-    else {
-        RS_DEBUG->print("got RS_DialogFactory instance");
-    }
-
+  
     // 创建并绑定对话框工厂,用于统一管理对话框创建（比如属性编辑、块插入等）
     RS_DialogFactory::instance()->setFactoryObject(dialogFactory);
-    RS_DEBUG->print("setting dialog factory object: OK");
-
+   
     //最近文件列表菜单构建
     recentFiles = new QG_RecentFiles(this, 9);
     auto recent_menu = new QMenu(tr("Recent Files"), file_menu);
     file_menu->addMenu(recent_menu);
     recentFiles->addFiles(recent_menu);
 
-    RS_DEBUG->print("QC_ApplicationWindow::QC_ApplicationWindow: init settings");
-    initSettings();
-
 
     //加载用户命令文件（可选）
-    auto command_file = settings.value("Paths/VariableFile", "").toString();
+   /* auto command_file = settings.value("Paths/VariableFile", "").toString();
     if (!command_file.isEmpty())
-        commandWidget->leCommand->readCommandFile(command_file);
+        commandWidget->leCommand->readCommandFile(command_file);*/
 
-    // Activate autosave timer启动自动保存定时器
-    if (settings.value("Defaults/AutoBackupDocument", 0).toBool())
-    {
-        autosaveTimer = new QTimer(this);
-        autosaveTimer->setObjectName("autosave");
-        connect(autosaveTimer, SIGNAL(timeout()), this, SLOT(slotFileAutoSave()));
-        int ms = 60000 * settings.value("Defaults/AutoSaveTime", 5).toInt();
-        autosaveTimer->start(ms);
-    }
+    emit windowsChanged(false);//通常用于通知主窗口内 CAD 子窗口的数量或状态发生了变化
 
-    // Disable menu and toolbar items
-
-    emit windowsChanged(false);
-
-    RS_COMMANDS->updateAlias();
-    //plugin load
-    loadPlugins();
-
-    statusBar()->showMessage(qApp->applicationName() + " Ready", 2000);
-
+	RS_COMMANDS->updateAlias();// 更新命令别名，通常是从设置中读取用户定义的命令别名并应用
     
-    
-    SetQSS();
-    initializeUserPermissions();
-    setupImageButtonEvents();
+	initSettings();// 从设置中读取用户偏好并应用，比如工具栏显示、图标大小、状态栏配置等
+
+    initializeUserPermissions();// 初始化用户权限系统，控制不同用户对功能的访问权限
+
+    setupImageButtonEvents();// 设置图像按钮的事件连接，比如拍照、标刻等功能按钮
+	
+	
+    //loadPlugins();// 加载插件，通常是从指定目录扫描并动态加载插件库
    
    
 }
+
 
 /**
-  * Find a menu entry in the current menu list. This function will try to recursively find the menu
-  * searchMenu for example foo/bar
-  * thisMenuList list of Widgets
-  * currentEntry only used internally during recursion
-  * returns 0 when no menu was found
-  */
-QMenu *QC_ApplicationWindow::findMenu(const QString &searchMenu, const QObjectList thisMenuList, const QString& currentEntry) {
-    if (searchMenu==currentEntry)
-        return ( QMenu *)thisMenuList.at(0)->parent();
-
-    QList<QObject*>::const_iterator i=thisMenuList.begin();
-    while (i != thisMenuList.end()) {
-        if ((*i)->inherits ("QMenu")) {
-            QMenu *ii=(QMenu*)*i;
-            if (QMenu *foundMenu=findMenu(searchMenu, ii->children(), currentEntry+"/"+ii->objectName().replace("&", ""))) {
-                return foundMenu;
-            }
-        }
-        ++i;
-    }
-    return 0;
-}
+*这是一个递归搜索函数，用于在一个树状结构的菜单体系中，根据类似文件路径的字符串（如 "File/New"）
+*来定位特定的 QMenu 对象。它利用了 Qt 对象树(parent() / children()) 的特性来遍历菜单结构
+*/
+//QMenu *QC_ApplicationWindow::findMenu(const QString &searchMenu, const QObjectList thisMenuList, const QString& currentEntry) {
+//    if (searchMenu==currentEntry)
+//        return ( QMenu *)thisMenuList.at(0)->parent();
+//
+//    QList<QObject*>::const_iterator i=thisMenuList.begin();
+//    while (i != thisMenuList.end()) {
+//        if ((*i)->inherits ("QMenu")) {
+//            QMenu *ii=(QMenu*)*i;
+//            if (QMenu *foundMenu=findMenu(searchMenu, ii->children(), currentEntry+"/"+ii->objectName().replace("&", ""))) {
+//                return foundMenu;
+//            }
+//        }
+//        ++i;
+//    }
+//    return 0;
+//}
 
 /**
  * Arrange the sub-windows as specified, and set the setting.
  * Note: Tab mode always uses (and sets) the RS2::Maximized mode.
  * @param m the layout mode; if set to RS2::CurrentMode, read the current setting
  * @param actuallyDont just set the setting, don't actually do the arrangement
+ * 指定窗口排列方式，并设置相关设置项
  */
-void QC_ApplicationWindow::doArrangeWindows(RS2::SubWindowMode m, bool actuallyDont)
+void QC_ApplicationWindow::doArrangeWindows(RS2::SubWindowMode m, bool actuallyDont)//指定窗口排列方式，并设置相关设置项
 {
 	RS_SETTINGS->beginGroup("/WindowOptions");
 	int mode = m != RS2::CurrentMode ? m : RS_SETTINGS->readNumEntry("/SubWindowMode", RS2::Maximized);
@@ -1055,16 +1016,16 @@ void QC_ApplicationWindow::doArrangeWindows(RS2::SubWindowMode m, bool actuallyD
 			mdiAreaCAD->currentSubWindow()->showMaximized();
 		break;
 	case RS2::Cascade:
-		slotCascade();
+		slotCascade();//层叠排列
 		break;
 	case RS2::Tile:
-		slotTile();
+		slotTile();//平铺排列
 		break;
 	case RS2::TileHorizontal:
-		slotTileHorizontal();
+		slotTileHorizontal();//水平平铺排列
 		break;
 	case RS2::TileVertical:
-		slotTileVertical();
+		slotTileVertical();//垂直平铺排列
 		break;
 	}
 	
@@ -1274,77 +1235,6 @@ void QC_ApplicationWindow::enableFileActions(QC_MDIWindow* w)
 	a_map["FileCloseAll"]->setEnabled(w && window_list.count() > 1);
 }
 
-/**
- * Loads the found plugins.
- */
-void QC_ApplicationWindow::loadPlugins() {
-
-    loadedPlugins.clear();
-    QStringList lst = RS_SYSTEM->getDirectoryList("plugins");
-    // Keep track of plugin filenames loaded to skip duplicate plugins.
-    QStringList loadedPluginFileNames;
-
-    for (int i = 0; i < lst.size(); ++i) {
-        QDir pluginsDir(lst.at(i));
-        for(const QString& fileName: pluginsDir.entryList(QDir::Files)) {
-            // Skip loading a plugin if a plugin with the same
-            // filename has already been loaded.
-            #ifdef Q_OS_MAC
-            if (!fileName.contains(".dylib"))
-                continue;
-            #endif
-            #ifdef Q_OS_WIN32
-            if (!fileName.contains(".dll"))
-                continue;
-            #endif
-
-            if (loadedPluginFileNames.contains(fileName)) {
-                continue;
-            }
-            QPluginLoader pluginLoader(pluginsDir.absoluteFilePath(fileName));
-            QObject *plugin = pluginLoader.instance();
-            if (plugin) {
-                QC_PluginInterface *pluginInterface = qobject_cast<QC_PluginInterface *>(plugin);
-                if (pluginInterface) {
-                    loadedPlugins.push_back(pluginInterface);
-                    loadedPluginFileNames.push_back(fileName);
-                    PluginCapabilities pluginCapabilities=pluginInterface->getCapabilities();
-                    for(const PluginMenuLocation& loc: pluginCapabilities.menuEntryPoints) {
-                        QAction *actpl = new QAction(loc.menuEntryActionName, plugin);
-                        actpl->setData(loc.menuEntryActionName);
-                        connect(actpl, SIGNAL(triggered()), this, SLOT(execPlug()));
-                        connect(this, SIGNAL(windowsChanged(bool)), actpl, SLOT(setEnabled(bool)));
-                        QMenu *atMenu = findMenu("/"+loc.menuEntryPoint, menuBar()->children(), "");
-                        if (atMenu) {
-                            atMenu->addAction(actpl);
-                        } else {
-                            QStringList treemenu = loc.menuEntryPoint.split('/', QString::SkipEmptyParts);
-                            QString currentLevel="";
-                            QMenu *parentMenu=0;
-                            do {
-                                QString menuName=treemenu.at(0); treemenu.removeFirst();
-                                currentLevel=currentLevel+"/"+menuName;
-                                atMenu = findMenu(currentLevel, menuBar()->children(), "");
-                                if (atMenu==0) {
-                                    if (parentMenu==0) {
-                                        parentMenu=menuBar()->addMenu(menuName);
-                                    } else {
-                                        parentMenu=parentMenu->addMenu(menuName);
-                                    }
-                                    parentMenu->setObjectName(menuName);
-                                }
-                            } while(treemenu.size()>0);
-							if (parentMenu) parentMenu->addAction(actpl);
-                        }
-                    }
-                }
-            } else {
-                QMessageBox::information(this, "Info", pluginLoader.errorString());
-                RS_DEBUG->print("QC_ApplicationWindow::loadPlugin: %s", pluginLoader.errorString().toLatin1().data());
-            }
-        }
-    }
-}
 
 /**
  * Execute the plugin.
@@ -1498,6 +1388,44 @@ void QC_ApplicationWindow::slotUpdateActiveLayer()
  */
 void QC_ApplicationWindow::initSettings()
 {
+    setWindowFlags(Qt::FramelessWindowHint | Qt::WindowSystemMenuHint | Qt::WindowMinMaxButtonsHint);
+    qApp->installEventFilter(this);                   //给自己加事件过滤器,用来实现拖动窗口
+    ui->stackedWidget->setCurrentIndex(0);
+    ui->stackedWidget_2->setCurrentIndex(1);
+    ui->stackedWidget_3->setCurrentIndex(0);
+    ui->tabWidget->setCurrentIndex(1);
+    ui->stackedWidget_4->setStyleSheet(QString::fromUtf8("#stackedWidget_4{border:1px solid rgb(52, 62, 79)}"));
+   
+    QRegularExpressionValidator* alnumValidator = new QRegularExpressionValidator(
+        QRegularExpression("^[A-Za-z0-9]*$"),  // 正则表达式
+        this                                   // 父对象
+    );
+
+    // 应用到所有自定义字段
+    ui->lineEdit_4->setValidator(alnumValidator);
+    ui->lineEdit_5->setValidator(alnumValidator);
+    ui->lineEdit_6->setValidator(alnumValidator);
+    ui->lineEdit_7->setValidator(alnumValidator);
+    ui->lineEdit_8->setValidator(alnumValidator);
+    ui->lineEdit_9->setValidator(alnumValidator);
+
+    ui->lineEdit->setFocusPolicy(Qt::NoFocus);
+    ui->lineEdit_3->setFocusPolicy(Qt::NoFocus);
+    ui->zdybutton->setIcon(QIcon("Resources/PICs/close2.png"));
+    ui->zdybutton->setIconSize(QSize(31, 31));
+    ui->zdybutton->setText(QString::fromLocal8Bit("关闭 "));
+    ui->zdybutton->setToolButtonStyle(Qt::ToolButtonTextBesideIcon);
+    ui->zdybutton_3->setIcon(QIcon("Resources/PICs/close2.png"));
+    ui->zdybutton_3->setIconSize(QSize(31, 31));
+    ui->zdybutton_3->setText(QString::fromLocal8Bit("关闭 "));
+    ui->zdybutton_3->setToolButtonStyle(Qt::ToolButtonTextBesideIcon);
+
+    ui->zdybutton_2->setEnabled(true);
+
+    SelectDB_Jgconfig();
+    ui->lineEdit_15->setText(QString::number(jgconfig.interpolationStep));//设置插值步长
+
+   
     RS_DEBUG->print("QC_ApplicationWindow::initSettings()");
 
     QSettings settings;
@@ -2116,15 +2044,11 @@ void QC_ApplicationWindow::slotSnapsChanged(RS_SnapMode snaps) {
 
 QC_MDIWindow* QC_ApplicationWindow::slotFileNew(RS_Document* doc) {
 
-    RS_DEBUG->print("QC_ApplicationWindow::slotFileNew() begin");
+   
 
     QSettings settings;
     static int id = 0;
     id++;
-
-    statusBar()->showMessage(tr("Creating new file..."));
-
-    RS_DEBUG->print("  creating MDI window");
 
     QC_MDIWindow* w = new QC_MDIWindow(doc, mdiAreaCAD, 0);
 
@@ -2139,9 +2063,9 @@ QC_MDIWindow* QC_ApplicationWindow::slotFileNew(RS_Document* doc) {
     flags |= Qt::FramelessWindowHint;   // 无边框窗口
     w->setWindowFlags(flags);
    
-    RS_SETTINGS->beginGroup("/Appearance");
+   RS_SETTINGS->beginGroup("/Appearance");
     int aa = RS_SETTINGS->readNumEntry("/Antialiasing", 0);
-    int scrollbars = RS_SETTINGS->readNumEntry("/ScrollBars", 1);
+    //int scrollbars = RS_SETTINGS->readNumEntry("/ScrollBars", 0);
     int cursor_hiding = RS_SETTINGS->readNumEntry("/cursor_hiding", 0);
     RS_SETTINGS->endGroup();
 
@@ -2150,9 +2074,9 @@ QC_MDIWindow* QC_ApplicationWindow::slotFileNew(RS_Document* doc) {
     view->setAntialiasing(aa);
     view->setCursorHiding(cursor_hiding);
     view->device = settings.value("Hardware/Device", "Mouse").toString();
-    if (scrollbars) view->addScrollbars();
+    //if (scrollbars) view->addScrollbars();
 
-    settings.beginGroup("Activators");
+   /* settings.beginGroup("Activators");
     auto activators = settings.childKeys();
     settings.endGroup();
 
@@ -2168,7 +2092,7 @@ QC_MDIWindow* QC_ApplicationWindow::slotFileNew(RS_Document* doc) {
             menu->addAction(a_map[key]);
         }
         view->setMenu(activator, menu);
-    }
+    }*/
 
    
     actionHandler->set_view(view);
@@ -2214,29 +2138,21 @@ QC_MDIWindow* QC_ApplicationWindow::slotFileNew(RS_Document* doc) {
         // Link the block list to the block widget
         graphic->addBlockListListener(blockWidget);
     }
-	// Link the dialog factory to the coordinate widget:
-	//if( coordinateWidget){
-	//	coordinateWidget->setGraphic(graphic );
-	//}
-	// Link the dialog factory to the mouse widget:
+	
 	QG_DIALOGFACTORY->setMouseWidget(mouseWidget);
-	//QG_DIALOGFACTORY->setCoordinateWidget(coordinateWidget);
+	
 	QG_DIALOGFACTORY->setSelectionWidget(selectionWidget);
-	// Link the dialog factory to the option widget:
-	//QG_DIALOGFACTORY->setOptionWidget(optionWidget);
-	// Link the dialog factory to the command widget:
+	
 	QG_DIALOGFACTORY->setCommandWidget(commandWidget);
 
     mdiAreaCAD->addSubWindow(w);
 
-    RS_DEBUG->print("  showing MDI window");
+  
 	doActivate(w);
 	doArrangeWindows(RS2::CurrentMode);
-    statusBar()->showMessage(tr("New Drawing created."), 2000);
-
+    w->getDocument()->getGraphic()->setGridOn(false);
+    w->getGraphicView()->redraw();
     layerWidget->activateLayer(0);
-
-    RS_DEBUG->print("QC_ApplicationWindow::slotFileNew() OK");
 
     return w;
 }
@@ -4367,72 +4283,6 @@ QC_MDIWindow* QC_ApplicationWindow::getWindowWithDoc(const RS_Document* doc)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 											   下面是Ocrdemo中的代码
 */
-
-
-
-
-//设置主界面QSS样式表
-void QC_ApplicationWindow::SetQSS()
-{
- 
-    setWindowFlags(Qt::FramelessWindowHint | Qt::WindowSystemMenuHint | Qt::WindowMinMaxButtonsHint);
-    qApp->installEventFilter(this);                   //给自己加事件过滤器,用来实现拖动窗口
-  /*  mtextlowerLeftx = 0;
-    mtextlowerLefty = 0;
-    mtexttotalWidth = 1920;
-    mtexttotalHeight = 1200;
-    SetROISimple(mtexttotalWidth, mtexttotalHeight, mtextlowerLeftx, mtextlowerLefty);*/
-   
-    ui->stackedWidget->setCurrentIndex(0);
-    ui->stackedWidget_2->setCurrentIndex(1);
-    ui->stackedWidget_3->setCurrentIndex(0);
-    ui->tabWidget->setCurrentIndex(1);
-    ui->stackedWidget_4->setStyleSheet(QString::fromUtf8("#stackedWidget_4{border:1px solid rgb(52, 62, 79)}"));
-    // 禁用所有工具栏动作
-    //foreach(QToolBar * toolbar, findChildren<QToolBar*>()) {
-    //    foreach(QAction * action, toolbar->actions()) {
-    //        action->setEnabled(false);  // 禁用单个动作
-    //    }
-    //    toolbar->setStyleSheet("QToolBar { background: #f0f0f0; }"); // 视觉灰化
-    //}
-    QRegularExpressionValidator* alnumValidator = new QRegularExpressionValidator(
-        QRegularExpression("^[A-Za-z0-9]*$"),  // 正则表达式
-        this                                   // 父对象
-    );
-
-    // 应用到所有自定义字段
-    ui->lineEdit_4->setValidator(alnumValidator);
-    ui->lineEdit_5->setValidator(alnumValidator);
-    ui->lineEdit_6->setValidator(alnumValidator);
-    ui->lineEdit_7->setValidator(alnumValidator);
-    ui->lineEdit_8->setValidator(alnumValidator);
-    ui->lineEdit_9->setValidator(alnumValidator);
-
-    //ui->toolButton_3->setStyleSheet("background-color:  #87CEEB;");
-    //ui->toolButton_14->setStyleSheet("background-color:  #87CEEB;");
- 
-
-  
-    ui->lineEdit->setFocusPolicy(Qt::NoFocus);
-    ui->lineEdit_3->setFocusPolicy(Qt::NoFocus);
-    ui->zdybutton->setIcon(QIcon("Resources/PICs/close2.png"));
-    ui->zdybutton->setIconSize(QSize(31, 31));
-    ui->zdybutton->setText(QString::fromLocal8Bit("关闭 "));
-    ui->zdybutton->setToolButtonStyle(Qt::ToolButtonTextBesideIcon);
-    ui->zdybutton_3->setIcon(QIcon("Resources/PICs/close2.png"));
-    ui->zdybutton_3->setIconSize(QSize(31, 31));
-    ui->zdybutton_3->setText(QString::fromLocal8Bit("关闭 "));
-    ui->zdybutton_3->setToolButtonStyle(Qt::ToolButtonTextBesideIcon);
-
-    ui->zdybutton_2->setEnabled(true);
-
-    SelectDB_Jgconfig();
-    ui->lineEdit_15->setText(QString::number(jgconfig.interpolationStep));//设置插值步长
-  
-  
-}
-
-
 
 
 

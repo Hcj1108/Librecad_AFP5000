@@ -1453,24 +1453,42 @@ QToolButton:pressed {
          </widget>
         </widget>
         <widget class="QWidget" name="page_10">
-         <widget class="QToolButton" name="toolButton_6">
+         <widget class="QGroupBox" name="groupBox_12">
           <property name="geometry">
            <rect>
-            <x>40</x>
-            <y>70</y>
-            <width>211</width>
-            <height>121</height>
+            <x>10</x>
+            <y>10</y>
+            <width>281</width>
+            <height>91</height>
            </rect>
           </property>
           <property name="font">
            <font>
             <family>微软雅黑</family>
             <pointsize>12</pointsize>
-            <bold>true</bold>
            </font>
           </property>
-          <property name="styleSheet">
-           <string notr="true"> QToolButton {
+          <property name="title">
+           <string>检测设置</string>
+          </property>
+          <widget class="QToolButton" name="toolButton_6">
+           <property name="geometry">
+            <rect>
+             <x>10</x>
+             <y>30</y>
+             <width>110</width>
+             <height>40</height>
+            </rect>
+           </property>
+           <property name="font">
+            <font>
+             <family>微软雅黑</family>
+             <pointsize>9</pointsize>
+             <bold>true</bold>
+            </font>
+           </property>
+           <property name="styleSheet">
+            <string notr="true"> QToolButton {
         opacity: 1;
  		border: none;
 }
@@ -1483,42 +1501,42 @@ QToolButton:pressed {
     border: 1px solid #37474F; /* 深色边框模拟阴影 */
 }
 </string>
-          </property>
-          <property name="text">
-           <string>日期模式</string>
-          </property>
-          <property name="icon">
-           <iconset resource="OCRdemo.qrc">
-            <normaloff>:/PIC/Resources/PICs/rl.png</normaloff>:/PIC/Resources/PICs/rl.png</iconset>
-          </property>
-          <property name="iconSize">
-           <size>
-            <width>80</width>
-            <height>80</height>
-           </size>
-          </property>
-          <property name="toolButtonStyle">
-           <enum>Qt::ToolButtonStyle::ToolButtonTextUnderIcon</enum>
-          </property>
-         </widget>
-         <widget class="QToolButton" name="toolButton_9">
-          <property name="geometry">
-           <rect>
-            <x>50</x>
-            <y>310</y>
-            <width>211</width>
-            <height>131</height>
-           </rect>
-          </property>
-          <property name="font">
-           <font>
-            <family>微软雅黑</family>
-            <pointsize>12</pointsize>
-            <bold>true</bold>
-           </font>
-          </property>
-          <property name="styleSheet">
-           <string notr="true"> QToolButton {
+           </property>
+           <property name="text">
+            <string>日期模式</string>
+           </property>
+           <property name="icon">
+            <iconset resource="OCRdemo.qrc">
+             <normaloff>:/PIC/Resources/PICs/rl.png</normaloff>:/PIC/Resources/PICs/rl.png</iconset>
+           </property>
+           <property name="iconSize">
+            <size>
+             <width>40</width>
+             <height>40</height>
+            </size>
+           </property>
+           <property name="toolButtonStyle">
+            <enum>Qt::ToolButtonStyle::ToolButtonTextBesideIcon</enum>
+           </property>
+          </widget>
+          <widget class="QToolButton" name="toolButton_9">
+           <property name="geometry">
+            <rect>
+             <x>140</x>
+             <y>30</y>
+             <width>110</width>
+             <height>40</height>
+            </rect>
+           </property>
+           <property name="font">
+            <font>
+             <family>微软雅黑</family>
+             <pointsize>8</pointsize>
+             <bold>true</bold>
+            </font>
+           </property>
+           <property name="styleSheet">
+            <string notr="true"> QToolButton {
         opacity: 1;
  		border: none;
 }
@@ -1531,31 +1549,97 @@ QToolButton:pressed {
     border: 1px solid #37474F; /* 深色边框模拟阴影 */
 }
 </string>
-          </property>
-          <property name="text">
-           <string>自定义</string>
-          </property>
-          <property name="icon">
-           <iconset resource="OCRdemo.qrc">
-            <normaloff>:/PIC/Resources/PICs/A2.png</normaloff>:/PIC/Resources/PICs/A2.png</iconset>
-          </property>
-          <property name="iconSize">
-           <size>
-            <width>80</width>
-            <height>80</height>
-           </size>
-          </property>
-          <property name="toolButtonStyle">
-           <enum>Qt::ToolButtonStyle::ToolButtonTextUnderIcon</enum>
-          </property>
+           </property>
+           <property name="text">
+            <string>自定义</string>
+           </property>
+           <property name="icon">
+            <iconset resource="OCRdemo.qrc">
+             <normaloff>:/PIC/Resources/PICs/A2.png</normaloff>:/PIC/Resources/PICs/A2.png</iconset>
+           </property>
+           <property name="iconSize">
+            <size>
+             <width>40</width>
+             <height>40</height>
+            </size>
+           </property>
+           <property name="toolButtonStyle">
+            <enum>Qt::ToolButtonStyle::ToolButtonTextBesideIcon</enum>
+           </property>
+          </widget>
          </widget>
-        </widget>
-        <widget class="QWidget" name="page_12">
+         <widget class="QGroupBox" name="groupBox_13">
+          <property name="geometry">
+           <rect>
+            <x>10</x>
+            <y>240</y>
+            <width>281</width>
+            <height>91</height>
+           </rect>
+          </property>
+          <property name="font">
+           <font>
+            <family>微软雅黑</family>
+            <pointsize>12</pointsize>
+           </font>
+          </property>
+          <property name="title">
+           <string>图像设置</string>
+          </property>
+          <widget class="QToolButton" name="toolButton_7">
+           <property name="geometry">
+            <rect>
+             <x>10</x>
+             <y>30</y>
+             <width>110</width>
+             <height>40</height>
+            </rect>
+           </property>
+           <property name="font">
+            <font>
+             <family>微软雅黑</family>
+             <pointsize>8</pointsize>
+             <bold>true</bold>
+            </font>
+           </property>
+           <property name="styleSheet">
+            <string notr="true"> QToolButton {
+        opacity: 1;
+ 		border: none;
+}
+/* 按下状态 */
+QToolButton:pressed {
+   background-color: #546E7A; /* 深石板灰 */
+    background-image: none;
+    padding-top: 12px;
+    padding-bottom: 8px;
+    border: 1px solid #37474F; /* 深色边框模拟阴影 */
+}
+</string>
+           </property>
+           <property name="text">
+            <string>图像调整</string>
+           </property>
+           <property name="icon">
+            <iconset resource="OCRdemo.qrc">
+             <normaloff>:/PIC/Resources/PICs/Bianji.png</normaloff>:/PIC/Resources/PICs/Bianji.png</iconset>
+           </property>
+           <property name="iconSize">
+            <size>
+             <width>40</width>
+             <height>40</height>
+            </size>
+           </property>
+           <property name="toolButtonStyle">
+            <enum>Qt::ToolButtonStyle::ToolButtonTextBesideIcon</enum>
+           </property>
+          </widget>
+         </widget>
          <widget class="QGroupBox" name="groupBox_4">
           <property name="geometry">
            <rect>
             <x>10</x>
-            <y>315</y>
+            <y>130</y>
             <width>281</width>
             <height>91</height>
            </rect>
@@ -1669,6 +1753,8 @@ QToolButton:pressed {
            </property>
           </widget>
          </widget>
+        </widget>
+        <widget class="QWidget" name="page_12">
          <widget class="QGroupBox" name="groupBox_8">
           <property name="geometry">
            <rect>
@@ -1838,7 +1924,7 @@ QToolButton:pressed {
             <enum>Qt::ToolButtonStyle::ToolButtonTextBesideIcon</enum>
            </property>
           </widget>
-          <widget class="QToolButton" name="toolButton_7">
+          <widget class="QToolButton" name="toolButton_16">
            <property name="geometry">
             <rect>
              <x>140</x>
@@ -1870,11 +1956,11 @@ QToolButton:pressed {
 </string>
            </property>
            <property name="text">
-            <string>图像调整</string>
+            <string>设备状态</string>
            </property>
            <property name="icon">
             <iconset resource="OCRdemo.qrc">
-             <normaloff>:/PIC/Resources/PICs/Bianji.png</normaloff>:/PIC/Resources/PICs/Bianji.png</iconset>
+             <normaloff>:/PIC/Resources/PICs/XTZT.png</normaloff>:/PIC/Resources/PICs/XTZT.png</iconset>
            </property>
            <property name="iconSize">
             <size>
@@ -1891,7 +1977,7 @@ QToolButton:pressed {
           <property name="geometry">
            <rect>
             <x>10</x>
-            <y>160</y>
+            <y>180</y>
             <width>281</width>
             <height>141</height>
            </rect>
@@ -2007,8 +2093,8 @@ QToolButton:pressed {
           <widget class="QToolButton" name="toolButton_30">
            <property name="geometry">
             <rect>
-             <x>140</x>
-             <y>80</y>
+             <x>10</x>
+             <y>90</y>
              <width>110</width>
              <height>40</height>
             </rect>
@@ -2052,60 +2138,12 @@ QToolButton:pressed {
             <enum>Qt::ToolButtonStyle::ToolButtonTextBesideIcon</enum>
            </property>
           </widget>
-          <widget class="QToolButton" name="toolButton_16">
-           <property name="geometry">
-            <rect>
-             <x>10</x>
-             <y>80</y>
-             <width>110</width>
-             <height>40</height>
-            </rect>
-           </property>
-           <property name="font">
-            <font>
-             <family>微软雅黑</family>
-             <pointsize>8</pointsize>
-             <bold>true</bold>
-            </font>
-           </property>
-           <property name="styleSheet">
-            <string notr="true"> QToolButton {
-        opacity: 1;
- 		border: none;
-}
-/* 按下状态 */
-QToolButton:pressed {
-   background-color: #546E7A; /* 深石板灰 */
-    background-image: none;
-    padding-top: 12px;
-    padding-bottom: 8px;
-    border: 1px solid #37474F; /* 深色边框模拟阴影 */
-}
-</string>
-           </property>
-           <property name="text">
-            <string>设备状态</string>
-           </property>
-           <property name="icon">
-            <iconset resource="OCRdemo.qrc">
-             <normaloff>:/PIC/Resources/PICs/XTZT.png</normaloff>:/PIC/Resources/PICs/XTZT.png</iconset>
-           </property>
-           <property name="iconSize">
-            <size>
-             <width>40</width>
-             <height>40</height>
-            </size>
-           </property>
-           <property name="toolButtonStyle">
-            <enum>Qt::ToolButtonStyle::ToolButtonTextBesideIcon</enum>
-           </property>
-          </widget>
          </widget>
          <widget class="QGroupBox" name="groupBox_11">
           <property name="geometry">
            <rect>
             <x>10</x>
-            <y>420</y>
+            <y>350</y>
             <width>281</width>
             <height>91</height>
            </rect>

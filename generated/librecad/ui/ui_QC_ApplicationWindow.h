@@ -94,22 +94,24 @@ public:
     QLabel *label_28;
     QLineEdit *lineEdit_12;
     QWidget *page_10;
+    QGroupBox *groupBox_12;
     QToolButton *toolButton_6;
     QToolButton *toolButton_9;
-    QWidget *page_12;
+    QGroupBox *groupBox_13;
+    QToolButton *toolButton_7;
     QGroupBox *groupBox_4;
     QToolButton *toolButton_2;
     QToolButton *toolButton_4;
+    QWidget *page_12;
     QGroupBox *groupBox_8;
     QToolButton *toolButton_12;
     QToolButton *toolButton_13;
     QToolButton *toolButton_5;
-    QToolButton *toolButton_7;
+    QToolButton *toolButton_16;
     QGroupBox *groupBox_9;
     QToolButton *toolButton_33;
     QToolButton *toolButton_25;
     QToolButton *toolButton_30;
-    QToolButton *toolButton_16;
     QGroupBox *groupBox_11;
     QToolButton *toolButton_11;
     QToolButton *toolButton_14;
@@ -802,10 +804,14 @@ public:
         stackedWidget_2->addWidget(page_6);
         page_10 = new QWidget();
         page_10->setObjectName(QString::fromUtf8("page_10"));
-        toolButton_6 = new QToolButton(page_10);
+        groupBox_12 = new QGroupBox(page_10);
+        groupBox_12->setObjectName(QString::fromUtf8("groupBox_12"));
+        groupBox_12->setGeometry(QRect(10, 10, 281, 91));
+        groupBox_12->setFont(font9);
+        toolButton_6 = new QToolButton(groupBox_12);
         toolButton_6->setObjectName(QString::fromUtf8("toolButton_6"));
-        toolButton_6->setGeometry(QRect(40, 70, 211, 121));
-        toolButton_6->setFont(font5);
+        toolButton_6->setGeometry(QRect(10, 30, 110, 40));
+        toolButton_6->setFont(font2);
         toolButton_6->setStyleSheet(QString::fromUtf8(" QToolButton {\n"
 "        opacity: 1;\n"
 " 		border: none;\n"
@@ -820,12 +826,12 @@ public:
 "}\n"
 ""));
         toolButton_6->setIcon(icon16);
-        toolButton_6->setIconSize(QSize(80, 80));
-        toolButton_6->setToolButtonStyle(Qt::ToolButtonStyle::ToolButtonTextUnderIcon);
-        toolButton_9 = new QToolButton(page_10);
+        toolButton_6->setIconSize(QSize(40, 40));
+        toolButton_6->setToolButtonStyle(Qt::ToolButtonStyle::ToolButtonTextBesideIcon);
+        toolButton_9 = new QToolButton(groupBox_12);
         toolButton_9->setObjectName(QString::fromUtf8("toolButton_9"));
-        toolButton_9->setGeometry(QRect(50, 310, 211, 131));
-        toolButton_9->setFont(font5);
+        toolButton_9->setGeometry(QRect(140, 30, 110, 40));
+        toolButton_9->setFont(font4);
         toolButton_9->setStyleSheet(QString::fromUtf8(" QToolButton {\n"
 "        opacity: 1;\n"
 " 		border: none;\n"
@@ -840,14 +846,37 @@ public:
 "}\n"
 ""));
         toolButton_9->setIcon(icon15);
-        toolButton_9->setIconSize(QSize(80, 80));
-        toolButton_9->setToolButtonStyle(Qt::ToolButtonStyle::ToolButtonTextUnderIcon);
-        stackedWidget_2->addWidget(page_10);
-        page_12 = new QWidget();
-        page_12->setObjectName(QString::fromUtf8("page_12"));
-        groupBox_4 = new QGroupBox(page_12);
+        toolButton_9->setIconSize(QSize(40, 40));
+        toolButton_9->setToolButtonStyle(Qt::ToolButtonStyle::ToolButtonTextBesideIcon);
+        groupBox_13 = new QGroupBox(page_10);
+        groupBox_13->setObjectName(QString::fromUtf8("groupBox_13"));
+        groupBox_13->setGeometry(QRect(10, 240, 281, 91));
+        groupBox_13->setFont(font9);
+        toolButton_7 = new QToolButton(groupBox_13);
+        toolButton_7->setObjectName(QString::fromUtf8("toolButton_7"));
+        toolButton_7->setGeometry(QRect(10, 30, 110, 40));
+        toolButton_7->setFont(font4);
+        toolButton_7->setStyleSheet(QString::fromUtf8(" QToolButton {\n"
+"        opacity: 1;\n"
+" 		border: none;\n"
+"}\n"
+"/* \346\214\211\344\270\213\347\212\266\346\200\201 */\n"
+"QToolButton:pressed {\n"
+"   background-color: #546E7A; /* \346\267\261\347\237\263\346\235\277\347\201\260 */\n"
+"    background-image: none;\n"
+"    padding-top: 12px;\n"
+"    padding-bottom: 8px;\n"
+"    border: 1px solid #37474F; /* \346\267\261\350\211\262\350\276\271\346\241\206\346\250\241\346\213\237\351\230\264\345\275\261 */\n"
+"}\n"
+""));
+        QIcon icon17;
+        icon17.addFile(QString::fromUtf8(":/PIC/Resources/PICs/Bianji.png"), QSize(), QIcon::Normal, QIcon::Off);
+        toolButton_7->setIcon(icon17);
+        toolButton_7->setIconSize(QSize(40, 40));
+        toolButton_7->setToolButtonStyle(Qt::ToolButtonStyle::ToolButtonTextBesideIcon);
+        groupBox_4 = new QGroupBox(page_10);
         groupBox_4->setObjectName(QString::fromUtf8("groupBox_4"));
-        groupBox_4->setGeometry(QRect(10, 315, 281, 91));
+        groupBox_4->setGeometry(QRect(10, 130, 281, 91));
         groupBox_4->setFont(font9);
         groupBox_4->setStyleSheet(QString::fromUtf8(""));
         toolButton_2 = new QToolButton(groupBox_4);
@@ -867,9 +896,9 @@ public:
 "    border: 1px solid #37474F; /* \346\267\261\350\211\262\350\276\271\346\241\206\346\250\241\346\213\237\351\230\264\345\275\261 */\n"
 "}\n"
 ""));
-        QIcon icon17;
-        icon17.addFile(QString::fromUtf8(":/PIC/Resources/PICs/Anquan.png"), QSize(), QIcon::Normal, QIcon::Off);
-        toolButton_2->setIcon(icon17);
+        QIcon icon18;
+        icon18.addFile(QString::fromUtf8(":/PIC/Resources/PICs/Anquan.png"), QSize(), QIcon::Normal, QIcon::Off);
+        toolButton_2->setIcon(icon18);
         toolButton_2->setIconSize(QSize(40, 40));
         toolButton_2->setToolButtonStyle(Qt::ToolButtonStyle::ToolButtonTextBesideIcon);
         toolButton_4 = new QToolButton(groupBox_4);
@@ -889,11 +918,14 @@ public:
 "    border: 1px solid #37474F; /* \346\267\261\350\211\262\350\276\271\346\241\206\346\250\241\346\213\237\351\230\264\345\275\261 */\n"
 "}\n"
 ""));
-        QIcon icon18;
-        icon18.addFile(QString::fromUtf8(":/PIC/Resources/PICs/XYZ.png"), QSize(), QIcon::Normal, QIcon::Off);
-        toolButton_4->setIcon(icon18);
+        QIcon icon19;
+        icon19.addFile(QString::fromUtf8(":/PIC/Resources/PICs/XYZ.png"), QSize(), QIcon::Normal, QIcon::Off);
+        toolButton_4->setIcon(icon19);
         toolButton_4->setIconSize(QSize(40, 40));
         toolButton_4->setToolButtonStyle(Qt::ToolButtonStyle::ToolButtonTextBesideIcon);
+        stackedWidget_2->addWidget(page_10);
+        page_12 = new QWidget();
+        page_12->setObjectName(QString::fromUtf8("page_12"));
         groupBox_8 = new QGroupBox(page_12);
         groupBox_8->setObjectName(QString::fromUtf8("groupBox_8"));
         groupBox_8->setGeometry(QRect(10, 10, 281, 141));
@@ -916,9 +948,9 @@ public:
 "    border: 1px solid #37474F; /* \346\267\261\350\211\262\350\276\271\346\241\206\346\250\241\346\213\237\351\230\264\345\275\261 */\n"
 "}\n"
 ""));
-        QIcon icon19;
-        icon19.addFile(QString::fromUtf8(":/PIC/Resources/PICs/jiaocheng.png"), QSize(), QIcon::Normal, QIcon::Off);
-        toolButton_12->setIcon(icon19);
+        QIcon icon20;
+        icon20.addFile(QString::fromUtf8(":/PIC/Resources/PICs/jiaocheng.png"), QSize(), QIcon::Normal, QIcon::Off);
+        toolButton_12->setIcon(icon20);
         toolButton_12->setIconSize(QSize(40, 40));
         toolButton_12->setToolButtonStyle(Qt::ToolButtonStyle::ToolButtonTextBesideIcon);
         toolButton_13 = new QToolButton(groupBox_8);
@@ -938,9 +970,9 @@ public:
 "    border: 1px solid #37474F; /* \346\267\261\350\211\262\350\276\271\346\241\206\346\250\241\346\213\237\351\230\264\345\275\261 */\n"
 "}\n"
 ""));
-        QIcon icon20;
-        icon20.addFile(QString::fromUtf8(":/PIC/Resources/PICs/Rizhi.png"), QSize(), QIcon::Normal, QIcon::Off);
-        toolButton_13->setIcon(icon20);
+        QIcon icon21;
+        icon21.addFile(QString::fromUtf8(":/PIC/Resources/PICs/Rizhi.png"), QSize(), QIcon::Normal, QIcon::Off);
+        toolButton_13->setIcon(icon21);
         toolButton_13->setIconSize(QSize(40, 40));
         toolButton_13->setToolButtonStyle(Qt::ToolButtonStyle::ToolButtonTextBesideIcon);
         toolButton_5 = new QToolButton(groupBox_8);
@@ -960,16 +992,16 @@ public:
 "    border: 1px solid #37474F; /* \346\267\261\350\211\262\350\276\271\346\241\206\346\250\241\346\213\237\351\230\264\345\275\261 */\n"
 "}\n"
 ""));
-        QIcon icon21;
-        icon21.addFile(QString::fromUtf8(":/PIC/Resources/PICs/NGTP.png"), QSize(), QIcon::Normal, QIcon::Off);
-        toolButton_5->setIcon(icon21);
+        QIcon icon22;
+        icon22.addFile(QString::fromUtf8(":/PIC/Resources/PICs/NGTP.png"), QSize(), QIcon::Normal, QIcon::Off);
+        toolButton_5->setIcon(icon22);
         toolButton_5->setIconSize(QSize(40, 40));
         toolButton_5->setToolButtonStyle(Qt::ToolButtonStyle::ToolButtonTextBesideIcon);
-        toolButton_7 = new QToolButton(groupBox_8);
-        toolButton_7->setObjectName(QString::fromUtf8("toolButton_7"));
-        toolButton_7->setGeometry(QRect(140, 80, 110, 40));
-        toolButton_7->setFont(font4);
-        toolButton_7->setStyleSheet(QString::fromUtf8(" QToolButton {\n"
+        toolButton_16 = new QToolButton(groupBox_8);
+        toolButton_16->setObjectName(QString::fromUtf8("toolButton_16"));
+        toolButton_16->setGeometry(QRect(140, 80, 110, 40));
+        toolButton_16->setFont(font4);
+        toolButton_16->setStyleSheet(QString::fromUtf8(" QToolButton {\n"
 "        opacity: 1;\n"
 " 		border: none;\n"
 "}\n"
@@ -982,14 +1014,14 @@ public:
 "    border: 1px solid #37474F; /* \346\267\261\350\211\262\350\276\271\346\241\206\346\250\241\346\213\237\351\230\264\345\275\261 */\n"
 "}\n"
 ""));
-        QIcon icon22;
-        icon22.addFile(QString::fromUtf8(":/PIC/Resources/PICs/Bianji.png"), QSize(), QIcon::Normal, QIcon::Off);
-        toolButton_7->setIcon(icon22);
-        toolButton_7->setIconSize(QSize(40, 40));
-        toolButton_7->setToolButtonStyle(Qt::ToolButtonStyle::ToolButtonTextBesideIcon);
+        QIcon icon23;
+        icon23.addFile(QString::fromUtf8(":/PIC/Resources/PICs/XTZT.png"), QSize(), QIcon::Normal, QIcon::Off);
+        toolButton_16->setIcon(icon23);
+        toolButton_16->setIconSize(QSize(40, 40));
+        toolButton_16->setToolButtonStyle(Qt::ToolButtonStyle::ToolButtonTextBesideIcon);
         groupBox_9 = new QGroupBox(page_12);
         groupBox_9->setObjectName(QString::fromUtf8("groupBox_9"));
-        groupBox_9->setGeometry(QRect(10, 160, 281, 141));
+        groupBox_9->setGeometry(QRect(10, 180, 281, 141));
         groupBox_9->setFont(font9);
         groupBox_9->setStyleSheet(QString::fromUtf8(""));
         toolButton_33 = new QToolButton(groupBox_9);
@@ -1009,9 +1041,9 @@ public:
 "    border: 1px solid #37474F; /* \346\267\261\350\211\262\350\276\271\346\241\206\346\250\241\346\213\237\351\230\264\345\275\261 */\n"
 "}\n"
 ""));
-        QIcon icon23;
-        icon23.addFile(QString::fromUtf8(":/PNG/Resources/PNG/DYTZ.png"), QSize(), QIcon::Normal, QIcon::Off);
-        toolButton_33->setIcon(icon23);
+        QIcon icon24;
+        icon24.addFile(QString::fromUtf8(":/PNG/Resources/PNG/DYTZ.png"), QSize(), QIcon::Normal, QIcon::Off);
+        toolButton_33->setIcon(icon24);
         toolButton_33->setIconSize(QSize(40, 40));
         toolButton_33->setToolButtonStyle(Qt::ToolButtonStyle::ToolButtonTextBesideIcon);
         toolButton_25 = new QToolButton(groupBox_9);
@@ -1031,14 +1063,14 @@ public:
 "    border: 1px solid #37474F; /* \346\267\261\350\211\262\350\276\271\346\241\206\346\250\241\346\213\237\351\230\264\345\275\261 */\n"
 "}\n"
 ""));
-        QIcon icon24;
-        icon24.addFile(QString::fromUtf8(":/PIC/Resources/PICs/\344\273\273\345\212\241.png"), QSize(), QIcon::Normal, QIcon::Off);
-        toolButton_25->setIcon(icon24);
+        QIcon icon25;
+        icon25.addFile(QString::fromUtf8(":/PIC/Resources/PICs/\344\273\273\345\212\241.png"), QSize(), QIcon::Normal, QIcon::Off);
+        toolButton_25->setIcon(icon25);
         toolButton_25->setIconSize(QSize(40, 40));
         toolButton_25->setToolButtonStyle(Qt::ToolButtonStyle::ToolButtonTextBesideIcon);
         toolButton_30 = new QToolButton(groupBox_9);
         toolButton_30->setObjectName(QString::fromUtf8("toolButton_30"));
-        toolButton_30->setGeometry(QRect(140, 80, 110, 40));
+        toolButton_30->setGeometry(QRect(10, 90, 110, 40));
         toolButton_30->setFont(font4);
         toolButton_30->setStyleSheet(QString::fromUtf8(" QToolButton {\n"
 "        opacity: 1;\n"
@@ -1053,36 +1085,14 @@ public:
 "    border: 1px solid #37474F; /* \346\267\261\350\211\262\350\276\271\346\241\206\346\250\241\346\213\237\351\230\264\345\275\261 */\n"
 "}\n"
 ""));
-        QIcon icon25;
-        icon25.addFile(QString::fromUtf8(":/PNG/Resources/PNG/YHGL.png"), QSize(), QIcon::Normal, QIcon::Off);
-        toolButton_30->setIcon(icon25);
+        QIcon icon26;
+        icon26.addFile(QString::fromUtf8(":/PNG/Resources/PNG/YHGL.png"), QSize(), QIcon::Normal, QIcon::Off);
+        toolButton_30->setIcon(icon26);
         toolButton_30->setIconSize(QSize(45, 45));
         toolButton_30->setToolButtonStyle(Qt::ToolButtonStyle::ToolButtonTextBesideIcon);
-        toolButton_16 = new QToolButton(groupBox_9);
-        toolButton_16->setObjectName(QString::fromUtf8("toolButton_16"));
-        toolButton_16->setGeometry(QRect(10, 80, 110, 40));
-        toolButton_16->setFont(font4);
-        toolButton_16->setStyleSheet(QString::fromUtf8(" QToolButton {\n"
-"        opacity: 1;\n"
-" 		border: none;\n"
-"}\n"
-"/* \346\214\211\344\270\213\347\212\266\346\200\201 */\n"
-"QToolButton:pressed {\n"
-"   background-color: #546E7A; /* \346\267\261\347\237\263\346\235\277\347\201\260 */\n"
-"    background-image: none;\n"
-"    padding-top: 12px;\n"
-"    padding-bottom: 8px;\n"
-"    border: 1px solid #37474F; /* \346\267\261\350\211\262\350\276\271\346\241\206\346\250\241\346\213\237\351\230\264\345\275\261 */\n"
-"}\n"
-""));
-        QIcon icon26;
-        icon26.addFile(QString::fromUtf8(":/PIC/Resources/PICs/XTZT.png"), QSize(), QIcon::Normal, QIcon::Off);
-        toolButton_16->setIcon(icon26);
-        toolButton_16->setIconSize(QSize(40, 40));
-        toolButton_16->setToolButtonStyle(Qt::ToolButtonStyle::ToolButtonTextBesideIcon);
         groupBox_11 = new QGroupBox(page_12);
         groupBox_11->setObjectName(QString::fromUtf8("groupBox_11"));
-        groupBox_11->setGeometry(QRect(10, 420, 281, 91));
+        groupBox_11->setGeometry(QRect(10, 350, 281, 91));
         groupBox_11->setFont(font9);
         toolButton_11 = new QToolButton(groupBox_11);
         toolButton_11->setObjectName(QString::fromUtf8("toolButton_11"));
@@ -1841,8 +1851,11 @@ public:
         label_26->setText(QCoreApplication::translate("QC_ApplicationWindow", "\344\277\235\350\264\250\346\227\245\346\234\237\357\274\232", nullptr));
         label_28->setText(QCoreApplication::translate("QC_ApplicationWindow", "\351\242\235\345\244\226\344\273\243\347\240\201\357\274\232", nullptr));
         tabWidget->setTabText(tabWidget->indexOf(tab_2), QCoreApplication::translate("QC_ApplicationWindow", "\346\227\245\346\234\237\346\243\200\346\265\213", nullptr));
+        groupBox_12->setTitle(QCoreApplication::translate("QC_ApplicationWindow", "\346\243\200\346\265\213\350\256\276\347\275\256", nullptr));
         toolButton_6->setText(QCoreApplication::translate("QC_ApplicationWindow", "\346\227\245\346\234\237\346\250\241\345\274\217", nullptr));
         toolButton_9->setText(QCoreApplication::translate("QC_ApplicationWindow", "\350\207\252\345\256\232\344\271\211", nullptr));
+        groupBox_13->setTitle(QCoreApplication::translate("QC_ApplicationWindow", "\345\233\276\345\203\217\350\256\276\347\275\256", nullptr));
+        toolButton_7->setText(QCoreApplication::translate("QC_ApplicationWindow", "\345\233\276\345\203\217\350\260\203\346\225\264", nullptr));
         groupBox_4->setTitle(QCoreApplication::translate("QC_ApplicationWindow", "\344\273\277\347\234\237", nullptr));
         toolButton_2->setText(QCoreApplication::translate("QC_ApplicationWindow", "\344\273\277\347\234\237", nullptr));
         toolButton_4->setText(QCoreApplication::translate("QC_ApplicationWindow", "\344\270\213\344\270\200\345\274\240", nullptr));
@@ -1853,12 +1866,11 @@ public:
         toolButton_5->setToolTip(QCoreApplication::translate("QC_ApplicationWindow", "NG\345\233\276\347\211\207", nullptr));
 #endif // QT_CONFIG(tooltip)
         toolButton_5->setText(QCoreApplication::translate("QC_ApplicationWindow", "NG\345\233\276\347\211\207", nullptr));
-        toolButton_7->setText(QCoreApplication::translate("QC_ApplicationWindow", "\345\233\276\345\203\217\350\260\203\346\225\264", nullptr));
+        toolButton_16->setText(QCoreApplication::translate("QC_ApplicationWindow", "\350\256\276\345\244\207\347\212\266\346\200\201", nullptr));
         groupBox_9->setTitle(QCoreApplication::translate("QC_ApplicationWindow", "\350\277\220\350\241\214\350\256\276\345\256\232", nullptr));
         toolButton_33->setText(QCoreApplication::translate("QC_ApplicationWindow", "\346\211\223\345\215\260\345\217\202\346\225\260", nullptr));
         toolButton_25->setText(QCoreApplication::translate("QC_ApplicationWindow", "\346\243\200\346\265\213\345\217\202\346\225\260", nullptr));
         toolButton_30->setText(QCoreApplication::translate("QC_ApplicationWindow", "\347\224\250\346\210\267\346\235\203\351\231\220", nullptr));
-        toolButton_16->setText(QCoreApplication::translate("QC_ApplicationWindow", "\350\256\276\345\244\207\347\212\266\346\200\201", nullptr));
         groupBox_11->setTitle(QCoreApplication::translate("QC_ApplicationWindow", "\351\205\215\346\226\271\347\256\241\347\220\206", nullptr));
         toolButton_11->setText(QCoreApplication::translate("QC_ApplicationWindow", "\346\226\260\345\273\272\344\273\273\345\212\241", nullptr));
         toolButton_14->setText(QCoreApplication::translate("QC_ApplicationWindow", "\351\205\215\346\226\271\347\256\241\347\220\206", nullptr));

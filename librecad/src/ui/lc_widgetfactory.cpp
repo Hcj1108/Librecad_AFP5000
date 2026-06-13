@@ -624,9 +624,9 @@ void LC_WidgetFactory::createMenus(QMenuBar* menu_bar)
 
     // <[~ Plugins ~]>
 
-    QMenu* plugins_menu = new QMenu(QC_ApplicationWindow::tr("Pl&ugins"), menu_bar);
+    /*QMenu* plugins_menu = new QMenu(QC_ApplicationWindow::tr("Pl&ugins"), menu_bar);
     plugins_menu->setObjectName("plugins_menu");
-    plugins_menu->setTearOffEnabled(true);
+    plugins_menu->setTearOffEnabled(true);*/
 
     // <[~ View ~]>
 
@@ -902,10 +902,10 @@ void LC_WidgetFactory::createMenus(QMenuBar* menu_bar)
     menu_bar->addMenu(settings_menu);
     menu_bar->addMenu(edit_menu);
     menu_bar->addMenu(view_menu);
-    menu_bar->addMenu(plugins_menu);
+    //menu_bar->addMenu(plugins_menu);
     menu_bar->addMenu(widgets_menu);
     menu_bar->addMenu(windows_menu);
-    menu_bar->addMenu(help_menu);
+    //menu_bar->addMenu(help_menu);
     menu_bar->addMenu(tools_menu);
 
 
