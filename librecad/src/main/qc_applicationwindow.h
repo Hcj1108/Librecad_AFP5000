@@ -159,13 +159,14 @@ OCRdemo模块导入区域
 #include "SimpleBarChart.h"         // 简单柱状图
 #include "rollingbox.h"             // 滚动条部件日期选择器
 #include "Logger.h"                 // 日志查看器
-
+#include "OcrFilterRules.h"       // OCR过滤规则界面
 
 #include "PlaceholderPositionManager.h" // 占位符位置管理器
 #include "BinaryDataListener.h"
 #include "fileuilts.h"              // 文件工具类，处理文件操作
 #include "EntityMover.h"           // 实体移动工具类
 #include "PathSender.h"           // 路径点发送类
+
 
 using namespace std;  // 使用标准命名空间
 
@@ -234,6 +235,8 @@ public:
     Logger loggerView;               // 日志查看器
     AddScheme addscheme;             //新建配方界面
     AlterScheme alterscheme;         //修改配方界面
+    OcrFilterRules ocrFilterRules;   //ocr检测内容设置
+
     // 定时器（用于各种定时任务）
     QTimer* TimerLongPressSub = new QTimer(this);      // 长按计时器1
     QTimer* TimerLongPressSub2 = new QTimer(this);     // 长按计时器2
@@ -352,8 +355,7 @@ public:
     void processImageAndControls();         //处理图像缩放、报警控制和运行模式
     void processBinaryData(const QBitArray& bits, const QHostAddress& sender, quint16 port);//处理接收到的二进制数据
     void CustomModeButtonClicked();         //自定义模式按钮点击事件
-    void clearCustomFields();               //清除自定义字段内容
-    void saveCustomFields();                //保存自定义字段内容
+    void saveCustomFields();                //保存检测字段内容
     void showOCRResults();                  //显示OCR识别结果
     void onTabWidgetPageChanged(int index);   //处理工具箱页面切换
     // 方案管理

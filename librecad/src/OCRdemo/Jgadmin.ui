@@ -49,8 +49,8 @@
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">QGroupBox{font: bold 14px &quot;Microsoft YaHei&quot;; color: #2c3e50; border: 1px solid #dcdde1; border-radius: 8px; margin-top: 12px; padding-top: 16px; background: #ffffff;}
-QGroupBox::title{subcontrol-origin: margin; left: 12px; padding: 0 6px;}</string>
+        <string notr="true">QGroupBox{font: bold 14px &quot;Microsoft YaHei&quot;; color: #2c3e50; border: 1px solid #e0e0e0; border-radius: 8px; margin-top: 14px; padding-top: 18px; background: #ffffff;}
+QGroupBox::title{subcontrol-origin: margin; left: 12px; padding: 4px 12px; background: #3498db; color: white; border-radius: 4px;}</string>
        </property>
        <property name="title">
         <string>流水线设置</string>
@@ -337,8 +337,8 @@ QGroupBox::title{subcontrol-origin: margin; left: 12px; padding: 0 6px;}</string
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">QGroupBox{font: bold 14px &quot;Microsoft YaHei&quot;; color: #2c3e50; border: 1px solid #dcdde1; border-radius: 8px; margin-top: 12px; padding-top: 16px; background: #ffffff;}
-QGroupBox::title{subcontrol-origin: margin; left: 12px; padding: 0 6px;}</string>
+        <string notr="true">QGroupBox{font: bold 14px &quot;Microsoft YaHei&quot;; color: #2c3e50; border: 1px solid #e0e0e0; border-radius: 8px; margin-top: 14px; padding-top: 18px; background: #ffffff;}
+QGroupBox::title{subcontrol-origin: margin; left: 12px; padding: 4px 12px; background: #3498db; color: white; border-radius: 4px;}</string>
        </property>
        <property name="title">
         <string>喷码参数</string>
@@ -663,8 +663,8 @@ QGroupBox::title{subcontrol-origin: margin; left: 12px; padding: 0 6px;}</string
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">QGroupBox{font: bold 14px &quot;Microsoft YaHei&quot;; color: #2c3e50; border: 1px solid #dcdde1; border-radius: 8px; margin-top: 12px; padding-top: 16px; background: #ffffff;}
-QGroupBox::title{subcontrol-origin: margin; left: 12px; padding: 0 6px;}</string>
+        <string notr="true">QGroupBox{font: bold 14px &quot;Microsoft YaHei&quot;; color: #2c3e50; border: 1px solid #e0e0e0; border-radius: 8px; margin-top: 14px; padding-top: 18px; background: #ffffff;}
+QGroupBox::title{subcontrol-origin: margin; left: 12px; padding: 4px 12px; background: #3498db; color: white; border-radius: 4px;}</string>
        </property>
        <property name="title">
         <string>触发优化</string>

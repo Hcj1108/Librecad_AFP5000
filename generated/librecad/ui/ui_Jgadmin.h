@@ -100,8 +100,8 @@ public:
         font.setBold(true);
         font.setItalic(false);
         groupBox_2->setFont(font);
-        groupBox_2->setStyleSheet(QString::fromUtf8("QGroupBox{font: bold 14px \"Microsoft YaHei\"; color: #2c3e50; border: 1px solid #dcdde1; border-radius: 8px; margin-top: 12px; padding-top: 16px; background: #ffffff;}\n"
-"QGroupBox::title{subcontrol-origin: margin; left: 12px; padding: 0 6px;}"));
+        groupBox_2->setStyleSheet(QString::fromUtf8("QGroupBox{font: bold 14px \"Microsoft YaHei\"; color: #2c3e50; border: 1px solid #e0e0e0; border-radius: 8px; margin-top: 14px; padding-top: 18px; background: #ffffff;}\n"
+"QGroupBox::title{subcontrol-origin: margin; left: 12px; padding: 4px 12px; background: #3498db; color: white; border-radius: 4px;}"));
         lineLayout = new QFormLayout(groupBox_2);
         lineLayout->setObjectName(QString::fromUtf8("lineLayout"));
         lineLayout->setHorizontalSpacing(10);
@@ -216,8 +216,8 @@ public:
         groupBox = new QGroupBox(JgadminClass);
         groupBox->setObjectName(QString::fromUtf8("groupBox"));
         groupBox->setFont(font);
-        groupBox->setStyleSheet(QString::fromUtf8("QGroupBox{font: bold 14px \"Microsoft YaHei\"; color: #2c3e50; border: 1px solid #dcdde1; border-radius: 8px; margin-top: 12px; padding-top: 16px; background: #ffffff;}\n"
-"QGroupBox::title{subcontrol-origin: margin; left: 12px; padding: 0 6px;}"));
+        groupBox->setStyleSheet(QString::fromUtf8("QGroupBox{font: bold 14px \"Microsoft YaHei\"; color: #2c3e50; border: 1px solid #e0e0e0; border-radius: 8px; margin-top: 14px; padding-top: 18px; background: #ffffff;}\n"
+"QGroupBox::title{subcontrol-origin: margin; left: 12px; padding: 4px 12px; background: #3498db; color: white; border-radius: 4px;}"));
         sprayLayout = new QFormLayout(groupBox);
         sprayLayout->setObjectName(QString::fromUtf8("sprayLayout"));
         sprayLayout->setHorizontalSpacing(10);
@@ -348,8 +348,8 @@ public:
         groupBox_3 = new QGroupBox(JgadminClass);
         groupBox_3->setObjectName(QString::fromUtf8("groupBox_3"));
         groupBox_3->setFont(font);
-        groupBox_3->setStyleSheet(QString::fromUtf8("QGroupBox{font: bold 14px \"Microsoft YaHei\"; color: #2c3e50; border: 1px solid #dcdde1; border-radius: 8px; margin-top: 12px; padding-top: 16px; background: #ffffff;}\n"
-"QGroupBox::title{subcontrol-origin: margin; left: 12px; padding: 0 6px;}"));
+        groupBox_3->setStyleSheet(QString::fromUtf8("QGroupBox{font: bold 14px \"Microsoft YaHei\"; color: #2c3e50; border: 1px solid #e0e0e0; border-radius: 8px; margin-top: 14px; padding-top: 18px; background: #ffffff;}\n"
+"QGroupBox::title{subcontrol-origin: margin; left: 12px; padding: 4px 12px; background: #3498db; color: white; border-radius: 4px;}"));
         triggerLayout = new QFormLayout(groupBox_3);
         triggerLayout->setObjectName(QString::fromUtf8("triggerLayout"));
         triggerLayout->setHorizontalSpacing(10);

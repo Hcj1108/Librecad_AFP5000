@@ -11,6 +11,7 @@ D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\OCRdemo\Jgadmin.cpp;D:\DM\LibreCAD-2.4(Y
 D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\OCRdemo\Logger.cpp;D:\DM\LibreCAD-2.4(YitiJi)\generated\librecad\obj\Logger.obj
 D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\OCRdemo\LoginDialog.cpp;D:\DM\LibreCAD-2.4(YitiJi)\generated\librecad\obj\LoginDialog.obj
 D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\OCRdemo\mylabel.cpp;D:\DM\LibreCAD-2.4(YitiJi)\generated\librecad\obj\mylabel.obj
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\OCRdemo\OcrFilterRules.cpp;D:\DM\LibreCAD-2.4(YitiJi)\generated\librecad\obj\OcrFilterRules.obj
 D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\OCRdemo\OCRruning.cpp;D:\DM\LibreCAD-2.4(YitiJi)\generated\librecad\obj\OCRruning.obj
 D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\OCRdemo\PixelCorrector.cpp;D:\DM\LibreCAD-2.4(YitiJi)\generated\librecad\obj\PixelCorrector.obj
 D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\OCRdemo\rollingbox.cpp;D:\DM\LibreCAD-2.4(YitiJi)\generated\librecad\obj\rollingbox.obj
@@ -396,6 +397,7 @@ D:\DM\LibreCAD-2.4(YitiJi)\generated\librecad\moc\moc_ImageViewer.cpp;D:\DM\Libr
 D:\DM\LibreCAD-2.4(YitiJi)\generated\librecad\moc\moc_mylabel.cpp;D:\DM\LibreCAD-2.4(YitiJi)\generated\librecad\obj\moc_mylabel.obj
 D:\DM\LibreCAD-2.4(YitiJi)\generated\librecad\moc\moc_Logger.cpp;D:\DM\LibreCAD-2.4(YitiJi)\generated\librecad\obj\moc_Logger.obj
 D:\DM\LibreCAD-2.4(YitiJi)\generated\librecad\moc\moc_LoginDialog.cpp;D:\DM\LibreCAD-2.4(YitiJi)\generated\librecad\obj\moc_LoginDialog.obj
+D:\DM\LibreCAD-2.4(YitiJi)\generated\librecad\moc\moc_OcrFilterRules.cpp;D:\DM\LibreCAD-2.4(YitiJi)\generated\librecad\obj\moc_OcrFilterRules.obj
 D:\DM\LibreCAD-2.4(YitiJi)\generated\librecad\moc\moc_SimpleBarChart.cpp;D:\DM\LibreCAD-2.4(YitiJi)\generated\librecad\obj\moc_SimpleBarChart.obj
 D:\DM\LibreCAD-2.4(YitiJi)\generated\librecad\moc\moc_SenderBinUdp.cpp;D:\DM\LibreCAD-2.4(YitiJi)\generated\librecad\obj\moc_SenderBinUdp.obj
 D:\DM\LibreCAD-2.4(YitiJi)\generated\librecad\moc\moc_Simulator.cpp;D:\DM\LibreCAD-2.4(YitiJi)\generated\librecad\obj\moc_Simulator.obj

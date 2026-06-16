@@ -20,9 +20,7 @@
 #include <QtWidgets/QLineEdit>
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QMdiArea>
-#include <QtWidgets/QPushButton>
 #include <QtWidgets/QSpacerItem>
-#include <QtWidgets/QSpinBox>
 #include <QtWidgets/QStackedWidget>
 #include <QtWidgets/QTabWidget>
 #include <QtWidgets/QTextEdit>
@@ -47,8 +45,7 @@ public:
     QToolButton *toolButton_32;
     QToolButton *MIN;
     QToolButton *EXIT;
-    QStackedWidget *stackedWidget;
-    QWidget *page_2;
+    QWidget *widget;
     QStackedWidget *stackedWidget_2;
     QWidget *page_4;
     QGroupBox *groupBox_5;
@@ -75,7 +72,7 @@ public:
     QGraphicsView *graphicsView;
     QToolButton *toolButton_8;
     QTextEdit *textEdit;
-    QWidget *widget;
+    QWidget *widget1;
     QLabel *label_5;
     QLabel *label_21;
     QTabWidget *tabWidget;
@@ -131,7 +128,7 @@ public:
     QMdiArea *mdiArea;
     QWidget *page_8;
     QLabel *label_2;
-    QWidget *layoutWidget;
+    QToolButton *toolButton_15;
     QHBoxLayout *horizontalLayout;
     QToolButton *toolButton_26;
     QSpacerItem *horizontalSpacer;
@@ -142,55 +139,12 @@ public:
     QToolButton *toolButton_21;
     QSpacerItem *horizontalSpacer_4;
     QToolButton *toolButton_17;
-    QToolButton *toolButton_15;
-    QWidget *page_7;
-    QStackedWidget *stackedWidget_4;
-    QWidget *page;
-    QPushButton *pushButton_6;
-    QGroupBox *groupBox_3;
-    QLineEdit *lineEdit_4;
-    QLineEdit *lineEdit_6;
-    QLineEdit *lineEdit_5;
-    QLineEdit *lineEdit_7;
-    QLineEdit *lineEdit_8;
-    QPushButton *zdybutton_2;
-    QToolButton *zdybutton_3;
-    QWidget *stackedWidget_4Page1;
-    QGroupBox *groupBox;
-    QLabel *label_19;
-    QLabel *label_20;
-    QToolButton *toolButton_18;
-    QToolButton *toolButton_22;
-    QToolButton *toolButton_23;
-    QToolButton *toolButton_20;
-    QLabel *label_22;
-    QSpinBox *spinBox;
-    QLabel *label_23;
-    QToolButton *toolButton_24;
-    QToolButton *toolButton_29;
-    QSpinBox *spinBox_2;
-    QSpinBox *spinBox_3;
-    QLabel *label_29;
-    QLabel *label_30;
-    QLabel *label_31;
-    QPushButton *pushButton_5;
-    QGroupBox *groupBox_2;
-    QLabel *label_4;
-    QLabel *label_14;
-    QLabel *label_16;
-    QLineEdit *lineEdit;
-    QLineEdit *lineEdit_3;
-    QLineEdit *lineEdit_9;
-    QLabel *label_15;
-    QComboBox *comboBox_2;
-    QPushButton *pushButton_4;
-    QPushButton *pushButton_3;
 
     void setupUi(QMainWindow *QC_ApplicationWindow)
     {
         if (QC_ApplicationWindow->objectName().isEmpty())
             QC_ApplicationWindow->setObjectName(QString::fromUtf8("QC_ApplicationWindow"));
-        QC_ApplicationWindow->resize(1020, 750);
+        QC_ApplicationWindow->resize(1016, 702);
         QC_ApplicationWindow->setStyleSheet(QString::fromUtf8("background-color:rgb(220, 235, 240)"));
         centralwidget = new QWidget(QC_ApplicationWindow);
         centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
@@ -209,7 +163,7 @@ public:
 ""));
         label_6 = new QLabel(widget_3);
         label_6->setObjectName(QString::fromUtf8("label_6"));
-        label_6->setGeometry(QRect(400, 0, 191, 41));
+        label_6->setGeometry(QRect(430, 0, 191, 41));
         QFont font;
         font.setFamily(QString::fromUtf8("\345\215\216\346\226\207\344\270\255\345\256\213"));
         font.setPointSize(28);
@@ -310,12 +264,11 @@ public:
 
         verticalLayout->addLayout(horizontalLayout_3);
 
-        stackedWidget = new QStackedWidget(centralwidget);
-        stackedWidget->setObjectName(QString::fromUtf8("stackedWidget"));
-        stackedWidget->setStyleSheet(QString::fromUtf8("background-color:rgb(220, 235, 240);"));
-        page_2 = new QWidget();
-        page_2->setObjectName(QString::fromUtf8("page_2"));
-        stackedWidget_2 = new QStackedWidget(page_2);
+        widget = new QWidget(centralwidget);
+        widget->setObjectName(QString::fromUtf8("widget"));
+        widget->setMinimumSize(QSize(0, 600));
+        widget->setStyleSheet(QString::fromUtf8("background-color:rgb(220, 235, 240);"));
+        stackedWidget_2 = new QStackedWidget(widget);
         stackedWidget_2->setObjectName(QString::fromUtf8("stackedWidget_2"));
         stackedWidget_2->setGeometry(QRect(710, 0, 301, 531));
         stackedWidget_2->setStyleSheet(QString::fromUtf8("background-color:rgb(250, 250, 245);\n"
@@ -327,15 +280,20 @@ public:
         groupBox_5->setObjectName(QString::fromUtf8("groupBox_5"));
         groupBox_5->setGeometry(QRect(10, 10, 281, 201));
         QFont font3;
-        font3.setFamily(QString::fromUtf8("\345\276\256\350\275\257\351\233\205\351\273\221"));
-        font3.setPointSize(12);
-        font3.setBold(false);
+        font3.setFamily(QString::fromUtf8("Microsoft YaHei"));
+        font3.setBold(true);
+        font3.setItalic(false);
         groupBox_5->setFont(font3);
-        groupBox_5->setStyleSheet(QString::fromUtf8(""));
+        groupBox_5->setStyleSheet(QString::fromUtf8("QGroupBox{font: bold 14px \"Microsoft YaHei\"; color: #2c3e50; border: 1px solid #e0e0e0; border-radius: 8px; margin-top: 14px; padding-top: 18px; background: #ffffff;}\n"
+"QGroupBox::title{subcontrol-origin: margin; left: 12px; padding: 4px 12px; background: #3498db; color: white; border-radius: 4px;}"));
         label_32 = new QLabel(groupBox_5);
         label_32->setObjectName(QString::fromUtf8("label_32"));
         label_32->setGeometry(QRect(20, 30, 41, 30));
-        label_32->setFont(font3);
+        QFont font4;
+        font4.setFamily(QString::fromUtf8("\345\276\256\350\275\257\351\233\205\351\273\221"));
+        font4.setPointSize(12);
+        font4.setBold(false);
+        label_32->setFont(font4);
         lineEdit_15 = new QLineEdit(groupBox_5);
         lineEdit_15->setObjectName(QString::fromUtf8("lineEdit_15"));
         lineEdit_15->setGeometry(QRect(90, 30, 131, 30));
@@ -444,7 +402,8 @@ public:
         groupBox_7->setObjectName(QString::fromUtf8("groupBox_7"));
         groupBox_7->setGeometry(QRect(10, 230, 281, 91));
         groupBox_7->setFont(font3);
-        groupBox_7->setStyleSheet(QString::fromUtf8(""));
+        groupBox_7->setStyleSheet(QString::fromUtf8("QGroupBox{font: bold 14px \"Microsoft YaHei\"; color: #2c3e50; border: 1px solid #e0e0e0; border-radius: 8px; margin-top: 14px; padding-top: 18px; background: #ffffff;}\n"
+"QGroupBox::title{subcontrol-origin: margin; left: 12px; padding: 4px 12px; background: #3498db; color: white; border-radius: 4px;}"));
         horizontalLayoutWidget = new QWidget(groupBox_7);
         horizontalLayoutWidget->setObjectName(QString::fromUtf8("horizontalLayoutWidget"));
         horizontalLayoutWidget->setGeometry(QRect(10, 30, 261, 51));
@@ -453,11 +412,11 @@ public:
         horizontalLayout_2->setContentsMargins(0, 0, 0, 0);
         toolButton_44 = new QToolButton(horizontalLayoutWidget);
         toolButton_44->setObjectName(QString::fromUtf8("toolButton_44"));
-        QFont font4;
-        font4.setFamily(QString::fromUtf8("\345\276\256\350\275\257\351\233\205\351\273\221"));
-        font4.setPointSize(8);
-        font4.setBold(true);
-        toolButton_44->setFont(font4);
+        QFont font5;
+        font5.setFamily(QString::fromUtf8("\345\276\256\350\275\257\351\233\205\351\273\221"));
+        font5.setPointSize(8);
+        font5.setBold(true);
+        toolButton_44->setFont(font5);
         toolButton_44->setStyleSheet(QString::fromUtf8(" QToolButton {\n"
 "        opacity: 1;\n"
 " 		border: none;\n"
@@ -481,7 +440,7 @@ public:
 
         toolButton_43 = new QToolButton(horizontalLayoutWidget);
         toolButton_43->setObjectName(QString::fromUtf8("toolButton_43"));
-        toolButton_43->setFont(font4);
+        toolButton_43->setFont(font5);
         toolButton_43->setStyleSheet(QString::fromUtf8(" QToolButton {\n"
 "        opacity: 1;\n"
 " 		border: none;\n"
@@ -505,7 +464,7 @@ public:
 
         toolButton_45 = new QToolButton(horizontalLayoutWidget);
         toolButton_45->setObjectName(QString::fromUtf8("toolButton_45"));
-        toolButton_45->setFont(font4);
+        toolButton_45->setFont(font5);
         toolButton_45->setStyleSheet(QString::fromUtf8(" QToolButton {\n"
 "        opacity: 1;\n"
 " 		border: none;\n"
@@ -531,10 +490,12 @@ public:
         groupBox_10->setObjectName(QString::fromUtf8("groupBox_10"));
         groupBox_10->setGeometry(QRect(10, 340, 281, 141));
         groupBox_10->setFont(font3);
+        groupBox_10->setStyleSheet(QString::fromUtf8("QGroupBox{font: bold 14px \"Microsoft YaHei\"; color: #2c3e50; border: 1px solid #e0e0e0; border-radius: 8px; margin-top: 14px; padding-top: 18px; background: #ffffff;}\n"
+"QGroupBox::title{subcontrol-origin: margin; left: 12px; padding: 4px 12px; background: #3498db; color: white; border-radius: 4px;}"));
         moveDownBtn_2 = new QToolButton(groupBox_10);
         moveDownBtn_2->setObjectName(QString::fromUtf8("moveDownBtn_2"));
         moveDownBtn_2->setGeometry(QRect(10, 30, 111, 41));
-        moveDownBtn_2->setFont(font4);
+        moveDownBtn_2->setFont(font5);
         moveDownBtn_2->setStyleSheet(QString::fromUtf8(" QToolButton {\n"
 "        opacity: 1;\n"
 " 		border: none;\n"
@@ -558,7 +519,7 @@ public:
         moveDownBtn_3 = new QToolButton(groupBox_10);
         moveDownBtn_3->setObjectName(QString::fromUtf8("moveDownBtn_3"));
         moveDownBtn_3->setGeometry(QRect(150, 30, 111, 41));
-        moveDownBtn_3->setFont(font4);
+        moveDownBtn_3->setFont(font5);
         moveDownBtn_3->setStyleSheet(QString::fromUtf8(" QToolButton {\n"
 "        opacity: 1;\n"
 " 		border: none;\n"
@@ -582,7 +543,7 @@ public:
         toolButton_42 = new QToolButton(groupBox_10);
         toolButton_42->setObjectName(QString::fromUtf8("toolButton_42"));
         toolButton_42->setGeometry(QRect(10, 80, 111, 41));
-        toolButton_42->setFont(font4);
+        toolButton_42->setFont(font5);
         toolButton_42->setStyleSheet(QString::fromUtf8(" QToolButton {\n"
 "        opacity: 1;\n"
 " 		border: none;\n"
@@ -604,7 +565,7 @@ public:
         toolButton_46 = new QToolButton(groupBox_10);
         toolButton_46->setObjectName(QString::fromUtf8("toolButton_46"));
         toolButton_46->setGeometry(QRect(150, 80, 111, 41));
-        toolButton_46->setFont(font4);
+        toolButton_46->setFont(font5);
         toolButton_46->setStyleSheet(QString::fromUtf8(" QToolButton {\n"
 "        opacity: 1;\n"
 " 		border: none;\n"
@@ -629,15 +590,14 @@ public:
         groupBox_6 = new QGroupBox(page_6);
         groupBox_6->setObjectName(QString::fromUtf8("groupBox_6"));
         groupBox_6->setGeometry(QRect(10, 190, 281, 331));
-        QFont font5;
-        font5.setFamily(QString::fromUtf8("\345\276\256\350\275\257\351\233\205\351\273\221"));
-        font5.setPointSize(12);
-        font5.setBold(true);
-        groupBox_6->setFont(font5);
+        groupBox_6->setFont(font3);
+        groupBox_6->setStyleSheet(QString::fromUtf8("QGroupBox{font: bold 14px \"Microsoft YaHei\"; color: #2c3e50; border: 1px solid #e0e0e0; border-radius: 8px; margin-top: 14px; padding-top: 18px; background: #ffffff;}\n"
+"QGroupBox::title{subcontrol-origin: margin; left: 12px; padding: 4px 12px; background: #3498db; color: white; border-radius: 4px;}"));
         graphicsView = new QGraphicsView(groupBox_6);
         graphicsView->setObjectName(QString::fromUtf8("graphicsView"));
         graphicsView->setGeometry(QRect(10, 170, 251, 151));
-        graphicsView->setStyleSheet(QString::fromUtf8("background-color: #9e9e9e;\n"
+        graphicsView->setStyleSheet(QString::fromUtf8("/*background-color: #9e9e9e;*/\n"
+"background-color: #f0f0f0; \n"
 "opacity: 1; \n"
 "border: none;                  /* \346\240\270\345\277\203\357\274\232\345\216\273\346\216\211\346\211\200\346\234\211\350\276\271\346\241\206 */"));
         toolButton_8 = new QToolButton(groupBox_6);
@@ -663,16 +623,16 @@ public:
         font6.setFamily(QString::fromUtf8("\345\276\256\350\275\257\351\233\205\351\273\221"));
         font6.setPointSize(10);
         textEdit->setFont(font6);
-        textEdit->setStyleSheet(QString::fromUtf8("background-color: #9e9e9e;\n"
+        textEdit->setStyleSheet(QString::fromUtf8("background-color:  #f0f0f0; \n"
 "opacity: 1;\n"
 "border: none;                  /* \346\240\270\345\277\203\357\274\232\345\216\273\346\216\211\346\211\200\346\234\211\350\276\271\346\241\206 */"));
-        widget = new QWidget(groupBox_6);
-        widget->setObjectName(QString::fromUtf8("widget"));
-        widget->setGeometry(QRect(10, 40, 251, 31));
-        widget->setStyleSheet(QString::fromUtf8("background-color: #9e9e9e;\n"
+        widget1 = new QWidget(groupBox_6);
+        widget1->setObjectName(QString::fromUtf8("widget1"));
+        widget1->setGeometry(QRect(10, 40, 251, 31));
+        widget1->setStyleSheet(QString::fromUtf8("background-color: #f0f0f0; \n"
 "opacity: 1; \n"
 ""));
-        label_5 = new QLabel(widget);
+        label_5 = new QLabel(widget1);
         label_5->setObjectName(QString::fromUtf8("label_5"));
         label_5->setGeometry(QRect(0, 0, 111, 21));
         label_5->setFont(font6);
@@ -682,7 +642,7 @@ public:
 "opacity: 1;                    /* \344\277\235\346\214\201\344\270\215\351\200\217\346\230\216\345\272\246\344\270\2721\357\274\210\346\226\207\345\255\227\346\270\205\346\231\260\345\217\257\350\247\201\357\274\211 */\n"
 "border: none;                  /* \346\240\270\345\277\203\357\274\232\345\216\273\346\216\211\346\211\200\346\234\211\350\276\271\346\241\206 */\n"
 "border-radius: 0;              /* \345\216\273\346\216\211\345\234\206\350\247\222\357\274\214\345\246\202\346\236\234\351\234\200\350\246\201\345\234\206\350\247\222\345\217\257\344\273\245\346\224\271\346\210\220\346\257\224\345\246\202 5px */"));
-        label_21 = new QLabel(widget);
+        label_21 = new QLabel(widget1);
         label_21->setObjectName(QString::fromUtf8("label_21"));
         label_21->setGeometry(QRect(130, 0, 121, 21));
         QFont font7;
@@ -714,36 +674,40 @@ public:
         lineEdit_13->setObjectName(QString::fromUtf8("lineEdit_13"));
         lineEdit_13->setEnabled(false);
         lineEdit_13->setGeometry(QRect(5, 10, 151, 31));
-        lineEdit_13->setFont(font5);
+        QFont font9;
+        font9.setFamily(QString::fromUtf8("\345\276\256\350\275\257\351\233\205\351\273\221"));
+        font9.setPointSize(12);
+        font9.setBold(true);
+        lineEdit_13->setFont(font9);
         lineEdit_13->setStyleSheet(QString::fromUtf8(""));
         lineEdit_14 = new QLineEdit(tab);
         lineEdit_14->setObjectName(QString::fromUtf8("lineEdit_14"));
         lineEdit_14->setEnabled(false);
         lineEdit_14->setGeometry(QRect(5, 50, 151, 31));
-        lineEdit_14->setFont(font5);
+        lineEdit_14->setFont(font9);
         lineEdit_14->setStyleSheet(QString::fromUtf8(""));
         lineEdit_16 = new QLineEdit(tab);
         lineEdit_16->setObjectName(QString::fromUtf8("lineEdit_16"));
         lineEdit_16->setEnabled(false);
         lineEdit_16->setGeometry(QRect(5, 90, 151, 31));
-        lineEdit_16->setFont(font5);
+        lineEdit_16->setFont(font9);
         lineEdit_16->setStyleSheet(QString::fromUtf8(""));
         lineEdit_17 = new QLineEdit(tab);
         lineEdit_17->setObjectName(QString::fromUtf8("lineEdit_17"));
         lineEdit_17->setEnabled(false);
         lineEdit_17->setGeometry(QRect(180, 10, 81, 31));
-        lineEdit_17->setFont(font5);
+        lineEdit_17->setFont(font9);
         lineEdit_17->setStyleSheet(QString::fromUtf8(""));
         lineEdit_18 = new QLineEdit(tab);
         lineEdit_18->setObjectName(QString::fromUtf8("lineEdit_18"));
         lineEdit_18->setEnabled(false);
         lineEdit_18->setGeometry(QRect(180, 50, 81, 31));
-        lineEdit_18->setFont(font5);
+        lineEdit_18->setFont(font9);
         lineEdit_18->setStyleSheet(QString::fromUtf8(""));
         zdybutton = new QToolButton(tab);
         zdybutton->setObjectName(QString::fromUtf8("zdybutton"));
         zdybutton->setGeometry(QRect(180, 90, 81, 31));
-        zdybutton->setFont(font4);
+        zdybutton->setFont(font5);
         zdybutton->setStyleSheet(QString::fromUtf8(" QToolButton {\n"
 "        opacity: 1;\n"
 " 		border: none;\n"
@@ -768,35 +732,35 @@ public:
         label_25 = new QLabel(tab_2);
         label_25->setObjectName(QString::fromUtf8("label_25"));
         label_25->setGeometry(QRect(10, 10, 81, 31));
-        QFont font9;
-        font9.setFamily(QString::fromUtf8("\345\276\256\350\275\257\351\233\205\351\273\221"));
-        font9.setPointSize(12);
-        label_25->setFont(font9);
+        QFont font10;
+        font10.setFamily(QString::fromUtf8("\345\276\256\350\275\257\351\233\205\351\273\221"));
+        font10.setPointSize(12);
+        label_25->setFont(font10);
         lineEdit_2 = new QLineEdit(tab_2);
         lineEdit_2->setObjectName(QString::fromUtf8("lineEdit_2"));
         lineEdit_2->setEnabled(false);
         lineEdit_2->setGeometry(QRect(100, 10, 161, 31));
-        lineEdit_2->setFont(font3);
+        lineEdit_2->setFont(font4);
         lineEdit_2->setAlignment(Qt::AlignmentFlag::AlignCenter);
         label_26 = new QLabel(tab_2);
         label_26->setObjectName(QString::fromUtf8("label_26"));
         label_26->setGeometry(QRect(10, 50, 81, 31));
-        label_26->setFont(font9);
+        label_26->setFont(font10);
         lineEdit_10 = new QLineEdit(tab_2);
         lineEdit_10->setObjectName(QString::fromUtf8("lineEdit_10"));
         lineEdit_10->setEnabled(false);
         lineEdit_10->setGeometry(QRect(100, 50, 161, 31));
-        lineEdit_10->setFont(font3);
+        lineEdit_10->setFont(font4);
         lineEdit_10->setAlignment(Qt::AlignmentFlag::AlignCenter);
         label_28 = new QLabel(tab_2);
         label_28->setObjectName(QString::fromUtf8("label_28"));
         label_28->setGeometry(QRect(10, 90, 81, 31));
-        label_28->setFont(font9);
+        label_28->setFont(font10);
         lineEdit_12 = new QLineEdit(tab_2);
         lineEdit_12->setObjectName(QString::fromUtf8("lineEdit_12"));
         lineEdit_12->setEnabled(false);
         lineEdit_12->setGeometry(QRect(100, 90, 161, 31));
-        lineEdit_12->setFont(font3);
+        lineEdit_12->setFont(font4);
         lineEdit_12->setAlignment(Qt::AlignmentFlag::AlignCenter);
         QIcon icon16;
         icon16.addFile(QString::fromUtf8(":/PIC/Resources/PICs/rl.png"), QSize(), QIcon::Normal, QIcon::Off);
@@ -807,7 +771,9 @@ public:
         groupBox_12 = new QGroupBox(page_10);
         groupBox_12->setObjectName(QString::fromUtf8("groupBox_12"));
         groupBox_12->setGeometry(QRect(10, 10, 281, 91));
-        groupBox_12->setFont(font9);
+        groupBox_12->setFont(font3);
+        groupBox_12->setStyleSheet(QString::fromUtf8("QGroupBox{font: bold 14px \"Microsoft YaHei\"; color: #2c3e50; border: 1px solid #e0e0e0; border-radius: 8px; margin-top: 14px; padding-top: 18px; background: #ffffff;}\n"
+"QGroupBox::title{subcontrol-origin: margin; left: 12px; padding: 4px 12px; background: #3498db; color: white; border-radius: 4px;}"));
         toolButton_6 = new QToolButton(groupBox_12);
         toolButton_6->setObjectName(QString::fromUtf8("toolButton_6"));
         toolButton_6->setGeometry(QRect(10, 30, 110, 40));
@@ -831,7 +797,7 @@ public:
         toolButton_9 = new QToolButton(groupBox_12);
         toolButton_9->setObjectName(QString::fromUtf8("toolButton_9"));
         toolButton_9->setGeometry(QRect(140, 30, 110, 40));
-        toolButton_9->setFont(font4);
+        toolButton_9->setFont(font5);
         toolButton_9->setStyleSheet(QString::fromUtf8(" QToolButton {\n"
 "        opacity: 1;\n"
 " 		border: none;\n"
@@ -851,11 +817,13 @@ public:
         groupBox_13 = new QGroupBox(page_10);
         groupBox_13->setObjectName(QString::fromUtf8("groupBox_13"));
         groupBox_13->setGeometry(QRect(10, 240, 281, 91));
-        groupBox_13->setFont(font9);
+        groupBox_13->setFont(font3);
+        groupBox_13->setStyleSheet(QString::fromUtf8("QGroupBox{font: bold 14px \"Microsoft YaHei\"; color: #2c3e50; border: 1px solid #e0e0e0; border-radius: 8px; margin-top: 14px; padding-top: 18px; background: #ffffff;}\n"
+"QGroupBox::title{subcontrol-origin: margin; left: 12px; padding: 4px 12px; background: #3498db; color: white; border-radius: 4px;}"));
         toolButton_7 = new QToolButton(groupBox_13);
         toolButton_7->setObjectName(QString::fromUtf8("toolButton_7"));
         toolButton_7->setGeometry(QRect(10, 30, 110, 40));
-        toolButton_7->setFont(font4);
+        toolButton_7->setFont(font5);
         toolButton_7->setStyleSheet(QString::fromUtf8(" QToolButton {\n"
 "        opacity: 1;\n"
 " 		border: none;\n"
@@ -877,12 +845,13 @@ public:
         groupBox_4 = new QGroupBox(page_10);
         groupBox_4->setObjectName(QString::fromUtf8("groupBox_4"));
         groupBox_4->setGeometry(QRect(10, 130, 281, 91));
-        groupBox_4->setFont(font9);
-        groupBox_4->setStyleSheet(QString::fromUtf8(""));
+        groupBox_4->setFont(font3);
+        groupBox_4->setStyleSheet(QString::fromUtf8("QGroupBox{font: bold 14px \"Microsoft YaHei\"; color: #2c3e50; border: 1px solid #e0e0e0; border-radius: 8px; margin-top: 14px; padding-top: 18px; background: #ffffff;}\n"
+"QGroupBox::title{subcontrol-origin: margin; left: 12px; padding: 4px 12px; background: #3498db; color: white; border-radius: 4px;}"));
         toolButton_2 = new QToolButton(groupBox_4);
         toolButton_2->setObjectName(QString::fromUtf8("toolButton_2"));
         toolButton_2->setGeometry(QRect(10, 30, 110, 40));
-        toolButton_2->setFont(font4);
+        toolButton_2->setFont(font5);
         toolButton_2->setStyleSheet(QString::fromUtf8(" QToolButton {\n"
 "        opacity: 1;\n"
 " 		border: none;\n"
@@ -904,7 +873,7 @@ public:
         toolButton_4 = new QToolButton(groupBox_4);
         toolButton_4->setObjectName(QString::fromUtf8("toolButton_4"));
         toolButton_4->setGeometry(QRect(140, 30, 110, 40));
-        toolButton_4->setFont(font4);
+        toolButton_4->setFont(font5);
         toolButton_4->setStyleSheet(QString::fromUtf8(" QToolButton {\n"
 "        opacity: 1;\n"
 " 		border: none;\n"
@@ -930,11 +899,12 @@ public:
         groupBox_8->setObjectName(QString::fromUtf8("groupBox_8"));
         groupBox_8->setGeometry(QRect(10, 10, 281, 141));
         groupBox_8->setFont(font3);
-        groupBox_8->setStyleSheet(QString::fromUtf8(""));
+        groupBox_8->setStyleSheet(QString::fromUtf8("QGroupBox{font: bold 14px \"Microsoft YaHei\"; color: #2c3e50; border: 1px solid #e0e0e0; border-radius: 8px; margin-top: 14px; padding-top: 18px; background: #ffffff;}\n"
+"QGroupBox::title{subcontrol-origin: margin; left: 12px; padding: 4px 12px; background: #3498db; color: white; border-radius: 4px;}"));
         toolButton_12 = new QToolButton(groupBox_8);
         toolButton_12->setObjectName(QString::fromUtf8("toolButton_12"));
         toolButton_12->setGeometry(QRect(10, 30, 110, 40));
-        toolButton_12->setFont(font4);
+        toolButton_12->setFont(font5);
         toolButton_12->setStyleSheet(QString::fromUtf8(" QToolButton {\n"
 "        opacity: 1;\n"
 " 		border: none;\n"
@@ -956,7 +926,7 @@ public:
         toolButton_13 = new QToolButton(groupBox_8);
         toolButton_13->setObjectName(QString::fromUtf8("toolButton_13"));
         toolButton_13->setGeometry(QRect(140, 30, 110, 40));
-        toolButton_13->setFont(font4);
+        toolButton_13->setFont(font5);
         toolButton_13->setStyleSheet(QString::fromUtf8(" QToolButton {\n"
 "        opacity: 1;\n"
 " 		border: none;\n"
@@ -978,7 +948,7 @@ public:
         toolButton_5 = new QToolButton(groupBox_8);
         toolButton_5->setObjectName(QString::fromUtf8("toolButton_5"));
         toolButton_5->setGeometry(QRect(10, 80, 110, 40));
-        toolButton_5->setFont(font4);
+        toolButton_5->setFont(font5);
         toolButton_5->setStyleSheet(QString::fromUtf8(" QToolButton {\n"
 "        opacity: 1;\n"
 " 		border: none;\n"
@@ -1000,7 +970,7 @@ public:
         toolButton_16 = new QToolButton(groupBox_8);
         toolButton_16->setObjectName(QString::fromUtf8("toolButton_16"));
         toolButton_16->setGeometry(QRect(140, 80, 110, 40));
-        toolButton_16->setFont(font4);
+        toolButton_16->setFont(font5);
         toolButton_16->setStyleSheet(QString::fromUtf8(" QToolButton {\n"
 "        opacity: 1;\n"
 " 		border: none;\n"
@@ -1022,12 +992,13 @@ public:
         groupBox_9 = new QGroupBox(page_12);
         groupBox_9->setObjectName(QString::fromUtf8("groupBox_9"));
         groupBox_9->setGeometry(QRect(10, 180, 281, 141));
-        groupBox_9->setFont(font9);
-        groupBox_9->setStyleSheet(QString::fromUtf8(""));
+        groupBox_9->setFont(font3);
+        groupBox_9->setStyleSheet(QString::fromUtf8("QGroupBox{font: bold 14px \"Microsoft YaHei\"; color: #2c3e50; border: 1px solid #e0e0e0; border-radius: 8px; margin-top: 14px; padding-top: 18px; background: #ffffff;}\n"
+"QGroupBox::title{subcontrol-origin: margin; left: 12px; padding: 4px 12px; background: #3498db; color: white; border-radius: 4px;}"));
         toolButton_33 = new QToolButton(groupBox_9);
         toolButton_33->setObjectName(QString::fromUtf8("toolButton_33"));
         toolButton_33->setGeometry(QRect(10, 30, 110, 40));
-        toolButton_33->setFont(font4);
+        toolButton_33->setFont(font5);
         toolButton_33->setStyleSheet(QString::fromUtf8(" QToolButton {\n"
 "        opacity: 1;\n"
 " 		border: none;\n"
@@ -1049,7 +1020,7 @@ public:
         toolButton_25 = new QToolButton(groupBox_9);
         toolButton_25->setObjectName(QString::fromUtf8("toolButton_25"));
         toolButton_25->setGeometry(QRect(140, 30, 110, 40));
-        toolButton_25->setFont(font4);
+        toolButton_25->setFont(font5);
         toolButton_25->setStyleSheet(QString::fromUtf8(" QToolButton {\n"
 "        opacity: 1;\n"
 " 		border: none;\n"
@@ -1071,7 +1042,7 @@ public:
         toolButton_30 = new QToolButton(groupBox_9);
         toolButton_30->setObjectName(QString::fromUtf8("toolButton_30"));
         toolButton_30->setGeometry(QRect(10, 90, 110, 40));
-        toolButton_30->setFont(font4);
+        toolButton_30->setFont(font5);
         toolButton_30->setStyleSheet(QString::fromUtf8(" QToolButton {\n"
 "        opacity: 1;\n"
 " 		border: none;\n"
@@ -1093,11 +1064,13 @@ public:
         groupBox_11 = new QGroupBox(page_12);
         groupBox_11->setObjectName(QString::fromUtf8("groupBox_11"));
         groupBox_11->setGeometry(QRect(10, 350, 281, 91));
-        groupBox_11->setFont(font9);
+        groupBox_11->setFont(font3);
+        groupBox_11->setStyleSheet(QString::fromUtf8("QGroupBox{font: bold 14px \"Microsoft YaHei\"; color: #2c3e50; border: 1px solid #e0e0e0; border-radius: 8px; margin-top: 14px; padding-top: 18px; background: #ffffff;}\n"
+"QGroupBox::title{subcontrol-origin: margin; left: 12px; padding: 4px 12px; background: #3498db; color: white; border-radius: 4px;}"));
         toolButton_11 = new QToolButton(groupBox_11);
         toolButton_11->setObjectName(QString::fromUtf8("toolButton_11"));
         toolButton_11->setGeometry(QRect(10, 30, 110, 40));
-        toolButton_11->setFont(font4);
+        toolButton_11->setFont(font5);
         toolButton_11->setStyleSheet(QString::fromUtf8(" QToolButton {\n"
 "        opacity: 1;\n"
 " 		border: none;\n"
@@ -1119,7 +1092,7 @@ public:
         toolButton_14 = new QToolButton(groupBox_11);
         toolButton_14->setObjectName(QString::fromUtf8("toolButton_14"));
         toolButton_14->setGeometry(QRect(140, 30, 110, 40));
-        toolButton_14->setFont(font4);
+        toolButton_14->setFont(font5);
         toolButton_14->setStyleSheet(QString::fromUtf8(" QToolButton {\n"
 "        opacity: 1;\n"
 " 		border: none;\n"
@@ -1139,7 +1112,7 @@ public:
         toolButton_14->setIconSize(QSize(40, 40));
         toolButton_14->setToolButtonStyle(Qt::ToolButtonStyle::ToolButtonTextBesideIcon);
         stackedWidget_2->addWidget(page_12);
-        widget_2 = new QWidget(page_2);
+        widget_2 = new QWidget(widget);
         widget_2->setObjectName(QString::fromUtf8("widget_2"));
         widget_2->setGeometry(QRect(5, 0, 701, 41));
         widget_2->setStyleSheet(QString::fromUtf8("background-color: rgb(190, 190, 190); opacity: 1;\n"
@@ -1149,11 +1122,11 @@ public:
         toolButton = new QToolButton(widget_2);
         toolButton->setObjectName(QString::fromUtf8("toolButton"));
         toolButton->setGeometry(QRect(500, 0, 41, 41));
-        QFont font10;
-        font10.setFamily(QString::fromUtf8("\345\276\256\350\275\257\351\233\205\351\273\221"));
-        font10.setPointSize(13);
-        font10.setBold(true);
-        toolButton->setFont(font10);
+        QFont font11;
+        font11.setFamily(QString::fromUtf8("\345\276\256\350\275\257\351\233\205\351\273\221"));
+        font11.setPointSize(13);
+        font11.setBold(true);
+        toolButton->setFont(font11);
         toolButton->setStyleSheet(QString::fromUtf8("background-color: rgb(190, 190, 190); opacity: 1; border: none;\n"
 "border:none;\n"
 "background-color: qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 #dfd5cf, stop: 0.15 #acbbac, stop: 0.85 #acbbac,stop:1 #dfd5cf);\n"
@@ -1163,7 +1136,7 @@ public:
         toolButton_35 = new QToolButton(widget_2);
         toolButton_35->setObjectName(QString::fromUtf8("toolButton_35"));
         toolButton_35->setGeometry(QRect(600, 0, 41, 41));
-        toolButton_35->setFont(font10);
+        toolButton_35->setFont(font11);
         toolButton_35->setStyleSheet(QString::fromUtf8("background-color: rgb(190, 190, 190); opacity: 1; border: none;\n"
 "\n"
 "background-color: qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 #dfd5cf, stop: 0.15 #acbbac, stop: 0.85 #acbbac,stop:1 #dfd5cf);\n"
@@ -1182,7 +1155,7 @@ public:
         toolButton_34 = new QToolButton(widget_2);
         toolButton_34->setObjectName(QString::fromUtf8("toolButton_34"));
         toolButton_34->setGeometry(QRect(650, 0, 41, 41));
-        toolButton_34->setFont(font4);
+        toolButton_34->setFont(font5);
         toolButton_34->setStyleSheet(QString::fromUtf8("background-color: rgb(190, 190, 190); opacity: 1; border: none;\n"
 "border:none;\n"
 "background-color: qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 #dfd5cf, stop: 0.15 #acbbac, stop: 0.85 #acbbac,stop:1 #dfd5cf);\n"
@@ -1207,7 +1180,7 @@ public:
         toolButton_3->setIcon(icon31);
         toolButton_3->setIconSize(QSize(25, 25));
         toolButton_3->setToolButtonStyle(Qt::ToolButtonStyle::ToolButtonIconOnly);
-        timg2 = new QToolButton(page_2);
+        timg2 = new QToolButton(widget);
         timg2->setObjectName(QString::fromUtf8("timg2"));
         timg2->setGeometry(QRect(555, 150, 151, 110));
         timg2->setStyleSheet(QString::fromUtf8("background-color: rgb(0,0,0); \n"
@@ -1220,7 +1193,7 @@ public:
 "    stop:0.85 #1A1A1A,    \n"
 "    stop:1 #3C3C3C        \n"
 ");*/"));
-        timg1 = new QToolButton(page_2);
+        timg1 = new QToolButton(widget);
         timg1->setObjectName(QString::fromUtf8("timg1"));
         timg1->setGeometry(QRect(555, 40, 151, 110));
         timg1->setStyleSheet(QString::fromUtf8("\n"
@@ -1234,7 +1207,7 @@ public:
 "    stop:0.85 #1A1A1A,    \n"
 "    stop:1 #3C3C3C        \n"
 ");*/"));
-        timg3 = new QToolButton(page_2);
+        timg3 = new QToolButton(widget);
         timg3->setObjectName(QString::fromUtf8("timg3"));
         timg3->setGeometry(QRect(555, 260, 151, 110));
         timg3->setStyleSheet(QString::fromUtf8("background-color: rgb(0,0,0); \n"
@@ -1247,7 +1220,7 @@ public:
 "    stop:0.85 #1A1A1A,    \n"
 "    stop:1 #3C3C3C        \n"
 ");*/"));
-        timg4 = new QToolButton(page_2);
+        timg4 = new QToolButton(widget);
         timg4->setObjectName(QString::fromUtf8("timg4"));
         timg4->setGeometry(QRect(555, 370, 151, 110));
         timg4->setStyleSheet(QString::fromUtf8("background-color: rgb(0,0,0); \n"
@@ -1261,7 +1234,7 @@ public:
 "    stop:1 #3C3C3C        \n"
 ");*/"));
         timg4->setToolButtonStyle(Qt::ToolButtonStyle::ToolButtonIconOnly);
-        timg5 = new QToolButton(page_2);
+        timg5 = new QToolButton(widget);
         timg5->setObjectName(QString::fromUtf8("timg5"));
         timg5->setGeometry(QRect(555, 480, 151, 111));
         timg5->setStyleSheet(QString::fromUtf8("background-color: rgb(0,0,0); \n"
@@ -1274,7 +1247,7 @@ public:
 "    stop:0.85 #1A1A1A,    \n"
 "    stop:1 #3C3C3C        \n"
 ");*/"));
-        stackedWidget_3 = new QStackedWidget(page_2);
+        stackedWidget_3 = new QStackedWidget(widget);
         stackedWidget_3->setObjectName(QString::fromUtf8("stackedWidget_3"));
         stackedWidget_3->setGeometry(QRect(5, 40, 551, 551));
         page_5 = new QWidget();
@@ -1296,14 +1269,49 @@ public:
         label_2->setScaledContents(false);
         label_2->setAlignment(Qt::AlignmentFlag::AlignCenter);
         stackedWidget_3->addWidget(page_8);
-        layoutWidget = new QWidget(page_2);
-        layoutWidget->setObjectName(QString::fromUtf8("layoutWidget"));
-        layoutWidget->setGeometry(QRect(0, 600, 1020, 66));
-        horizontalLayout = new QHBoxLayout(layoutWidget);
+        toolButton_15 = new QToolButton(widget);
+        toolButton_15->setObjectName(QString::fromUtf8("toolButton_15"));
+        toolButton_15->setGeometry(QRect(790, 540, 134, 54));
+        toolButton_15->setMinimumSize(QSize(134, 54));
+        toolButton_15->setFont(font8);
+        toolButton_15->setStyleSheet(QString::fromUtf8("/* \346\214\211\344\270\213\347\212\266\346\200\201 */\n"
+"QToolButton:pressed {\n"
+"   background-color: #546E7A; /* \346\267\261\347\237\263\346\235\277\347\201\260 */\n"
+"    background-image: none;\n"
+"    padding-top: 12px;\n"
+"    padding-bottom: 8px;\n"
+"    border: 1px solid #37474F; /* \346\267\261\350\211\262\350\276\271\346\241\206\346\250\241\346\213\237\351\230\264\345\275\261 */\n"
+"}\n"
+" QToolButton {\n"
+"        background-color: rgb(255, 255, 255);\n"
+"        opacity: 1;\n"
+"        border-radius: 15px;  \n"
+"        border: 2px solid #4CAF50;\n"
+"        padding: 5px 15px;\n"
+"        min-width: 100px;\n"
+"        min-height: 40px;\n"
+"		\n"
+"		\n"
+"      }\n"
+""));
+        QIcon icon32;
+        icon32.addFile(QString::fromUtf8(":/PNG/Resources/PNG/OFF.png"), QSize(), QIcon::Normal, QIcon::Off);
+        toolButton_15->setIcon(icon32);
+        toolButton_15->setIconSize(QSize(30, 30));
+        toolButton_15->setCheckable(false);
+        toolButton_15->setAutoRepeat(false);
+        toolButton_15->setAutoExclusive(false);
+        toolButton_15->setPopupMode(QToolButton::ToolButtonPopupMode::DelayedPopup);
+        toolButton_15->setToolButtonStyle(Qt::ToolButtonStyle::ToolButtonTextBesideIcon);
+        toolButton_15->setAutoRaise(false);
+
+        verticalLayout->addWidget(widget);
+
+        horizontalLayout = new QHBoxLayout();
         horizontalLayout->setSpacing(0);
         horizontalLayout->setObjectName(QString::fromUtf8("horizontalLayout"));
-        horizontalLayout->setContentsMargins(0, 0, 0, 0);
-        toolButton_26 = new QToolButton(layoutWidget);
+        horizontalLayout->setContentsMargins(-1, -1, 0, 0);
+        toolButton_26 = new QToolButton(centralwidget);
         toolButton_26->setObjectName(QString::fromUtf8("toolButton_26"));
         toolButton_26->setMinimumSize(QSize(112, 0));
         toolButton_26->setFont(font8);
@@ -1320,9 +1328,9 @@ public:
 "    border: 1px solid #37474F; /* \346\267\261\350\211\262\350\276\271\346\241\206\346\250\241\346\213\237\351\230\264\345\275\261 */\n"
 "}\n"
 ""));
-        QIcon icon32;
-        icon32.addFile(QString::fromUtf8(":/PIC/Resources/PICs/Zhuye.png"), QSize(), QIcon::Normal, QIcon::Off);
-        toolButton_26->setIcon(icon32);
+        QIcon icon33;
+        icon33.addFile(QString::fromUtf8(":/PIC/Resources/PICs/Zhuye.png"), QSize(), QIcon::Normal, QIcon::Off);
+        toolButton_26->setIcon(icon33);
         toolButton_26->setIconSize(QSize(45, 45));
         toolButton_26->setToolButtonStyle(Qt::ToolButtonStyle::ToolButtonTextBesideIcon);
 
@@ -1332,7 +1340,7 @@ public:
 
         horizontalLayout->addItem(horizontalSpacer);
 
-        toolButton_47 = new QToolButton(layoutWidget);
+        toolButton_47 = new QToolButton(centralwidget);
         toolButton_47->setObjectName(QString::fromUtf8("toolButton_47"));
         toolButton_47->setFont(font8);
         toolButton_47->setStyleSheet(QString::fromUtf8(" QToolButton {\n"
@@ -1358,7 +1366,7 @@ public:
 
         horizontalLayout->addItem(horizontalSpacer_2);
 
-        toolButton_36 = new QToolButton(layoutWidget);
+        toolButton_36 = new QToolButton(centralwidget);
         toolButton_36->setObjectName(QString::fromUtf8("toolButton_36"));
         toolButton_36->setFont(font8);
         toolButton_36->setStyleSheet(QString::fromUtf8(" QToolButton {\n"
@@ -1374,9 +1382,9 @@ public:
 "    border: 1px solid #37474F; /* \346\267\261\350\211\262\350\276\271\346\241\206\346\250\241\346\213\237\351\230\264\345\275\261 */\n"
 "}\n"
 ""));
-        QIcon icon33;
-        icon33.addFile(QString::fromUtf8(":/PNG/Resources/PNG/OCR.png"), QSize(), QIcon::Normal, QIcon::Off);
-        toolButton_36->setIcon(icon33);
+        QIcon icon34;
+        icon34.addFile(QString::fromUtf8(":/PNG/Resources/PNG/OCR.png"), QSize(), QIcon::Normal, QIcon::Off);
+        toolButton_36->setIcon(icon34);
         toolButton_36->setIconSize(QSize(45, 45));
         toolButton_36->setToolButtonStyle(Qt::ToolButtonStyle::ToolButtonTextBesideIcon);
 
@@ -1386,7 +1394,7 @@ public:
 
         horizontalLayout->addItem(horizontalSpacer_3);
 
-        toolButton_21 = new QToolButton(layoutWidget);
+        toolButton_21 = new QToolButton(centralwidget);
         toolButton_21->setObjectName(QString::fromUtf8("toolButton_21"));
         toolButton_21->setFont(font8);
         toolButton_21->setStyleSheet(QString::fromUtf8(" QToolButton {\n"
@@ -1402,9 +1410,9 @@ public:
 "    border: 1px solid #37474F; /* \346\267\261\350\211\262\350\276\271\346\241\206\346\250\241\346\213\237\351\230\264\345\275\261 */\n"
 "}\n"
 ""));
-        QIcon icon34;
-        icon34.addFile(QString::fromUtf8(":/PIC/Resources/PICs/PFGL.png"), QSize(), QIcon::Normal, QIcon::Off);
-        toolButton_21->setIcon(icon34);
+        QIcon icon35;
+        icon35.addFile(QString::fromUtf8(":/PIC/Resources/PICs/PFGL.png"), QSize(), QIcon::Normal, QIcon::Off);
+        toolButton_21->setIcon(icon35);
         toolButton_21->setIconSize(QSize(45, 45));
         toolButton_21->setToolButtonStyle(Qt::ToolButtonStyle::ToolButtonTextBesideIcon);
 
@@ -1414,15 +1422,15 @@ public:
 
         horizontalLayout->addItem(horizontalSpacer_4);
 
-        toolButton_17 = new QToolButton(layoutWidget);
+        toolButton_17 = new QToolButton(centralwidget);
         toolButton_17->setObjectName(QString::fromUtf8("toolButton_17"));
         toolButton_17->setMinimumSize(QSize(112, 0));
-        QFont font11;
-        font11.setFamily(QString::fromUtf8("\345\276\256\350\275\257\351\233\205\351\273\221"));
-        font11.setPointSize(11);
-        font11.setBold(true);
-        font11.setItalic(false);
-        toolButton_17->setFont(font11);
+        QFont font12;
+        font12.setFamily(QString::fromUtf8("\345\276\256\350\275\257\351\233\205\351\273\221"));
+        font12.setPointSize(11);
+        font12.setBold(true);
+        font12.setItalic(false);
+        toolButton_17->setFont(font12);
         toolButton_17->setStyleSheet(QString::fromUtf8(" QToolButton {\n"
 "        opacity: 1;\n"
 " 		border: none;\n"
@@ -1436,354 +1444,25 @@ public:
 "    border: 1px solid #37474F; /* \346\267\261\350\211\262\350\276\271\346\241\206\346\250\241\346\213\237\351\230\264\345\275\261 */\n"
 "}\n"
 ""));
-        QIcon icon35;
-        icon35.addFile(QString::fromUtf8(":/PIC/Resources/PICs/admin.png"), QSize(), QIcon::Normal, QIcon::Off);
-        toolButton_17->setIcon(icon35);
+        QIcon icon36;
+        icon36.addFile(QString::fromUtf8(":/PIC/Resources/PICs/admin.png"), QSize(), QIcon::Normal, QIcon::Off);
+        toolButton_17->setIcon(icon36);
         toolButton_17->setIconSize(QSize(45, 45));
         toolButton_17->setAutoRepeatDelay(300);
         toolButton_17->setToolButtonStyle(Qt::ToolButtonStyle::ToolButtonTextBesideIcon);
 
         horizontalLayout->addWidget(toolButton_17);
 
-        toolButton_15 = new QToolButton(page_2);
-        toolButton_15->setObjectName(QString::fromUtf8("toolButton_15"));
-        toolButton_15->setGeometry(QRect(790, 540, 134, 54));
-        toolButton_15->setMinimumSize(QSize(134, 54));
-        toolButton_15->setFont(font8);
-        toolButton_15->setStyleSheet(QString::fromUtf8("/* \346\214\211\344\270\213\347\212\266\346\200\201 */\n"
-"QToolButton:pressed {\n"
-"   background-color: #546E7A; /* \346\267\261\347\237\263\346\235\277\347\201\260 */\n"
-"    background-image: none;\n"
-"    padding-top: 12px;\n"
-"    padding-bottom: 8px;\n"
-"    border: 1px solid #37474F; /* \346\267\261\350\211\262\350\276\271\346\241\206\346\250\241\346\213\237\351\230\264\345\275\261 */\n"
-"}\n"
-" QToolButton {\n"
-"        background-color: rgb(255, 255, 255);\n"
-"        opacity: 1;\n"
-"        border-radius: 15px;  \n"
-"        border: 2px solid #4CAF50;\n"
-"        padding: 5px 15px;\n"
-"        min-width: 100px;\n"
-"        min-height: 40px;\n"
-"		\n"
-"		\n"
-"      }\n"
-""));
-        QIcon icon36;
-        icon36.addFile(QString::fromUtf8(":/PNG/Resources/PNG/OFF.png"), QSize(), QIcon::Normal, QIcon::Off);
-        toolButton_15->setIcon(icon36);
-        toolButton_15->setIconSize(QSize(30, 30));
-        toolButton_15->setCheckable(false);
-        toolButton_15->setAutoRepeat(false);
-        toolButton_15->setAutoExclusive(false);
-        toolButton_15->setPopupMode(QToolButton::ToolButtonPopupMode::DelayedPopup);
-        toolButton_15->setToolButtonStyle(Qt::ToolButtonStyle::ToolButtonTextBesideIcon);
-        toolButton_15->setAutoRaise(false);
-        stackedWidget->addWidget(page_2);
-        page_7 = new QWidget();
-        page_7->setObjectName(QString::fromUtf8("page_7"));
-        stackedWidget_4 = new QStackedWidget(page_7);
-        stackedWidget_4->setObjectName(QString::fromUtf8("stackedWidget_4"));
-        stackedWidget_4->setGeometry(QRect(20, 20, 951, 561));
-        stackedWidget_4->setStyleSheet(QString::fromUtf8("background-color:rgb(220, 235, 240);\n"
-"opacity: 1;"));
-        page = new QWidget();
-        page->setObjectName(QString::fromUtf8("page"));
-        pushButton_6 = new QPushButton(page);
-        pushButton_6->setObjectName(QString::fromUtf8("pushButton_6"));
-        pushButton_6->setGeometry(QRect(620, 40, 151, 71));
-        QFont font12;
-        font12.setFamily(QString::fromUtf8("\345\276\256\350\275\257\351\233\205\351\273\221"));
-        font12.setPointSize(11);
-        font12.setBold(true);
-        pushButton_6->setFont(font12);
-        pushButton_6->setStyleSheet(QString::fromUtf8(" QToolButton {\n"
-"        opacity: 1;\n"
-" 		border: none;\n"
-"}\n"
-"/* \346\214\211\344\270\213\347\212\266\346\200\201 */\n"
-"QToolButton:pressed {\n"
-"   background-color: #546E7A; /* \346\267\261\347\237\263\346\235\277\347\201\260 */\n"
-"    background-image: none;\n"
-"    padding-top: 12px;\n"
-"    padding-bottom: 8px;\n"
-"    border: 1px solid #37474F; /* \346\267\261\350\211\262\350\276\271\346\241\206\346\250\241\346\213\237\351\230\264\345\275\261 */\n"
-"}\n"
-""));
-        QIcon icon37;
-        icon37.addFile(QString::fromUtf8(":/PIC/Resources/PICs/checkbox_checked.png"), QSize(), QIcon::Normal, QIcon::Off);
-        pushButton_6->setIcon(icon37);
-        pushButton_6->setIconSize(QSize(40, 40));
-        groupBox_3 = new QGroupBox(page);
-        groupBox_3->setObjectName(QString::fromUtf8("groupBox_3"));
-        groupBox_3->setGeometry(QRect(0, 30, 581, 321));
-        lineEdit_4 = new QLineEdit(groupBox_3);
-        lineEdit_4->setObjectName(QString::fromUtf8("lineEdit_4"));
-        lineEdit_4->setGeometry(QRect(50, 80, 201, 41));
-        lineEdit_4->setFont(font5);
-        lineEdit_4->setStyleSheet(QString::fromUtf8(""));
-        lineEdit_4->setInputMethodHints(Qt::InputMethodHint::ImhNone);
-        lineEdit_6 = new QLineEdit(groupBox_3);
-        lineEdit_6->setObjectName(QString::fromUtf8("lineEdit_6"));
-        lineEdit_6->setGeometry(QRect(50, 160, 201, 41));
-        lineEdit_6->setFont(font5);
-        lineEdit_6->setStyleSheet(QString::fromUtf8(""));
-        lineEdit_5 = new QLineEdit(groupBox_3);
-        lineEdit_5->setObjectName(QString::fromUtf8("lineEdit_5"));
-        lineEdit_5->setGeometry(QRect(50, 240, 371, 41));
-        lineEdit_5->setFont(font5);
-        lineEdit_5->setStyleSheet(QString::fromUtf8(""));
-        lineEdit_7 = new QLineEdit(groupBox_3);
-        lineEdit_7->setObjectName(QString::fromUtf8("lineEdit_7"));
-        lineEdit_7->setGeometry(QRect(270, 80, 151, 41));
-        lineEdit_7->setFont(font5);
-        lineEdit_7->setStyleSheet(QString::fromUtf8(""));
-        lineEdit_8 = new QLineEdit(groupBox_3);
-        lineEdit_8->setObjectName(QString::fromUtf8("lineEdit_8"));
-        lineEdit_8->setGeometry(QRect(270, 160, 151, 41));
-        lineEdit_8->setFont(font5);
-        lineEdit_8->setStyleSheet(QString::fromUtf8(""));
-        zdybutton_2 = new QPushButton(groupBox_3);
-        zdybutton_2->setObjectName(QString::fromUtf8("zdybutton_2"));
-        zdybutton_2->setGeometry(QRect(440, 240, 71, 41));
-        zdybutton_2->setFont(font12);
-        zdybutton_2->setStyleSheet(QString::fromUtf8(" QToolButton {\n"
-"        opacity: 1;\n"
-" 		border: none;\n"
-"}\n"
-"/* \346\214\211\344\270\213\347\212\266\346\200\201 */\n"
-"QToolButton:pressed {\n"
-"   background-color: #546E7A; /* \346\267\261\347\237\263\346\235\277\347\201\260 */\n"
-"    background-image: none;\n"
-"    padding-top: 12px;\n"
-"    padding-bottom: 8px;\n"
-"    border: 1px solid #37474F; /* \346\267\261\350\211\262\350\276\271\346\241\206\346\250\241\346\213\237\351\230\264\345\275\261 */\n"
-"}\n"
-""));
-        zdybutton_3 = new QToolButton(groupBox_3);
-        zdybutton_3->setObjectName(QString::fromUtf8("zdybutton_3"));
-        zdybutton_3->setGeometry(QRect(440, 160, 71, 41));
-        zdybutton_3->setFont(font2);
-        zdybutton_3->setStyleSheet(QString::fromUtf8(" QToolButton {\n"
-"        opacity: 1;\n"
-" 		border: none;\n"
-"}\n"
-"/* \346\214\211\344\270\213\347\212\266\346\200\201 */\n"
-"QToolButton:pressed {\n"
-"   background-color: #546E7A; /* \346\267\261\347\237\263\346\235\277\347\201\260 */\n"
-"    background-image: none;\n"
-"    padding-top: 12px;\n"
-"    padding-bottom: 8px;\n"
-"    border: 1px solid #37474F; /* \346\267\261\350\211\262\350\276\271\346\241\206\346\250\241\346\213\237\351\230\264\345\275\261 */\n"
-"}\n"
-""));
-        zdybutton_3->setPopupMode(QToolButton::ToolButtonPopupMode::DelayedPopup);
-        zdybutton_3->setToolButtonStyle(Qt::ToolButtonStyle::ToolButtonTextBesideIcon);
-        stackedWidget_4->addWidget(page);
-        stackedWidget_4Page1 = new QWidget();
-        stackedWidget_4Page1->setObjectName(QString::fromUtf8("stackedWidget_4Page1"));
-        groupBox = new QGroupBox(stackedWidget_4Page1);
-        groupBox->setObjectName(QString::fromUtf8("groupBox"));
-        groupBox->setGeometry(QRect(20, 0, 251, 441));
-        groupBox->setFont(font5);
-        label_19 = new QLabel(groupBox);
-        label_19->setObjectName(QString::fromUtf8("label_19"));
-        label_19->setGeometry(QRect(20, 20, 91, 31));
-        label_20 = new QLabel(groupBox);
-        label_20->setObjectName(QString::fromUtf8("label_20"));
-        label_20->setGeometry(QRect(20, 100, 91, 31));
-        toolButton_18 = new QToolButton(groupBox);
-        toolButton_18->setObjectName(QString::fromUtf8("toolButton_18"));
-        toolButton_18->setGeometry(QRect(30, 60, 81, 31));
-        QFont font13;
-        font13.setItalic(false);
-        toolButton_18->setFont(font13);
-        toolButton_22 = new QToolButton(groupBox);
-        toolButton_22->setObjectName(QString::fromUtf8("toolButton_22"));
-        toolButton_22->setGeometry(QRect(30, 150, 81, 31));
-        toolButton_23 = new QToolButton(groupBox);
-        toolButton_23->setObjectName(QString::fromUtf8("toolButton_23"));
-        toolButton_23->setGeometry(QRect(110, 150, 81, 31));
-        toolButton_20 = new QToolButton(groupBox);
-        toolButton_20->setObjectName(QString::fromUtf8("toolButton_20"));
-        toolButton_20->setGeometry(QRect(110, 60, 81, 31));
-        toolButton_20->setStyleSheet(QString::fromUtf8(""));
-        label_22 = new QLabel(groupBox);
-        label_22->setObjectName(QString::fromUtf8("label_22"));
-        label_22->setGeometry(QRect(20, 270, 91, 31));
-        spinBox = new QSpinBox(groupBox);
-        spinBox->setObjectName(QString::fromUtf8("spinBox"));
-        spinBox->setGeometry(QRect(40, 310, 131, 31));
-        QFont font14;
-        font14.setFamily(QString::fromUtf8("Microsoft YaHei UI"));
-        font14.setPointSize(9);
-        font14.setBold(false);
-        spinBox->setFont(font14);
-        spinBox->setMinimum(-99);
-        label_23 = new QLabel(groupBox);
-        label_23->setObjectName(QString::fromUtf8("label_23"));
-        label_23->setGeometry(QRect(20, 190, 91, 31));
-        toolButton_24 = new QToolButton(groupBox);
-        toolButton_24->setObjectName(QString::fromUtf8("toolButton_24"));
-        toolButton_24->setGeometry(QRect(30, 220, 81, 31));
-        toolButton_29 = new QToolButton(groupBox);
-        toolButton_29->setObjectName(QString::fromUtf8("toolButton_29"));
-        toolButton_29->setGeometry(QRect(110, 220, 81, 31));
-        spinBox_2 = new QSpinBox(groupBox);
-        spinBox_2->setObjectName(QString::fromUtf8("spinBox_2"));
-        spinBox_2->setGeometry(QRect(40, 350, 131, 31));
-        spinBox_2->setFont(font14);
-        spinBox_3 = new QSpinBox(groupBox);
-        spinBox_3->setObjectName(QString::fromUtf8("spinBox_3"));
-        spinBox_3->setGeometry(QRect(40, 390, 131, 31));
-        spinBox_3->setFont(font14);
-        label_29 = new QLabel(groupBox);
-        label_29->setObjectName(QString::fromUtf8("label_29"));
-        label_29->setGeometry(QRect(10, 310, 31, 31));
-        label_30 = new QLabel(groupBox);
-        label_30->setObjectName(QString::fromUtf8("label_30"));
-        label_30->setGeometry(QRect(10, 350, 31, 31));
-        label_31 = new QLabel(groupBox);
-        label_31->setObjectName(QString::fromUtf8("label_31"));
-        label_31->setGeometry(QRect(10, 390, 31, 31));
-        pushButton_5 = new QPushButton(stackedWidget_4Page1);
-        pushButton_5->setObjectName(QString::fromUtf8("pushButton_5"));
-        pushButton_5->setGeometry(QRect(770, 20, 151, 71));
-        pushButton_5->setFont(font12);
-        pushButton_5->setStyleSheet(QString::fromUtf8(" QToolButton {\n"
-"        opacity: 1;\n"
-" 		border: none;\n"
-"}\n"
-"/* \346\214\211\344\270\213\347\212\266\346\200\201 */\n"
-"QToolButton:pressed {\n"
-"   background-color: #546E7A; /* \346\267\261\347\237\263\346\235\277\347\201\260 */\n"
-"    background-image: none;\n"
-"    padding-top: 12px;\n"
-"    padding-bottom: 8px;\n"
-"    border: 1px solid #37474F; /* \346\267\261\350\211\262\350\276\271\346\241\206\346\250\241\346\213\237\351\230\264\345\275\261 */\n"
-"}\n"
-""));
-        pushButton_5->setIcon(icon37);
-        groupBox_2 = new QGroupBox(stackedWidget_4Page1);
-        groupBox_2->setObjectName(QString::fromUtf8("groupBox_2"));
-        groupBox_2->setGeometry(QRect(300, 90, 621, 351));
-        label_4 = new QLabel(groupBox_2);
-        label_4->setObjectName(QString::fromUtf8("label_4"));
-        label_4->setGeometry(QRect(10, 30, 81, 31));
-        label_4->setFont(font5);
-        label_4->setAlignment(Qt::AlignmentFlag::AlignCenter);
-        label_14 = new QLabel(groupBox_2);
-        label_14->setObjectName(QString::fromUtf8("label_14"));
-        label_14->setGeometry(QRect(10, 80, 81, 31));
-        label_14->setFont(font5);
-        label_14->setAlignment(Qt::AlignmentFlag::AlignCenter);
-        label_16 = new QLabel(groupBox_2);
-        label_16->setObjectName(QString::fromUtf8("label_16"));
-        label_16->setGeometry(QRect(10, 130, 81, 31));
-        label_16->setFont(font5);
-        label_16->setAlignment(Qt::AlignmentFlag::AlignCenter);
-        lineEdit = new QLineEdit(groupBox_2);
-        lineEdit->setObjectName(QString::fromUtf8("lineEdit"));
-        lineEdit->setGeometry(QRect(110, 20, 231, 41));
-        lineEdit->setFont(font5);
-        lineEdit_3 = new QLineEdit(groupBox_2);
-        lineEdit_3->setObjectName(QString::fromUtf8("lineEdit_3"));
-        lineEdit_3->setGeometry(QRect(110, 70, 231, 41));
-        lineEdit_3->setFont(font5);
-        lineEdit_9 = new QLineEdit(groupBox_2);
-        lineEdit_9->setObjectName(QString::fromUtf8("lineEdit_9"));
-        lineEdit_9->setGeometry(QRect(110, 120, 231, 41));
-        lineEdit_9->setFont(font5);
-        label_15 = new QLabel(groupBox_2);
-        label_15->setObjectName(QString::fromUtf8("label_15"));
-        label_15->setGeometry(QRect(20, 180, 61, 41));
-        label_15->setFont(font5);
-        comboBox_2 = new QComboBox(groupBox_2);
-        comboBox_2->addItem(QString());
-        comboBox_2->addItem(QString());
-        comboBox_2->addItem(QString());
-        comboBox_2->addItem(QString());
-        comboBox_2->addItem(QString());
-        comboBox_2->addItem(QString());
-        comboBox_2->addItem(QString());
-        comboBox_2->addItem(QString());
-        comboBox_2->addItem(QString());
-        comboBox_2->addItem(QString());
-        comboBox_2->addItem(QString());
-        comboBox_2->addItem(QString());
-        comboBox_2->addItem(QString());
-        comboBox_2->addItem(QString());
-        comboBox_2->addItem(QString());
-        comboBox_2->addItem(QString());
-        comboBox_2->addItem(QString());
-        comboBox_2->addItem(QString());
-        comboBox_2->addItem(QString());
-        comboBox_2->addItem(QString());
-        comboBox_2->addItem(QString());
-        comboBox_2->addItem(QString());
-        comboBox_2->addItem(QString());
-        comboBox_2->addItem(QString());
-        comboBox_2->addItem(QString());
-        comboBox_2->addItem(QString());
-        comboBox_2->addItem(QString());
-        comboBox_2->setObjectName(QString::fromUtf8("comboBox_2"));
-        comboBox_2->setGeometry(QRect(110, 180, 51, 41));
-        QFont font15;
-        font15.setFamily(QString::fromUtf8("\345\276\256\350\275\257\351\233\205\351\273\221"));
-        font15.setPointSize(18);
-        font15.setBold(true);
-        comboBox_2->setFont(font15);
-        pushButton_4 = new QPushButton(groupBox_2);
-        pushButton_4->setObjectName(QString::fromUtf8("pushButton_4"));
-        pushButton_4->setGeometry(QRect(360, 120, 111, 51));
-        pushButton_4->setFont(font12);
-        pushButton_4->setStyleSheet(QString::fromUtf8(" QToolButton {\n"
-"        opacity: 1;\n"
-" 		border: none;\n"
-"}\n"
-"/* \346\214\211\344\270\213\347\212\266\346\200\201 */\n"
-"QToolButton:pressed {\n"
-"   background-color: #546E7A; /* \346\267\261\347\237\263\346\235\277\347\201\260 */\n"
-"    background-image: none;\n"
-"    padding-top: 12px;\n"
-"    padding-bottom: 8px;\n"
-"    border: 1px solid #37474F; /* \346\267\261\350\211\262\350\276\271\346\241\206\346\250\241\346\213\237\351\230\264\345\275\261 */\n"
-"}\n"
-""));
-        pushButton_3 = new QPushButton(groupBox_2);
-        pushButton_3->setObjectName(QString::fromUtf8("pushButton_3"));
-        pushButton_3->setGeometry(QRect(360, 20, 111, 51));
-        pushButton_3->setFont(font12);
-        pushButton_3->setStyleSheet(QString::fromUtf8(" QToolButton {\n"
-"        opacity: 1;\n"
-" 		border: none;\n"
-"}\n"
-"/* \346\214\211\344\270\213\347\212\266\346\200\201 */\n"
-"QToolButton:pressed {\n"
-"   background-color: #546E7A; /* \346\267\261\347\237\263\346\235\277\347\201\260 */\n"
-"    background-image: none;\n"
-"    padding-top: 12px;\n"
-"    padding-bottom: 8px;\n"
-"    border: 1px solid #37474F; /* \346\267\261\350\211\262\350\276\271\346\241\206\346\250\241\346\213\237\351\230\264\345\275\261 */\n"
-"}\n"
-""));
-        stackedWidget_4->addWidget(stackedWidget_4Page1);
-        stackedWidget->addWidget(page_7);
 
-        verticalLayout->addWidget(stackedWidget);
+        verticalLayout->addLayout(horizontalLayout);
 
-        verticalLayout->setStretch(0, 66);
-        verticalLayout->setStretch(1, 605);
         QC_ApplicationWindow->setCentralWidget(centralwidget);
 
         retranslateUi(QC_ApplicationWindow);
 
-        stackedWidget->setCurrentIndex(0);
-        stackedWidget_2->setCurrentIndex(3);
-        tabWidget->setCurrentIndex(0);
+        stackedWidget_2->setCurrentIndex(1);
+        tabWidget->setCurrentIndex(1);
         stackedWidget_3->setCurrentIndex(1);
-        stackedWidget_4->setCurrentIndex(1);
 
 
         QMetaObject::connectSlotsByName(QC_ApplicationWindow);
@@ -1856,10 +1535,10 @@ public:
         toolButton_9->setText(QCoreApplication::translate("QC_ApplicationWindow", "\350\207\252\345\256\232\344\271\211", nullptr));
         groupBox_13->setTitle(QCoreApplication::translate("QC_ApplicationWindow", "\345\233\276\345\203\217\350\256\276\347\275\256", nullptr));
         toolButton_7->setText(QCoreApplication::translate("QC_ApplicationWindow", "\345\233\276\345\203\217\350\260\203\346\225\264", nullptr));
-        groupBox_4->setTitle(QCoreApplication::translate("QC_ApplicationWindow", "\344\273\277\347\234\237", nullptr));
+        groupBox_4->setTitle(QCoreApplication::translate("QC_ApplicationWindow", "\345\233\276\347\211\207\344\273\277\347\234\237", nullptr));
         toolButton_2->setText(QCoreApplication::translate("QC_ApplicationWindow", "\344\273\277\347\234\237", nullptr));
         toolButton_4->setText(QCoreApplication::translate("QC_ApplicationWindow", "\344\270\213\344\270\200\345\274\240", nullptr));
-        groupBox_8->setTitle(QCoreApplication::translate("QC_ApplicationWindow", "\347\202\271\346\243\200", nullptr));
+        groupBox_8->setTitle(QCoreApplication::translate("QC_ApplicationWindow", "\350\256\276\345\244\207\347\202\271\346\243\200", nullptr));
         toolButton_12->setText(QCoreApplication::translate("QC_ApplicationWindow", "\350\247\206\351\242\221\346\225\231\347\250\213", nullptr));
         toolButton_13->setText(QCoreApplication::translate("QC_ApplicationWindow", "\350\275\257\344\273\266\346\227\245\345\277\227", nullptr));
 #if QT_CONFIG(tooltip)
@@ -1890,73 +1569,12 @@ public:
         timg4->setText(QString());
         timg5->setText(QString());
         label_2->setText(QString());
+        toolButton_15->setText(QCoreApplication::translate("QC_ApplicationWindow", "\346\211\223\345\215\260", nullptr));
         toolButton_26->setText(QCoreApplication::translate("QC_ApplicationWindow", "\344\270\273\351\241\265", nullptr));
         toolButton_47->setText(QCoreApplication::translate("QC_ApplicationWindow", "\346\211\223\345\215\260\350\256\276\347\275\256", nullptr));
         toolButton_36->setText(QCoreApplication::translate("QC_ApplicationWindow", "OCR\350\256\276\347\275\256", nullptr));
         toolButton_21->setText(QCoreApplication::translate("QC_ApplicationWindow", "\345\212\237\350\203\275\350\217\234\345\215\225", nullptr));
         toolButton_17->setText(QCoreApplication::translate("QC_ApplicationWindow", "\346\234\252\347\231\273\345\275\225", nullptr));
-        toolButton_15->setText(QCoreApplication::translate("QC_ApplicationWindow", "\346\211\223\345\215\260", nullptr));
-        pushButton_6->setText(QCoreApplication::translate("QC_ApplicationWindow", "\345\256\214\346\210\220", nullptr));
-        groupBox_3->setTitle(QCoreApplication::translate("QC_ApplicationWindow", "\350\207\252\345\256\232\344\271\211\346\243\200\346\265\213\346\226\207\346\234\254", nullptr));
-        lineEdit_4->setInputMask(QString());
-        lineEdit_4->setText(QString());
-        lineEdit_6->setText(QString());
-        lineEdit_5->setText(QString());
-        lineEdit_7->setText(QString());
-        lineEdit_8->setText(QString());
-        zdybutton_2->setText(QCoreApplication::translate("QC_ApplicationWindow", "\346\270\205\347\251\272", nullptr));
-        zdybutton_3->setText(QCoreApplication::translate("QC_ApplicationWindow", "\345\205\263\351\227\255", nullptr));
-        groupBox->setTitle(QCoreApplication::translate("QC_ApplicationWindow", "\346\227\245\346\234\237\346\243\200\346\265\213\345\206\205\345\256\271\350\256\276\347\275\256", nullptr));
-        label_19->setText(QCoreApplication::translate("QC_ApplicationWindow", "\347\224\237\344\272\247\346\227\245\346\234\237\346\234\211\346\225\210\357\274\232", nullptr));
-        label_20->setText(QCoreApplication::translate("QC_ApplicationWindow", "\344\277\235\350\264\250\346\227\245\346\234\237\346\234\211\346\225\210\357\274\232", nullptr));
-        toolButton_18->setText(QCoreApplication::translate("QC_ApplicationWindow", "\346\234\211\346\225\210", nullptr));
-        toolButton_22->setText(QCoreApplication::translate("QC_ApplicationWindow", "\346\234\211\346\225\210", nullptr));
-        toolButton_23->setText(QCoreApplication::translate("QC_ApplicationWindow", "\346\227\240\346\225\210", nullptr));
-        toolButton_20->setText(QCoreApplication::translate("QC_ApplicationWindow", "\346\227\240\346\225\210", nullptr));
-        label_22->setText(QCoreApplication::translate("QC_ApplicationWindow", "\344\277\235\350\264\250\346\227\266\351\225\277\357\274\232", nullptr));
-        label_23->setText(QCoreApplication::translate("QC_ApplicationWindow", "\351\242\235\345\244\226\344\273\243\347\240\201\357\274\232", nullptr));
-        toolButton_24->setText(QCoreApplication::translate("QC_ApplicationWindow", "\346\234\211\346\225\210", nullptr));
-        toolButton_29->setText(QCoreApplication::translate("QC_ApplicationWindow", "\346\227\240\346\225\210", nullptr));
-        label_29->setText(QCoreApplication::translate("QC_ApplicationWindow", "\346\227\245\357\274\232", nullptr));
-        label_30->setText(QCoreApplication::translate("QC_ApplicationWindow", "\346\234\210\357\274\232", nullptr));
-        label_31->setText(QCoreApplication::translate("QC_ApplicationWindow", "\345\271\264\357\274\232", nullptr));
-        pushButton_5->setText(QCoreApplication::translate("QC_ApplicationWindow", "\345\256\214\346\210\220", nullptr));
-        groupBox_2->setTitle(QCoreApplication::translate("QC_ApplicationWindow", "\346\227\245\346\234\237\350\256\276\347\275\256", nullptr));
-        label_4->setText(QCoreApplication::translate("QC_ApplicationWindow", "\347\224\237\344\272\247\346\227\245\346\234\237:", nullptr));
-        label_14->setText(QCoreApplication::translate("QC_ApplicationWindow", "\344\277\235\350\264\250\346\234\237\350\207\263:", nullptr));
-        label_16->setText(QCoreApplication::translate("QC_ApplicationWindow", "\351\242\235\345\244\226\344\273\243\347\240\201", nullptr));
-        lineEdit->setText(QString());
-        label_15->setText(QCoreApplication::translate("QC_ApplicationWindow", "\351\246\226\345\255\227\346\257\215:", nullptr));
-        comboBox_2->setItemText(0, QCoreApplication::translate("QC_ApplicationWindow", "*", nullptr));
-        comboBox_2->setItemText(1, QCoreApplication::translate("QC_ApplicationWindow", "A", nullptr));
-        comboBox_2->setItemText(2, QCoreApplication::translate("QC_ApplicationWindow", "B", nullptr));
-        comboBox_2->setItemText(3, QCoreApplication::translate("QC_ApplicationWindow", "C", nullptr));
-        comboBox_2->setItemText(4, QCoreApplication::translate("QC_ApplicationWindow", "D", nullptr));
-        comboBox_2->setItemText(5, QCoreApplication::translate("QC_ApplicationWindow", "E", nullptr));
-        comboBox_2->setItemText(6, QCoreApplication::translate("QC_ApplicationWindow", "F", nullptr));
-        comboBox_2->setItemText(7, QCoreApplication::translate("QC_ApplicationWindow", "G", nullptr));
-        comboBox_2->setItemText(8, QCoreApplication::translate("QC_ApplicationWindow", "H", nullptr));
-        comboBox_2->setItemText(9, QCoreApplication::translate("QC_ApplicationWindow", "I", nullptr));
-        comboBox_2->setItemText(10, QCoreApplication::translate("QC_ApplicationWindow", "J", nullptr));
-        comboBox_2->setItemText(11, QCoreApplication::translate("QC_ApplicationWindow", "K", nullptr));
-        comboBox_2->setItemText(12, QCoreApplication::translate("QC_ApplicationWindow", "L", nullptr));
-        comboBox_2->setItemText(13, QCoreApplication::translate("QC_ApplicationWindow", "M", nullptr));
-        comboBox_2->setItemText(14, QCoreApplication::translate("QC_ApplicationWindow", "N", nullptr));
-        comboBox_2->setItemText(15, QCoreApplication::translate("QC_ApplicationWindow", "O", nullptr));
-        comboBox_2->setItemText(16, QCoreApplication::translate("QC_ApplicationWindow", "P", nullptr));
-        comboBox_2->setItemText(17, QCoreApplication::translate("QC_ApplicationWindow", "Q", nullptr));
-        comboBox_2->setItemText(18, QCoreApplication::translate("QC_ApplicationWindow", "R", nullptr));
-        comboBox_2->setItemText(19, QCoreApplication::translate("QC_ApplicationWindow", "S", nullptr));
-        comboBox_2->setItemText(20, QCoreApplication::translate("QC_ApplicationWindow", "T", nullptr));
-        comboBox_2->setItemText(21, QCoreApplication::translate("QC_ApplicationWindow", "U", nullptr));
-        comboBox_2->setItemText(22, QCoreApplication::translate("QC_ApplicationWindow", "V", nullptr));
-        comboBox_2->setItemText(23, QCoreApplication::translate("QC_ApplicationWindow", "W", nullptr));
-        comboBox_2->setItemText(24, QCoreApplication::translate("QC_ApplicationWindow", "X", nullptr));
-        comboBox_2->setItemText(25, QCoreApplication::translate("QC_ApplicationWindow", "Y", nullptr));
-        comboBox_2->setItemText(26, QCoreApplication::translate("QC_ApplicationWindow", "Z", nullptr));
-
-        pushButton_4->setText(QCoreApplication::translate("QC_ApplicationWindow", "\350\256\276\347\275\256\351\242\235\345\244\226\344\273\243\347\240\201", nullptr));
-        pushButton_3->setText(QCoreApplication::translate("QC_ApplicationWindow", "\351\200\211\346\213\251\347\224\237\344\272\247\346\227\245\346\234\237", nullptr));
     } // retranslateUi
 
 };

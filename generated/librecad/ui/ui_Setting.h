@@ -78,6 +78,9 @@ public:
         SettingClass->resize(900, 550);
         SettingClass->setMinimumSize(QSize(900, 550));
         SettingClass->setMaximumSize(QSize(900, 550));
+        QIcon icon;
+        icon.addFile(QString::fromUtf8(":/PIC/Resources/PICs/Bianji.png"), QSize(), QIcon::Normal, QIcon::Off);
+        SettingClass->setWindowIcon(icon);
         SettingClass->setStyleSheet(QString::fromUtf8("background-color:rgb(220, 235, 240);"));
         centralWidget = new QWidget(SettingClass);
         centralWidget->setObjectName(QString::fromUtf8("centralWidget"));
@@ -118,8 +121,8 @@ public:
         groupBox_2->setObjectName(QString::fromUtf8("groupBox_2"));
         groupBox_2->setMinimumSize(QSize(280, 200));
         groupBox_2->setMaximumSize(QSize(280, 200));
-        groupBox_2->setStyleSheet(QString::fromUtf8("QGroupBox{font: bold 14px \"Microsoft YaHei\"; color: #2c3e50; border: 1px solid #dcdde1; border-radius: 8px; margin-top: 12px; padding-top: 14px; background: #ffffff;}\n"
-"QGroupBox::title{subcontrol-origin: margin; left: 12px; padding: 0 6px;}"));
+        groupBox_2->setStyleSheet(QString::fromUtf8("QGroupBox{font: bold 14px \"Microsoft YaHei\"; color: #2c3e50; border: 1px solid #e0e0e0; border-radius: 8px; margin-top: 14px; padding-top: 18px; background: #ffffff;}\n"
+"QGroupBox::title{subcontrol-origin: margin; left: 12px; padding: 4px 12px; background: #3498db; color: white; border-radius: 4px;}"));
         gbLayout1 = new QVBoxLayout(groupBox_2);
         gbLayout1->setSpacing(0);
         gbLayout1->setContentsMargins(11, 11, 11, 11);
@@ -148,9 +151,9 @@ public:
         toolButton_7->setObjectName(QString::fromUtf8("toolButton_7"));
         toolButton_7->setMinimumSize(QSize(32, 32));
         toolButton_7->setMaximumSize(QSize(32, 32));
-        QIcon icon;
-        icon.addFile(QString::fromUtf8(":/PIC/Resources/PICs/Moon.png"), QSize(), QIcon::Normal, QIcon::Off);
-        toolButton_7->setIcon(icon);
+        QIcon icon1;
+        icon1.addFile(QString::fromUtf8(":/PIC/Resources/PICs/Moon.png"), QSize(), QIcon::Normal, QIcon::Off);
+        toolButton_7->setIcon(icon1);
 
         hl_exp->addWidget(toolButton_7);
 
@@ -158,9 +161,9 @@ public:
         toolButton_5->setObjectName(QString::fromUtf8("toolButton_5"));
         toolButton_5->setMinimumSize(QSize(32, 32));
         toolButton_5->setMaximumSize(QSize(32, 32));
-        QIcon icon1;
-        icon1.addFile(QString::fromUtf8(":/PIC/Resources/PICs/Sun.png"), QSize(), QIcon::Normal, QIcon::Off);
-        toolButton_5->setIcon(icon1);
+        QIcon icon2;
+        icon2.addFile(QString::fromUtf8(":/PIC/Resources/PICs/Sun.png"), QSize(), QIcon::Normal, QIcon::Off);
+        toolButton_5->setIcon(icon2);
 
         hl_exp->addWidget(toolButton_5);
 
@@ -191,7 +194,7 @@ public:
         toolButton_8->setObjectName(QString::fromUtf8("toolButton_8"));
         toolButton_8->setMinimumSize(QSize(32, 32));
         toolButton_8->setMaximumSize(QSize(32, 32));
-        toolButton_8->setIcon(icon);
+        toolButton_8->setIcon(icon1);
 
         hl_gain->addWidget(toolButton_8);
 
@@ -199,7 +202,7 @@ public:
         toolButton_6->setObjectName(QString::fromUtf8("toolButton_6"));
         toolButton_6->setMinimumSize(QSize(32, 32));
         toolButton_6->setMaximumSize(QSize(32, 32));
-        toolButton_6->setIcon(icon1);
+        toolButton_6->setIcon(icon2);
 
         hl_gain->addWidget(toolButton_6);
 
@@ -281,8 +284,8 @@ public:
         groupBox_3->setObjectName(QString::fromUtf8("groupBox_3"));
         groupBox_3->setMinimumSize(QSize(280, 150));
         groupBox_3->setMaximumSize(QSize(280, 150));
-        groupBox_3->setStyleSheet(QString::fromUtf8("QGroupBox{font: bold 14px \"Microsoft YaHei\"; color: #2c3e50; border: 1px solid #dcdde1; border-radius: 8px; margin-top: 12px; padding-top: 14px; background: #ffffff;}\n"
-"QGroupBox::title{subcontrol-origin: margin; left: 12px; padding: 0 6px;}"));
+        groupBox_3->setStyleSheet(QString::fromUtf8("QGroupBox{font: bold 14px \"Microsoft YaHei\"; color: #2c3e50; border: 1px solid #e0e0e0; border-radius: 8px; margin-top: 14px; padding-top: 18px; background: #ffffff;}\n"
+"QGroupBox::title{subcontrol-origin: margin; left: 12px; padding: 4px 12px; background: #3498db; color: white; border-radius: 4px;}"));
         gbLayout2 = new QHBoxLayout(groupBox_3);
         gbLayout2->setSpacing(6);
         gbLayout2->setContentsMargins(11, 11, 11, 11);
@@ -293,9 +296,9 @@ public:
         toolButton_2->setMaximumSize(QSize(109, 45));
         toolButton_2->setStyleSheet(QString::fromUtf8("QToolButton{font: bold 13px \"Microsoft YaHei\"; background: #3498db; color: white; border-radius: 6px; padding: 6px;}\n"
 "QToolButton:hover{background: #2980b9;}"));
-        QIcon icon2;
-        icon2.addFile(QString::fromUtf8(":/PNG/Resources/PNG/DZCJ1.png"), QSize(), QIcon::Normal, QIcon::Off);
-        toolButton_2->setIcon(icon2);
+        QIcon icon3;
+        icon3.addFile(QString::fromUtf8(":/PNG/Resources/PNG/DZCJ1.png"), QSize(), QIcon::Normal, QIcon::Off);
+        toolButton_2->setIcon(icon3);
         toolButton_2->setIconSize(QSize(20, 20));
         toolButton_2->setToolButtonStyle(Qt::ToolButtonStyle::ToolButtonTextBesideIcon);
 
@@ -307,9 +310,9 @@ public:
         toolButton_3->setMaximumSize(QSize(109, 45));
         toolButton_3->setStyleSheet(QString::fromUtf8("QToolButton{font: bold 13px \"Microsoft YaHei\"; background: #27ae60; color: white; border-radius: 6px; padding: 6px;}\n"
 "QToolButton:hover{background: #229954;}"));
-        QIcon icon3;
-        icon3.addFile(QString::fromUtf8(":/PNG/Resources/PNG/KXFW.png"), QSize(), QIcon::Normal, QIcon::Off);
-        toolButton_3->setIcon(icon3);
+        QIcon icon4;
+        icon4.addFile(QString::fromUtf8(":/PNG/Resources/PNG/KXFW.png"), QSize(), QIcon::Normal, QIcon::Off);
+        toolButton_3->setIcon(icon4);
         toolButton_3->setIconSize(QSize(20, 20));
         toolButton_3->setToolButtonStyle(Qt::ToolButtonStyle::ToolButtonTextBesideIcon);
 
@@ -347,9 +350,9 @@ public:
         btnClose->setMaximumSize(QSize(80, 36));
         btnClose->setStyleSheet(QString::fromUtf8("QPushButton{font: bold 12px \"Microsoft YaHei\"; background: #e74c3c; color: white; border-radius: 6px; padding: 6px 14px;}\n"
 "QPushButton:hover{background: #c0392b;}"));
-        QIcon icon4;
-        icon4.addFile(QString::fromUtf8(":/PIC/Resources/PICs/Fanhui.png"), QSize(), QIcon::Normal, QIcon::Off);
-        btnClose->setIcon(icon4);
+        QIcon icon5;
+        icon5.addFile(QString::fromUtf8(":/PIC/Resources/PICs/Fanhui.png"), QSize(), QIcon::Normal, QIcon::Off);
+        btnClose->setIcon(icon5);
         btnClose->setIconSize(QSize(20, 20));
 
         horizontalLayout->addWidget(btnClose);

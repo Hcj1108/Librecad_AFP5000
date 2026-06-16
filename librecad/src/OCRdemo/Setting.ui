@@ -25,6 +25,10 @@
   <property name="windowTitle">
    <string>参数设置</string>
   </property>
+  <property name="windowIcon">
+   <iconset resource="../OCRdemo.qrc">
+    <normaloff>:/PIC/Resources/PICs/Bianji.png</normaloff>:/PIC/Resources/PICs/Bianji.png</iconset>
+  </property>
   <property name="styleSheet">
    <string notr="true">background-color:rgb(220, 235, 240);</string>
   </property>
@@ -124,8 +128,8 @@
            </size>
           </property>
           <property name="styleSheet">
-           <string notr="true">QGroupBox{font: bold 14px &quot;Microsoft YaHei&quot;; color: #2c3e50; border: 1px solid #dcdde1; border-radius: 8px; margin-top: 12px; padding-top: 14px; background: #ffffff;}
-QGroupBox::title{subcontrol-origin: margin; left: 12px; padding: 0 6px;}</string>
+           <string notr="true">QGroupBox{font: bold 14px &quot;Microsoft YaHei&quot;; color: #2c3e50; border: 1px solid #e0e0e0; border-radius: 8px; margin-top: 14px; padding-top: 18px; background: #ffffff;}
+QGroupBox::title{subcontrol-origin: margin; left: 12px; padding: 4px 12px; background: #3498db; color: white; border-radius: 4px;}</string>
           </property>
           <property name="title">
            <string>图像调整</string>
@@ -494,8 +498,8 @@ QPushButton:hover{background: #2980b9;}</string>
            </size>
           </property>
           <property name="styleSheet">
-           <string notr="true">QGroupBox{font: bold 14px &quot;Microsoft YaHei&quot;; color: #2c3e50; border: 1px solid #dcdde1; border-radius: 8px; margin-top: 12px; padding-top: 14px; background: #ffffff;}
-QGroupBox::title{subcontrol-origin: margin; left: 12px; padding: 0 6px;}</string>
+           <string notr="true">QGroupBox{font: bold 14px &quot;Microsoft YaHei&quot;; color: #2c3e50; border: 1px solid #e0e0e0; border-radius: 8px; margin-top: 14px; padding-top: 18px; background: #ffffff;}
+QGroupBox::title{subcontrol-origin: margin; left: 12px; padding: 4px 12px; background: #3498db; color: white; border-radius: 4px;}</string>
           </property>
           <property name="title">
            <string>图像ROI</string>

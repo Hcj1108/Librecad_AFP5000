@@ -1,0 +1,821 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>OcrFilterRulesClass</class>
+ <widget class="QWidget" name="OcrFilterRulesClass">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>781</width>
+    <height>460</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>OCR过滤规则</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="../OCRdemo.qrc">
+    <normaloff>:/PIC/Resources/PICs/A2.png</normaloff>:/PIC/Resources/PICs/A2.png</iconset>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background-color:rgb(220, 235, 240);</string>
+  </property>
+  <layout class="QVBoxLayout" name="mainLayout">
+   <property name="spacing">
+    <number>8</number>
+   </property>
+   <property name="leftMargin">
+    <number>8</number>
+   </property>
+   <property name="topMargin">
+    <number>8</number>
+   </property>
+   <property name="rightMargin">
+    <number>8</number>
+   </property>
+   <property name="bottomMargin">
+    <number>8</number>
+   </property>
+   <item>
+    <widget class="QStackedWidget" name="stackedWidget">
+     <property name="styleSheet">
+      <string notr="true"/>
+     </property>
+     <property name="currentIndex">
+      <number>1</number>
+     </property>
+     <widget class="QWidget" name="page">
+      <layout class="QVBoxLayout" name="page0Layout">
+       <property name="spacing">
+        <number>0</number>
+       </property>
+       <property name="leftMargin">
+        <number>0</number>
+       </property>
+       <property name="topMargin">
+        <number>0</number>
+       </property>
+       <property name="rightMargin">
+        <number>0</number>
+       </property>
+       <property name="bottomMargin">
+        <number>0</number>
+       </property>
+       <item>
+        <widget class="QGroupBox" name="groupBox_3">
+         <property name="font">
+          <font>
+           <family>Microsoft YaHei</family>
+           <pointsize>-1</pointsize>
+           <italic>false</italic>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QGroupBox{font: bold 14px &quot;Microsoft YaHei&quot;; color: #2c3e50; border: 1px solid #e0e0e0; border-radius: 8px; margin-top: 14px; padding-top: 18px; background: #ffffff;}
+QGroupBox::title{subcontrol-origin: margin; left: 12px; padding: 4px 12px; background: #3498db; color: white; border-radius: 4px;}
+QLineEdit{font: bold 12px &quot;Microsoft YaHei&quot;; padding: 8px 12px; border: 2px solid #dcdde1; border-radius: 6px; background: #fafafa; min-height:20px;}
+QLineEdit:focus{border-color: #3498db; background: #ffffff;}
+QPushButton{font: bold 12px &quot;Microsoft YaHei&quot;; border-radius: 6px; padding: 8px 20px; min-height: 20px;}
+QPushButton:hover{opacity: 0.9;}
+QPushButton:pressed{padding-top: 10px; padding-bottom: 6px;}
+QSpinBox{font: 12px &quot;Microsoft YaHei&quot;; padding: 4px 8px; border: 2px solid #dcdde1; border-radius: 6px; background: #fafafa; min-height: 20px;}
+QSpinBox:focus{border-color: #3498db; background: #ffffff;}</string>
+         </property>
+         <property name="title">
+          <string>自定义检测文本</string>
+         </property>
+         <layout class="QVBoxLayout" name="groupBox3Layout">
+          <property name="spacing">
+           <number>10</number>
+          </property>
+          <property name="leftMargin">
+           <number>24</number>
+          </property>
+          <property name="topMargin">
+           <number>24</number>
+          </property>
+          <property name="rightMargin">
+           <number>24</number>
+          </property>
+          <property name="bottomMargin">
+           <number>20</number>
+          </property>
+          <item>
+           <layout class="QHBoxLayout" name="row1">
+            <item>
+             <widget class="QLineEdit" name="lineEdit_4">
+              <property name="placeholderText">
+               <string>检测文本 1</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLineEdit" name="lineEdit_7">
+              <property name="placeholderText">
+               <string>检测文本 4</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+          <item>
+           <layout class="QHBoxLayout" name="row2">
+            <item>
+             <widget class="QLineEdit" name="lineEdit_6">
+              <property name="placeholderText">
+               <string>检测文本 2</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLineEdit" name="lineEdit_8">
+              <property name="placeholderText">
+               <string>检测文本 5</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+          <item>
+           <widget class="QLineEdit" name="lineEdit_5">
+            <property name="placeholderText">
+             <string>检测文本 3</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <layout class="QHBoxLayout" name="buttonRow">
+            <item>
+             <spacer name="buttonSpacerLeft">
+              <property name="orientation">
+               <enum>Qt::Orientation::Horizontal</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>40</width>
+                <height>20</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+            <item>
+             <widget class="QPushButton" name="zdybutton_2">
+              <property name="minimumSize">
+               <size>
+                <width>80</width>
+                <height>36</height>
+               </size>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">QPushButton{background: #3498db; color: white;} QPushButton:hover{background: #2980b9;}</string>
+              </property>
+              <property name="text">
+               <string>清空</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QPushButton" name="pushButton_6">
+              <property name="minimumSize">
+               <size>
+                <width>80</width>
+                <height>36</height>
+               </size>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">QPushButton{background: #27ae60; color: white;} QPushButton:hover{background: #219a52;}</string>
+              </property>
+              <property name="text">
+               <string>保存</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <spacer name="buttonSpacerRight">
+              <property name="orientation">
+               <enum>Qt::Orientation::Horizontal</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>40</width>
+                <height>20</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+           </layout>
+          </item>
+         </layout>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="stackedWidget_4Page1">
+      <layout class="QHBoxLayout" name="page1Layout">
+       <property name="spacing">
+        <number>10</number>
+       </property>
+       <property name="leftMargin">
+        <number>10</number>
+       </property>
+       <property name="topMargin">
+        <number>10</number>
+       </property>
+       <property name="rightMargin">
+        <number>10</number>
+       </property>
+       <property name="bottomMargin">
+        <number>10</number>
+       </property>
+       <item>
+        <widget class="QGroupBox" name="groupBox">
+         <property name="font">
+          <font>
+           <family>Microsoft YaHei</family>
+           <pointsize>-1</pointsize>
+           <italic>false</italic>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QGroupBox{font: bold 14px &quot;Microsoft YaHei&quot;; color: #2c3e50; border: 1px solid #e0e0e0; border-radius: 8px; margin-top: 14px; padding-top: 18px; background: #ffffff;}
+QGroupBox::title{subcontrol-origin: margin; left: 12px; padding: 4px 12px; background: #3498db; color: white; border-radius: 4px;}
+QLabel{color: #34495e; background: transparent; font: bold 12px &quot;Microsoft YaHei&quot;; padding: 2px 4px;}
+QToolButton{font: bold 12px &quot;Microsoft YaHei&quot;; border: 2px solid #dcdde1; border-radius: 6px; padding: 6px 16px; background: #ffffff; min-height: 20px;}
+QToolButton:checked{background: #d4efdf; border-color: #27ae60; color: #1e8449; font-weight: bold;}
+QSpinBox{font: 12px &quot;Microsoft YaHei&quot;; padding: 4px 8px; border: 2px solid #dcdde1; border-radius: 6px; background: #fafafa; min-height: 20px;}
+QSpinBox:focus{border-color: #3498db; background: #ffffff;}</string>
+         </property>
+         <property name="title">
+          <string>检测内容设置</string>
+         </property>
+         <layout class="QGridLayout" name="gridLayoutLeft">
+          <property name="leftMargin">
+           <number>14</number>
+          </property>
+          <property name="topMargin">
+           <number>18</number>
+          </property>
+          <property name="rightMargin">
+           <number>14</number>
+          </property>
+          <property name="bottomMargin">
+           <number>14</number>
+          </property>
+          <property name="spacing">
+           <number>10</number>
+          </property>
+          <item row="0" column="0">
+           <widget class="QLabel" name="label_19">
+            <property name="text">
+             <string>生产日期有效：</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="1">
+           <widget class="QLabel" name="label_20">
+            <property name="text">
+             <string>保质日期有效：</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="0">
+           <layout class="QHBoxLayout" name="scRow">
+            <property name="spacing">
+             <number>6</number>
+            </property>
+            <item>
+             <widget class="QToolButton" name="toolButton_18">
+              <property name="text">
+               <string>有效</string>
+              </property>
+              <property name="checkable">
+               <bool>true</bool>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QToolButton" name="toolButton_20">
+              <property name="text">
+               <string>无效</string>
+              </property>
+              <property name="checkable">
+               <bool>true</bool>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+          <item row="1" column="1">
+           <layout class="QHBoxLayout" name="bzRow">
+            <property name="spacing">
+             <number>6</number>
+            </property>
+            <item>
+             <widget class="QToolButton" name="toolButton_22">
+              <property name="text">
+               <string>有效</string>
+              </property>
+              <property name="checkable">
+               <bool>true</bool>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QToolButton" name="toolButton_23">
+              <property name="text">
+               <string>无效</string>
+              </property>
+              <property name="checkable">
+               <bool>true</bool>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+          <item row="2" column="0" colspan="2">
+           <widget class="QLabel" name="label_23">
+            <property name="text">
+             <string>额外代码：</string>
+            </property>
+           </widget>
+          </item>
+          <item row="3" column="0" colspan="2">
+           <layout class="QHBoxLayout" name="ewRow">
+            <property name="spacing">
+             <number>6</number>
+            </property>
+            <item>
+             <widget class="QToolButton" name="toolButton_24">
+              <property name="text">
+               <string>有效</string>
+              </property>
+              <property name="checkable">
+               <bool>true</bool>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QToolButton" name="toolButton_29">
+              <property name="text">
+               <string>无效</string>
+              </property>
+              <property name="checkable">
+               <bool>true</bool>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+          <item row="4" column="0" colspan="2">
+           <widget class="QLabel" name="label_22">
+            <property name="text">
+             <string>保质时长：</string>
+            </property>
+           </widget>
+          </item>
+          <item row="5" column="0">
+           <widget class="QLabel" name="label_29">
+            <property name="text">
+             <string>日</string>
+            </property>
+           </widget>
+          </item>
+          <item row="5" column="1">
+           <widget class="QSpinBox" name="spinBox">
+            <property name="suffix">
+             <string> 天</string>
+            </property>
+            <property name="minimum">
+             <number>-99</number>
+            </property>
+            <property name="maximum">
+             <number>999</number>
+            </property>
+           </widget>
+          </item>
+          <item row="6" column="0">
+           <widget class="QLabel" name="label_30">
+            <property name="text">
+             <string>月</string>
+            </property>
+           </widget>
+          </item>
+          <item row="6" column="1">
+           <widget class="QSpinBox" name="spinBox_2">
+            <property name="suffix">
+             <string> 月</string>
+            </property>
+           </widget>
+          </item>
+          <item row="7" column="0">
+           <widget class="QLabel" name="label_31">
+            <property name="text">
+             <string>年</string>
+            </property>
+           </widget>
+          </item>
+          <item row="7" column="1">
+           <widget class="QSpinBox" name="spinBox_3">
+            <property name="suffix">
+             <string> 年</string>
+            </property>
+           </widget>
+          </item>
+          <item row="8" column="0" colspan="2">
+           <spacer name="vSpacerLeft">
+            <property name="orientation">
+             <enum>Qt::Orientation::Vertical</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>20</width>
+              <height>10</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item>
+        <widget class="QGroupBox" name="groupBox_2">
+         <property name="font">
+          <font>
+           <family>Microsoft YaHei</family>
+           <pointsize>-1</pointsize>
+           <italic>false</italic>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QGroupBox{font: bold 14px &quot;Microsoft YaHei&quot;; color: #2c3e50; border: 1px solid #e0e0e0; border-radius: 8px; margin-top: 14px; padding-top: 18px; background: #ffffff;}
+QGroupBox::title{subcontrol-origin: margin; left: 12px; padding: 4px 12px; background: #3498db; color: white; border-radius: 4px;}
+QLabel{color: #34495e; background: transparent; font: bold 12px &quot;Microsoft YaHei&quot;; padding: 2px 4px;}
+
+QLineEdit{font: bold 12px &quot;Microsoft YaHei&quot;; padding: 8px 12px; border: 2px solid #dcdde1; border-radius: 6px; background: #fafafa; min-height: 20px;}
+QLineEdit:focus{border-color: #3498db; background: #ffffff;}
+QLineEdit:read-only{background: #f0f0f0;}
+
+QPushButton{font: bold 12px &quot;Microsoft YaHei&quot;; border-radius: 6px; padding: 8px 16px; min-height: 20px;}
+QComboBox{font: bold 16px &quot;Microsoft YaHei&quot;; padding: 4px 10px; border: 2px solid #dcdde1; border-radius: 6px; background: #fafafa; min-height: 32px; min-width: 60px;}
+QComboBox:focus{border-color: #3498db; background: #ffffff;}
+QComboBox::drop-down{width: 24px;}</string>
+         </property>
+         <property name="title">
+          <string>日期设置</string>
+         </property>
+         <layout class="QVBoxLayout" name="groupBox2Layout">
+          <property name="spacing">
+           <number>12</number>
+          </property>
+          <property name="leftMargin">
+           <number>18</number>
+          </property>
+          <property name="topMargin">
+           <number>18</number>
+          </property>
+          <property name="rightMargin">
+           <number>18</number>
+          </property>
+          <property name="bottomMargin">
+           <number>18</number>
+          </property>
+          <item>
+           <layout class="QHBoxLayout" name="prodRow">
+            <item>
+             <widget class="QLabel" name="label_4">
+              <property name="text">
+               <string>生产日期</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLineEdit" name="lineEdit">
+              <property name="minimumSize">
+               <size>
+                <width>200</width>
+                <height>40</height>
+               </size>
+              </property>
+              <property name="readOnly">
+               <bool>true</bool>
+              </property>
+              <property name="placeholderText">
+               <string>自动生成</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QPushButton" name="pushButton_3">
+              <property name="styleSheet">
+               <string notr="true">QPushButton{background: #3498db; color: white;} QPushButton:hover{background: #2980b9;}</string>
+              </property>
+              <property name="text">
+               <string>选择日期</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+          <item>
+           <layout class="QHBoxLayout" name="expRow">
+            <item>
+             <widget class="QLabel" name="label_14">
+              <property name="text">
+               <string>保质期至</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLineEdit" name="lineEdit_3">
+              <property name="readOnly">
+               <bool>true</bool>
+              </property>
+              <property name="placeholderText">
+               <string>自动计算</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+          <item>
+           <layout class="QHBoxLayout" name="extraRow">
+            <item>
+             <widget class="QLabel" name="label_16">
+              <property name="text">
+               <string>额外代码</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLineEdit" name="lineEdit_9">
+              <property name="placeholderText">
+               <string>输入额外代码</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QPushButton" name="pushButton_4">
+              <property name="styleSheet">
+               <string notr="true">QPushButton{background: #27ae60; color: white;} QPushButton:hover{background: #219a52;}</string>
+              </property>
+              <property name="text">
+               <string>设置</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+          <item>
+           <layout class="QHBoxLayout" name="letterRow">
+            <item>
+             <widget class="QLabel" name="label_15">
+              <property name="text">
+               <string>首字母</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QComboBox" name="comboBox_2">
+              <item>
+               <property name="text">
+                <string>*</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>A</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>B</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>C</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>D</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>E</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>F</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>G</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>H</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>I</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>J</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>K</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>L</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>M</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>N</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>O</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>P</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>Q</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>R</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>S</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>T</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>U</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>V</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>W</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>X</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>Y</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>Z</string>
+               </property>
+              </item>
+             </widget>
+            </item>
+            <item>
+             <spacer name="letterSpacer">
+              <property name="orientation">
+               <enum>Qt::Orientation::Horizontal</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>40</width>
+                <height>20</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+           </layout>
+          </item>
+          <item>
+           <spacer name="vSpacerRight">
+            <property name="orientation">
+             <enum>Qt::Orientation::Vertical</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>20</width>
+              <height>10</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+         </layout>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </widget>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="bottomBar">
+     <property name="spacing">
+      <number>10</number>
+     </property>
+     <item>
+      <spacer name="bottomSpacer">
+       <property name="orientation">
+        <enum>Qt::Orientation::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>40</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item>
+      <widget class="QPushButton" name="pushButton">
+       <property name="minimumSize">
+        <size>
+         <width>80</width>
+         <height>36</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>80</width>
+         <height>36</height>
+        </size>
+       </property>
+       <property name="font">
+        <font>
+         <family>Microsoft YaHei</family>
+         <pointsize>-1</pointsize>
+         <italic>false</italic>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton{font: bold 12px &quot;Microsoft YaHei&quot;; background: #e74c3c; color: white; border-radius: 6px; padding: 6px 14px;}
+QPushButton:hover{background: #c0392b;}</string>
+       </property>
+       <property name="text">
+        <string>关闭</string>
+       </property>
+       <property name="icon">
+        <iconset resource="../OCRdemo.qrc">
+         <normaloff>:/PIC/Resources/PICs/Fanhui.png</normaloff>:/PIC/Resources/PICs/Fanhui.png</iconset>
+       </property>
+       <property name="iconSize">
+        <size>
+         <width>20</width>
+         <height>20</height>
+        </size>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+  </layout>
+ </widget>
+ <resources>
+  <include location="../OCRdemo.qrc"/>
+ </resources>
+ <connections/>
+</ui>

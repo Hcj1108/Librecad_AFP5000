@@ -74,8 +74,8 @@ public:
         font.setBold(true);
         font.setItalic(false);
         groupBox->setFont(font);
-        groupBox->setStyleSheet(QString::fromUtf8("QGroupBox{font: bold 14px \"Microsoft YaHei\"; color: #2c3e50; border: 1px solid #dcdde1; border-radius: 8px; margin-top: 12px; padding-top: 16px; background: #ffffff;}\n"
-"QGroupBox::title{subcontrol-origin: margin; left: 12px; padding: 0 6px;}"));
+        groupBox->setStyleSheet(QString::fromUtf8("QGroupBox{font: bold 14px \"Microsoft YaHei\"; color: #2c3e50; border: 1px solid #e0e0e0; border-radius: 8px; margin-top: 14px; padding-top: 18px; background: #ffffff;}\n"
+"QGroupBox::title{subcontrol-origin: margin; left: 12px; padding: 4px 12px; background: #3498db; color: white; border-radius: 4px;}"));
         alarmLayout = new QGridLayout(groupBox);
         alarmLayout->setObjectName(QString::fromUtf8("alarmLayout"));
         alarmLayout->setHorizontalSpacing(8);
@@ -151,8 +151,8 @@ public:
         groupBox_2 = new QGroupBox(SerialManagerClass);
         groupBox_2->setObjectName(QString::fromUtf8("groupBox_2"));
         groupBox_2->setFont(font);
-        groupBox_2->setStyleSheet(QString::fromUtf8("QGroupBox{font: bold 14px \"Microsoft YaHei\"; color: #2c3e50; border: 1px solid #dcdde1; border-radius: 8px; margin-top: 12px; padding-top: 16px; background: #ffffff;}\n"
-"QGroupBox::title{subcontrol-origin: margin; left: 12px; padding: 0 6px;}"));
+        groupBox_2->setStyleSheet(QString::fromUtf8("QGroupBox{font: bold 14px \"Microsoft YaHei\"; color: #2c3e50; border: 1px solid #e0e0e0; border-radius: 8px; margin-top: 14px; padding-top: 18px; background: #ffffff;}\n"
+"QGroupBox::title{subcontrol-origin: margin; left: 12px; padding: 4px 12px; background: #3498db; color: white; border-radius: 4px;}"));
         linkLayout = new QGridLayout(groupBox_2);
         linkLayout->setObjectName(QString::fromUtf8("linkLayout"));
         linkLayout->setHorizontalSpacing(8);

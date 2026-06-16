@@ -124,6 +124,7 @@
 #include <direct.h>
 
 
+
 QC_ApplicationWindow* QC_ApplicationWindow::appWindow = nullptr;
 
 //相机采集回调函数
@@ -227,6 +228,7 @@ QC_ApplicationWindow::QC_ApplicationWindow()
     addscheme.setWindowModality(Qt::ApplicationModal);
     alterscheme.setWindowModality(Qt::ApplicationModal);
     loggerView.setWindowModality(Qt::ApplicationModal);
+    ocrFilterRules.setWindowModality(Qt::ApplicationModal);
 
     Logger::write("***********************程序开始*************************");
 
@@ -286,24 +288,7 @@ QC_ApplicationWindow::QC_ApplicationWindow()
     });
     connect(this, &QC_ApplicationWindow::resizeimage, this, &QC_ApplicationWindow::processImageAndControls);
   
-    // 第一个comboBox连接
-    connect(ui->comboBox_2,static_cast<void (QComboBox::*)(int)>(&QComboBox::currentIndexChanged),
-        this,
-        [=](int index) {
-            CodeIndex = index;  // 使用传递的index参数而不是再次获取
-            FH = ui->comboBox_2->currentText();
-            if (IsSchemeComboBoxcode) {
-                IsSchemeComboBoxcode = false;
-            }
-            else {
-                QString schemeName = ui->comboBox->currentText();
-                bool result = AlterDB(schemeName.toStdString());
-                // 建议添加错误处理
-                if (!result) {
-                    qWarning() << "Failed to alter database for scheme:" << schemeName;
-                }
-            }
-        });
+  
 
    
     listener->start(); // 正确捕获listener对象
@@ -311,8 +296,8 @@ QC_ApplicationWindow::QC_ApplicationWindow()
  
    
     connect(ui->zdybutton, &QPushButton::clicked,this, &QC_ApplicationWindow::CustomModeButtonClicked);
-    connect(ui->zdybutton_3, &QPushButton::clicked, this, &QC_ApplicationWindow::CustomModeButtonClicked);
-    connect(ui->zdybutton_2, &QPushButton::clicked,this, &QC_ApplicationWindow::clearCustomFields);
+  
+   
   
     //OCR结果后续显示
     connect(OCRT, &OCRruning::ocrend, this,&QC_ApplicationWindow::showOCRResults);
@@ -337,16 +322,18 @@ QC_ApplicationWindow::QC_ApplicationWindow()
     connect(ui->toolButton_4, &QPushButton::clicked, this, &QC_ApplicationWindow::OnlyOcr);
     connect(ui->toolButton_5, &QPushButton::clicked, this, &QC_ApplicationWindow::ViewRecord);
     connect(ui->toolButton_6, &QPushButton::clicked, this, [=] {
-
-        ui->stackedWidget->setCurrentIndex(1);
-        ui->stackedWidget_4->setCurrentIndex(1);
+       // ocrFilterRules.setCurrentPage(1);
+        ocrFilterRules.show();
+        ocrFilterRules.SetOcrFilterRules(ui->comboBox->currentText(), CustomStr, CustomStr_2,CustomStr_3, CustomStr_4, CustomStr_5, CustomStr_6,SCenabled,BZenabled, EWenabled,  Savemonth, Saveyear, save_time, Start_Data_Time , Save_Time , CodeIndex ,1);
+        
         });
     connect(ui->toolButton_7, &QPushButton::clicked, this, &QC_ApplicationWindow::ShowSetting);
     connect(ui->toolButton_33, &QPushButton::clicked, this, &QC_ApplicationWindow::ShowJgadmain);
     connect(ui->toolButton_8, &QPushButton::clicked, this, &QC_ApplicationWindow::RateClear);
     connect(ui->toolButton_9, &QPushButton::clicked, this, [=] {
-        ui->stackedWidget->setCurrentIndex(1);
-        ui->stackedWidget_4->setCurrentIndex(0);
+       // ocrFilterRules.setCurrentPage(0);
+        ocrFilterRules.show();
+        ocrFilterRules.SetOcrFilterRules(ui->comboBox->currentText(), CustomStr, CustomStr_2, CustomStr_3, CustomStr_4, CustomStr_5, CustomStr_6, SCenabled, BZenabled, EWenabled, Savemonth, Saveyear, save_time, Start_Data_Time, Save_Time, CodeIndex , 0);
         });
 
     connect(ui->toolButton_11, &QPushButton::clicked, this, [=] {
@@ -401,25 +388,10 @@ QC_ApplicationWindow::QC_ApplicationWindow()
         serialmanager.show();
         } );
     connect(ui->toolButton_17, &QPushButton::clicked, this, &QC_ApplicationWindow::showLoginDialog);
-    connect(ui->toolButton_18, &QPushButton::clicked, this, [=] {
-        toggleSchemeButton(ui->toolButton_18, ui->toolButton_20, SCenabled, true);
-    });
-    connect(ui->toolButton_20, &QPushButton::clicked, this, [=] {
-        toggleSchemeButton(ui->toolButton_20, ui->toolButton_18, SCenabled, false);
-    });
-    connect(ui->toolButton_22, &QPushButton::clicked, this, [=] {
-        toggleSchemeButton(ui->toolButton_22, ui->toolButton_23, BZenabled, true);
-    });
-    connect(ui->toolButton_23, &QPushButton::clicked, this, [=] {
-        toggleSchemeButton(ui->toolButton_23, ui->toolButton_22, BZenabled, false);
-    });
-    connect(ui->toolButton_24, &QPushButton::clicked, this, [=] {
-        toggleSchemeButton(ui->toolButton_24, ui->toolButton_29, EWenabled, true);
-    });
+
+
     connect(ui->toolButton_25, &QPushButton::clicked, this, &QC_ApplicationWindow::ShowXJadmain);
-    connect(ui->toolButton_29, &QPushButton::clicked, this, [=] {
-        toggleSchemeButton(ui->toolButton_29, ui->toolButton_24, EWenabled, false);
-    });
+  
     connect(ui->toolButton_30, &QPushButton::clicked, this, &QC_ApplicationWindow::ShowUser);
  
    
@@ -472,15 +444,11 @@ QC_ApplicationWindow::QC_ApplicationWindow()
         });
  
     
-  
     connect(ui->toolButton_42, &QToolButton::clicked,actionHandler, &QG_ActionHandler::slotDrawMText);//编辑文本
     connect(ui->toolButton_43, &QToolButton::clicked, actionHandler, &QG_ActionHandler::slotZoomIn);
     connect(ui->toolButton_44, &QToolButton::clicked, actionHandler, &QG_ActionHandler::slotZoomOut);
     connect(ui->toolButton_45, &QToolButton::clicked, actionHandler, &QG_ActionHandler::slotZoomAuto);
-   
     connect(ui->toolButton_46, &QToolButton::clicked, actionHandler, &QG_ActionHandler::slotModifyDeleteQuick);
-
-
     connect(ui->toolButton_26, &QToolButton::clicked, this, [=] {
         ui->stackedWidget_2->setCurrentIndex(1);
         ui->stackedWidget_3->setCurrentIndex(0);
@@ -489,67 +457,14 @@ QC_ApplicationWindow::QC_ApplicationWindow()
         }
         });
     connect(ui->toolButton_47, &QToolButton::clicked, this, [=] {
-      
         ui->stackedWidget_2->setCurrentIndex(0);
         ui->stackedWidget_3->setCurrentIndex(0);
         //AutoCap();
-
         });
-
-    connect(ui->pushButton_3, &QPushButton::clicked, this, &QC_ApplicationWindow::SelectTime);
-    connect(ui->pushButton_4, &QPushButton::clicked, this, [=] {
-
-        CustomStr_6 = "";
-        CustomStr_6.append(std::string(ui->lineEdit_9->text().toLocal8Bit()));
-
-        QString deletestr = ui->comboBox->currentText();
-        string delestr = std::string(deletestr.toLocal8Bit());
-        if (AlterSchemeContent(delestr))
-        {
-            QMessageBox* msgBox = new QMessageBox(QMessageBox::Information, QString::fromLocal8Bit("保存成功  "), QString::fromLocal8Bit("保存成功 "), QMessageBox::Ok, this);
-            msgBox->button(QMessageBox::Ok)->setText(QString::fromLocal8Bit("确定 "));
-            msgBox->show();
-        }
-        string Log_Str = "*保存检测额外代码内容:\n" + CustomStr_6;
-        Logger::write(Log_Str);
-        });
-    connect(ui->pushButton_5, &QPushButton::clicked, this, [=] {
-        if (SCenabled != 0) {
-            if (FH != "*") {
-                ui->lineEdit_2->setText(FH + Start_Data_Time);
-            }
-            else {
-                ui->lineEdit_2->setText(Start_Data_Time);
-            }
-        }
-        else {
-            ui->lineEdit_2->setText(QString::fromLocal8Bit("生产日期未启用"));
-        }
-        if (BZenabled != 0) {
-            ui->lineEdit_10->setText(Save_Time);
-        }
-        else {
-            ui->lineEdit_10->setText(QString::fromLocal8Bit("保质日期未启用"));
-        }
-        if (EWenabled != 0) {
-            ui->lineEdit_12->setText(CustomStr_6.c_str());
-        }
-        else {
-            ui->lineEdit_12->setText(QString::fromLocal8Bit("额外代码未启用"));
-        }
-        ui->stackedWidget->setCurrentIndex(0);
-        ui->stackedWidget_2->setCurrentIndex(2);
-        QString deletestr = ui->comboBox->currentText();
-        string delestr = std::string(deletestr.toLocal8Bit());
-        AlterSchemeContent(delestr);
-        });
-    connect(ui->pushButton_6, &QPushButton::clicked, this, &QC_ApplicationWindow::saveCustomFields);
     connect(ui->comboBox,static_cast<void (QComboBox::*)(int)>(&QComboBox::currentIndexChanged),
         this,&QC_ApplicationWindow::ChangeScheme);
     connect(this, &QC_ApplicationWindow::RunOcr, this, &QC_ApplicationWindow::CapAndOcr);
     connect(this, &QC_ApplicationWindow::RunShow, this, &QC_ApplicationWindow::SubCapture);
-   // connect(this, &QC_ApplicationWindow::AlarmSignal, this, &QC_ApplicationWindow::Alarm);
-   // connect(this, &QC_ApplicationWindow::UNAlarmSignal, this, &QC_ApplicationWindow::UNAlarm);
     connect(this, &QC_ApplicationWindow::CamError, this, &QC_ApplicationWindow::CamErrorAct);//相机掉线动作);
    
     connect(&User, &user::showmain, this, [=] {
@@ -659,59 +574,29 @@ QC_ApplicationWindow::QC_ApplicationWindow()
         CamTimerEnd = true;
         });
 
-    //ui.comboBox->setCurrentIndex(FindNameCode());
 
-   // 使用函数指针的Qt5兼容方式
-    connect(ui->spinBox,
-        static_cast<void (QSpinBox::*)(int)>(&QSpinBox::valueChanged),
-        this,
-        [=](int value) {
-            save_time = value;  // 使用传递的值而不是再次获取
-            UpdataTime();
-        });
-    connect(ui->spinBox_2,
-        static_cast<void (QSpinBox::*)(int)>(&QSpinBox::valueChanged),
-        this,
-        [=](int value) {
-            Savemonth = value;  // 使用传递的值而不是再次获取
-            UpdataTime();
-        });
-    connect(ui->spinBox_3,
-        static_cast<void (QSpinBox::*)(int)>(&QSpinBox::valueChanged),
-        this,
-        [=](int value) {
-            Saveyear = value;  // 使用传递的值而不是再次获取
-            UpdataTime();
-        });
-
+  
+    connect(&ocrFilterRules, &OcrFilterRules::showmain, this, &QC_ApplicationWindow::saveCustomFields);
+   
+    
     ImageSize = FindImageSize();
 
-
-    if (FindNameCode() != 0)
-    {
-        ui->comboBox->setCurrentIndex(FindNameCode());
-    }
-    else
-    {
-        SetScheme(ui->comboBox->currentText());
-    }
-
-
-    RateClear();// 重置统计数据
+  
     UpdateCombobox();// 刷新方案下拉框
-    CamerButton();// 相机开关按钮，打开相机
+  
 
 
     QDateTime datetime = QDateTime::currentDateTime(); //当前时间
     year = datetime.date().year();             //年
     month = datetime.date().month();			   //月
     day = datetime.date().day();				   //日
-    ui->spinBox->setMaximum(10000);
+  /*  ui->spinBox->setMaximum(10000);
     ui->spinBox->setMinimum(-10000);
-    ui->spinBox->setValue(save_time);
+    ui->spinBox->setValue(save_time);*/
     UpdataTime();
     getSerialNum3();
-   
+    RateClear();// 重置统计数据
+    CamerButton();// 相机开关按钮，打开相机
    
 
     RS_DEBUG->print("QC_ApplicationWindow::QC_ApplicationWindow");
@@ -1390,38 +1275,22 @@ void QC_ApplicationWindow::initSettings()
 {
     setWindowFlags(Qt::FramelessWindowHint | Qt::WindowSystemMenuHint | Qt::WindowMinMaxButtonsHint);
     qApp->installEventFilter(this);                   //给自己加事件过滤器,用来实现拖动窗口
-    ui->stackedWidget->setCurrentIndex(0);
+  
     ui->stackedWidget_2->setCurrentIndex(1);
     ui->stackedWidget_3->setCurrentIndex(0);
     ui->tabWidget->setCurrentIndex(1);
-    ui->stackedWidget_4->setStyleSheet(QString::fromUtf8("#stackedWidget_4{border:1px solid rgb(52, 62, 79)}"));
+    //ui->stackedWidget_4->setStyleSheet(QString::fromUtf8("#stackedWidget_4{border:1px solid rgb(52, 62, 79)}"));
    
     QRegularExpressionValidator* alnumValidator = new QRegularExpressionValidator(
         QRegularExpression("^[A-Za-z0-9]*$"),  // 正则表达式
         this                                   // 父对象
     );
 
-    // 应用到所有自定义字段
-    ui->lineEdit_4->setValidator(alnumValidator);
-    ui->lineEdit_5->setValidator(alnumValidator);
-    ui->lineEdit_6->setValidator(alnumValidator);
-    ui->lineEdit_7->setValidator(alnumValidator);
-    ui->lineEdit_8->setValidator(alnumValidator);
-    ui->lineEdit_9->setValidator(alnumValidator);
-
-    ui->lineEdit->setFocusPolicy(Qt::NoFocus);
-    ui->lineEdit_3->setFocusPolicy(Qt::NoFocus);
     ui->zdybutton->setIcon(QIcon("Resources/PICs/close2.png"));
     ui->zdybutton->setIconSize(QSize(31, 31));
     ui->zdybutton->setText(QString::fromLocal8Bit("关闭 "));
     ui->zdybutton->setToolButtonStyle(Qt::ToolButtonTextBesideIcon);
-    ui->zdybutton_3->setIcon(QIcon("Resources/PICs/close2.png"));
-    ui->zdybutton_3->setIconSize(QSize(31, 31));
-    ui->zdybutton_3->setText(QString::fromLocal8Bit("关闭 "));
-    ui->zdybutton_3->setToolButtonStyle(Qt::ToolButtonTextBesideIcon);
-
-    ui->zdybutton_2->setEnabled(true);
-
+   
     SelectDB_Jgconfig();
     ui->lineEdit_15->setText(QString::number(jgconfig.interpolationStep));//设置插值步长
 
@@ -4577,7 +4446,7 @@ void QC_ApplicationWindow::CapAndOcr()
         {
             OCRT->isfinash = false;
             emit OCRT->running(image, rot, rects, &RawResult, &RawResult2, &Time_str, &ocrresult, SCenabled, BZenabled, EWenabled, Start_Data_Time, 
-                Save_Time, ui->comboBox_2->currentText(), IsCustom, QString::fromLocal8Bit(QByteArray::fromStdString(CustomStr)), 
+                Save_Time, FH, IsCustom, QString::fromLocal8Bit(QByteArray::fromStdString(CustomStr)), 
                 QString::fromLocal8Bit(QByteArray::fromStdString(CustomStr_2)), QString::fromLocal8Bit(QByteArray::fromStdString(CustomStr_3)),
                 QString::fromLocal8Bit(QByteArray::fromStdString(CustomStr_4)), QString::fromLocal8Bit(QByteArray::fromStdString(CustomStr_5)), 
                 QString::fromLocal8Bit(QByteArray::fromStdString(CustomStr_6)), &ocr_time, FirstOCRSize, SecOCRSize);//触发working流程开始执行
@@ -5090,7 +4959,6 @@ void QC_ApplicationWindow::NG()
                 Sleep(100);
                 ObjFeatureControlPtr->GetBoolFeature("LineInverter")->SetValue(true);
             
-              
             }
             else
             {
@@ -5123,6 +4991,14 @@ void QC_ApplicationWindow::UpdateCombobox()
         ui->comboBox->addItem(qstr);
     }
     ComboxMark = false;
+    if (FindNameCode() != 0)
+    {
+        ui->comboBox->setCurrentIndex(FindNameCode());
+    }
+    else
+    {
+        SetScheme(ui->comboBox->currentText());
+    }
 }
 //删除方案
 void QC_ApplicationWindow::DeleteCombobox()
@@ -5271,8 +5147,7 @@ void QC_ApplicationWindow::SetScheme(QString schemetext)
             SaveNameCode(ui->comboBox->currentIndex());
         }
         IsSchemeComboBoxcode = true;
-        ui->comboBox_2->setCurrentIndex(CodeIndex);
-        FH = ui->comboBox_2->currentText();
+      
         IsSchemeComboBoxcode = false;
       
     }
@@ -5300,23 +5175,13 @@ void QC_ApplicationWindow::ChangeScheme()
             ui->tabWidget->setCurrentIndex(0);
         }
         IsCustom = false;
-        ui->zdybutton_2->setEnabled(true);
-       
-
-        ui->lineEdit_4->setEnabled(true);
-        ui->lineEdit_5->setEnabled(true);
-        ui->lineEdit_6->setEnabled(true);
-        ui->lineEdit_7->setEnabled(true);
-        ui->lineEdit_8->setEnabled(true);
+      
 
         ui->zdybutton->setIcon(QIcon("Resources/PICs/close2.png"));
         ui->zdybutton->setIconSize(QSize(31, 31));
         ui->zdybutton->setText(QString::fromLocal8Bit("关闭 "));
         ui->zdybutton->setToolButtonStyle(Qt::ToolButtonTextBesideIcon);
-        ui->zdybutton_3->setIcon(QIcon("Resources/PICs/close2.png"));
-        ui->zdybutton_3->setIconSize(QSize(31, 31));
-        ui->zdybutton_3->setText(QString::fromLocal8Bit("关闭 "));
-        ui->zdybutton_3->setToolButtonStyle(Qt::ToolButtonTextBesideIcon);
+       
         Logger::write("切换当前配方为:" + std::string(ui->comboBox->currentText().toLocal8Bit()));
     }
 }
@@ -5608,7 +5473,7 @@ void QC_ApplicationWindow::OnlyOcr()
         if (OCRT->isfinash)
         {
             OCRT->isfinash = false;
-            emit OCRT->running(simulateImg, rot, rects, &RawResult, &RawResult2, &Time_str, &ocrresult, SCenabled, BZenabled, EWenabled, Start_Data_Time, Save_Time, ui->comboBox_2->currentText(), IsCustom, QString::fromLocal8Bit(QByteArray::fromStdString(CustomStr)), QString::fromLocal8Bit(QByteArray::fromStdString(CustomStr_2)), QString::fromLocal8Bit(QByteArray::fromStdString(CustomStr_3)), QString::fromLocal8Bit(QByteArray::fromStdString(CustomStr_4)), QString::fromLocal8Bit(QByteArray::fromStdString(CustomStr_5)), QString::fromLocal8Bit(QByteArray::fromStdString(CustomStr_6)), &ocr_time, FirstOCRSize, SecOCRSize);//触发working流程开始执行
+            emit OCRT->running(simulateImg, rot, rects, &RawResult, &RawResult2, &Time_str, &ocrresult, SCenabled, BZenabled, EWenabled, Start_Data_Time, Save_Time, FH, IsCustom, QString::fromLocal8Bit(QByteArray::fromStdString(CustomStr)), QString::fromLocal8Bit(QByteArray::fromStdString(CustomStr_2)), QString::fromLocal8Bit(QByteArray::fromStdString(CustomStr_3)), QString::fromLocal8Bit(QByteArray::fromStdString(CustomStr_4)), QString::fromLocal8Bit(QByteArray::fromStdString(CustomStr_5)), QString::fromLocal8Bit(QByteArray::fromStdString(CustomStr_6)), &ocr_time, FirstOCRSize, SecOCRSize);//触发working流程开始执行
  
         }
         IsOnlyOcr = true;
@@ -5658,63 +5523,7 @@ void QC_ApplicationWindow::RateClear()
     Logger::write(defaultstr);
 }
 
-void QC_ApplicationWindow::SelectTime()
-{
-    //确认弹窗
-    QDialog dialog;
-    dialog.setWindowTitle(QString::fromLocal8Bit("选择日期 "));
-    dialog.resize(700, 350);
 
-    RollingBox timebox(&dialog);
-
-    //使用QDialogButtonBox简化按钮的创建和连接
-    QDialogButtonBox* buttonBox = new QDialogButtonBox(&dialog);
-    buttonBox->setGeometry(220, 200, 300, 200);
-
-    QPushButton* okButton = new QPushButton(QString::fromLocal8Bit("确定 "));
-    QPushButton* cancelButton = new QPushButton(QString::fromLocal8Bit("取消 "));
-    buttonBox->addButton(okButton, QDialogButtonBox::ActionRole);
-    buttonBox->addButton(cancelButton, QDialogButtonBox::ActionRole);
-    buttonBox->setStyleSheet("QPushButton { margin-right: 50px; width: 100px; height: 50px; }");
-
-    connect(okButton, &QPushButton::clicked, &dialog, &QDialog::accept);
-    connect(cancelButton, &QPushButton::clicked, &dialog, &QDialog::reject);
-
-    int ret = dialog.exec();
-    //根据选择进行响应
-    if (ret == QDialog::Accepted) {
-        year = timebox.readYear();
-        month = timebox.readMonth();
-        day = timebox.readDay();
-        QString year_str, month_str, day_str;
-        if (year < 10)
-        {
-            year_str = "0" + QString::number(year);
-        }
-        else {
-            year_str = QString::number(year);
-        }
-        if (month < 10)
-        {
-            month_str = "0" + QString::number(month);
-        }
-        else {
-            month_str = QString::number(month);
-        }
-        if (day < 10)
-        {
-            day_str = "0" + QString::number(day);
-        }
-        else {
-            day_str = QString::number(day);
-        }
-
-        Start_Data_Time = year_str + month_str + day_str;
-        ui->lineEdit->setText(Start_Data_Time);
-        Save_Time = CaculateTime(year, month, day, save_time, Savemonth, Saveyear);
-        ui->lineEdit_3->setText(Save_Time);
-    }
-}
 
 QString QC_ApplicationWindow::CaculateTime(int year, int month, int day,
     int save_days, int save_months, int save_years)
@@ -5735,22 +5544,52 @@ QString QC_ApplicationWindow::CaculateTime(int year, int month, int day,
 }
 void QC_ApplicationWindow::UpdataTime()
 {
-    auto pad = [](int v) { return QString("%1").arg(v, 2, 10, QChar('0')); };
-    Start_Data_Time = pad(year) + pad(month) + pad(day);
-    ui->lineEdit->setText(Start_Data_Time);
-
-    if (SCenabled != 0) {
-        ui->lineEdit_2->setText(FH != "*" ? FH + Start_Data_Time : Start_Data_Time);
-    } else {
-        ui->lineEdit_2->setText(QString::fromLocal8Bit("生产日期未启用"));
+    QString year_str, month_str, day_str;
+    if (year < 10)
+    {
+        year_str = "0" + QString::number(year);
+    }
+    else {
+        year_str = QString::number(year);
+    }
+    if (month < 10)
+    {
+        month_str = "0" + QString::number(month);
+    }
+    else {
+        month_str = QString::number(month);
+    }
+    if (day < 10)
+    {
+        day_str = "0" + QString::number(day);
+    }
+    else {
+        day_str = QString::number(day);
     }
 
-    save_time = ui->spinBox->value();
+    Start_Data_Time = year_str + month_str + day_str;
+    ui->lineEdit_2->setText(Start_Data_Time);
+    if (SCenabled != 0) {
+        if (FH != "*") {
+            ui->lineEdit_2->setText(FH + Start_Data_Time);
+        }
+        else {
+            ui->lineEdit_2->setText(Start_Data_Time);
+        }
+    }
+    else {
+        ui->lineEdit_2->setText(QString::fromLocal8Bit("生产日期未启用"));
+    }
+    //save_time = ui->spinBox->value();
     Save_Time = CaculateTime(year, month, day, save_time, Savemonth, Saveyear);
-    ui->lineEdit_3->setText(Save_Time);
-    ui->lineEdit_10->setText(BZenabled != 0
-        ? Save_Time
-        : QString::fromLocal8Bit("保质日期未启用"));
+    ui->lineEdit_10->setText(Save_Time);
+    if (BZenabled != 0) {
+        ui->lineEdit_10->setText(Save_Time);
+    }
+    else {
+        ui->lineEdit_10->setText(QString::fromLocal8Bit("保质日期未启用"));
+    }
+
 }
 
 
@@ -5791,33 +5630,20 @@ void QC_ApplicationWindow::SetSchemeContent(QString schemename)
     auto setText = [&](QLineEdit* edit, const std::string& str) {
         edit->setText(QString::fromLocal8Bit(str.c_str()));
     };
-    setText(ui->lineEdit_4, CustomStr);
-    setText(ui->lineEdit_7, CustomStr_2);
-    setText(ui->lineEdit_6, CustomStr_3);
-    setText(ui->lineEdit_8, CustomStr_4);
-    setText(ui->lineEdit_5, CustomStr_5);
+   
+
+
     setText(ui->lineEdit_13, CustomStr);
     setText(ui->lineEdit_17, CustomStr_2);
     setText(ui->lineEdit_14, CustomStr_3);
     setText(ui->lineEdit_18, CustomStr_4);
     setText(ui->lineEdit_16, CustomStr_5);
 
-    setText(ui->lineEdit_9, CustomStr_6);
+  
     ui->lineEdit_12->setText(EWenabled != 0
         ? QString::fromLocal8Bit(CustomStr_6.c_str())
         : QString::fromLocal8Bit("额外代码未启用"));
 
-    ui->spinBox->setValue(save_time);
-    ui->spinBox_2->setValue(Savemonth);
-    ui->spinBox_3->setValue(Saveyear);
-
-    auto setToggle = [&](QWidget* onBtn, QWidget* offBtn, bool enabled) {
-        onBtn->setStyleSheet(enabled ? "background-color:  #87CEEB;" : "background-color:  #FFFFFF;");
-        offBtn->setStyleSheet(enabled ? "background-color:  #FFFFFF;" : "background-color:  #87CEEB;");
-    };
-    setToggle(ui->toolButton_18, ui->toolButton_20, SCenabled);
-    setToggle(ui->toolButton_22, ui->toolButton_23, BZenabled);
-    setToggle(ui->toolButton_24, ui->toolButton_29, EWenabled);
 }
 ////打开相机锁定界面
 //void QC_ApplicationWindow::LockScreen()
@@ -5836,11 +5662,7 @@ void QC_ApplicationWindow::SetSchemeContent(QString schemename)
 //    TriggerLine0();
 //    //ui.page_3->setStyleSheet("background-color: #333333;");
 //}
-// 解锁至主界面
-void QC_ApplicationWindow::UnlockScreen()
-{
-    ui->stackedWidget->setCurrentIndex(0);
-}
+
 
 
 
@@ -6478,7 +6300,7 @@ void QC_ApplicationWindow::processBinaryData(const QBitArray& bits, const QHostA
 void QC_ApplicationWindow::CustomModeButtonClicked() {
     if (!IsCustom)
     {
-        if (ui->lineEdit_6->text() == "" && ui->lineEdit_4->text() == "" && ui->lineEdit_5->text() == "" && ui->lineEdit_7->text() == "" && ui->lineEdit_8->text() == "")
+        if (ui->lineEdit_13->text() == "" && ui->lineEdit_14->text() == "" && ui->lineEdit_16->text() == "" && ui->lineEdit_17->text() == "" && ui->lineEdit_18->text() == "")
         {
             QMessageBox* msgBox = new QMessageBox(QMessageBox::Critical, QString::fromLocal8Bit("日期格式错误 "), QString::fromLocal8Bit("日期字符不能为空 "), QMessageBox::Ok, this);
             msgBox->setFixedSize(400, 400);
@@ -6486,99 +6308,70 @@ void QC_ApplicationWindow::CustomModeButtonClicked() {
             msgBox->show();
             return;
         }
-        CustomStr = "";
-        CustomStr.append(std::string(ui->lineEdit_4->text().toLocal8Bit()));
-        CustomStr_2 = "";
-        CustomStr_2.append(std::string(ui->lineEdit_7->text().toLocal8Bit()));
-        CustomStr_3 = "";
-        CustomStr_3.append(std::string(ui->lineEdit_6->text().toLocal8Bit()));
-        CustomStr_4 = "";
-        CustomStr_4.append(std::string(ui->lineEdit_8->text().toLocal8Bit()));
-        CustomStr_5 = "";
-        CustomStr_5.append(std::string(ui->lineEdit_5->text().toLocal8Bit()));
+    
 
         QString deletestr = ui->comboBox->currentText();
         string delestr = std::string(deletestr.toLocal8Bit());
         AlterSchemeContent(delestr);
 
         IsCustom = true;
-        ui->zdybutton_2->setEnabled(false);
+      
       
         ui->zdybutton->setIcon(QIcon("Resources/PICs/open2.png"));
         ui->zdybutton->setIconSize(QSize(31, 31));
         ui->zdybutton->setText(QString::fromLocal8Bit("开启 "));
         ui->zdybutton->setToolButtonStyle(Qt::ToolButtonTextBesideIcon);
-        ui->zdybutton_3->setIcon(QIcon("Resources/PICs/open2.png"));
-        ui->zdybutton_3->setIconSize(QSize(31, 31));
-        ui->zdybutton_3->setText(QString::fromLocal8Bit("开启 "));
-        ui->zdybutton_3->setToolButtonStyle(Qt::ToolButtonTextBesideIcon);
-
-        ui->lineEdit_4->setEnabled(false);
-        ui->lineEdit_5->setEnabled(false);
-        ui->lineEdit_6->setEnabled(false);
-        ui->lineEdit_7->setEnabled(false);
-        ui->lineEdit_8->setEnabled(false);
-
+      
+       
         Logger::write("开启自定义模式!");
     }
     else
     {
         IsCustom = false;
-        ui->zdybutton_2->setEnabled(true);
        
-
-        ui->lineEdit_4->setEnabled(true);
-        ui->lineEdit_5->setEnabled(true);
-        ui->lineEdit_6->setEnabled(true);
-        ui->lineEdit_7->setEnabled(true);
-        ui->lineEdit_8->setEnabled(true);
 
         ui->zdybutton->setIcon(QIcon("Resources/PICs/close2.png"));
         ui->zdybutton->setIconSize(QSize(31, 31));
         ui->zdybutton->setText(QString::fromLocal8Bit("关闭 "));
         ui->zdybutton->setToolButtonStyle(Qt::ToolButtonTextBesideIcon);
-        ui->zdybutton_3->setIcon(QIcon("Resources/PICs/close2.png"));
-        ui->zdybutton_3->setIconSize(QSize(31, 31));
-        ui->zdybutton_3->setText(QString::fromLocal8Bit("关闭 "));
-        ui->zdybutton_3->setToolButtonStyle(Qt::ToolButtonTextBesideIcon);
+       
         Logger::write("关闭自定义模式!");
     }
 }
-void QC_ApplicationWindow::clearCustomFields() {
-    ui->lineEdit_4->clear();
-    ui->lineEdit_5->clear();
-    ui->lineEdit_6->clear();
-    ui->lineEdit_7->clear();
-    ui->lineEdit_8->clear();
-}
+
 
 void QC_ApplicationWindow::saveCustomFields() {
-    CustomStr = "";
-    CustomStr.append(std::string(ui->lineEdit_4->text().toLocal8Bit()));
-    CustomStr_2 = "";
-    CustomStr_2.append(std::string(ui->lineEdit_7->text().toLocal8Bit()));
-    CustomStr_3 = "";
-    CustomStr_3.append(std::string(ui->lineEdit_6->text().toLocal8Bit()));
-    CustomStr_4 = "";
-    CustomStr_4.append(std::string(ui->lineEdit_8->text().toLocal8Bit()));
-    CustomStr_5 = "";
-    CustomStr_5.append(std::string(ui->lineEdit_5->text().toLocal8Bit()));
-
-    QString deletestr = ui->comboBox->currentText();
-    string delestr = std::string(deletestr.toLocal8Bit());
-    AlterSchemeContent(delestr);
-    string Log_Str = "*保存检测栏内容:\n" + CustomStr + " " + CustomStr_2 + "\n" + CustomStr_3 + " " + CustomStr_4 + "\n" + CustomStr_5;
-    Logger::write(Log_Str);
+   
+    if (SCenabled != 0) {
+         ui->lineEdit_2->setText(Start_Data_Time);
+    }
+    else {
+        ui->lineEdit_2->setText(QString::fromLocal8Bit("生产日期未启用"));
+    }
+    if (BZenabled != 0) {
+        ui->lineEdit_10->setText(Save_Time);
+    }
+    else {
+        ui->lineEdit_10->setText(QString::fromLocal8Bit("保质日期未启用"));
+    }
+    if (EWenabled != 0) {
+        ui->lineEdit_12->setText(CustomStr_6.c_str());
+    }
+    else {
+        ui->lineEdit_12->setText(QString::fromLocal8Bit("额外代码未启用"));
+    }
     ui->lineEdit_13->setText(QString::fromLocal8Bit(CustomStr.c_str()));
     ui->lineEdit_17->setText(QString::fromLocal8Bit(CustomStr_2.c_str()));
     ui->lineEdit_14->setText(QString::fromLocal8Bit(CustomStr_3.c_str()));
     ui->lineEdit_18->setText(QString::fromLocal8Bit(CustomStr_4.c_str()));
     ui->lineEdit_16->setText(QString::fromLocal8Bit(CustomStr_5.c_str()));
-    ui->stackedWidget->setCurrentIndex(0);
-    ui->stackedWidget_2->setCurrentIndex(2);
-    if (IsCustom) {
+    ui->stackedWidget_2->setCurrentIndex(1);
+    QString deletestr = ui->comboBox->currentText();
+    string delestr = std::string(deletestr.toLocal8Bit());
+    AlterSchemeContent(delestr);
+    /*if (IsCustom) {
         ui->tabWidget->setCurrentIndex(0);
-    }
+    }*/
 
 }
 
@@ -6659,21 +6452,12 @@ void QC_ApplicationWindow::onTabWidgetPageChanged(int index)
 
     if (ui->tabWidget) {
         IsCustom = false;
-        ui->zdybutton_2->setEnabled(true);
-        ui->lineEdit_4->setEnabled(true);
-        ui->lineEdit_5->setEnabled(true);
-        ui->lineEdit_6->setEnabled(true);
-        ui->lineEdit_7->setEnabled(true);
-        ui->lineEdit_8->setEnabled(true);
-
+     
         ui->zdybutton->setIcon(QIcon("Resources/PICs/close2.png"));
         ui->zdybutton->setIconSize(QSize(31, 31));
         ui->zdybutton->setText(QString::fromLocal8Bit("关闭 "));
         ui->zdybutton->setToolButtonStyle(Qt::ToolButtonTextBesideIcon);
-        ui->zdybutton_3->setIcon(QIcon("Resources/PICs/close2.png"));
-        ui->zdybutton_3->setIconSize(QSize(31, 31));
-        ui->zdybutton_3->setText(QString::fromLocal8Bit("关闭 "));
-        ui->zdybutton_3->setToolButtonStyle(Qt::ToolButtonTextBesideIcon);
+      
 
     }
 }
