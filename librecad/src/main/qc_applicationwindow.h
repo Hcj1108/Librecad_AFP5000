@@ -301,7 +301,7 @@ public:
     // 9. OCR模块公共方法声明
     // =======================================================================
 
-    bool eventFilter(QObject* obj, QEvent* evt);  // 事件过滤器
+  
 
     // 相机控制
     void CamerButton();                     // 相机开关按钮处理
@@ -392,8 +392,6 @@ public:
 
     // 系统管理
     void SetSchemeContent(QString schemename);  // 设置方案内容
-    //void LockScreen();                     // 锁屏
-    void UnlockScreen();                   // 解锁
     void showLoginDialog();                  // 弹出登录/注销对话框
     void toggleSchemeButton(QWidget* activeBtn, QWidget* inactiveBtn, bool& flag, bool value);
     void manageUserPermissions();          // 管理用户权限
@@ -597,6 +595,7 @@ protected:
     virtual void dropEvent(QDropEvent* e) override;  // 拖放事件
     virtual void dragEnterEvent(QDragEnterEvent* event) override;  // 拖入事件
     void changeEvent(QEvent* event) override;  // 变化事件
+    bool eventFilter(QObject* obj, QEvent* evt);  // 事件过滤器
 
 private:
     QMenu* createPopupMenu() override;  // 创建弹出菜单

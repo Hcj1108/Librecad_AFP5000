@@ -63,13 +63,10 @@ public:
     QToolButton *toolButton_3;
     QSpacerItem *verticalSpacer;
     QSpacerItem *verticalSpacer_5;
-    QSpacerItem *verticalSpacer_4;
     QSpacerItem *verticalSpacer_3;
     QHBoxLayout *horizontalLayout;
     QSpacerItem *horizontalSpacer_3;
     QPushButton *btnClose;
-    QSpacerItem *verticalSpacer_2;
-    QSpacerItem *horizontalSpacer_4;
 
     void setupUi(QMainWindow *SettingClass)
     {
@@ -115,8 +112,9 @@ public:
         mainArea->addItem(horizontalSpacer);
 
         rightPanel = new QVBoxLayout();
-        rightPanel->setSpacing(0);
+        rightPanel->setSpacing(5);
         rightPanel->setObjectName(QString::fromUtf8("rightPanel"));
+        rightPanel->setContentsMargins(10, 10, 10, 10);
         groupBox_2 = new QGroupBox(centralWidget);
         groupBox_2->setObjectName(QString::fromUtf8("groupBox_2"));
         groupBox_2->setMinimumSize(QSize(280, 200));
@@ -329,10 +327,6 @@ public:
 
         rightPanel->addItem(verticalSpacer_5);
 
-        verticalSpacer_4 = new QSpacerItem(20, 40, QSizePolicy::Expanding, QSizePolicy::Minimum);
-
-        rightPanel->addItem(verticalSpacer_4);
-
         verticalSpacer_3 = new QSpacerItem(20, 40, QSizePolicy::Expanding, QSizePolicy::Minimum);
 
         rightPanel->addItem(verticalSpacer_3);
@@ -360,16 +354,8 @@ public:
 
         rightPanel->addLayout(horizontalLayout);
 
-        verticalSpacer_2 = new QSpacerItem(10, 10, QSizePolicy::Policy::Minimum, QSizePolicy::Minimum);
-
-        rightPanel->addItem(verticalSpacer_2);
-
 
         mainArea->addLayout(rightPanel);
-
-        horizontalSpacer_4 = new QSpacerItem(10, 20, QSizePolicy::Policy::Minimum, QSizePolicy::Minimum);
-
-        mainArea->addItem(horizontalSpacer_4);
 
 
         mainLayout->addLayout(mainArea);

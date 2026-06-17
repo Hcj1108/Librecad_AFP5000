@@ -37,7 +37,6 @@ QG_DlgMText::~QG_DlgMText()
     destroy();
    
 }
-
 /**
  *  界面文本翻译
  *  刷新函数

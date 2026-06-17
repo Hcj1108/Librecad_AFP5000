@@ -249,10 +249,6 @@ QC_ApplicationWindow::QC_ApplicationWindow()
         });
 
   
-   
- 
-  
-   
     //上下左右平移
     connect(ui->moveUpBtn, &QToolButton::clicked, this, &QC_ApplicationWindow::onMoveUpButtonClicked);
     connect(ui->moveDownBtn, &QToolButton::clicked, this, &QC_ApplicationWindow::onMoveDownButtonClicked);
@@ -630,7 +626,6 @@ QC_ApplicationWindow::QC_ApplicationWindow()
 
 
 
-
     //状态栏(左下角)初始化
     QStatusBar* status_bar = statusBar();
 
@@ -673,13 +668,13 @@ QC_ApplicationWindow::QC_ApplicationWindow()
 
 
     mdiAreaCAD = ui->mdiArea;  // 将UI中的mdiArea赋值给成员变量
-    mdiAreaCAD->setDocumentMode(false);// 启用标签页模式
+    //mdiAreaCAD->setDocumentMode(false);// 启用标签页模式
   
 
 
     RS_SETTINGS->beginGroup("/WindowOptions");
-    //setTabLayout(static_cast<RS2::TabShape>(RS_SETTINGS->readNumEntry("/TabShape", RS2::Triangular)),
-        //static_cast<RS2::TabPosition>(RS_SETTINGS->readNumEntry("/TabPosition", RS2::West)));
+    setTabLayout(static_cast<RS2::TabShape>(RS_SETTINGS->readNumEntry("/TabShape", RS2::Triangular)),
+        static_cast<RS2::TabPosition>(RS_SETTINGS->readNumEntry("/TabPosition", RS2::West)));
     RS_SETTINGS->endGroup();
 
     settings.beginGroup("Startup");
@@ -780,7 +775,7 @@ QC_ApplicationWindow::QC_ApplicationWindow()
     //创建菜单栏
     widget_factory.createMenus(menuBar());
 
-    /*undoButton = a_map["EditUndo"];
+ /*   undoButton = a_map["EditUndo"];
     redoButton = a_map["EditRedo"];
     previousZoom = a_map["ZoomPrevious"];*/
 
@@ -806,7 +801,7 @@ QC_ApplicationWindow::QC_ApplicationWindow()
 
 
     //连接信号槽：关闭文档、修改画笔、快捷键
-   /* connect(a_map["FileClose"], SIGNAL(triggered(bool)),
+  /*  connect(a_map["FileClose"], SIGNAL(triggered(bool)),
         mdiAreaCAD, SLOT(closeActiveSubWindow()));
 
     connect(penToolBar, SIGNAL(penChanged(RS_Pen)),
@@ -825,11 +820,13 @@ QC_ApplicationWindow::QC_ApplicationWindow()
     // send key events for mdiAreaCAD to command widget by default
 
 
-    //// 安装事件过滤器,用于将按键事件直接发往命令行输入框。
-    //mdiAreaCAD->installEventFilter(commandWidget);
+    // 安装事件过滤器,用于将按键事件直接发往命令行输入框。
+    // mdiAreaCAD->installEventFilter(commandWidget);
 
     dialogFactory = new QC_DialogFactory(this, optionWidget);
   
+
+
     // 创建并绑定对话框工厂,用于统一管理对话框创建（比如属性编辑、块插入等）
     RS_DialogFactory::instance()->setFactoryObject(dialogFactory);
    
@@ -858,7 +855,7 @@ QC_ApplicationWindow::QC_ApplicationWindow()
 	
     //loadPlugins();// 加载插件，通常是从指定目录扫描并动态加载插件库
    
-   
+    
 }
 
 
@@ -1339,7 +1336,7 @@ void QC_ApplicationWindow::initSettings()
     foreach(QToolBar* toolbar, findChildren<QToolBar*>()) {
         toolbar->hide();
     }
- 
+   
 }
 
 
@@ -2019,8 +2016,10 @@ QC_MDIWindow* QC_ApplicationWindow::slotFileNew(RS_Document* doc) {
   
 	doActivate(w);
 	doArrangeWindows(RS2::CurrentMode);
-    w->getDocument()->getGraphic()->setGridOn(false);
-    w->getGraphicView()->redraw();
+
+   /* w->getDocument()->getGraphic()->setGridOn(false);
+    w->getGraphicView()->redraw();*/
+   
     layerWidget->activateLayer(0);
 
     return w;
@@ -2118,6 +2117,8 @@ void QC_ApplicationWindow::slotFileNewNew() {
         // 创建成功，输出调试信息
         RS_DEBUG->print("QC_ApplicationWindow::slotFileNewNew() OK");
     }
+    //取消网格显示
+    slotViewGrid(false);
 }
 
 /**
@@ -4446,7 +4447,7 @@ void QC_ApplicationWindow::CapAndOcr()
         {
             OCRT->isfinash = false;
             emit OCRT->running(image, rot, rects, &RawResult, &RawResult2, &Time_str, &ocrresult, SCenabled, BZenabled, EWenabled, Start_Data_Time, 
-                Save_Time, FH, IsCustom, QString::fromLocal8Bit(QByteArray::fromStdString(CustomStr)), 
+                Save_Time, "*", IsCustom, QString::fromLocal8Bit(QByteArray::fromStdString(CustomStr)),
                 QString::fromLocal8Bit(QByteArray::fromStdString(CustomStr_2)), QString::fromLocal8Bit(QByteArray::fromStdString(CustomStr_3)),
                 QString::fromLocal8Bit(QByteArray::fromStdString(CustomStr_4)), QString::fromLocal8Bit(QByteArray::fromStdString(CustomStr_5)), 
                 QString::fromLocal8Bit(QByteArray::fromStdString(CustomStr_6)), &ocr_time, FirstOCRSize, SecOCRSize);//触发working流程开始执行
@@ -5176,7 +5177,7 @@ void QC_ApplicationWindow::ChangeScheme()
         }
         IsCustom = false;
       
-
+        saveCustomFields();
         ui->zdybutton->setIcon(QIcon("Resources/PICs/close2.png"));
         ui->zdybutton->setIconSize(QSize(31, 31));
         ui->zdybutton->setText(QString::fromLocal8Bit("关闭 "));
@@ -5473,7 +5474,11 @@ void QC_ApplicationWindow::OnlyOcr()
         if (OCRT->isfinash)
         {
             OCRT->isfinash = false;
-            emit OCRT->running(simulateImg, rot, rects, &RawResult, &RawResult2, &Time_str, &ocrresult, SCenabled, BZenabled, EWenabled, Start_Data_Time, Save_Time, FH, IsCustom, QString::fromLocal8Bit(QByteArray::fromStdString(CustomStr)), QString::fromLocal8Bit(QByteArray::fromStdString(CustomStr_2)), QString::fromLocal8Bit(QByteArray::fromStdString(CustomStr_3)), QString::fromLocal8Bit(QByteArray::fromStdString(CustomStr_4)), QString::fromLocal8Bit(QByteArray::fromStdString(CustomStr_5)), QString::fromLocal8Bit(QByteArray::fromStdString(CustomStr_6)), &ocr_time, FirstOCRSize, SecOCRSize);//触发working流程开始执行
+            emit OCRT->running(simulateImg, rot, rects, &RawResult, &RawResult2, &Time_str, &ocrresult, SCenabled, BZenabled, EWenabled, 
+                Start_Data_Time, Save_Time, "*", IsCustom, QString::fromLocal8Bit(QByteArray::fromStdString(CustomStr)), 
+                QString::fromLocal8Bit(QByteArray::fromStdString(CustomStr_2)), QString::fromLocal8Bit(QByteArray::fromStdString(CustomStr_3)),
+                QString::fromLocal8Bit(QByteArray::fromStdString(CustomStr_4)), QString::fromLocal8Bit(QByteArray::fromStdString(CustomStr_5)),
+                QString::fromLocal8Bit(QByteArray::fromStdString(CustomStr_6)), &ocr_time, FirstOCRSize, SecOCRSize);//触发working流程开始执行
  
         }
         IsOnlyOcr = true;
@@ -5570,12 +5575,7 @@ void QC_ApplicationWindow::UpdataTime()
     Start_Data_Time = year_str + month_str + day_str;
     ui->lineEdit_2->setText(Start_Data_Time);
     if (SCenabled != 0) {
-        if (FH != "*") {
-            ui->lineEdit_2->setText(FH + Start_Data_Time);
-        }
-        else {
-            ui->lineEdit_2->setText(Start_Data_Time);
-        }
+        ui->lineEdit_2->setText(Start_Data_Time);
     }
     else {
         ui->lineEdit_2->setText(QString::fromLocal8Bit("生产日期未启用"));
@@ -6458,11 +6458,8 @@ void QC_ApplicationWindow::onTabWidgetPageChanged(int index)
         ui->zdybutton->setText(QString::fromLocal8Bit("关闭 "));
         ui->zdybutton->setToolButtonStyle(Qt::ToolButtonTextBesideIcon);
       
-
     }
 }
-
-
 
 void QC_ApplicationWindow::getSerialNum3() {
 
@@ -6810,8 +6807,8 @@ void QC_ApplicationWindow::enableBKBKPrinting() {
     RS_Document* document = getDocument();
     if (!graphicView || !document) return;
     // 计算选中实体的中心点
-    //if (!calculateSelectionBounds(document)) return;
-    //SetROISimple(mtexttotalWidth, mtexttotalHeight, mtextlowerLeftx, mtextlowerLefty);
+  /*  if (!calculateSelectionBounds(document)) return;
+    SetROISimple(mtexttotalWidth, mtexttotalHeight, mtextlowerLeftx, mtextlowerLefty);*/
     // 禁用所有工具栏动作
     if (slotCustomFunction1())
     {
@@ -6879,11 +6876,11 @@ void QC_ApplicationWindow::disableBKBKPrinting() {
     // ui->toolButton_47->setEnabled(true);
     // ui->toolButton_48->setEnabled(true);
 
-    mtextlowerLeftx = 0;
+   /* mtextlowerLeftx = 0;
     mtextlowerLefty = 0;
     mtexttotalWidth = ImageWidth;
     mtexttotalHeight = ImageHeight;
-    //SetROISimple(mtexttotalWidth, mtexttotalHeight, mtextlowerLeftx, mtextlowerLefty);
+    SetROISimple(mtexttotalWidth, mtexttotalHeight, mtextlowerLeftx, mtextlowerLefty);*/
 
     IsOpenBKBK = false;
     //ui->toolButton_15->setStyleSheet("background-color: rgb(255, 255, 255);");

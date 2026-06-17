@@ -129,8 +129,8 @@ public:
         font.setBold(true);
         font.setItalic(false);
         groupBox->setFont(font);
-        groupBox->setStyleSheet(QString::fromUtf8("QGroupBox{font: bold 14px \"Microsoft YaHei\"; color: #2c3e50; border: 1px solid #dcdde1; border-radius: 8px; margin-top: 12px; padding-top: 16px; background: #ffffff;}\n"
-"QGroupBox::title{subcontrol-origin: margin; left: 12px; padding: 0 6px;}"));
+        groupBox->setStyleSheet(QString::fromUtf8("QGroupBox{font: bold 14px \"Microsoft YaHei\"; color: #2c3e50; border: 1px solid #e0e0e0; border-radius: 8px; margin-top: 14px; padding-top: 18px; background: #ffffff;}\n"
+"QGroupBox::title{subcontrol-origin: margin; left: 12px; padding: 4px 12px; background: #3498db; color: white; border-radius: 4px;}"));
         userLayout = new QHBoxLayout(groupBox);
         userLayout->setSpacing(10);
         userLayout->setObjectName(QString::fromUtf8("userLayout"));
@@ -141,9 +141,9 @@ public:
         groupBox_3->setStyleSheet(QString::fromUtf8("QGroupBox{font: bold 13px \"Microsoft YaHei\"; color: #2c3e50; border: 1px solid #dcdde1; border-radius: 6px; margin-top: 10px; padding-top: 12px; background: #ffffff;}\n"
 "QGroupBox::title{subcontrol-origin: margin; left: 8px; padding: 0 4px;}"));
         userListLayout = new QVBoxLayout(groupBox_3);
-        userListLayout->setSpacing(8);
+        userListLayout->setSpacing(10);
         userListLayout->setObjectName(QString::fromUtf8("userListLayout"));
-        userListLayout->setContentsMargins(15, 22, 15, 15);
+        userListLayout->setContentsMargins(10, 10, 10, 10);
         comboBox_2 = new QComboBox(groupBox_3);
         comboBox_2->setObjectName(QString::fromUtf8("comboBox_2"));
         comboBox_2->setMinimumSize(QSize(119, 36));
@@ -201,61 +201,70 @@ public:
         permLayout = new QVBoxLayout(groupBox_2);
         permLayout->setSpacing(4);
         permLayout->setObjectName(QString::fromUtf8("permLayout"));
-        permLayout->setContentsMargins(12, 22, 12, 10);
+        permLayout->setContentsMargins(10, 10, 10, 10);
         checkBox = new QCheckBox(groupBox_2);
         checkBox->setObjectName(QString::fromUtf8("checkBox"));
         QFont font1;
         font1.setFamily(QString::fromUtf8("Microsoft YaHei"));
         font1.setPointSize(12);
         checkBox->setFont(font1);
+        checkBox->setStyleSheet(QString::fromUtf8("color: #34495e; background: transparent;"));
 
         permLayout->addWidget(checkBox);
 
         checkBox_6 = new QCheckBox(groupBox_2);
         checkBox_6->setObjectName(QString::fromUtf8("checkBox_6"));
         checkBox_6->setFont(font1);
+        checkBox_6->setStyleSheet(QString::fromUtf8("color: #34495e; background: transparent;"));
 
         permLayout->addWidget(checkBox_6);
 
         checkBox_7 = new QCheckBox(groupBox_2);
         checkBox_7->setObjectName(QString::fromUtf8("checkBox_7"));
         checkBox_7->setFont(font1);
+        checkBox_7->setStyleSheet(QString::fromUtf8("color: #34495e; background: transparent;"));
 
         permLayout->addWidget(checkBox_7);
 
         checkBox_3 = new QCheckBox(groupBox_2);
         checkBox_3->setObjectName(QString::fromUtf8("checkBox_3"));
         checkBox_3->setFont(font1);
+        checkBox_3->setStyleSheet(QString::fromUtf8("color: #34495e; background: transparent;"));
 
         permLayout->addWidget(checkBox_3);
 
         checkBox_4 = new QCheckBox(groupBox_2);
         checkBox_4->setObjectName(QString::fromUtf8("checkBox_4"));
         checkBox_4->setFont(font1);
+        checkBox_4->setStyleSheet(QString::fromUtf8("color: #34495e; background: transparent;"));
 
         permLayout->addWidget(checkBox_4);
 
         checkBox_2 = new QCheckBox(groupBox_2);
         checkBox_2->setObjectName(QString::fromUtf8("checkBox_2"));
         checkBox_2->setFont(font1);
+        checkBox_2->setStyleSheet(QString::fromUtf8("color: #34495e; background: transparent;"));
 
         permLayout->addWidget(checkBox_2);
 
         checkBox_5 = new QCheckBox(groupBox_2);
         checkBox_5->setObjectName(QString::fromUtf8("checkBox_5"));
         checkBox_5->setFont(font1);
+        checkBox_5->setStyleSheet(QString::fromUtf8("color: #34495e; background: transparent;"));
 
         permLayout->addWidget(checkBox_5);
 
         checkBox_8 = new QCheckBox(groupBox_2);
         checkBox_8->setObjectName(QString::fromUtf8("checkBox_8"));
         checkBox_8->setFont(font1);
+        checkBox_8->setStyleSheet(QString::fromUtf8("color: #34495e; background: transparent;"));
 
         permLayout->addWidget(checkBox_8);
 
         checkBox_17 = new QCheckBox(groupBox_2);
         checkBox_17->setObjectName(QString::fromUtf8("checkBox_17"));
         checkBox_17->setFont(font1);
+        checkBox_17->setStyleSheet(QString::fromUtf8("color: #34495e; background: transparent;"));
 
         permLayout->addWidget(checkBox_17);
 
@@ -297,8 +306,9 @@ public:
         toolButton_3->setMinimumSize(QSize(119, 38));
         toolButton_3->setMaximumSize(QSize(119, 38));
         toolButton_3->setFont(font);
-        toolButton_3->setStyleSheet(QString::fromUtf8("QToolButton{font: bold 12px \"Microsoft YaHei\"; background: #f39c12; color: white; border-radius: 6px; padding: 8px 16px;}\n"
-"QToolButton:hover{background: #e67e22;}"));
+        toolButton_3->setStyleSheet(QString::fromUtf8("QToolButton{font: bold 12px \"Microsoft YaHei\"; background: #27ae60; color: white; border-radius: 6px; padding: 8px 16px;}\n"
+"QToolButton:hover{background: #e67e22;}\n"
+""));
         QIcon icon3;
         icon3.addFile(QString::fromUtf8(":/PNG/Resources/PNG/XGMM.png"), QSize(), QIcon::Normal, QIcon::Off);
         toolButton_3->setIcon(icon3);
@@ -324,8 +334,9 @@ public:
         toolButton_6->setMinimumSize(QSize(119, 38));
         toolButton_6->setMaximumSize(QSize(119, 38));
         toolButton_6->setFont(font);
-        toolButton_6->setStyleSheet(QString::fromUtf8("QToolButton{font: bold 12px \"Microsoft YaHei\"; background: #27ae60; color: white; border-radius: 6px; padding: 8px 16px;}\n"
-"QToolButton:hover{background: #229954;}"));
+        toolButton_6->setStyleSheet(QString::fromUtf8("QToolButton{font: bold 12px \"Microsoft YaHei\"; background: #ffaa00; color: white; border-radius: 6px; padding: 8px 16px;}\n"
+"QToolButton:hover{background: #229954;}\n"
+""));
         QIcon icon4;
         icon4.addFile(QString::fromUtf8(":/PNG/Resources/PNG/Gengxing.png"), QSize(), QIcon::Normal, QIcon::Off);
         toolButton_6->setIcon(icon4);
@@ -379,8 +390,8 @@ public:
         groupBox_4 = new QGroupBox(page_2);
         groupBox_4->setObjectName(QString::fromUtf8("groupBox_4"));
         groupBox_4->setFont(font);
-        groupBox_4->setStyleSheet(QString::fromUtf8("QGroupBox{font: bold 14px \"Microsoft YaHei\"; color: #2c3e50; border: 1px solid #dcdde1; border-radius: 8px; margin-top: 12px; padding-top: 16px; background: #ffffff;}\n"
-"QGroupBox::title{subcontrol-origin: margin; left: 12px; padding: 0 6px;}"));
+        groupBox_4->setStyleSheet(QString::fromUtf8("QGroupBox{font: bold 14px \"Microsoft YaHei\"; color: #2c3e50; border: 1px solid #e0e0e0; border-radius: 8px; margin-top: 14px; padding-top: 18px; background: #ffffff;}\n"
+"QGroupBox::title{subcontrol-origin: margin; left: 12px; padding: 4px 12px; background: #3498db; color: white; border-radius: 4px;}"));
         addUserLayout = new QHBoxLayout(groupBox_4);
         addUserLayout->setSpacing(15);
         addUserLayout->setObjectName(QString::fromUtf8("addUserLayout"));
@@ -490,54 +501,63 @@ public:
         checkBox_9 = new QCheckBox(groupBox_5);
         checkBox_9->setObjectName(QString::fromUtf8("checkBox_9"));
         checkBox_9->setFont(font1);
+        checkBox_9->setStyleSheet(QString::fromUtf8("color: #34495e; background: transparent;"));
 
         setPermLayout->addWidget(checkBox_9);
 
         checkBox_13 = new QCheckBox(groupBox_5);
         checkBox_13->setObjectName(QString::fromUtf8("checkBox_13"));
         checkBox_13->setFont(font1);
+        checkBox_13->setStyleSheet(QString::fromUtf8("color: #34495e; background: transparent;"));
 
         setPermLayout->addWidget(checkBox_13);
 
         checkBox_14 = new QCheckBox(groupBox_5);
         checkBox_14->setObjectName(QString::fromUtf8("checkBox_14"));
         checkBox_14->setFont(font1);
+        checkBox_14->setStyleSheet(QString::fromUtf8("color: #34495e; background: transparent;"));
 
         setPermLayout->addWidget(checkBox_14);
 
         checkBox_11 = new QCheckBox(groupBox_5);
         checkBox_11->setObjectName(QString::fromUtf8("checkBox_11"));
         checkBox_11->setFont(font1);
+        checkBox_11->setStyleSheet(QString::fromUtf8("color: #34495e; background: transparent;"));
 
         setPermLayout->addWidget(checkBox_11);
 
         checkBox_12 = new QCheckBox(groupBox_5);
         checkBox_12->setObjectName(QString::fromUtf8("checkBox_12"));
         checkBox_12->setFont(font1);
+        checkBox_12->setStyleSheet(QString::fromUtf8("color: #34495e; background: transparent;"));
 
         setPermLayout->addWidget(checkBox_12);
 
         checkBox_10 = new QCheckBox(groupBox_5);
         checkBox_10->setObjectName(QString::fromUtf8("checkBox_10"));
         checkBox_10->setFont(font1);
+        checkBox_10->setStyleSheet(QString::fromUtf8("color: #34495e; background: transparent;"));
 
         setPermLayout->addWidget(checkBox_10);
 
         checkBox_15 = new QCheckBox(groupBox_5);
         checkBox_15->setObjectName(QString::fromUtf8("checkBox_15"));
         checkBox_15->setFont(font1);
+        checkBox_15->setStyleSheet(QString::fromUtf8("color: #34495e; background: transparent;"));
 
         setPermLayout->addWidget(checkBox_15);
 
         checkBox_16 = new QCheckBox(groupBox_5);
         checkBox_16->setObjectName(QString::fromUtf8("checkBox_16"));
         checkBox_16->setFont(font1);
+        checkBox_16->setStyleSheet(QString::fromUtf8("color: #34495e; background: transparent;"));
 
         setPermLayout->addWidget(checkBox_16);
 
         checkBox_18 = new QCheckBox(groupBox_5);
         checkBox_18->setObjectName(QString::fromUtf8("checkBox_18"));
         checkBox_18->setFont(font1);
+        checkBox_18->setStyleSheet(QString::fromUtf8("color: #34495e; background: transparent;"));
 
         setPermLayout->addWidget(checkBox_18);
 

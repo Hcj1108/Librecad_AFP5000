@@ -1167,7 +1167,7 @@ extern vector<string> FindName;
 // 保存栏目内容相关变量
 extern string CustomStr, CustomStr_2, CustomStr_3, CustomStr_4, CustomStr_5, CustomStr_6;
 extern QString Start_Data_Time;
-extern QString FH;
+
 extern int year, month, day;
 extern int Savemonth, Saveyear, save_time;
 extern QString Save_Time;

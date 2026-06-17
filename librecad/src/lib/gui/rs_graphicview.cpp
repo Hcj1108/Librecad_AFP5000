@@ -73,7 +73,7 @@ RS_GraphicView::RS_GraphicView(QWidget* parent, Qt::WindowFlags f)
 	// 从设置中读取颜色配置
 	RS_SETTINGS->beginGroup("Colors");
 	setBackground(QColor(RS_SETTINGS->readEntry("/background", Colors::background)));
-	setBackground(QColor(80, 80, 80));  // 直接设置为白色
+	setBackground(QColor(30, 30, 30));  // 直接设置为白色
 	setGridColor(QColor(RS_SETTINGS->readEntry("/grid", Colors::grid)));
 	setMetaGridColor(QColor(RS_SETTINGS->readEntry("/meta_grid", Colors::meta_grid)));
 	setSelectedColor(QColor(RS_SETTINGS->readEntry("/select", Colors::select)));

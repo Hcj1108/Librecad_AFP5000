@@ -6,366 +6,39 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>690</width>
-    <height>370</height>
+    <width>735</width>
+    <height>388</height>
    </rect>
   </property>
   <property name="windowTitle">
-   <string>SenderBinUdp</string>
+   <string>固件更新</string>
   </property>
-  
+  <property name="windowIcon">
+   <iconset resource="../OCRdemo.qrc">
+    <normaloff>:/PNG/Resources/PNG/Gengxing.png</normaloff>:/PNG/Resources/PNG/Gengxing.png</iconset>
+  </property>
   <property name="styleSheet">
    <string notr="true">background-color:rgb(220, 235, 240);</string>
-  </property><property name="styleSheet">
-   <string notr="true"/>
   </property>
   <widget class="QWidget" name="centralWidget">
-   <widget class="QLabel" name="label_3">
-    <property name="geometry">
-     <rect>
-      <x>250</x>
-      <y>10</y>
-      <width>211</width>
-      <height>31</height>
-     </rect>
+   <layout class="QVBoxLayout" name="mainLayout">
+    <property name="spacing">
+     <number>8</number>
     </property>
-    <property name="font">
-     <font>
-      <family>Microsoft YaHei</family>
-      <pointsize>20</pointsize>
-      <bold>true</bold>
-     </font>
+    <property name="leftMargin">
+     <number>10</number>
     </property>
-    <property name="text">
-     <string>更新</string>
+    <property name="topMargin">
+     <number>10</number>
     </property>
-    <property name="alignment">
-     <set>Qt::AlignmentFlag::AlignCenter</set>
+    <property name="rightMargin">
+     <number>10</number>
     </property>
-   </widget>
-   <widget class="QToolButton" name="toolButton_6">
-    <property name="geometry">
-     <rect>
-      <x>640</x>
-      <y>10</y>
-      <width>41</width>
-      <height>41</height>
-     </rect>
+    <property name="bottomMargin">
+     <number>10</number>
     </property>
-    <property name="font">
-     <font>
-      <family>Microsoft YaHei</family>
-      <pointsize>14</pointsize>
-      <bold>true</bold>
-     </font>
-    </property>
-    <property name="text">
-     <string>X</string>
-    </property>
-    <property name="icon">
-     <iconset resource="../OCRdemo.qrc">
-      <normaloff>:/PIC/Resources/PICs/GB.png</normaloff>:/PIC/Resources/PICs/GB.png</iconset>
-    </property>
-    <property name="toolButtonStyle">
-     <enum>Qt::ToolButtonStyle::ToolButtonIconOnly</enum>
-    </property>
-   </widget>
-   <widget class="QTabWidget" name="tabWidget">
-    <property name="geometry">
-     <rect>
-      <x>5</x>
-      <y>50</y>
-      <width>681</width>
-      <height>311</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <family>Microsoft YaHei</family>
-      <pointsize>14</pointsize>
-      <bold>true</bold>
-     </font>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">border:2px solid rgb(150, 150, 150)</string>
-    </property>
-    <property name="currentIndex">
-     <number>0</number>
-    </property>
-    <property name="iconSize">
-     <size>
-      <width>0</width>
-      <height>0</height>
-     </size>
-    </property>
-    <widget class="QWidget" name="tab">
-     <attribute name="title">
-      <string>硬件升级</string>
-     </attribute>
-     <widget class="QLabel" name="label">
-      <property name="geometry">
-       <rect>
-        <x>20</x>
-        <y>20</y>
-        <width>91</width>
-        <height>31</height>
-       </rect>
-      </property>
-      <property name="font">
-       <font>
-        <family>Microsoft YaHei</family>
-        <pointsize>12</pointsize>
-        <bold>true</bold>
-       </font>
-      </property>
-      <property name="text">
-       <string>每包字节：</string>
-      </property>
-     </widget>
-     <widget class="QLabel" name="label_2">
-      <property name="geometry">
-       <rect>
-        <x>280</x>
-        <y>20</y>
-        <width>81</width>
-        <height>31</height>
-       </rect>
-      </property>
-      <property name="font">
-       <font>
-        <family>Microsoft YaHei</family>
-        <pointsize>12</pointsize>
-        <bold>true</bold>
-       </font>
-      </property>
-      <property name="text">
-       <string>每包间隔：</string>
-      </property>
-     </widget>
-     <widget class="QSpinBox" name="spinBox">
-      <property name="enabled">
-       <bool>false</bool>
-      </property>
-      <property name="geometry">
-       <rect>
-        <x>110</x>
-        <y>20</y>
-        <width>111</width>
-        <height>31</height>
-       </rect>
-      </property>
-      <property name="font">
-       <font>
-        <family>Microsoft YaHei</family>
-        <pointsize>11</pointsize>
-        <bold>true</bold>
-       </font>
-      </property>
-      <property name="wrapping">
-       <bool>false</bool>
-      </property>
-      <property name="buttonSymbols">
-       <enum>QAbstractSpinBox::ButtonSymbols::NoButtons</enum>
-      </property>
-      <property name="maximum">
-       <number>655536</number>
-      </property>
-     </widget>
-     <widget class="QSpinBox" name="spinBox_2">
-      <property name="enabled">
-       <bool>false</bool>
-      </property>
-      <property name="geometry">
-       <rect>
-        <x>410</x>
-        <y>20</y>
-        <width>111</width>
-        <height>31</height>
-       </rect>
-      </property>
-      <property name="font">
-       <font>
-        <family>Microsoft YaHei</family>
-        <pointsize>11</pointsize>
-        <bold>true</bold>
-       </font>
-      </property>
-      <property name="wrapping">
-       <bool>false</bool>
-      </property>
-      <property name="buttonSymbols">
-       <enum>QAbstractSpinBox::ButtonSymbols::NoButtons</enum>
-      </property>
-      <property name="maximum">
-       <number>99999</number>
-      </property>
-     </widget>
-     <widget class="QTextEdit" name="textEdit">
-      <property name="enabled">
-       <bool>false</bool>
-      </property>
-      <property name="geometry">
-       <rect>
-        <x>110</x>
-        <y>70</y>
-        <width>411</width>
-        <height>101</height>
-       </rect>
-      </property>
-      <property name="font">
-       <font>
-        <family>Microsoft YaHei</family>
-        <pointsize>11</pointsize>
-        <bold>true</bold>
-       </font>
-      </property>
-     </widget>
-     <widget class="QToolButton" name="toolButton">
-      <property name="geometry">
-       <rect>
-        <x>20</x>
-        <y>190</y>
-        <width>81</width>
-        <height>41</height>
-       </rect>
-      </property>
-      <property name="font">
-       <font>
-        <family>Microsoft YaHei</family>
-        <pointsize>12</pointsize>
-        <bold>true</bold>
-       </font>
-      </property>
-      <property name="text">
-       <string>选择文件</string>
-      </property>
-     </widget>
-     <widget class="QLineEdit" name="lineEdit">
-      <property name="enabled">
-       <bool>false</bool>
-      </property>
-      <property name="geometry">
-       <rect>
-        <x>110</x>
-        <y>190</y>
-        <width>301</width>
-        <height>41</height>
-       </rect>
-      </property>
-      <property name="font">
-       <font>
-        <family>Microsoft YaHei</family>
-        <pointsize>11</pointsize>
-        <bold>true</bold>
-       </font>
-      </property>
-      <property name="text">
-       <string/>
-      </property>
-      <property name="frame">
-       <bool>true</bool>
-      </property>
-     </widget>
-     <widget class="QToolButton" name="toolButton_2">
-      <property name="geometry">
-       <rect>
-        <x>420</x>
-        <y>190</y>
-        <width>101</width>
-        <height>41</height>
-       </rect>
-      </property>
-      <property name="font">
-       <font>
-        <family>Microsoft YaHei</family>
-        <pointsize>9</pointsize>
-        <bold>true</bold>
-       </font>
-      </property>
-      <property name="text">
-       <string>一键写入</string>
-      </property>
-      <property name="icon">
-       <iconset resource="../OCRdemo.qrc">
-        <normaloff>:/PIC/Resources/PICs/Bianji.png</normaloff>:/PIC/Resources/PICs/Bianji.png</iconset>
-      </property>
-      <property name="iconSize">
-       <size>
-        <width>40</width>
-        <height>40</height>
-       </size>
-      </property>
-      <property name="toolButtonStyle">
-       <enum>Qt::ToolButtonStyle::ToolButtonTextBesideIcon</enum>
-      </property>
-     </widget>
-     <widget class="QLabel" name="label_4">
-      <property name="geometry">
-       <rect>
-        <x>20</x>
-        <y>100</y>
-        <width>81</width>
-        <height>41</height>
-       </rect>
-      </property>
-      <property name="font">
-       <font>
-        <family>Microsoft YaHei</family>
-        <pointsize>12</pointsize>
-        <bold>true</bold>
-       </font>
-      </property>
-      <property name="text">
-       <string>发送结果：</string>
-      </property>
-     </widget>
-     <widget class="QToolButton" name="toolButton_7">
-      <property name="geometry">
-       <rect>
-        <x>540</x>
-        <y>190</y>
-        <width>101</width>
-        <height>41</height>
-       </rect>
-      </property>
-      <property name="font">
-       <font>
-        <family>Microsoft YaHei</family>
-        <pointsize>9</pointsize>
-        <bold>true</bold>
-       </font>
-      </property>
-      <property name="text">
-       <string>程序擦除</string>
-      </property>
-      <property name="icon">
-       <iconset resource="../OCRdemo.qrc">
-        <normaloff>:/PIC/Resources/PICs/clear.png</normaloff>:/PIC/Resources/PICs/clear.png</iconset>
-      </property>
-      <property name="iconSize">
-       <size>
-        <width>40</width>
-        <height>40</height>
-       </size>
-      </property>
-      <property name="toolButtonStyle">
-       <enum>Qt::ToolButtonStyle::ToolButtonTextBesideIcon</enum>
-      </property>
-     </widget>
-    </widget>
-    <widget class="QWidget" name="tab_2">
-     <attribute name="title">
-      <string>模型切换</string>
-     </attribute>
-     <widget class="QGroupBox" name="groupBox_3">
-      <property name="geometry">
-       <rect>
-        <x>10</x>
-        <y>10</y>
-        <width>261</width>
-        <height>241</height>
-       </rect>
-      </property>
+    <item>
+     <widget class="QTabWidget" name="tabWidget">
       <property name="font">
        <font>
         <family>Microsoft YaHei</family>
@@ -374,139 +47,578 @@
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true"/>
+       <string notr="true">QTabWidget::pane{border: 2px solid #dcdde1; border-radius: 8px; background: #ffffff; padding: 4px;}
+QTabBar::tab{font: bold 12px &quot;Microsoft YaHei&quot;; padding: 8px 20px; margin-right: 2px; border: 1px solid #dcdde1; border-bottom: none; border-top-left-radius: 6px; border-top-right-radius: 6px; background: #ecf0f1; color: #7f8c8d;}
+QTabBar::tab:selected{background: #ffffff; color: #2c3e50; border-bottom: 2px solid #3498db;}
+QTabBar::tab:hover{background: #dfe6e9;}</string>
       </property>
-      <property name="title">
-       <string>切换模型</string>
+      <property name="currentIndex">
+       <number>1</number>
       </property>
-      <widget class="QLineEdit" name="lineEdit_2">
-       <property name="enabled">
-        <bool>false</bool>
-       </property>
-       <property name="geometry">
-        <rect>
-         <x>10</x>
-         <y>30</y>
-         <width>241</width>
-         <height>31</height>
-        </rect>
-       </property>
-       <property name="font">
-        <font>
-         <family>Microsoft YaHei</family>
-         <pointsize>9</pointsize>
-         <bold>false</bold>
-        </font>
-       </property>
+      <widget class="QWidget" name="tab">
+       <attribute name="title">
+        <string>硬件升级</string>
+       </attribute>
+       <layout class="QVBoxLayout" name="tab1Layout">
+        <property name="spacing">
+         <number>10</number>
+        </property>
+        <property name="leftMargin">
+         <number>15</number>
+        </property>
+        <property name="topMargin">
+         <number>15</number>
+        </property>
+        <property name="rightMargin">
+         <number>15</number>
+        </property>
+        <property name="bottomMargin">
+         <number>15</number>
+        </property>
+        <item>
+         <layout class="QHBoxLayout" name="paramRow">
+          <property name="spacing">
+           <number>15</number>
+          </property>
+          <item>
+           <widget class="QLabel" name="label">
+            <property name="font">
+             <font>
+              <family>Microsoft YaHei</family>
+              <pointsize>12</pointsize>
+              <bold>true</bold>
+             </font>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">color: #34495e; background: transparent;</string>
+            </property>
+            <property name="text">
+             <string>每包字节：</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QSpinBox" name="bytesPerPacketSpb">
+            <property name="enabled">
+             <bool>false</bool>
+            </property>
+            <property name="font">
+             <font>
+              <family>Microsoft YaHei</family>
+              <pointsize>-1</pointsize>
+              <italic>false</italic>
+              <bold>true</bold>
+             </font>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">QSpinBox{font: bold 12px &quot;Microsoft YaHei&quot;; padding: 4px 10px; border: 2px solid #bdc3c7; border-radius: 6px; background: #fafafa; min-height: 32px;}
+QSpinBox:focus{border-color: #3498db; background: #ffffff;}</string>
+            </property>
+            <property name="wrapping">
+             <bool>false</bool>
+            </property>
+            <property name="buttonSymbols">
+             <enum>QAbstractSpinBox::ButtonSymbols::NoButtons</enum>
+            </property>
+            <property name="maximum">
+             <number>655536</number>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="label_2">
+            <property name="font">
+             <font>
+              <family>Microsoft YaHei</family>
+              <pointsize>12</pointsize>
+              <bold>true</bold>
+             </font>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">color: #34495e; background: transparent;</string>
+            </property>
+            <property name="text">
+             <string>每包间隔：</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QSpinBox" name="intervalSpb">
+            <property name="enabled">
+             <bool>false</bool>
+            </property>
+            <property name="font">
+             <font>
+              <family>Microsoft YaHei</family>
+              <pointsize>-1</pointsize>
+              <italic>false</italic>
+              <bold>true</bold>
+             </font>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">QSpinBox{font: bold 12px &quot;Microsoft YaHei&quot;; padding: 4px 10px; border: 2px solid #bdc3c7; border-radius: 6px; background: #fafafa; min-height: 32px;}
+QSpinBox:focus{border-color: #3498db; background: #ffffff;}</string>
+            </property>
+            <property name="wrapping">
+             <bool>false</bool>
+            </property>
+            <property name="buttonSymbols">
+             <enum>QAbstractSpinBox::ButtonSymbols::NoButtons</enum>
+            </property>
+            <property name="maximum">
+             <number>99999</number>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <spacer name="paramSpacer">
+            <property name="orientation">
+             <enum>Qt::Orientation::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>40</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <widget class="QTextEdit" name="dataEdit">
+          <property name="enabled">
+           <bool>false</bool>
+          </property>
+          <property name="font">
+           <font>
+            <family>Microsoft YaHei</family>
+            <pointsize>-1</pointsize>
+            <italic>false</italic>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QTextEdit{font: bold 11px &quot;Microsoft YaHei&quot;; border: 2px solid #bdc3c7; border-radius: 6px; background: #fafafa; padding: 6px;}
+QTextEdit:focus{border-color: #3498db; background: #ffffff;}</string>
+          </property>
+          <property name="placeholderText">
+           <string>数据内容...</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="fileRow">
+          <property name="spacing">
+           <number>10</number>
+          </property>
+          <item>
+           <widget class="QPushButton" name="selectFileBtn">
+            <property name="minimumSize">
+             <size>
+              <width>80</width>
+              <height>36</height>
+             </size>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">QPushButton{background: #3498db; color: white; border-radius: 6px; padding: 8px 16px;}
+QPushButton:hover{background: #2980b9;}</string>
+            </property>
+            <property name="text">
+             <string>选择文件</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLineEdit" name="filePathEdit">
+            <property name="enabled">
+             <bool>false</bool>
+            </property>
+            <property name="font">
+             <font>
+              <family>Microsoft YaHei</family>
+              <pointsize>-1</pointsize>
+              <italic>false</italic>
+              <bold>true</bold>
+             </font>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">QLineEdit{font: bold 11px &quot;Microsoft YaHei&quot;; padding: 6px 10px; border: 2px solid #bdc3c7; border-radius: 6px; background: #f0f0f0; min-height: 32px;}</string>
+            </property>
+            <property name="placeholderText">
+             <string>未选择文件</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="actionRow">
+          <property name="spacing">
+           <number>10</number>
+          </property>
+          <item>
+           <spacer name="actionSpacer">
+            <property name="orientation">
+             <enum>Qt::Orientation::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>40</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item>
+           <widget class="QPushButton" name="writeBtn">
+            <property name="minimumSize">
+             <size>
+              <width>110</width>
+              <height>40</height>
+             </size>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">QPushButton{background: #27ae60; color: white; border-radius: 6px; padding: 8px 20px;}
+QPushButton:hover{background: #219a52;}
+QPushButton:pressed{background: #1e8449;}</string>
+            </property>
+            <property name="text">
+             <string>一键写入</string>
+            </property>
+            <property name="icon">
+             <iconset resource="../OCRdemo.qrc">
+              <normaloff>:/PIC/Resources/PICs/Bianji.png</normaloff>:/PIC/Resources/PICs/Bianji.png</iconset>
+            </property>
+            <property name="iconSize">
+             <size>
+              <width>20</width>
+              <height>20</height>
+             </size>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="eraseBtn">
+            <property name="minimumSize">
+             <size>
+              <width>110</width>
+              <height>40</height>
+             </size>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">QPushButton{background: #e74c3c; color: white; border-radius: 6px; padding: 8px 20px;}
+QPushButton:hover{background: #c0392b;}
+QPushButton:pressed{background: #a93226;}</string>
+            </property>
+            <property name="text">
+             <string>程序擦除</string>
+            </property>
+            <property name="icon">
+             <iconset resource="../OCRdemo.qrc">
+              <normaloff>:/PIC/Resources/PICs/clear.png</normaloff>:/PIC/Resources/PICs/clear.png</iconset>
+            </property>
+            <property name="iconSize">
+             <size>
+              <width>20</width>
+              <height>20</height>
+             </size>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <spacer name="actionSpacerRight">
+            <property name="orientation">
+             <enum>Qt::Orientation::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>40</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+         </layout>
+        </item>
+       </layout>
       </widget>
-      <widget class="QTextEdit" name="textEdit_2">
-       <property name="enabled">
-        <bool>false</bool>
-       </property>
-       <property name="geometry">
-        <rect>
-         <x>10</x>
-         <y>70</y>
-         <width>241</width>
-         <height>111</height>
-        </rect>
-       </property>
-       <property name="font">
-        <font>
-         <family>Microsoft YaHei</family>
-         <pointsize>12</pointsize>
-         <bold>true</bold>
-        </font>
-       </property>
-      </widget>
-      <widget class="QToolButton" name="toolButton_3">
-       <property name="geometry">
-        <rect>
-         <x>10</x>
-         <y>190</y>
-         <width>121</width>
-         <height>41</height>
-        </rect>
-       </property>
-       <property name="text">
-        <string>模型选择</string>
-       </property>
-      </widget>
-      <widget class="QToolButton" name="toolButton_4">
-       <property name="geometry">
-        <rect>
-         <x>130</x>
-         <y>190</y>
-         <width>121</width>
-         <height>41</height>
-        </rect>
-       </property>
-       <property name="text">
-        <string>确认替换</string>
-       </property>
+      <widget class="QWidget" name="tab_2">
+       <attribute name="title">
+        <string>模型切换</string>
+       </attribute>
+       <layout class="QHBoxLayout" name="tab2Layout">
+        <property name="spacing">
+         <number>12</number>
+        </property>
+        <property name="leftMargin">
+         <number>12</number>
+        </property>
+        <property name="topMargin">
+         <number>12</number>
+        </property>
+        <property name="rightMargin">
+         <number>12</number>
+        </property>
+        <property name="bottomMargin">
+         <number>12</number>
+        </property>
+        <item>
+         <widget class="QGroupBox" name="switchModelBox">
+          <property name="font">
+           <font>
+            <family>Microsoft YaHei</family>
+            <pointsize>-1</pointsize>
+            <italic>false</italic>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QGroupBox{font: bold 14px &quot;Microsoft YaHei&quot;; color: #2c3e50; border: 2px solid #e0e0e0; border-radius: 10px; margin-top: 14px; padding-top: 18px; background: #ffffff;}
+QGroupBox::title{subcontrol-origin: margin; left: 14px; padding: 4px 14px; background: #3498db; color: white; border-radius: 4px;}
+QTextEdit{font: bold 12px &quot;Microsoft YaHei&quot;; border: 2px solid #dcdde1; border-radius: 6px; background: #fafafa; padding: 6px;}
+QTextEdit:focus{border-color: #3498db; background: #ffffff;}
+QLineEdit{font: 12px &quot;Microsoft YaHei&quot;; padding: 6px 10px; border: 2px solid #dcdde1; border-radius: 6px; background: #f0f0f0; min-height: 30px;}
+QPushButton{font: bold 12px &quot;Microsoft YaHei&quot;; border-radius: 6px; padding: 8px 16px; min-height: 32px;}
+QPushButton:hover{opacity: 0.9;}</string>
+          </property>
+          <property name="title">
+           <string>切换模型</string>
+          </property>
+          <layout class="QVBoxLayout" name="switchModelLayout">
+           <property name="spacing">
+            <number>10</number>
+           </property>
+           <property name="leftMargin">
+            <number>14</number>
+           </property>
+           <property name="topMargin">
+            <number>16</number>
+           </property>
+           <property name="rightMargin">
+            <number>14</number>
+           </property>
+           <property name="bottomMargin">
+            <number>14</number>
+           </property>
+           <item>
+            <widget class="QLineEdit" name="modelPathEdit">
+             <property name="enabled">
+              <bool>false</bool>
+             </property>
+             <property name="placeholderText">
+              <string>模型文件路径</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QTextEdit" name="modelInfoEdit">
+             <property name="enabled">
+              <bool>false</bool>
+             </property>
+             <property name="placeholderText">
+              <string>模型信息...</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="modelBtnRow">
+             <property name="spacing">
+              <number>10</number>
+             </property>
+             <item>
+              <widget class="QPushButton" name="selectModelBtn">
+               <property name="minimumSize">
+                <size>
+                 <width>90</width>
+                 <height>48</height>
+                </size>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">QPushButton{background: #3498db; color: white;} QPushButton:hover{background: #2980b9;}</string>
+               </property>
+               <property name="text">
+                <string>模型选择</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="confirmReplaceBtn">
+               <property name="minimumSize">
+                <size>
+                 <width>90</width>
+                 <height>48</height>
+                </size>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">QPushButton{background: #27ae60; color: white;} QPushButton:hover{background: #219a52;}</string>
+               </property>
+               <property name="text">
+                <string>确认替换</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item>
+         <widget class="QGroupBox" name="currentModelBox">
+          <property name="font">
+           <font>
+            <family>Microsoft YaHei</family>
+            <pointsize>-1</pointsize>
+            <italic>false</italic>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QGroupBox{font: bold 14px &quot;Microsoft YaHei&quot;; color: #2c3e50; border: 2px solid #e0e0e0; border-radius: 10px; margin-top: 14px; padding-top: 18px; background: #ffffff;}
+QGroupBox::title{subcontrol-origin: margin; left: 14px; padding: 4px 14px; background: #27ae60; color: white; border-radius: 4px;}
+QTextEdit{font: bold 12px &quot;Microsoft YaHei&quot;; border: 2px solid #dcdde1; border-radius: 6px; background: #fafafa; padding: 6px;}
+QTextEdit:focus{border-color: #3498db; background: #ffffff;}
+QPushButton{font: bold 12px &quot;Microsoft YaHei&quot;; border-radius: 6px; padding: 8px 16px; min-height: 32px;}
+QPushButton:hover{opacity: 0.9;}</string>
+          </property>
+          <property name="title">
+           <string>当前模型</string>
+          </property>
+          <layout class="QVBoxLayout" name="currentModelLayout">
+           <property name="spacing">
+            <number>10</number>
+           </property>
+           <property name="leftMargin">
+            <number>14</number>
+           </property>
+           <property name="topMargin">
+            <number>16</number>
+           </property>
+           <property name="rightMargin">
+            <number>14</number>
+           </property>
+           <property name="bottomMargin">
+            <number>14</number>
+           </property>
+           <item>
+            <widget class="QTextEdit" name="currentModelInfoEdit">
+             <property name="enabled">
+              <bool>false</bool>
+             </property>
+             <property name="placeholderText">
+              <string>当前运行模型信息...</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="currentModelBtnRow">
+             <property name="spacing">
+              <number>10</number>
+             </property>
+             <item>
+              <spacer name="currentModelSpacer">
+               <property name="orientation">
+                <enum>Qt::Orientation::Horizontal</enum>
+               </property>
+               <property name="sizeHint" stdset="0">
+                <size>
+                 <width>40</width>
+                 <height>20</height>
+                </size>
+               </property>
+              </spacer>
+             </item>
+             <item>
+              <widget class="QPushButton" name="viewModelBtn">
+               <property name="minimumSize">
+                <size>
+                 <width>120</width>
+                 <height>48</height>
+                </size>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">QPushButton{background: #3498db; color: white;} QPushButton:hover{background: #2980b9;}</string>
+               </property>
+               <property name="text">
+                <string>查看当前模型</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <spacer name="currentModelSpacerRight">
+               <property name="orientation">
+                <enum>Qt::Orientation::Horizontal</enum>
+               </property>
+               <property name="sizeHint" stdset="0">
+                <size>
+                 <width>40</width>
+                 <height>20</height>
+                </size>
+               </property>
+              </spacer>
+             </item>
+            </layout>
+           </item>
+          </layout>
+         </widget>
+        </item>
+       </layout>
       </widget>
      </widget>
-     <widget class="QGroupBox" name="groupBox_4">
-      <property name="geometry">
-       <rect>
-        <x>300</x>
-        <y>10</y>
-        <width>361</width>
-        <height>241</height>
-       </rect>
-      </property>
-      <property name="font">
-       <font>
-        <family>Microsoft YaHei</family>
-        <pointsize>12</pointsize>
-        <bold>true</bold>
-       </font>
-      </property>
-      <property name="styleSheet">
-       <string notr="true"/>
-      </property>
-      <property name="title">
-       <string>当前模型</string>
-      </property>
-      <widget class="QTextEdit" name="textEdit_3">
-       <property name="enabled">
-        <bool>false</bool>
-       </property>
-       <property name="geometry">
-        <rect>
-         <x>10</x>
-         <y>30</y>
-         <width>341</width>
-         <height>151</height>
-        </rect>
-       </property>
-       <property name="font">
-        <font>
-         <family>Microsoft YaHei</family>
-         <pointsize>12</pointsize>
-         <bold>true</bold>
-        </font>
-       </property>
-      </widget>
-      <widget class="QToolButton" name="toolButton_5">
-       <property name="geometry">
-        <rect>
-         <x>10</x>
-         <y>190</y>
-         <width>121</width>
-         <height>41</height>
-        </rect>
-       </property>
-       <property name="text">
-        <string>点击查看当前模型</string>
-       </property>
-      </widget>
-     </widget>
-    </widget>
-   </widget>
+    </item>
+    <item>
+     <layout class="QHBoxLayout" name="horizontalLayout">
+      <item>
+       <spacer name="horizontalSpacer">
+        <property name="orientation">
+         <enum>Qt::Orientation::Horizontal</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>40</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item>
+       <widget class="QPushButton" name="closeBtn">
+        <property name="minimumSize">
+         <size>
+          <width>80</width>
+          <height>36</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>80</width>
+          <height>36</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton{font: bold 12px &quot;Microsoft YaHei&quot;; background: #e74c3c; color: white; border-radius: 6px; padding: 6px 14px;}
+QPushButton:hover{background: #c0392b;}</string>
+        </property>
+        <property name="text">
+         <string>关闭</string>
+        </property>
+        <property name="icon">
+         <iconset resource="../OCRdemo.qrc">
+          <normaloff>:/PIC/Resources/PICs/Fanhui.png</normaloff>:/PIC/Resources/PICs/Fanhui.png</iconset>
+        </property>
+        <property name="iconSize">
+         <size>
+          <width>20</width>
+          <height>20</height>
+         </size>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+   </layout>
   </widget>
  </widget>
- <layoutdefault spacing="6" margin="11"/>
  <resources>
   <include location="../OCRdemo.qrc"/>
  </resources>

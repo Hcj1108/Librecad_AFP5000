@@ -592,11 +592,13 @@ int main(int argc, char** argv)
 
                 qDebug() << "最近文件不存在，创建新文档";
                 appWin.slotFileNewNew();
+              
             }
         }
         else {
             qDebug() << "没有最近文件，创建新文档";
             appWin.slotFileNewNew();
+           
         }
     }
 
@@ -614,7 +616,7 @@ int main(int argc, char** argv)
 
     RS_DEBUG->print("main: exited Qt event loop");
 
-
+   
     return return_code;
 }
 

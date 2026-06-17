@@ -1,7 +1,7 @@
 {
   "tool_name": "Bash",
-  "tool_input_preview": "{\"command\":\"cd \\\"D:\\\\DM\\\\LibreCAD-2.4(YitiJi)\\\" && git checkout HEAD -- librecad/src/OCRdemo/OcrFilterRules.ui && echo \\\"reverted\\\"\",\"description\":\"Revert .ui to HEAD\"}",
-  "error": "Exit code 1\nerror: pathspec 'librecad/src/OCRdemo/OcrFilterRules.ui' did not match any file(s) known to git",
-  "timestamp": "2026-06-16T05:54:48.837Z",
+  "tool_input_preview": "{\"command\":\"cd \\\"D:\\\\DM\\\\LibreCAD-2.4(YitiJi)\\\" && python -c \\\"\\nimport re\\nwith open('librecad/src/OCRdemo/SenderBinUdp.cpp', 'rb') as f:\\n    raw = f.read()\\ntext = raw.decode('gbk')\\n\\n# Find all u...",
+  "error": "Exit code 1\nTraceback (most recent call last):\r\n  File \"<string>\", line 5, in <module>\r\nUnicodeDecodeError: 'gbk' codec can't decode byte 0xbd in position 1868: illegal multibyte sequence",
+  "timestamp": "2026-06-16T07:48:44.418Z",
   "retry_count": 1
 }

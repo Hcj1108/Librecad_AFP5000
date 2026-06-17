@@ -597,7 +597,7 @@ public:
         graphicsView->setObjectName(QString::fromUtf8("graphicsView"));
         graphicsView->setGeometry(QRect(10, 170, 251, 151));
         graphicsView->setStyleSheet(QString::fromUtf8("/*background-color: #9e9e9e;*/\n"
-"background-color: #f0f0f0; \n"
+"background-color:  #dddddd; \n"
 "opacity: 1; \n"
 "border: none;                  /* \346\240\270\345\277\203\357\274\232\345\216\273\346\216\211\346\211\200\346\234\211\350\276\271\346\241\206 */"));
         toolButton_8 = new QToolButton(groupBox_6);
@@ -623,13 +623,13 @@ public:
         font6.setFamily(QString::fromUtf8("\345\276\256\350\275\257\351\233\205\351\273\221"));
         font6.setPointSize(10);
         textEdit->setFont(font6);
-        textEdit->setStyleSheet(QString::fromUtf8("background-color:  #f0f0f0; \n"
+        textEdit->setStyleSheet(QString::fromUtf8("background-color:  #dddddd; \n"
 "opacity: 1;\n"
 "border: none;                  /* \346\240\270\345\277\203\357\274\232\345\216\273\346\216\211\346\211\200\346\234\211\350\276\271\346\241\206 */"));
         widget1 = new QWidget(groupBox_6);
         widget1->setObjectName(QString::fromUtf8("widget1"));
         widget1->setGeometry(QRect(10, 40, 251, 31));
-        widget1->setStyleSheet(QString::fromUtf8("background-color: #f0f0f0; \n"
+        widget1->setStyleSheet(QString::fromUtf8("background-color:  #dddddd; \n"
 "opacity: 1; \n"
 ""));
         label_5 = new QLabel(widget1);
@@ -1184,8 +1184,10 @@ public:
         timg2->setObjectName(QString::fromUtf8("timg2"));
         timg2->setGeometry(QRect(555, 150, 151, 110));
         timg2->setStyleSheet(QString::fromUtf8("background-color: rgb(0,0,0); \n"
+" \n"
 "opacity: 1; \n"
 "border: none; \n"
+"border: 2px solid #2196F3;\n"
 "border-radius: 0;\n"
 "/*background-color: qlineargradient(x1:0, y1:0, x2:0, y2:1, \n"
 "    stop:0 #4A4A4A,       \n"
@@ -1198,8 +1200,9 @@ public:
         timg1->setGeometry(QRect(555, 40, 151, 110));
         timg1->setStyleSheet(QString::fromUtf8("\n"
 "background-color:rgb(0, 0, 0);\n"
+" \n"
 "opacity: 1; \n"
-"border: none; \n"
+"border: 2px solid #2196F3;\n"
 "border-radius: 0;\n"
 "/*background-color: qlineargradient(x1:0, y1:0, x2:0, y2:1, \n"
 "    stop:0 #4A4A4A,       \n"
@@ -1211,8 +1214,10 @@ public:
         timg3->setObjectName(QString::fromUtf8("timg3"));
         timg3->setGeometry(QRect(555, 260, 151, 110));
         timg3->setStyleSheet(QString::fromUtf8("background-color: rgb(0,0,0); \n"
+"\n"
 "opacity: 1; \n"
 "border: none; \n"
+"border: 2px solid #2196F3;\n"
 "border-radius: 0;\n"
 "/*background-color: qlineargradient(x1:0, y1:0, x2:0, y2:1, \n"
 "    stop:0 #4A4A4A,       \n"
@@ -1224,8 +1229,10 @@ public:
         timg4->setObjectName(QString::fromUtf8("timg4"));
         timg4->setGeometry(QRect(555, 370, 151, 110));
         timg4->setStyleSheet(QString::fromUtf8("background-color: rgb(0,0,0); \n"
+"\n"
 "opacity: 1; \n"
 "border: none; \n"
+"border: 2px solid #2196F3;\n"
 "border-radius: 0;\n"
 "/*background-color: qlineargradient(x1:0, y1:0, x2:0, y2:1, \n"
 "    stop:0 #4A4A4A,       \n"
@@ -1238,8 +1245,10 @@ public:
         timg5->setObjectName(QString::fromUtf8("timg5"));
         timg5->setGeometry(QRect(555, 480, 151, 111));
         timg5->setStyleSheet(QString::fromUtf8("background-color: rgb(0,0,0); \n"
+"\n"
 "opacity: 1; \n"
 "border: none; \n"
+"border: 2px solid #2196F3;\n"
 "border-radius: 0;\n"
 "/*background-color: qlineargradient(x1:0, y1:0, x2:0, y2:1, \n"
 "    stop:0 #4A4A4A,       \n"
@@ -1262,12 +1271,14 @@ public:
         label_2 = new QLabel(page_8);
         label_2->setObjectName(QString::fromUtf8("label_2"));
         label_2->setGeometry(QRect(0, 0, 551, 551));
-        label_2->setStyleSheet(QString::fromUtf8("background-color: rgb(0, 0, 0); "));
+        label_2->setStyleSheet(QString::fromUtf8("background-color: rgb(0, 0, 0); \n"
+""));
         label_2->setFrameShape(QFrame::Shape::Box);
-        label_2->setLineWidth(5);
+        label_2->setLineWidth(0);
         label_2->setPixmap(QPixmap(QString::fromUtf8(":/PIC/Resources/PICs/MZGYXJ.png")));
         label_2->setScaledContents(false);
         label_2->setAlignment(Qt::AlignmentFlag::AlignCenter);
+        label_2->setTextInteractionFlags(Qt::TextInteractionFlag::LinksAccessibleByMouse);
         stackedWidget_3->addWidget(page_8);
         toolButton_15 = new QToolButton(widget);
         toolButton_15->setObjectName(QString::fromUtf8("toolButton_15"));

@@ -67,7 +67,8 @@ void OCRruning::getocr(cv::Mat image, double rot, cv::Rect rects, QString* rawRe
 	bool ResultCusArr[5] = { 0,0,0,0,0 };
 	
 	//Loaddll.GetOcr(resizeImage0, &Loaddll.detection_results, &Loaddll.num_detection_results, &Loaddll.recognition_results, &Loaddll.num_recognition_results);
-	Loaddll.GetOcrDetEnhance(resizeImage0, Loaddll.thresh, Loaddll.box_thresh, Loaddll.unclip_ratio , Loaddll.score_mode , Loaddll.use_dilation ,&Loaddll.detection_results, &Loaddll.num_detection_results, &Loaddll.recognition_results, &Loaddll.num_recognition_results);
+	Loaddll.GetOcrDetEnhance(resizeImage0, Loaddll.thresh, Loaddll.box_thresh, Loaddll.unclip_ratio , Loaddll.score_mode ,
+		Loaddll.use_dilation ,&Loaddll.detection_results, &Loaddll.num_detection_results, &Loaddll.recognition_results, &Loaddll.num_recognition_results);
 	if (Loaddll.num_detection_results > 0) {
 		for (int i = 0; i <= Loaddll.num_detection_results - 1; i++) {
 
@@ -255,7 +256,8 @@ void OCRruning::getocr(cv::Mat image, double rot, cv::Rect rects, QString* rawRe
 			cv::Mat resizeImage;
 			cv::resize(imaged, resizeImage, cv::Size(imaged.cols * 1.2, imaged.rows * 1.2), 0, 0, cv::INTER_LINEAR);
 			//Loaddll.GetOcr(resizeImage, &Loaddll.detection_results, &Loaddll.num_detection_results, &Loaddll.recognition_results, &Loaddll.num_recognition_results);
-			Loaddll.GetOcrDetEnhance(resizeImage, Loaddll.thresh, Loaddll.box_thresh, Loaddll.unclip_ratio , Loaddll.score_mode , Loaddll.use_dilation ,&Loaddll.detection_results, &Loaddll.num_detection_results, &Loaddll.recognition_results, &Loaddll.num_recognition_results);
+			Loaddll.GetOcrDetEnhance(resizeImage, Loaddll.thresh, Loaddll.box_thresh, Loaddll.unclip_ratio , Loaddll.score_mode ,
+				Loaddll.use_dilation ,&Loaddll.detection_results, &Loaddll.num_detection_results, &Loaddll.recognition_results, &Loaddll.num_recognition_results);
 			if (Loaddll.num_detection_results > 0) {
 				for (int i = 0; i <= Loaddll.num_detection_results - 1; i++) {
 

@@ -13,13 +13,16 @@
 #include <QtGui/QIcon>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QGroupBox>
+#include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QLineEdit>
 #include <QtWidgets/QMainWindow>
+#include <QtWidgets/QPushButton>
+#include <QtWidgets/QSpacerItem>
 #include <QtWidgets/QSpinBox>
 #include <QtWidgets/QTabWidget>
 #include <QtWidgets/QTextEdit>
-#include <QtWidgets/QToolButton>
+#include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QWidget>
 
 QT_BEGIN_NAMESPACE
@@ -28,188 +31,330 @@ class Ui_SenderBinUdpClass
 {
 public:
     QWidget *centralWidget;
-    QLabel *label_3;
-    QToolButton *toolButton_6;
+    QVBoxLayout *mainLayout;
     QTabWidget *tabWidget;
     QWidget *tab;
+    QVBoxLayout *tab1Layout;
+    QHBoxLayout *paramRow;
     QLabel *label;
+    QSpinBox *bytesPerPacketSpb;
     QLabel *label_2;
-    QSpinBox *spinBox;
-    QSpinBox *spinBox_2;
-    QTextEdit *textEdit;
-    QToolButton *toolButton;
-    QLineEdit *lineEdit;
-    QToolButton *toolButton_2;
-    QLabel *label_4;
-    QToolButton *toolButton_7;
+    QSpinBox *intervalSpb;
+    QSpacerItem *paramSpacer;
+    QTextEdit *dataEdit;
+    QHBoxLayout *fileRow;
+    QPushButton *selectFileBtn;
+    QLineEdit *filePathEdit;
+    QHBoxLayout *actionRow;
+    QSpacerItem *actionSpacer;
+    QPushButton *writeBtn;
+    QPushButton *eraseBtn;
+    QSpacerItem *actionSpacerRight;
     QWidget *tab_2;
-    QGroupBox *groupBox_3;
-    QLineEdit *lineEdit_2;
-    QTextEdit *textEdit_2;
-    QToolButton *toolButton_3;
-    QToolButton *toolButton_4;
-    QGroupBox *groupBox_4;
-    QTextEdit *textEdit_3;
-    QToolButton *toolButton_5;
+    QHBoxLayout *tab2Layout;
+    QGroupBox *switchModelBox;
+    QVBoxLayout *switchModelLayout;
+    QLineEdit *modelPathEdit;
+    QTextEdit *modelInfoEdit;
+    QHBoxLayout *modelBtnRow;
+    QPushButton *selectModelBtn;
+    QPushButton *confirmReplaceBtn;
+    QGroupBox *currentModelBox;
+    QVBoxLayout *currentModelLayout;
+    QTextEdit *currentModelInfoEdit;
+    QHBoxLayout *currentModelBtnRow;
+    QSpacerItem *currentModelSpacer;
+    QPushButton *viewModelBtn;
+    QSpacerItem *currentModelSpacerRight;
+    QHBoxLayout *horizontalLayout;
+    QSpacerItem *horizontalSpacer;
+    QPushButton *closeBtn;
 
     void setupUi(QMainWindow *SenderBinUdpClass)
     {
         if (SenderBinUdpClass->objectName().isEmpty())
             SenderBinUdpClass->setObjectName(QString::fromUtf8("SenderBinUdpClass"));
-        SenderBinUdpClass->resize(690, 370);
+        SenderBinUdpClass->resize(735, 388);
+        QIcon icon;
+        icon.addFile(QString::fromUtf8(":/PNG/Resources/PNG/Gengxing.png"), QSize(), QIcon::Normal, QIcon::Off);
+        SenderBinUdpClass->setWindowIcon(icon);
         SenderBinUdpClass->setStyleSheet(QString::fromUtf8("background-color:rgb(220, 235, 240);"));
-        SenderBinUdpClass->setStyleSheet(QString::fromUtf8(""));
         centralWidget = new QWidget(SenderBinUdpClass);
         centralWidget->setObjectName(QString::fromUtf8("centralWidget"));
-        label_3 = new QLabel(centralWidget);
-        label_3->setObjectName(QString::fromUtf8("label_3"));
-        label_3->setGeometry(QRect(250, 10, 211, 31));
-        QFont font;
-        font.setFamily(QString::fromUtf8("Microsoft YaHei"));
-        font.setPointSize(20);
-        font.setBold(true);
-        label_3->setFont(font);
-        label_3->setAlignment(Qt::AlignmentFlag::AlignCenter);
-        toolButton_6 = new QToolButton(centralWidget);
-        toolButton_6->setObjectName(QString::fromUtf8("toolButton_6"));
-        toolButton_6->setGeometry(QRect(640, 10, 41, 41));
-        QFont font1;
-        font1.setFamily(QString::fromUtf8("Microsoft YaHei"));
-        font1.setPointSize(14);
-        font1.setBold(true);
-        toolButton_6->setFont(font1);
-        QIcon icon;
-        icon.addFile(QString::fromUtf8(":/PIC/Resources/PICs/GB.png"), QSize(), QIcon::Normal, QIcon::Off);
-        toolButton_6->setIcon(icon);
-        toolButton_6->setToolButtonStyle(Qt::ToolButtonStyle::ToolButtonIconOnly);
+        mainLayout = new QVBoxLayout(centralWidget);
+        mainLayout->setSpacing(8);
+        mainLayout->setObjectName(QString::fromUtf8("mainLayout"));
+        mainLayout->setContentsMargins(10, 10, 10, 10);
         tabWidget = new QTabWidget(centralWidget);
         tabWidget->setObjectName(QString::fromUtf8("tabWidget"));
-        tabWidget->setGeometry(QRect(5, 50, 681, 311));
-        tabWidget->setFont(font1);
-        tabWidget->setStyleSheet(QString::fromUtf8("border:2px solid rgb(150, 150, 150)"));
-        tabWidget->setIconSize(QSize(0, 0));
+        QFont font;
+        font.setFamily(QString::fromUtf8("Microsoft YaHei"));
+        font.setPointSize(12);
+        font.setBold(true);
+        tabWidget->setFont(font);
+        tabWidget->setStyleSheet(QString::fromUtf8("QTabWidget::pane{border: 2px solid #dcdde1; border-radius: 8px; background: #ffffff; padding: 4px;}\n"
+"QTabBar::tab{font: bold 12px \"Microsoft YaHei\"; padding: 8px 20px; margin-right: 2px; border: 1px solid #dcdde1; border-bottom: none; border-top-left-radius: 6px; border-top-right-radius: 6px; background: #ecf0f1; color: #7f8c8d;}\n"
+"QTabBar::tab:selected{background: #ffffff; color: #2c3e50; border-bottom: 2px solid #3498db;}\n"
+"QTabBar::tab:hover{background: #dfe6e9;}"));
         tab = new QWidget();
         tab->setObjectName(QString::fromUtf8("tab"));
+        tab1Layout = new QVBoxLayout(tab);
+        tab1Layout->setSpacing(10);
+        tab1Layout->setObjectName(QString::fromUtf8("tab1Layout"));
+        tab1Layout->setContentsMargins(15, 15, 15, 15);
+        paramRow = new QHBoxLayout();
+        paramRow->setSpacing(15);
+        paramRow->setObjectName(QString::fromUtf8("paramRow"));
         label = new QLabel(tab);
         label->setObjectName(QString::fromUtf8("label"));
-        label->setGeometry(QRect(20, 20, 91, 31));
-        QFont font2;
-        font2.setFamily(QString::fromUtf8("Microsoft YaHei"));
-        font2.setPointSize(12);
-        font2.setBold(true);
-        label->setFont(font2);
+        label->setFont(font);
+        label->setStyleSheet(QString::fromUtf8("color: #34495e; background: transparent;"));
+
+        paramRow->addWidget(label);
+
+        bytesPerPacketSpb = new QSpinBox(tab);
+        bytesPerPacketSpb->setObjectName(QString::fromUtf8("bytesPerPacketSpb"));
+        bytesPerPacketSpb->setEnabled(false);
+        QFont font1;
+        font1.setFamily(QString::fromUtf8("Microsoft YaHei"));
+        font1.setBold(true);
+        font1.setItalic(false);
+        bytesPerPacketSpb->setFont(font1);
+        bytesPerPacketSpb->setStyleSheet(QString::fromUtf8("QSpinBox{font: bold 12px \"Microsoft YaHei\"; padding: 4px 10px; border: 2px solid #bdc3c7; border-radius: 6px; background: #fafafa; min-height: 32px;}\n"
+"QSpinBox:focus{border-color: #3498db; background: #ffffff;}"));
+        bytesPerPacketSpb->setWrapping(false);
+        bytesPerPacketSpb->setButtonSymbols(QAbstractSpinBox::ButtonSymbols::NoButtons);
+        bytesPerPacketSpb->setMaximum(655536);
+
+        paramRow->addWidget(bytesPerPacketSpb);
+
         label_2 = new QLabel(tab);
         label_2->setObjectName(QString::fromUtf8("label_2"));
-        label_2->setGeometry(QRect(280, 20, 81, 31));
-        label_2->setFont(font2);
-        spinBox = new QSpinBox(tab);
-        spinBox->setObjectName(QString::fromUtf8("spinBox"));
-        spinBox->setEnabled(false);
-        spinBox->setGeometry(QRect(110, 20, 111, 31));
-        QFont font3;
-        font3.setFamily(QString::fromUtf8("Microsoft YaHei"));
-        font3.setPointSize(11);
-        font3.setBold(true);
-        spinBox->setFont(font3);
-        spinBox->setWrapping(false);
-        spinBox->setButtonSymbols(QAbstractSpinBox::ButtonSymbols::NoButtons);
-        spinBox->setMaximum(655536);
-        spinBox_2 = new QSpinBox(tab);
-        spinBox_2->setObjectName(QString::fromUtf8("spinBox_2"));
-        spinBox_2->setEnabled(false);
-        spinBox_2->setGeometry(QRect(410, 20, 111, 31));
-        spinBox_2->setFont(font3);
-        spinBox_2->setWrapping(false);
-        spinBox_2->setButtonSymbols(QAbstractSpinBox::ButtonSymbols::NoButtons);
-        spinBox_2->setMaximum(99999);
-        textEdit = new QTextEdit(tab);
-        textEdit->setObjectName(QString::fromUtf8("textEdit"));
-        textEdit->setEnabled(false);
-        textEdit->setGeometry(QRect(110, 70, 411, 101));
-        textEdit->setFont(font3);
-        toolButton = new QToolButton(tab);
-        toolButton->setObjectName(QString::fromUtf8("toolButton"));
-        toolButton->setGeometry(QRect(20, 190, 81, 41));
-        toolButton->setFont(font2);
-        lineEdit = new QLineEdit(tab);
-        lineEdit->setObjectName(QString::fromUtf8("lineEdit"));
-        lineEdit->setEnabled(false);
-        lineEdit->setGeometry(QRect(110, 190, 301, 41));
-        lineEdit->setFont(font3);
-        lineEdit->setFrame(true);
-        toolButton_2 = new QToolButton(tab);
-        toolButton_2->setObjectName(QString::fromUtf8("toolButton_2"));
-        toolButton_2->setGeometry(QRect(420, 190, 101, 41));
-        QFont font4;
-        font4.setFamily(QString::fromUtf8("Microsoft YaHei"));
-        font4.setPointSize(9);
-        font4.setBold(true);
-        toolButton_2->setFont(font4);
+        label_2->setFont(font);
+        label_2->setStyleSheet(QString::fromUtf8("color: #34495e; background: transparent;"));
+
+        paramRow->addWidget(label_2);
+
+        intervalSpb = new QSpinBox(tab);
+        intervalSpb->setObjectName(QString::fromUtf8("intervalSpb"));
+        intervalSpb->setEnabled(false);
+        intervalSpb->setFont(font1);
+        intervalSpb->setStyleSheet(QString::fromUtf8("QSpinBox{font: bold 12px \"Microsoft YaHei\"; padding: 4px 10px; border: 2px solid #bdc3c7; border-radius: 6px; background: #fafafa; min-height: 32px;}\n"
+"QSpinBox:focus{border-color: #3498db; background: #ffffff;}"));
+        intervalSpb->setWrapping(false);
+        intervalSpb->setButtonSymbols(QAbstractSpinBox::ButtonSymbols::NoButtons);
+        intervalSpb->setMaximum(99999);
+
+        paramRow->addWidget(intervalSpb);
+
+        paramSpacer = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+
+        paramRow->addItem(paramSpacer);
+
+
+        tab1Layout->addLayout(paramRow);
+
+        dataEdit = new QTextEdit(tab);
+        dataEdit->setObjectName(QString::fromUtf8("dataEdit"));
+        dataEdit->setEnabled(false);
+        dataEdit->setFont(font1);
+        dataEdit->setStyleSheet(QString::fromUtf8("QTextEdit{font: bold 11px \"Microsoft YaHei\"; border: 2px solid #bdc3c7; border-radius: 6px; background: #fafafa; padding: 6px;}\n"
+"QTextEdit:focus{border-color: #3498db; background: #ffffff;}"));
+
+        tab1Layout->addWidget(dataEdit);
+
+        fileRow = new QHBoxLayout();
+        fileRow->setSpacing(10);
+        fileRow->setObjectName(QString::fromUtf8("fileRow"));
+        selectFileBtn = new QPushButton(tab);
+        selectFileBtn->setObjectName(QString::fromUtf8("selectFileBtn"));
+        selectFileBtn->setMinimumSize(QSize(80, 36));
+        selectFileBtn->setStyleSheet(QString::fromUtf8("QPushButton{background: #3498db; color: white; border-radius: 6px; padding: 8px 16px;}\n"
+"QPushButton:hover{background: #2980b9;}"));
+
+        fileRow->addWidget(selectFileBtn);
+
+        filePathEdit = new QLineEdit(tab);
+        filePathEdit->setObjectName(QString::fromUtf8("filePathEdit"));
+        filePathEdit->setEnabled(false);
+        filePathEdit->setFont(font1);
+        filePathEdit->setStyleSheet(QString::fromUtf8("QLineEdit{font: bold 11px \"Microsoft YaHei\"; padding: 6px 10px; border: 2px solid #bdc3c7; border-radius: 6px; background: #f0f0f0; min-height: 32px;}"));
+
+        fileRow->addWidget(filePathEdit);
+
+
+        tab1Layout->addLayout(fileRow);
+
+        actionRow = new QHBoxLayout();
+        actionRow->setSpacing(10);
+        actionRow->setObjectName(QString::fromUtf8("actionRow"));
+        actionSpacer = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+
+        actionRow->addItem(actionSpacer);
+
+        writeBtn = new QPushButton(tab);
+        writeBtn->setObjectName(QString::fromUtf8("writeBtn"));
+        writeBtn->setMinimumSize(QSize(110, 40));
+        writeBtn->setStyleSheet(QString::fromUtf8("QPushButton{background: #27ae60; color: white; border-radius: 6px; padding: 8px 20px;}\n"
+"QPushButton:hover{background: #219a52;}\n"
+"QPushButton:pressed{background: #1e8449;}"));
         QIcon icon1;
         icon1.addFile(QString::fromUtf8(":/PIC/Resources/PICs/Bianji.png"), QSize(), QIcon::Normal, QIcon::Off);
-        toolButton_2->setIcon(icon1);
-        toolButton_2->setIconSize(QSize(40, 40));
-        toolButton_2->setToolButtonStyle(Qt::ToolButtonStyle::ToolButtonTextBesideIcon);
-        label_4 = new QLabel(tab);
-        label_4->setObjectName(QString::fromUtf8("label_4"));
-        label_4->setGeometry(QRect(20, 100, 81, 41));
-        label_4->setFont(font2);
-        toolButton_7 = new QToolButton(tab);
-        toolButton_7->setObjectName(QString::fromUtf8("toolButton_7"));
-        toolButton_7->setGeometry(QRect(540, 190, 101, 41));
-        toolButton_7->setFont(font4);
+        writeBtn->setIcon(icon1);
+        writeBtn->setIconSize(QSize(20, 20));
+
+        actionRow->addWidget(writeBtn);
+
+        eraseBtn = new QPushButton(tab);
+        eraseBtn->setObjectName(QString::fromUtf8("eraseBtn"));
+        eraseBtn->setMinimumSize(QSize(110, 40));
+        eraseBtn->setStyleSheet(QString::fromUtf8("QPushButton{background: #e74c3c; color: white; border-radius: 6px; padding: 8px 20px;}\n"
+"QPushButton:hover{background: #c0392b;}\n"
+"QPushButton:pressed{background: #a93226;}"));
         QIcon icon2;
         icon2.addFile(QString::fromUtf8(":/PIC/Resources/PICs/clear.png"), QSize(), QIcon::Normal, QIcon::Off);
-        toolButton_7->setIcon(icon2);
-        toolButton_7->setIconSize(QSize(40, 40));
-        toolButton_7->setToolButtonStyle(Qt::ToolButtonStyle::ToolButtonTextBesideIcon);
+        eraseBtn->setIcon(icon2);
+        eraseBtn->setIconSize(QSize(20, 20));
+
+        actionRow->addWidget(eraseBtn);
+
+        actionSpacerRight = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+
+        actionRow->addItem(actionSpacerRight);
+
+
+        tab1Layout->addLayout(actionRow);
+
         tabWidget->addTab(tab, QString());
         tab_2 = new QWidget();
         tab_2->setObjectName(QString::fromUtf8("tab_2"));
-        groupBox_3 = new QGroupBox(tab_2);
-        groupBox_3->setObjectName(QString::fromUtf8("groupBox_3"));
-        groupBox_3->setGeometry(QRect(10, 10, 261, 241));
-        groupBox_3->setFont(font2);
-        groupBox_3->setStyleSheet(QString::fromUtf8(""));
-        lineEdit_2 = new QLineEdit(groupBox_3);
-        lineEdit_2->setObjectName(QString::fromUtf8("lineEdit_2"));
-        lineEdit_2->setEnabled(false);
-        lineEdit_2->setGeometry(QRect(10, 30, 241, 31));
-        QFont font5;
-        font5.setFamily(QString::fromUtf8("Microsoft YaHei"));
-        font5.setPointSize(9);
-        font5.setBold(false);
-        lineEdit_2->setFont(font5);
-        textEdit_2 = new QTextEdit(groupBox_3);
-        textEdit_2->setObjectName(QString::fromUtf8("textEdit_2"));
-        textEdit_2->setEnabled(false);
-        textEdit_2->setGeometry(QRect(10, 70, 241, 111));
-        textEdit_2->setFont(font2);
-        toolButton_3 = new QToolButton(groupBox_3);
-        toolButton_3->setObjectName(QString::fromUtf8("toolButton_3"));
-        toolButton_3->setGeometry(QRect(10, 190, 121, 41));
-        toolButton_4 = new QToolButton(groupBox_3);
-        toolButton_4->setObjectName(QString::fromUtf8("toolButton_4"));
-        toolButton_4->setGeometry(QRect(130, 190, 121, 41));
-        groupBox_4 = new QGroupBox(tab_2);
-        groupBox_4->setObjectName(QString::fromUtf8("groupBox_4"));
-        groupBox_4->setGeometry(QRect(300, 10, 361, 241));
-        groupBox_4->setFont(font2);
-        groupBox_4->setStyleSheet(QString::fromUtf8(""));
-        textEdit_3 = new QTextEdit(groupBox_4);
-        textEdit_3->setObjectName(QString::fromUtf8("textEdit_3"));
-        textEdit_3->setEnabled(false);
-        textEdit_3->setGeometry(QRect(10, 30, 341, 151));
-        textEdit_3->setFont(font2);
-        toolButton_5 = new QToolButton(groupBox_4);
-        toolButton_5->setObjectName(QString::fromUtf8("toolButton_5"));
-        toolButton_5->setGeometry(QRect(10, 190, 121, 41));
+        tab2Layout = new QHBoxLayout(tab_2);
+        tab2Layout->setSpacing(12);
+        tab2Layout->setObjectName(QString::fromUtf8("tab2Layout"));
+        tab2Layout->setContentsMargins(12, 12, 12, 12);
+        switchModelBox = new QGroupBox(tab_2);
+        switchModelBox->setObjectName(QString::fromUtf8("switchModelBox"));
+        switchModelBox->setFont(font1);
+        switchModelBox->setStyleSheet(QString::fromUtf8("QGroupBox{font: bold 14px \"Microsoft YaHei\"; color: #2c3e50; border: 2px solid #e0e0e0; border-radius: 10px; margin-top: 14px; padding-top: 18px; background: #ffffff;}\n"
+"QGroupBox::title{subcontrol-origin: margin; left: 14px; padding: 4px 14px; background: #3498db; color: white; border-radius: 4px;}\n"
+"QTextEdit{font: bold 12px \"Microsoft YaHei\"; border: 2px solid #dcdde1; border-radius: 6px; background: #fafafa; padding: 6px;}\n"
+"QTextEdit:focus{border-color: #3498db; background: #ffffff;}\n"
+"QLineEdit{font: 12px \"Microsoft YaHei\"; padding: 6px 10px; border: 2px solid #dcdde1; border-radius: 6px; background: #f0f0f0; min-height: 30px;}\n"
+"QPushButton{font: bold 12px \"Microsoft YaHei\"; border-radius: 6px; padding: 8px 16px; min-height: 32px;}\n"
+"QPushButton:hover{opacity: 0.9;}"));
+        switchModelLayout = new QVBoxLayout(switchModelBox);
+        switchModelLayout->setSpacing(10);
+        switchModelLayout->setObjectName(QString::fromUtf8("switchModelLayout"));
+        switchModelLayout->setContentsMargins(14, 16, 14, 14);
+        modelPathEdit = new QLineEdit(switchModelBox);
+        modelPathEdit->setObjectName(QString::fromUtf8("modelPathEdit"));
+        modelPathEdit->setEnabled(false);
+
+        switchModelLayout->addWidget(modelPathEdit);
+
+        modelInfoEdit = new QTextEdit(switchModelBox);
+        modelInfoEdit->setObjectName(QString::fromUtf8("modelInfoEdit"));
+        modelInfoEdit->setEnabled(false);
+
+        switchModelLayout->addWidget(modelInfoEdit);
+
+        modelBtnRow = new QHBoxLayout();
+        modelBtnRow->setSpacing(10);
+        modelBtnRow->setObjectName(QString::fromUtf8("modelBtnRow"));
+        selectModelBtn = new QPushButton(switchModelBox);
+        selectModelBtn->setObjectName(QString::fromUtf8("selectModelBtn"));
+        selectModelBtn->setMinimumSize(QSize(90, 48));
+        selectModelBtn->setStyleSheet(QString::fromUtf8("QPushButton{background: #3498db; color: white;} QPushButton:hover{background: #2980b9;}"));
+
+        modelBtnRow->addWidget(selectModelBtn);
+
+        confirmReplaceBtn = new QPushButton(switchModelBox);
+        confirmReplaceBtn->setObjectName(QString::fromUtf8("confirmReplaceBtn"));
+        confirmReplaceBtn->setMinimumSize(QSize(90, 48));
+        confirmReplaceBtn->setStyleSheet(QString::fromUtf8("QPushButton{background: #27ae60; color: white;} QPushButton:hover{background: #219a52;}"));
+
+        modelBtnRow->addWidget(confirmReplaceBtn);
+
+
+        switchModelLayout->addLayout(modelBtnRow);
+
+
+        tab2Layout->addWidget(switchModelBox);
+
+        currentModelBox = new QGroupBox(tab_2);
+        currentModelBox->setObjectName(QString::fromUtf8("currentModelBox"));
+        currentModelBox->setFont(font1);
+        currentModelBox->setStyleSheet(QString::fromUtf8("QGroupBox{font: bold 14px \"Microsoft YaHei\"; color: #2c3e50; border: 2px solid #e0e0e0; border-radius: 10px; margin-top: 14px; padding-top: 18px; background: #ffffff;}\n"
+"QGroupBox::title{subcontrol-origin: margin; left: 14px; padding: 4px 14px; background: #27ae60; color: white; border-radius: 4px;}\n"
+"QTextEdit{font: bold 12px \"Microsoft YaHei\"; border: 2px solid #dcdde1; border-radius: 6px; background: #fafafa; padding: 6px;}\n"
+"QTextEdit:focus{border-color: #3498db; background: #ffffff;}\n"
+"QPushButton{font: bold 12px \"Microsoft YaHei\"; border-radius: 6px; padding: 8px 16px; min-height: 32px;}\n"
+"QPushButton:hover{opacity: 0.9;}"));
+        currentModelLayout = new QVBoxLayout(currentModelBox);
+        currentModelLayout->setSpacing(10);
+        currentModelLayout->setObjectName(QString::fromUtf8("currentModelLayout"));
+        currentModelLayout->setContentsMargins(14, 16, 14, 14);
+        currentModelInfoEdit = new QTextEdit(currentModelBox);
+        currentModelInfoEdit->setObjectName(QString::fromUtf8("currentModelInfoEdit"));
+        currentModelInfoEdit->setEnabled(false);
+
+        currentModelLayout->addWidget(currentModelInfoEdit);
+
+        currentModelBtnRow = new QHBoxLayout();
+        currentModelBtnRow->setSpacing(10);
+        currentModelBtnRow->setObjectName(QString::fromUtf8("currentModelBtnRow"));
+        currentModelSpacer = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+
+        currentModelBtnRow->addItem(currentModelSpacer);
+
+        viewModelBtn = new QPushButton(currentModelBox);
+        viewModelBtn->setObjectName(QString::fromUtf8("viewModelBtn"));
+        viewModelBtn->setMinimumSize(QSize(120, 48));
+        viewModelBtn->setStyleSheet(QString::fromUtf8("QPushButton{background: #3498db; color: white;} QPushButton:hover{background: #2980b9;}"));
+
+        currentModelBtnRow->addWidget(viewModelBtn);
+
+        currentModelSpacerRight = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+
+        currentModelBtnRow->addItem(currentModelSpacerRight);
+
+
+        currentModelLayout->addLayout(currentModelBtnRow);
+
+
+        tab2Layout->addWidget(currentModelBox);
+
         tabWidget->addTab(tab_2, QString());
+
+        mainLayout->addWidget(tabWidget);
+
+        horizontalLayout = new QHBoxLayout();
+        horizontalLayout->setObjectName(QString::fromUtf8("horizontalLayout"));
+        horizontalSpacer = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+
+        horizontalLayout->addItem(horizontalSpacer);
+
+        closeBtn = new QPushButton(centralWidget);
+        closeBtn->setObjectName(QString::fromUtf8("closeBtn"));
+        closeBtn->setMinimumSize(QSize(80, 36));
+        closeBtn->setMaximumSize(QSize(80, 36));
+        closeBtn->setStyleSheet(QString::fromUtf8("QPushButton{font: bold 12px \"Microsoft YaHei\"; background: #e74c3c; color: white; border-radius: 6px; padding: 6px 14px;}\n"
+"QPushButton:hover{background: #c0392b;}"));
+        QIcon icon3;
+        icon3.addFile(QString::fromUtf8(":/PIC/Resources/PICs/Fanhui.png"), QSize(), QIcon::Normal, QIcon::Off);
+        closeBtn->setIcon(icon3);
+        closeBtn->setIconSize(QSize(20, 20));
+
+        horizontalLayout->addWidget(closeBtn);
+
+
+        mainLayout->addLayout(horizontalLayout);
+
         SenderBinUdpClass->setCentralWidget(centralWidget);
 
         retranslateUi(SenderBinUdpClass);
 
-        tabWidget->setCurrentIndex(0);
+        tabWidget->setCurrentIndex(1);
 
 
         QMetaObject::connectSlotsByName(SenderBinUdpClass);
@@ -217,23 +362,25 @@ public:
 
     void retranslateUi(QMainWindow *SenderBinUdpClass)
     {
-        SenderBinUdpClass->setWindowTitle(QCoreApplication::translate("SenderBinUdpClass", "SenderBinUdp", nullptr));
-        label_3->setText(QCoreApplication::translate("SenderBinUdpClass", "\346\233\264\346\226\260", nullptr));
-        toolButton_6->setText(QCoreApplication::translate("SenderBinUdpClass", "X", nullptr));
+        SenderBinUdpClass->setWindowTitle(QCoreApplication::translate("SenderBinUdpClass", "\345\233\272\344\273\266\346\233\264\346\226\260", nullptr));
         label->setText(QCoreApplication::translate("SenderBinUdpClass", "\346\257\217\345\214\205\345\255\227\350\212\202\357\274\232", nullptr));
         label_2->setText(QCoreApplication::translate("SenderBinUdpClass", "\346\257\217\345\214\205\351\227\264\351\232\224\357\274\232", nullptr));
-        toolButton->setText(QCoreApplication::translate("SenderBinUdpClass", "\351\200\211\346\213\251\346\226\207\344\273\266", nullptr));
-        lineEdit->setText(QString());
-        toolButton_2->setText(QCoreApplication::translate("SenderBinUdpClass", "\344\270\200\351\224\256\345\206\231\345\205\245", nullptr));
-        label_4->setText(QCoreApplication::translate("SenderBinUdpClass", "\345\217\221\351\200\201\347\273\223\346\236\234\357\274\232", nullptr));
-        toolButton_7->setText(QCoreApplication::translate("SenderBinUdpClass", "\347\250\213\345\272\217\346\223\246\351\231\244", nullptr));
+        dataEdit->setPlaceholderText(QCoreApplication::translate("SenderBinUdpClass", "\346\225\260\346\215\256\345\206\205\345\256\271...", nullptr));
+        selectFileBtn->setText(QCoreApplication::translate("SenderBinUdpClass", "\351\200\211\346\213\251\346\226\207\344\273\266", nullptr));
+        filePathEdit->setPlaceholderText(QCoreApplication::translate("SenderBinUdpClass", "\346\234\252\351\200\211\346\213\251\346\226\207\344\273\266", nullptr));
+        writeBtn->setText(QCoreApplication::translate("SenderBinUdpClass", "\344\270\200\351\224\256\345\206\231\345\205\245", nullptr));
+        eraseBtn->setText(QCoreApplication::translate("SenderBinUdpClass", "\347\250\213\345\272\217\346\223\246\351\231\244", nullptr));
         tabWidget->setTabText(tabWidget->indexOf(tab), QCoreApplication::translate("SenderBinUdpClass", "\347\241\254\344\273\266\345\215\207\347\272\247", nullptr));
-        groupBox_3->setTitle(QCoreApplication::translate("SenderBinUdpClass", "\345\210\207\346\215\242\346\250\241\345\236\213", nullptr));
-        toolButton_3->setText(QCoreApplication::translate("SenderBinUdpClass", "\346\250\241\345\236\213\351\200\211\346\213\251", nullptr));
-        toolButton_4->setText(QCoreApplication::translate("SenderBinUdpClass", "\347\241\256\350\256\244\346\233\277\346\215\242", nullptr));
-        groupBox_4->setTitle(QCoreApplication::translate("SenderBinUdpClass", "\345\275\223\345\211\215\346\250\241\345\236\213", nullptr));
-        toolButton_5->setText(QCoreApplication::translate("SenderBinUdpClass", "\347\202\271\345\207\273\346\237\245\347\234\213\345\275\223\345\211\215\346\250\241\345\236\213", nullptr));
+        switchModelBox->setTitle(QCoreApplication::translate("SenderBinUdpClass", "\345\210\207\346\215\242\346\250\241\345\236\213", nullptr));
+        modelPathEdit->setPlaceholderText(QCoreApplication::translate("SenderBinUdpClass", "\346\250\241\345\236\213\346\226\207\344\273\266\350\267\257\345\276\204", nullptr));
+        modelInfoEdit->setPlaceholderText(QCoreApplication::translate("SenderBinUdpClass", "\346\250\241\345\236\213\344\277\241\346\201\257...", nullptr));
+        selectModelBtn->setText(QCoreApplication::translate("SenderBinUdpClass", "\346\250\241\345\236\213\351\200\211\346\213\251", nullptr));
+        confirmReplaceBtn->setText(QCoreApplication::translate("SenderBinUdpClass", "\347\241\256\350\256\244\346\233\277\346\215\242", nullptr));
+        currentModelBox->setTitle(QCoreApplication::translate("SenderBinUdpClass", "\345\275\223\345\211\215\346\250\241\345\236\213", nullptr));
+        currentModelInfoEdit->setPlaceholderText(QCoreApplication::translate("SenderBinUdpClass", "\345\275\223\345\211\215\350\277\220\350\241\214\346\250\241\345\236\213\344\277\241\346\201\257...", nullptr));
+        viewModelBtn->setText(QCoreApplication::translate("SenderBinUdpClass", "\346\237\245\347\234\213\345\275\223\345\211\215\346\250\241\345\236\213", nullptr));
         tabWidget->setTabText(tabWidget->indexOf(tab_2), QCoreApplication::translate("SenderBinUdpClass", "\346\250\241\345\236\213\345\210\207\346\215\242", nullptr));
+        closeBtn->setText(QCoreApplication::translate("SenderBinUdpClass", "\345\205\263\351\227\255", nullptr));
     } // retranslateUi
 
 };

@@ -9,17 +9,17 @@ OcrFilterRules::OcrFilterRules(QWidget *parent)
 {
 	ui->setupUi(this);
 
-    connect(ui->pushButton, &QPushButton::clicked, this, [=] {
+    connect(ui->closeBtn, &QPushButton::clicked, this, [=] {
         this->hide();
         emit showmain();
         });
 	// 转发控件事件
-	connect(ui->zdybutton_2, &QPushButton::clicked, this, &OcrFilterRules::clearCustomFields);
-    connect(ui->pushButton_3, &QPushButton::clicked, this, &OcrFilterRules::SelectTime);
-    connect(ui->pushButton_4, &QPushButton::clicked, this, [=] {
+	connect(ui->clearFieldsBtn, &QPushButton::clicked, this, &OcrFilterRules::clearCustomFields);
+    connect(ui->selectDateBtn, &QPushButton::clicked, this, &OcrFilterRules::SelectTime);
+    connect(ui->setExtraCodeBtn, &QPushButton::clicked, this, [=] {
 
         CustomStr_6 = "";
-        CustomStr_6.append(std::string(ui->lineEdit_9->text().toLocal8Bit()));
+        CustomStr_6.append(std::string(ui->extraCodeEdit->text().toLocal8Bit()));
         string delestr = std::string(SCHEMEtext.toLocal8Bit());
         if (AlterSchemeContent(delestr))
         {
@@ -30,69 +30,59 @@ OcrFilterRules::OcrFilterRules(QWidget *parent)
         string Log_Str = "*保存检测额外代码内容:\n" + CustomStr_6;
       
         });
-    // 第一个comboBox连接
-    connect(ui->comboBox_2, static_cast<void (QComboBox::*)(int)>(&QComboBox::currentIndexChanged),
-        this,
-        [=](int index) {
-            CodeIndex = index;  // 使用传递的index参数而不是再次获取
-            FH = ui->comboBox_2->currentText();
-          /*  if (IsSchemeComboBoxcode) {
-                IsSchemeComboBoxcode = false;
-            }
-            else {*/
-                bool result = AlterDB(SCHEMEtext.toStdString());
-            //}
-        });
-
+   
      // 使用函数指针的Qt5兼容方式
-    connect(ui->spinBox,
+    connect(ui->shelfLifeDaysSpb,
         static_cast<void (QSpinBox::*)(int)>(&QSpinBox::valueChanged),
         this,
         [=](int value) {
             save_time = value;  // 使用传递的值而不是再次获取
             UpdataTime();
         });
-    connect(ui->spinBox_2,
+    connect(ui->shelfLifeMonthsSpb,
         static_cast<void (QSpinBox::*)(int)>(&QSpinBox::valueChanged),
         this,
         [=](int value) {
             Savemonth = value;  // 使用传递的值而不是再次获取
             UpdataTime();
         });
-    connect(ui->spinBox_3,
+    connect(ui->shelfLifeYearsSpb,
         static_cast<void (QSpinBox::*)(int)>(&QSpinBox::valueChanged),
         this,
         [=](int value) {
             Saveyear = value;  // 使用传递的值而不是再次获取
             UpdataTime();
         });
-    connect(ui->toolButton_18, &QPushButton::clicked, this, [=] {
-        toggleSchemeButton(ui->toolButton_18, ui->toolButton_20, SCenabled, true);
+    connect(ui->scEnableBtn, &QPushButton::clicked, this, [=] {
+        toggleSchemeButton(ui->scEnableBtn, ui->scDisableBtn, SCenabled, true);
         });
-    connect(ui->toolButton_20, &QPushButton::clicked, this, [=] {
-        toggleSchemeButton(ui->toolButton_20, ui->toolButton_18, SCenabled, false);
+    connect(ui->scDisableBtn, &QPushButton::clicked, this, [=] {
+        toggleSchemeButton(ui->scDisableBtn, ui->scEnableBtn, SCenabled, false);
         });
-    connect(ui->toolButton_22, &QPushButton::clicked, this, [=] {
-        toggleSchemeButton(ui->toolButton_22, ui->toolButton_23, BZenabled, true);
+    connect(ui->bzEnableBtn, &QPushButton::clicked, this, [=] {
+        toggleSchemeButton(ui->bzEnableBtn, ui->bzDisableBtn, BZenabled, true);
         });
-    connect(ui->toolButton_23, &QPushButton::clicked, this, [=] {
-        toggleSchemeButton(ui->toolButton_23, ui->toolButton_22, BZenabled, false);
+    connect(ui->bzDisableBtn, &QPushButton::clicked, this, [=] {
+        toggleSchemeButton(ui->bzDisableBtn, ui->bzEnableBtn, BZenabled, false);
         });
-    connect(ui->toolButton_24, &QPushButton::clicked, this, [=] {
-        toggleSchemeButton(ui->toolButton_24, ui->toolButton_29, EWenabled, true);
+    connect(ui->ewEnableBtn, &QPushButton::clicked, this, [=] {
+        toggleSchemeButton(ui->ewEnableBtn, ui->ewDisableBtn, EWenabled, true);
         });
-    connect(ui->toolButton_29, &QPushButton::clicked, this, [=] {
-        toggleSchemeButton(ui->toolButton_29, ui->toolButton_24, EWenabled, false);
+    connect(ui->ewDisableBtn, &QPushButton::clicked, this, [=] {
+        toggleSchemeButton(ui->ewDisableBtn, ui->ewEnableBtn, EWenabled, false);
         });
 	
-	connect(ui->pushButton_6, &QPushButton::clicked, this, &OcrFilterRules::saveCustomFields);
-	
+	connect(ui->saveCustomBtn, &QPushButton::clicked, this, &OcrFilterRules::saveCustomFields);
+
+    // 设置窗口标志：保留系统菜单、显示问号(?)按钮、显示关闭(X)按钮
+    setWindowFlags(Qt::WindowSystemMenuHint | Qt::WindowContextHelpButtonHint | Qt::WindowCloseButtonHint);
 }
 
 OcrFilterRules::~OcrFilterRules()
 {
 	delete ui;
 }
+
 
 
 void  OcrFilterRules::closeEvent(QCloseEvent* event)
@@ -105,7 +95,8 @@ void  OcrFilterRules::closeEvent(QCloseEvent* event)
 
 void OcrFilterRules::SetOcrFilterRules(QString _SCHEME, std::string CustomStr, std::string CustomStr_2,
     std::string CustomStr_3, std::string CustomStr_4,std::string CustomStr_5, std::string CustomStr_6,
-    bool SCenabled ,bool BZenabled ,bool EWenabled, int Savemonth, int Saveyear, int save_time , QString Start_Data_Time ,QString Save_Time , int CodeIndex , bool Page)
+    bool SCenabled ,bool BZenabled ,bool EWenabled, int Savemonth, int Saveyear, int save_time , 
+    QString Start_Data_Time ,QString Save_Time , int CodeIndex , bool Page)
 {
     SCHEMEtext = _SCHEME;
 
@@ -116,29 +107,27 @@ void OcrFilterRules::SetOcrFilterRules(QString _SCHEME, std::string CustomStr, s
 
 			edit->setText(QString::fromLocal8Bit(str.c_str()));
 		};
-    setText(ui->lineEdit_4, CustomStr);
-    setText(ui->lineEdit_7, CustomStr_2);
-    setText(ui->lineEdit_6, CustomStr_3);
-    setText(ui->lineEdit_8, CustomStr_4);
-    setText(ui->lineEdit_5, CustomStr_5);
-    setText(ui->lineEdit_9, CustomStr_6);
+    setText(ui->customEdit1, CustomStr);
+    setText(ui->customEdit4, CustomStr_2);
+    setText(ui->customEdit2, CustomStr_3);
+    setText(ui->customEdit5, CustomStr_4);
+    setText(ui->customEdit3, CustomStr_5);
+    setText(ui->extraCodeEdit, CustomStr_6);
 
 
-    ui->spinBox->setValue(save_time);
-    ui->spinBox_2->setValue(Savemonth);
-    ui->spinBox_3->setValue(Saveyear);
-	ui->comboBox_2->setCurrentIndex(CodeIndex);
-    FH = ui->comboBox_2->currentText();
-	ui->lineEdit->setText(Start_Data_Time);
-	ui->lineEdit_3->setText(Save_Time);
+    ui->shelfLifeDaysSpb->setValue(save_time);
+    ui->shelfLifeMonthsSpb->setValue(Savemonth);
+    ui->shelfLifeYearsSpb->setValue(Saveyear);
+	ui->prodDateEdit->setText(Start_Data_Time);
+	ui->expDateEdit->setText(Save_Time);
 
     auto setToggle = [&](QWidget* onBtn, QWidget* offBtn, bool enabled) {
         onBtn->setStyleSheet(enabled ? "background-color:  #87CEEB;" : "background-color:  #FFFFFF;");
         offBtn->setStyleSheet(enabled ? "background-color:  #FFFFFF;" : "background-color:  #87CEEB;");
         };
-    setToggle(ui->toolButton_18, ui->toolButton_20, SCenabled);
-    setToggle(ui->toolButton_22, ui->toolButton_23, BZenabled);
-    setToggle(ui->toolButton_24, ui->toolButton_29, EWenabled);
+    setToggle(ui->scEnableBtn, ui->scDisableBtn, SCenabled);
+    setToggle(ui->bzEnableBtn, ui->bzDisableBtn, BZenabled);
+    setToggle(ui->ewEnableBtn, ui->ewDisableBtn, EWenabled);
 }
 
 void OcrFilterRules::SelectTime()
@@ -193,9 +182,9 @@ void OcrFilterRules::SelectTime()
         }
 
         Start_Data_Time = year_str + month_str + day_str;
-        ui->lineEdit->setText(Start_Data_Time);
+        ui->prodDateEdit->setText(Start_Data_Time);
         Save_Time = CaculateTime(year, month, day, save_time, Savemonth, Saveyear);
-        ui->lineEdit_3->setText(Save_Time);
+        ui->expDateEdit->setText(Save_Time);
     }
 }
 
@@ -220,12 +209,14 @@ void OcrFilterRules::UpdataTime()
 {
     auto pad = [](int v) { return QString("%1").arg(v, 2, 10, QChar('0')); };
     Start_Data_Time = pad(year) + pad(month) + pad(day);
-    ui->lineEdit->setText(Start_Data_Time);
-    save_time = ui->spinBox->value();
+    ui->prodDateEdit->setText(Start_Data_Time);
+    save_time = ui->shelfLifeDaysSpb->value();
     Save_Time = CaculateTime(year, month, day, save_time, Savemonth, Saveyear);
-    ui->lineEdit_3->setText(Save_Time);
+    ui->expDateEdit->setText(Save_Time);
   
 }
+//onBtn->setStyleSheet(enabled ? "background-color:  #87CEEB;" : "background-color:  #FFFFFF;");
+//offBtn->setStyleSheet(enabled ? "background-color:  #FFFFFF;" : "background-color:  #87CEEB;");
 //标记开关按钮单选待理
 void OcrFilterRules::toggleSchemeButton(QWidget* activeBtn, QWidget* inactiveBtn, bool& flag, bool value)
 {
@@ -238,23 +229,23 @@ void OcrFilterRules::toggleSchemeButton(QWidget* activeBtn, QWidget* inactiveBtn
 }
 
 void  OcrFilterRules::clearCustomFields() {
-    ui->lineEdit_4->clear();
-    ui->lineEdit_5->clear();
-    ui->lineEdit_6->clear();
-    ui->lineEdit_7->clear();
-    ui->lineEdit_8->clear();
+    ui->customEdit1->clear();
+    ui->customEdit3->clear();
+    ui->customEdit2->clear();
+    ui->customEdit4->clear();
+    ui->customEdit5->clear();
 }
 void  OcrFilterRules::saveCustomFields() {
     CustomStr = "";
-    CustomStr.append(std::string(ui->lineEdit_4->text().toLocal8Bit()));
+    CustomStr.append(std::string(ui->customEdit1->text().toLocal8Bit()));
     CustomStr_2 = "";
-    CustomStr_2.append(std::string(ui->lineEdit_7->text().toLocal8Bit()));
+    CustomStr_2.append(std::string(ui->customEdit4->text().toLocal8Bit()));
     CustomStr_3 = "";
-    CustomStr_3.append(std::string(ui->lineEdit_6->text().toLocal8Bit()));
+    CustomStr_3.append(std::string(ui->customEdit2->text().toLocal8Bit()));
     CustomStr_4 = "";
-    CustomStr_4.append(std::string(ui->lineEdit_8->text().toLocal8Bit()));
+    CustomStr_4.append(std::string(ui->customEdit5->text().toLocal8Bit()));
     CustomStr_5 = "";
-    CustomStr_5.append(std::string(ui->lineEdit_5->text().toLocal8Bit()));
+    CustomStr_5.append(std::string(ui->customEdit3->text().toLocal8Bit()));
 
     string delestr = std::string(SCHEMEtext.toLocal8Bit());
     AlterSchemeContent(delestr);

@@ -10,27 +10,27 @@ SenderBinUdp::SenderBinUdp(QWidget *parent)
 	: QMainWindow(parent)
 {
 	ui.setupUi(this);
-    ui.spinBox->setValue(packetSize);
-    ui.spinBox_2->setValue(intervalMs);
-    ui.lineEdit_2->setText(QString::fromLocal8Bit("无模型路径"));
-    ui.textEdit_2->setText(QString::fromLocal8Bit("请选择模型"));
-    ui.textEdit_3->clear();
+    ui.bytesPerPacketSpb->setValue(packetSize);
+    ui.intervalSpb->setValue(intervalMs);
+    ui.modelPathEdit->setText(QString::fromLocal8Bit("无模型路径"));
+    ui.modelInfoEdit->setText(QString::fromLocal8Bit("请选择模型"));
+    ui.currentModelInfoEdit->clear();
 
     QString appDir = QCoreApplication::applicationDirPath();
     QString modelsPath = appDir + "/models";
     destPath = appDir + "/models/rec";
 
-    connect(ui.toolButton_6, &QToolButton::clicked, this, [=] {
-        ui.toolButton_2->setEnabled(false);
+    connect(ui.closeBtn, &QPushButton::clicked, this, [=] {
+        ui.writeBtn->setEnabled(false);
         startSend();
         hide();
         });
-    connect(ui.toolButton_3, &QPushButton::clicked, this,&SenderBinUdp::onToolButtonClicked);
-    connect(ui.toolButton_4, &QPushButton::clicked, this,&SenderBinUdp::saveFolderPath);
-    connect(ui.toolButton_5, &QPushButton::clicked, this, [=] {
+    connect(ui.selectModelBtn, &QPushButton::clicked, this,&SenderBinUdp::onToolButtonClicked);
+    connect(ui.confirmReplaceBtn, &QPushButton::clicked, this,&SenderBinUdp::saveFolderPath);
+    connect(ui.viewModelBtn, &QPushButton::clicked, this, [=] {
         getFolderContentsInfo(destPath);
         });
-    connect(ui.toolButton, &QPushButton::clicked, this, [=] {
+    connect(ui.selectFileBtn, &QPushButton::clicked, this, [=] {
             fileName = QFileDialog::getOpenFileName(
             nullptr,
             QString::fromLocal8Bit("选择升级文件"),
@@ -39,18 +39,18 @@ SenderBinUdp::SenderBinUdp(QWidget *parent)
             QString::fromLocal8Bit("升级文件 (*.bin)")
         );
         openBinFilePath = fileName;
-        ui.lineEdit->setText(openBinFilePath);
+        ui.filePathEdit->setText(openBinFilePath);
        
 
         });
-    connect(ui.toolButton_2, &QPushButton::clicked, this, [=] {
+    connect(ui.writeBtn, &QPushButton::clicked, this, [=] {
     
         // 检查用户是否选择了文件
         if (!fileName.isEmpty()) {
             file.setFileName(openBinFilePath);
             if (!file.open(QIODevice::ReadOnly)) {
                 error(QString::fromLocal8Bit("无法打开文件"));
-                ui.textEdit->setText(QString::fromLocal8Bit("无法打开文件"));
+                ui.dataEdit->setText(QString::fromLocal8Bit("无法打开文件"));
                 return;
             }
             else {
@@ -65,17 +65,17 @@ SenderBinUdp::SenderBinUdp(QWidget *parent)
         else {
             // 用户取消选择时的处理（可选）
             qDebug() << QString::fromLocal8Bit("未选择文件");
-            ui.textEdit->setText(QString::fromLocal8Bit("未选择文件"));
+            ui.dataEdit->setText(QString::fromLocal8Bit("未选择文件"));
         }
         });
-    connect(ui.toolButton_7, &QPushButton::clicked, this, [=] {
+    connect(ui.eraseBtn, &QPushButton::clicked, this, [=] {
 
         // 检查用户是否选择了文件
         if (!fileName.isEmpty()) {
             file.setFileName(openBinFilePath);
             if (!file.open(QIODevice::ReadOnly)) {
                 error(QString::fromLocal8Bit("无法打开文件"));
-                ui.textEdit->setText(QString::fromLocal8Bit("无法打开文件"));
+                ui.dataEdit->setText(QString::fromLocal8Bit("无法打开文件"));
                 return;
             }
             else {
@@ -89,7 +89,7 @@ SenderBinUdp::SenderBinUdp(QWidget *parent)
         else {
             // 用户取消选择时的处理（可选）
             qDebug() << QString::fromLocal8Bit("未选择文件");
-            ui.textEdit->setText(QString::fromLocal8Bit("未选择文件"));
+            ui.dataEdit->setText(QString::fromLocal8Bit("未选择文件"));
         }
         });
     SetQSS();
@@ -113,11 +113,11 @@ void SenderBinUdp::paintEvent(QPaintEvent* event)
 //设置页面样式
 void  SenderBinUdp::SetQSS()
 {
-    // 去掉最小化和关闭按钮
-    setWindowFlags(Qt::FramelessWindowHint | Qt::WindowSystemMenuHint | Qt::WindowMinMaxButtonsHint);
+    // 设置窗口标志：保留系统菜单、显示问号(?)按钮、显示关闭(X)按钮
+    setWindowFlags(Qt::WindowSystemMenuHint | Qt::WindowContextHelpButtonHint | Qt::WindowCloseButtonHint);
     // 设置窗体的初始大小
     qApp->installEventFilter(this);                   //给自己加事件过滤器,用来实现拖动窗口
-    ui.toolButton_2->setEnabled(false);
+    ui.writeBtn->setEnabled(false);
 }
 bool SenderBinUdp::eventFilter(QObject* obj, QEvent* evt)
 {
@@ -156,20 +156,20 @@ bool SenderBinUdp::sendFile(const QString& filePath, const QString& ip, quint16 
    
     if (sending) {
         emit error(QString::fromLocal8Bit("正在发送中"));
-        ui.textEdit->setText(QString::fromLocal8Bit("正在发送中"));
+        ui.dataEdit->setText(QString::fromLocal8Bit("正在发送中"));
         return false;
     }
 
     if (!checkBinFile(filePath)) {
         emit error(QString::fromLocal8Bit("请选择.bin文件"));
-        ui.textEdit->setText(QString::fromLocal8Bit("请选择.bin文件"));
+        ui.dataEdit->setText(QString::fromLocal8Bit("请选择.bin文件"));
         return false;
     }
 
  /*   file.setFileName(filePath);
     if (!file.open(QIODevice::ReadOnly)) {
         emit error(QString::fromLocal8Bit("无法打开文件"));
-        ui.textEdit->setText(QString::fromLocal8Bit("无法打开文件"));
+        ui.dataEdit->setText(QString::fromLocal8Bit("无法打开文件"));
         return false;
     }*/
    
@@ -178,8 +178,8 @@ bool SenderBinUdp::sendFile(const QString& filePath, const QString& ip, quint16 
     sent = 0;                         // 已发送字节数初始化为0
     sending = true;                   // 设置发送状态为正在发送
     // 从UI控件获取发送参数
-    packetSize = ui.spinBox->value();     // 从界面上的spinBox控件获取每个数据包的大小（字节）
-    intervalMs = ui.spinBox_2->value();   // 从界面上的spinBox_2控件获取发送间隔时间（毫秒）
+    packetSize = ui.bytesPerPacketSpb->value();     // 从界面上的spinBox控件获取每个数据包的大小（字节）
+    intervalMs = ui.intervalSpb->value();   // 从界面上的spinBox_2控件获取发送间隔时间（毫秒）
 
     // --- 文件有效性检查 ---
     if (total == 0) {
@@ -187,7 +187,7 @@ bool SenderBinUdp::sendFile(const QString& filePath, const QString& ip, quint16 
 
         // 发送错误信号并更新UI
         emit error(QString::fromLocal8Bit("文件为空"));  // 发射错误信号
-        ui.textEdit->setText(QString::fromLocal8Bit("文件为空"));  // 在文本框中显示错误信息
+        ui.dataEdit->setText(QString::fromLocal8Bit("文件为空"));  // 在文本框中显示错误信息
 
         sending = false;  // 设置发送状态为停止
         return false;     // 返回失败状态
@@ -223,7 +223,7 @@ void SenderBinUdp::sendPacket()
         emit progress(100);
         emit finished();
         qDebug() << QString::fromLocal8Bit("发送完成");
-        ui.textEdit->setText(QString::fromLocal8Bit("发送完成"));
+        ui.dataEdit->setText(QString::fromLocal8Bit("发送完成"));
         startSend();
         return;
     }
@@ -238,7 +238,7 @@ void SenderBinUdp::sendPacket()
 
     if (blockData.isEmpty()) {
         emit error(QString::fromLocal8Bit("读取块失败"));
-        ui.textEdit->setText(QString::fromLocal8Bit("读取块失败"));
+        ui.dataEdit->setText(QString::fromLocal8Bit("读取块失败"));
         stop();
         return;
     }
@@ -295,7 +295,7 @@ void SenderBinUdp::sendPacket()
                 .arg(percent)
                 .arg(sent)
                 .arg(total);
-            ui.textEdit->setText(progressText);
+            ui.dataEdit->setText(progressText);
             lastPercent = percent;
         }
     }
@@ -403,7 +403,7 @@ void SenderBinUdp::onToolButtonClicked() {
     // 检查models目录是否存在
     QDir modelsDir(modelsPath);
     if (!modelsDir.exists()) {
-        ui.textEdit_2->setText(QString::fromLocal8Bit("错误：找不到models目录"));
+        ui.modelInfoEdit->setText(QString::fromLocal8Bit("错误：找不到models目录"));
         return;
     }
 
@@ -418,7 +418,7 @@ void SenderBinUdp::onToolButtonClicked() {
     }
 
     if (enSqFolders.isEmpty()) {
-        ui.textEdit_2->setText(QString::fromLocal8Bit("未找到包含'en_SQ'的文件夹"));
+        ui.modelInfoEdit->setText(QString::fromLocal8Bit("未找到包含'en_SQ'的文件夹"));
         return;
     }
 
@@ -486,27 +486,27 @@ void SenderBinUdp::onToolButtonClicked() {
     // 显示对话框
     if (dialog.exec() == QDialog::Accepted && !selectedFolder.isEmpty()) {
         openFilePath = modelsPath + "/" + selectedFolder;
-        ui.lineEdit_2->setText(openFilePath);
-        ui.textEdit_2->setText(QString::fromLocal8Bit("已选择: %1\n请点击确认替换！")
+        ui.modelPathEdit->setText(openFilePath);
+        ui.modelInfoEdit->setText(QString::fromLocal8Bit("已选择: %1\n请点击确认替换！")
             .arg(selectedFolder));
     }
     else {
-        ui.textEdit_2->setText(QString::fromLocal8Bit("已取消选择"));
+        ui.modelInfoEdit->setText(QString::fromLocal8Bit("已取消选择"));
     }
 }
 void SenderBinUdp::saveFolderPath() {
     // 检查用户是否选择了文件
-    if (ui.lineEdit_2->text().isEmpty()) {
-        ui.textEdit_2->setText(QString::fromLocal8Bit("请先选择源文件夹！ "));
+    if (ui.modelPathEdit->text().isEmpty()) {
+        ui.modelInfoEdit->setText(QString::fromLocal8Bit("请先选择源文件夹！ "));
     }
     else {
         int finalizeModelTransfer = copyFilesOnly(openFilePath, destPath);
         if (finalizeModelTransfer) {
-            ui.textEdit_2->setText(QString::fromLocal8Bit("替换完成！请重新启动软件 "));
-            ui.lineEdit_2->clear();
+            ui.modelInfoEdit->setText(QString::fromLocal8Bit("替换完成！请重新启动软件 "));
+            ui.modelPathEdit->clear();
         }
         else {
-            ui.textEdit_2->setText(QString::fromLocal8Bit("替换失败！ "));
+            ui.modelInfoEdit->setText(QString::fromLocal8Bit("替换失败！ "));
         }
 
     }
@@ -518,7 +518,7 @@ void SenderBinUdp::getFolderContentsInfo(const QString& folderPath) {
     QDir dir(folderPath);
 
     if (!dir.exists()) {
-        ui.textEdit_3->setText(QString::fromLocal8Bit("文件夹不存在"));
+        ui.currentModelInfoEdit->setText(QString::fromLocal8Bit("文件夹不存在"));
         return;
     }
 
@@ -527,7 +527,7 @@ void SenderBinUdp::getFolderContentsInfo(const QString& folderPath) {
     QFileInfoList dirs = dir.entryInfoList(QDir::Dirs | QDir::NoDotAndDotDot);
 
     if (files.isEmpty()) {
-        ui.textEdit_3->setText(QString::fromLocal8Bit("没有找到文件"));
+        ui.currentModelInfoEdit->setText(QString::fromLocal8Bit("没有找到文件"));
 
     }
     else {
@@ -555,7 +555,7 @@ void SenderBinUdp::getFolderContentsInfo(const QString& folderPath) {
         }
 
         // 显示在textEdit_3中
-        ui.textEdit_3->setText(displayText);
+        ui.currentModelInfoEdit->setText(displayText);
     }
 }
 //发送############################################################################
@@ -606,9 +606,9 @@ int SenderBinUdp::SendBKBK(QString positionCommandHeader, QString cmdHex, int Pa
 void SenderBinUdp::eraseCompleteSignal()
 {
     stopSend();
-    ui.toolButton_2->setEnabled(true);
+    ui.writeBtn->setEnabled(true);
 }
 void SenderBinUdp::writeCompleteSignal()
 {
-    ui.toolButton_2->setEnabled(false);
+    ui.writeBtn->setEnabled(false);
 }

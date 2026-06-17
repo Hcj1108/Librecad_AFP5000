@@ -92,7 +92,6 @@ vector<string> FindName;
 // 保存栏目内容相关变量定义
 string CustomStr, CustomStr_2, CustomStr_3, CustomStr_4, CustomStr_5, CustomStr_6;
 QString Start_Data_Time;
-QString FH;
 int year = 0, month = 0, day = 0;
 int Savemonth = 0, Saveyear = 0, save_time = 181;
 QString Save_Time;

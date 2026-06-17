@@ -1,40 +1,21 @@
 ﻿   Qt/MSBuild: 3.5.0.0
    Qt: 5.15.2
-  qc_applicationwindow.cpp
-D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\lib\engine\rs.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
-  (编译源文件“main/qc_applicationwindow.cpp”)
-  
-D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\lib\engine\rs_polyline.h(38,69): warning C4100: 'step': 未引用的参数
-  (编译源文件“main/qc_applicationwindow.cpp”)
-  
-D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\OCRdemo\GXBitmap.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
-  (编译源文件“main/qc_applicationwindow.cpp”)
-  
+  OCRruning.cpp
+  OcrFilterRules.cpp
 D:\software\vcpkg-master\installed\x64-windows\include\iconv.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
-  (编译源文件“main/qc_applicationwindow.cpp”)
+  (编译源文件“OCRdemo/OcrFilterRules.cpp”)
   
-D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\OCRdemo\SerialManager.h(9,10): warning C4067: 预处理器指令后有意外标记 - 应输入换行符
-  (编译源文件“main/qc_applicationwindow.cpp”)
-  
-D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\main\qc_applicationwindow.cpp(131,98): warning C4100: 'pUserParam': 未引用的参数
-D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\main\qc_applicationwindow.cpp(156,69): warning C4100: 'pUserParam': 未引用的参数
-D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\main\qc_applicationwindow.cpp(1089,22): warning C4189: “document”: 局部变量已初始化但不引用
-D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\main\qc_applicationwindow.cpp(1174,52): warning C4100: 'ce': 未引用的参数
-D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\main\qc_applicationwindow.cpp(1284,34): warning C4189: “alnumValidator”: 局部变量已初始化但不引用
-D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\main\qc_applicationwindow.cpp(3176,46): warning C4100: 'toggle': 未引用的参数
-D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\main\qc_applicationwindow.cpp(4368,34): warning C4101: “e”: 未引用的局部变量
-D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\main\qc_applicationwindow.cpp(4432,34): warning C4101: “e”: 未引用的局部变量
-D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\main\qc_applicationwindow.cpp(4483,38): warning C4101: “e”: 未引用的局部变量
-D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\main\qc_applicationwindow.cpp(4501,30): warning C4101: “e”: 未引用的局部变量
-D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\main\qc_applicationwindow.cpp(4584,30): warning C4101: “e”: 未引用的局部变量
-D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\main\qc_applicationwindow.cpp(4774,87): warning C4267: “参数”: 从“size_t”转换到“int”，可能丢失数据
-D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\main\qc_applicationwindow.cpp(4794,87): warning C4267: “参数”: 从“size_t”转换到“int”，可能丢失数据
-D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\main\qc_applicationwindow.cpp(5220,14): warning C4189: “result1”: 局部变量已初始化但不引用
-D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\main\qc_applicationwindow.cpp(6411,122): warning C4267: “参数”: 从“size_t”转换到“int”，可能丢失数据
-D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\main\qc_applicationwindow.cpp(6439,118): warning C4267: “参数”: 从“size_t”转换到“int”，可能丢失数据
-D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\main\qc_applicationwindow.cpp(6495,17): warning C4267: “参数”: 从“size_t”转换到“int”，可能丢失数据
-D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\main\qc_applicationwindow.cpp(4511,1): warning C4715: “QC_ApplicationWindow::SetROISimple”: 不是所有的控件路径都返回值
-D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\main\qc_applicationwindow.cpp(4377,1): warning C4715: “QC_ApplicationWindow::OpenCamer”: 不是所有的控件路径都返回值
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\OCRdemo\OcrFilterRules.cpp(99,54): warning C4100: 'CodeIndex': 未引用的参数
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\OCRdemo\OCRruning.cpp(24,75): warning C4267: “参数”: 从“size_t”转换到“int”，可能丢失数据
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\OCRdemo\OCRruning.cpp(12,429): warning C4100: 'SecOCRSize': 未引用的参数
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\OCRdemo\OCRruning.cpp(12,408): warning C4100: 'FirstOCRSize': 未引用的参数
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\OCRdemo\OCRruning.cpp(390,13): warning C4189: “sec_duration_millsecond”: 局部变量已初始化但不引用
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\OCRdemo\OCRruning.cpp(502,11): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\OCRdemo\OCRruning.cpp(502,29): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\OCRdemo\OCRruning.cpp(530,29): warning C4267: “=”: 从“size_t”转换到“int”，可能丢失数据
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\OCRdemo\OCRruning.cpp(531,42): warning C4267: “=”: 从“size_t”转换到“int”，可能丢失数据
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\OCRdemo\OCRruning.cpp(686,29): warning C4267: “=”: 从“size_t”转换到“int”，可能丢失数据
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\OCRdemo\OCRruning.cpp(687,42): warning C4267: “=”: 从“size_t”转换到“int”，可能丢失数据
   LibreCAD.vcxproj -> D:\DM\LibreCAD-2.4(YitiJi)\windows\LibreCAD.exe
   'pwsh.exe' 不是内部或外部命令，也不是可运行的程序
   或批处理文件。
