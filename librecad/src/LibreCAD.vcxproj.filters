@@ -936,9 +936,6 @@
     <ClCompile Include="lib\engine\rs_graphic.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="lib\gui\rs_graphicview.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="lib\gui\rs_grid.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -1169,6 +1166,12 @@
     </ClCompile>
     <ClCompile Include="OCRdemo\OcrFilterRules.cpp">
       <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="lib\gui\rs_graphicview.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="OCRdemo\SerialNumberDialog.cpp">
+      <Filter>Generated Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -2300,6 +2303,9 @@
     <QtMoc Include="OCRdemo\OcrFilterRules.h">
       <Filter>Header Files</Filter>
     </QtMoc>
+    <QtMoc Include="OCRdemo\SerialNumberDialog.h">
+      <Filter>Generated Files</Filter>
+    </QtMoc>
   </ItemGroup>
   <ItemGroup>
     <None Include="..\ts\librecad_ar.ts">
@@ -2751,6 +2757,9 @@
     </QtUic>
     <QtUic Include="OCRdemo\OcrFilterRules.ui">
       <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="OCRdemo\SerialNumberDialog.ui">
+      <Filter>Generated Files</Filter>
     </QtUic>
   </ItemGroup>
   <ItemGroup>

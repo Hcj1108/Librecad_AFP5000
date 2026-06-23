@@ -379,7 +379,7 @@ QC_ApplicationWindow::QC_ApplicationWindow()
     connect(ui->toolButton_16, &QPushButton::clicked, this, [=] {
         if ( SelectDB_Status())
         {
-            serialmanager.setSerialNum( MaxThresholdAlermOpen,  MinThresholdAlermOpen,  cameraAlarmOpen,  markingOutOfAreaOpen,  linkTXOpen,  linkBKBKOpen,  linkCameraOpen);
+            serialmanager.setSerialNum( MaxThresholdAlermOpen,  MinThresholdAlermOpen,  cameraAlarmOpen,  markingOutOfAreaOpen,  linkTXOpen,  linkBKBKOpen,  linkCameraOpen, IsOpenBKBK, isOpenCam);
         }
         serialmanager.show();
         } );
@@ -498,8 +498,8 @@ QC_ApplicationWindow::QC_ApplicationWindow()
 
         Logger::write("关闭参数设置界面 ");*/
 
-        });
-
+        }); 
+    connect(&serialmanager, &SerialManager::SendNG, this, &QC_ApplicationWindow::NG);
     connect(&serialmanager, &SerialManager::setzhuangtai, this, [=] {
         int date = serialmanager.getSerialNum();
         int date2 = serialmanager.getSerialNum2();
@@ -4612,7 +4612,7 @@ void QC_ApplicationWindow::ShowSetting()
         TriggerLine0();
     }
     //FileUtils::SendBKBK(60, 1);
-    FileUtils::SendBKBK("11","00", 1);
+    FileUtils::SendBKBK("11","00", 1);//光源常亮
     string str = std::string(ui->comboBox->currentText().toLocal8Bit());
     if (str != "")
     {
@@ -4754,7 +4754,7 @@ void QC_ApplicationWindow::ShowThis()
             }*/
 
          //FileUtils::SendBKBK(60, RGBMode);
-         FileUtils::SendBKBK("11","00", RGBMode);
+         FileUtils::SendBKBK("11","00", RGBMode);//恢复光源设置
         Logger::write("关闭参数设置界面 ");
     }
    
@@ -4966,9 +4966,7 @@ void QC_ApplicationWindow::NG()
                 ObjFeatureControlPtr->GetBoolFeature("LineInverter")->SetValue(true);
                 Sleep(100);
                 ObjFeatureControlPtr->GetBoolFeature("LineInverter")->SetValue(false);
-         
-               
-               
+ 
             }
         }
     }
@@ -5632,7 +5630,6 @@ void QC_ApplicationWindow::SetSchemeContent(QString schemename)
     };
    
 
-
     setText(ui->lineEdit_13, CustomStr);
     setText(ui->lineEdit_17, CustomStr_2);
     setText(ui->lineEdit_14, CustomStr_3);
@@ -6182,7 +6179,7 @@ void QC_ApplicationWindow::processBinaryData(const QBitArray& bits, const QHostA
             }
             else {
                 // 情况2b：有未连接且未被屏蔽的设备 - 红色
-                ui->toolButton_38->setStyleSheet(
+                ui->toolButton_32->setStyleSheet(
                     "QToolButton {"
                     "  background-color: qlineargradient(x1:0, y1:0, x2:0, y2:1, "
                     "      stop:0 #ff5252, "       // 顶部：亮红（高光）

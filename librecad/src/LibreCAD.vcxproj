@@ -223,6 +223,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="ImageProcessor.cpp" />
+    <ClCompile Include="lib\gui\rs_graphicview.cpp" />
     <ClCompile Include="OCRdemo\AddScheme.cpp" />
     <ClCompile Include="OCRdemo\AlterScheme.cpp" />
     <ClCompile Include="OCRdemo\Config.cpp" />
@@ -244,6 +245,7 @@
     <ClCompile Include="OCRdemo\rollingboxy.cpp" />
     <ClCompile Include="OCRdemo\SenderBinUdp.cpp" />
     <ClCompile Include="OCRdemo\SerialManager.cpp" />
+    <ClCompile Include="OCRdemo\SerialNumberDialog.cpp" />
     <ClCompile Include="OCRdemo\Setting.cpp" />
     <ClCompile Include="OCRdemo\SimpleBarChart.cpp" />
     <ClCompile Include="OCRdemo\Simulator.cpp" />
@@ -548,9 +550,6 @@
     <ClCompile Include="lib\engine\rs_font.cpp" />
     <ClCompile Include="lib\engine\rs_fontlist.cpp" />
     <ClCompile Include="lib\engine\rs_graphic.cpp" />
-    <ClCompile Include="lib\gui\rs_graphicview.cpp">
-      <FileType>RC</FileType>
-    </ClCompile>
     <ClCompile Include="lib\gui\rs_grid.cpp" />
     <ClCompile Include="lib\engine\rs_hatch.cpp" />
     <ClCompile Include="lib\engine\rs_image.cpp" />
@@ -631,6 +630,7 @@
     <QtMoc Include="OCRdemo\SimpleBarChart.h" />
     <QtMoc Include="OCRdemo\SenderBinUdp.h" />
     <QtMoc Include="OCRdemo\Simulator.h" />
+    <QtMoc Include="OCRdemo\SerialNumberDialog.h" />
     <ClInclude Include="OCRdemo\SingletonNomArray.h" />
     <QtMoc Include="OCRdemo\XJadmin.h" />
     <ClInclude Include="plugins\document_interface.h" />
@@ -1061,6 +1061,7 @@
     <QtUic Include="OCRdemo\OcrFilterRules.ui" />
     <QtUic Include="OCRdemo\SenderBinUdp.ui" />
     <QtUic Include="OCRdemo\SerialManager.ui" />
+    <QtUic Include="OCRdemo\SerialNumberDialog.ui" />
     <QtUic Include="OCRdemo\Setting.ui" />
     <QtUic Include="OCRdemo\Simulator.ui" />
     <QtUic Include="OCRdemo\user.ui" />

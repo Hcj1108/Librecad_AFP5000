@@ -64,7 +64,7 @@ public slots:
     virtual void setMFGDateText();  // 插入"生产日期："
     virtual void setEXPDateText();  // 插入"保质期至："
     virtual void setLineBreak();    // 插入换行
-    virtual void insertSymbol(int); // 插入特殊符号
+    //virtual void insertSymbol(int); // 插入特殊符号
     // 对话框操作
     virtual void setText(RS_MText& t, bool isNew);
     virtual void updateText();
@@ -78,9 +78,9 @@ public slots:
     virtual void saveText();
     virtual void save(const QString& fn);
     // Unicode
-    virtual void updateUniCharComboBox(int);
-    virtual void updateUniCharButton(int);
-    virtual void insertChar();
+    //virtual void updateUniCharComboBox(int);
+    //virtual void updateUniCharButton(int);
+    //virtual void insertChar();
 
 public:
     QString replaceDatePlaceholders(const QString& input);

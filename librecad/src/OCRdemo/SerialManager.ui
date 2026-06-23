@@ -9,12 +9,12 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>514</width>
-    <height>270</height>
+    <width>584</width>
+    <height>410</height>
    </rect>
   </property>
   <property name="windowTitle">
-   <string>设备状态</string>
+   <string>IO监视器</string>
   </property>
   <property name="windowIcon">
    <iconset resource="../OCRdemo.qrc">
@@ -53,7 +53,8 @@
        </property>
        <property name="styleSheet">
         <string notr="true">QGroupBox{font: bold 14px &quot;Microsoft YaHei&quot;; color: #2c3e50; border: 1px solid #e0e0e0; border-radius: 8px; margin-top: 14px; padding-top: 18px; background: #ffffff;}
-QGroupBox::title{subcontrol-origin: margin; left: 12px; padding: 4px 12px; background: #3498db; color: white; border-radius: 4px;}</string>
+QGroupBox::title{subcontrol-origin: margin; left: 12px; padding: 4px 12px; background: #3498db; color: white; border-radius: 4px;}
+QToolButton{font: bold 11px &quot;Microsoft YaHei&quot;; border-radius: 4px; padding: 4px 8px; border: 1px solid #bdc3c7; background: #ffffff;}</string>
        </property>
        <property name="title">
         <string>报警状态</string>
@@ -98,8 +99,14 @@ QGroupBox::title{subcontrol-origin: margin; left: 12px; padding: 4px 12px; backg
          <widget class="QToolButton" name="toolButton_10">
           <property name="minimumSize">
            <size>
-            <width>0</width>
+            <width>100</width>
             <height>30</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>100</width>
+            <height>16777215</height>
            </size>
           </property>
           <property name="font">
@@ -111,7 +118,7 @@ QGroupBox::title{subcontrol-origin: margin; left: 12px; padding: 4px 12px; backg
            </font>
           </property>
           <property name="styleSheet">
-           <string notr="true">QToolButton{font: bold 11px &quot;Microsoft YaHei&quot;; border-radius: 4px; padding: 4px 8px; border: 1px solid #bdc3c7; background: #ffffff;}</string>
+           <string notr="true"/>
           </property>
           <property name="text">
            <string>正常运行</string>
@@ -139,8 +146,14 @@ QGroupBox::title{subcontrol-origin: margin; left: 12px; padding: 4px 12px; backg
          <widget class="QToolButton" name="toolButton_11">
           <property name="minimumSize">
            <size>
-            <width>0</width>
+            <width>100</width>
             <height>30</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>100</width>
+            <height>16777215</height>
            </size>
           </property>
           <property name="font">
@@ -152,7 +165,7 @@ QGroupBox::title{subcontrol-origin: margin; left: 12px; padding: 4px 12px; backg
            </font>
           </property>
           <property name="styleSheet">
-           <string notr="true">QToolButton{font: bold 11px &quot;Microsoft YaHei&quot;; border-radius: 4px; padding: 4px 8px; border: 1px solid #bdc3c7; background: #ffffff;}</string>
+           <string notr="true"/>
           </property>
           <property name="text">
            <string>正常运行</string>
@@ -180,8 +193,14 @@ QGroupBox::title{subcontrol-origin: margin; left: 12px; padding: 4px 12px; backg
          <widget class="QToolButton" name="toolButton_12">
           <property name="minimumSize">
            <size>
-            <width>0</width>
+            <width>100</width>
             <height>30</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>100</width>
+            <height>16777215</height>
            </size>
           </property>
           <property name="font">
@@ -193,7 +212,7 @@ QGroupBox::title{subcontrol-origin: margin; left: 12px; padding: 4px 12px; backg
            </font>
           </property>
           <property name="styleSheet">
-           <string notr="true">QToolButton{font: bold 11px &quot;Microsoft YaHei&quot;; border-radius: 4px; padding: 4px 8px; border: 1px solid #bdc3c7; background: #ffffff;}</string>
+           <string notr="true"/>
           </property>
           <property name="text">
            <string>正常运行</string>
@@ -221,8 +240,14 @@ QGroupBox::title{subcontrol-origin: margin; left: 12px; padding: 4px 12px; backg
          <widget class="QToolButton" name="toolButton_13">
           <property name="minimumSize">
            <size>
-            <width>0</width>
+            <width>100</width>
             <height>30</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>100</width>
+            <height>16777215</height>
            </size>
           </property>
           <property name="font">
@@ -234,7 +259,7 @@ QGroupBox::title{subcontrol-origin: margin; left: 12px; padding: 4px 12px; backg
            </font>
           </property>
           <property name="styleSheet">
-           <string notr="true">QToolButton{font: bold 11px &quot;Microsoft YaHei&quot;; border-radius: 4px; padding: 4px 8px; border: 1px solid #bdc3c7; background: #ffffff;}</string>
+           <string notr="true"/>
           </property>
           <property name="text">
            <string>正常运行</string>
@@ -256,7 +281,8 @@ QGroupBox::title{subcontrol-origin: margin; left: 12px; padding: 4px 12px; backg
        </property>
        <property name="styleSheet">
         <string notr="true">QGroupBox{font: bold 14px &quot;Microsoft YaHei&quot;; color: #2c3e50; border: 1px solid #e0e0e0; border-radius: 8px; margin-top: 14px; padding-top: 18px; background: #ffffff;}
-QGroupBox::title{subcontrol-origin: margin; left: 12px; padding: 4px 12px; background: #3498db; color: white; border-radius: 4px;}</string>
+QGroupBox::title{subcontrol-origin: margin; left: 12px; padding: 4px 12px; background: #3498db; color: white; border-radius: 4px;}
+QToolButton{font: bold 11px &quot;Microsoft YaHei&quot;; border-radius: 4px; padding: 4px 8px; border: 1px solid #bdc3c7; background: #ffffff;}</string>
        </property>
        <property name="title">
         <string>联机状态</string>
@@ -301,8 +327,14 @@ QGroupBox::title{subcontrol-origin: margin; left: 12px; padding: 4px 12px; backg
          <widget class="QToolButton" name="toolButton_14">
           <property name="minimumSize">
            <size>
-            <width>0</width>
+            <width>100</width>
             <height>30</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>100</width>
+            <height>16777215</height>
            </size>
           </property>
           <property name="font">
@@ -314,7 +346,7 @@ QGroupBox::title{subcontrol-origin: margin; left: 12px; padding: 4px 12px; backg
            </font>
           </property>
           <property name="styleSheet">
-           <string notr="true">QToolButton{font: bold 11px &quot;Microsoft YaHei&quot;; border-radius: 4px; padding: 4px 8px; border: 1px solid #bdc3c7; background: #ffffff;}</string>
+           <string notr="true"/>
           </property>
           <property name="text">
            <string>正常运行</string>
@@ -342,8 +374,14 @@ QGroupBox::title{subcontrol-origin: margin; left: 12px; padding: 4px 12px; backg
          <widget class="QToolButton" name="toolButton_15">
           <property name="minimumSize">
            <size>
-            <width>0</width>
+            <width>100</width>
             <height>30</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>100</width>
+            <height>16777215</height>
            </size>
           </property>
           <property name="font">
@@ -355,7 +393,7 @@ QGroupBox::title{subcontrol-origin: margin; left: 12px; padding: 4px 12px; backg
            </font>
           </property>
           <property name="styleSheet">
-           <string notr="true">QToolButton{font: bold 11px &quot;Microsoft YaHei&quot;; border-radius: 4px; padding: 4px 8px; border: 1px solid #bdc3c7; background: #ffffff;}</string>
+           <string notr="true"/>
           </property>
           <property name="text">
            <string>正常运行</string>
@@ -383,8 +421,14 @@ QGroupBox::title{subcontrol-origin: margin; left: 12px; padding: 4px 12px; backg
          <widget class="QToolButton" name="toolButton_16">
           <property name="minimumSize">
            <size>
-            <width>0</width>
+            <width>100</width>
             <height>30</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>100</width>
+            <height>16777215</height>
            </size>
           </property>
           <property name="font">
@@ -396,7 +440,7 @@ QGroupBox::title{subcontrol-origin: margin; left: 12px; padding: 4px 12px; backg
            </font>
           </property>
           <property name="styleSheet">
-           <string notr="true">QToolButton{font: bold 11px &quot;Microsoft YaHei&quot;; border-radius: 4px; padding: 4px 8px; border: 1px solid #bdc3c7; background: #ffffff;}</string>
+           <string notr="true"/>
           </property>
           <property name="text">
            <string>正常运行</string>
@@ -407,6 +451,126 @@ QGroupBox::title{subcontrol-origin: margin; left: 12px; padding: 4px 12px; backg
       </widget>
      </item>
     </layout>
+   </item>
+   <item>
+    <widget class="QGroupBox" name="groupBox_3">
+     <property name="styleSheet">
+      <string notr="true">QGroupBox{font: bold 14px &quot;Microsoft YaHei&quot;; color: #2c3e50; border: 1px solid #e0e0e0; border-radius: 8px; margin-top: 14px; padding-top: 18px; background: #ffffff;}
+QGroupBox::title{subcontrol-origin: margin; left: 12px; padding: 4px 12px; background: #8e44ad; color: white; border-radius: 4px;}
+QLabel{color: #34495e; background: transparent; font: bold 12px &quot;Microsoft YaHei&quot;; padding: 2px 4px;}
+QToolButton{font: bold 11px &quot;Microsoft YaHei&quot;; border-radius: 4px; padding: 4px 8px; border: 1px solid #bdc3c7; background: #ffffff;}</string>
+     </property>
+     <property name="title">
+      <string>信号输出</string>
+     </property>
+     <layout class="QGridLayout" name="gridLayout">
+      <property name="leftMargin">
+       <number>10</number>
+      </property>
+      <property name="topMargin">
+       <number>10</number>
+      </property>
+      <property name="rightMargin">
+       <number>10</number>
+      </property>
+      <property name="bottomMargin">
+       <number>10</number>
+      </property>
+      <property name="spacing">
+       <number>10</number>
+      </property>
+      <item row="0" column="5">
+       <widget class="QToolButton" name="toolButton_5">
+        <property name="styleSheet">
+         <string notr="true">QToolButton{font: bold 12px &quot;Microsoft YaHei&quot;; background: #1abc9c; color: white; border-radius: 6px; padding: 6px 14px;}
+QToolButton:hover{background: #2980b9;}</string>
+        </property>
+        <property name="text">
+         <string>常亮信号</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="3">
+       <widget class="QToolButton" name="toolButton_4">
+        <property name="styleSheet">
+         <string notr="true">QToolButton{font: bold 12px &quot;Microsoft YaHei&quot;; background: #1abc9c; color: white; border-radius: 6px; padding: 6px 14px;}
+QToolButton:hover{background: #2980b9;}</string>
+        </property>
+        <property name="text">
+         <string>清除报警</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="1">
+       <widget class="QToolButton" name="toolButton">
+        <property name="styleSheet">
+         <string notr="true">QToolButton{font: bold 12px &quot;Microsoft YaHei&quot;; background: #1abc9c; color: white; border-radius: 6px; padding: 6px 14px;}
+QToolButton:hover{background: #2980b9;}</string>
+        </property>
+        <property name="text">
+         <string>打印一次</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="0">
+       <widget class="QLabel" name="label_3">
+        <property name="text">
+         <string>报警信号：</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="2">
+       <widget class="QLabel" name="label_2">
+        <property name="text">
+         <string>拍照信号：</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="0">
+       <widget class="QLabel" name="label">
+        <property name="text">
+         <string>打印信号：</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="3">
+       <widget class="QToolButton" name="toolButton_2">
+        <property name="styleSheet">
+         <string notr="true">QToolButton{font: bold 12px &quot;Microsoft YaHei&quot;; background: #1abc9c; color: white; border-radius: 6px; padding: 6px 14px;}
+QToolButton:hover{background: #2980b9;}</string>
+        </property>
+        <property name="text">
+         <string>拍照一次</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="2">
+       <widget class="QLabel" name="label_4">
+        <property name="text">
+         <string>清除报警：</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="1">
+       <widget class="QToolButton" name="toolButton_3">
+        <property name="styleSheet">
+         <string notr="true">QToolButton{font: bold 12px &quot;Microsoft YaHei&quot;;background: #1abc9c; color: white; border-radius: 6px; padding: 6px 14px;}
+QToolButton:hover{background: #2980b9;}</string>
+        </property>
+        <property name="text">
+         <string>报警一次</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="4">
+       <widget class="QLabel" name="label_5">
+        <property name="text">
+         <string>光源常亮：</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
    </item>
    <item>
     <layout class="QHBoxLayout" name="bottomBar">

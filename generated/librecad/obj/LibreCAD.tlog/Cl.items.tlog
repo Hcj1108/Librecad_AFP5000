@@ -1,4 +1,5 @@
 D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\ImageProcessor.cpp;D:\DM\LibreCAD-2.4(YitiJi)\generated\librecad\obj\ImageProcessor.obj
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\lib\gui\rs_graphicview.cpp;D:\DM\LibreCAD-2.4(YitiJi)\generated\librecad\obj\rs_graphicview.obj
 D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\OCRdemo\AddScheme.cpp;D:\DM\LibreCAD-2.4(YitiJi)\generated\librecad\obj\AddScheme.obj
 D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\OCRdemo\AlterScheme.cpp;D:\DM\LibreCAD-2.4(YitiJi)\generated\librecad\obj\AlterScheme.obj
 D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\OCRdemo\Config.cpp;D:\DM\LibreCAD-2.4(YitiJi)\generated\librecad\obj\Config.obj
@@ -20,6 +21,7 @@ D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\OCRdemo\rollingboxm.cpp;D:\DM\LibreCAD-2
 D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\OCRdemo\rollingboxy.cpp;D:\DM\LibreCAD-2.4(YitiJi)\generated\librecad\obj\rollingboxy.obj
 D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\OCRdemo\SenderBinUdp.cpp;D:\DM\LibreCAD-2.4(YitiJi)\generated\librecad\obj\SenderBinUdp.obj
 D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\OCRdemo\SerialManager.cpp;D:\DM\LibreCAD-2.4(YitiJi)\generated\librecad\obj\SerialManager.obj
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\OCRdemo\SerialNumberDialog.cpp;D:\DM\LibreCAD-2.4(YitiJi)\generated\librecad\obj\SerialNumberDialog.obj
 D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\OCRdemo\Setting.cpp;D:\DM\LibreCAD-2.4(YitiJi)\generated\librecad\obj\Setting.obj
 D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\OCRdemo\SimpleBarChart.cpp;D:\DM\LibreCAD-2.4(YitiJi)\generated\librecad\obj\SimpleBarChart.obj
 D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\OCRdemo\Simulator.cpp;D:\DM\LibreCAD-2.4(YitiJi)\generated\librecad\obj\Simulator.obj
@@ -324,7 +326,6 @@ D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\lib\engine\rs_flags.cpp;D:\DM\LibreCAD-2
 D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\lib\engine\rs_font.cpp;D:\DM\LibreCAD-2.4(YitiJi)\generated\librecad\obj\rs_font.obj
 D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\lib\engine\rs_fontlist.cpp;D:\DM\LibreCAD-2.4(YitiJi)\generated\librecad\obj\rs_fontlist.obj
 D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\lib\engine\rs_graphic.cpp;D:\DM\LibreCAD-2.4(YitiJi)\generated\librecad\obj\rs_graphic.obj
-D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\lib\gui\rs_graphicview.cpp;D:\DM\LibreCAD-2.4(YitiJi)\generated\librecad\obj\rs_graphicview.obj
 D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\lib\gui\rs_grid.cpp;D:\DM\LibreCAD-2.4(YitiJi)\generated\librecad\obj\rs_grid.obj
 D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\lib\engine\rs_hatch.cpp;D:\DM\LibreCAD-2.4(YitiJi)\generated\librecad\obj\rs_hatch.obj
 D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\lib\engine\rs_image.cpp;D:\DM\LibreCAD-2.4(YitiJi)\generated\librecad\obj\rs_image.obj
@@ -401,6 +402,7 @@ D:\DM\LibreCAD-2.4(YitiJi)\generated\librecad\moc\moc_OcrFilterRules.cpp;D:\DM\L
 D:\DM\LibreCAD-2.4(YitiJi)\generated\librecad\moc\moc_SimpleBarChart.cpp;D:\DM\LibreCAD-2.4(YitiJi)\generated\librecad\obj\moc_SimpleBarChart.obj
 D:\DM\LibreCAD-2.4(YitiJi)\generated\librecad\moc\moc_SenderBinUdp.cpp;D:\DM\LibreCAD-2.4(YitiJi)\generated\librecad\obj\moc_SenderBinUdp.obj
 D:\DM\LibreCAD-2.4(YitiJi)\generated\librecad\moc\moc_Simulator.cpp;D:\DM\LibreCAD-2.4(YitiJi)\generated\librecad\obj\moc_Simulator.obj
+D:\DM\LibreCAD-2.4(YitiJi)\generated\librecad\moc\moc_SerialNumberDialog.cpp;D:\DM\LibreCAD-2.4(YitiJi)\generated\librecad\obj\moc_SerialNumberDialog.obj
 D:\DM\LibreCAD-2.4(YitiJi)\generated\librecad\moc\moc_XJadmin.cpp;D:\DM\LibreCAD-2.4(YitiJi)\generated\librecad\obj\moc_XJadmin.obj
 D:\DM\LibreCAD-2.4(YitiJi)\generated\librecad\moc\moc_lc_actiondrawcircle2pr.cpp;D:\DM\LibreCAD-2.4(YitiJi)\generated\librecad\obj\moc_lc_actiondrawcircle2pr.obj
 D:\DM\LibreCAD-2.4(YitiJi)\generated\librecad\moc\moc_lc_actiondrawlinepolygon3.cpp;D:\DM\LibreCAD-2.4(YitiJi)\generated\librecad\obj\moc_lc_actiondrawlinepolygon3.obj

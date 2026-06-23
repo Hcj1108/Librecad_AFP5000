@@ -291,7 +291,7 @@ QComboBox::down-arrow:on {
 opacity: 1;</string>
        </property>
        <property name="currentIndex">
-        <number>1</number>
+        <number>3</number>
        </property>
        <widget class="QWidget" name="page_4">
         <widget class="QGroupBox" name="groupBox_5">
@@ -1990,7 +1990,7 @@ QToolButton:pressed {
 </string>
           </property>
           <property name="text">
-           <string>设备状态</string>
+           <string>IO监视器</string>
           </property>
           <property name="icon">
            <iconset resource="OCRdemo.qrc">
@@ -2029,7 +2029,7 @@ QToolButton:pressed {
 QGroupBox::title{subcontrol-origin: margin; left: 12px; padding: 4px 12px; background: #3498db; color: white; border-radius: 4px;}</string>
          </property>
          <property name="title">
-          <string>运行设定</string>
+          <string>高级设定</string>
          </property>
          <widget class="QToolButton" name="toolButton_33">
           <property name="geometry">
@@ -2198,7 +2198,7 @@ QToolButton:pressed {
 QGroupBox::title{subcontrol-origin: margin; left: 12px; padding: 4px 12px; background: #3498db; color: white; border-radius: 4px;}</string>
          </property>
          <property name="title">
-          <string>配方管理</string>
+          <string>配方设定</string>
          </property>
          <widget class="QToolButton" name="toolButton_11">
           <property name="geometry">
@@ -2489,16 +2489,17 @@ background-color: qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 #dfd5cf, stop: 
          <x>555</x>
          <y>150</y>
          <width>151</width>
-         <height>110</height>
+         <height>111</height>
         </rect>
        </property>
        <property name="styleSheet">
         <string notr="true">background-color: rgb(0,0,0); 
- 
+ color: #888888; 
 opacity: 1; 
 border: none; 
-border: 2px solid #2196F3;
+border: 2px solid rgb(60, 80, 120);
 border-radius: 0;
+font: bold 12px &quot;Microsoft YaHei&quot;; 
 /*background-color: qlineargradient(x1:0, y1:0, x2:0, y2:1, 
     stop:0 #4A4A4A,       
     stop:0.15 #2D2D2D,    
@@ -2507,7 +2508,7 @@ border-radius: 0;
 );*/</string>
        </property>
        <property name="text">
-        <string/>
+        <string>等待图片</string>
        </property>
       </widget>
       <widget class="QToolButton" name="timg1">
@@ -2516,16 +2517,17 @@ border-radius: 0;
          <x>555</x>
          <y>40</y>
          <width>151</width>
-         <height>110</height>
+         <height>111</height>
         </rect>
        </property>
        <property name="styleSheet">
         <string notr="true">
 background-color:rgb(0, 0, 0);
- 
+ color: #888888; 
 opacity: 1; 
-border: 2px solid #2196F3;
+border: 2px solid rgb(60, 80, 120);
 border-radius: 0;
+font: bold 12px &quot;Microsoft YaHei&quot;; 
 /*background-color: qlineargradient(x1:0, y1:0, x2:0, y2:1, 
     stop:0 #4A4A4A,       
     stop:0.15 #2D2D2D,    
@@ -2534,7 +2536,7 @@ border-radius: 0;
 );*/</string>
        </property>
        <property name="text">
-        <string/>
+        <string>等待图片</string>
        </property>
       </widget>
       <widget class="QToolButton" name="timg3">
@@ -2543,16 +2545,17 @@ border-radius: 0;
          <x>555</x>
          <y>260</y>
          <width>151</width>
-         <height>110</height>
+         <height>111</height>
         </rect>
        </property>
        <property name="styleSheet">
         <string notr="true">background-color: rgb(0,0,0); 
-
+ color: #888888; 
 opacity: 1; 
 border: none; 
-border: 2px solid #2196F3;
+border: 2px solid rgb(60, 80, 120);
 border-radius: 0;
+font: bold 12px &quot;Microsoft YaHei&quot;; 
 /*background-color: qlineargradient(x1:0, y1:0, x2:0, y2:1, 
     stop:0 #4A4A4A,       
     stop:0.15 #2D2D2D,    
@@ -2561,7 +2564,7 @@ border-radius: 0;
 );*/</string>
        </property>
        <property name="text">
-        <string/>
+        <string>等待图片</string>
        </property>
       </widget>
       <widget class="QToolButton" name="timg4">
@@ -2570,16 +2573,17 @@ border-radius: 0;
          <x>555</x>
          <y>370</y>
          <width>151</width>
-         <height>110</height>
+         <height>111</height>
         </rect>
        </property>
        <property name="styleSheet">
         <string notr="true">background-color: rgb(0,0,0); 
-
+ color: #888888; 
 opacity: 1; 
 border: none; 
-border: 2px solid #2196F3;
+border: 2px solid rgb(60, 80, 120);
 border-radius: 0;
+font: bold 12px &quot;Microsoft YaHei&quot;; 
 /*background-color: qlineargradient(x1:0, y1:0, x2:0, y2:1, 
     stop:0 #4A4A4A,       
     stop:0.15 #2D2D2D,    
@@ -2588,7 +2592,7 @@ border-radius: 0;
 );*/</string>
        </property>
        <property name="text">
-        <string/>
+        <string>等待图片</string>
        </property>
        <property name="toolButtonStyle">
         <enum>Qt::ToolButtonStyle::ToolButtonIconOnly</enum>
@@ -2605,11 +2609,12 @@ border-radius: 0;
        </property>
        <property name="styleSheet">
         <string notr="true">background-color: rgb(0,0,0); 
-
+ color: #888888; 
 opacity: 1; 
 border: none; 
-border: 2px solid #2196F3;
+border: 2px solid rgb(60, 80, 120);
 border-radius: 0;
+font: bold 12px &quot;Microsoft YaHei&quot;; 
 /*background-color: qlineargradient(x1:0, y1:0, x2:0, y2:1, 
     stop:0 #4A4A4A,       
     stop:0.15 #2D2D2D,    
@@ -2618,7 +2623,7 @@ border-radius: 0;
 );*/</string>
        </property>
        <property name="text">
-        <string/>
+        <string>等待图片</string>
        </property>
       </widget>
       <widget class="QStackedWidget" name="stackedWidget_3">

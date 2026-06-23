@@ -1182,13 +1182,14 @@ public:
         toolButton_3->setToolButtonStyle(Qt::ToolButtonStyle::ToolButtonIconOnly);
         timg2 = new QToolButton(widget);
         timg2->setObjectName(QString::fromUtf8("timg2"));
-        timg2->setGeometry(QRect(555, 150, 151, 110));
+        timg2->setGeometry(QRect(555, 150, 151, 111));
         timg2->setStyleSheet(QString::fromUtf8("background-color: rgb(0,0,0); \n"
-" \n"
+" color: #888888; \n"
 "opacity: 1; \n"
 "border: none; \n"
-"border: 2px solid #2196F3;\n"
+"border: 2px solid rgb(60, 80, 120);\n"
 "border-radius: 0;\n"
+"font: bold 12px \"Microsoft YaHei\"; \n"
 "/*background-color: qlineargradient(x1:0, y1:0, x2:0, y2:1, \n"
 "    stop:0 #4A4A4A,       \n"
 "    stop:0.15 #2D2D2D,    \n"
@@ -1197,13 +1198,14 @@ public:
 ");*/"));
         timg1 = new QToolButton(widget);
         timg1->setObjectName(QString::fromUtf8("timg1"));
-        timg1->setGeometry(QRect(555, 40, 151, 110));
+        timg1->setGeometry(QRect(555, 40, 151, 111));
         timg1->setStyleSheet(QString::fromUtf8("\n"
 "background-color:rgb(0, 0, 0);\n"
-" \n"
+" color: #888888; \n"
 "opacity: 1; \n"
-"border: 2px solid #2196F3;\n"
+"border: 2px solid rgb(60, 80, 120);\n"
 "border-radius: 0;\n"
+"font: bold 12px \"Microsoft YaHei\"; \n"
 "/*background-color: qlineargradient(x1:0, y1:0, x2:0, y2:1, \n"
 "    stop:0 #4A4A4A,       \n"
 "    stop:0.15 #2D2D2D,    \n"
@@ -1212,13 +1214,14 @@ public:
 ");*/"));
         timg3 = new QToolButton(widget);
         timg3->setObjectName(QString::fromUtf8("timg3"));
-        timg3->setGeometry(QRect(555, 260, 151, 110));
+        timg3->setGeometry(QRect(555, 260, 151, 111));
         timg3->setStyleSheet(QString::fromUtf8("background-color: rgb(0,0,0); \n"
-"\n"
+" color: #888888; \n"
 "opacity: 1; \n"
 "border: none; \n"
-"border: 2px solid #2196F3;\n"
+"border: 2px solid rgb(60, 80, 120);\n"
 "border-radius: 0;\n"
+"font: bold 12px \"Microsoft YaHei\"; \n"
 "/*background-color: qlineargradient(x1:0, y1:0, x2:0, y2:1, \n"
 "    stop:0 #4A4A4A,       \n"
 "    stop:0.15 #2D2D2D,    \n"
@@ -1227,13 +1230,14 @@ public:
 ");*/"));
         timg4 = new QToolButton(widget);
         timg4->setObjectName(QString::fromUtf8("timg4"));
-        timg4->setGeometry(QRect(555, 370, 151, 110));
+        timg4->setGeometry(QRect(555, 370, 151, 111));
         timg4->setStyleSheet(QString::fromUtf8("background-color: rgb(0,0,0); \n"
-"\n"
+" color: #888888; \n"
 "opacity: 1; \n"
 "border: none; \n"
-"border: 2px solid #2196F3;\n"
+"border: 2px solid rgb(60, 80, 120);\n"
 "border-radius: 0;\n"
+"font: bold 12px \"Microsoft YaHei\"; \n"
 "/*background-color: qlineargradient(x1:0, y1:0, x2:0, y2:1, \n"
 "    stop:0 #4A4A4A,       \n"
 "    stop:0.15 #2D2D2D,    \n"
@@ -1245,11 +1249,12 @@ public:
         timg5->setObjectName(QString::fromUtf8("timg5"));
         timg5->setGeometry(QRect(555, 480, 151, 111));
         timg5->setStyleSheet(QString::fromUtf8("background-color: rgb(0,0,0); \n"
-"\n"
+" color: #888888; \n"
 "opacity: 1; \n"
 "border: none; \n"
-"border: 2px solid #2196F3;\n"
+"border: 2px solid rgb(60, 80, 120);\n"
 "border-radius: 0;\n"
+"font: bold 12px \"Microsoft YaHei\"; \n"
 "/*background-color: qlineargradient(x1:0, y1:0, x2:0, y2:1, \n"
 "    stop:0 #4A4A4A,       \n"
 "    stop:0.15 #2D2D2D,    \n"
@@ -1471,7 +1476,7 @@ public:
 
         retranslateUi(QC_ApplicationWindow);
 
-        stackedWidget_2->setCurrentIndex(1);
+        stackedWidget_2->setCurrentIndex(3);
         tabWidget->setCurrentIndex(1);
         stackedWidget_3->setCurrentIndex(1);
 
@@ -1556,12 +1561,12 @@ public:
         toolButton_5->setToolTip(QCoreApplication::translate("QC_ApplicationWindow", "NG\345\233\276\347\211\207", nullptr));
 #endif // QT_CONFIG(tooltip)
         toolButton_5->setText(QCoreApplication::translate("QC_ApplicationWindow", "NG\345\233\276\347\211\207", nullptr));
-        toolButton_16->setText(QCoreApplication::translate("QC_ApplicationWindow", "\350\256\276\345\244\207\347\212\266\346\200\201", nullptr));
-        groupBox_9->setTitle(QCoreApplication::translate("QC_ApplicationWindow", "\350\277\220\350\241\214\350\256\276\345\256\232", nullptr));
+        toolButton_16->setText(QCoreApplication::translate("QC_ApplicationWindow", "IO\347\233\221\350\247\206\345\231\250", nullptr));
+        groupBox_9->setTitle(QCoreApplication::translate("QC_ApplicationWindow", "\351\253\230\347\272\247\350\256\276\345\256\232", nullptr));
         toolButton_33->setText(QCoreApplication::translate("QC_ApplicationWindow", "\346\211\223\345\215\260\345\217\202\346\225\260", nullptr));
         toolButton_25->setText(QCoreApplication::translate("QC_ApplicationWindow", "\346\243\200\346\265\213\345\217\202\346\225\260", nullptr));
         toolButton_30->setText(QCoreApplication::translate("QC_ApplicationWindow", "\347\224\250\346\210\267\346\235\203\351\231\220", nullptr));
-        groupBox_11->setTitle(QCoreApplication::translate("QC_ApplicationWindow", "\351\205\215\346\226\271\347\256\241\347\220\206", nullptr));
+        groupBox_11->setTitle(QCoreApplication::translate("QC_ApplicationWindow", "\351\205\215\346\226\271\350\256\276\345\256\232", nullptr));
         toolButton_11->setText(QCoreApplication::translate("QC_ApplicationWindow", "\346\226\260\345\273\272\344\273\273\345\212\241", nullptr));
         toolButton_14->setText(QCoreApplication::translate("QC_ApplicationWindow", "\351\205\215\346\226\271\347\256\241\347\220\206", nullptr));
 #if QT_CONFIG(tooltip)
@@ -1574,11 +1579,11 @@ public:
         label->setText(QCoreApplication::translate("QC_ApplicationWindow", "OK", nullptr));
         toolButton_34->setText(QCoreApplication::translate("QC_ApplicationWindow", "\345\215\225\346\254\241\346\211\223\345\215\260", nullptr));
         toolButton_3->setText(QCoreApplication::translate("QC_ApplicationWindow", "...", nullptr));
-        timg2->setText(QString());
-        timg1->setText(QString());
-        timg3->setText(QString());
-        timg4->setText(QString());
-        timg5->setText(QString());
+        timg2->setText(QCoreApplication::translate("QC_ApplicationWindow", "\347\255\211\345\276\205\345\233\276\347\211\207", nullptr));
+        timg1->setText(QCoreApplication::translate("QC_ApplicationWindow", "\347\255\211\345\276\205\345\233\276\347\211\207", nullptr));
+        timg3->setText(QCoreApplication::translate("QC_ApplicationWindow", "\347\255\211\345\276\205\345\233\276\347\211\207", nullptr));
+        timg4->setText(QCoreApplication::translate("QC_ApplicationWindow", "\347\255\211\345\276\205\345\233\276\347\211\207", nullptr));
+        timg5->setText(QCoreApplication::translate("QC_ApplicationWindow", "\347\255\211\345\276\205\345\233\276\347\211\207", nullptr));
         label_2->setText(QString());
         toolButton_15->setText(QCoreApplication::translate("QC_ApplicationWindow", "\346\211\223\345\215\260", nullptr));
         toolButton_26->setText(QCoreApplication::translate("QC_ApplicationWindow", "\344\270\273\351\241\265", nullptr));

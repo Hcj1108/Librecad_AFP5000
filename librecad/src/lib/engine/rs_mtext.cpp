@@ -660,8 +660,7 @@ void RS_MText::update()
         data.timePlaceholderPositions.clear();
         for (RS_Insert* letter : placeholderLetters) {
             data.timePlaceholderPositions.append(letter->getInsertionPoint());
-            qDebug() << "**********************************************************";
-            qDebug() << "Final placeholder position:" << letter->getInsertionPoint().x
+            qDebug() << QString::fromLocal8Bit("最终占位符位置:") << letter->getInsertionPoint().x
                 << letter->getInsertionPoint().y;
         }
         // 新增：从实际实体中读取第一个占位符的位置
@@ -682,7 +681,6 @@ void RS_MText::update()
    
   
 }
-
 
 /**
  * updateAddLine 是 update() 函数的核心助手，

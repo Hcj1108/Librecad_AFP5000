@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>713</width>
+    <width>610</width>
     <height>562</height>
    </rect>
   </property>
@@ -349,7 +349,7 @@ QTextEdit:focus{border-color: #3498db;}</string>
     </layout>
    </item>
    <item>
-    <layout class="QHBoxLayout" name="bottomRow" stretch="1,1">
+    <layout class="QHBoxLayout" name="bottomRow" stretch="7">
      <property name="spacing">
       <number>10</number>
      </property>
@@ -393,7 +393,7 @@ QToolButton:pressed{background: #d4e6f9; padding-top: 6px; padding-bottom: 2px;}
         <property name="spacing">
          <number>6</number>
         </property>
-        <item row="0" column="0">
+        <item row="1" column="0">
          <widget class="QToolButton" name="bLoad">
           <property name="text">
            <string>打开模板</string>
@@ -413,14 +413,20 @@ QToolButton:pressed{background: #d4e6f9; padding-top: 6px; padding-bottom: 2px;}
           </property>
          </widget>
         </item>
-        <item row="0" column="1">
-         <widget class="QToolButton" name="bClear">
+        <item row="2" column="4">
+         <widget class="QToolButton" name="toolButton_3">
+          <property name="minimumSize">
+           <size>
+            <width>99</width>
+            <height>46</height>
+           </size>
+          </property>
           <property name="text">
-           <string>清空文本</string>
+           <string>保质期至</string>
           </property>
           <property name="icon">
            <iconset resource="../../OCRdemo.qrc">
-            <normaloff>:/PNG/Resources/PNG/clear .png</normaloff>:/PNG/Resources/PNG/clear .png</iconset>
+            <normaloff>:/PIC/Resources/PICs/rl.png</normaloff>:/PIC/Resources/PICs/rl.png</iconset>
           </property>
           <property name="iconSize">
            <size>
@@ -433,7 +439,33 @@ QToolButton:pressed{background: #d4e6f9; padding-top: 6px; padding-bottom: 2px;}
           </property>
          </widget>
         </item>
-        <item row="0" column="2">
+        <item row="1" column="4">
+         <widget class="QToolButton" name="toolButton">
+          <property name="minimumSize">
+           <size>
+            <width>99</width>
+            <height>46</height>
+           </size>
+          </property>
+          <property name="text">
+           <string>生产日期</string>
+          </property>
+          <property name="icon">
+           <iconset resource="../../OCRdemo.qrc">
+            <normaloff>:/PIC/Resources/PICs/rl.png</normaloff>:/PIC/Resources/PICs/rl.png</iconset>
+          </property>
+          <property name="iconSize">
+           <size>
+            <width>32</width>
+            <height>32</height>
+           </size>
+          </property>
+          <property name="toolButtonStyle">
+           <enum>Qt::ToolButtonStyle::ToolButtonTextBesideIcon</enum>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="0">
          <widget class="QToolButton" name="bSave">
           <property name="text">
            <string>保存模板</string>
@@ -453,74 +485,14 @@ QToolButton:pressed{background: #d4e6f9; padding-top: 6px; padding-bottom: 2px;}
           </property>
          </widget>
         </item>
-        <item row="1" column="0">
-         <widget class="QToolButton" name="toolButton_5">
-          <property name="text">
-           <string>生产日期</string>
-          </property>
-          <property name="icon">
-           <iconset resource="../../OCRdemo.qrc">
-            <normaloff>:/PIC/Resources/PICs/text.png</normaloff>:/PIC/Resources/PICs/text.png</iconset>
-          </property>
-          <property name="iconSize">
-           <size>
-            <width>32</width>
-            <height>32</height>
-           </size>
-          </property>
-          <property name="toolButtonStyle">
-           <enum>Qt::ToolButtonStyle::ToolButtonTextBesideIcon</enum>
-          </property>
-         </widget>
-        </item>
-        <item row="1" column="1">
-         <widget class="QToolButton" name="toolButton_2">
-          <property name="text">
-           <string>保质期至</string>
-          </property>
-          <property name="icon">
-           <iconset resource="../../OCRdemo.qrc">
-            <normaloff>:/PIC/Resources/PICs/text.png</normaloff>:/PIC/Resources/PICs/text.png</iconset>
-          </property>
-          <property name="iconSize">
-           <size>
-            <width>32</width>
-            <height>32</height>
-           </size>
-          </property>
-          <property name="toolButtonStyle">
-           <enum>Qt::ToolButtonStyle::ToolButtonTextBesideIcon</enum>
-          </property>
-         </widget>
-        </item>
-        <item row="1" column="2">
-         <widget class="QToolButton" name="toolButton_6">
-          <property name="text">
-           <string>换行符</string>
-          </property>
-          <property name="icon">
-           <iconset resource="../../OCRdemo.qrc">
-            <normaloff>:/PIC/Resources/PICs/line break.png</normaloff>:/PIC/Resources/PICs/line break.png</iconset>
-          </property>
-          <property name="iconSize">
-           <size>
-            <width>32</width>
-            <height>32</height>
-           </size>
-          </property>
-          <property name="toolButtonStyle">
-           <enum>Qt::ToolButtonStyle::ToolButtonTextBesideIcon</enum>
-          </property>
-         </widget>
-        </item>
         <item row="2" column="0">
-         <widget class="QToolButton" name="toolButton">
+         <widget class="QToolButton" name="bClear">
           <property name="text">
-           <string>生产日期</string>
+           <string>清空文本</string>
           </property>
           <property name="icon">
            <iconset resource="../../OCRdemo.qrc">
-            <normaloff>:/PIC/Resources/PICs/rl.png</normaloff>:/PIC/Resources/PICs/rl.png</iconset>
+            <normaloff>:/PNG/Resources/PNG/clear .png</normaloff>:/PNG/Resources/PNG/clear .png</iconset>
           </property>
           <property name="iconSize">
            <size>
@@ -533,28 +505,14 @@ QToolButton:pressed{background: #d4e6f9; padding-top: 6px; padding-bottom: 2px;}
           </property>
          </widget>
         </item>
-        <item row="2" column="1">
-         <widget class="QToolButton" name="toolButton_3">
-          <property name="text">
-           <string>保质期至</string>
-          </property>
-          <property name="icon">
-           <iconset resource="../../OCRdemo.qrc">
-            <normaloff>:/PIC/Resources/PICs/rl.png</normaloff>:/PIC/Resources/PICs/rl.png</iconset>
-          </property>
-          <property name="iconSize">
-           <size>
-            <width>32</width>
-            <height>32</height>
-           </size>
-          </property>
-          <property name="toolButtonStyle">
-           <enum>Qt::ToolButtonStyle::ToolButtonTextBesideIcon</enum>
-          </property>
-         </widget>
-        </item>
-        <item row="2" column="2">
+        <item row="3" column="4">
          <widget class="QToolButton" name="toolButton_4">
+          <property name="minimumSize">
+           <size>
+            <width>99</width>
+            <height>46</height>
+           </size>
+          </property>
           <property name="text">
            <string>选择时间</string>
           </property>
@@ -573,207 +531,55 @@ QToolButton:pressed{background: #d4e6f9; padding-top: 6px; padding-bottom: 2px;}
           </property>
          </widget>
         </item>
-       </layout>
-      </widget>
-     </item>
-     <item>
-      <widget class="QGroupBox" name="buttonGroup5">
-       <property name="styleSheet">
-        <string notr="true">QGroupBox{font: bold 13px &quot;Microsoft YaHei&quot;; color: #2c3e50; border: 2px solid #e0e0e0; border-radius: 8px; margin-top: 12px; padding-top: 16px; background: #ffffff;}
-QGroupBox::title{subcontrol-origin: margin; left: 12px; padding: 4px 12px; background: #27ae60; color: white; border-radius: 4px;}
-QLabel{font: bold 11px &quot;Microsoft YaHei&quot;; color: #34495e; background: transparent;}
-QComboBox{font: 11px &quot;Microsoft YaHei&quot;; padding: 4px 8px; border: 2px solid #dcdde1; border-radius: 6px; background: #fafafa; min-height: 28px;}
-QComboBox:focus{border-color: #3498db; background: #ffffff;}
-QComboBox::drop-down{width: 22px;}
-QToolButton{border: 1px solid #bdc3c7; border-radius: 4px; background: #f8f9fa;}
-QToolButton:hover{background: #e8f0fe; border-color: #3498db;}</string>
-       </property>
-       <property name="title">
-        <string>插入符号</string>
-       </property>
-       <layout class="QGridLayout">
-        <property name="leftMargin">
-         <number>8</number>
-        </property>
-        <property name="topMargin">
-         <number>14</number>
-        </property>
-        <property name="rightMargin">
-         <number>8</number>
-        </property>
-        <property name="bottomMargin">
-         <number>8</number>
-        </property>
-        <property name="spacing">
-         <number>6</number>
-        </property>
-        <item row="4" column="2" colspan="2">
-         <widget class="QComboBox" name="cbUniChar">
-          <property name="sizePolicy">
-           <sizepolicy hsizetype="MinimumExpanding" vsizetype="Fixed">
-            <horstretch>0</horstretch>
-            <verstretch>0</verstretch>
-           </sizepolicy>
-          </property>
-          <property name="minimumSize">
-           <size>
-            <width>92</width>
-            <height>40</height>
-           </size>
-          </property>
-         </widget>
-        </item>
-        <item row="4" column="0">
-         <widget class="QLabel" name="textLabel1_2">
-          <property name="text">
-           <string>字符：</string>
-          </property>
-         </widget>
-        </item>
-        <item row="0" column="0">
-         <widget class="QLabel" name="label_6">
-          <property name="text">
-           <string>符号：</string>
-          </property>
-         </widget>
-        </item>
-        <item row="0" column="2" colspan="2">
-         <widget class="QComboBox" name="cbSymbol">
-          <property name="sizePolicy">
-           <sizepolicy hsizetype="MinimumExpanding" vsizetype="Fixed">
-            <horstretch>0</horstretch>
-            <verstretch>0</verstretch>
-           </sizepolicy>
-          </property>
-          <item>
-           <property name="text">
-            <string>Diameter (⌀)</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>Degree (°)</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>Plus / Minus (±)</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>At (@)</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>Hash (#)</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>Dollar ($)</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>Copyright (©)</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>Registered (®)</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>Paragraph (§)</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>Pi (π)</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>Pound (£)</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>Yen (¥)</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>Times (×)</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>Division (÷)</string>
-           </property>
-          </item>
-         </widget>
-        </item>
-        <item row="1" column="0">
-         <widget class="QLabel" name="textLabel1">
-          <property name="text">
-           <string>页面：</string>
-          </property>
-         </widget>
-        </item>
-        <item row="1" column="2">
-         <widget class="QComboBox" name="cbUniPage">
-          <property name="sizePolicy">
-           <sizepolicy hsizetype="MinimumExpanding" vsizetype="Fixed">
-            <horstretch>0</horstretch>
-            <verstretch>0</verstretch>
-           </sizepolicy>
-          </property>
-          <property name="minimumSize">
-           <size>
-            <width>280</width>
-            <height>40</height>
-           </size>
-          </property>
-          <item>
-           <property name="text">
-            <string>[0000-007F] Basic Latin</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>[0080-00FF] Latin-1 Supplementary</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>[0100-017F] Latin Extended-A</string>
-           </property>
-          </item>
-         </widget>
-        </item>
-        <item row="1" column="3">
-         <widget class="QToolButton" name="bUnicode">
-          <property name="minimumSize">
-           <size>
-            <width>28</width>
-            <height>28</height>
-           </size>
-          </property>
+        <item row="1" column="5">
+         <widget class="QToolButton" name="toolButton_7">
           <property name="maximumSize">
            <size>
-            <width>28</width>
-            <height>28</height>
+            <width>99</width>
+            <height>16777215</height>
            </size>
           </property>
-          <property name="styleSheet">
-           <string notr="true">QToolButton{font: bold 14px; border-radius: 4px;} QToolButton:hover{background: #3498db; color: white;}</string>
+          <property name="text">
+           <string>序列号</string>
+          </property>
+          <property name="icon">
+           <iconset resource="../../OCRdemo.qrc">
+            <normaloff>:/PIC/Resources/PICs/PFGL.png</normaloff>:/PIC/Resources/PICs/PFGL.png</iconset>
+          </property>
+          <property name="iconSize">
+           <size>
+            <width>32</width>
+            <height>32</height>
+           </size>
+          </property>
+          <property name="toolButtonStyle">
+           <enum>Qt::ToolButtonStyle::ToolButtonTextBesideIcon</enum>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="5">
+         <widget class="QToolButton" name="toolButton_6">
+          <property name="minimumSize">
+           <size>
+            <width>99</width>
+            <height>46</height>
+           </size>
           </property>
           <property name="text">
-           <string>+</string>
+           <string>换行符</string>
+          </property>
+          <property name="icon">
+           <iconset resource="../../OCRdemo.qrc">
+            <normaloff>:/PIC/Resources/PICs/line break.png</normaloff>:/PIC/Resources/PICs/line break.png</iconset>
+          </property>
+          <property name="iconSize">
+           <size>
+            <width>32</width>
+            <height>32</height>
+           </size>
+          </property>
+          <property name="toolButtonStyle">
+           <enum>Qt::ToolButtonStyle::ToolButtonTextBesideIcon</enum>
           </property>
          </widget>
         </item>
@@ -784,6 +590,18 @@ QToolButton:hover{background: #e8f0fe; border-color: #3498db;}</string>
    </item>
    <item>
     <widget class="QDialogButtonBox" name="buttonBox">
+     <property name="minimumSize">
+      <size>
+       <width>0</width>
+       <height>0</height>
+      </size>
+     </property>
+     <property name="maximumSize">
+      <size>
+       <width>16777215</width>
+       <height>16777215</height>
+      </size>
+     </property>
      <property name="styleSheet">
       <string notr="true">QPushButton{font: bold 12px &quot;Microsoft YaHei&quot;; padding: 8px 24px; border-radius: 6px; min-width: 50px;}
 QPushButton[text=&quot;OK&quot;], QPushButton[text=&quot;确定&quot;]{background: #3498db; color: white;}
@@ -892,86 +710,6 @@ QPushButton[text=&quot;Cancel&quot;]:hover, QPushButton[text=&quot;取消&quot;]
    </hints>
   </connection>
   <connection>
-   <sender>cbUniPage</sender>
-   <signal>activated(int)</signal>
-   <receiver>QG_DlgMText</receiver>
-   <slot>updateUniCharComboBox(int)</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>20</x>
-     <y>20</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>20</x>
-     <y>20</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>bUnicode</sender>
-   <signal>clicked()</signal>
-   <receiver>QG_DlgMText</receiver>
-   <slot>insertChar()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>20</x>
-     <y>20</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>20</x>
-     <y>20</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>cbUniPage</sender>
-   <signal>activated(int)</signal>
-   <receiver>QG_DlgMText</receiver>
-   <slot>updateUniCharButton(int)</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>20</x>
-     <y>20</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>20</x>
-     <y>20</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>cbUniChar</sender>
-   <signal>activated(int)</signal>
-   <receiver>QG_DlgMText</receiver>
-   <slot>updateUniCharButton(int)</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>20</x>
-     <y>20</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>20</x>
-     <y>20</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>cbSymbol</sender>
-   <signal>activated(int)</signal>
-   <receiver>QG_DlgMText</receiver>
-   <slot>insertSymbol(int)</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>20</x>
-     <y>20</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>20</x>
-     <y>20</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
    <sender>cbDefault</sender>
    <signal>toggled(bool)</signal>
    <receiver>leLineSpacingFactor</receiver>
@@ -1040,38 +778,6 @@ QPushButton[text=&quot;Cancel&quot;]:hover, QPushButton[text=&quot;取消&quot;]
    <signal>clicked()</signal>
    <receiver>QG_DlgMText</receiver>
    <slot>setMFGDate()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>20</x>
-     <y>20</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>20</x>
-     <y>20</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>toolButton_5</sender>
-   <signal>clicked()</signal>
-   <receiver>QG_DlgMText</receiver>
-   <slot>setMFGDateText()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>20</x>
-     <y>20</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>20</x>
-     <y>20</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>toolButton_2</sender>
-   <signal>clicked()</signal>
-   <receiver>QG_DlgMText</receiver>
-   <slot>setEXPDateText()</slot>
    <hints>
     <hint type="sourcelabel">
      <x>20</x>

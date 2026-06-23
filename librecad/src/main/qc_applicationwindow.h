@@ -112,16 +112,14 @@ class LC_PenWizard;                // 笔向导
 // =======================================================================
 #include <rs_modification.h>        // 修改操作，如移动、旋转、缩放
 #include <rs_debug.h>               // 调试工具
-#include<rs_text.h>                 // 文本实体
+#include <rs_text.h>                 // 文本实体
 #include <rs_dialogfactory.h>       // 对话框工厂
 #include <QInputDialog>             // Qt输入对话框
 #include <QDoubleSpinBox>           // Qt双精度微调框
 #include <QFormLayout>              // Qt表单布局
 #include <QDialogButtonBox>         // Qt对话框按钮盒
-#include<rs_graphic.h>              // CAD图形
+#include <rs_graphic.h>              // CAD图形
 
-
-#include "qg_dlgmtext.h"
 // =======================================================================
 // 5. OCR模块包含文件
 // =======================================================================

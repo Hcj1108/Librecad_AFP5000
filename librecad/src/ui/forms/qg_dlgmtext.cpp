@@ -11,6 +11,7 @@
 #include "rs_graphic.h"
 #include "rs_math.h"
 #include <QDate>
+#include "SerialNumberDialog.h"
 
 /*
  *  Constructs a QG_DlgMText as a child of 'parent', with the
@@ -56,30 +57,37 @@ void QG_DlgMText::init() {
     font=NULL;
     text = NULL;
     isNew = false;
-    updateUniCharComboBox(0);
-    updateUniCharButton(0);
+    //updateUniCharComboBox(0);
+    //updateUniCharButton(0);
     buttonBox->button(QDialogButtonBox::Ok)->setText(QString::fromLocal8Bit("确认"));
     buttonBox->button(QDialogButtonBox::Cancel)->setText(QString::fromLocal8Bit("取消"));
+
+    connect(toolButton_7, &QPushButton::clicked, this, [=] {
+        SerialNumberDialog dlg(this);
+        if (dlg.exec() == QDialog::Accepted) {
+            teText->insertPlainText(dlg.getFormattedNumber());
+        }
+    });
 }
 
 /**
 *  根据用户选择的“Unicode 字符页码范围”，
 *  动态填充“特殊字符下拉框”里的具体字符列表
 */
-void QG_DlgMText::updateUniCharComboBox(int) {
-    QString t = cbUniPage->currentText();
-    int i1 = t.indexOf('-');
-    int i2 = t.indexOf(']');
-    int min = t.mid(1, i1-1).toInt(NULL, 16);
-    int max = t.mid(i1+1, i2-i1-1).toInt(NULL, 16);
-
-    cbUniChar->clear();
-    for (int c=min; c<=max; c++) {
-        char buf[5];
-        snprintf(buf,5, "%04X", c);
-        cbUniChar->addItem(QString("[%1] %2").arg(buf).arg(QChar(c)));
-    }
-}
+//void QG_DlgMText::updateUniCharComboBox(int) {
+//    QString t = cbUniPage->currentText();
+//    int i1 = t.indexOf('-');
+//    int i2 = t.indexOf(']');
+//    int min = t.mid(1, i1-1).toInt(NULL, 16);
+//    int max = t.mid(i1+1, i2-i1-1).toInt(NULL, 16);
+//
+//    cbUniChar->clear();
+//    for (int c=min; c<=max; c++) {
+//        char buf[5];
+//        snprintf(buf,5, "%04X", c);
+//        cbUniChar->addItem(QString("[%1] %2").arg(buf).arg(QChar(c)));
+//    }
+//}
 
 /**
 *  告诉程序用户点击了“取消”或关闭按钮，并且不要
@@ -387,13 +395,13 @@ void QG_DlgMText::save(const QString& fn) {
 /**
 *  将符号选择框中的某个特殊字符插入到当前文本编辑框的光标位置
 */
-void QG_DlgMText::insertSymbol(int) {
-    QString str = cbSymbol->currentText();//​获取组合框的当前文本
-    int i=str.indexOf('(');
-    if (i!=-1) {
-        teText->textCursor().insertText(QString("%1").arg(str.at(i+1)));
-    }
-}
+//void QG_DlgMText::insertSymbol(int) {
+//    QString str = cbSymbol->currentText();//​获取组合框的当前文本
+//    int i=str.indexOf('(');
+//    if (i!=-1) {
+//        teText->textCursor().insertText(QString("%1").arg(str.at(i+1)));
+//    }
+//}
 
 void  QG_DlgMText::setQuickTime() {
 
@@ -610,16 +618,16 @@ QString QG_DlgMText::replaceDatePlaceholders(const QString& input) {
     return result;
 }
 
-void QG_DlgMText::updateUniCharButton(int) {
-    QString t = cbUniChar->currentText();
-    int i1 = t.indexOf(']');
-    int c = t.mid(1, i1-1).toInt(NULL, 16);
-    bUnicode->setText(QString("%1").arg(QChar(c)));
-}
-
-void QG_DlgMText::insertChar() {
-    QString t = cbUniChar->currentText();
-    int i1 = t.indexOf(']');
-    int c = t.mid(1, i1-1).toInt(NULL, 16);
-    teText->textCursor().insertText( QString("%1").arg(QChar(c)) );
-}
+//void QG_DlgMText::updateUniCharButton(int) {
+//    QString t = cbUniChar->currentText();
+//    int i1 = t.indexOf(']');
+//    int c = t.mid(1, i1-1).toInt(NULL, 16);
+//    bUnicode->setText(QString("%1").arg(QChar(c)));
+//}
+//
+//void QG_DlgMText::insertChar() {
+//    QString t = cbUniChar->currentText();
+//    int i1 = t.indexOf(']');
+//    int c = t.mid(1, i1-1).toInt(NULL, 16);
+//    teText->textCursor().insertText( QString("%1").arg(QChar(c)) );
+//}

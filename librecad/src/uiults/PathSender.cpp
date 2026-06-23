@@ -8,6 +8,7 @@
 
 #include <QMessageBox>
 #include <QDebug>
+#include <QElapsedTimer>
 
 const QString PathSender::DEFAULT_IP = "192.168.1.10";
 
@@ -29,6 +30,9 @@ int PathSender::sendPathPoints()
         return -1;
     }
 
+    QElapsedTimer __totalTimer;
+    __totalTimer.start();
+
     // 更新文档
     m_doc->update();
 
@@ -36,7 +40,10 @@ int PathSender::sendPathPoints()
     collectPathPoints();
     reorganizePaths();
 
-    qDebug() << "[PathSender] sending paths:" << m_optimizedPaths.size();
+    qint64 __t1 = __totalTimer.nsecsElapsed();
+    qDebug().noquote() << QString(QString::fromLocal8Bit("[PathSender] 路径收集: %1 ms"))
+        .arg(__t1 / 1000000.0, 0, 'f', 2);
+    qDebug() << QString::fromLocal8Bit("[PathSender] sending paths:") << m_optimizedPaths.size();
 
     // 如果没有路径点则返回
     if (m_optimizedPaths.isEmpty()) {
@@ -55,7 +62,14 @@ int PathSender::sendPathPoints()
     m_begin = startNom;
 
     // 发送路径点到设备
+    qint64 __t2 = __totalTimer.nsecsElapsed();
+    qDebug().noquote() << QString(QString::fromLocal8Bit("[PathSender] UDP发送: %1 ms"))
+        .arg((__t2 - __t1) / 1000000.0, 0, 'f', 2);
     int lastNom = sendOptimizedPaths(ip, port, startNom);
+
+    qint64 __t3 = __totalTimer.nsecsElapsed();
+    qDebug().noquote() << QString(QString::fromLocal8Bit("[PathSender] BKBK类型处理: %1 ms"))
+        .arg((__t3 - __t2) / 1000000.0, 0, 'f', 2);
 
     // 处理 BKBK 类型标志
     handleBKBKType(lastNom, ip);
@@ -66,6 +80,10 @@ int PathSender::sendPathPoints()
     }
 
     m_end = lastNom;
+
+    qint64 __t4 = __totalTimer.nsecsElapsed();
+    qDebug().noquote() << QString(QString::fromLocal8Bit("[PathSender] nomArray: %1 ms"))
+        .arg((__t4 - __t3) / 1000000.0, 0, 'f', 2);
 
     // 发送 nomArray 寻址信息
     int nom = sendNomInfo(m_end, ip);
@@ -78,6 +96,12 @@ int PathSender::sendPathPoints()
     // 发送时间占位符坐标
     sendPlaceholderCoords(nom, ip, fontSize);
 
+    qint64 __t5 = __totalTimer.nsecsElapsed();
+    qDebug().noquote() << QString(QString::fromLocal8Bit("[PathSender] 占位符坐标: %1 ms"))
+        .arg((__t5 - __t4) / 1000000.0, 0, 'f', 2);
+    qDebug().noquote() << QString(QString::fromLocal8Bit("[PathSender] 总耗时: %1 ms"))
+        .arg(__totalTimer.nsecsElapsed() / 1000000.0, 0, 'f', 2);
+
     return 1;
 }
 
@@ -87,7 +111,7 @@ int PathSender::sendPathPoints()
 
 void PathSender::collectPathPoints()
 {
-    auto allPoints = m_doc->getAllEntityPathPoints(true);
+    auto allPoints = m_doc->getAllEntityPathPoints(false);
 
     m_optimizedPaths.clear();
     for (const auto& entityPoints : allPoints) {

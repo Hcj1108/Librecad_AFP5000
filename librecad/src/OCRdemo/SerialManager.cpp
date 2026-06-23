@@ -13,9 +13,11 @@ SerialManager::SerialManager(QWidget* parent)
 {
 	ui.setupUi(this);
 
-	/*connect(ui.toolButton_21, &QToolButton::clicked, this, [=] {
-		showmain();
-		});*/
+	connect(ui.btnClose, &QPushButton::clicked, this, [=] {
+		this->hide();
+		FileUtils::SendBKBK("11", "00", RGBMode);//恢复光源设置
+		emit showmain();
+		});
 	connect(ui.checkBox, &QCheckBox::clicked, this, &SerialManager::setzhuangtai);
 	connect(ui.checkBox_2, &QCheckBox::clicked, this, &SerialManager::setzhuangtai);
 	connect(ui.checkBox_3, &QCheckBox::clicked, this, &SerialManager::setzhuangtai);
@@ -23,10 +25,43 @@ SerialManager::SerialManager(QWidget* parent)
 	connect(ui.checkBox_5, &QCheckBox::clicked, this, &SerialManager::setzhuangtai);
 	connect(ui.checkBox_6, &QCheckBox::clicked, this, &SerialManager::setzhuangtai);
 	connect(ui.checkBox_7, &QCheckBox::clicked, this, &SerialManager::setzhuangtai);
-	connect(ui.btnClose, &QPushButton::clicked, this, [=] {
-		this->hide();
-		emit showmain();
-	});
+	connect(ui.toolButton, &QPushButton::clicked, this, [=] {
+		if (Serial_IsOpenBKBK == true)
+		{
+			FileUtils::SendBKBK("02", "F0", 1);//单次打码
+		}
+		else
+		{
+			QMessageBox* msgBox = new QMessageBox(QMessageBox::Critical, QString::fromLocal8Bit("打印失败  "), QString::fromLocal8Bit("打印未开启! "), QMessageBox::Ok, this);
+			msgBox->setFixedSize(400, 400);
+			msgBox->button(QMessageBox::Ok)->setText(QString::fromLocal8Bit("确定 "));
+			msgBox->show();	
+		}
+		});
+	connect(ui.toolButton_2, &QPushButton::clicked, this, [=] {
+		if (Serial_isOpenCam)
+		{
+			FileUtils::SendBKBK("02", "F1", 1);//单次拍照
+		}
+		else
+		{
+			QMessageBox* msgBox = new QMessageBox(QMessageBox::Critical, QString::fromLocal8Bit("拍照失败  "), QString::fromLocal8Bit("相机未开启! "), QMessageBox::Ok, this);
+			msgBox->setFixedSize(400, 400);
+			msgBox->button(QMessageBox::Ok)->setText(QString::fromLocal8Bit("确定 "));
+			msgBox->show();
+		}
+		});
+	connect(ui.toolButton_3, &QPushButton::clicked, this, [=] {
+		emit SendNG();//发送相机报警
+		});
+	connect(ui.toolButton_4, &QPushButton::clicked, this, [=] {
+		FileUtils::SendBKBK("21", "F0", 1);//取消报警
+		});
+	connect(ui.toolButton_5, &QPushButton::clicked, this, [=] {
+		FileUtils::SendBKBK("11", "00", 1);//光源常亮
+		});
+
+	
 	SetQSS();
 }
 
@@ -38,26 +73,21 @@ SerialManager::~SerialManager()
 //设置页面样式
 void SerialManager::SetQSS()
 {
-	
 	setWindowFlags(Qt::WindowSystemMenuHint | Qt::WindowContextHelpButtonHint | Qt::WindowCloseButtonHint);
-	// 设置窗体的初始大小
-	
-	qApp->installEventFilter(this);                   //给自己加事件过滤器,用来实现拖动窗口
 
-	/*ui.toolButton_21->setIcon(QIcon("OCRdemo/Resources/PICs/GB.png"));
-	ui.toolButton_21->setIconSize(QSize(71, 71));*/
-
-	
 }
 void SerialManager::closeEvent(QCloseEvent* event)
 {
 	this->hide();
+	FileUtils::SendBKBK("11", "00", RGBMode);//恢复光源设置
 	emit showmain();
 	event->ignore();
 }
 
-void SerialManager::setSerialNum(int MaxThresholdAlermOpen, int MinThresholdAlermOpen, int cameraAlarmOpen, int markingOutOfAreaOpen, int linkTXOpen, int linkBKBKOpen, int linkCameraOpen)
+void SerialManager::setSerialNum(int MaxThresholdAlermOpen, int MinThresholdAlermOpen, int cameraAlarmOpen, int markingOutOfAreaOpen, int linkTXOpen, int linkBKBKOpen, int linkCameraOpen, bool  IsOpenBKBK, bool isOpenCam)
 {
+	Serial_IsOpenBKBK = IsOpenBKBK;
+	Serial_isOpenCam = isOpenCam;
 	ui.checkBox_4->setChecked(MaxThresholdAlermOpen);
 	ui.checkBox_5->setChecked(MinThresholdAlermOpen);
 	ui.checkBox_6->setChecked(cameraAlarmOpen);
