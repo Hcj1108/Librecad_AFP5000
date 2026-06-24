@@ -237,6 +237,7 @@
     <ClCompile Include="OCRdemo\LoginDialog.cpp" />
     <ClCompile Include="OCRdemo\mylabel.cpp" />
     <ClCompile Include="OCRdemo\OcrFilterRules.cpp" />
+    <ClCompile Include="OCRdemo\QRCodeDialog.cpp" />
     <ClCompile Include="OCRdemo\OCRruning.cpp" />
     <ClCompile Include="OCRdemo\PixelCorrector.cpp" />
     <ClCompile Include="OCRdemo\rollingbox.cpp" />
@@ -626,6 +627,7 @@
     <QtMoc Include="OCRdemo\Logger.h" />
     <QtMoc Include="OCRdemo\LoginDialog.h" />
     <QtMoc Include="OCRdemo\OcrFilterRules.h" />
+    <QtMoc Include="OCRdemo\QRCodeDialog.h" />
     <ClInclude Include="OCRdemo\PixelCorrector.h" />
     <QtMoc Include="OCRdemo\SimpleBarChart.h" />
     <QtMoc Include="OCRdemo\SenderBinUdp.h" />
@@ -1059,6 +1061,7 @@
     <QtUic Include="OCRdemo\Logger.ui" />
     <QtUic Include="OCRdemo\LoginDialog.ui" />
     <QtUic Include="OCRdemo\OcrFilterRules.ui" />
+    <QtUic Include="OCRdemo\QRCodeDialog.ui" />
     <QtUic Include="OCRdemo\SenderBinUdp.ui" />
     <QtUic Include="OCRdemo\SerialManager.ui" />
     <QtUic Include="OCRdemo\SerialNumberDialog.ui" />

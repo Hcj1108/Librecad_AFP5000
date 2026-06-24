@@ -36,6 +36,7 @@
 #include "rs_coordinateevent.h"
 #include "rs_preview.h"
 #include "rs_debug.h"
+#include "rs_graphic.h"
 #include<QDebug>
 #include<QTimer>
 #include "qg_actionhandler.h"
@@ -136,7 +137,8 @@ void RS_ActionDrawMText::trigger() {
             << data->insertionPoint.x << "," << data->insertionPoint.y;*/
 
         // 1. 清空文档
-        document->clear();
+        //document->clear();
+  
 
         // 2. UDP 数据发送逻辑
         SingletonNomArray& nomArray = SingletonNomArray::getInstance();
@@ -195,7 +197,7 @@ void RS_ActionDrawMText::trigger() {
             document->endUndoCycle();
             
         }
-
+        qDebug() << "========================================\n";
         // 调试输出最终结果
         qDebug() << "All nom values:" << nomArray.getNomArray();
 
@@ -221,12 +223,12 @@ void RS_ActionDrawMText::trigger() {
             int placeholderPos = textData.text.indexOf("hh:mm:ss");
             textData.hasDynamicPlaceholders = true;
             textData.timePlaceholderPos = placeholderPos;
-            qDebug() << "Found 'hh:mm:ss' at position:" << placeholderPos;
+            qDebug() << QString::fromLocal8Bit("在以下位置找到了:") << placeholderPos;
 
             QString timeStr = QTime::currentTime().toString("hh:mm:ss");
             textData.text.replace("hh:mm:ss", timeStr);
             textData.timePlaceholderReplacedLength = timeStr.length();
-            qDebug() << "Placeholder replaced with:" << timeStr;
+            qDebug() << QString::fromLocal8Bit("占位符被替换为:") << timeStr;
 
             textData.timePlaceholderPositions.clear();
             textData.hasDynamicPlaceholders = true;

@@ -200,12 +200,12 @@ int PathSender::sendNomInfo(int nom, const QString& ip)
         return -1;
     }
 
-    if (myArray.isEmpty()) {
+  /*  if (myArray.isEmpty()) {
         QMessageBox::warning(m_parent,
             QString::fromLocal8Bit("警告"),
             QString::fromLocal8Bit("没有任何数据"));
         return -1;
-    }
+    }*/
 
     nom = FileUtils::sendquint256(myArray, ip, DEFAULT_PORT, nom);
     nom = FileUtils::sendquint256_static(m_begin, m_end - 1, ip, DEFAULT_PORT, nom);

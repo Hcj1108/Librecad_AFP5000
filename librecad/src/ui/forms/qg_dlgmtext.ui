@@ -440,6 +440,46 @@ QToolButton:pressed{background: #d4e6f9; padding-top: 6px; padding-bottom: 2px;}
          </widget>
         </item>
         <item row="1" column="4">
+         <widget class="QToolButton" name="bClear">
+          <property name="text">
+           <string>清空文本</string>
+          </property>
+          <property name="icon">
+           <iconset resource="../../OCRdemo.qrc">
+            <normaloff>:/PNG/Resources/PNG/clear .png</normaloff>:/PNG/Resources/PNG/clear .png</iconset>
+          </property>
+          <property name="iconSize">
+           <size>
+            <width>32</width>
+            <height>32</height>
+           </size>
+          </property>
+          <property name="toolButtonStyle">
+           <enum>Qt::ToolButtonStyle::ToolButtonTextBesideIcon</enum>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="5">
+         <widget class="QToolButton" name="bSave">
+          <property name="text">
+           <string>保存模板</string>
+          </property>
+          <property name="icon">
+           <iconset resource="../../OCRdemo.qrc">
+            <normaloff>:/PNG/Resources/PNG/save.png</normaloff>:/PNG/Resources/PNG/save.png</iconset>
+          </property>
+          <property name="iconSize">
+           <size>
+            <width>32</width>
+            <height>32</height>
+           </size>
+          </property>
+          <property name="toolButtonStyle">
+           <enum>Qt::ToolButtonStyle::ToolButtonTextBesideIcon</enum>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="0">
          <widget class="QToolButton" name="toolButton">
           <property name="minimumSize">
            <size>
@@ -465,47 +505,7 @@ QToolButton:pressed{background: #d4e6f9; padding-top: 6px; padding-bottom: 2px;}
           </property>
          </widget>
         </item>
-        <item row="3" column="0">
-         <widget class="QToolButton" name="bSave">
-          <property name="text">
-           <string>保存模板</string>
-          </property>
-          <property name="icon">
-           <iconset resource="../../OCRdemo.qrc">
-            <normaloff>:/PNG/Resources/PNG/save.png</normaloff>:/PNG/Resources/PNG/save.png</iconset>
-          </property>
-          <property name="iconSize">
-           <size>
-            <width>32</width>
-            <height>32</height>
-           </size>
-          </property>
-          <property name="toolButtonStyle">
-           <enum>Qt::ToolButtonStyle::ToolButtonTextBesideIcon</enum>
-          </property>
-         </widget>
-        </item>
-        <item row="2" column="0">
-         <widget class="QToolButton" name="bClear">
-          <property name="text">
-           <string>清空文本</string>
-          </property>
-          <property name="icon">
-           <iconset resource="../../OCRdemo.qrc">
-            <normaloff>:/PNG/Resources/PNG/clear .png</normaloff>:/PNG/Resources/PNG/clear .png</iconset>
-          </property>
-          <property name="iconSize">
-           <size>
-            <width>32</width>
-            <height>32</height>
-           </size>
-          </property>
-          <property name="toolButtonStyle">
-           <enum>Qt::ToolButtonStyle::ToolButtonTextBesideIcon</enum>
-          </property>
-         </widget>
-        </item>
-        <item row="3" column="4">
+        <item row="2" column="5">
          <widget class="QToolButton" name="toolButton_4">
           <property name="minimumSize">
            <size>
@@ -531,33 +531,7 @@ QToolButton:pressed{background: #d4e6f9; padding-top: 6px; padding-bottom: 2px;}
           </property>
          </widget>
         </item>
-        <item row="1" column="5">
-         <widget class="QToolButton" name="toolButton_7">
-          <property name="maximumSize">
-           <size>
-            <width>99</width>
-            <height>16777215</height>
-           </size>
-          </property>
-          <property name="text">
-           <string>序列号</string>
-          </property>
-          <property name="icon">
-           <iconset resource="../../OCRdemo.qrc">
-            <normaloff>:/PIC/Resources/PICs/PFGL.png</normaloff>:/PIC/Resources/PICs/PFGL.png</iconset>
-          </property>
-          <property name="iconSize">
-           <size>
-            <width>32</width>
-            <height>32</height>
-           </size>
-          </property>
-          <property name="toolButtonStyle">
-           <enum>Qt::ToolButtonStyle::ToolButtonTextBesideIcon</enum>
-          </property>
-         </widget>
-        </item>
-        <item row="2" column="5">
+        <item row="3" column="0">
          <widget class="QToolButton" name="toolButton_6">
           <property name="minimumSize">
            <size>
@@ -571,6 +545,32 @@ QToolButton:pressed{background: #d4e6f9; padding-top: 6px; padding-bottom: 2px;}
           <property name="icon">
            <iconset resource="../../OCRdemo.qrc">
             <normaloff>:/PIC/Resources/PICs/line break.png</normaloff>:/PIC/Resources/PICs/line break.png</iconset>
+          </property>
+          <property name="iconSize">
+           <size>
+            <width>32</width>
+            <height>32</height>
+           </size>
+          </property>
+          <property name="toolButtonStyle">
+           <enum>Qt::ToolButtonStyle::ToolButtonTextBesideIcon</enum>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="4">
+         <widget class="QToolButton" name="toolButton_7">
+          <property name="maximumSize">
+           <size>
+            <width>99</width>
+            <height>16777215</height>
+           </size>
+          </property>
+          <property name="text">
+           <string>序列号</string>
+          </property>
+          <property name="icon">
+           <iconset resource="../../OCRdemo.qrc">
+            <normaloff>:/PIC/Resources/PICs/PFGL.png</normaloff>:/PIC/Resources/PICs/PFGL.png</iconset>
           </property>
           <property name="iconSize">
            <size>
@@ -603,7 +603,7 @@ QToolButton:pressed{background: #d4e6f9; padding-top: 6px; padding-bottom: 2px;}
       </size>
      </property>
      <property name="styleSheet">
-      <string notr="true">QPushButton{font: bold 12px &quot;Microsoft YaHei&quot;; padding: 8px 24px; border-radius: 6px; min-width: 50px;}
+      <string notr="true">QPushButton{font: bold 12px &quot;Microsoft YaHei&quot;; padding: 1px 20px; border-radius: 6px; min-width: 50px;}
 QPushButton[text=&quot;OK&quot;], QPushButton[text=&quot;确定&quot;]{background: #3498db; color: white;}
 QPushButton[text=&quot;OK&quot;]:hover, QPushButton[text=&quot;确定&quot;]:hover{background: #2980b9;}
 QPushButton[text=&quot;Cancel&quot;], QPushButton[text=&quot;取消&quot;]{background: #95a5a6; color: white;}

@@ -1,0 +1,514 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>QRCodeDialogClass</class>
+ <widget class="QDialog" name="QRCodeDialogClass">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>563</width>
+    <height>570</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>二维码生成</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="../OCRdemo.qrc">
+    <normaloff>:/PNG/Resources/PNG/BCPF.png</normaloff>:/PNG/Resources/PNG/BCPF.png</iconset>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background-color:rgb(220, 235, 240);</string>
+  </property>
+  <layout class="QVBoxLayout" name="mainLayout">
+   <property name="spacing">
+    <number>10</number>
+   </property>
+   <property name="leftMargin">
+    <number>12</number>
+   </property>
+   <property name="topMargin">
+    <number>12</number>
+   </property>
+   <property name="rightMargin">
+    <number>12</number>
+   </property>
+   <property name="bottomMargin">
+    <number>12</number>
+   </property>
+   <item>
+    <widget class="QGroupBox" name="contentGroup">
+     <property name="font">
+      <font>
+       <family>Microsoft YaHei</family>
+       <pointsize>-1</pointsize>
+       <italic>false</italic>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QGroupBox{font: bold 14px &quot;Microsoft YaHei&quot;; color: #2c3e50; border: 2px solid #e0e0e0; border-radius: 10px; margin-top: 14px; padding-top: 18px; background: #ffffff;}
+QGroupBox::title{subcontrol-origin: margin; left: 14px; padding: 4px 14px; background: #3498db; color: white; border-radius: 4px;}
+QLineEdit{font: bold 12px &quot;Microsoft YaHei&quot;; padding: 8px 12px; border: 2px solid #dcdde1; border-radius: 6px; background: #fafafa; min-height: 32px;}
+QLineEdit:focus{border-color: #3498db; background: #ffffff;}
+QPlainTextEdit{font: bold 12px &quot;Microsoft YaHei&quot;; padding: 8px 12px; border: 2px solid #dcdde1; border-radius: 6px; background: #fafafa;}
+QPlainTextEdit:focus{border-color: #3498db; background: #ffffff;}
+QCheckBox{font: bold 12px &quot;Microsoft YaHei&quot;; color: #34495e; background: transparent; spacing: 6px;}
+QCheckBox::indicator{width: 18px; height: 18px; border: 2px solid #bdc3c7; border-radius: 3px; background: #ffffff;}
+QCheckBox::indicator:checked{background: #3498db; border-color: #2980b9;}</string>
+     </property>
+     <property name="title">
+      <string>内容</string>
+     </property>
+     <layout class="QVBoxLayout" name="contentLayout">
+      <property name="spacing">
+       <number>8</number>
+      </property>
+      <property name="leftMargin">
+       <number>16</number>
+      </property>
+      <property name="topMargin">
+       <number>16</number>
+      </property>
+      <property name="rightMargin">
+       <number>16</number>
+      </property>
+      <property name="bottomMargin">
+       <number>12</number>
+      </property>
+      <item>
+       <widget class="QPlainTextEdit" name="contentEdit">
+        <property name="minimumSize">
+         <size>
+          <width>0</width>
+          <height>60</height>
+         </size>
+        </property>
+        <property name="placeholderText">
+         <string>输入二维码内容（文本、网址等）</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <layout class="QHBoxLayout" name="timeRow">
+        <item>
+         <widget class="QCheckBox" name="timeModeCk">
+          <property name="text">
+           <string>使用当前时间作为内容</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QComboBox" name="timeFormatCbx">
+          <property name="styleSheet">
+           <string notr="true">QComboBox{font: bold 12px &quot;Microsoft YaHei&quot;; padding: 4px 10px; border: 2px solid #bdc3c7; border-radius: 6px; background: #fafafa; min-height: 28px;}
+QComboBox:focus{border-color: #3498db; background: #ffffff;}
+QComboBox::drop-down{width: 24px;}</string>
+          </property>
+          <item>
+           <property name="text">
+            <string>YYYY-MM-DD HH:mm:ss</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>YYYY/MM/DD HH:mm</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>DD-MM-YYYY</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>HH:mm:ss</string>
+           </property>
+          </item>
+         </widget>
+        </item>
+       </layout>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item>
+    <widget class="QGroupBox" name="positionGroup">
+     <property name="font">
+      <font>
+       <family>Microsoft YaHei</family>
+       <pointsize>-1</pointsize>
+       <italic>false</italic>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QGroupBox{font: bold 14px &quot;Microsoft YaHei&quot;; color: #2c3e50; border: 2px solid #e0e0e0; border-radius: 10px; margin-top: 14px; padding-top: 18px; background: #ffffff;}
+QGroupBox::title{subcontrol-origin: margin; left: 14px; padding: 4px 14px; background: #3498db; color: white; border-radius: 4px;}
+QLabel{font: bold 12px &quot;Microsoft YaHei&quot;; color: #34495e; background: transparent;}
+QDoubleSpinBox{font: bold 12px &quot;Microsoft YaHei&quot;; padding: 4px 8px; border: 2px solid #dcdde1; border-radius: 6px; background: #fafafa; min-height: 28px;}
+QDoubleSpinBox:focus{border-color: #3498db; background: #ffffff;}
+QComboBox{font: bold 12px &quot;Microsoft YaHei&quot;; padding: 4px 10px; border: 2px solid #bdc3c7; border-radius: 6px; background: #fafafa; min-height: 28px;}
+QComboBox:focus{border-color: #3498db; background: #ffffff;}
+QComboBox::drop-down{width: 24px;}
+QSpinBox{font: bold 12px &quot;Microsoft YaHei&quot;; padding: 4px 8px; border: 2px solid #dcdde1; border-radius: 6px; background: #fafafa; min-height: 28px;}
+QSpinBox:focus{border-color: #3498db; background: #ffffff;}</string>
+     </property>
+     <property name="title">
+      <string>位置与尺寸</string>
+     </property>
+     <layout class="QGridLayout" name="posGrid">
+      <property name="leftMargin">
+       <number>16</number>
+      </property>
+      <property name="topMargin">
+       <number>14</number>
+      </property>
+      <property name="rightMargin">
+       <number>16</number>
+      </property>
+      <property name="bottomMargin">
+       <number>12</number>
+      </property>
+      <property name="spacing">
+       <number>8</number>
+      </property>
+      <item row="0" column="0">
+       <widget class="QLabel" name="labelX">
+        <property name="text">
+         <string>X 位置：</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="1">
+       <widget class="QDoubleSpinBox" name="posXSpb">
+        <property name="suffix">
+         <string> mm</string>
+        </property>
+        <property name="decimals">
+         <number>2</number>
+        </property>
+        <property name="maximum">
+         <double>65000.000000000000000</double>
+        </property>
+        <property name="value">
+         <double>33000.000000000000000</double>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="2">
+       <widget class="QLabel" name="labelY">
+        <property name="text">
+         <string>Y 位置：</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="3">
+       <widget class="QDoubleSpinBox" name="posYSpb">
+        <property name="suffix">
+         <string> mm</string>
+        </property>
+        <property name="decimals">
+         <number>2</number>
+        </property>
+        <property name="maximum">
+         <double>65000.000000000000000</double>
+        </property>
+        <property name="value">
+         <double>33000.000000000000000</double>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="0">
+       <widget class="QLabel" name="labelSize">
+        <property name="text">
+         <string>模块大小：</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="1">
+       <widget class="QDoubleSpinBox" name="moduleSizeSpb">
+        <property name="suffix">
+         <string> mm</string>
+        </property>
+        <property name="decimals">
+         <number>2</number>
+        </property>
+        <property name="minimum">
+         <double>0.100000000000000</double>
+        </property>
+        <property name="maximum">
+         <double>500.000000000000000</double>
+        </property>
+        <property name="value">
+         <double>200.000000000000000</double>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="2">
+       <widget class="QLabel" name="labelMargin">
+        <property name="text">
+         <string>边距：</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="3">
+       <widget class="QSpinBox" name="marginSpb">
+        <property name="minimum">
+         <number>0</number>
+        </property>
+        <property name="maximum">
+         <number>10</number>
+        </property>
+        <property name="value">
+         <number>2</number>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="0">
+       <widget class="QLabel" name="labelRotate">
+        <property name="text">
+         <string>旋转角度：</string>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="1">
+       <widget class="QDoubleSpinBox" name="rotateSpb">
+        <property name="suffix">
+         <string> °</string>
+        </property>
+        <property name="decimals">
+         <number>1</number>
+        </property>
+        <property name="maximum">
+         <double>360.000000000000000</double>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="2">
+       <widget class="QLabel" name="labelEcc">
+        <property name="text">
+         <string>纠错等级：</string>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="3">
+       <widget class="QComboBox" name="eccCbx">
+        <item>
+         <property name="text">
+          <string>L (低)</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>M (中)</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Q (较高)</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>H (高)</string>
+         </property>
+        </item>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item>
+    <widget class="QGroupBox" name="styleGroup">
+     <property name="font">
+      <font>
+       <family>Microsoft YaHei</family>
+       <pointsize>-1</pointsize>
+       <italic>false</italic>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QGroupBox{font: bold 14px &quot;Microsoft YaHei&quot;; color: #2c3e50; border: 2px solid #e0e0e0; border-radius: 10px; margin-top: 14px; padding-top: 18px; background: #ffffff;}
+QGroupBox::title{subcontrol-origin: margin; left: 14px; padding: 4px 14px; background: #9b59b6; color: white; border-radius: 4px;}
+QLabel{font: bold 12px &quot;Microsoft YaHei&quot;; color: #34495e; background: transparent;}
+QComboBox{font: bold 12px &quot;Microsoft YaHei&quot;; padding: 4px 10px; border: 2px solid #bdc3c7; border-radius: 6px; background: #fafafa; min-height: 28px;}
+QComboBox:focus{border-color: #3498db; background: #ffffff;}
+QComboBox::drop-down{width: 24px;}</string>
+     </property>
+     <property name="title">
+      <string>样式设置</string>
+     </property>
+     <layout class="QHBoxLayout" name="styleLayout">
+      <property name="spacing">
+       <number>20</number>
+      </property>
+      <property name="leftMargin">
+       <number>16</number>
+      </property>
+      <property name="topMargin">
+       <number>14</number>
+      </property>
+      <property name="rightMargin">
+       <number>16</number>
+      </property>
+      <property name="bottomMargin">
+       <number>12</number>
+      </property>
+      <item>
+       <widget class="QLabel" name="labelShape">
+        <property name="text">
+         <string>模块形状：</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QComboBox" name="shapeCbx">
+        <item>
+         <property name="text">
+          <string>矩形</string>
+         </property>
+        </item>
+
+        <item>
+         <property name="text">
+          <string>点状</string>
+         </property>
+        </item>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="labelVersion">
+        <property name="text">
+         <string>版本：</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QComboBox" name="versionCbx">
+        <item>
+         <property name="text">
+          <string>自动</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>版本 1 (21x21)</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>版本 2 (25x25)</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>版本 3 (29x29)</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>版本 4 (33x33)</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>版本 5 (37x37)</string>
+         </property>
+        </item>
+       </widget>
+      </item>
+      <item>
+       <spacer name="styleSpacer">
+        <property name="orientation">
+         <enum>Qt::Orientation::Horizontal</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>40</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="buttonRow">
+     <property name="spacing">
+      <number>10</number>
+     </property>
+     <item>
+      <spacer name="btnSpacer">
+       <property name="orientation">
+        <enum>Qt::Orientation::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>40</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item>
+      <widget class="QPushButton" name="okBtn">
+       <property name="minimumSize">
+        <size>
+         <width>80</width>
+         <height>40</height>
+        </size>
+       </property>
+       <property name="font">
+        <font>
+         <family>Microsoft YaHei</family>
+         <pointsize>12</pointsize>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton{background: #27ae60; color: white; border-radius: 6px; padding: 8px 24px;}
+QPushButton:hover{background: #219a52;}
+QPushButton:pressed{background: #1e8449;}</string>
+       </property>
+       <property name="text">
+        <string>确定</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="cancelBtn">
+       <property name="minimumSize">
+        <size>
+         <width>80</width>
+         <height>40</height>
+        </size>
+       </property>
+       <property name="font">
+        <font>
+         <family>Microsoft YaHei</family>
+         <pointsize>12</pointsize>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton{background: #95a5a6; color: white; border-radius: 6px; padding: 8px 24px;}
+QPushButton:hover{background: #7f8c8d;}
+QPushButton:pressed{background: #717d7e;}</string>
+       </property>
+       <property name="text">
+        <string>取消</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+  </layout>
+ </widget>
+ <resources>
+  <include location="../OCRdemo.qrc"/>
+ </resources>
+ <connections/>
+</ui>

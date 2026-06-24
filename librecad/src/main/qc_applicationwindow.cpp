@@ -457,6 +457,12 @@ QC_ApplicationWindow::QC_ApplicationWindow()
         ui->stackedWidget_3->setCurrentIndex(0);
         //AutoCap();
         });
+    connect(ui->toolButton_48, &QToolButton::clicked, this, [=] {
+        QRCodeDialog dlg(this);
+        if (dlg.exec() != QDialog::Accepted) return;
+        if (!getMDIWindow()) return;
+        QRCodeDialog::generateToDocument(getDocument(), getGraphicView(), dlg.getParams());
+        });
     connect(ui->comboBox,static_cast<void (QComboBox::*)(int)>(&QComboBox::currentIndexChanged),
         this,&QC_ApplicationWindow::ChangeScheme);
     connect(this, &QC_ApplicationWindow::RunOcr, this, &QC_ApplicationWindow::CapAndOcr);

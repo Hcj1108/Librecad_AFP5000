@@ -186,6 +186,10 @@ namespace FileUtils {
 	//发送0~9：的起止位信息()
 	int sendquint256(QVector<int>& Array, const QString& ip, quint16 port, int nom)
 	{
+		if (Array.size() < 2) {
+			qDebug() << "[UDP] sendquint256: Array too small, skip";
+			return nom;
+		}
 		QUdpSocket udpSocket;
 		const int MAX_ENTRIES_PER_PACKET = 46;
 

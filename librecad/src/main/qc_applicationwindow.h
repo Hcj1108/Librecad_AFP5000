@@ -59,12 +59,13 @@
 #include <iostream>                 // C++输入输出流
 #include <fstream>                  // C++文件流
 
-// 二维码生成库 (ZXing)
-#include <include/ZXing/BarcodeFormat.h>    // 条码格式定义
-#include <include/ZXing/BitMatrix.h>        // 位矩阵，存储二维码数据
-#include <include/ZXing/MultiFormatWriter.h>// 多格式条码生成器
+//// 二维码生成库 (ZXing)
+//#include <include/ZXing/BarcodeFormat.h>    // 条码格式定义
+//#include <include/ZXing/BitMatrix.h>        // 位矩阵，存储二维码数据
+//#include <include/ZXing/MultiFormatWriter.h>// 多格式条码生成器
+//
+//using namespace ZXing;  // 使用ZXing命名空间简化代码
 
-using namespace ZXing;  // 使用ZXing命名空间简化代码
 
 // =======================================================================
 // 2. Qt UI命名空间
@@ -158,6 +159,7 @@ OCRdemo模块导入区域
 #include "rollingbox.h"             // 滚动条部件日期选择器
 #include "Logger.h"                 // 日志查看器
 #include "OcrFilterRules.h"       // OCR过滤规则界面
+#include "QRCodeDialog.h"
 
 #include "PlaceholderPositionManager.h" // 占位符位置管理器
 #include "BinaryDataListener.h"

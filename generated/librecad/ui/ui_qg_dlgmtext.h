@@ -391,7 +391,7 @@ public:
         buttonBox->setObjectName(QString::fromUtf8("buttonBox"));
         buttonBox->setMinimumSize(QSize(0, 0));
         buttonBox->setMaximumSize(QSize(16777215, 16777215));
-        buttonBox->setStyleSheet(QString::fromUtf8("QPushButton{font: bold 12px \"Microsoft YaHei\"; padding: 8px 24px; border-radius: 6px; min-width: 50px;}\n"
+        buttonBox->setStyleSheet(QString::fromUtf8("QPushButton{font: bold 12px \"Microsoft YaHei\"; padding: 1px 20px; border-radius: 6px; min-width: 50px;}\n"
 "QPushButton[text=\"OK\"], QPushButton[text=\"\347\241\256\345\256\232\"]{background: #3498db; color: white;}\n"
 "QPushButton[text=\"OK\"]:hover, QPushButton[text=\"\347\241\256\345\256\232\"]:hover{background: #2980b9;}\n"
 "QPushButton[text=\"Cancel\"], QPushButton[text=\"\345\217\226\346\266\210\"]{background: #95a5a6; color: white;}\n"

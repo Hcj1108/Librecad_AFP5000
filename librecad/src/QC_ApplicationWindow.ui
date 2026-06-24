@@ -291,7 +291,7 @@ QComboBox::down-arrow:on {
 opacity: 1;</string>
        </property>
        <property name="currentIndex">
-        <number>3</number>
+        <number>1</number>
        </property>
        <widget class="QWidget" name="page_4">
         <widget class="QGroupBox" name="groupBox_5">
@@ -723,119 +723,11 @@ QGroupBox::title{subcontrol-origin: margin; left: 12px; padding: 4px 12px; backg
          <property name="title">
           <string>文本设置</string>
          </property>
-         <widget class="QToolButton" name="moveDownBtn_2">
-          <property name="geometry">
-           <rect>
-            <x>10</x>
-            <y>30</y>
-            <width>111</width>
-            <height>41</height>
-           </rect>
-          </property>
-          <property name="font">
-           <font>
-            <family>微软雅黑</family>
-            <pointsize>8</pointsize>
-            <bold>true</bold>
-           </font>
-          </property>
-          <property name="styleSheet">
-           <string notr="true"> QToolButton {
-        opacity: 1;
- 		border: none;
-}
-/* 按下状态 */
-QToolButton:pressed {
-   background-color: #546E7A; /* 深石板灰 */
-    background-image: none;
-    padding-top: 12px;
-    padding-bottom: 8px;
-    border: 1px solid #37474F; /* 深色边框模拟阴影 */
-}
-</string>
-          </property>
-          <property name="text">
-           <string>局部ROI</string>
-          </property>
-          <property name="icon">
-           <iconset resource="OCRdemo.qrc">
-            <normaloff>:/PNG/Resources/PNG/Jubu.png</normaloff>:/PNG/Resources/PNG/Jubu.png</iconset>
-          </property>
-          <property name="iconSize">
-           <size>
-            <width>30</width>
-            <height>30</height>
-           </size>
-          </property>
-          <property name="popupMode">
-           <enum>QToolButton::ToolButtonPopupMode::DelayedPopup</enum>
-          </property>
-          <property name="toolButtonStyle">
-           <enum>Qt::ToolButtonStyle::ToolButtonTextBesideIcon</enum>
-          </property>
-          <property name="arrowType">
-           <enum>Qt::ArrowType::NoArrow</enum>
-          </property>
-         </widget>
-         <widget class="QToolButton" name="moveDownBtn_3">
-          <property name="geometry">
-           <rect>
-            <x>150</x>
-            <y>30</y>
-            <width>111</width>
-            <height>41</height>
-           </rect>
-          </property>
-          <property name="font">
-           <font>
-            <family>微软雅黑</family>
-            <pointsize>8</pointsize>
-            <bold>true</bold>
-           </font>
-          </property>
-          <property name="styleSheet">
-           <string notr="true"> QToolButton {
-        opacity: 1;
- 		border: none;
-}
-/* 按下状态 */
-QToolButton:pressed {
-   background-color: #546E7A; /* 深石板灰 */
-    background-image: none;
-    padding-top: 12px;
-    padding-bottom: 8px;
-    border: 1px solid #37474F; /* 深色边框模拟阴影 */
-}
-</string>
-          </property>
-          <property name="text">
-           <string>全局显示</string>
-          </property>
-          <property name="icon">
-           <iconset resource="OCRdemo.qrc">
-            <normaloff>:/PNG/Resources/PNG/Quanju.png</normaloff>:/PNG/Resources/PNG/Quanju.png</iconset>
-          </property>
-          <property name="iconSize">
-           <size>
-            <width>30</width>
-            <height>30</height>
-           </size>
-          </property>
-          <property name="popupMode">
-           <enum>QToolButton::ToolButtonPopupMode::DelayedPopup</enum>
-          </property>
-          <property name="toolButtonStyle">
-           <enum>Qt::ToolButtonStyle::ToolButtonTextBesideIcon</enum>
-          </property>
-          <property name="arrowType">
-           <enum>Qt::ArrowType::NoArrow</enum>
-          </property>
-         </widget>
          <widget class="QToolButton" name="toolButton_42">
           <property name="geometry">
            <rect>
             <x>10</x>
-            <y>80</y>
+            <y>30</y>
             <width>111</width>
             <height>41</height>
            </rect>
@@ -882,8 +774,8 @@ QToolButton:pressed {
          <widget class="QToolButton" name="toolButton_46">
           <property name="geometry">
            <rect>
-            <x>150</x>
-            <y>80</y>
+            <x>10</x>
+            <y>90</y>
             <width>111</width>
             <height>41</height>
            </rect>
@@ -916,6 +808,54 @@ QToolButton:pressed {
           <property name="icon">
            <iconset resource="OCRdemo.qrc">
             <normaloff>:/PNG/Resources/PNG/delete.png</normaloff>:/PNG/Resources/PNG/delete.png</iconset>
+          </property>
+          <property name="iconSize">
+           <size>
+            <width>30</width>
+            <height>30</height>
+           </size>
+          </property>
+          <property name="toolButtonStyle">
+           <enum>Qt::ToolButtonStyle::ToolButtonTextBesideIcon</enum>
+          </property>
+         </widget>
+         <widget class="QToolButton" name="toolButton_48">
+          <property name="geometry">
+           <rect>
+            <x>140</x>
+            <y>30</y>
+            <width>111</width>
+            <height>41</height>
+           </rect>
+          </property>
+          <property name="font">
+           <font>
+            <family>微软雅黑</family>
+            <pointsize>8</pointsize>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true"> QToolButton {
+        opacity: 1;
+ 		border: none;
+}
+/* 按下状态 */
+QToolButton:pressed {
+   background-color: #546E7A; /* 深石板灰 */
+    background-image: none;
+    padding-top: 12px;
+    padding-bottom: 8px;
+    border: 1px solid #37474F; /* 深色边框模拟阴影 */
+}
+</string>
+          </property>
+          <property name="text">
+           <string>二维码编辑</string>
+          </property>
+          <property name="icon">
+           <iconset resource="OCRdemo.qrc">
+            <normaloff>:/PNG/Resources/PNG/mtext.png</normaloff>:/PNG/Resources/PNG/mtext.png</iconset>
           </property>
           <property name="iconSize">
            <size>
@@ -1152,7 +1092,7 @@ border-radius: 0;              /* 去掉圆角，如果需要圆角可以改成�
             <normaloff>:/PIC/Resources/PICs/A2.png</normaloff>:/PIC/Resources/PICs/A2.png</iconset>
           </attribute>
           <attribute name="title">
-           <string>自定义检测</string>
+           <string>自定义检测模式</string>
           </attribute>
           <widget class="QLineEdit" name="lineEdit_13">
            <property name="enabled">
@@ -1338,7 +1278,7 @@ QToolButton:pressed {
             <normaloff>:/PIC/Resources/PICs/rl.png</normaloff>:/PIC/Resources/PICs/rl.png</iconset>
           </attribute>
           <attribute name="title">
-           <string>日期检测</string>
+           <string>日期检测模式</string>
           </attribute>
           <widget class="QLabel" name="label_25">
            <property name="geometry">
@@ -1534,8 +1474,8 @@ QToolButton:pressed {
           </property>
           <property name="iconSize">
            <size>
-            <width>40</width>
-            <height>40</height>
+            <width>30</width>
+            <height>30</height>
            </size>
           </property>
           <property name="toolButtonStyle">
@@ -1582,8 +1522,8 @@ QToolButton:pressed {
           </property>
           <property name="iconSize">
            <size>
-            <width>40</width>
-            <height>40</height>
+            <width>30</width>
+            <height>30</height>
            </size>
           </property>
           <property name="toolButtonStyle">
@@ -1597,7 +1537,7 @@ QToolButton:pressed {
            <x>10</x>
            <y>240</y>
            <width>281</width>
-           <height>91</height>
+           <height>141</height>
           </rect>
          </property>
          <property name="font">
@@ -1619,7 +1559,7 @@ QGroupBox::title{subcontrol-origin: margin; left: 12px; padding: 4px 12px; backg
           <property name="geometry">
            <rect>
             <x>10</x>
-            <y>30</y>
+            <y>90</y>
             <width>110</width>
             <height>40</height>
            </rect>
@@ -1655,12 +1595,120 @@ QToolButton:pressed {
           </property>
           <property name="iconSize">
            <size>
-            <width>40</width>
-            <height>40</height>
+            <width>30</width>
+            <height>30</height>
            </size>
           </property>
           <property name="toolButtonStyle">
            <enum>Qt::ToolButtonStyle::ToolButtonTextBesideIcon</enum>
+          </property>
+         </widget>
+         <widget class="QToolButton" name="moveDownBtn_2">
+          <property name="geometry">
+           <rect>
+            <x>140</x>
+            <y>30</y>
+            <width>111</width>
+            <height>41</height>
+           </rect>
+          </property>
+          <property name="font">
+           <font>
+            <family>微软雅黑</family>
+            <pointsize>8</pointsize>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true"> QToolButton {
+        opacity: 1;
+ 		border: none;
+}
+/* 按下状态 */
+QToolButton:pressed {
+   background-color: #546E7A; /* 深石板灰 */
+    background-image: none;
+    padding-top: 12px;
+    padding-bottom: 8px;
+    border: 1px solid #37474F; /* 深色边框模拟阴影 */
+}
+</string>
+          </property>
+          <property name="text">
+           <string>局部ROI</string>
+          </property>
+          <property name="icon">
+           <iconset resource="OCRdemo.qrc">
+            <normaloff>:/PNG/Resources/PNG/Jubu.png</normaloff>:/PNG/Resources/PNG/Jubu.png</iconset>
+          </property>
+          <property name="iconSize">
+           <size>
+            <width>30</width>
+            <height>30</height>
+           </size>
+          </property>
+          <property name="popupMode">
+           <enum>QToolButton::ToolButtonPopupMode::DelayedPopup</enum>
+          </property>
+          <property name="toolButtonStyle">
+           <enum>Qt::ToolButtonStyle::ToolButtonTextBesideIcon</enum>
+          </property>
+          <property name="arrowType">
+           <enum>Qt::ArrowType::NoArrow</enum>
+          </property>
+         </widget>
+         <widget class="QToolButton" name="moveDownBtn_3">
+          <property name="geometry">
+           <rect>
+            <x>10</x>
+            <y>30</y>
+            <width>111</width>
+            <height>41</height>
+           </rect>
+          </property>
+          <property name="font">
+           <font>
+            <family>微软雅黑</family>
+            <pointsize>8</pointsize>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true"> QToolButton {
+        opacity: 1;
+ 		border: none;
+}
+/* 按下状态 */
+QToolButton:pressed {
+   background-color: #546E7A; /* 深石板灰 */
+    background-image: none;
+    padding-top: 12px;
+    padding-bottom: 8px;
+    border: 1px solid #37474F; /* 深色边框模拟阴影 */
+}
+</string>
+          </property>
+          <property name="text">
+           <string>全局显示</string>
+          </property>
+          <property name="icon">
+           <iconset resource="OCRdemo.qrc">
+            <normaloff>:/PNG/Resources/PNG/Quanju.png</normaloff>:/PNG/Resources/PNG/Quanju.png</iconset>
+          </property>
+          <property name="iconSize">
+           <size>
+            <width>30</width>
+            <height>30</height>
+           </size>
+          </property>
+          <property name="popupMode">
+           <enum>QToolButton::ToolButtonPopupMode::DelayedPopup</enum>
+          </property>
+          <property name="toolButtonStyle">
+           <enum>Qt::ToolButtonStyle::ToolButtonTextBesideIcon</enum>
+          </property>
+          <property name="arrowType">
+           <enum>Qt::ArrowType::NoArrow</enum>
           </property>
          </widget>
         </widget>
@@ -1728,8 +1776,8 @@ QToolButton:pressed {
           </property>
           <property name="iconSize">
            <size>
-            <width>40</width>
-            <height>40</height>
+            <width>30</width>
+            <height>30</height>
            </size>
           </property>
           <property name="toolButtonStyle">
@@ -1776,8 +1824,8 @@ QToolButton:pressed {
           </property>
           <property name="iconSize">
            <size>
-            <width>40</width>
-            <height>40</height>
+            <width>30</width>
+            <height>30</height>
            </size>
           </property>
           <property name="toolButtonStyle">
@@ -1851,8 +1899,8 @@ QToolButton:pressed {
           </property>
           <property name="iconSize">
            <size>
-            <width>40</width>
-            <height>40</height>
+            <width>30</width>
+            <height>30</height>
            </size>
           </property>
           <property name="toolButtonStyle">
@@ -1899,8 +1947,8 @@ QToolButton:pressed {
           </property>
           <property name="iconSize">
            <size>
-            <width>40</width>
-            <height>40</height>
+            <width>30</width>
+            <height>30</height>
            </size>
           </property>
           <property name="toolButtonStyle">
@@ -1950,8 +1998,8 @@ QToolButton:pressed {
           </property>
           <property name="iconSize">
            <size>
-            <width>40</width>
-            <height>40</height>
+            <width>30</width>
+            <height>30</height>
            </size>
           </property>
           <property name="toolButtonStyle">
@@ -1998,8 +2046,8 @@ QToolButton:pressed {
           </property>
           <property name="iconSize">
            <size>
-            <width>40</width>
-            <height>40</height>
+            <width>30</width>
+            <height>30</height>
            </size>
           </property>
           <property name="toolButtonStyle">
@@ -2071,8 +2119,8 @@ QToolButton:pressed {
           </property>
           <property name="iconSize">
            <size>
-            <width>40</width>
-            <height>40</height>
+            <width>30</width>
+            <height>30</height>
            </size>
           </property>
           <property name="toolButtonStyle">
@@ -2119,8 +2167,8 @@ QToolButton:pressed {
           </property>
           <property name="iconSize">
            <size>
-            <width>40</width>
-            <height>40</height>
+            <width>30</width>
+            <height>30</height>
            </size>
           </property>
           <property name="toolButtonStyle">
@@ -2167,8 +2215,8 @@ QToolButton:pressed {
           </property>
           <property name="iconSize">
            <size>
-            <width>45</width>
-            <height>45</height>
+            <width>30</width>
+            <height>30</height>
            </size>
           </property>
           <property name="toolButtonStyle">
@@ -2240,8 +2288,8 @@ QToolButton:pressed {
           </property>
           <property name="iconSize">
            <size>
-            <width>40</width>
-            <height>40</height>
+            <width>30</width>
+            <height>30</height>
            </size>
           </property>
           <property name="toolButtonStyle">
@@ -2288,8 +2336,8 @@ QToolButton:pressed {
           </property>
           <property name="iconSize">
            <size>
-            <width>40</width>
-            <height>40</height>
+            <width>30</width>
+            <height>30</height>
            </size>
           </property>
           <property name="toolButtonStyle">
