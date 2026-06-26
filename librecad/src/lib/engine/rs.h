@@ -138,7 +138,8 @@ public:
         EntitySolid,        /**< Solid */
         EntityConstructionLine, /**< Construction line */
         EntityMText,         /**< Multi-line Text 16*/
-        EntityText,         /**< Single-line Text */
+        EntityText,          /**< Single-line Text */
+        EntityQRCode,        /**< QR Code */
         EntityDimAligned,   /**< Aligned Dimension */
         EntityDimLinear,    /**< Linear Dimension */
         EntityDimRadial,    /**< Radial Dimension */

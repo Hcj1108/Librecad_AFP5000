@@ -1176,6 +1176,9 @@
     <ClCompile Include="OCRdemo\QRCodeDialog.cpp">
       <Filter>Generated Files</Filter>
     </ClCompile>
+    <ClCompile Include="OCRdemo\rs_qrcode.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="ui\generic\actionlist.h">
@@ -2312,6 +2315,9 @@
     <QtMoc Include="OCRdemo\QRCodeDialog.h">
       <Filter>Generated Files</Filter>
     </QtMoc>
+    <ClInclude Include="OCRdemo\rs_qrcode.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="..\ts\librecad_ar.ts">

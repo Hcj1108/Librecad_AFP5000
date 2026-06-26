@@ -14,6 +14,7 @@
 #include "rs_entitycontainer.h"
 #include "rs_line.h"
 #include "rs_point.h"
+#include "rs_qrcode.h"
 
 #include <include/ZXing/BarcodeFormat.h>
 #include <include/ZXing/BitMatrix.h>
@@ -133,48 +134,27 @@ bool QRCodeDialog::generateToDocument(RS_Document* doc, RS_GraphicView* view, co
     if (!container) return false;
 
     try {
-        MultiFormatWriter writer(BarcodeFormat::QRCode);
-        writer.setMargin(p.margin);
-        writer.setEccLevel(p.eccLevel);
-        auto matrix = writer.encode(p.text.toUtf8().constData(), 0, 0);
+        RS_QRCodeData d;
+        d.text = p.text;
+        d.posX = p.posX;
+        d.posY = p.posY;
+        d.moduleSize = p.moduleSize;
+        d.margin = p.margin;
+        d.rotateAngle = p.rotateAngle;
+        d.eccLevel = p.eccLevel;
+        d.shapeIndex = p.shapeIndex;
+        d.version = p.version;
+        d.timeMode = p.timeMode;
+        d.timeFormat = p.timeFormat;
 
-        double tw = matrix.width() * p.moduleSize;
-        double th = matrix.height() * p.moduleSize;
-        double ox = p.posX - tw / 2.0;
-        double oy = p.posY - th / 2.0;
+        RS_QRCode* qr = new RS_QRCode(container, d);
 
-        RS_EntityContainer* group = new RS_EntityContainer(container);
-
-        for (int y = 0; y < matrix.height(); ++y) {
-            for (int x = 0; x < matrix.width(); ++x) {
-                if (!matrix.get(x, y)) continue;
-                double x1 = ox + x * p.moduleSize;
-                double y1 = oy + y * p.moduleSize;
-                double x2 = x1 + p.moduleSize;
-                double y2 = y1 + p.moduleSize;
-
-                if (p.shapeIndex == 0) {
-                    RS_LineData segs[] = {
-                        RS_LineData(RS_Vector(x1,y1), RS_Vector(x2,y1)),
-                        RS_LineData(RS_Vector(x2,y1), RS_Vector(x2,y2)),
-                        RS_LineData(RS_Vector(x2,y2), RS_Vector(x1,y2)),
-                        RS_LineData(RS_Vector(x1,y2), RS_Vector(x1,y1)),
-                    };
-                    for (auto& s : segs) {
-                        auto* L = new RS_Line(group, s);
-                        group->addEntity(L);
-                    }
-                } else {
-                    double cx = (x1+x2)/2, cy = (y1+y2)/2;
-                    auto* pt = new RS_Point(group, RS_PointData(RS_Vector(cx,cy)));
-                    group->addEntity(pt);
-                }
-            }
-        }
+        qr->setLayerToActive();
+        qr->setPenToActive();
 
         doc->startUndoCycle();
-        doc->addEntity(group);
-        doc->addUndoable(group);
+        doc->addEntity(qr);
+        doc->addUndoable(qr);
         doc->endUndoCycle();
         view->redraw(RS2::RedrawDrawing);
 

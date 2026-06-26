@@ -794,7 +794,7 @@ RS_Entity* RS_EntityContainer::firstEntity(RS2::ResolveLevel level) {
             entIdx = 0;
             e = entities.first();
         }
-		if (e && e->isContainer() && e->rtti()!=RS2::EntityText && e->rtti()!=RS2::EntityMText) {
+		if (e && e->isContainer() && e->rtti()!=RS2::EntityText && e->rtti()!=RS2::EntityMText && e->rtti()!=RS2::EntityQRCode) {
             subContainer = (RS_EntityContainer*)e;
             e = ((RS_EntityContainer*)e)->firstEntity(level);
             // empty container:
@@ -865,7 +865,7 @@ RS_Entity* RS_EntityContainer::lastEntity(RS2::ResolveLevel level) {
         if (!entities.isEmpty())
             e = entities.last();
 		subContainer = nullptr;
-		if (e && e->isContainer() && e->rtti()!=RS2::EntityText && e->rtti()!=RS2::EntityMText) {
+		if (e && e->isContainer() && e->rtti()!=RS2::EntityText && e->rtti()!=RS2::EntityMText && e->rtti()!=RS2::EntityQRCode) {
             subContainer = (RS_EntityContainer*)e;
             e = ((RS_EntityContainer*)e)->lastEntity(level);
         }
@@ -948,7 +948,7 @@ RS_Entity* RS_EntityContainer::nextEntity(RS2::ResolveLevel level) {
             if ( entIdx < entities.size() )
                 e = entities.at(entIdx);
         }
-		if (e && e->isContainer() && e->rtti()!=RS2::EntityText && e->rtti()!=RS2::EntityMText ) {
+		if (e && e->isContainer() && e->rtti()!=RS2::EntityText && e->rtti()!=RS2::EntityMText && e->rtti()!=RS2::EntityQRCode) {
             subContainer = (RS_EntityContainer*)e;
             e = ((RS_EntityContainer*)e)->firstEntity(level);
             // empty container:
@@ -1049,7 +1049,7 @@ RS_Entity* RS_EntityContainer::prevEntity(RS2::ResolveLevel level) {
             if (entIdx >= 0)
                 e = entities.at(entIdx);
         }
-		if (e && e->isContainer() && e->rtti()!=RS2::EntityText && e->rtti()!=RS2::EntityMText) {
+		if (e && e->isContainer() && e->rtti()!=RS2::EntityText && e->rtti()!=RS2::EntityMText && e->rtti()!=RS2::EntityQRCode) {
             subContainer = (RS_EntityContainer*)e;
             e = ((RS_EntityContainer*)e)->lastEntity(level);
             // empty container:
@@ -1854,6 +1854,7 @@ bool RS_EntityContainer::ignoredOnModification() const
     case RS2::EntitySpline:
     case RS2::EntityMText:        /**< Text 15*/
     case RS2::EntityText:         /**< Text 15*/
+    case RS2::EntityQRCode:       /**< QR Code */
     case RS2::EntityDimAligned:   /**< Aligned Dimension */
     case RS2::EntityDimLinear:    /**< Linear Dimension */
     case RS2::EntityDimRadial:    /**< Radial Dimension */

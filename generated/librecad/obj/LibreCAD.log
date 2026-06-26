@@ -1,14 +1,849 @@
 ﻿   Qt/MSBuild: 3.5.0.0
    Qt: 5.15.2
   QRCodeDialog.cpp
+  rs_qrcode.cpp
 D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\OCRdemo\QRCodeDialog.cpp(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\lib\engine\rs.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“OCRdemo/rs_qrcode.cpp”)
+  
 D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\lib\engine\rs.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
   (编译源文件“OCRdemo/QRCodeDialog.cpp”)
   
-LoginDialog.obj : warning LNK4099: 未找到 PDB“vc140.pdb”(使用“LoginDialog.obj”或在“D:\DM\LibreCAD-2.4(YitiJi)\windows\vc140.pdb”中寻找)；正在链接对象，如同没有调试信息一样
-OcrFilterRules.obj : warning LNK4099: 未找到 PDB“vc140.pdb”(使用“OcrFilterRules.obj”或在“D:\DM\LibreCAD-2.4(YitiJi)\windows\vc140.pdb”中寻找)；正在链接对象，如同没有调试信息一样
-SerialNumberDialog.obj : warning LNK4099: 未找到 PDB“vc140.pdb”(使用“SerialNumberDialog.obj”或在“D:\DM\LibreCAD-2.4(YitiJi)\windows\vc140.pdb”中寻找)；正在链接对象，如同没有调试信息一样
-Simulator.obj : warning LNK4099: 未找到 PDB“vc140.pdb”(使用“Simulator.obj”或在“D:\DM\LibreCAD-2.4(YitiJi)\windows\vc140.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+  qrc_actions.cpp
+  qrc_extui.cpp
+  qrc_icons.cpp
+  qrc_licenses.cpp
+  qrc_main.cpp
+  qrc_ui.cpp
+  qrc_OCRdemo.cpp
+  moc_actionlist.cpp
+  moc_colorcombobox.cpp
+  moc_colorwizard.cpp
+  moc_comboboxoption.cpp
+  moc_ImageProcessor.cpp
+  moc_AddScheme.cpp
+  moc_AlterScheme.cpp
+  moc_deletionmanager.cpp
+  moc_Guide.cpp
+  moc_Jgadmin.cpp
+  moc_OCRruning.cpp
+  moc_rollingbox.cpp
+  moc_rollingboxd.cpp
+  moc_rollingboxm.cpp
+  moc_rollingboxy.cpp
+  moc_SerialManager.cpp
+  moc_Setting.cpp
+  moc_user.cpp
+  moc_ImageViewer.cpp
+  moc_mylabel.cpp
+  moc_Logger.cpp
+  moc_LoginDialog.cpp
+  moc_OcrFilterRules.cpp
+  moc_QRCodeDialog.cpp
+  moc_SimpleBarChart.cpp
+  moc_SenderBinUdp.cpp
+  moc_Simulator.cpp
+  moc_SerialNumberDialog.cpp
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\OCRdemo\SerialManager.h(9,10): warning C4067: 预处理器指令后有意外标记 - 应输入换行符
+  (编译源文件“../../generated/librecad/moc/moc_SerialManager.cpp”)
+  
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\OCRdemo\SerialManager.h(10,10): warning C4067: 预处理器指令后有意外标记 - 应输入换行符
+  (编译源文件“../../generated/librecad/moc/moc_SerialManager.cpp”)
+  
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\lib\engine\rs.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../generated/librecad/moc/moc_SerialManager.cpp”)
+  
+  moc_XJadmin.cpp
+  moc_lc_actiondrawcircle2pr.cpp
+  moc_lc_actiondrawlinepolygon3.cpp
+  moc_lc_actiondrawsplinepoints.cpp
+  moc_lc_actionfactory.cpp
+  moc_lc_actionfileexportmakercam.cpp
+  moc_lc_actiongroupmanager.cpp
+  moc_lc_actionlayerstoggleconstruction.cpp
+  moc_lc_application.cpp
+  moc_lc_centralwidget.cpp
+  moc_lc_deviceoptions.cpp
+  moc_lc_dlgsplinepoints.cpp
+  moc_lc_dockwidget.cpp
+  moc_lc_penwizard.cpp
+  moc_lc_simpletests.cpp
+D:\software\vcpkg-master\installed\x64-windows\include\iconv.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../generated/librecad/moc/moc_SerialManager.cpp”)
+  
+  moc_lc_widgetfactory.cpp
+  moc_lc_widgetoptionsdialog.cpp
+  moc_lg_dimzerosbox.cpp
+  moc_linklist.cpp
+  moc_mainwindowx.cpp
+  moc_pdf_print_loop.cpp
+  moc_qc_actiongetent.cpp
+  moc_qc_actiongetpoint.cpp
+D:\software\vcpkg-master\installed\x64-windows\include\iconv.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../generated/librecad/moc/moc_OcrFilterRules.cpp”)
+  
+  moc_qc_actiongetselect.cpp
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\lib\engine\rs.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../generated/librecad/moc/moc_lc_actiondrawcircle2pr.cpp”)
+  
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\lib\engine\rs.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../generated/librecad/moc/moc_lc_actiondrawlinepolygon3.cpp”)
+  
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\lib\engine\rs.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../generated/librecad/moc/moc_lc_actionlayerstoggleconstruction.cpp”)
+  
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\lib\engine\rs.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../generated/librecad/moc/moc_lc_actiondrawsplinepoints.cpp”)
+  
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\lib\engine\rs.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../generated/librecad/moc/moc_lc_actionfileexportmakercam.cpp”)
+  
+  moc_qc_applicationwindow.cpp
+  moc_qc_mdiwindow.cpp
+  moc_qg_actionhandler.cpp
+  moc_qg_activelayername.cpp
+  moc_qg_arcoptions.cpp
+  moc_qg_arctangentialoptions.cpp
+  moc_qg_beveloptions.cpp
+  moc_qg_blockdialog.cpp
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\lib\engine\rs.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../generated/librecad/moc/moc_qc_actiongetent.cpp”)
+  
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\lib\engine\rs.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../generated/librecad/moc/moc_qc_actiongetpoint.cpp”)
+  
+  moc_qg_blockwidget.cpp
+  moc_qg_circleoptions.cpp
+  moc_qg_circletan2options.cpp
+  moc_qg_colorbox.cpp
+  moc_qg_commandedit.cpp
+  moc_qg_commandhistory.cpp
+  moc_qg_commandwidget.cpp
+  moc_qg_coordinatewidget.cpp
+  moc_BinaryDataListener.cpp
+  moc_UdpTimeSender.cpp
+  moc_qg_dimensionlabeleditor.cpp
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\lib\engine\rs.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../generated/librecad/moc/moc_qc_actiongetselect.cpp”)
+  
+  moc_qg_dimlinearoptions.cpp
+  moc_qg_dimoptions.cpp
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\lib\engine\rs.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../generated/librecad/moc/moc_qg_actionhandler.cpp”)
+  
+  moc_qg_dlgarc.cpp
+  moc_qg_dlgattributes.cpp
+  moc_qg_dlgcircle.cpp
+  moc_qg_dlgdimension.cpp
+  moc_qg_dlgdimlinear.cpp
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\lib\engine\rs.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../generated/librecad/moc/moc_qc_applicationwindow.cpp”)
+  
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\lib\engine\rs.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../generated/librecad/moc/moc_qc_mdiwindow.cpp”)
+  
+  moc_qg_dlgellipse.cpp
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\lib\engine\rs.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../generated/librecad/moc/moc_pdf_print_loop.cpp”)
+  
+  moc_qg_dlghatch.cpp
+  moc_qg_dlgimage.cpp
+  moc_qg_dlgimageoptions.cpp
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\lib\engine\rs.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../generated/librecad/moc/moc_qg_blockwidget.cpp”)
+  
+  moc_qg_dlginitial.cpp
+  moc_qg_dlginsert.cpp
+  moc_qg_dlgline.cpp
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\lib\engine\rs_polyline.h(38,69): warning C4100: 'step': 未引用的参数
+  (编译源文件“../../generated/librecad/moc/moc_qc_applicationwindow.cpp”)
+  
+  moc_qg_dlgmirror.cpp
+  moc_qg_dlgmove.cpp
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\lib\engine\rs.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../generated/librecad/moc/moc_qg_coordinatewidget.cpp”)
+  
+  moc_qg_dlgmoverotate.cpp
+  moc_qg_dlgmtext.cpp
+  moc_qg_dlgoptionsdrawing.cpp
+  moc_qg_dlgoptionsgeneral.cpp
+  moc_qg_dlgoptionsmakercam.cpp
+  moc_qg_dlgpoint.cpp
+  moc_qg_dlgpolyline.cpp
+  moc_qg_dlgrotate.cpp
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\OCRdemo\GXBitmap.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../generated/librecad/moc/moc_qc_applicationwindow.cpp”)
+  
+  moc_qg_dlgrotate2.cpp
+  moc_qg_dlgscale.cpp
+  moc_qg_dlgspline.cpp
+  moc_qg_dlgtext.cpp
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\lib\engine\rs.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../generated/librecad/moc/moc_qg_dlgcircle.cpp”)
+  
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\lib\engine\rs.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../generated/librecad/moc/moc_qg_dlgattributes.cpp”)
+  
+  moc_qg_exitdialog.cpp
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\lib\engine\rs.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../generated/librecad/moc/moc_qg_dlgarc.cpp”)
+  
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\lib\engine\rs.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../generated/librecad/moc/moc_qg_dlgdimlinear.cpp”)
+  
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\lib\engine\rs.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../generated/librecad/moc/moc_qg_dlgdimension.cpp”)
+  
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\lib\engine\rs.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../generated/librecad/moc/moc_qg_dlgellipse.cpp”)
+  
+  moc_qg_fontbox.cpp
+  moc_qg_graphicview.cpp
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\lib\engine\rs.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../generated/librecad/moc/moc_qg_dlghatch.cpp”)
+  
+  moc_qg_imageoptions.cpp
+  moc_qg_insertoptions.cpp
+  moc_qg_layerbox.cpp
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\lib\engine\rs.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../generated/librecad/moc/moc_qg_dlgimage.cpp”)
+  
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\lib\engine\rs.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../generated/librecad/moc/moc_qg_dlgimageoptions.cpp”)
+  
+  moc_qg_layerdialog.cpp
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\lib\engine\rs.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../generated/librecad/moc/moc_qg_dlgline.cpp”)
+  
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\lib\engine\rs.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../generated/librecad/moc/moc_qg_dlginsert.cpp”)
+  
+D:\software\vcpkg-master\installed\x64-windows\include\iconv.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../generated/librecad/moc/moc_qc_applicationwindow.cpp”)
+  
+  moc_qg_layerwidget.cpp
+  moc_qg_libraryinsertoptions.cpp
+  moc_qg_librarywidget.cpp
+  moc_qg_lineangleoptions.cpp
+  moc_qg_linebisectoroptions.cpp
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\OCRdemo\SerialManager.h(9,10): warning C4067: 预处理器指令后有意外标记 - 应输入换行符
+  (编译源文件“../../generated/librecad/moc/moc_qc_applicationwindow.cpp”)
+  
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\OCRdemo\SerialManager.h(10,10): warning C4067: 预处理器指令后有意外标记 - 应输入换行符
+  (编译源文件“../../generated/librecad/moc/moc_qc_applicationwindow.cpp”)
+  
+  moc_qg_lineoptions.cpp
+  moc_qg_lineparalleloptions.cpp
+  moc_qg_lineparallelthroughoptions.cpp
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\lib\engine\rs.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../generated/librecad/moc/moc_qg_dlgpolyline.cpp”)
+  
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\lib\engine\rs.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../generated/librecad/moc/moc_qg_dlgmtext.cpp”)
+  
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\lib\engine\rs.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../generated/librecad/moc/moc_qg_dlgpoint.cpp”)
+  
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\lib\engine\rs.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../generated/librecad/moc/moc_qg_dlgoptionsdrawing.cpp”)
+  
+  moc_qg_linepolygon2options.cpp
+  moc_qg_linepolygonoptions.cpp
+  moc_qg_linerelangleoptions.cpp
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\lib\engine\rs.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../generated/librecad/moc/moc_qg_dlgspline.cpp”)
+  
+  moc_qg_linetypebox.cpp
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\lib\engine\rs.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../generated/librecad/moc/moc_qg_dlgtext.cpp”)
+  
+  moc_qg_modifyoffsetoptions.cpp
+  moc_qg_mousewidget.cpp
+  moc_qg_moverotateoptions.cpp
+  moc_qg_mtextoptions.cpp
+  moc_qg_patternbox.cpp
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\lib\engine\rs.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../generated/librecad/moc/moc_qg_graphicview.cpp”)
+  
+  moc_qg_pentoolbar.cpp
+  moc_qg_polylineequidistantoptions.cpp
+  moc_qg_polylineoptions.cpp
+  moc_qg_printpreviewoptions.cpp
+  moc_qg_recentfiles.cpp
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\lib\engine\rs.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../generated/librecad/moc/moc_qg_layerwidget.cpp”)
+  
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\lib\engine\rs.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../generated/librecad/moc/moc_qg_layerdialog.cpp”)
+  
+  moc_qg_roundoptions.cpp
+  moc_qg_scrollbar.cpp
+  moc_qg_selectionwidget.cpp
+  moc_qg_snapdistoptions.cpp
+  moc_qg_snapmiddleoptions.cpp
+  moc_qg_snaptoolbar.cpp
+  moc_qg_splineoptions.cpp
+  moc_qg_textoptions.cpp
+  moc_qg_trimamountoptions.cpp
+  moc_qg_widgetpen.cpp
+  moc_qg_widthbox.cpp
+  moc_rs_actionblocksadd.cpp
+  moc_rs_actionblocksattributes.cpp
+  moc_rs_actionblockscreate.cpp
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\lib\engine\rs.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../generated/librecad/moc/moc_qg_linetypebox.cpp”)
+  
+  moc_rs_actionblocksedit.cpp
+  moc_rs_actionblocksexplode.cpp
+  moc_rs_actionblocksfreezeall.cpp
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\lib\engine\rs.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../generated/librecad/moc/moc_qg_pentoolbar.cpp”)
+  
+  moc_rs_actionblocksinsert.cpp
+  moc_rs_actionblocksremove.cpp
+  moc_rs_actionblockssave.cpp
+  moc_rs_actionblockstoggleview.cpp
+  moc_rs_actiondefault.cpp
+  moc_rs_actiondimaligned.cpp
+  moc_rs_actiondimangular.cpp
+  moc_rs_actiondimdiametric.cpp
+  moc_rs_actiondimension.cpp
+  moc_rs_actiondimleader.cpp
+  moc_rs_actiondimlinear.cpp
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\lib\engine\rs.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../generated/librecad/moc/moc_rs_actionblocksadd.cpp”)
+  
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\lib\engine\rs.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../generated/librecad/moc/moc_rs_actionblocksattributes.cpp”)
+  
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\lib\engine\rs.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../generated/librecad/moc/moc_qg_snaptoolbar.cpp”)
+  
+  moc_rs_actiondimradial.cpp
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\lib\engine\rs.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../generated/librecad/moc/moc_rs_actionblockscreate.cpp”)
+  
+  moc_rs_actiondrawarc.cpp
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\lib\engine\rs.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../generated/librecad/moc/moc_rs_actionblocksedit.cpp”)
+  
+  moc_rs_actiondrawarc3p.cpp
+  moc_rs_actiondrawarctangential.cpp
+  moc_rs_actiondrawcircle.cpp
+  moc_rs_actiondrawcircle2p.cpp
+  moc_rs_actiondrawcircle3p.cpp
+  moc_rs_actiondrawcirclecr.cpp
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\lib\engine\rs.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../generated/librecad/moc/moc_rs_actionblocksexplode.cpp”)
+  
+  moc_rs_actiondrawcircleinscribe.cpp
+  moc_rs_actiondrawcircletan1_2p.cpp
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\lib\engine\rs.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../generated/librecad/moc/moc_qg_widgetpen.cpp”)
+  
+  moc_rs_actiondrawcircletan2.cpp
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\lib\engine\rs.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../generated/librecad/moc/moc_rs_actionblocksfreezeall.cpp”)
+  
+  moc_rs_actiondrawcircletan2_1p.cpp
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\lib\engine\rs.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../generated/librecad/moc/moc_qg_widthbox.cpp”)
+  
+  moc_rs_actiondrawcircletan3.cpp
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\lib\engine\rs.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../generated/librecad/moc/moc_rs_actionblocksremove.cpp”)
+  
+  moc_rs_actiondrawellipse4points.cpp
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\lib\engine\rs.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../generated/librecad/moc/moc_rs_actionblocksinsert.cpp”)
+  
+  moc_rs_actiondrawellipseaxis.cpp
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\lib\engine\rs.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../generated/librecad/moc/moc_rs_actionblockssave.cpp”)
+  
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\lib\engine\rs.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../generated/librecad/moc/moc_rs_actiondefault.cpp”)
+  
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\lib\engine\rs.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../generated/librecad/moc/moc_rs_actionblockstoggleview.cpp”)
+  
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\lib\engine\rs.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../generated/librecad/moc/moc_rs_actiondimangular.cpp”)
+  
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\lib\engine\rs.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../generated/librecad/moc/moc_rs_actiondimdiametric.cpp”)
+  
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\lib\engine\rs.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../generated/librecad/moc/moc_rs_actiondimaligned.cpp”)
+  
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\lib\engine\rs.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../generated/librecad/moc/moc_rs_actiondimension.cpp”)
+  
+  moc_rs_actiondrawellipsecenter3points.cpp
+  moc_rs_actiondrawellipsefocipoint.cpp
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\lib\engine\rs.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../generated/librecad/moc/moc_rs_actiondimleader.cpp”)
+  
+  moc_rs_actiondrawellipseinscribe.cpp
+  moc_rs_actiondrawhatch.cpp
+  moc_rs_actiondrawimage.cpp
+  moc_rs_actiondrawline.cpp
+  moc_rs_actiondrawlineangle.cpp
+  moc_rs_actiondrawlinebisector.cpp
+  moc_rs_actiondrawlinefree.cpp
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\lib\engine\rs.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../generated/librecad/moc/moc_rs_actiondimlinear.cpp”)
+  
+  moc_rs_actiondrawlinehorvert.cpp
+  moc_rs_actiondrawlineorthtan.cpp
+  moc_rs_actiondrawlineparallel.cpp
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\lib\engine\rs.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../generated/librecad/moc/moc_rs_actiondimradial.cpp”)
+  
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\lib\engine\rs.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../generated/librecad/moc/moc_rs_actiondrawarctangential.cpp”)
+  
+  moc_rs_actiondrawlineparallelthrough.cpp
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\lib\engine\rs.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../generated/librecad/moc/moc_rs_actiondrawarc3p.cpp”)
+  
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\lib\engine\rs.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../generated/librecad/moc/moc_rs_actiondrawcircle.cpp”)
+  
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\lib\engine\rs.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../generated/librecad/moc/moc_rs_actiondrawarc.cpp”)
+  
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\lib\engine\rs.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../generated/librecad/moc/moc_rs_actiondrawcircletan1_2p.cpp”)
+  
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\lib\engine\rs.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../generated/librecad/moc/moc_rs_actiondrawcircle2p.cpp”)
+  
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\lib\engine\rs.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../generated/librecad/moc/moc_rs_actiondrawcircle3p.cpp”)
+  
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\lib\engine\rs.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../generated/librecad/moc/moc_rs_actiondrawcircleinscribe.cpp”)
+  
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\lib\engine\rs.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../generated/librecad/moc/moc_rs_actiondrawcircletan2_1p.cpp”)
+  
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\lib\engine\rs.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../generated/librecad/moc/moc_rs_actiondrawcircletan2.cpp”)
+  
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\lib\engine\rs.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../generated/librecad/moc/moc_rs_actiondrawcirclecr.cpp”)
+  
+  moc_rs_actiondrawlinepolygon.cpp
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\lib\engine\rs.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../generated/librecad/moc/moc_rs_actiondrawcircletan3.cpp”)
+  
+  moc_rs_actiondrawlinepolygon2.cpp
+  moc_rs_actiondrawlinerectangle.cpp
+  moc_rs_actiondrawlinerelangle.cpp
+  moc_rs_actiondrawlinetangent1.cpp
+  moc_rs_actiondrawlinetangent2.cpp
+  moc_rs_actiondrawmtext.cpp
+  moc_rs_actiondrawpoint.cpp
+  moc_rs_actiondrawpolyline.cpp
+  moc_rs_actiondrawtext.cpp
+  moc_rs_actiondrawspline.cpp
+  moc_rs_actioneditcopy.cpp
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\lib\engine\rs.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../generated/librecad/moc/moc_rs_actiondrawellipse4points.cpp”)
+  
+  moc_rs_actioneditpaste.cpp
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\lib\engine\rs.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../generated/librecad/moc/moc_rs_actiondrawellipseaxis.cpp”)
+  
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\lib\engine\rs.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../generated/librecad/moc/moc_rs_actiondrawellipsecenter3points.cpp”)
+  
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\lib\engine\rs.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../generated/librecad/moc/moc_rs_actiondrawline.cpp”)
+  
+  moc_rs_actioneditundo.cpp
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\lib\engine\rs.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../generated/librecad/moc/moc_rs_actiondrawhatch.cpp”)
+  
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\lib\engine\rs.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../generated/librecad/moc/moc_rs_actiondrawellipsefocipoint.cpp”)
+  
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\lib\engine\rs.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../generated/librecad/moc/moc_rs_actiondrawimage.cpp”)
+  
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\lib\engine\rs.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../generated/librecad/moc/moc_rs_actiondrawellipseinscribe.cpp”)
+  
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\lib\engine\rs.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../generated/librecad/moc/moc_rs_actiondrawlineangle.cpp”)
+  
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\lib\engine\rs.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../generated/librecad/moc/moc_rs_actiondrawlinehorvert.cpp”)
+  
+  moc_rs_actionfilenew.cpp
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\lib\engine\rs.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../generated/librecad/moc/moc_rs_actiondrawlinefree.cpp”)
+  
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\lib\engine\rs.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../generated/librecad/moc/moc_rs_actiondrawlinebisector.cpp”)
+  
+  moc_rs_actionfilenewtemplate.cpp
+  moc_rs_actionfileopen.cpp
+  moc_rs_actionfilesave.cpp
+  moc_rs_actionfilesaveas.cpp
+  moc_rs_actioninfoangle.cpp
+  moc_rs_actioninfoarea.cpp
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\lib\engine\rs.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../generated/librecad/moc/moc_rs_actiondrawlineorthtan.cpp”)
+  
+  moc_rs_actioninfodist.cpp
+  moc_rs_actioninfodist2.cpp
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\lib\engine\rs.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../generated/librecad/moc/moc_rs_actiondrawlineparallelthrough.cpp”)
+  
+  moc_rs_actioninfoinside.cpp
+  moc_rs_actioninfototallength.cpp
+  moc_rs_actioninterface.cpp
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\lib\engine\rs.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../generated/librecad/moc/moc_rs_actiondrawlineparallel.cpp”)
+  
+  moc_rs_actionlayersadd.cpp
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\lib\engine\rs.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../generated/librecad/moc/moc_rs_actiondrawlinerelangle.cpp”)
+  
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\lib\engine\rs.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../generated/librecad/moc/moc_rs_actiondrawlinerectangle.cpp”)
+  
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\lib\engine\rs.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../generated/librecad/moc/moc_rs_actiondrawlinetangent2.cpp”)
+  
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\lib\engine\rs.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../generated/librecad/moc/moc_rs_actiondrawlinepolygon.cpp”)
+  
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\lib\engine\rs.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../generated/librecad/moc/moc_rs_actiondrawlinetangent1.cpp”)
+  
+  moc_rs_actionlayersedit.cpp
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\lib\engine\rs.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../generated/librecad/moc/moc_rs_actiondrawlinepolygon2.cpp”)
+  
+  moc_rs_actionlayersfreezeall.cpp
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\lib\engine\rs.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../generated/librecad/moc/moc_rs_actiondrawpoint.cpp”)
+  
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\lib\engine\rs.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../generated/librecad/moc/moc_rs_actiondrawtext.cpp”)
+  
+  moc_rs_actionlayerslockall.cpp
+  moc_rs_actionlayersremove.cpp
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\lib\engine\rs.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../generated/librecad/moc/moc_rs_actiondrawpolyline.cpp”)
+  
+  moc_rs_actionlayerstogglelock.cpp
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\lib\engine\rs.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../generated/librecad/moc/moc_rs_actioneditcopy.cpp”)
+  
+  moc_rs_actionlayerstoggleprint.cpp
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\lib\engine\rs.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../generated/librecad/moc/moc_rs_actiondrawspline.cpp”)
+  
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\lib\engine\rs.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../generated/librecad/moc/moc_rs_actioneditpaste.cpp”)
+  
+  moc_rs_actionlayerstoggleview.cpp
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\lib\engine\rs.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../generated/librecad/moc/moc_rs_actiondrawmtext.cpp”)
+  
+  moc_rs_actionlibraryinsert.cpp
+  moc_rs_actionlockrelativezero.cpp
+  moc_rs_actionmodifyattributes.cpp
+  moc_rs_actionmodifybevel.cpp
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\lib\engine\rs.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../generated/librecad/moc/moc_rs_actioneditundo.cpp”)
+  
+  moc_rs_actionmodifycut.cpp
+  moc_rs_actionmodifydelete.cpp
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\lib\engine\rs.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../generated/librecad/moc/moc_rs_actionfilenew.cpp”)
+  
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\lib\engine\rs.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../generated/librecad/moc/moc_rs_actionfileopen.cpp”)
+  
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\lib\engine\rs.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../generated/librecad/moc/moc_rs_actionfilesave.cpp”)
+  
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\lib\engine\rs.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../generated/librecad/moc/moc_rs_actioninfodist.cpp”)
+  
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\lib\engine\rs.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../generated/librecad/moc/moc_rs_actionfilenewtemplate.cpp”)
+  
+  moc_rs_actionmodifydeletefree.cpp
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\lib\engine\rs.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../generated/librecad/moc/moc_rs_actioninfodist2.cpp”)
+  
+  moc_rs_actionmodifydeletequick.cpp
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\lib\engine\rs.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../generated/librecad/moc/moc_rs_actioninfoinside.cpp”)
+  
+  moc_rs_actionmodifyentity.cpp
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\lib\engine\rs.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../generated/librecad/moc/moc_rs_actioninfoangle.cpp”)
+  
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\lib\engine\rs.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../generated/librecad/moc/moc_rs_actionfilesaveas.cpp”)
+  
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\lib\engine\rs.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../generated/librecad/moc/moc_rs_actioninfoarea.cpp”)
+  
+  moc_rs_actionmodifyexplodetext.cpp
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\lib\engine\rs.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../generated/librecad/moc/moc_rs_actioninterface.cpp”)
+  
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\lib\engine\rs.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../generated/librecad/moc/moc_rs_actioninfototallength.cpp”)
+  
+  moc_rs_actionmodifymirror.cpp
+  moc_rs_actionmodifymove.cpp
+  moc_rs_actionmodifymoverotate.cpp
+  moc_rs_actionmodifyoffset.cpp
+  moc_rs_actionmodifyrevertdirection.cpp
+  moc_rs_actionmodifyrotate.cpp
+  moc_rs_actionmodifyrotate2.cpp
+  moc_rs_actionmodifyround.cpp
+  moc_rs_actionmodifyscale.cpp
+  moc_rs_actionmodifystretch.cpp
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\lib\engine\rs.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../generated/librecad/moc/moc_rs_actionlayersadd.cpp”)
+  
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\lib\engine\rs.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../generated/librecad/moc/moc_rs_actionlayersedit.cpp”)
+  
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\lib\engine\rs.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../generated/librecad/moc/moc_rs_actionlayersfreezeall.cpp”)
+  
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\lib\engine\rs.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../generated/librecad/moc/moc_rs_actionlayerstogglelock.cpp”)
+  
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\lib\engine\rs.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../generated/librecad/moc/moc_rs_actionlayerslockall.cpp”)
+  
+  moc_rs_actionmodifytrim.cpp
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\lib\engine\rs.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../generated/librecad/moc/moc_rs_actionlayerstoggleview.cpp”)
+  
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\lib\engine\rs.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../generated/librecad/moc/moc_rs_actionlayersremove.cpp”)
+  
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\lib\engine\rs.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../generated/librecad/moc/moc_rs_actionlayerstoggleprint.cpp”)
+  
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\lib\engine\rs.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../generated/librecad/moc/moc_rs_actionlibraryinsert.cpp”)
+  
+  moc_rs_actionmodifytrimamount.cpp
+  moc_rs_actionoptionsdrawing.cpp
+  moc_rs_actionorder.cpp
+  moc_rs_actionpolylineadd.cpp
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\lib\engine\rs.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../generated/librecad/moc/moc_rs_actionmodifydelete.cpp”)
+  
+  moc_rs_actionpolylineappend.cpp
+  moc_rs_actionpolylinedel.cpp
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\lib\engine\rs.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../generated/librecad/moc/moc_rs_actionmodifycut.cpp”)
+  
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\lib\engine\rs.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../generated/librecad/moc/moc_rs_actionlockrelativezero.cpp”)
+  
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\lib\engine\rs.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../generated/librecad/moc/moc_rs_actionmodifybevel.cpp”)
+  
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\lib\engine\rs.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../generated/librecad/moc/moc_rs_actionmodifyattributes.cpp”)
+  
+  moc_rs_actionpolylinedelbetween.cpp
+  moc_rs_actionpolylineequidistant.cpp
+  moc_rs_actionpolylinesegment.cpp
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\lib\engine\rs.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../generated/librecad/moc/moc_rs_actionmodifydeletefree.cpp”)
+  
+  moc_rs_actionpolylinetrim.cpp
+  moc_rs_actionprintpreview.cpp
+  moc_rs_actionselect.cpp
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\lib\engine\rs.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../generated/librecad/moc/moc_rs_actionmodifydeletequick.cpp”)
+  
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\lib\engine\rs.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../generated/librecad/moc/moc_rs_actionmodifyentity.cpp”)
+  
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\lib\engine\rs.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../generated/librecad/moc/moc_rs_actionmodifymove.cpp”)
+  
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\lib\engine\rs.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../generated/librecad/moc/moc_rs_actionmodifyexplodetext.cpp”)
+  
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\lib\engine\rs.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../generated/librecad/moc/moc_rs_actionmodifyoffset.cpp”)
+  
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\lib\engine\rs.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../generated/librecad/moc/moc_rs_actionmodifyrevertdirection.cpp”)
+  
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\lib\engine\rs.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../generated/librecad/moc/moc_rs_actionmodifymirror.cpp”)
+  
+  moc_rs_actionselectall.cpp
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\lib\engine\rs.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../generated/librecad/moc/moc_rs_actionmodifystretch.cpp”)
+  
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\lib\engine\rs.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../generated/librecad/moc/moc_rs_actionmodifyrotate2.cpp”)
+  
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\lib\engine\rs.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../generated/librecad/moc/moc_rs_actionmodifymoverotate.cpp”)
+  
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\lib\engine\rs.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../generated/librecad/moc/moc_rs_actionmodifyrotate.cpp”)
+  
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\lib\engine\rs.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../generated/librecad/moc/moc_rs_actionmodifyround.cpp”)
+  
+  moc_rs_actionselectbase.cpp
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\lib\engine\rs.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../generated/librecad/moc/moc_rs_actionmodifyscale.cpp”)
+  
+  moc_rs_actionselectcontour.cpp
+  moc_rs_actionselectintersected.cpp
+  moc_rs_actionselectinvert.cpp
+  moc_rs_actionselectlayer.cpp
+  moc_rs_actionselectsingle.cpp
+  moc_rs_actionselectwindow.cpp
+  moc_rs_actionsetrelativezero.cpp
+  moc_rs_actionsetsnapmode.cpp
+  moc_rs_actionsetsnaprestriction.cpp
+  moc_rs_actionsnapintersectionmanual.cpp
+  moc_rs_actiontoolregeneratedimensions.cpp
+  moc_rs_actionzoomauto.cpp
+  moc_rs_actionzoomautoy.cpp
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\lib\engine\rs.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../generated/librecad/moc/moc_rs_actionmodifytrim.cpp”)
+  
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\lib\engine\rs.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../generated/librecad/moc/moc_rs_actionmodifytrimamount.cpp”)
+  
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\lib\engine\rs.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../generated/librecad/moc/moc_rs_actionoptionsdrawing.cpp”)
+  
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\lib\engine\rs.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../generated/librecad/moc/moc_rs_actionorder.cpp”)
+  
+  moc_rs_actionzoomin.cpp
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\lib\engine\rs.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../generated/librecad/moc/moc_rs_actionpolylinedel.cpp”)
+  
+  moc_rs_actionzoompan.cpp
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\lib\engine\rs.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../generated/librecad/moc/moc_rs_actionpolylineadd.cpp”)
+  
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\lib\engine\rs.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../generated/librecad/moc/moc_rs_actionpolylineappend.cpp”)
+  
+  moc_rs_actionzoomprevious.cpp
+  moc_rs_actionzoomredraw.cpp
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\lib\engine\rs.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../generated/librecad/moc/moc_rs_actionpolylinesegment.cpp”)
+  
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\lib\engine\rs.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../generated/librecad/moc/moc_rs_actionpolylinedelbetween.cpp”)
+  
+  moc_rs_actionzoomscroll.cpp
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\lib\engine\rs.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../generated/librecad/moc/moc_rs_actionpolylineequidistant.cpp”)
+  
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\lib\engine\rs.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../generated/librecad/moc/moc_rs_actionprintpreview.cpp”)
+  
+  moc_rs_actionzoomwindow.cpp
+  moc_rs_eventhandler.cpp
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\lib\engine\rs.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../generated/librecad/moc/moc_rs_actionselect.cpp”)
+  
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\lib\engine\rs.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../generated/librecad/moc/moc_rs_actionpolylinetrim.cpp”)
+  
+  moc_rs_graphicview.cpp
+  moc_textfileviewer.cpp
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\lib\engine\rs.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../generated/librecad/moc/moc_rs_actionselectall.cpp”)
+  
+  moc_widgetcreator.cpp
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\lib\engine\rs.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../generated/librecad/moc/moc_rs_actionselectinvert.cpp”)
+  
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\lib\engine\rs.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../generated/librecad/moc/moc_rs_actionselectcontour.cpp”)
+  
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\lib\engine\rs.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../generated/librecad/moc/moc_rs_actionselectbase.cpp”)
+  
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\lib\engine\rs.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../generated/librecad/moc/moc_rs_actionselectwindow.cpp”)
+  
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\lib\engine\rs.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../generated/librecad/moc/moc_rs_actionselectlayer.cpp”)
+  
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\lib\engine\rs.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../generated/librecad/moc/moc_rs_actionselectintersected.cpp”)
+  
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\lib\engine\rs.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../generated/librecad/moc/moc_rs_actionselectsingle.cpp”)
+  
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\lib\engine\rs.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../generated/librecad/moc/moc_rs_actionsetsnapmode.cpp”)
+  
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\lib\engine\rs.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../generated/librecad/moc/moc_rs_actionsetsnaprestriction.cpp”)
+  
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\lib\engine\rs.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../generated/librecad/moc/moc_rs_actiontoolregeneratedimensions.cpp”)
+  
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\lib\engine\rs.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../generated/librecad/moc/moc_rs_actionsetrelativezero.cpp”)
+  
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\lib\engine\rs.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../generated/librecad/moc/moc_rs_actionzoomauto.cpp”)
+  
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\lib\engine\rs.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../generated/librecad/moc/moc_rs_actionsnapintersectionmanual.cpp”)
+  
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\lib\engine\rs.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../generated/librecad/moc/moc_rs_graphicview.cpp”)
+  
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\lib\engine\rs.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../generated/librecad/moc/moc_rs_actionzoomautoy.cpp”)
+  
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\lib\engine\rs.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../generated/librecad/moc/moc_rs_actionzoomin.cpp”)
+  
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\lib\engine\rs.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../generated/librecad/moc/moc_rs_actionzoompan.cpp”)
+  
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\lib\engine\rs.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../generated/librecad/moc/moc_rs_actionzoomprevious.cpp”)
+  
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\lib\engine\rs.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../generated/librecad/moc/moc_rs_actionzoomredraw.cpp”)
+  
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\lib\engine\rs.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../generated/librecad/moc/moc_rs_actionzoomscroll.cpp”)
+  
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\lib\engine\rs.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../generated/librecad/moc/moc_rs_eventhandler.cpp”)
+  
+D:\DM\LibreCAD-2.4(YitiJi)\librecad\src\lib\engine\rs.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“../../generated/librecad/moc/moc_rs_actionzoomwindow.cpp”)
+  
   LibreCAD.vcxproj -> D:\DM\LibreCAD-2.4(YitiJi)\windows\LibreCAD.exe
   'pwsh.exe' 不是内部或外部命令，也不是可运行的程序
   或批处理文件。

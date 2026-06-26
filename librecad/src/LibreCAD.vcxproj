@@ -238,6 +238,7 @@
     <ClCompile Include="OCRdemo\mylabel.cpp" />
     <ClCompile Include="OCRdemo\OcrFilterRules.cpp" />
     <ClCompile Include="OCRdemo\QRCodeDialog.cpp" />
+    <ClCompile Include="OCRdemo\rs_qrcode.cpp" />
     <ClCompile Include="OCRdemo\OCRruning.cpp" />
     <ClCompile Include="OCRdemo\PixelCorrector.cpp" />
     <ClCompile Include="OCRdemo\rollingbox.cpp" />
@@ -634,6 +635,7 @@
     <QtMoc Include="OCRdemo\Simulator.h" />
     <QtMoc Include="OCRdemo\SerialNumberDialog.h" />
     <ClInclude Include="OCRdemo\SingletonNomArray.h" />
+    <ClInclude Include="OCRdemo\rs_qrcode.h" />
     <QtMoc Include="OCRdemo\XJadmin.h" />
     <ClInclude Include="plugins\document_interface.h" />
     <QtMoc Include="actions\lc_actiondrawcircle2pr.h" />
