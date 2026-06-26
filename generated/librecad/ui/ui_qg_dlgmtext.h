@@ -66,12 +66,12 @@ public:
     QGridLayout *gridLayout1;
     QToolButton *bLoad;
     QToolButton *toolButton_3;
-    QToolButton *toolButton;
-    QToolButton *bSave;
     QToolButton *bClear;
+    QToolButton *bSave;
+    QToolButton *toolButton;
     QToolButton *toolButton_4;
-    QToolButton *toolButton_7;
     QToolButton *toolButton_6;
+    QToolButton *toolButton_7;
     QDialogButtonBox *buttonBox;
 
     void setupUi(QDialog *QG_DlgMText)
@@ -318,6 +318,26 @@ public:
 
         gridLayout1->addWidget(toolButton_3, 2, 4, 1, 1);
 
+        bClear = new QToolButton(buttonGroup7);
+        bClear->setObjectName(QString::fromUtf8("bClear"));
+        QIcon icon5;
+        icon5.addFile(QString::fromUtf8(":/PNG/Resources/PNG/clear .png"), QSize(), QIcon::Normal, QIcon::Off);
+        bClear->setIcon(icon5);
+        bClear->setIconSize(QSize(32, 32));
+        bClear->setToolButtonStyle(Qt::ToolButtonStyle::ToolButtonTextBesideIcon);
+
+        gridLayout1->addWidget(bClear, 1, 4, 1, 1);
+
+        bSave = new QToolButton(buttonGroup7);
+        bSave->setObjectName(QString::fromUtf8("bSave"));
+        QIcon icon6;
+        icon6.addFile(QString::fromUtf8(":/PNG/Resources/PNG/save.png"), QSize(), QIcon::Normal, QIcon::Off);
+        bSave->setIcon(icon6);
+        bSave->setIconSize(QSize(32, 32));
+        bSave->setToolButtonStyle(Qt::ToolButtonStyle::ToolButtonTextBesideIcon);
+
+        gridLayout1->addWidget(bSave, 1, 5, 1, 1);
+
         toolButton = new QToolButton(buttonGroup7);
         toolButton->setObjectName(QString::fromUtf8("toolButton"));
         toolButton->setMinimumSize(QSize(99, 46));
@@ -325,27 +345,7 @@ public:
         toolButton->setIconSize(QSize(32, 32));
         toolButton->setToolButtonStyle(Qt::ToolButtonStyle::ToolButtonTextBesideIcon);
 
-        gridLayout1->addWidget(toolButton, 1, 4, 1, 1);
-
-        bSave = new QToolButton(buttonGroup7);
-        bSave->setObjectName(QString::fromUtf8("bSave"));
-        QIcon icon5;
-        icon5.addFile(QString::fromUtf8(":/PNG/Resources/PNG/save.png"), QSize(), QIcon::Normal, QIcon::Off);
-        bSave->setIcon(icon5);
-        bSave->setIconSize(QSize(32, 32));
-        bSave->setToolButtonStyle(Qt::ToolButtonStyle::ToolButtonTextBesideIcon);
-
-        gridLayout1->addWidget(bSave, 3, 0, 1, 1);
-
-        bClear = new QToolButton(buttonGroup7);
-        bClear->setObjectName(QString::fromUtf8("bClear"));
-        QIcon icon6;
-        icon6.addFile(QString::fromUtf8(":/PNG/Resources/PNG/clear .png"), QSize(), QIcon::Normal, QIcon::Off);
-        bClear->setIcon(icon6);
-        bClear->setIconSize(QSize(32, 32));
-        bClear->setToolButtonStyle(Qt::ToolButtonStyle::ToolButtonTextBesideIcon);
-
-        gridLayout1->addWidget(bClear, 2, 0, 1, 1);
+        gridLayout1->addWidget(toolButton, 2, 0, 1, 1);
 
         toolButton_4 = new QToolButton(buttonGroup7);
         toolButton_4->setObjectName(QString::fromUtf8("toolButton_4"));
@@ -356,29 +356,29 @@ public:
         toolButton_4->setIconSize(QSize(32, 32));
         toolButton_4->setToolButtonStyle(Qt::ToolButtonStyle::ToolButtonTextBesideIcon);
 
-        gridLayout1->addWidget(toolButton_4, 3, 4, 1, 1);
-
-        toolButton_7 = new QToolButton(buttonGroup7);
-        toolButton_7->setObjectName(QString::fromUtf8("toolButton_7"));
-        toolButton_7->setMaximumSize(QSize(99, 16777215));
-        QIcon icon8;
-        icon8.addFile(QString::fromUtf8(":/PIC/Resources/PICs/PFGL.png"), QSize(), QIcon::Normal, QIcon::Off);
-        toolButton_7->setIcon(icon8);
-        toolButton_7->setIconSize(QSize(32, 32));
-        toolButton_7->setToolButtonStyle(Qt::ToolButtonStyle::ToolButtonTextBesideIcon);
-
-        gridLayout1->addWidget(toolButton_7, 1, 5, 1, 1);
+        gridLayout1->addWidget(toolButton_4, 2, 5, 1, 1);
 
         toolButton_6 = new QToolButton(buttonGroup7);
         toolButton_6->setObjectName(QString::fromUtf8("toolButton_6"));
         toolButton_6->setMinimumSize(QSize(99, 46));
-        QIcon icon9;
-        icon9.addFile(QString::fromUtf8(":/PIC/Resources/PICs/line break.png"), QSize(), QIcon::Normal, QIcon::Off);
-        toolButton_6->setIcon(icon9);
+        QIcon icon8;
+        icon8.addFile(QString::fromUtf8(":/PIC/Resources/PICs/line break.png"), QSize(), QIcon::Normal, QIcon::Off);
+        toolButton_6->setIcon(icon8);
         toolButton_6->setIconSize(QSize(32, 32));
         toolButton_6->setToolButtonStyle(Qt::ToolButtonStyle::ToolButtonTextBesideIcon);
 
-        gridLayout1->addWidget(toolButton_6, 2, 5, 1, 1);
+        gridLayout1->addWidget(toolButton_6, 3, 0, 1, 1);
+
+        toolButton_7 = new QToolButton(buttonGroup7);
+        toolButton_7->setObjectName(QString::fromUtf8("toolButton_7"));
+        toolButton_7->setMaximumSize(QSize(99, 16777215));
+        QIcon icon9;
+        icon9.addFile(QString::fromUtf8(":/PIC/Resources/PICs/PFGL.png"), QSize(), QIcon::Normal, QIcon::Off);
+        toolButton_7->setIcon(icon9);
+        toolButton_7->setIconSize(QSize(32, 32));
+        toolButton_7->setToolButtonStyle(Qt::ToolButtonStyle::ToolButtonTextBesideIcon);
+
+        gridLayout1->addWidget(toolButton_7, 3, 4, 1, 1);
 
 
         bottomRow->addWidget(buttonGroup7);
@@ -443,12 +443,12 @@ public:
         buttonGroup7->setTitle(QCoreApplication::translate("QG_DlgMText", "\345\277\253\346\215\267\350\276\223\345\205\245", nullptr));
         bLoad->setText(QCoreApplication::translate("QG_DlgMText", "\346\211\223\345\274\200\346\250\241\346\235\277", nullptr));
         toolButton_3->setText(QCoreApplication::translate("QG_DlgMText", "\344\277\235\350\264\250\346\234\237\350\207\263", nullptr));
-        toolButton->setText(QCoreApplication::translate("QG_DlgMText", "\347\224\237\344\272\247\346\227\245\346\234\237", nullptr));
-        bSave->setText(QCoreApplication::translate("QG_DlgMText", "\344\277\235\345\255\230\346\250\241\346\235\277", nullptr));
         bClear->setText(QCoreApplication::translate("QG_DlgMText", "\346\270\205\347\251\272\346\226\207\346\234\254", nullptr));
+        bSave->setText(QCoreApplication::translate("QG_DlgMText", "\344\277\235\345\255\230\346\250\241\346\235\277", nullptr));
+        toolButton->setText(QCoreApplication::translate("QG_DlgMText", "\347\224\237\344\272\247\346\227\245\346\234\237", nullptr));
         toolButton_4->setText(QCoreApplication::translate("QG_DlgMText", "\351\200\211\346\213\251\346\227\266\351\227\264", nullptr));
-        toolButton_7->setText(QCoreApplication::translate("QG_DlgMText", "\345\272\217\345\210\227\345\217\267", nullptr));
         toolButton_6->setText(QCoreApplication::translate("QG_DlgMText", "\346\215\242\350\241\214\347\254\246", nullptr));
+        toolButton_7->setText(QCoreApplication::translate("QG_DlgMText", "\345\272\217\345\210\227\345\217\267", nullptr));
     } // retranslateUi
 
 };

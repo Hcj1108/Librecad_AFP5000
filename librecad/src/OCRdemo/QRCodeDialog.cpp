@@ -4,6 +4,9 @@
 #include <QPainter>
 #include <QDateTime>
 #include <QDebug>
+#include <QSettings>
+#include <QDialogButtonBox>
+#include <QPushButton>
 
 #include "rs_document.h"
 #include "rs_graphicview.h"
@@ -24,10 +27,25 @@ QRCodeDialog::QRCodeDialog(QWidget* parent)
     ui->setupUi(this);
 
     connect(ui->timeModeCk, &QCheckBox::toggled, this, &QRCodeDialog::onTimeModeToggled);
-    connect(ui->okBtn, &QPushButton::clicked, this, &QRCodeDialog::onAccept);
-    connect(ui->cancelBtn, &QPushButton::clicked, this, &QDialog::reject);
-
-    onTimeModeToggled(false);
+    connect(ui->buttonBox, &QDialogButtonBox::accepted, this, &QRCodeDialog::onAccept);
+    connect(ui->buttonBox, &QDialogButtonBox::rejected, this, &QDialog::reject);
+    ui->buttonBox->button(QDialogButtonBox::Ok)->setText("确认");
+    ui->buttonBox->button(QDialogButtonBox::Cancel)->setText("取消");
+    // 从注册表恢复上次关闭时的参数
+    QSettings settings;
+    QRCodeParams p;
+    p.text = settings.value("/QRCode/Text", p.text).toString();
+    p.posX = settings.value("/QRCode/PosX", p.posX).toDouble();
+    p.posY = settings.value("/QRCode/PosY", p.posY).toDouble();
+    p.moduleSize = settings.value("/QRCode/ModuleSize", p.moduleSize).toDouble();
+    p.margin = settings.value("/QRCode/Margin", p.margin).toInt();
+    p.rotateAngle = settings.value("/QRCode/RotateAngle", p.rotateAngle).toDouble();
+    p.eccLevel = settings.value("/QRCode/EccLevel", p.eccLevel).toInt();
+    p.shapeIndex = settings.value("/QRCode/ShapeIndex", p.shapeIndex).toInt();
+    p.version = settings.value("/QRCode/Version", p.version).toInt();
+    p.timeMode = settings.value("/QRCode/TimeMode", p.timeMode).toBool();
+    p.timeFormat = settings.value("/QRCode/TimeFormat", p.timeFormat).toString();
+    setParams(p);
 }
 
 QRCodeDialog::~QRCodeDialog()
@@ -46,6 +64,7 @@ void QRCodeDialog::setParams(const QRCodeParams& p)
     ui->rotateSpb->setValue(p.rotateAngle);
     ui->eccCbx->setCurrentIndex(p.eccLevel);
     ui->shapeCbx->setCurrentIndex(p.shapeIndex);
+    ui->versionCbx->setCurrentIndex(p.version);
     ui->timeModeCk->setChecked(p.timeMode);
     ui->timeFormatCbx->setCurrentText(p.timeFormat);
 }
@@ -61,6 +80,7 @@ QRCodeParams QRCodeDialog::getParams() const
     p.rotateAngle = ui->rotateSpb->value();
     p.eccLevel = ui->eccCbx->currentIndex();
     p.shapeIndex = ui->shapeCbx->currentIndex();
+    p.version = ui->versionCbx->currentIndex();
     p.timeMode = ui->timeModeCk->isChecked();
     p.timeFormat = ui->timeFormatCbx->currentText();
     return p;
@@ -87,6 +107,21 @@ void QRCodeDialog::onTimeModeToggled(bool checked)
 void QRCodeDialog::onAccept()
 {
     m_params = getParams();
+
+    // 将参数保存到注册表
+    QSettings settings;
+    settings.setValue("/QRCode/Text", m_params.text);
+    settings.setValue("/QRCode/PosX", m_params.posX);
+    settings.setValue("/QRCode/PosY", m_params.posY);
+    settings.setValue("/QRCode/ModuleSize", m_params.moduleSize);
+    settings.setValue("/QRCode/Margin", m_params.margin);
+    settings.setValue("/QRCode/RotateAngle", m_params.rotateAngle);
+    settings.setValue("/QRCode/EccLevel", m_params.eccLevel);
+    settings.setValue("/QRCode/ShapeIndex", m_params.shapeIndex);
+    settings.setValue("/QRCode/Version", m_params.version);
+    settings.setValue("/QRCode/TimeMode", m_params.timeMode);
+    settings.setValue("/QRCode/TimeFormat", m_params.timeFormat);
+
     accept();
 }
 

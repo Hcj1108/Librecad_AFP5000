@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
  <class>QRCodeDialogClass</class>
  <widget class="QDialog" name="QRCodeDialogClass">
@@ -370,7 +370,6 @@ QComboBox::drop-down{width: 24px;}</string>
           <string>矩形</string>
          </property>
         </item>
-
         <item>
          <property name="text">
           <string>点状</string>
@@ -436,74 +435,34 @@ QComboBox::drop-down{width: 24px;}</string>
     </widget>
    </item>
    <item>
-    <layout class="QHBoxLayout" name="buttonRow">
-     <property name="spacing">
-      <number>10</number>
+    <widget class="QDialogButtonBox" name="buttonBox">
+     <property name="minimumSize">
+      <size>
+       <width>0</width>
+       <height>40</height>
+      </size>
      </property>
-     <item>
-      <spacer name="btnSpacer">
-       <property name="orientation">
-        <enum>Qt::Orientation::Horizontal</enum>
-       </property>
-       <property name="sizeHint" stdset="0">
-        <size>
-         <width>40</width>
-         <height>20</height>
-        </size>
-       </property>
-      </spacer>
-     </item>
-     <item>
-      <widget class="QPushButton" name="okBtn">
-       <property name="minimumSize">
-        <size>
-         <width>80</width>
-         <height>40</height>
-        </size>
-       </property>
-       <property name="font">
-        <font>
-         <family>Microsoft YaHei</family>
-         <pointsize>12</pointsize>
-         <bold>true</bold>
-        </font>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">QPushButton{background: #27ae60; color: white; border-radius: 6px; padding: 8px 24px;}
-QPushButton:hover{background: #219a52;}
-QPushButton:pressed{background: #1e8449;}</string>
-       </property>
-       <property name="text">
-        <string>确定</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QPushButton" name="cancelBtn">
-       <property name="minimumSize">
-        <size>
-         <width>80</width>
-         <height>40</height>
-        </size>
-       </property>
-       <property name="font">
-        <font>
-         <family>Microsoft YaHei</family>
-         <pointsize>12</pointsize>
-         <bold>true</bold>
-        </font>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">QPushButton{background: #95a5a6; color: white; border-radius: 6px; padding: 8px 24px;}
-QPushButton:hover{background: #7f8c8d;}
-QPushButton:pressed{background: #717d7e;}</string>
-       </property>
-       <property name="text">
-        <string>取消</string>
-       </property>
-      </widget>
-     </item>
-    </layout>
+     <property name="font">
+      <font>
+       <family>Microsoft YaHei</family>
+       <pointsize>12</pointsize>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton{font: bold 12px &quot;Microsoft YaHei&quot;; padding: 1px 20px; border-radius: 6px; min-width: 50px;}
+QPushButton[text=&quot;OK&quot;], QPushButton[text=&quot;确定&quot;]{background: #3498db; color: white;}
+QPushButton[text=&quot;OK&quot;]:hover, QPushButton[text=&quot;确定&quot;]:hover{background: #2980b9;}
+QPushButton[text=&quot;Cancel&quot;], QPushButton[text=&quot;取消&quot;]{background: #95a5a6; color: white;}
+QPushButton[text=&quot;Cancel&quot;]:hover, QPushButton[text=&quot;取消&quot;]:hover{background: #7f8c8d;}</string>
+     </property>
+     <property name="standardButtons">
+      <set>QDialogButtonBox::StandardButton::Cancel|QDialogButtonBox::StandardButton::Ok</set>
+     </property>
+     <property name="centerButtons">
+      <bool>false</bool>
+     </property>
+    </widget>
    </item>
   </layout>
  </widget>

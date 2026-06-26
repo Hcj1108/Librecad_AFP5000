@@ -12,7 +12,7 @@ class QRCodeDialogClass;
 }
 
 struct QRCodeParams {
-    QString text = "LibreCAD";
+    QString text = "";
     double posX = 33000.0;
     double posY = 33000.0;
     double moduleSize = 200.0;
