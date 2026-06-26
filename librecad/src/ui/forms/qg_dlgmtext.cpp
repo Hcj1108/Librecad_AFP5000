@@ -232,7 +232,7 @@ void QG_DlgMText::setText(RS_MText& t, bool isNew) {
     if (m_mfgDate.isValid()) {
         label_9->setText(QString::fromLocal8Bit("%1").arg(m_mfgDate.toString("yyyy MM dd")));
     } else {
-        label_9->setText(QString::fromLocal8Bit("未设置"));
+        label_9->setText(QDate::currentDate().toString("yyyy MM dd"));
     }
     teText->setFocus();
     teText->moveCursor(QTextCursor::End);
@@ -583,9 +583,11 @@ void QG_DlgMText::setEXPDate() {
 QString QG_DlgMText::replaceDatePlaceholders(const QString& input) {
     QString result = input;
 
-    // 替换 {MFG} 为实际生产日期
-    if (result.contains("{MFG}") && m_mfgDate.isValid()) {
-        result.replace("{MFG}", m_mfgDate.toString("yyyy MM dd"));
+    // 替换 {MFG} 为实际生产日期（无基准日期则用系统当前日期）
+    if (result.contains("{MFG}")) {
+        QString dateStr = m_mfgDate.isValid() ? m_mfgDate.toString("yyyy MM dd")
+                                              : QDate::currentDate().toString("yyyy MM dd");
+        result.replace("{MFG}", dateStr);
     }
 
     // 替换 {EXP...} 为实际保质期（支持多个）

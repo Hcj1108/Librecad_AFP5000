@@ -30,6 +30,7 @@
 #include <QLabel>
 #include <QMenu>
 #include <QDebug>
+#include <QTime>
 #include <QNativeGestureEvent>
 
 #include "rs_actionzoomin.h"
@@ -50,6 +51,8 @@
 #include "rs_modification.h"
 #include "rs_debug.h"
 #include "rs_graphic.h"
+#include "rs_mtext.h"
+#include "rs_math.h"
 
 #ifdef Q_OS_WIN32
 #define CURSOR_SIZE 16
@@ -75,22 +78,22 @@ QG_GraphicView::QG_GraphicView(QWidget* parent, Qt::WindowFlags f, RS_Document* 
 
     if (doc)
     {
-        setContainer(doc);// ���ù����ĵ�
+        setContainer(doc);// 设置关联文档
         doc->setGraphicView(this);
         setDefaultAction(new RS_ActionDefault(*doc, *this));
 
 
     }
-    // ��ʼ����ͼ��Χ����������
-	setFactorX(0.0085);// ����X������0.01���ô򿪾���65000*65000
+    // 初始化视图范围和缩放因子
+	setFactorX(0.0085);// 设置X轴缩放0.01正好打开就是65000*65000
     setFactorY(0.0085);
     setBorders(100, 100, 100, 100);
     
-    setMouseTracking(true);// ���������٣�ʵʱ����ƶ���
-    setFocusPolicy(Qt::NoFocus); // ��ͼ�����ռ��̽���
+    setMouseTracking(true);// 启用鼠标跟踪（实时检测移动）
+    setFocusPolicy(Qt::NoFocus); // 视图不接收键盘焦点
 
     // SourceForge issue 45 (Left-mouse drag shrinks window)
-    setAttribute(Qt::WA_NoMousePropagation);// ��ֹ����¼�ð��
+    setAttribute(Qt::WA_NoMousePropagation);// 阻止鼠标事件冒泡
 
     view_rect = LC_Rect(toGraph(0, 0), toGraph(getWidth(), getHeight()));
 }
@@ -276,14 +279,107 @@ void QG_GraphicView::mouseDoubleClickEvent(QMouseEvent* e)
             setCurrentAction(new RS_ActionZoomAuto(*container, *this));
             break;
         case Qt::LeftButton:
+        {
+            RS_Vector pos = toGraph(e->x(), e->y());
+            if (editEntityAt(pos)) {
+                e->accept();
+                return;
+            }
             if (menus.contains("Double-Click"))
             {
                 killAllActions();
                 menus["Double-Click"]->popup(mapToGlobal(e->pos()));
             }
             break;
+        }
     }
     e->accept();
+}
+
+/**
+ * @brief 双击编辑 MText 实体（原地更新，不创建新实体）
+ *
+ * 流程：
+ *   1. 通过坐标查找最近的 MText 实体
+ *   2. 克隆原实体（克隆体用于对话框编辑，不修改原实体）
+ *   3. 打开编辑对话框（isNew=true，从注册表读取字体、高度、TextString、TextMFGDate 等）
+ *   4. 用户确认后，将克隆体的编辑结果逐字段写回原实体
+ *   5. 检测 hh:mm:ss 占位符，设置 timePlaceholder 标记使 update() 正确收集时间字符坐标
+ *   6. 全量重绘
+ *   7. 删除克隆体（始终只保留原实体在容器中，不会累积）
+ *
+ * 与按钮新建的区别：
+ *   - 按钮新建：读注册表 → 在默认位置创建新实体
+ *   - 双击编辑：读注册表 → 在原实体位置原地更新
+ *
+ * @param pos 双击位置的图形坐标
+ * @return true=找到并编辑了实体，false=无可编辑实体
+ */
+bool QG_GraphicView::editEntityAt(const RS_Vector& pos)
+{
+    if (!container) return false;
+
+    double dist = RS_MAXDOUBLE;
+    RS_Entity* entity = container->getNearestEntity(pos, &dist, RS2::ResolveNone);
+    if (!entity || !entity->isVisible()) return false;
+
+    // 当前只处理多行文本 MText
+    if (entity->rtti() != RS2::EntityMText) return false;
+
+    RS_MText* mtext = dynamic_cast<RS_MText*>(entity);
+    if (!mtext) return false;
+
+    // --- 克隆原实体（仅用于对话框编辑） ---
+    RS_Entity* cloneObj = mtext->clone();
+    if (!cloneObj) return false;
+
+    RS_MText* clone = dynamic_cast<RS_MText*>(cloneObj);
+    if (!clone) {
+        delete cloneObj;
+        return false;
+    }
+
+    // --- 打开编辑对话框（isNew=true，从注册表读取所有参数） ---
+    if (!RS_DIALOGFACTORY->requestMTextDialog(clone)) {
+        delete cloneObj;
+        return false;
+    }
+
+    // --- 将克隆体的编辑结果写回原实体（原地更新，不替换实体） ---
+    RS_MTextData d = clone->getData();
+    mtext->setText(d.text);
+    mtext->setStyle(d.style);
+    mtext->setHeight(d.height);
+    mtext->setWordSpace(d.wordSpacing);
+    mtext->sety_scale(d.y_scale);
+    mtext->setx_scale(d.x_scale);
+    mtext->setLineSpacingFactor(d.lineSpacingFactor);
+    mtext->setAlignment(clone->getAlignment());
+    mtext->setAngle(d.angle);
+
+    // --- 检测时间占位符，替换为当前时间并设置收集坐标标记 ---
+    QString timeStr = QTime::currentTime().toString("hh:mm:ss");
+    int pos_time = d.text.indexOf("hh:mm:ss");
+    if (pos_time >= 0) {
+        // 先替换占位符为实际时间（同 trigger() 流程）
+        QString finalText = d.text;
+        finalText.replace("hh:mm:ss", timeStr);
+        mtext->setText(finalText);
+        // 再设置坐标收集标记
+        mtext->setTimePlaceholder(pos_time, timeStr.length());
+    }
+
+    mtext->update();
+    redraw(RS2::RedrawDrawing);
+
+    // --- 删除克隆体（不会累积实体） ---
+    delete cloneObj;
+
+    RS_DIALOGFACTORY->updateSelectionWidget(
+        container->countSelected(),
+        container->totalSelectedLength());
+
+    return true;
 }
 
 
@@ -788,7 +884,7 @@ void QG_GraphicView::adjustOffsetControls()
 
         hScrollBar->setPageStep(getWidth());
         vScrollBar->setPageStep(getHeight());
-        hScrollBar->setPageStep(getWidth() + getWidth() * 0.4);  // ���ӵ�120%
+        hScrollBar->setPageStep(getWidth() + getWidth() * 0.4);  // 增加到120%
         vScrollBar->setPageStep(getHeight() + getHeight() * 0.4);
         hScrollBar->setValue(-ox);
         vScrollBar->setValue(oy);
@@ -952,7 +1048,7 @@ void QG_GraphicView::layerActivated(RS_Layer *layer) {
  */
 void QG_GraphicView::paintEvent(QPaintEvent *)
 {
-    // 1. ��ʼ������ Pixmap
+    // 1. 初始化三层 Pixmap
     // Re-Create or get the layering pixmaps
     getPixmapForView(PixmapLayer1);
     getPixmapForView(PixmapLayer2);
@@ -960,7 +1056,7 @@ void QG_GraphicView::paintEvent(QPaintEvent *)
 
     // Draw Layer 1
     if (redrawMethod & RS2::RedrawGrid)
-    {   // �����Ĭ�ϱ���
+    {   // 先填充默认背景
         PixmapLayer1->fill(background);
         RS_PainterQt painter1(PixmapLayer1.get());
        

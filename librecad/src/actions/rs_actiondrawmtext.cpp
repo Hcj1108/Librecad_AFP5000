@@ -139,7 +139,6 @@ void RS_ActionDrawMText::trigger() {
         // 1. 清空文档
         //document->clear();
   
-
         // 2. UDP 数据发送逻辑
         SingletonNomArray& nomArray = SingletonNomArray::getInstance();
         nomArray.clearNomArray();

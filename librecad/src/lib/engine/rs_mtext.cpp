@@ -1,4 +1,4 @@
-/****************************************************************************
+ï»¿/****************************************************************************
 **
 ** This file is part of the LibreCAD project, a 2D CAD program
 **
@@ -40,8 +40,8 @@
 
 
 /**
-*   C++ Àà RS_MTextData µÄ¹¹Ôìº¯Êı,ËüµÄÖ÷Òª×÷ÓÃÊÇÔÚ´´½¨Ò»¸ö
-*   ĞÂµÄ¶àĞĞÎÄ±¾£¨MText£©ÊµÌå¶ÔÏóÊ±£¬¶ÔËü½øĞĞ³õÊ¼»¯ÉèÖÃ¡£
+*   C++ ç±» RS_MTextData çš„æ„é€ å‡½æ•°,å®ƒçš„ä¸»è¦ä½œç”¨æ˜¯åœ¨åˆ›å»ºä¸€ä¸ª
+*   æ–°çš„å¤šè¡Œæ–‡æœ¬ï¼ˆMTextï¼‰å®ä½“å¯¹è±¡æ—¶ï¼Œå¯¹å®ƒè¿›è¡Œåˆå§‹åŒ–è®¾ç½®ã€‚
 */
 RS_MTextData::RS_MTextData(const RS_Vector& _insertionPoint,
     double _height,
@@ -68,9 +68,9 @@ RS_MTextData::RS_MTextData(const RS_Vector& _insertionPoint,
     , angle(_angle)
     , updateMode(_updateMode),
 
-    hasDynamicPlaceholders(false) // Ä¬ÈÏÎŞÕ¼Î»·û
+    hasDynamicPlaceholders(false) // é»˜è®¤æ— å ä½ç¬¦
 {
-    //// ×Ô¶¯¼ì²âÕ¼Î»·û
+    //// è‡ªåŠ¨æ£€æµ‹å ä½ç¬¦
     //if (text.contains("hh:mm:ss")) {
     //    hasDynamicPlaceholders = true;
     //    timePlaceholderPos = text.indexOf("hh:mm:ss");
@@ -79,8 +79,8 @@ RS_MTextData::RS_MTextData(const RS_Vector& _insertionPoint,
     //}
 }
 /*
-*  ÔËËã·ûÖØÔØ£¬¾ßÌåÀ´ËµÊÇÖØÔØÁËÊä³öÁ÷ÔËËã·û <<,ËüµÄºËĞÄ×÷ÓÃÊÇ£ºÈÃ RS_MTextData Õâ¸ö×Ô¶¨ÒåµÄÀà¶ÔÏó£¬
-*  ÄÜ¹»Ïñ int¡¢double »ò string Ò»Ñù£¬Ö±½Ó±» std::cout ´òÓ¡³öÀ´¡£
+*  è¿ç®—ç¬¦é‡è½½ï¼Œå…·ä½“æ¥è¯´æ˜¯é‡è½½äº†è¾“å‡ºæµè¿ç®—ç¬¦ <<,å®ƒçš„æ ¸å¿ƒä½œç”¨æ˜¯ï¼šè®© RS_MTextData è¿™ä¸ªè‡ªå®šä¹‰çš„ç±»å¯¹è±¡ï¼Œ
+*  èƒ½å¤Ÿåƒ intã€double æˆ– string ä¸€æ ·ï¼Œç›´æ¥è¢« std::cout æ‰“å°å‡ºæ¥ã€‚
 */
 std::ostream& operator << (std::ostream& os, const RS_MTextData& td) {
 	os << "("
@@ -101,12 +101,12 @@ std::ostream& operator << (std::ostream& os, const RS_MTextData& td) {
 }
 
 /**
- *  ´´½¨Ò»¸öĞÂµÄ¶àĞĞÎÄ±¾ÊµÌå£¨Entity£©Ê±£¬Íê³É³õÊ¼»¯ÉèÖÃ£¬
- *  ²¢ÔÙ´Î¶ÔÎÄ±¾ÖĞµÄ¶¯Ì¬Õ¼Î»·û½øĞĞÊ¶±ğºÍ¼ì²â
+ *  åˆ›å»ºä¸€ä¸ªæ–°çš„å¤šè¡Œæ–‡æœ¬å®ä½“ï¼ˆEntityï¼‰æ—¶ï¼Œå®Œæˆåˆå§‹åŒ–è®¾ç½®ï¼Œ
+ *  å¹¶å†æ¬¡å¯¹æ–‡æœ¬ä¸­çš„åŠ¨æ€å ä½ç¬¦è¿›è¡Œè¯†åˆ«å’Œæ£€æµ‹
  */
 RS_MText::RS_MText(RS_EntityContainer* parent,
                  const RS_MTextData& d)
-        : RS_EntityContainer(parent), data(d) {//ÔÚ¶ÔÏó±»´´½¨µÄÍ¬Ê±£¬Ö±½Ó¶Ô³ÉÔ±±äÁ¿½øĞĞ³õÊ¼»¯
+        : RS_EntityContainer(parent), data(d) {//åœ¨å¯¹è±¡è¢«åˆ›å»ºçš„åŒæ—¶ï¼Œç›´æ¥å¯¹æˆå‘˜å˜é‡è¿›è¡Œåˆå§‹åŒ–
 
     usedTextHeight = 0.0;
     usedTextWidth = 0.0;
@@ -117,11 +117,11 @@ RS_MText::RS_MText(RS_EntityContainer* parent,
         qDebug() << "RS_MTextData: Detected dynamic placeholder 'hh:mm:ss' in text.";
         data.hasDynamicPlaceholders = true;
     }
-    // ĞÂ¹¦ÄÜÊ¹ÓÃ
+    // æ–°åŠŸèƒ½ä½¿ç”¨
 }
 
 /*
-*  ´´½¨µ±Ç° RS_MText ¶ÔÏóµÄÒ»¸öÍêÕû¡¢¶ÀÁ¢µÄ¸±±¾£¨Éî¿½±´£©£¬²¢·µ»ØÕâ¸öĞÂ¶ÔÏóµÄÖ¸Õë
+*  åˆ›å»ºå½“å‰ RS_MText å¯¹è±¡çš„ä¸€ä¸ªå®Œæ•´ã€ç‹¬ç«‹çš„å‰¯æœ¬ï¼ˆæ·±æ‹·è´ï¼‰ï¼Œå¹¶è¿”å›è¿™ä¸ªæ–°å¯¹è±¡çš„æŒ‡é’ˆ
 */
 RS_Entity* RS_MText::clone() const{
 	RS_MText* t = new RS_MText(*this);
@@ -132,9 +132,9 @@ RS_Entity* RS_MText::clone() const{
 }
 
 /**
- * ÎªÎÄ±¾ÊµÌåÉèÖÃĞÂµÄÎÄ×ÖÄÚÈİ£¬²¢×Ô¶¯½âÎöÆäÖĞÇ¶ÈëµÄÌØÊâ¸ñÊ½Ö¸Áî
- * ÒşĞÎµÄÅÅ°æÖ¸ÁîËüÖ»Ê¶±ğ²¢°şÀëÁËÒÔ \A ¿ªÍ·µÄÌØÊâÇ°×º£¨ÀıÈç \A0;¡¢\A1;£©
- * ²¢½«ÕâĞ©´úÂë×ª»»³É³ÌĞòÄÜÌı¶®µÄ´¹Ö±¶ÔÆëÊôĞÔ£¨µ×²¿¡¢¾ÓÖĞ»ò¶¥²¿£©¡£
+ * ä¸ºæ–‡æœ¬å®ä½“è®¾ç½®æ–°çš„æ–‡å­—å†…å®¹ï¼Œå¹¶è‡ªåŠ¨è§£æå…¶ä¸­åµŒå…¥çš„ç‰¹æ®Šæ ¼å¼æŒ‡ä»¤
+ * éšå½¢çš„æ’ç‰ˆæŒ‡ä»¤å®ƒåªè¯†åˆ«å¹¶å‰¥ç¦»äº†ä»¥ \A å¼€å¤´çš„ç‰¹æ®Šå‰ç¼€ï¼ˆä¾‹å¦‚ \A0;ã€\A1;ï¼‰
+ * å¹¶å°†è¿™äº›ä»£ç è½¬æ¢æˆç¨‹åºèƒ½å¬æ‡‚çš„å‚ç›´å¯¹é½å±æ€§ï¼ˆåº•éƒ¨ã€å±…ä¸­æˆ–é¡¶éƒ¨ï¼‰ã€‚
  */
 void RS_MText::setText(const QString& t) {
     data.text = t;
@@ -160,11 +160,11 @@ void RS_MText::setText(const QString& t) {
 
 
 /**
- * ½«ÎÄ±¾µÄ´¹Ö±¶ÔÆë£¨valign£©ºÍË®Æ½¶ÔÆë£¨halign£©ÕâÁ½¸ö¶ÀÁ¢µÄÊôĞÔ£¬
- * ×éºÏ²¢×ª»»³ÉÒ»¸ö1µ½9µÄÊı×Ö±àÂë¡£
- * 7 8 9 £¨¶ÔÓ¦×óÉÏ¡¢ÖĞÉÏ¡¢ÓÒÉÏ£©
- * 4 5 6 £¨¶ÔÓ¦×óÖĞ¡¢ÕıÖĞ¡¢ÓÒÖĞ£©
- * 1 2 3 £¨¶ÔÓ¦×óÏÂ¡¢ÖĞÏÂ¡¢ÓÒÏÂ£©
+ * å°†æ–‡æœ¬çš„å‚ç›´å¯¹é½ï¼ˆvalignï¼‰å’Œæ°´å¹³å¯¹é½ï¼ˆhalignï¼‰è¿™ä¸¤ä¸ªç‹¬ç«‹çš„å±æ€§ï¼Œ
+ * ç»„åˆå¹¶è½¬æ¢æˆä¸€ä¸ª1åˆ°9çš„æ•°å­—ç¼–ç ã€‚
+ * 7 8 9 ï¼ˆå¯¹åº”å·¦ä¸Šã€ä¸­ä¸Šã€å³ä¸Šï¼‰
+ * 4 5 6 ï¼ˆå¯¹åº”å·¦ä¸­ã€æ­£ä¸­ã€å³ä¸­ï¼‰
+ * 1 2 3 ï¼ˆå¯¹åº”å·¦ä¸‹ã€ä¸­ä¸‹ã€å³ä¸‹ï¼‰
  */
 int RS_MText::getAlignment() {
     if (data.valign==RS_MTextData::VATop) {
@@ -199,8 +199,8 @@ int RS_MText::getAlignment() {
 
 
 /**
- * ½ÓÊÕÒ»¸ö 1µ½9µÄÊı×Ö±àÂë£¬Í¨¹ıÊıÑ§ÔËËã½«Æä¡°·­Òë¡±
- * »Ø¶ÔÓ¦µÄË®Æ½¶ÔÆë£¨halign£©ºÍ´¹Ö±¶ÔÆë£¨valign£©ÊôĞÔ¡£
+ * æ¥æ”¶ä¸€ä¸ª 1åˆ°9çš„æ•°å­—ç¼–ç ï¼Œé€šè¿‡æ•°å­¦è¿ç®—å°†å…¶â€œç¿»è¯‘â€
+ * å›å¯¹åº”çš„æ°´å¹³å¯¹é½ï¼ˆhalignï¼‰å’Œå‚ç›´å¯¹é½ï¼ˆvalignï¼‰å±æ€§ã€‚
  */
 void RS_MText::setAlignment(int a) {
     switch (a%3) {
@@ -234,7 +234,7 @@ void RS_MText::setAlignment(int a) {
 
 
 /**
- * ¼ÆËãµ±Ç°ÎÄ±¾ÖĞÒ»¹²ÓĞ¶àÉÙĞĞ
+ * è®¡ç®—å½“å‰æ–‡æœ¬ä¸­ä¸€å…±æœ‰å¤šå°‘è¡Œ
  */
 int RS_MText::getNumberOfLines() {
     int c=1;
@@ -251,98 +251,98 @@ int RS_MText::getNumberOfLines() {
 
 
 /**
- * ¸üĞÂ´ËÎÄ±¾µÄ²åÈëÏî£¨×ÖÄ¸£©¡£µ±
- * ÎÄ±¾»òÆäÊı¾İ¡¢Î»ÖÃ¡¢¶ÔÆë·½Ê½µÈ·¢Éú¸Ä±äÊ±µ÷ÓÃ´Ë·½·¨¡£
- * ´Ë·½·¨Í¬Ê±Ò²»á¸üĞÂ usedTextWidth / usedTextHeight ÊôĞÔ¡£
+ * æ›´æ–°æ­¤æ–‡æœ¬çš„æ’å…¥é¡¹ï¼ˆå­—æ¯ï¼‰ã€‚å½“
+ * æ–‡æœ¬æˆ–å…¶æ•°æ®ã€ä½ç½®ã€å¯¹é½æ–¹å¼ç­‰å‘ç”Ÿæ”¹å˜æ—¶è°ƒç”¨æ­¤æ–¹æ³•ã€‚
+ * æ­¤æ–¹æ³•åŒæ—¶ä¹Ÿä¼šæ›´æ–° usedTextWidth / usedTextHeight å±æ€§ã€‚
  */
 void RS_MText::update()
 {
-    placeholderCharNames.clear();//Çå³ıÕ¼Î»·û×Ö·ûÃû»º´æ
-	data.timePlaceholderPositions.clear();//Çå³ıÊ±¼äÕ¼Î»·ûÎ»ÖÃ»º´æ
+    placeholderCharNames.clear();//æ¸…é™¤å ä½ç¬¦å­—ç¬¦åç¼“å­˜
+	data.timePlaceholderPositions.clear();//æ¸…é™¤æ—¶é—´å ä½ç¬¦ä½ç½®ç¼“å­˜
     RS_DEBUG->print("RS_MText::update");
 
-    clear();// // Çå¿Õµ±Ç°ËùÓĞÍ¼ĞÎÊµÌå
+    clear();// // æ¸…ç©ºå½“å‰æ‰€æœ‰å›¾å½¢å®ä½“
 
-    // Èç¹û¶ÔÏó×´Ì¬Îª¡°ÒÑ³·Ïú¡±£¬Ôò²»ÔÙ¼ÌĞø´¦Àí
+    // å¦‚æœå¯¹è±¡çŠ¶æ€ä¸ºâ€œå·²æ’¤é”€â€ï¼Œåˆ™ä¸å†ç»§ç»­å¤„ç†
     if (isUndone()) {
         return;
     }
-    // ÖØÖÃÎÄ±¾×Ü¿í¸ß
+    // é‡ç½®æ–‡æœ¬æ€»å®½é«˜
     usedTextWidth = 0.0;
     usedTextHeight = 0.0;
 
-    // ¸ù¾İÎÄ±¾ÑùÊ½»ñÈ¡×ÖÌå¶ÔÏó
+    // æ ¹æ®æ–‡æœ¬æ ·å¼è·å–å­—ä½“å¯¹è±¡
     RS_Font* font {RS_FONTLIST->requestFont( data.style)};
 
-    // Èç¹ûÕÒ²»µ½×ÖÌå£¬Ö±½Ó·µ»Ø
+    // å¦‚æœæ‰¾ä¸åˆ°å­—ä½“ï¼Œç›´æ¥è¿”å›
     if (nullptr == font) {
         return;
     }
-    // ³õÊ¼»¯µÚÒ»¸ö×Ö·ûµÄÏà¶ÔÎ»ÖÃ£¨YÖáÏòÏÂÆ«ÒÆ9¸öµ¥Î»£©
+    // åˆå§‹åŒ–ç¬¬ä¸€ä¸ªå­—ç¬¦çš„ç›¸å¯¹ä½ç½®ï¼ˆYè½´å‘ä¸‹åç§»9ä¸ªå•ä½ï¼‰
     RS_Vector letterPos {RS_Vector( 0.0, -9.0)};
-    // »ñÈ¡×ÖÌå¶¨ÒåµÄ×Ö·û¼ä¾à
+    // è·å–å­—ä½“å®šä¹‰çš„å­—ç¬¦é—´è·
     RS_Vector letterSpace {RS_Vector( font->getLetterSpacing(), 0.0)};
-    // »ñÈ¡µ¥´Ê¼ä¾à
-    RS_Vector space {RS_Vector( font->getWordSpacing(), 0.0)};//¿Õ¸ñ²¹³¥¼ä¾à
-    // ĞĞ¼ÆÊıÆ÷£¬ÓÃÓÚ¼ÆËãĞĞ¼äÎ»ÖÃ
+    // è·å–å•è¯é—´è·
+    RS_Vector space {RS_Vector( font->getWordSpacing(), 0.0)};//ç©ºæ ¼è¡¥å¿é—´è·
+    // è¡Œè®¡æ•°å™¨ï¼Œç”¨äºè®¡ç®—è¡Œé—´ä½ç½®
 	int lineCounter{ 0 };
 
-    // ´´½¨Ò»¸öÈİÆ÷À´ÁÙÊ±´æ´¢µ±Ç°ÕıÔÚ¹¹½¨µÄÕâÒ»ĞĞµÄËùÓĞ×Ö·ûÊµÌå
-    // ÕâÑù±ãÓÚÖ®ºó¶ÔÕûĞĞ½øĞĞÍ³Ò»²Ù×÷£¨Èç¶ÔÆë¡¢ÒÆ¶¯£©
+    // åˆ›å»ºä¸€ä¸ªå®¹å™¨æ¥ä¸´æ—¶å­˜å‚¨å½“å‰æ­£åœ¨æ„å»ºçš„è¿™ä¸€è¡Œçš„æ‰€æœ‰å­—ç¬¦å®ä½“
+    // è¿™æ ·ä¾¿äºä¹‹åå¯¹æ•´è¡Œè¿›è¡Œç»Ÿä¸€æ“ä½œï¼ˆå¦‚å¯¹é½ã€ç§»åŠ¨ï¼‰
     RS_EntityContainer* oneLine {new RS_EntityContainer(this)};
 
-    // ×Ö·û´¦ÀíÑ­»·Ç°£¬´´½¨Ò»¸öÁĞ±íÓÃÓÚÁÙÊ±´æ´¢¶¯Ì¬Õ¼Î»·ûÏà¹ØµÄ×Ö·ûÊµÌå
+    // å­—ç¬¦å¤„ç†å¾ªç¯å‰ï¼Œåˆ›å»ºä¸€ä¸ªåˆ—è¡¨ç”¨äºä¸´æ—¶å­˜å‚¨åŠ¨æ€å ä½ç¬¦ç›¸å…³çš„å­—ç¬¦å®ä½“
     QList<RS_Insert*> placeholderLetters;  
 
-    // ¿ªÊ¼±éÀúÎÄ±¾ÖĞµÄÃ¿Ò»¸ö×Ö·û£¬´¦ÀíÕ¼×Ö·û
+    // å¼€å§‹éå†æ–‡æœ¬ä¸­çš„æ¯ä¸€ä¸ªå­—ç¬¦ï¼Œå¤„ç†å å­—ç¬¦
     for (int i = 0; i < static_cast<int>(data.text.length()); ++i) {
        
      
-        // ±ê¼Çµ±Ç°×Ö·ûÊÇ·ñÒÑ±»´¦Àí
+        // æ ‡è®°å½“å‰å­—ç¬¦æ˜¯å¦å·²è¢«å¤„ç†
         bool handled {false};
 
-        // ¸ù¾İµ±Ç°×Ö·ûµÄ Unicode Âëµã½øĞĞ·ÖÀà´¦Àí
+        // æ ¹æ®å½“å‰å­—ç¬¦çš„ Unicode ç ç‚¹è¿›è¡Œåˆ†ç±»å¤„ç†
         switch (data.text.at(i).unicode()) {
-        case 0x0A://»»ĞĞ·û'\n'
+        case 0x0A://æ¢è¡Œç¬¦'\n'
         {   
 
-            // ´´½¨Ò»¸ö¿ÕµÄ²åÈëÊµÌåÀ´±íÊ¾»»ĞĞ
-            RS_InsertData d("",  // ¿Õ×Ö·û´®
+            // åˆ›å»ºä¸€ä¸ªç©ºçš„æ’å…¥å®ä½“æ¥è¡¨ç¤ºæ¢è¡Œ
+            RS_InsertData d("",  // ç©ºå­—ç¬¦ä¸²
                 letterPos,
                 RS_Vector(1.0, 1.0),
                 0.0,
                 1,
                 1,
                 RS_Vector(0.0, 0.0),
-                nullptr,  // ²»Ê¹ÓÃ×ÖÌåÁĞ±í
+                nullptr,  // ä¸ä½¿ç”¨å­—ä½“åˆ—è¡¨
                 RS2::NoUpdate);
             RS_Insert* newlineEntity = new RS_Insert(oneLine, d);
             newlineEntity->setPen(RS_Pen(RS2::FlagInvalid));
             newlineEntity->setLayer(nullptr);
             newlineEntity->update();
             newlineEntity->forcedCalculateBorders();
-            //½«ĞÂ´´½¨µÄ¡°¿Õ²åÈëÊµÌå¡±£¨newlineEntity£©Ìí¼Óµ½µ±Ç°ĞĞµÄÊµÌåÈİÆ÷£¨oneLine£©ÖĞ
+            //å°†æ–°åˆ›å»ºçš„â€œç©ºæ’å…¥å®ä½“â€ï¼ˆnewlineEntityï¼‰æ·»åŠ åˆ°å½“å‰è¡Œçš„å®ä½“å®¹å™¨ï¼ˆoneLineï¼‰ä¸­
             oneLine->addEntity(newlineEntity);
 
-            // 1. µ÷ÓÃ updateAddLine ´¦Àíµ±Ç°ĞĞ- Ó¦ÓÃ¶ÔÆë·½Ê½- ¼ÆËã²¢´æ´¢µ½Ö÷ÈİÆ÷- ĞĞ¼ÆÊıÆ÷¼ÓÒ»
+            // 1. è°ƒç”¨ updateAddLine å¤„ç†å½“å‰è¡Œ- åº”ç”¨å¯¹é½æ–¹å¼- è®¡ç®—å¹¶å­˜å‚¨åˆ°ä¸»å®¹å™¨- è¡Œè®¡æ•°å™¨åŠ ä¸€
             updateAddLine(oneLine, lineCounter++);
-            // 2. ´´½¨ĞÂµÄÈİÆ÷ÓÃÓÚÏÂÒ»ĞĞ
+            // 2. åˆ›å»ºæ–°çš„å®¹å™¨ç”¨äºä¸‹ä¸€è¡Œ
             oneLine = new RS_EntityContainer(this);
-            // 3. ÖØÖÃÏÂÒ»ĞĞµÄÆğÊ¼Ïà¶ÔÎ»ÖÃ
+            // 3. é‡ç½®ä¸‹ä¸€è¡Œçš„èµ·å§‹ç›¸å¯¹ä½ç½®
             letterPos = RS_Vector(0.0, -9.0);
             break;
         }
-        case 0x20:// ¿Õ¸ñ·û ' '
+        case 0x20:// ç©ºæ ¼ç¬¦ ' '
         {
-            // ´´½¨Ò»¸ö¿ÕµÄ²åÈëÊµÌåÀ´±íÊ¾¿Õ¸ñ
-            RS_InsertData d("",  // ¿Õ×Ö·û´®
+            // åˆ›å»ºä¸€ä¸ªç©ºçš„æ’å…¥å®ä½“æ¥è¡¨ç¤ºç©ºæ ¼
+            RS_InsertData d("",  // ç©ºå­—ç¬¦ä¸²
                 letterPos,
                 RS_Vector(1.0, 1.0),
                 0.0,
                 1,
                 1,
                 RS_Vector(0.0, 0.0),
-                nullptr,  // ²»Ê¹ÓÃ×ÖÌåÁĞ±í
+                nullptr,  // ä¸ä½¿ç”¨å­—ä½“åˆ—è¡¨
                 RS2::NoUpdate);
 
             RS_Insert* spaceEntity = new RS_Insert(oneLine, d);
@@ -350,15 +350,15 @@ void RS_MText::update()
             spaceEntity->setLayer(nullptr);
             spaceEntity->update();
             spaceEntity->forcedCalculateBorders();
-            // ½«¿Õ¸ñÊµÌåÌí¼Óµ½µ±Ç°ĞĞÈİÆ÷ÖĞ
+            // å°†ç©ºæ ¼å®ä½“æ·»åŠ åˆ°å½“å‰è¡Œå®¹å™¨ä¸­
             oneLine->addEntity(spaceEntity);
-            // ÒÆ¶¯ÏÂÒ»¸ö×Ö·ûµÄÎ»ÖÃ£º¼ÓÉÏµ¥´Ê¼ä¾àºÍÓÃ»§¶¨ÒåµÄ×Ö¼ä¾à²¹³¥
+            // ç§»åŠ¨ä¸‹ä¸€ä¸ªå­—ç¬¦çš„ä½ç½®ï¼šåŠ ä¸Šå•è¯é—´è·å’Œç”¨æˆ·å®šä¹‰çš„å­—é—´è·è¡¥å¿
             letterPos += space;
-            //Ôö¼Ó×Ö¼ä¾à
+            //å¢åŠ å­—é—´è·
             letterPos.x += data.wordSpacing;
             break;
         }
-        case 0x5C: {// ·´Ğ±¸Ü '\'£¬±íÊ¾ÌØÊâ¿ØÖÆÂë¿ªÊ¼
+        case 0x5C: {// åæ–œæ  '\'ï¼Œè¡¨ç¤ºç‰¹æ®Šæ§åˆ¶ç å¼€å§‹
             // code (e.g. \S, \P, ..)
             ++i;
             if (static_cast<int>(data.text.length()) <= i) {
@@ -426,13 +426,13 @@ void RS_MText::update()
                     ++i;
                 }
 
-                // ½âÎöÏÂ±ê²¿·Ö
+                // è§£æä¸‹æ ‡éƒ¨åˆ†
                 while (static_cast<int>(data.text.length()) > i
                        && ';' != data.text.at(i).unicode()) {
                     lowerText += data.text.at(i);
                     ++i;
                 }
-                // --- ´´½¨ÉÏ±ê MText ÊµÌå ---
+                // --- åˆ›å»ºä¸Šæ ‡ MText å®ä½“ ---
                 double upperWidth {0.0};
                 if (! upperText.isEmpty()) {
                     RS_MText* upper { new RS_MText( oneLine,
@@ -454,7 +454,7 @@ void RS_MText::update()
                     oneLine->addEntity(upper);
                     upperWidth = upper->getSize().x;
                 }
-                // --- ´´½¨ÏÂ±ê MText ÊµÌå ---
+                // --- åˆ›å»ºä¸‹æ ‡ MText å®ä½“ ---
                 double lowerWidth {0.0};
                 if (! lowerText.isEmpty()) {
                     RS_MText* lower { new RS_MText( oneLine,
@@ -476,8 +476,8 @@ void RS_MText::update()
                     oneLine->addEntity(lower);
                     lowerWidth = lower->getSize().x;
                 }
-                // --- ¸üĞÂÏÂÒ»¸ö×Ö·ûµÄÎ»ÖÃ ---
-                // È¡ÉÏ±êºÍÏÂ±êÖĞ×î¿íµÄÄÇ¸ö×÷ÎªÕ¼ÓÃ¿í¶È
+                // --- æ›´æ–°ä¸‹ä¸€ä¸ªå­—ç¬¦çš„ä½ç½® ---
+                // å–ä¸Šæ ‡å’Œä¸‹æ ‡ä¸­æœ€å®½çš„é‚£ä¸ªä½œä¸ºå ç”¨å®½åº¦
                 if (upperWidth > lowerWidth) {
                     letterPos += RS_Vector( upperWidth, 0.0);
                 }
@@ -500,30 +500,30 @@ void RS_MText::update()
             }
         } // outer case 0x5C
 
-        /*¼ì²é×ÖÌåÖĞÊÇ·ñÓĞ¸Ã×Ö·ûÈôÎŞÔòÌæ»»ÎªÌØÊâ×Ö·û(0xfffd)´´½¨RS_InsertÊµÌå±íÊ¾¸Ã×Ö·û¼ÆËã×Ö·û¿í¶È²¢¸üĞÂÎ»ÖÃ*/
+        /*æ£€æŸ¥å­—ä½“ä¸­æ˜¯å¦æœ‰è¯¥å­—ç¬¦è‹¥æ— åˆ™æ›¿æ¢ä¸ºç‰¹æ®Šå­—ç¬¦(0xfffd)åˆ›å»ºRS_Insertå®ä½“è¡¨ç¤ºè¯¥å­—ç¬¦è®¡ç®—å­—ç¬¦å®½åº¦å¹¶æ›´æ–°ä½ç½®*/
         default: {
             // One Letter:
 
-            // ±£´æµ±Ç°×Ö·ûµÄÔ­Ê¼Î»ÖÃ
+            // ä¿å­˜å½“å‰å­—ç¬¦çš„åŸå§‹ä½ç½®
             RS_Vector originalPos = letterPos;
 
-            QString letterText {QString(data.text.at(i))};//»ñÈ¡Ò»¸ö×Ö·û²¢¼ì²é×ÖÌåÖ§³Ö
+            QString letterText {QString(data.text.at(i))};//è·å–ä¸€ä¸ªå­—ç¬¦å¹¶æ£€æŸ¥å­—ä½“æ”¯æŒ
             if (nullptr == font->findLetter( letterText))
             {
                 RS_DEBUG->print("RS_MText::update: missing font for letter( %s ), replaced it with QChar(0xfffd)",qPrintable( letterText));
-                letterText = QChar( 0xfffd);//Unicode Ìæ»»×Ö·û,ÓÃÀ´Ìæ»»×ÖÌåÈ±Ê§µÄ×Ö·û
+                letterText = QChar( 0xfffd);//Unicode æ›¿æ¢å­—ç¬¦,ç”¨æ¥æ›¿æ¢å­—ä½“ç¼ºå¤±çš„å­—ç¬¦
             }
 
             RS_DEBUG->print("RS_MText::update: insert a letter at pos: %f/%f", letterPos.x, letterPos.y);
             
             
-            // ±£´æµ±Ç°Ïà¶ÔÎ»ÖÃ£¨ÓÃÓÚºóĞø¿í¶È¼ÆËã£©
+            // ä¿å­˜å½“å‰ç›¸å¯¹ä½ç½®ï¼ˆç”¨äºåç»­å®½åº¦è®¡ç®—ï¼‰
             RS_Vector relativePosBefore = letterPos;
 
-            RS_InsertData d( letterText,//ÎÄ±¾×Ö·û
-                             letterPos,//²åÈëÎ»ÖÃ
-				             RS_Vector(data.x_scale, data.y_scale),//Ëõ·ÅÒò×Ó
-                             0,//Ğı×ª½Ç¶È
+            RS_InsertData d( letterText,//æ–‡æœ¬å­—ç¬¦
+                             letterPos,//æ’å…¥ä½ç½®
+				             RS_Vector(data.x_scale, data.y_scale),//ç¼©æ”¾å› å­
+                             0,//æ—‹è½¬è§’åº¦
                              1,
                              1,
                              RS_Vector( 0.0, 0.0),
@@ -543,16 +543,16 @@ void RS_MText::update()
             }
             oneLine->addEntity( letter);
 
-            //// Ê¹ÓÃupdateAddLineÖĞµÄÍêÕû¼ÆËãÂß¼­
+            //// ä½¿ç”¨updateAddLineä¸­çš„å®Œæ•´è®¡ç®—é€»è¾‘
             //RS_Vector pos = originalPos;
-            //// 1. ĞĞÎ»ÖÃÆ«ÒÆ£¨À´×ÔupdateAddLine£©
+            //// 1. è¡Œä½ç½®åç§»ï¼ˆæ¥è‡ªupdateAddLineï¼‰
             //double ls = 5.0 / 3.0;
             //pos += RS_Vector(0.0, -9.0 * lineCounter * data.lineSpacingFactor * ls);
 
-            //// 2. ¼ÆËãµ±Ç°ĞĞµÄÊµ¼Ê¿í¶È£¨Ä£ÄâupdateAddLineÖĞµÄÂß¼­£©
-            //// ÕâÀïĞèÒª¸ù¾İµ±Ç°ĞĞÖĞÒÑ´¦ÀíµÄ×Ö·ûÀ´¼ÆËã¿í¶È
+            //// 2. è®¡ç®—å½“å‰è¡Œçš„å®é™…å®½åº¦ï¼ˆæ¨¡æ‹ŸupdateAddLineä¸­çš„é€»è¾‘ï¼‰
+            //// è¿™é‡Œéœ€è¦æ ¹æ®å½“å‰è¡Œä¸­å·²å¤„ç†çš„å­—ç¬¦æ¥è®¡ç®—å®½åº¦
             //double currentLineWidth = 0.0;
-            //// ±éÀúµ±Ç°ĞĞÈİÆ÷ÖĞµÄËùÓĞÊµÌåÀ´¼ÆËã¿í¶È
+            //// éå†å½“å‰è¡Œå®¹å™¨ä¸­çš„æ‰€æœ‰å®ä½“æ¥è®¡ç®—å®½åº¦
             //if (oneLine) {
             //    for (RS_Entity* entity : oneLine->getEntityList()) {
             //        if (RS_Insert* charEntity = dynamic_cast<RS_Insert*>(entity)) {
@@ -561,12 +561,12 @@ void RS_MText::update()
             //        }
             //    }
             //}
-            //// ¼ÓÉÏµ±Ç°×Ö·ûµÄ¿í¶È
+            //// åŠ ä¸Šå½“å‰å­—ç¬¦çš„å®½åº¦
             //currentLineWidth = std::max(currentLineWidth, letterPos.x + letterWidth.x);
 
             //RS_Vector textSize = RS_Vector(currentLineWidth, 9.0);
 
-            //// 3. Ë®Æ½¶ÔÆë£¨À´×ÔupdateAddLine£©
+            //// 3. æ°´å¹³å¯¹é½ï¼ˆæ¥è‡ªupdateAddLineï¼‰
             //switch (data.halign) {
             //case RS_MTextData::HACenter:
             //    pos += RS_Vector(-textSize.x / 2.0, 0.0);
@@ -578,11 +578,11 @@ void RS_MText::update()
             //    break;
             //}
 
-            //// 4. ´¹Ö±¶ÔÆë¼ÆËã£¨À´×ÔupdateAddLine£©
+            //// 4. å‚ç›´å¯¹é½è®¡ç®—ï¼ˆæ¥è‡ªupdateAddLineï¼‰
             //double vSize = getNumberOfLines() * 9.0 * data.lineSpacingFactor * ls
             //    - (9.0 * data.lineSpacingFactor * ls - 9.0);
 
-            //// 5. ´¹Ö±¶ÔÆëÓ¦ÓÃ£¨À´×ÔupdateAddLine£©
+            //// 5. å‚ç›´å¯¹é½åº”ç”¨ï¼ˆæ¥è‡ªupdateAddLineï¼‰
             //switch (data.valign) {
             //case RS_MTextData::VAMiddle:
             //    pos += RS_Vector(0.0, vSize / 2.0);
@@ -594,13 +594,13 @@ void RS_MText::update()
             //    break;
             //}
 
-            //// 6. Ëõ·Å£¨À´×ÔupdateAddLine£©
+            //// 6. ç¼©æ”¾ï¼ˆæ¥è‡ªupdateAddLineï¼‰
             //pos = pos.scale(RS_Vector(0.0, 0.0), RS_Vector(data.height / 9.0, data.height / 9.0));
 
-            //// 7. Ğı×ª£¨À´×ÔupdateAddLine£©
+            //// 7. æ—‹è½¬ï¼ˆæ¥è‡ªupdateAddLineï¼‰
             //pos = pos.rotate(RS_Vector(0.0, 0.0), data.angle);
 
-            //// 8. ×îÖÕÒÆ¶¯£¨À´×ÔupdateAddLine£©
+            //// 8. æœ€ç»ˆç§»åŠ¨ï¼ˆæ¥è‡ªupdateAddLineï¼‰
             //pos += data.insertionPoint;
 
             //double scaleFactor = data.height / (9.0 * font->getLineSpacingFactor());
@@ -610,7 +610,7 @@ void RS_MText::update()
                 << ") at DOC: (" << pos.x << "," << pos.y << ")";*/
               
 
-            //¼ÇÂ¼Õ¼Î»·ûµÄ×îÖÕÎ»ÖÃ
+            //è®°å½•å ä½ç¬¦çš„æœ€ç»ˆä½ç½®
             if (data.hasDynamicPlaceholders &&
                 data.timePlaceholderPos != -1 &&
                 i >= data.timePlaceholderPos &&
@@ -636,10 +636,10 @@ void RS_MText::update()
             //qDebug() << "data.lineSpacingFactor:" << data.lineSpacingFactor;
 
 
-            // --- ¸üĞÂÏÂÒ»¸ö×Ö·ûµÄÏà¶ÔÎ»ÖÃ ---
-            letterPos += letterWidth; //µ±Ç°×Ö¿í
-            letterPos += letterSpace; //×Ö¼ä¾à(Ò»¸ö¿Õ¸ñ)
-			letterPos.x += data.wordSpacing;// Ìí¼Ó×Ö¼ä¾à²¹³¥,ÓÉÓÃ»§È·¶¨µÄ
+            // --- æ›´æ–°ä¸‹ä¸€ä¸ªå­—ç¬¦çš„ç›¸å¯¹ä½ç½® ---
+            letterPos += letterWidth; //å½“å‰å­—å®½
+            letterPos += letterSpace; //å­—é—´è·(ä¸€ä¸ªç©ºæ ¼)
+			letterPos.x += data.wordSpacing;// æ·»åŠ å­—é—´è·è¡¥å¿,ç”±ç”¨æˆ·ç¡®å®šçš„
           
             break;
         } // outer default
@@ -647,7 +647,7 @@ void RS_MText::update()
 
     } // for (i) loop
 
-    // ´¦Àí×îºóÒ»ĞĞ£¨ÒòÎªÑ­»·½áÊøºó£¬×îºóÒ»ĞĞ»¹Ã»ÓĞ±»Ìá½»¸ø updateAddLine£©
+    // å¤„ç†æœ€åä¸€è¡Œï¼ˆå› ä¸ºå¾ªç¯ç»“æŸåï¼Œæœ€åä¸€è¡Œè¿˜æ²¡æœ‰è¢«æäº¤ç»™ updateAddLineï¼‰
     double tt {updateAddLine( oneLine, lineCounter)};
     if (RS_MTextData::VABottom == data.valign) {
         RS_Vector ot {RS_Vector( 0.0, -tt).rotate( data.angle)};
@@ -655,39 +655,47 @@ void RS_MText::update()
     }
 
 
-    // ÔÚËùÓĞ±ä»»Íê³Éºó¼ÇÂ¼×îÖÕÎ»ÖÃ
+    // åœ¨æ‰€æœ‰å˜æ¢å®Œæˆåè®°å½•æœ€ç»ˆä½ç½®
     if (data.hasDynamicPlaceholders) {
         data.timePlaceholderPositions.clear();
         for (RS_Insert* letter : placeholderLetters) {
             data.timePlaceholderPositions.append(letter->getInsertionPoint());
-            qDebug() << QString::fromLocal8Bit("×îÖÕÕ¼Î»·ûÎ»ÖÃ:") << letter->getInsertionPoint().x
+            qDebug() << QString::fromLocal8Bit("æœ€ç»ˆå ä½ç¬¦ä½ç½®:") << letter->getInsertionPoint().x
                 << letter->getInsertionPoint().y;
         }
-        // ĞÂÔö£º´ÓÊµ¼ÊÊµÌåÖĞ¶ÁÈ¡µÚÒ»¸öÕ¼Î»·ûµÄÎ»ÖÃ
+        // æ–°å¢ï¼šä»å®é™…å®ä½“ä¸­è¯»å–ç¬¬ä¸€ä¸ªå ä½ç¬¦çš„ä½ç½®
         if (!placeholderLetters.isEmpty()) {
             data.insertionPoint_timePlace = placeholderLetters.first()->getInsertionPoint();
         }
     }
 
     usedTextHeight -= data.height * data.lineSpacingFactor * 5.0 / 3.0 - data.height;
-    // Ç¿ÖÆÖØĞÂ¼ÆËãÕû¸ö MText ¶ÔÏóµÄ±ß½ç¿ò
+    // å¼ºåˆ¶é‡æ–°è®¡ç®—æ•´ä¸ª MText å¯¹è±¡çš„è¾¹ç•Œæ¡†
     forcedCalculateBorders();
 
     RS_DEBUG->print("RS_MText::update: OK");
 
-    // ½«Õ¼Î»·ûÎ»ÖÃÍ¬²½µ½È«¾Öµ¥Àı¹ÜÀíÆ÷
+    // å°†å ä½ç¬¦ä½ç½®åŒæ­¥åˆ°å…¨å±€å•ä¾‹ç®¡ç†å™¨
     PlaceholderPositionManager::getInstance().clear();
     PlaceholderPositionManager::getInstance().setPositions(data.timePlaceholderPositions);
-   
-  
+
+}
+
+void RS_MText::setTimePlaceholder(int pos, int replacedLength)
+{
+    data.hasDynamicPlaceholders = true;
+    data.timePlaceholderPos = pos;
+    data.timePlaceholderReplacedLength = replacedLength;
+    data.timePlaceholderNum = 8;
+    data.timePlaceholderFormat = "hh:mm:ss";
 }
 
 /**
- * updateAddLine ÊÇ update() º¯ÊıµÄºËĞÄÖúÊÖ£¬
- * ×¨ÃÅ¸ºÔğ´¦ÀíÒÑ¾­Éú³ÉºÃ£¨°üº¬¶à¸ö×Ö·ûÊµÌå£©µÄÒ»ĞĞÎÄ±¾¡£
- * @param textLine ÀïÃæ×°×Å×é³ÉÕâÒ»ĞĞµÄËùÓĞ×Ö·ûÊµÌå£¨±ÈÈç×ÖÄ¸¡¢Êı×ÖµÈ£©
- * @param lineCounter µ±Ç°ÊÇµÚ¼¸ĞĞ£¨ĞĞºÅ/ĞĞË÷Òı£©¡£ÕâÊÇÒ»¸ö´Ó 0 ¿ªÊ¼µÄÕûÊı
- * £¬ÓÃÀ´¸æËßº¯ÊıÏÖÔÚ´¦ÀíµÄÊÇµÚ 1 ĞĞ¡¢µÚ 2 ĞĞ»¹ÊÇµÚ N ĞĞ¡£
+ * updateAddLine æ˜¯ update() å‡½æ•°çš„æ ¸å¿ƒåŠ©æ‰‹ï¼Œ
+ * ä¸“é—¨è´Ÿè´£å¤„ç†å·²ç»ç”Ÿæˆå¥½ï¼ˆåŒ…å«å¤šä¸ªå­—ç¬¦å®ä½“ï¼‰çš„ä¸€è¡Œæ–‡æœ¬ã€‚
+ * @param textLine é‡Œé¢è£…ç€ç»„æˆè¿™ä¸€è¡Œçš„æ‰€æœ‰å­—ç¬¦å®ä½“ï¼ˆæ¯”å¦‚å­—æ¯ã€æ•°å­—ç­‰ï¼‰
+ * @param lineCounter å½“å‰æ˜¯ç¬¬å‡ è¡Œï¼ˆè¡Œå·/è¡Œç´¢å¼•ï¼‰ã€‚è¿™æ˜¯ä¸€ä¸ªä» 0 å¼€å§‹çš„æ•´æ•°
+ * ï¼Œç”¨æ¥å‘Šè¯‰å‡½æ•°ç°åœ¨å¤„ç†çš„æ˜¯ç¬¬ 1 è¡Œã€ç¬¬ 2 è¡Œè¿˜æ˜¯ç¬¬ N è¡Œã€‚
  *
  * @return  distance over the text base-line
  */
@@ -765,27 +773,27 @@ double RS_MText::updateAddLine(RS_EntityContainer* textLine, int lineCounter) {
     // Move:
     textLine->move(data.insertionPoint);
 	
-	//Êä³öËùÓĞ×Ö·ûµÄ×îÖÕÎ»ÖÃºÍ±ß½ç¿òĞÅÏ¢
+	//è¾“å‡ºæ‰€æœ‰å­—ç¬¦çš„æœ€ç»ˆä½ç½®å’Œè¾¹ç•Œæ¡†ä¿¡æ¯
     for (RS_Entity* entity : entities) {
         if (RS_EntityContainer* line = dynamic_cast<RS_EntityContainer*>(entity)) {
-            // ±éÀúÃ¿ĞĞÖĞµÄ×Ö·û
+            // éå†æ¯è¡Œä¸­çš„å­—ç¬¦
 
             const QList<RS_Entity*>& list = line->getEntityList();
             for (RS_Entity* entity : list) {
-                // ´¦Àí entity
+                // å¤„ç† entity
             
                 if (RS_Insert* letter = dynamic_cast<RS_Insert*>(entity)) {
-                    // »ñÈ¡×Ö·ûµÄ×îÖÕ²åÈëµã
+                    // è·å–å­—ç¬¦çš„æœ€ç»ˆæ’å…¥ç‚¹
                     RS_Vector finalPos = letter->getInsertionPoint();
 
-                    // »ñÈ¡×Ö·ûµÄ±ß½ç¿ò
+                    // è·å–å­—ç¬¦çš„è¾¹ç•Œæ¡†
                     RS_Vector min = letter->getMin();
                     RS_Vector max = letter->getMax();
 
-                    // »ñÈ¡×Ö·ûµÄÖĞĞÄµã
+                    // è·å–å­—ç¬¦çš„ä¸­å¿ƒç‚¹
                     RS_Vector center = (min + max) / 2.0;
 
-                    // Êä³ö×Ö·ûĞÅÏ¢
+                    // è¾“å‡ºå­—ç¬¦ä¿¡æ¯
                   /* qDebug() << "Character:" << letter->getName()
 						<< "Final Position.x:" << finalPos.x
 						<< "Center:" << center.x
@@ -809,7 +817,7 @@ double RS_MText::updateAddLine(RS_EntityContainer* textLine, int lineCounter) {
 }
 
 /**
-* »ñÈ¡µ±Ç° MText ¶ÔÏóÉÏ£¬¾àÀëÖ¸¶¨×ø±êµã×î½üµÄÄÇ¸ö¡°¶Ëµã¡±£¨¼´²åÈëµã£©£¬²¢¼ÆËã³ö¾ßÌåµÄ¾àÀë
+* è·å–å½“å‰ MText å¯¹è±¡ä¸Šï¼Œè·ç¦»æŒ‡å®šåæ ‡ç‚¹æœ€è¿‘çš„é‚£ä¸ªâ€œç«¯ç‚¹â€ï¼ˆå³æ’å…¥ç‚¹ï¼‰ï¼Œå¹¶è®¡ç®—å‡ºå…·ä½“çš„è·ç¦»
 */
 RS_Vector RS_MText::getNearestEndpoint(const RS_Vector& coord, double* dist)const {
     if (dist) {
@@ -819,22 +827,22 @@ RS_Vector RS_MText::getNearestEndpoint(const RS_Vector& coord, double* dist)cons
 }
 
 /*
-* ·µ»Ø¸ÃÎÄ±¾¶ÔÏóµÄËùÓĞ²Î¿¼µã£¨Reference Points£©
+* è¿”å›è¯¥æ–‡æœ¬å¯¹è±¡çš„æ‰€æœ‰å‚è€ƒç‚¹ï¼ˆReference Pointsï¼‰
 */
 RS_VectorSolutions RS_MText::getRefPoints() const{
 		return RS_VectorSolutions({data.insertionPoint});
 }
 
 /**
-* ½«Õû¸ö MText ¶ÔÏó£¨°üÀ¨ÎÄ±¾ÄÚÈİºÍ¶¨Î»µã£©ÔÚÍ¼Ö½ÉÏÒÆ¶¯Ö¸¶¨µÄÆ«ÒÆÁ¿
+* å°†æ•´ä¸ª MText å¯¹è±¡ï¼ˆåŒ…æ‹¬æ–‡æœ¬å†…å®¹å’Œå®šä½ç‚¹ï¼‰åœ¨å›¾çº¸ä¸Šç§»åŠ¨æŒ‡å®šçš„åç§»é‡
 */
 void RS_MText::move(const RS_Vector& offset) {
     RS_EntityContainer::move(offset);
     data.insertionPoint.move(offset);
 	if (data.hasDynamicPlaceholders)
 	{             
-                  //Ö®Ç°Ğ´µÄ,Õâ¸öÃ»ÓÃ
-		data.insertionPoint_timePlace.move(offset);// Èç¹ûÓĞ¶¯Ì¬Õ¼Î»·û£¬ÒÆ¶¯Õ¼Î»·ûÎ»ÖÃ
+                  //ä¹‹å‰å†™çš„,è¿™ä¸ªæ²¡ç”¨
+		data.insertionPoint_timePlace.move(offset);// å¦‚æœæœ‰åŠ¨æ€å ä½ç¬¦ï¼Œç§»åŠ¨å ä½ç¬¦ä½ç½®
 		//qDebug() << "RS_MText::move: moving insertionPoint_timePlace by offset" << offset.x << offset.y;
 	}
     //qDebug() << "RS_MText::move: old  insertionPoint_timePlace is   " << data.insertionPoint_timePlace.x << data.insertionPoint_timePlace.y;
@@ -844,9 +852,9 @@ void RS_MText::move(const RS_Vector& offset) {
 }
 
 
-/*Ğı×ªÎÄ±¾ÄÚÈİ,ÓÃ»¡¶ÈÖµ double Ö±½ÓÖ¸¶¨½Ç¶È
-* centerĞı×ªÖĞĞÄµã£¨»ùµã£©
-* angleĞı×ª·½ÏòµÄµ¥Î»ÏòÁ¿£¨Ö±½Ó½Ç¶ÈÖµ£©
+/*æ—‹è½¬æ–‡æœ¬å†…å®¹,ç”¨å¼§åº¦å€¼ double ç›´æ¥æŒ‡å®šè§’åº¦
+* centeræ—‹è½¬ä¸­å¿ƒç‚¹ï¼ˆåŸºç‚¹ï¼‰
+* angleæ—‹è½¬æ–¹å‘çš„å•ä½å‘é‡ï¼ˆç›´æ¥è§’åº¦å€¼ï¼‰
 */
 void RS_MText::rotate(const RS_Vector& center, const double& angle) {
     RS_Vector angleVector(angle);
@@ -855,9 +863,9 @@ void RS_MText::rotate(const RS_Vector& center, const double& angle) {
     data.angle = RS_Math::correctAngle(data.angle+angle);
 //    update();
 }
-/*Ğı×ªÎÄ±¾ÄÚÈİ,ÓÃ·½ÏòÏòÁ¿ RS_Vector ±íÊ¾Ğı×ª
-* centerĞı×ªÖĞĞÄµã£¨»ùµã£©
-* angleVectorĞı×ª·½ÏòµÄµ¥Î»ÏòÁ¿£¨·ÇÖ±½Ó½Ç¶ÈÖµ£©
+/*æ—‹è½¬æ–‡æœ¬å†…å®¹,ç”¨æ–¹å‘å‘é‡ RS_Vector è¡¨ç¤ºæ—‹è½¬
+* centeræ—‹è½¬ä¸­å¿ƒç‚¹ï¼ˆåŸºç‚¹ï¼‰
+* angleVectoræ—‹è½¬æ–¹å‘çš„å•ä½å‘é‡ï¼ˆéç›´æ¥è§’åº¦å€¼ï¼‰
 */
 void RS_MText::rotate(const RS_Vector& center, const RS_Vector& angleVector) {
     RS_EntityContainer::rotate(center, angleVector);
@@ -868,9 +876,9 @@ void RS_MText::rotate(const RS_Vector& center, const RS_Vector& angleVector) {
 
 
 /**
-* RS_MText Àà£¨¶àĞĞÎÄ±¾ÊµÌå£©µÄ Ëõ·Å²Ù×÷ÊµÏÖ£¬ÓÃÓÚ°´Ö¸¶¨±ÈÀıµ÷ÕûÎÄ±¾¶ÔÏóµÄ´óĞ¡ºÍÎ»ÖÃ
-* center ²ÎÊı£ºËõ·Å»ùµã
-* factor ²ÎÊı£ºËõ·ÅÒò×ÓÏòÁ¿
+* RS_MText ç±»ï¼ˆå¤šè¡Œæ–‡æœ¬å®ä½“ï¼‰çš„ ç¼©æ”¾æ“ä½œå®ç°ï¼Œç”¨äºæŒ‰æŒ‡å®šæ¯”ä¾‹è°ƒæ•´æ–‡æœ¬å¯¹è±¡çš„å¤§å°å’Œä½ç½®
+* center å‚æ•°ï¼šç¼©æ”¾åŸºç‚¹
+* factor å‚æ•°ï¼šç¼©æ”¾å› å­å‘é‡
 */
 void RS_MText::scale(const RS_Vector& center, const RS_Vector& factor) {
     data.insertionPoint.scale(center, factor);
@@ -880,8 +888,8 @@ void RS_MText::scale(const RS_Vector& center, const RS_Vector& factor) {
 }
 
 
-/* RS_MText£¨¶àĞĞÎÄ±¾¶ÔÏó£©µÄ ¾µÏñ²Ù×÷ÊµÏÖ£¬ºËĞÄÄ¿±êÊÇÔÚ±£³ÖÎÄ×Ö¿É¶ÁĞÔµÄÇ°ÌáÏÂÍê³É¼¸ºÎ¾µÏñ
-*  ½«ÎÄ×ÖµÄ²åÈëµã£¨ÎÄ±¾¶¨Î»»ù×¼µã£©¹ØÓÚ¾µÏñÖá£¨ÓÉ axisPoint1 ºÍ axisPoint2 ¶¨Òå£©½øĞĞ¼¸ºÎ¾µÏñ¡£
+/* RS_MTextï¼ˆå¤šè¡Œæ–‡æœ¬å¯¹è±¡ï¼‰çš„ é•œåƒæ“ä½œå®ç°ï¼Œæ ¸å¿ƒç›®æ ‡æ˜¯åœ¨ä¿æŒæ–‡å­—å¯è¯»æ€§çš„å‰æä¸‹å®Œæˆå‡ ä½•é•œåƒ
+*  å°†æ–‡å­—çš„æ’å…¥ç‚¹ï¼ˆæ–‡æœ¬å®šä½åŸºå‡†ç‚¹ï¼‰å…³äºé•œåƒè½´ï¼ˆç”± axisPoint1 å’Œ axisPoint2 å®šä¹‰ï¼‰è¿›è¡Œå‡ ä½•é•œåƒã€‚
 */
 void RS_MText::mirror(const RS_Vector& axisPoint1, const RS_Vector& axisPoint2) {
     data.insertionPoint.mirror(axisPoint1, axisPoint2);
@@ -920,8 +928,8 @@ bool RS_MText::hasEndpointsWithinWindow(const RS_Vector& /*v1*/, const RS_Vector
 
 
 /**
- *  CAD ÏµÍ³ÖĞ¶àĞĞÎÄ±¾£¨MText£©¶ÔÏóµÄ"À­Éì"²Ù×÷ÊµÏÖ£¬ºËĞÄ×÷ÓÃÊÇ ½öµ±Õû¸öÎÄ±¾ÍêÈ«Î»ÓÚÀ­Éì´°¿ÚÄÚÊ±£¬
- *  ½öµ±Õû¸öÎÄ±¾ÍêÈ«Î»ÓÚÀ­Éì´°¿ÚÄÚÊ±£¬²ÅÖ´ĞĞÕûÌåÆ½ÒÆ£»·ñÔòºöÂÔ²¿·ÖÖØµşÇé¿ö
+ *  CAD ç³»ç»Ÿä¸­å¤šè¡Œæ–‡æœ¬ï¼ˆMTextï¼‰å¯¹è±¡çš„"æ‹‰ä¼¸"æ“ä½œå®ç°ï¼Œæ ¸å¿ƒä½œç”¨æ˜¯ ä»…å½“æ•´ä¸ªæ–‡æœ¬å®Œå…¨ä½äºæ‹‰ä¼¸çª—å£å†…æ—¶ï¼Œ
+ *  ä»…å½“æ•´ä¸ªæ–‡æœ¬å®Œå…¨ä½äºæ‹‰ä¼¸çª—å£å†…æ—¶ï¼Œæ‰æ‰§è¡Œæ•´ä½“å¹³ç§»ï¼›å¦åˆ™å¿½ç•¥éƒ¨åˆ†é‡å æƒ…å†µ
  * by the given offset.
  */
 void RS_MText::stretch(const RS_Vector& firstCorner, const RS_Vector& secondCorner, const RS_Vector& offset) {
@@ -936,14 +944,14 @@ void RS_MText::stretch(const RS_Vector& firstCorner, const RS_Vector& secondCorn
 
 
 /**
- * ¶àĞĞÎÄ±¾¶ÔÏó£¨RS_MText£©ÖØÔØµÄÁ÷Êä³öÔËËã·û£¬ºËĞÄ×÷ÓÃÊÇ ½«ÎÄ±¾¶ÔÏóµÄ¹Ø¼üÊı¾İÒÔÈËÀà¿É¶ÁµÄ¸ñÊ½Êä³öµ½±ê×¼Á÷
- *£¨Èç¿ØÖÆÌ¨/ÈÕÖ¾ÎÄ¼ş£©£¬×¨Îªµ÷ÊÔ¡¢ÈÕÖ¾¼ÇÂ¼ºÍ¿ª·¢Õï¶ÏÉè¼Æ
+ * å¤šè¡Œæ–‡æœ¬å¯¹è±¡ï¼ˆRS_MTextï¼‰é‡è½½çš„æµè¾“å‡ºè¿ç®—ç¬¦ï¼Œæ ¸å¿ƒä½œç”¨æ˜¯ å°†æ–‡æœ¬å¯¹è±¡çš„å…³é”®æ•°æ®ä»¥äººç±»å¯è¯»çš„æ ¼å¼è¾“å‡ºåˆ°æ ‡å‡†æµ
+ *ï¼ˆå¦‚æ§åˆ¶å°/æ—¥å¿—æ–‡ä»¶ï¼‰ï¼Œä¸“ä¸ºè°ƒè¯•ã€æ—¥å¿—è®°å½•å’Œå¼€å‘è¯Šæ–­è®¾è®¡
  */
 std::ostream& operator << (std::ostream& os, const RS_MText& p) {
     os << " Text: " << p.getData() << "\n";
     return os;
 }
-/*¸ºÔğ½«ÎÄ±¾ÄÚÈİ·Ö½âÎªµ×²ãÍ¼ĞÎÔªËØ²¢»æÖÆµ½ÊÓÍ¼ÉÏ*/
+/*è´Ÿè´£å°†æ–‡æœ¬å†…å®¹åˆ†è§£ä¸ºåº•å±‚å›¾å½¢å…ƒç´ å¹¶ç»˜åˆ¶åˆ°è§†å›¾ä¸Š*/
 void RS_MText::draw(RS_Painter* painter, RS_GraphicView* view, double& /*patternOffset*/)
 {
     if (!(painter && view)) {
@@ -961,7 +969,7 @@ void RS_MText::draw(RS_Painter* painter, RS_GraphicView* view, double& /*pattern
 
     foreach (auto e, entities)
     {
-        view->drawEntity(painter, e);// 1. Î¯ÍĞÊÓÍ¼»æÖÆÃ¿¸ö×ÓÍ¼Ôª
+        view->drawEntity(painter, e);// 1. å§”æ‰˜è§†å›¾ç»˜åˆ¶æ¯ä¸ªå­å›¾å…ƒ
         qDebug() << "  - Entity:" << (e->rtti())
            ;
         

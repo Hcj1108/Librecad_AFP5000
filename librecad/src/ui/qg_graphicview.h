@@ -1,4 +1,4 @@
-/****************************************************************************
+ï»¿/****************************************************************************
 **
 ** This file is part of the LibreCAD project, a 2D CAD program
 **
@@ -83,7 +83,7 @@ public:
      * @param ox, offset X
      * @param oy, offset Y
      */
-	void setOffset(int ox, int oy) override;  // ÉèÖÃÊÓÍ¼Æ«ÒÆ
+	void setOffset(int ox, int oy) override;  // è®¾ç½®è§†å›¾åç§»
     /**
      * @brief getMousePosition() mouse position in widget coordinates
      * @return the cursor position in widget coordinates
@@ -136,20 +136,20 @@ protected:
     //! Layout used to fit in the view and the scrollbars.
     QGridLayout* layout;
     //! CAD mouse cursor
-    std::unique_ptr<QCursor> curCad;// CAD¹â±ê
+    std::unique_ptr<QCursor> curCad;// CADå…‰æ ‡
     //! Delete mouse cursor
-    std::unique_ptr<QCursor> curDel;// É¾³ı¹â±ê
+    std::unique_ptr<QCursor> curDel;// åˆ é™¤å…‰æ ‡
     //! Select mouse cursor
-    std::unique_ptr<QCursor> curSelect;// Ñ¡Ôñ¹â±ê
+    std::unique_ptr<QCursor> curSelect;// é€‰æ‹©å…‰æ ‡
     //! Magnifying glass mouse cursor
     std::unique_ptr<QCursor> curMagnifier;
     //! Hand mouse cursor
     std::unique_ptr<QCursor> curHand;
 		
 	// Used for buffering different paint layers
-	std::unique_ptr<QPixmap> PixmapLayer1;  // Used for grids and absolute 0Íø¸ñºÍ¾ø¶ÔÁãµã
-    std::unique_ptr<QPixmap> PixmapLayer2;  // Used for the actual CAD drawing CADÍ¼ĞÎÖ÷Ìå
-    std::unique_ptr<QPixmap> PixmapLayer3;  // Used for crosshair and actionitemsÊ®×Ö×¼ÏßºÍ½»»¥ÔªËØ
+	std::unique_ptr<QPixmap> PixmapLayer1;  // Used for grids and absolute 0ç½‘æ ¼å’Œç»å¯¹é›¶ç‚¹
+    std::unique_ptr<QPixmap> PixmapLayer2;  // Used for the actual CAD drawing CADå›¾å½¢ä¸»ä½“
+    std::unique_ptr<QPixmap> PixmapLayer3;  // Used for crosshair and actionitemsåå­—å‡†çº¿å’Œäº¤äº’å…ƒç´ 
 	
 	RS2::RedrawMethod redrawMethod;
 		
@@ -162,6 +162,8 @@ private:
     bool antialiasing{false};
     bool scrollbars{false};
     bool cursor_hiding{false};
+
+    bool editEntityAt(const RS_Vector& pos);
   
 
 

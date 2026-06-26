@@ -1,8 +1,8 @@
-#include "fileuilts.h"
+ï»¿#include "fileuilts.h"
 // FileUtils.cpp
 
 
-#include <iomanip> // ×¢ÒâÒª¼ÓÕâ¸öÍ·ÎÄ¼ş
+#include <iomanip> // æ³¨æ„è¦åŠ è¿™ä¸ªå¤´æ–‡ä»¶
 
 #include <iostream>
 #include <QUdpSocket>
@@ -21,26 +21,26 @@
 //#include "PixelCorrector.h"
 
 
-// ÊµÏÖÊ±±ØĞëÃ÷È·Ö¸¶¨ÃüÃû¿Õ¼ä
+// å®ç°æ—¶å¿…é¡»æ˜ç¡®æŒ‡å®šå‘½åç©ºé—´
 namespace FileUtils {
 
 
-	//Ä¿Ç°ÔÙÓÃµÄ°æ±¾´¢´æ×ø±ê
-    //ÖØ·¢Î²µã,Î²µã·¢ÁËÁ½´Î
+	//ç›®å‰å†ç”¨çš„ç‰ˆæœ¬å‚¨å­˜åæ ‡
+    //é‡å‘å°¾ç‚¹,å°¾ç‚¹å‘äº†ä¸¤æ¬¡
 	int sendOptimizedPointsUDP_hex(QVector<QVector<QPoint>>& optimizedPaths, const QString& ip,
 		quint16 port, int nom)
 	{
 		
 
-		// ´´½¨Ò»ÌõÂ·¾¶£¬°üº¬Õı·½ĞÎµÄ¶¥µã
+		// åˆ›å»ºä¸€æ¡è·¯å¾„ï¼ŒåŒ…å«æ­£æ–¹å½¢çš„é¡¶ç‚¹
 		QVector<QPoint> squarePath;
-		squarePath.append(QPoint(10000, 30768)); // ×óÏÂ
-		squarePath.append(QPoint(10000, 34768)); // ×óÉÏ
-		squarePath.append(QPoint(15000, 34768)); // ÓÒÉÏ
-		squarePath.append(QPoint(15000, 30768)); // ÓÒÏÂ
-		squarePath.append(QPoint(10000, 30768)); // ×óÏÂ (ÖØ¸´)
+		squarePath.append(QPoint(10000, 30768)); // å·¦ä¸‹
+		squarePath.append(QPoint(10000, 34768)); // å·¦ä¸Š
+		squarePath.append(QPoint(15000, 34768)); // å³ä¸Š
+		squarePath.append(QPoint(15000, 30768)); // å³ä¸‹
+		squarePath.append(QPoint(10000, 30768)); // å·¦ä¸‹ (é‡å¤)
 
-		// ½«ÕâÌõÂ·¾¶Ìí¼Óµ½ optimizedPaths ÖĞ
+		// å°†è¿™æ¡è·¯å¾„æ·»åŠ åˆ° optimizedPaths ä¸­
 		optimizedPaths.append(squarePath);
 
 		QUdpSocket udpSocket;
@@ -111,7 +111,7 @@ namespace FileUtils {
 					qint64 distance_squared = dx * dx + dy * dy;
 
 					if (distance_squared <= stepThresholdSquared) {
-						is_first = false;// ²»ÊÓÎªµÚÒ»¸öµã
+						is_first = false;// ä¸è§†ä¸ºç¬¬ä¸€ä¸ªç‚¹
 					}
 					else {
 						quint64 hh = (1ULL << 56);
@@ -183,7 +183,7 @@ namespace FileUtils {
 		return nom;
 }
 
-	//·¢ËÍ0~9£ºµÄÆğÖ¹Î»ĞÅÏ¢()
+	//å‘é€0~9ï¼šçš„èµ·æ­¢ä½ä¿¡æ¯()
 	int sendquint256(QVector<int>& Array, const QString& ip, quint16 port, int nom)
 	{
 		if (Array.size() < 2) {
@@ -239,7 +239,7 @@ namespace FileUtils {
 
 
 
-	//·¢ËÍ¾²Ì¬Êı¾İÆğÖ¹Î»ĞÅÏ¢()
+	//å‘é€é™æ€æ•°æ®èµ·æ­¢ä½ä¿¡æ¯()
 	int sendquint256_static(int begin, int end, const QString& ip, quint16 port, int nom)
 	{
 		QUdpSocket udpSocket;
@@ -251,6 +251,9 @@ namespace FileUtils {
 		quint64 ll = (static_cast<quint64>(static_cast<quint32>(begin) * 8) << 32) | (static_cast<quint64>(static_cast<quint32>(end) * 8));
 
 		QByteArray packet;
+		hl = qToBigEndian(hl);
+		lh = qToBigEndian(lh);
+		ll = qToBigEndian(ll);
 		packet.append(QByteArray::fromHex(hhStr.toUtf8()));
 		packet.append(reinterpret_cast<const char*>(&hl), 8);
 		packet.append(reinterpret_cast<const char*>(&lh), 8);
@@ -261,7 +264,7 @@ namespace FileUtils {
 		return nom;
 }
 
-	//·¢ËÍ°Ë¸ö×ø±ê,hh:mm:ss°Ë¸ö×Ö·ûµÄ×ø±ê
+	//å‘é€å…«ä¸ªåæ ‡,hh:mm:sså…«ä¸ªå­—ç¬¦çš„åæ ‡
 	void sendquint256_4(const QVector<RS_Vector>& positions, const QString& ip, quint16 port, int nom, int num_item,int fondsize)
 	{
 		QUdpSocket udpSocket;
@@ -310,296 +313,296 @@ namespace FileUtils {
 		qDebug() << "[UDP] dynamic positions done";
 }
 
-	//µ¥·¢Ä£¿é############################################################################
+	//å•å‘æ¨¡å—############################################################################
 	int SendBKBK(QString positionCommandHeader, QString cmdHex, int ParamValue)
 	{
 		QString ip = "192.168.1.10";
 		quint16 port = 1234;
-		//QString cmdHex = QString::number(ParamType, 16).toUpper(); // ×ª»»Îª"5E"
+		//QString cmdHex = QString::number(ParamType, 16).toUpper(); // è½¬æ¢ä¸º"5E"
 	
 		QUdpSocket udpSocket;
 
-		// ¹¹½¨²ÎÊı·¢ËÍÁĞ±í£¨Óë½á¹¹Ìå³ÉÔ±¶ÔÓ¦£©
+		// æ„å»ºå‚æ•°å‘é€åˆ—è¡¨ï¼ˆä¸ç»“æ„ä½“æˆå‘˜å¯¹åº”ï¼‰
 		QVector<QPair<QString, int>> params = {
 			{cmdHex, ParamValue},
 		};
-		// ·¢ËÍËùÓĞ²ÎÊı
+		// å‘é€æ‰€æœ‰å‚æ•°
 		for (const auto& param : params) {
-			// ¹¹½¨¹Ì¶¨Í·: "02" + ×ÓÃüÁîID + "0000000000" (¹²16¸ö×Ö·û£¬8×Ö½Ú)
+			// æ„å»ºå›ºå®šå¤´: "02" + å­å‘½ä»¤ID + "0000000000" (å…±16ä¸ªå­—ç¬¦ï¼Œ8å­—èŠ‚)
 			QString headerStr = positionCommandHeader + param.first + "000000000000";
 			QByteArray header = QByteArray::fromHex(headerStr.toUtf8());
 
-			// ¹Ì¶¨Öµ hl ºÍ lh (¸÷8×Ö½Ú£¬È«0)
+			// å›ºå®šå€¼ hl å’Œ lh (å„8å­—èŠ‚ï¼Œå…¨0)
 			quint64 hl = 0;
 			quint64 lh = 0;
 
-			// ll ²ÎÊıÖµ (8×Ö½Ú£¬µÍ4×Ö½ÚÎª²ÎÊıÖµ£¬´ó¶ËĞò)
+			// ll å‚æ•°å€¼ (8å­—èŠ‚ï¼Œä½4å­—èŠ‚ä¸ºå‚æ•°å€¼ï¼Œå¤§ç«¯åº)
 			quint64 ll = qToBigEndian(static_cast<quint64>(param.second));
 
-			// ¹¹½¨ÍêÕûÊı¾İ°ü (32×Ö½Ú)
+			// æ„å»ºå®Œæ•´æ•°æ®åŒ… (32å­—èŠ‚)
 			QByteArray packet;
-			packet.append(header); // 8×Ö½Ú
-			packet.append(reinterpret_cast<const char*>(&hl), sizeof(hl)); // 8×Ö½Ú
-			packet.append(reinterpret_cast<const char*>(&lh), sizeof(lh)); // 8×Ö½Ú
-			packet.append(reinterpret_cast<const char*>(&ll), sizeof(ll)); // 8×Ö½Ú
+			packet.append(header); // 8å­—èŠ‚
+			packet.append(reinterpret_cast<const char*>(&hl), sizeof(hl)); // 8å­—èŠ‚
+			packet.append(reinterpret_cast<const char*>(&lh), sizeof(lh)); // 8å­—èŠ‚
+			packet.append(reinterpret_cast<const char*>(&ll), sizeof(ll)); // 8å­—èŠ‚
 
-			// ·¢ËÍUDPÊı¾İ°ü
+			// å‘é€UDPæ•°æ®åŒ…
 			if (udpSocket.writeDatagram(packet, QHostAddress(ip), port) == -1) {
-				qWarning() << "·¢ËÍ²ÎÊıÊ§°Ü:" << param.first << udpSocket.errorString();
+				qWarning() << "å‘é€å‚æ•°å¤±è´¥:" << param.first << udpSocket.errorString();
 			}
 			else {
-				qDebug() << QString::fromLocal8Bit("³É¹¦·¢ËÍ²ÎÊı:") << param.first << QString::fromLocal8Bit("Öµ:") << param.second
-					<< QString::fromLocal8Bit("Êı¾İ°ü:") << packet.toHex(' ').toUpper();
+				qDebug() << QString::fromLocal8Bit("æˆåŠŸå‘é€å‚æ•°:") << param.first << QString::fromLocal8Bit("å€¼:") << param.second
+					<< QString::fromLocal8Bit("æ•°æ®åŒ…:") << packet.toHex(' ').toUpper();
 			}
 		}
-		return 0; // ³É¹¦·µ»Ø0
+		return 0; // æˆåŠŸè¿”å›0
 	}
 
 
-	//µÆ¹âÄ£¿é############################################################################
+	//ç¯å…‰æ¨¡å—############################################################################
 	int Sendphoto()
 	{
 		QString ip = "192.168.1.10";
 		quint16 port = 1234;
 
-		// ²ÎÊıĞ£Ñéº¯Êı
+		// å‚æ•°æ ¡éªŒå‡½æ•°
 		auto checkParam = [](const QString& name, int value, int min, int max) -> bool {
 			if (value < min || value > max) {
-				qWarning() << QString::fromLocal8Bit("²ÎÊı '%1' Öµ %2 ³¬³ö·¶Î§ (%3-%4)")
+				qWarning() << QString::fromLocal8Bit("å‚æ•° '%1' å€¼ %2 è¶…å‡ºèŒƒå›´ (%3-%4)")
 					.arg(name).arg(value).arg(min).arg(max);
 				return false;
 			}
 			return true;
 			};
 
-		// Ğ£ÑéËùÓĞ²ÎÊı
+		// æ ¡éªŒæ‰€æœ‰å‚æ•°
 
 
-		if (!checkParam(QString::fromLocal8Bit("ºìÉ«"), R, 0, 255)) return -1;
-		if (!checkParam(QString::fromLocal8Bit("ÂÌÉ«"), G, 0, 255)) return -1;
-		if (!checkParam(QString::fromLocal8Bit("À¶É«"), B, 0, 255)) return -1;
-		if (!checkParam(QString::fromLocal8Bit("RGBÄ£Ê½"), RGBMode, 0, 1)) return -1;
-		if (!checkParam(QString::fromLocal8Bit("RGBÊ±¼ä"), RGBTime, 0, 2000)) return -1;
+		if (!checkParam(QString::fromLocal8Bit("çº¢è‰²"), R, 0, 255)) return -1;
+		if (!checkParam(QString::fromLocal8Bit("ç»¿è‰²"), G, 0, 255)) return -1;
+		if (!checkParam(QString::fromLocal8Bit("è“è‰²"), B, 0, 255)) return -1;
+		if (!checkParam(QString::fromLocal8Bit("RGBæ¨¡å¼"), RGBMode, 0, 1)) return -1;
+		if (!checkParam(QString::fromLocal8Bit("RGBæ—¶é—´"), RGBTime, 0, 2000)) return -1;
 
 		QUdpSocket udpSocket;
 
-		// ¹¹½¨²ÎÊı·¢ËÍÁĞ±í
+		// æ„å»ºå‚æ•°å‘é€åˆ—è¡¨
 		QVector<QPair<QString, int>> params = {
 
-			{"00", RGBMode},      // RGBÄ£Ê½
-			{"01", R},            // ºìÉ«
-			{"02", G},            // ÂÌÉ«
-			{"03", B},            // À¶É«
-			{"04", RGBTime},      // RGBÊ±¼ä
-			{"05", 100}           //½¥ÃğÊ±³¤
+			{"00", RGBMode},      // RGBæ¨¡å¼
+			{"01", R},            // çº¢è‰²
+			{"02", G},            // ç»¿è‰²
+			{"03", B},            // è“è‰²
+			{"04", RGBTime},      // RGBæ—¶é—´
+			{"05", 100}           //æ¸ç­æ—¶é•¿
 			
 		};
 
-		// ·¢ËÍËùÓĞ²ÎÊı
+		// å‘é€æ‰€æœ‰å‚æ•°
 		for (const auto& param : params) {
-			// ¹¹½¨¹Ì¶¨Í·: "02" + ×ÓÃüÁîID + "0000000000" (¹²16¸ö×Ö·û£¬8×Ö½Ú)
+			// æ„å»ºå›ºå®šå¤´: "02" + å­å‘½ä»¤ID + "0000000000" (å…±16ä¸ªå­—ç¬¦ï¼Œ8å­—èŠ‚)
 			QString headerStr = "11" + param.first + "000000000000";
 			QByteArray header = QByteArray::fromHex(headerStr.toUtf8());
 
-			// ¹Ì¶¨Öµ hl ºÍ lh (¸÷8×Ö½Ú£¬È«0)
+			// å›ºå®šå€¼ hl å’Œ lh (å„8å­—èŠ‚ï¼Œå…¨0)
 			quint64 hl = 0;
 			quint64 lh = 0;
 
-			// ll ²ÎÊıÖµ (8×Ö½Ú£¬µÍ4×Ö½ÚÎª²ÎÊıÖµ£¬´ó¶ËĞò)
+			// ll å‚æ•°å€¼ (8å­—èŠ‚ï¼Œä½4å­—èŠ‚ä¸ºå‚æ•°å€¼ï¼Œå¤§ç«¯åº)
 			quint64 ll = qToBigEndian(static_cast<quint64>(param.second));
 
-			// ¹¹½¨ÍêÕûÊı¾İ°ü (32×Ö½Ú)
+			// æ„å»ºå®Œæ•´æ•°æ®åŒ… (32å­—èŠ‚)
 			QByteArray packet;
-			packet.append(header); // 8×Ö½Ú
-			packet.append(reinterpret_cast<const char*>(&hl), sizeof(hl)); // 8×Ö½Ú
-			packet.append(reinterpret_cast<const char*>(&lh), sizeof(lh)); // 8×Ö½Ú
-			packet.append(reinterpret_cast<const char*>(&ll), sizeof(ll)); // 8×Ö½Ú
+			packet.append(header); // 8å­—èŠ‚
+			packet.append(reinterpret_cast<const char*>(&hl), sizeof(hl)); // 8å­—èŠ‚
+			packet.append(reinterpret_cast<const char*>(&lh), sizeof(lh)); // 8å­—èŠ‚
+			packet.append(reinterpret_cast<const char*>(&ll), sizeof(ll)); // 8å­—èŠ‚
 
-			// ·¢ËÍUDPÊı¾İ°ü
+			// å‘é€UDPæ•°æ®åŒ…
 			if (udpSocket.writeDatagram(packet, QHostAddress(ip), port) == -1) {
-				qWarning() << "·¢ËÍ²ÎÊıÊ§°Ü:" << param.first << udpSocket.errorString();
+				qWarning() << "å‘é€å‚æ•°å¤±è´¥:" << param.first << udpSocket.errorString();
 			}
 			else {
-				qDebug() << QString::fromLocal8Bit("³É¹¦·¢ËÍ²ÎÊı:") << param.first << QString::fromLocal8Bit("Öµ:") << param.second
-					<< QString::fromLocal8Bit("Êı¾İ°ü:") << packet.toHex(' ').toUpper();
+				qDebug() << QString::fromLocal8Bit("æˆåŠŸå‘é€å‚æ•°:") << param.first << QString::fromLocal8Bit("å€¼:") << param.second
+					<< QString::fromLocal8Bit("æ•°æ®åŒ…:") << packet.toHex(' ').toUpper();
 			}
 		}
-		return 0; // ³É¹¦·µ»Ø0
+		return 0; // æˆåŠŸè¿”å›0
 	}
-	//´¥·¢ÓÅ»¯############################################################################
+	//è§¦å‘ä¼˜åŒ–############################################################################
 	int Sendkey()
 	{
 		QString ip = "192.168.1.10";
 		quint16 port = 1234;
 
-		// ²ÎÊıĞ£Ñéº¯Êı
+		// å‚æ•°æ ¡éªŒå‡½æ•°
 		auto checkParam = [](const QString& name, int value, int min, int max) -> bool {
 			if (value < min || value > max) {
-				qWarning() << QString::fromLocal8Bit("²ÎÊı '%1' Öµ %2 ³¬³ö·¶Î§ (%3-%4)")
+				qWarning() << QString::fromLocal8Bit("å‚æ•° '%1' å€¼ %2 è¶…å‡ºèŒƒå›´ (%3-%4)")
 					.arg(name).arg(value).arg(min).arg(max);
 				return false;
 			}
 			return true;
 			};
 
-		// Ğ£ÑéËùÓĞ²ÎÊı
-		if (!checkParam(QString::fromLocal8Bit("¹âµçÂË²¨Ê±¼ä"), jgconfig.GdFilterTime, 1, 999)) return -1;
-		if (!checkParam(QString::fromLocal8Bit("×îĞ¡´¥·¢Ä£Ê½"), jgconfig.MinThresholdMode, 0, 2)) return -1;
-		if (!checkParam(QString::fromLocal8Bit("×îĞ¡´¥·¢Ê±¼ä"), jgconfig.MinTriggerTime, 1, 9999)) return -1;
-		if (!checkParam(QString::fromLocal8Bit("×îĞ¡´¥·¢¾àÀë"), jgconfig.MinTriggerDistance, 1, 9999)) return -1;
-		if (!checkParam(QString::fromLocal8Bit("ÑÓ³Ù´¥·¢Ä£Ê½"), jgconfig.DelayTriggerMode, 0, 2)) return -1;
-		if (!checkParam(QString::fromLocal8Bit("ÑÓ³Ù´¥·¢Ê±¼ä"), jgconfig.DelayTriggerTime, 1, 9999)) return -1;
-		if (!checkParam(QString::fromLocal8Bit("ÑÓ³Ù´¥·¢¾àÀë"), jgconfig.DelayTriggerDistance, 1, 9999)) return -1;
-		if (!checkParam(QString::fromLocal8Bit("¶ş´ÎÑÓ³Ù´¥·¢Ä£Ê½"), jgconfig.DelayTriggerModetwo, 0, 2)) return -1;
-		if (!checkParam(QString::fromLocal8Bit("¶ş´ÎÑÓ³Ù´¥·¢Ê±¼ä"), jgconfig.DelayTriggerTimetwo, 1, 9999)) return -1;
-		if (!checkParam(QString::fromLocal8Bit("¶ş´ÎÑÓ³Ù´¥·¢¾àÀë"), jgconfig.DelayTriggerDistancetwo, 1, 9999)) return -1;
+		// æ ¡éªŒæ‰€æœ‰å‚æ•°
+		if (!checkParam(QString::fromLocal8Bit("å…‰ç”µæ»¤æ³¢æ—¶é—´"), jgconfig.GdFilterTime, 1, 999)) return -1;
+		if (!checkParam(QString::fromLocal8Bit("æœ€å°è§¦å‘æ¨¡å¼"), jgconfig.MinThresholdMode, 0, 2)) return -1;
+		if (!checkParam(QString::fromLocal8Bit("æœ€å°è§¦å‘æ—¶é—´"), jgconfig.MinTriggerTime, 1, 9999)) return -1;
+		if (!checkParam(QString::fromLocal8Bit("æœ€å°è§¦å‘è·ç¦»"), jgconfig.MinTriggerDistance, 1, 9999)) return -1;
+		if (!checkParam(QString::fromLocal8Bit("å»¶è¿Ÿè§¦å‘æ¨¡å¼"), jgconfig.DelayTriggerMode, 0, 2)) return -1;
+		if (!checkParam(QString::fromLocal8Bit("å»¶è¿Ÿè§¦å‘æ—¶é—´"), jgconfig.DelayTriggerTime, 1, 9999)) return -1;
+		if (!checkParam(QString::fromLocal8Bit("å»¶è¿Ÿè§¦å‘è·ç¦»"), jgconfig.DelayTriggerDistance, 1, 9999)) return -1;
+		if (!checkParam(QString::fromLocal8Bit("äºŒæ¬¡å»¶è¿Ÿè§¦å‘æ¨¡å¼"), jgconfig.DelayTriggerModetwo, 0, 2)) return -1;
+		if (!checkParam(QString::fromLocal8Bit("äºŒæ¬¡å»¶è¿Ÿè§¦å‘æ—¶é—´"), jgconfig.DelayTriggerTimetwo, 1, 9999)) return -1;
+		if (!checkParam(QString::fromLocal8Bit("äºŒæ¬¡å»¶è¿Ÿè§¦å‘è·ç¦»"), jgconfig.DelayTriggerDistancetwo, 1, 9999)) return -1;
 
 		
 		QUdpSocket udpSocket;
 
-		// ¹¹½¨²ÎÊı·¢ËÍÁĞ±í£¨Óë½á¹¹Ìå³ÉÔ±¶ÔÓ¦£©
+		// æ„å»ºå‚æ•°å‘é€åˆ—è¡¨ï¼ˆä¸ç»“æ„ä½“æˆå‘˜å¯¹åº”ï¼‰
 		QVector<QPair<QString, int>> params = {
 			
-			{"00", jgconfig.GdFilterTime},       // ¹âµçÂË²¨Ê±¼ä
+			{"00", jgconfig.GdFilterTime},       // å…‰ç”µæ»¤æ³¢æ—¶é—´
 
-			{"01", jgconfig.MinThresholdMode},   // ×îĞ¡´¥·¢Ä£Ê½
-			{"02", jgconfig.MinTriggerTime},     // ×îĞ¡´¥·¢Ê±¼ä
-			{"03", jgconfig.MinTriggerDistance}, // ×îĞ¡´¥·¢¾àÀë
-			{"04", jgconfig.DelayTriggerMode},   // ÑÓ³Ù´¥·¢Ä£Ê½
-			{"05", jgconfig.DelayTriggerTime},   // ÑÓ³Ù´¥·¢Ê±¼ä
-			{"06", jgconfig.DelayTriggerDistance}, // ÑÓ³Ù´¥·¢¾àÀë
-			{"07", jgconfig.DelayTriggerModetwo}, // ¶ş´ÎÑÓ³Ù´¥·¢Ä£Ê½
-			{"08", jgconfig.DelayTriggerTimetwo}, // ¶ş´ÎÑÓ³Ù´¥·¢Ê±¼ä
-			{"09", jgconfig.DelayTriggerDistancetwo}, // ¶ş´ÎÑÓ³Ù´¥·¢¾àÀë
-			{"0A", DCLength},                     // ´¥·¢³¤¶È
-			{"0B", OutputLocationMin},            // ´¥·¢ÏÂÏŞÈßÓà³¤¶È
-			{"0C", OutputLocationMax}           // ´¥·¢ÉÏÏŞÈßÓà³¤¶È
+			{"01", jgconfig.MinThresholdMode},   // æœ€å°è§¦å‘æ¨¡å¼
+			{"02", jgconfig.MinTriggerTime},     // æœ€å°è§¦å‘æ—¶é—´
+			{"03", jgconfig.MinTriggerDistance}, // æœ€å°è§¦å‘è·ç¦»
+			{"04", jgconfig.DelayTriggerMode},   // å»¶è¿Ÿè§¦å‘æ¨¡å¼
+			{"05", jgconfig.DelayTriggerTime},   // å»¶è¿Ÿè§¦å‘æ—¶é—´
+			{"06", jgconfig.DelayTriggerDistance}, // å»¶è¿Ÿè§¦å‘è·ç¦»
+			{"07", jgconfig.DelayTriggerModetwo}, // äºŒæ¬¡å»¶è¿Ÿè§¦å‘æ¨¡å¼
+			{"08", jgconfig.DelayTriggerTimetwo}, // äºŒæ¬¡å»¶è¿Ÿè§¦å‘æ—¶é—´
+			{"09", jgconfig.DelayTriggerDistancetwo}, // äºŒæ¬¡å»¶è¿Ÿè§¦å‘è·ç¦»
+			{"0A", DCLength},                     // è§¦å‘é•¿åº¦
+			{"0B", OutputLocationMin},            // è§¦å‘ä¸‹é™å†—ä½™é•¿åº¦
+			{"0C", OutputLocationMax}           // è§¦å‘ä¸Šé™å†—ä½™é•¿åº¦
 			
 		};
 
-		// ·¢ËÍËùÓĞ²ÎÊı
+		// å‘é€æ‰€æœ‰å‚æ•°
 		for (const auto& param : params) {
-			// ¹¹½¨¹Ì¶¨Í·: "02" + ×ÓÃüÁîID + "0000000000" (¹²16¸ö×Ö·û£¬8×Ö½Ú)
+			// æ„å»ºå›ºå®šå¤´: "02" + å­å‘½ä»¤ID + "0000000000" (å…±16ä¸ªå­—ç¬¦ï¼Œ8å­—èŠ‚)
 			QString headerStr = "02" + param.first + "000000000000";
 
 			QByteArray header = QByteArray::fromHex(headerStr.toUtf8());
 
-			// ¹Ì¶¨Öµ hl ºÍ lh (¸÷8×Ö½Ú£¬È«0)
+			// å›ºå®šå€¼ hl å’Œ lh (å„8å­—èŠ‚ï¼Œå…¨0)
 			quint64 hl = 0;
 			quint64 lh = 0;
 
-			// ll ²ÎÊıÖµ (8×Ö½Ú£¬µÍ4×Ö½ÚÎª²ÎÊıÖµ£¬´ó¶ËĞò)
+			// ll å‚æ•°å€¼ (8å­—èŠ‚ï¼Œä½4å­—èŠ‚ä¸ºå‚æ•°å€¼ï¼Œå¤§ç«¯åº)
 			quint64 ll = qToBigEndian(static_cast<quint64>(param.second));
 
-			// ¹¹½¨ÍêÕûÊı¾İ°ü (32×Ö½Ú)
+			// æ„å»ºå®Œæ•´æ•°æ®åŒ… (32å­—èŠ‚)
 			QByteArray packet;
-			packet.append(header); // 8×Ö½Ú
-			packet.append(reinterpret_cast<const char*>(&hl), sizeof(hl)); // 8×Ö½Ú
-			packet.append(reinterpret_cast<const char*>(&lh), sizeof(lh)); // 8×Ö½Ú
-			packet.append(reinterpret_cast<const char*>(&ll), sizeof(ll)); // 8×Ö½Ú
+			packet.append(header); // 8å­—èŠ‚
+			packet.append(reinterpret_cast<const char*>(&hl), sizeof(hl)); // 8å­—èŠ‚
+			packet.append(reinterpret_cast<const char*>(&lh), sizeof(lh)); // 8å­—èŠ‚
+			packet.append(reinterpret_cast<const char*>(&ll), sizeof(ll)); // 8å­—èŠ‚
 
-			// ·¢ËÍUDPÊı¾İ°ü
+			// å‘é€UDPæ•°æ®åŒ…
 			if (udpSocket.writeDatagram(packet, QHostAddress(ip), port) == -1) {
-				qWarning() << "·¢ËÍ²ÎÊıÊ§°Ü:" << param.first << udpSocket.errorString();
+				qWarning() << "å‘é€å‚æ•°å¤±è´¥:" << param.first << udpSocket.errorString();
 			}
 			else {
-				qDebug() << QString::fromLocal8Bit("³É¹¦·¢ËÍ²ÎÊı:") << param.first << QString::fromLocal8Bit("Öµ:") << param.second
-					<< QString::fromLocal8Bit("Êı¾İ°ü:") << packet.toHex(' ').toUpper();
+				qDebug() << QString::fromLocal8Bit("æˆåŠŸå‘é€å‚æ•°:") << param.first << QString::fromLocal8Bit("å€¼:") << param.second
+					<< QString::fromLocal8Bit("æ•°æ®åŒ…:") << packet.toHex(' ').toUpper();
 			}
 		}
 
-		return 0; // ³É¹¦·µ»Ø0
+		return 0; // æˆåŠŸè¿”å›0
 	}
-	//´ò±ê²ÎÊı############################################################################
+	//æ‰“æ ‡å‚æ•°############################################################################
 	int Sendmarking()
 	{
 		QString ip = "192.168.1.10";
 		quint16 port = 1234;
 
-		// ²ÎÊıĞ£Ñéº¯Êı
+		// å‚æ•°æ ¡éªŒå‡½æ•°
 		auto checkParam = [](const QString& name, int value, int min, int max) -> bool {
 			if (value < min || value > max) {
-				qWarning() << QString::fromLocal8Bit("²ÎÊı '%1' Öµ %2 ³¬³ö·¶Î§ (%3-%4)")
+				qWarning() << QString::fromLocal8Bit("å‚æ•° '%1' å€¼ %2 è¶…å‡ºèŒƒå›´ (%3-%4)")
 					.arg(name).arg(value).arg(min).arg(max);
 				return false;
 			}
 			return true;
 			};
 
-		// Ğ£ÑéËùÓĞ²ÎÊı
-		if (!checkParam(QString::fromLocal8Bit("´ò±êÄÚÈİÑ¡Ôñ"), jgconfig.Dbchoice, 0, 3)) return -1;
-		if (!checkParam(QString::fromLocal8Bit("²å²¹²½³¤"), jgconfig.interpolationStep, 1, 100)) return -1;
+		// æ ¡éªŒæ‰€æœ‰å‚æ•°
+		if (!checkParam(QString::fromLocal8Bit("æ‰“æ ‡å†…å®¹é€‰æ‹©"), jgconfig.Dbchoice, 0, 3)) return -1;
+		if (!checkParam(QString::fromLocal8Bit("æ’è¡¥æ­¥é•¿"), jgconfig.interpolationStep, 1, 100)) return -1;
 
-		if (!checkParam(QString::fromLocal8Bit("·ÉĞĞÕñ¾µ·ùÃæ"), jgconfig.scanW_mm, 1, 999)) return -1;
-		if (!checkParam(QString::fromLocal8Bit("·ÉĞĞ±àÂëÆ÷·½Ïò"), jgconfig.BMQdirection, 0, 1)) return -1;
-		if (!checkParam(QString::fromLocal8Bit("·ÉĞĞ·½Ïò"), jgconfig.FXDBirection, 0, 1)) return -1;
-		if (!checkParam(QString::fromLocal8Bit("´ò±êÄ£Ê½"), jgconfig.Dbmode, 0, 1)) return -1;
+		if (!checkParam(QString::fromLocal8Bit("é£è¡ŒæŒ¯é•œå¹…é¢"), jgconfig.scanW_mm, 1, 999)) return -1;
+		if (!checkParam(QString::fromLocal8Bit("é£è¡Œç¼–ç å™¨æ–¹å‘"), jgconfig.BMQdirection, 0, 1)) return -1;
+		if (!checkParam(QString::fromLocal8Bit("é£è¡Œæ–¹å‘"), jgconfig.FXDBirection, 0, 1)) return -1;
+		if (!checkParam(QString::fromLocal8Bit("æ‰“æ ‡æ¨¡å¼"), jgconfig.Dbmode, 0, 1)) return -1;
 
-		if (!checkParam(QString::fromLocal8Bit("¼¤¹âÆµÂÊ"), jgconfig.JgFreq, 5, 400)) return -1;
-		if (!checkParam(QString::fromLocal8Bit("¼¤¹â¹¦ÂÊ"), jgconfig.JgPower, 5, 95)) return -1;
-		if (!checkParam(QString::fromLocal8Bit("¿ª¹âÑÓÊ±"), jgconfig.KgDelay, 0, 30)) return -1;
-		if (!checkParam(QString::fromLocal8Bit("¹Ø¹âÑÓÊ±"), jgconfig.GgDelay, 0, 30)) return -1;
-		if (!checkParam(QString::fromLocal8Bit("Ìø×ªÑÓÊ±"), jgconfig.jumpDelay, 0, 30)) return -1;
-		if (!checkParam(QString::fromLocal8Bit("½áÊøÑÓÊ±"), jgconfig.endDelay, 0, 30)) return -1;
+		if (!checkParam(QString::fromLocal8Bit("æ¿€å…‰é¢‘ç‡"), jgconfig.JgFreq, 5, 400)) return -1;
+		if (!checkParam(QString::fromLocal8Bit("æ¿€å…‰åŠŸç‡"), jgconfig.JgPower, 5, 95)) return -1;
+		if (!checkParam(QString::fromLocal8Bit("å¼€å…‰å»¶æ—¶"), jgconfig.KgDelay, 0, 30)) return -1;
+		if (!checkParam(QString::fromLocal8Bit("å…³å…‰å»¶æ—¶"), jgconfig.GgDelay, 0, 30)) return -1;
+		if (!checkParam(QString::fromLocal8Bit("è·³è½¬å»¶æ—¶"), jgconfig.jumpDelay, 0, 30)) return -1;
+		if (!checkParam(QString::fromLocal8Bit("ç»“æŸå»¶æ—¶"), jgconfig.endDelay, 0, 30)) return -1;
 
 
 		QUdpSocket udpSocket;
 
-		// ¹¹½¨²ÎÊı·¢ËÍÁĞ±í£¨Óë½á¹¹Ìå³ÉÔ±¶ÔÓ¦£©
+		// æ„å»ºå‚æ•°å‘é€åˆ—è¡¨ï¼ˆä¸ç»“æ„ä½“æˆå‘˜å¯¹åº”ï¼‰
 		QVector<QPair<QString, int>> params = {
 
-	 // ´ò±ê²ÎÊı
-	  //{"02", jgconfig.Dbchoice},           // ´ò±êÄÚÈİÑ¡Ôñ
-	  {"03", 10},  // ²å²¹²½³¤
+	 // æ‰“æ ‡å‚æ•°
+	  //{"02", jgconfig.Dbchoice},           // æ‰“æ ‡å†…å®¹é€‰æ‹©
+	  {"03", 10},  // æ’è¡¥æ­¥é•¿
 
-	  // ·ÉĞĞ²ÎÊı
-	  {"04", jgconfig.scanW_mm},           // ·ÉĞĞÕñ¾µ·ùÃæ
-	  {"05", jgconfig.BMQdirection},       // ·ÉĞĞ±àÂëÆ÷·½Ïò
-	  {"06", jgconfig.FXDBirection},       // ·ÉĞĞ·½Ïò
-	  {"07", jgconfig.Dbmode},             // ´ò±êÄ£Ê½
+	  // é£è¡Œå‚æ•°
+	  {"04", jgconfig.scanW_mm},           // é£è¡ŒæŒ¯é•œå¹…é¢
+	  {"05", jgconfig.BMQdirection},       // é£è¡Œç¼–ç å™¨æ–¹å‘
+	  {"06", jgconfig.FXDBirection},       // é£è¡Œæ–¹å‘
+	  {"07", jgconfig.Dbmode},             // æ‰“æ ‡æ¨¡å¼
 
-	  // ¼¤¹â²ÎÊı
-	  // ¼¤¹â²ÎÊı
-	  {"08", jgconfig.jumpDelay},          // Ìø×ªÑÓÊ±
-	  {"09", jgconfig.endDelay},         // ½áÊøÑÓÊ±
-	  {"0A", jgconfig.JgFreq},            // ¼¤¹âÆµÂÊ
-	  {"0B", jgconfig.JgPower},            // ¼¤¹â¹¦ÂÊ
-	  {"0C", jgconfig.KgDelay},            // ¿ª¹âÑÓÊ±
-	  {"0D", jgconfig.GgDelay}          // ¹Ø¹âÑÓÊ±
+	  // æ¿€å…‰å‚æ•°
+	  // æ¿€å…‰å‚æ•°
+	  {"08", jgconfig.jumpDelay},          // è·³è½¬å»¶æ—¶
+	  {"09", jgconfig.endDelay},         // ç»“æŸå»¶æ—¶
+	  {"0A", jgconfig.JgFreq},            // æ¿€å…‰é¢‘ç‡
+	  {"0B", jgconfig.JgPower},            // æ¿€å…‰åŠŸç‡
+	  {"0C", jgconfig.KgDelay},            // å¼€å…‰å»¶æ—¶
+	  {"0D", jgconfig.GgDelay}          // å…³å…‰å»¶æ—¶
 		};
 
-		// ·¢ËÍËùÓĞ²ÎÊı
+		// å‘é€æ‰€æœ‰å‚æ•°
 		for (const auto& param : params) {
-			// ¹¹½¨¹Ì¶¨Í·: "02" + ×ÓÃüÁîID + "0000000000" (¹²16¸ö×Ö·û£¬8×Ö½Ú)
+			// æ„å»ºå›ºå®šå¤´: "02" + å­å‘½ä»¤ID + "0000000000" (å…±16ä¸ªå­—ç¬¦ï¼Œ8å­—èŠ‚)
 			QString headerStr = "10" + param.first + "000000000000";
 
 			QByteArray header = QByteArray::fromHex(headerStr.toUtf8());
 
-			// ¹Ì¶¨Öµ hl ºÍ lh (¸÷8×Ö½Ú£¬È«0)
+			// å›ºå®šå€¼ hl å’Œ lh (å„8å­—èŠ‚ï¼Œå…¨0)
 			quint64 hl = 0;
 			quint64 lh = 0;
 
-			// ll ²ÎÊıÖµ (8×Ö½Ú£¬µÍ4×Ö½ÚÎª²ÎÊıÖµ£¬´ó¶ËĞò)
+			// ll å‚æ•°å€¼ (8å­—èŠ‚ï¼Œä½4å­—èŠ‚ä¸ºå‚æ•°å€¼ï¼Œå¤§ç«¯åº)
 			quint64 ll = qToBigEndian(static_cast<quint64>(param.second));
 
-			// ¹¹½¨ÍêÕûÊı¾İ°ü (32×Ö½Ú)
+			// æ„å»ºå®Œæ•´æ•°æ®åŒ… (32å­—èŠ‚)
 			QByteArray packet;
-			packet.append(header); // 8×Ö½Ú
-			packet.append(reinterpret_cast<const char*>(&hl), sizeof(hl)); // 8×Ö½Ú
-			packet.append(reinterpret_cast<const char*>(&lh), sizeof(lh)); // 8×Ö½Ú
-			packet.append(reinterpret_cast<const char*>(&ll), sizeof(ll)); // 8×Ö½Ú
+			packet.append(header); // 8å­—èŠ‚
+			packet.append(reinterpret_cast<const char*>(&hl), sizeof(hl)); // 8å­—èŠ‚
+			packet.append(reinterpret_cast<const char*>(&lh), sizeof(lh)); // 8å­—èŠ‚
+			packet.append(reinterpret_cast<const char*>(&ll), sizeof(ll)); // 8å­—èŠ‚
 
-			// ·¢ËÍUDPÊı¾İ°ü
+			// å‘é€UDPæ•°æ®åŒ…
 			if (udpSocket.writeDatagram(packet, QHostAddress(ip), port) == -1) {
-				qWarning() << "·¢ËÍ²ÎÊıÊ§°Ü:" << param.first << udpSocket.errorString();
+				qWarning() << "å‘é€å‚æ•°å¤±è´¥:" << param.first << udpSocket.errorString();
 			}
 			else {
-				qDebug() << QString::fromLocal8Bit("³É¹¦·¢ËÍ²ÎÊı:") << param.first << QString::fromLocal8Bit("Öµ:") << param.second
-					<< QString::fromLocal8Bit("Êı¾İ°ü:") << packet.toHex(' ').toUpper();
+				qDebug() << QString::fromLocal8Bit("æˆåŠŸå‘é€å‚æ•°:") << param.first << QString::fromLocal8Bit("å€¼:") << param.second
+					<< QString::fromLocal8Bit("æ•°æ®åŒ…:") << packet.toHex(' ').toUpper();
 			}
 		}
 
-		return 0; // ³É¹¦·µ»Ø0
+		return 0; // æˆåŠŸè¿”å›0
 	}
 
 	int Sendalarm()
@@ -607,121 +610,121 @@ namespace FileUtils {
 		QString ip = "192.168.1.10";
 		quint16 port = 1234;
 
-		// ²ÎÊıĞ£Ñéº¯Êı
+		// å‚æ•°æ ¡éªŒå‡½æ•°
 		auto checkParam = [](const QString& name, int value, int min, int max) -> bool {
 			if (value < min || value > max) {
-				qWarning() << QString::fromLocal8Bit("²ÎÊı '%1' Öµ %2 ³¬³ö·¶Î§ (%3-%4)")
+				qWarning() << QString::fromLocal8Bit("å‚æ•° '%1' å€¼ %2 è¶…å‡ºèŒƒå›´ (%3-%4)")
 					.arg(name).arg(value).arg(min).arg(max);
 				return false;
 			}
 			return true;
 			};
 
-		if (!checkParam(QString::fromLocal8Bit("±¨¾¯¼ä¸ôÊı"), GapCount, 1, 30)) return -1;
-		if (!checkParam(QString::fromLocal8Bit("±¨¾¯±£³ÖÊı"), KeepCount, 1, 30)) return -1;
+		if (!checkParam(QString::fromLocal8Bit("æŠ¥è­¦é—´éš”æ•°"), GapCount, 1, 30)) return -1;
+		if (!checkParam(QString::fromLocal8Bit("æŠ¥è­¦ä¿æŒæ•°"), KeepCount, 1, 30)) return -1;
 
 		QUdpSocket udpSocket;
 
-		// ¹¹½¨²ÎÊı·¢ËÍÁĞ±í£¨Óë½á¹¹Ìå³ÉÔ±¶ÔÓ¦£©
+		// æ„å»ºå‚æ•°å‘é€åˆ—è¡¨ï¼ˆä¸ç»“æ„ä½“æˆå‘˜å¯¹åº”ï¼‰
 		QVector<QPair<QString, int>> params = {
 
-			 {"00", GapCount},         // ±¨¾¯¼ä¸ôÊı
-		     {"01", KeepCount}        // ±¨¾¯±£³ÖÊı
+			 {"00", GapCount},         // æŠ¥è­¦é—´éš”æ•°
+		     {"01", KeepCount}        // æŠ¥è­¦ä¿æŒæ•°
 		};
 
-		// ·¢ËÍËùÓĞ²ÎÊı
+		// å‘é€æ‰€æœ‰å‚æ•°
 		for (const auto& param : params) {
-			// ¹¹½¨¹Ì¶¨Í·: "02" + ×ÓÃüÁîID + "0000000000" (¹²16¸ö×Ö·û£¬8×Ö½Ú)
+			// æ„å»ºå›ºå®šå¤´: "02" + å­å‘½ä»¤ID + "0000000000" (å…±16ä¸ªå­—ç¬¦ï¼Œ8å­—èŠ‚)
 			QString headerStr = "21" + param.first + "000000000000";
 
 			QByteArray header = QByteArray::fromHex(headerStr.toUtf8());
 
-			// ¹Ì¶¨Öµ hl ºÍ lh (¸÷8×Ö½Ú£¬È«0)
+			// å›ºå®šå€¼ hl å’Œ lh (å„8å­—èŠ‚ï¼Œå…¨0)
 			quint64 hl = 0;
 			quint64 lh = 0;
 
-			// ll ²ÎÊıÖµ (8×Ö½Ú£¬µÍ4×Ö½ÚÎª²ÎÊıÖµ£¬´ó¶ËĞò)
+			// ll å‚æ•°å€¼ (8å­—èŠ‚ï¼Œä½4å­—èŠ‚ä¸ºå‚æ•°å€¼ï¼Œå¤§ç«¯åº)
 			quint64 ll = qToBigEndian(static_cast<quint64>(param.second));
 
-			// ¹¹½¨ÍêÕûÊı¾İ°ü (32×Ö½Ú)
+			// æ„å»ºå®Œæ•´æ•°æ®åŒ… (32å­—èŠ‚)
 			QByteArray packet;
-			packet.append(header); // 8×Ö½Ú
-			packet.append(reinterpret_cast<const char*>(&hl), sizeof(hl)); // 8×Ö½Ú
-			packet.append(reinterpret_cast<const char*>(&lh), sizeof(lh)); // 8×Ö½Ú
-			packet.append(reinterpret_cast<const char*>(&ll), sizeof(ll)); // 8×Ö½Ú
+			packet.append(header); // 8å­—èŠ‚
+			packet.append(reinterpret_cast<const char*>(&hl), sizeof(hl)); // 8å­—èŠ‚
+			packet.append(reinterpret_cast<const char*>(&lh), sizeof(lh)); // 8å­—èŠ‚
+			packet.append(reinterpret_cast<const char*>(&ll), sizeof(ll)); // 8å­—èŠ‚
 
-			// ·¢ËÍUDPÊı¾İ°ü
+			// å‘é€UDPæ•°æ®åŒ…
 			if (udpSocket.writeDatagram(packet, QHostAddress(ip), port) == -1) {
-				qWarning() << "·¢ËÍ²ÎÊıÊ§°Ü:" << param.first << udpSocket.errorString();
+				qWarning() << "å‘é€å‚æ•°å¤±è´¥:" << param.first << udpSocket.errorString();
 			}
 			else {
-				qDebug() << QString::fromLocal8Bit("³É¹¦·¢ËÍ²ÎÊı:") << param.first << QString::fromLocal8Bit("Öµ:") << param.second
-					<< QString::fromLocal8Bit("Êı¾İ°ü:") << packet.toHex(' ').toUpper();
+				qDebug() << QString::fromLocal8Bit("æˆåŠŸå‘é€å‚æ•°:") << param.first << QString::fromLocal8Bit("å€¼:") << param.second
+					<< QString::fromLocal8Bit("æ•°æ®åŒ…:") << packet.toHex(' ').toUpper();
 			}
 		}
 
-		return 0; // ³É¹¦·µ»Ø0
+		return 0; // æˆåŠŸè¿”å›0
 	}
-	//±àÂë²ÎÊı############################################################################
+	//ç¼–ç å‚æ•°############################################################################
 	int Sendall()
 	{
 		QString ip = "192.168.1.10";
 		quint16 port = 1234;
 
-		// ²ÎÊıĞ£Ñéº¯Êı
+		// å‚æ•°æ ¡éªŒå‡½æ•°
 		auto checkParam = [](const QString& name, int value, int min, int max) -> bool {
 			if (value < min || value > max) {
-				qWarning() << QString::fromLocal8Bit("²ÎÊı '%1' Öµ %2 ³¬³ö·¶Î§ (%3-%4)")
+				qWarning() << QString::fromLocal8Bit("å‚æ•° '%1' å€¼ %2 è¶…å‡ºèŒƒå›´ (%3-%4)")
 					.arg(name).arg(value).arg(min).arg(max);
 				return false;
 			}
 			return true;
 			};
 
-		// Ğ£ÑéËùÓĞ²ÎÊı
-		if (!checkParam(QString::fromLocal8Bit("±àÂëÆ÷Ö±¾¶"), jgconfig.BMQzhijing, 1, 999)) return -1;
-		if (!checkParam(QString::fromLocal8Bit("±àÂëÆ÷ÖÜÂö³å"), jgconfig.BMQmaichong, 1, 9999)) return -1;
+		// æ ¡éªŒæ‰€æœ‰å‚æ•°
+		if (!checkParam(QString::fromLocal8Bit("ç¼–ç å™¨ç›´å¾„"), jgconfig.BMQzhijing, 1, 999)) return -1;
+		if (!checkParam(QString::fromLocal8Bit("ç¼–ç å™¨å‘¨è„‰å†²"), jgconfig.BMQmaichong, 1, 9999)) return -1;
 
 		QUdpSocket udpSocket;
 
-		// ¹¹½¨²ÎÊı·¢ËÍÁĞ±í£¨Óë½á¹¹Ìå³ÉÔ±¶ÔÓ¦£©
+		// æ„å»ºå‚æ•°å‘é€åˆ—è¡¨ï¼ˆä¸ç»“æ„ä½“æˆå‘˜å¯¹åº”ï¼‰
 		QVector<QPair<QString, int>> params = {
 
-			  {"00", jgconfig.BMQzhijing},         // ±àÂëÆ÷Ö±¾¶
-		      {"01", jgconfig.BMQmaichong}       // ±àÂëÆ÷ÖÜÂö³å
+			  {"00", jgconfig.BMQzhijing},         // ç¼–ç å™¨ç›´å¾„
+		      {"01", jgconfig.BMQmaichong}       // ç¼–ç å™¨å‘¨è„‰å†²
 		};
 
-		// ·¢ËÍËùÓĞ²ÎÊı
+		// å‘é€æ‰€æœ‰å‚æ•°
 		for (const auto& param : params) {
-			// ¹¹½¨¹Ì¶¨Í·: "02" + ×ÓÃüÁîID + "0000000000" (¹²16¸ö×Ö·û£¬8×Ö½Ú)
+			// æ„å»ºå›ºå®šå¤´: "02" + å­å‘½ä»¤ID + "0000000000" (å…±16ä¸ªå­—ç¬¦ï¼Œ8å­—èŠ‚)
 			QString headerStr = "FF" + param.first + "000000000000";
 
 			QByteArray header = QByteArray::fromHex(headerStr.toUtf8());
 
-			// ¹Ì¶¨Öµ hl ºÍ lh (¸÷8×Ö½Ú£¬È«0)
+			// å›ºå®šå€¼ hl å’Œ lh (å„8å­—èŠ‚ï¼Œå…¨0)
 			quint64 hl = 0;
 			quint64 lh = 0;
 
-			// ll ²ÎÊıÖµ (8×Ö½Ú£¬µÍ4×Ö½ÚÎª²ÎÊıÖµ£¬´ó¶ËĞò)
+			// ll å‚æ•°å€¼ (8å­—èŠ‚ï¼Œä½4å­—èŠ‚ä¸ºå‚æ•°å€¼ï¼Œå¤§ç«¯åº)
 			quint64 ll = qToBigEndian(static_cast<quint64>(param.second));
 
-			// ¹¹½¨ÍêÕûÊı¾İ°ü (32×Ö½Ú)
+			// æ„å»ºå®Œæ•´æ•°æ®åŒ… (32å­—èŠ‚)
 			QByteArray packet;
-			packet.append(header); // 8×Ö½Ú
-			packet.append(reinterpret_cast<const char*>(&hl), sizeof(hl)); // 8×Ö½Ú
-			packet.append(reinterpret_cast<const char*>(&lh), sizeof(lh)); // 8×Ö½Ú
-			packet.append(reinterpret_cast<const char*>(&ll), sizeof(ll)); // 8×Ö½Ú
+			packet.append(header); // 8å­—èŠ‚
+			packet.append(reinterpret_cast<const char*>(&hl), sizeof(hl)); // 8å­—èŠ‚
+			packet.append(reinterpret_cast<const char*>(&lh), sizeof(lh)); // 8å­—èŠ‚
+			packet.append(reinterpret_cast<const char*>(&ll), sizeof(ll)); // 8å­—èŠ‚
 
-			// ·¢ËÍUDPÊı¾İ°ü
+			// å‘é€UDPæ•°æ®åŒ…
 			if (udpSocket.writeDatagram(packet, QHostAddress(ip), port) == -1) {
-				qWarning() << "·¢ËÍ²ÎÊıÊ§°Ü:" << param.first << udpSocket.errorString();
+				qWarning() << "å‘é€å‚æ•°å¤±è´¥:" << param.first << udpSocket.errorString();
 			}
 			else {
-				qDebug() << QString::fromLocal8Bit("³É¹¦·¢ËÍ²ÎÊı:") << param.first << QString::fromLocal8Bit("Öµ:") << param.second
-					<< QString::fromLocal8Bit("Êı¾İ°ü:") << packet.toHex(' ').toUpper();
+				qDebug() << QString::fromLocal8Bit("æˆåŠŸå‘é€å‚æ•°:") << param.first << QString::fromLocal8Bit("å€¼:") << param.second
+					<< QString::fromLocal8Bit("æ•°æ®åŒ…:") << packet.toHex(' ').toUpper();
 			}
 		}
-		return 0; // ³É¹¦·µ»Ø0
+		return 0; // æˆåŠŸè¿”å›0
 	}
 
 

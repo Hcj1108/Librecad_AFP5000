@@ -1,4 +1,4 @@
-/****************************************************************************
+ï»¿/****************************************************************************
 **
 ** This file is part of the LibreCAD project, a 2D CAD program
 **
@@ -107,18 +107,18 @@ struct RS_MTextData {
 	 *    often the case since you might want to adjust attributes
 	 *    after creating a text entity.
 	 */
-	RS_MTextData(const RS_Vector& insertionPoint,              // ²åÈëµã£ºÎÄ±¾ÔÚCADÍ¼Ö½ÖĞµÄ»ù×¼Î»ÖÃ×ø±ê
-				 double height,                                // ±ê³Æ¸ß¶È£ºÎÄ±¾µÄ³õÊ¼×Ö·û¸ß¶È£¨Âß¼­µ¥Î»£©
-				 double width,                                 // ²Î¿¼¾ØĞÎ¿í¶È£ºÎÄ±¾±ß½ç¿òµÄ²Î¿¼¿í¶È
-				 VAlign valign,                                // ´¹Ö±¶ÔÆë£ºVATop(¶¥²¿)/VAMiddle(ÖĞ²¿)/VABottom(µ×²¿)
-				 HAlign halign,                                // Ë®Æ½¶ÔÆë£ºHALeft(×ó)/HACenter(ÖĞ)/HARight(ÓÒ)
-				 MTextDrawingDirection drawingDirection,       // »æÖÆ·½Ïò£ºLeftToRight(×óµ½ÓÒ)/TopToBottom(ÉÏµ½ÏÂ)/ByStyle(¼Ì³ĞÑùÊ½)
-				 MTextLineSpacingStyle lineSpacingStyle,       // ĞĞ¼ä¾àÑùÊ½£ºAtLeast(ÖÁÉÙ)/Exact(¾«È·)
-				 double lineSpacingFactor,                     // ĞĞ¼ä¾àÒò×Ó£º¿ØÖÆĞĞÓëĞĞÖ®¼äµÄ¼ä¾à±ÈÀı
-				 const QString& text,                          // ÎÄ±¾×Ö·û´®£ºÊµ¼ÊÏÔÊ¾µÄÎÄ±¾ÄÚÈİ
-				 const QString& style,                         // ÎÄ±¾ÑùÊ½Ãû£ºÒıÓÃµÄÎÄ±¾ÑùÊ½Ãû³Æ
-				 double angle,                                 // Ğı×ª½Ç¶È£ºÎÄ±¾Ïà¶ÔÓÚ²åÈëµãµÄĞı×ª½Ç¶È£¨»¡¶È£©
-				 RS2::UpdateMode updateMode = RS2::Update);    // ¸üĞÂÄ£Ê½£º¿ØÖÆÊµÌå´´½¨ºóÊÇ·ñÁ¢¼´¸üĞÂÏÔÊ¾
+	RS_MTextData(const RS_Vector& insertionPoint,              // æ’å…¥ç‚¹ï¼šæ–‡æœ¬åœ¨CADå›¾çº¸ä¸­çš„åŸºå‡†ä½ç½®åæ ‡
+				 double height,                                // æ ‡ç§°é«˜åº¦ï¼šæ–‡æœ¬çš„åˆå§‹å­—ç¬¦é«˜åº¦ï¼ˆé€»è¾‘å•ä½ï¼‰
+				 double width,                                 // å‚è€ƒçŸ©å½¢å®½åº¦ï¼šæ–‡æœ¬è¾¹ç•Œæ¡†çš„å‚è€ƒå®½åº¦
+				 VAlign valign,                                // å‚ç›´å¯¹é½ï¼šVATop(é¡¶éƒ¨)/VAMiddle(ä¸­éƒ¨)/VABottom(åº•éƒ¨)
+				 HAlign halign,                                // æ°´å¹³å¯¹é½ï¼šHALeft(å·¦)/HACenter(ä¸­)/HARight(å³)
+				 MTextDrawingDirection drawingDirection,       // ç»˜åˆ¶æ–¹å‘ï¼šLeftToRight(å·¦åˆ°å³)/TopToBottom(ä¸Šåˆ°ä¸‹)/ByStyle(ç»§æ‰¿æ ·å¼)
+				 MTextLineSpacingStyle lineSpacingStyle,       // è¡Œé—´è·æ ·å¼ï¼šAtLeast(è‡³å°‘)/Exact(ç²¾ç¡®)
+				 double lineSpacingFactor,                     // è¡Œé—´è·å› å­ï¼šæ§åˆ¶è¡Œä¸è¡Œä¹‹é—´çš„é—´è·æ¯”ä¾‹
+				 const QString& text,                          // æ–‡æœ¬å­—ç¬¦ä¸²ï¼šå®é™…æ˜¾ç¤ºçš„æ–‡æœ¬å†…å®¹
+				 const QString& style,                         // æ–‡æœ¬æ ·å¼åï¼šå¼•ç”¨çš„æ–‡æœ¬æ ·å¼åç§°
+				 double angle,                                 // æ—‹è½¬è§’åº¦ï¼šæ–‡æœ¬ç›¸å¯¹äºæ’å…¥ç‚¹çš„æ—‹è½¬è§’åº¦ï¼ˆå¼§åº¦ï¼‰
+				 RS2::UpdateMode updateMode = RS2::Update);    // æ›´æ–°æ¨¡å¼ï¼šæ§åˆ¶å®ä½“åˆ›å»ºåæ˜¯å¦ç«‹å³æ›´æ–°æ˜¾ç¤º
 
 	/** Insertion point */
 	RS_Vector insertionPoint;
@@ -146,22 +146,22 @@ struct RS_MTextData {
 	RS2::UpdateMode updateMode;
 
 
-	double wordSpacing=0;   //ĞÂÔö ,×Ö¼ä¾à, ÓÃÓÚ²¹³¥
-	double y_scale = 1.0;   //ĞÂÔö, ÓÃÓÚ×Ô¶¨Òå×ÖÌåµÄy·½ÏòËõ·Å
-	double x_scale = 1.0;   //ĞÂÔö, ÓÃÓÚ×Ô¶¨Òå×ÖÌåµÄx·½ÏòËõ·Å
+	double wordSpacing=0;   //æ–°å¢ ,å­—é—´è·, ç”¨äºè¡¥å¿
+	double y_scale = 1.0;   //æ–°å¢, ç”¨äºè‡ªå®šä¹‰å­—ä½“çš„yæ–¹å‘ç¼©æ”¾
+	double x_scale = 1.0;   //æ–°å¢, ç”¨äºè‡ªå®šä¹‰å­—ä½“çš„xæ–¹å‘ç¼©æ”¾
 
-    //double pos_x=33000.0;           //ĞÂÔö, ÓÃÓÚÊµÌåÎ»ÖÃµÄx×ó±ß
-    //double pos_x=34000.0;           //ĞÂÔö, ÓÃÓÚÊµÌåÎ»ÖÃµÄy×ø±ê
+    //double pos_x=33000.0;           //æ–°å¢, ç”¨äºå®ä½“ä½ç½®çš„xå·¦è¾¹
+    //double pos_x=34000.0;           //æ–°å¢, ç”¨äºå®ä½“ä½ç½®çš„yåæ ‡
 
-    /*---------------------------------Õ¼Î»·ûĞÅÏ¢------------------------------*/
-    bool    hasDynamicPlaceholders = false;   ///< ÊÇ·ñ°üº¬Ê±¼äÕ¼Î»·û hh:MM:ss
-    int     timePlaceholderPos = -1;        //< Õ¼Î»·ûÔÚÎÄ±¾ÖĞµÄÆğÊ¼Î»ÖÃË÷Òı
-    int     timePlaceholderNum = 8;         //Õ¼Î»·û³¤¶È,hh:MM:ss,
-    QString timePlaceholderFormat;          //< ¹Ì¶¨Îª "hh:MM:ss"£¨¿ÉÀ©Õ¹ÆäËû¸ñÊ½£©
+    /*---------------------------------å ä½ç¬¦ä¿¡æ¯------------------------------*/
+    bool    hasDynamicPlaceholders = false;   ///< æ˜¯å¦åŒ…å«æ—¶é—´å ä½ç¬¦ hh:MM:ss
+    int     timePlaceholderPos = -1;        //< å ä½ç¬¦åœ¨æ–‡æœ¬ä¸­çš„èµ·å§‹ä½ç½®ç´¢å¼•
+    int     timePlaceholderNum = 8;         //å ä½ç¬¦é•¿åº¦,hh:MM:ss,
+    QString timePlaceholderFormat;          //< å›ºå®šä¸º "hh:MM:ss"ï¼ˆå¯æ‰©å±•å…¶ä»–æ ¼å¼ï¼‰
 
-    RS_Vector insertionPoint_timePlace = RS_Vector(0.0, 0.0);//youÓÃ ,²»Òª¶¯timePlaceholderPositionsÌæ´úÁË
-    int timePlaceholderReplacedLength = 0; // Ìæ»»ºó×ÜÊµ¼Ê³¤¶È
-    QVector<RS_Vector> timePlaceholderPositions; // ´æ´¢Ã¿¸ö×Ö·ûµÄ×îÖÕ×ø±ê 
+    RS_Vector insertionPoint_timePlace = RS_Vector(0.0, 0.0);//youç”¨ ,ä¸è¦åŠ¨timePlaceholderPositionsæ›¿ä»£äº†
+    int timePlaceholderReplacedLength = 0; // æ›¿æ¢åæ€»å®é™…é•¿åº¦
+    QVector<RS_Vector> timePlaceholderPositions; // å­˜å‚¨æ¯ä¸ªå­—ç¬¦çš„æœ€ç»ˆåæ ‡ 
 
 };
 
@@ -179,7 +179,7 @@ std::ostream& operator << (std::ostream& os, const RS_MTextData& td);
  */
 class RS_MText : public RS_EntityContainer {
 
-    // Õ¼Î»·û×Ö·û±êÊ¶ÁĞ±í
+    // å ä½ç¬¦å­—ç¬¦æ ‡è¯†åˆ—è¡¨
     QList<QString> placeholderCharNames;
 
 
@@ -313,6 +313,8 @@ public:
     friend std::ostream& operator << (std::ostream& os, const RS_Text& p);
 
     void draw(RS_Painter* painter, RS_GraphicView* view, double& patternOffset) override;
+
+    void setTimePlaceholder(int pos, int replacedLength);
 
 private:
     double updateAddLine(RS_EntityContainer* textLine, int lineCounter);

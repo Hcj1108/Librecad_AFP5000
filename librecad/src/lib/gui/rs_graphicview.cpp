@@ -1237,6 +1237,7 @@ void RS_GraphicView::drawEntity(RS_Painter *painter, RS_Entity* e, double& patte
     // given entity is nullptr:
 
 	if (e->rtti() == RS2::EntityText || e->rtti() == RS2::EntityMText) {
+		if (!e->isVisible() || e->isUndone()) return;
 		drawEntityPlain(painter, e, patternOffset); // 强制原始渲染
 		return; // 跳过后续包围框绘制
 	}

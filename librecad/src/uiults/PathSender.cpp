@@ -10,7 +10,7 @@
 #include <QDebug>
 #include <QElapsedTimer>
 
-const QString PathSender::DEFAULT_IP = "192.168.1.10";
+const QString PathSender::DEFAULT_IP = "192.168.50.192";
 
 PathSender::PathSender(RS_Document* doc, RS_GraphicView* view, QWidget* parent)
     : m_doc(doc)
