@@ -377,7 +377,6 @@ D:\DM\LibreCAD-2.4(YitiJi)\generated\librecad\rcc\qrc_icons.cpp;D:\DM\LibreCAD-2
 D:\DM\LibreCAD-2.4(YitiJi)\generated\librecad\rcc\qrc_licenses.cpp;D:\DM\LibreCAD-2.4(YitiJi)\generated\librecad\obj\qrc_licenses.obj
 D:\DM\LibreCAD-2.4(YitiJi)\generated\librecad\rcc\qrc_main.cpp;D:\DM\LibreCAD-2.4(YitiJi)\generated\librecad\obj\qrc_main.obj
 D:\DM\LibreCAD-2.4(YitiJi)\generated\librecad\rcc\qrc_ui.cpp;D:\DM\LibreCAD-2.4(YitiJi)\generated\librecad\obj\qrc_ui.obj
-D:\DM\LibreCAD-2.4(YitiJi)\generated\librecad\rcc\qrc_OCRdemo.cpp;D:\DM\LibreCAD-2.4(YitiJi)\generated\librecad\obj\qrc_OCRdemo.obj
 D:\DM\LibreCAD-2.4(YitiJi)\generated\librecad\moc\moc_actionlist.cpp;D:\DM\LibreCAD-2.4(YitiJi)\generated\librecad\obj\moc_actionlist.obj
 D:\DM\LibreCAD-2.4(YitiJi)\generated\librecad\moc\moc_colorcombobox.cpp;D:\DM\LibreCAD-2.4(YitiJi)\generated\librecad\obj\moc_colorcombobox.obj
 D:\DM\LibreCAD-2.4(YitiJi)\generated\librecad\moc\moc_colorwizard.cpp;D:\DM\LibreCAD-2.4(YitiJi)\generated\librecad\obj\moc_colorwizard.obj
@@ -654,3 +653,4 @@ D:\DM\LibreCAD-2.4(YitiJi)\generated\librecad\moc\moc_rs_eventhandler.cpp;D:\DM\
 D:\DM\LibreCAD-2.4(YitiJi)\generated\librecad\moc\moc_rs_graphicview.cpp;D:\DM\LibreCAD-2.4(YitiJi)\generated\librecad\obj\moc_rs_graphicview.obj
 D:\DM\LibreCAD-2.4(YitiJi)\generated\librecad\moc\moc_textfileviewer.cpp;D:\DM\LibreCAD-2.4(YitiJi)\generated\librecad\obj\moc_textfileviewer.obj
 D:\DM\LibreCAD-2.4(YitiJi)\generated\librecad\moc\moc_widgetcreator.cpp;D:\DM\LibreCAD-2.4(YitiJi)\generated\librecad\obj\moc_widgetcreator.obj
+D:\DM\LibreCAD-2.4(YitiJi)\generated\librecad\rcc\qrc_OCRdemo.cpp;D:\DM\LibreCAD-2.4(YitiJi)\generated\librecad\obj\qrc_OCRdemo.obj

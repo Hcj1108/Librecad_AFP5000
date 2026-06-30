@@ -119,5 +119,7 @@
         <file>Resources/PNG/zoomauto.png</file>
         <file>Resources/PNG/zoomin.png</file>
         <file>Resources/PNG/zoomout.png</file>
+        <file>Resources/PNG/QR.png</file>
+        <file>Resources/PNG/revise.png</file>
     </qresource>
 </RCC>

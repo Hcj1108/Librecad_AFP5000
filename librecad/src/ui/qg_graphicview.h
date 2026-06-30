@@ -98,6 +98,10 @@ public:
    
     void setCurrentQAction(QAction* q_action);
 
+	// 设置画布是否允许选中实体（标刻模式下禁用）
+	void setSelectionEnabled(bool on) { selectionEnabled = on; }
+	bool isSelectionEnabled() const { return selectionEnabled; }
+
     QString device;
 
     void destroyMenu(const QString& activator);
@@ -162,6 +166,7 @@ private:
     bool antialiasing{false};
     bool scrollbars{false};
     bool cursor_hiding{false};
+	bool selectionEnabled{true};
 
     bool editEntityAt(const RS_Vector& pos);
   

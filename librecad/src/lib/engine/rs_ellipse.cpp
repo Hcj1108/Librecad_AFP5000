@@ -1851,9 +1851,9 @@ void RS_Ellipse::drawVisible(RS_Painter* painter, RS_GraphicView* view, double& 
 
     double mAngle=getAngle();
     RS_Vector cp(view->toGui(getCenter()));
-	if (!drawAsSelected && (
+	if (drawAsSelected || (!drawAsSelected && (
              getPen().getLineType()==RS2::SolidLine ||
-             view->getDrawingMode()==RS2::ModePreview)) {
+             view->getDrawingMode()==RS2::ModePreview))) {
         painter->drawEllipse(cp,
                              ra, rb,
                              mAngle,

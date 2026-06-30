@@ -701,9 +701,9 @@ void RS_Line::draw(RS_Painter* painter, RS_GraphicView* view, double& patternOff
 
     double  length=direction.magnitude();
     patternOffset -= length;
-    if (( !drawAsSelected && (
-              getPen().getLineType()==RS2::SolidLine ||
-              view->getDrawingMode()==RS2::ModePreview)) ) {
+    if (( drawAsSelected ||
+              (!drawAsSelected && (getPen().getLineType()==RS2::SolidLine ||
+              view->getDrawingMode()==RS2::ModePreview))) ) {
         //if length is too small, attempt to draw the line, could be a potential bug
         painter->drawLine(pStart,pEnd);
         return;

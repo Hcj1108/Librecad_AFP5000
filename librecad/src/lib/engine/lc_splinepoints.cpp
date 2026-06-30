@@ -1916,7 +1916,7 @@ void LC_SplinePoints::draw(RS_Painter* painter, RS_GraphicView* view, double& pa
 	if(isSelected() && !(view->isPrinting() || view->isPrintPreview()))
 	{
 //		styleFactor=1.;
-        pat = &RS_LineTypePattern::patternSelected;
+        // selected: drawSimple instead of patternSelected
 	}
 	else
 	{
@@ -1925,7 +1925,7 @@ void LC_SplinePoints::draw(RS_Painter* painter, RS_GraphicView* view, double& pa
 
 	bool bDrawPattern = false;
 	if(pat) bDrawPattern = pat->num > 0;
-	else
+	else if(!isSelected())
 	{
 		RS_DEBUG->print(RS_Debug::D_WARNING,
 			"RS_Line::draw: Invalid line pattern");

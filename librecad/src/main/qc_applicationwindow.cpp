@@ -6809,6 +6809,15 @@ void QC_ApplicationWindow::enableBKBKPrinting() {
     RS_GraphicView* graphicView = getGraphicView();
     RS_Document* document = getDocument();
     if (!graphicView || !document) return;
+	// 禁止选择实体
+    {   
+        QG_GraphicView* gv = dynamic_cast<QG_GraphicView*>(graphicView);
+        if (gv) {
+            gv->setSelectionEnabled(false);
+            gv->killAllActions();
+            gv->redraw(RS2::RedrawAll);
+        }
+    }
     // 计算选中实体的中心点
   /*  if (!calculateSelectionBounds(document)) return;
     SetROISimple(mtexttotalWidth, mtexttotalHeight, mtextlowerLeftx, mtextlowerLefty);*/
@@ -6832,7 +6841,7 @@ void QC_ApplicationWindow::enableBKBKPrinting() {
         ui->toolButton_45->setEnabled(false);*/
         ui->toolButton_46->setEnabled(false);
         //ui->toolButton_47->setEnabled(false);
-        // ui->toolButton_48->setEnabled(false);
+         ui->toolButton_48->setEnabled(false);
 
         IsOpenBKBK = true;
         //ui->toolButton_15->setStyleSheet("background-color: rgb(255, 0, 0);");
@@ -6858,6 +6867,13 @@ void QC_ApplicationWindow::enableBKBKPrinting() {
     }
 }
 void QC_ApplicationWindow::disableBKBKPrinting() {
+	//恢复实体选择功能
+    {
+        QG_GraphicView* gv = dynamic_cast<QG_GraphicView*>(getGraphicView());
+        if (gv) {
+            gv->setSelectionEnabled(true);
+        }
+    }
 
     // 启用时反向操作
     foreach(QToolBar * toolbar, findChildren<QToolBar*>()) {
@@ -6877,7 +6893,7 @@ void QC_ApplicationWindow::disableBKBKPrinting() {
     ui->toolButton_45->setEnabled(true);*/
     ui->toolButton_46->setEnabled(true);
     // ui->toolButton_47->setEnabled(true);
-    // ui->toolButton_48->setEnabled(true);
+    ui->toolButton_48->setEnabled(true);
 
    /* mtextlowerLeftx = 0;
     mtextlowerLefty = 0;

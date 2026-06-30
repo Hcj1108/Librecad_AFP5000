@@ -261,6 +261,11 @@ void QG_GraphicView::resizeEvent(QResizeEvent* /*e*/) {
 
 void QG_GraphicView::mousePressEvent(QMouseEvent* event)
 {
+    if (!selectionEnabled && event->button() == Qt::LeftButton) {
+        // 标刻模式下禁止左键选择实体
+        event->accept();
+        return;
+    }
     // pan zoom with middle mouse button
     if (event->button()==Qt::MiddleButton)
     {
@@ -280,6 +285,11 @@ void QG_GraphicView::mouseDoubleClickEvent(QMouseEvent* e)
             break;
         case Qt::LeftButton:
         {
+            if (!selectionEnabled) {
+                // 标刻模式下禁止双击编辑实体
+                e->accept();
+                return;
+            }
             RS_Vector pos = toGraph(e->x(), e->y());
             if (editEntityAt(pos)) {
                 e->accept();
